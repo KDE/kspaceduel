@@ -693,8 +693,8 @@ information.</para></listitem>
 
 <para><emphasis>Menu bindings</emphasis></para>
 
-<informaltable frame=all>
-<tgroup cols=2>
+<informaltable frame="all">
+<tgroup cols="2">
 <thead><row><entry>Key Combo</entry><entry>Action</entry></row></thead>
 <tbody>
 <row><entry><keycombo action="simul"><keycap>Ctrl</keycap><keycap>Q</keycap></keycombo></entry><entry>Quit &kspaceduel;</entry></row>
@@ -714,11 +714,11 @@ information.</para></listitem>
 
 <para><emphasis>Game Play</emphasis></para>
 
-<informaltable frame=all>
-<tgroup cols=3>
-<colspec colname=c1>
-<colspec colname=c2>
-<colspec colname=c3>
+<informaltable frame="all">
+<tgroup cols="3">
+<colspec colname="c1">
+<colspec colname="c2">
+<colspec colname="c3">
 <thead><row><entry>Action</entry><entry>Red Player</entry><entry>Blue Player</entry></row></thead>
 <tbody>
 <row><entry>Rotate Left</entry><entry>S</entry><entry>Left Arrow</entry></row>
