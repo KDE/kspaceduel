@@ -6,7 +6,7 @@
 #include "version.h"
 
 MyTopLevelWidget::MyTopLevelWidget(const char* name)
-      :KTopLevelWidget(name),
+      :KTMainWindow(name),
        menu(this),statusbar(this),wview(this)
 {
    keys=new KAccel(this);

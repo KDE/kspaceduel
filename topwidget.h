@@ -8,7 +8,7 @@
 #include <kconfig.h>
 #include "duelwidget.h"
 
-class MyTopLevelWidget:public KTopLevelWidget
+class MyTopLevelWidget:public KTMainWindow
 {
    Q_OBJECT
 public:
