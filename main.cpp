@@ -11,7 +11,7 @@ static const char *description = I18N_NOOP("KDE Space Game");
 int main(int argc,char **argv)
 {
    KAboutData aboutData( "kspaceduel", I18N_NOOP("KSpaceDuel"), 
-      KSPACEDUEL_VERSION, description, KAboutData::GPL, 
+      KSPACEDUEL_VERSION, description, KAboutData::License_GPL, 
       "(c) 1998, Andreas Zehender");
    aboutData.addAuthor("Andreas Zehender",0, "azehende@ba-stuttgart.de");
    KCmdLineArgs::init( argc, argv, &aboutData );
