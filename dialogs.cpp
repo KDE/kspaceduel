@@ -58,7 +58,7 @@ KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
    for(p=0;p<2;p++)
    {
       grid[p]=new QGridLayout(bplayer[p],PlayerKeyNum+1,2,10);
-      grid[p]->addRowSpacing( 0, spacingHint( ) );
+      grid[p]->addRowSpacing( 0, 2 * spacingHint( ) );
       grid[p]->setRowStretch(0,0);
       for(i=0;i<PlayerKeyNum;i++)
       {
@@ -98,6 +98,7 @@ void KeySetup::setButtons(int pl,int b)
          button[p][i]->setOn((pl==p)&&(b==i));
    waitForKey=b;
    player=pl;
+   grabKeyboard();
 }
 
 void KeySetup::slotDefault()
@@ -216,6 +217,7 @@ void KeySetup::keyPressEvent(QKeyEvent *ev)
    }
    else
       QDialog::keyPressEvent(ev);
+   releaseKeyboard();
 }
 
 #ifdef kspaceduel_only_for_xgettext
@@ -339,7 +341,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
       configCombo->insertItem(i18n(predefinedConfigName[i]));
    configCombo->insertItem(i18n("Custom"));
 
-   boxlayout->addSpacing(9);
+   boxlayout->addSpacing( 2 * spacingHint() );
    boxlayout->addWidget(configCombo);
    boxlayout->addWidget(tabs);
    
@@ -353,12 +355,13 @@ ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
    for(i=0;i<TabNum;i++)
       stacklayout[i]->activate();
 
-   tabs->addTab(configWidgets[i],i18n("General"));
-   tabs->addTab(configWidgets[i],i18n("Bullet"));
-   tabs->addTab(configWidgets[i],i18n("Name","Mine"));
-   tabs->addTab(configWidgets[i],i18n("Ship"));
-   tabs->addTab(configWidgets[i],i18n("Start"));
-   tabs->addTab(configWidgets[i],i18n("Powerups"));
+   tabs->addTab(configWidgets[0],i18n("General"));
+   tabs->addTab(configWidgets[1],i18n("Bullet"));
+   tabs->addTab(configWidgets[2],i18n("Name","Mine"));
+   tabs->addTab(configWidgets[3],i18n("Ship"));
+   tabs->addTab(configWidgets[4],i18n("Sun"));
+   tabs->addTab(configWidgets[5],i18n("Start"));
+   tabs->addTab(configWidgets[6],i18n("Powerups"));
  
    configCombo->setCurrentItem(opt->lastConfig);
    if(opt->lastConfig==predefinedConfigNum)
@@ -638,7 +641,7 @@ HitpointSetup::HitpointSetup(SOptions *opt,QWidget *parent,const char *name)
    QLabel *blueLabel=new QLabel(i18n("Blue Player"),box);
 
    QVBoxLayout *boxlayout = new QVBoxLayout( box, spacingHint( ) );
-   boxlayout->addSpacing(spacingHint()/*10*/);
+   boxlayout->addSpacing(2 * spacingHint()/*10*/);
    QGridLayout *grid=new QGridLayout(2,3);
    boxlayout->addLayout(grid);
    
@@ -691,7 +694,7 @@ GraphicSetup::GraphicSetup(SOptions *opt,QWidget *parent,const char *name)
    connect(refreshslider,SIGNAL(valueChanged(int)),refreshnumber,SLOT(display(int)));
    
    QVBoxLayout *boxlayout=new QVBoxLayout(box,spacingHint());
-   boxlayout->addSpacing(spacingHint());
+   boxlayout->addSpacing(2 * spacingHint());
    QGridLayout *partslayout=new QGridLayout(1,3);
    boxlayout->addLayout(partslayout);
    partslayout->addWidget(refreshlabel,0,0);
