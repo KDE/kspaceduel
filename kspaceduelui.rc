@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="kpovmodeler" version="2">
+<kpartgui name="kpovmodeler" version="4">
 <MenuBar>
    <Menu name="game"><text>&amp;Game</text>
       <Action name="new_game" append="new_merge"/>
@@ -19,7 +19,7 @@
    <Action name="game_start"/>
 </Menu>
 
-<Toolbar name="mainToolBar">
+<Toolbar name="mainToolBar"><text>Main Toolbar</text>
    <Action name="new_game"/>
    <Action name="new_round"/>
    <Action name="pause"/>

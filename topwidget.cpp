@@ -12,6 +12,7 @@
 MyTopLevelWidget::MyTopLevelWidget(const char* name)
       :KMainWindow(0, name)
 {
+   setCaption("");
    wview = new DuelWidget( this );
    initActions( );
    initStatusBar( );
@@ -70,8 +71,9 @@ void MyTopLevelWidget::initActions( )
 
 void MyTopLevelWidget::initStatusBar( )
 {
-   statusBar( )->insertItem(i18n(" paused "),IDS_PAUSE);
-   statusBar( )->insertItem("   ",IDS_MAIN);
+   statusBar( )->insertItem(i18n(" paused "),IDS_PAUSE,1);
+   statusBar( )->insertItem("   ",IDS_MAIN,1);
+   statusBar( )->insertItem("",42,2);
 
    QObject::connect(wview,SIGNAL(setStatusText(const QString &,int)),
                     SLOT(setStatusText(const QString &,int)));
