@@ -7,7 +7,6 @@ struct SOptions
 {
    double timeAfterKill;
    int playerKey[2][PlayerKeyNum];
-   int functionKey[FunctionKeyNum];
    unsigned refreshTime,startHitPoints[2],lastConfig;
    bool isAi[2];
    Difficulty aiDifficulty[2];

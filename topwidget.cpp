@@ -2,58 +2,76 @@
 #include <kapp.h>
 #include <qmessagebox.h>
 #include <kkeydialog.h>
+#include <kstdaction.h>
+#include <kaction.h>
 #include "topwidget.h"
 #include "version.h"
 
 MyTopLevelWidget::MyTopLevelWidget(const char* name)
-      :KTMainWindow(name),
-       menu(this),statusbar(this),wview(this)
+      :KTMainWindow(name),wview(this)
 {
-   keys=new KAccel(this);
-   KAccelMenu *popup;
+   initActions( );
+   initStatusBar( );
 
-   popup=new KAccelMenu(keys);
-   popup->insItem(i18n("&Quit"),"&Quit",this,SLOT(quit()),KStdAccel::Quit);
-   menu.insertItem(i18n("&File"),popup);
+   setView(&wview);
+
+   readConfig(kapp->config());
+}
+
+void MyTopLevelWidget::initActions( )
+{
+   KToggleAction* newAct;
    
-   popup=new KAccelMenu(keys);
-   popup->insItem(i18n("New &Game"),"New &Game",&wview,SLOT(newGame()),"CTRL+G");
-   popup->insItem(i18n("&New Round"),"&New Round",&wview,SLOT(newRound()),"CTRL+N");
-   menu.insertItem(i18n("&Game"),popup);
+   KStdAction::quit( this, SLOT( quit( ) ), actionCollection( ) );
+
+   ( void )new KAction( i18n( "New &Game" ), "newgame", 
+                        CTRL + Key_G, &wview, SLOT( newGame( ) ),
+                        actionCollection( ), "new_game" );
+   ( void )new KAction( i18n( "&New Round" ), "newround",
+                        CTRL + Key_N, &wview, SLOT( newRound( ) ),
+                        actionCollection( ), "new_round" );
+   newAct = new KToggleAction( i18n( "&Pause" ), "pausegame", 
+                               CTRL + Key_P, &wview, SLOT( togglePause( ) ),
+                               actionCollection( ), "pause" );
+   newAct->setChecked( false );
+   ( void )new KAction( i18n( "Start" ), Key_Space, &wview, SLOT( start( ) ),
+                        actionCollection( ), "game_start" );
    
-   popup=new KAccelMenu(keys);
-   popup->insItem(i18n("&Menu Keys..."),"&Menu Keys...",this,SLOT(keySetup()));
-   popup->insItem(i18n("&Keys..."),"&Keys...",&wview,SLOT(keySetup()));
-   popup->insItem(i18n("&Game..."),"&Game...",&wview,SLOT(gameSetup()));
-   popup->insItem(i18n("&Handicap..."),"&Handicap...",&wview,SLOT(hitpointSetup()));
-   popup->insItem(i18n("Gra&phics..."),"Gra&phics...",&wview,SLOT(graphicSetup()));
-                     
-   popup->insItem(i18n("&Ai..."),"&Ai...",&wview,SLOT(aiSetup()));
-   popup->insertSeparator();
-   popup->insItem(i18n("&Save Options"),"&Save Options",this,SLOT(saveOptions()));
-   menu.insertItem(i18n("&Options"),popup);
+   KStdAction::keyBindings( this, SLOT( keySetup( ) ), actionCollection( ) );
+   ( void )new KAction( i18n( "Player &Keys..." ), 0, &wview,
+                        SLOT( keySetup( ) ), actionCollection( ),
+                        "options_player_keys" );
+   ( void )new KAction( i18n( "&Game..." ), 0, &wview, SLOT( gameSetup( ) ),
+                        actionCollection( ), "options_game" );
+   ( void )new KAction( i18n( "&Handicap..." ), 0, &wview,
+                        SLOT( hitpointSetup( ) ),
+                        actionCollection( ), "options_handicap" );
+   ( void )new KAction( i18n( "Gra&phics..." ), 0, &wview,
+                        SLOT( graphicSetup( ) ),
+                        actionCollection( ), "options_graphics" );
+   ( void )new KAction( i18n( "&Ai..." ), 0, &wview,
+                        SLOT( aiSetup( ) ),
+                        actionCollection( ), "options_ai" );
+   KStdAction::showToolbar( this, SLOT( showToolBar( ) ),
+                            actionCollection( ) );
+   KStdAction::showStatusbar( this, SLOT( showStatusBar( ) ),
+                              actionCollection( ) );
 
-   menu.insertItem(i18n("&Help"),helpMenu(i18n("KSpaceduel")
-	+" "+KSPACEDUEL_VERSION
-	+ i18n("\n\nby Andreas Zehender")
-	+ " (azehende@ba-stuttgart.de)"));
+   KStdAction::saveOptions( this, SLOT( saveOptions( ) ),
+                            actionCollection( ) );
 
-   keys->readSettings();
+   createGUI( "kspaceduelui.rc" );
 
-//   statusbar.setInsertOrder(KStatusBar::RightToLeft);
-//   statusbar.setBorderWidth(2);
-   statusbar.insertItem(i18n(" paused "),IDS_PAUSE);
-   statusbar.insertItem("   ",IDS_MAIN);
-//   statusbar.setFrameStyle(QFrame::Panel|QFrame::Raised);
+}
+
+void MyTopLevelWidget::initStatusBar( )
+{
+   statusBar( )->insertItem(i18n(" paused "),IDS_PAUSE);
+   statusBar( )->insertItem("   ",IDS_MAIN);
 
    QObject::connect(&wview,SIGNAL(setStatusText(const char*,int)),
                     SLOT(setStatusText(const char*,int)));
 
-   setMenu(&menu);
-   setView(&wview);
-   setStatusBar(&statusbar);
-
-   readConfig(kapp->config());
 }
 
 void MyTopLevelWidget::start()
@@ -64,7 +82,7 @@ void MyTopLevelWidget::start()
 
 void MyTopLevelWidget::setStatusText(const char* str,int id)
 {
-   statusbar.changeItem(str,id);
+   statusBar( )->changeItem(str,id);
 }
 
 void MyTopLevelWidget::readConfig(KConfig *cfg)
@@ -90,12 +108,28 @@ void MyTopLevelWidget::quit()
 
 void MyTopLevelWidget::saveOptions()
 {
-   keys->writeSettings();
    wview.writeConfig();
 }
 
 void MyTopLevelWidget::keySetup()
 {
    wview.pause();
-   KKeyDialog::configureKeys(keys);   
+   KKeyDialog::configureKeys( actionCollection( ), "kspaceduelui.rc",
+                              false, this );   
+}
+
+void MyTopLevelWidget::showToolBar( )
+{
+   if( toolBar( )->isVisible( ) )
+      toolBar( )->hide( );
+   else
+      toolBar( )->show( );
+}
+
+void MyTopLevelWidget::showStatusBar( )
+{
+   if( statusBar( )->isVisible( ) )
+      statusBar( )->hide( );
+   else
+      statusBar( )->show( );
 }

@@ -19,14 +19,15 @@ public slots:
    void quit();
    void saveOptions();
    void keySetup();
+   void showToolBar( );
+   void showStatusBar( );
 protected:
    void readConfig(KConfig *cfg);
    void writeConfig(KConfig *cfg);
+   void initActions( );
+   void initStatusBar( );
 private:
-   KMenuBar menu;
-   KStatusBar statusbar;
    DuelWidget wview;
-   KAccel *keys; 
 };
 
 #endif

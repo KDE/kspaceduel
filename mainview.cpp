@@ -1,4 +1,5 @@
 #include "mainview.h"
+#include "topwidget.h"
 #include <qpixmap.h>
 #include <qimage.h>
 #include <qpoint.h>
@@ -8,6 +9,7 @@
 
 #include <kapp.h>
 #include <kaccel.h>
+#include <kaction.h>
 #include <klocale.h>
 #include <kstddirs.h>
 #include <kglobal.h>
@@ -38,8 +40,6 @@ MyMainView::MyMainView(QWidget *parent, const char *name)
       bulletShot[p]=false;
       minePut[p]=false;
    }
-   for(i=0;i<FunctionKeyNum;i++)
-      functionKeyPressed[i]=false;
 
    QString tmp = KGlobal::dirs()->findResourceDir("appdata", (QString)MV_BACKGROUND);
 
@@ -178,14 +178,12 @@ void MyMainView::readConfig(KConfig *cfg)
       cfg->readDoubleNumEntry("powerupEnergyAmount",
                               predefinedConfig[0].powerupEnergyAmount);
 
-   options.functionKey[FunctionKeyStart]=KAccel::stringToKey(cfg->readEntry("KeyStart","Space"));
-
    cfg->setGroup("Player2");
    options.playerKey[1][PlayerKeyLeft]=KAccel::stringToKey(cfg->readEntry("KeyLeft","Left"));
    options.playerKey[1][PlayerKeyRight]=KAccel::stringToKey(cfg->readEntry("KeyRight","Right"));
    options.playerKey[1][PlayerKeyAcc]=KAccel::stringToKey(cfg->readEntry("KeyAcc","Up"));
    options.playerKey[1][PlayerKeyShot]=KAccel::stringToKey(cfg->readEntry("KeyShot","Down"));
-   options.playerKey[1][PlayerKeyMine]=KAccel::stringToKey(cfg->readEntry("KeyMine","Control"));
+   options.playerKey[1][PlayerKeyMine]=KAccel::stringToKey(cfg->readEntry("KeyMine","Insert"));
    options.startHitPoints[1]=cfg->readUnsignedNumEntry("startHitPoints",99);
    cfg->setGroup("Player1");
    options.playerKey[0][PlayerKeyLeft]=KAccel::stringToKey(cfg->readEntry("KeyLeft","S"));
@@ -262,7 +260,7 @@ void MyMainView::writeConfig()
    cfg->writeEntry("KeyShot",KAccel::keyToString(options.playerKey[0][PlayerKeyShot]));
    cfg->writeEntry("KeyMine",KAccel::keyToString(options.playerKey[0][PlayerKeyMine]));
    cfg->setGroup("Game");
-   cfg->writeEntry("KeyStart",KAccel::keyToString(options.functionKey[FunctionKeyStart]));
+
    cfg->writeEntry("player1IsAi",options.isAi[0]);
    cfg->writeEntry("player2IsAi",options.isAi[1]);
    cfg->writeEntry("ai1Difficulty",(unsigned)options.aiDifficulty[0]);
@@ -290,26 +288,32 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
 
    if((gameEnd<=0.0)&&(gameEnd>-2.0))
    {
+      /*
       if(key==options.functionKey[FunctionKeyStart])
          newRound();
+      */
    }
    else if(waitForStart)
    {
+      /*
       if((key==options.functionKey[FunctionKeyStart])
          && (!functionKeyPressed[FunctionKeyStart]))
       {
          functionKeyPressed[FunctionKeyStart]=true;
          resume();
       }
+      */
    }
    else
    {
+      /*
       if((key==options.functionKey[FunctionKeyStart])
          && (!functionKeyPressed[FunctionKeyStart]))
       {
          functionKeyPressed[FunctionKeyStart]=true;
          pause();
       }
+      */
       for(p=0;p<2;p++)
          for(i=0;i<PlayerKeyNum;i++)
             if(key==options.playerKey[p][i])
@@ -328,32 +332,30 @@ void MyMainView::keyReleaseEvent(QKeyEvent *ev)
    int i,p,key=ev->key();
    bool accept=false;
 
-   for(i=0;i<FunctionKeyNum;i++)
-      if(key==options.functionKey[i])
-      {
-         functionKeyPressed[i]=false;
-         accept=true;
-      }
-   if(!accept)
-      for(p=0;p<2;p++)
-         for(i=0;i<PlayerKeyNum;i++)
-            if(key==options.playerKey[p][i])
-            {
-               playerKeyPressed[p][i]=false;
-               accept=true;
-            }
+   for(p=0;p<2;p++)
+      for(i=0;i<PlayerKeyNum;i++)
+         if(key==options.playerKey[p][i])
+         {
+            playerKeyPressed[p][i]=false;
+            accept=true;
+         }
    if(!accept)
       ev->ignore();
 }
 
 void MyMainView::pause()
 {
-   waitForStart=true;
-   killTimers();
-   QString str = i18n("Press %1 to start/resume")
-              .arg(KAccel::keyToString(options.functionKey[FunctionKeyStart]));
-   emit(setStatusText(i18n(" paused "),IDS_PAUSE));  
-   emit(setStatusText(str,IDS_MAIN));
+   if( !waitForStart )
+   {
+      KToggleAction* pauseAction = ( KToggleAction* )
+         ( (KTMainWindow* )parent( )->parent( ) )
+         ->actionCollection( )->action( "pause" );
+      pauseAction->setChecked( true );
+      
+      waitForStart=true;
+      killTimers();
+      emit(setStatusText(i18n(" paused "),IDS_PAUSE));
+   }
 }
 
 void MyMainView::resume()
@@ -362,6 +364,48 @@ void MyMainView::resume()
    timerID=startTimer(options.refreshTime);
    emit(setStatusText("",IDS_PAUSE));
    emit(setStatusText("",IDS_MAIN));
+}
+
+void MyMainView::start( )
+{
+   KActionCollection* collection = ( ( KTMainWindow* )parent( )->parent( ) )
+      ->actionCollection( );
+   KToggleAction* pauseAction;
+
+   if( ( gameEnd <= 0.0 ) && ( gameEnd > -2.0 ) )
+   {
+      newRound( );
+   }
+   else if( waitForStart )
+   {
+      waitForStart = false;
+      timerID=startTimer(options.refreshTime);
+      emit(setStatusText("",IDS_PAUSE));
+      emit(setStatusText("",IDS_MAIN));
+      pauseAction = ( KToggleAction* )collection->action( "pause" );
+      pauseAction->setEnabled( true );
+      pauseAction->setChecked( false );
+   }
+}
+
+void MyMainView::stop()
+{
+   KToggleAction* pauseAction = ( KToggleAction* )
+      ( (KTMainWindow* )parent( )->parent( ) )
+      ->actionCollection( )->action( "pause" );
+   pauseAction->setEnabled( false );
+   pauseAction->setChecked( false );
+   
+   killTimers();
+   waitForStart = true;
+}
+
+void MyMainView::togglePause( )
+{
+   if( waitForStart )
+      resume( );
+   else
+      pause( );
 }
 
 void MyMainView::resizeEvent(QResizeEvent *event)
@@ -454,7 +498,6 @@ void MyMainView::newRound()
       ai[i]->newRound();
    }
    explosions.clear();
-   pause();
    gameEnd=-10.0;
    for(i=0;i<PlayerKeyNum;i++)
    {
@@ -468,6 +511,14 @@ void MyMainView::newRound()
       textSprite=0;
    }
    field.update();
+   
+   QString str = i18n("Press %1 to start")
+      .arg(KAccel::keyToString( ( ( KTMainWindow* )( parent( )->parent( ) ) )
+                                ->actionCollection( )->action( "game_start" )
+                                ->accel( ) ) );
+   emit(setStatusText(str,IDS_MAIN));
+   emit( setStatusText( "", IDS_PAUSE ) );
+   stop( );
 }
 
 void MyMainView::newGame()
@@ -479,8 +530,6 @@ void MyMainView::newGame()
       emit(wins(i,0));
    }
    newRound();
-   for(i=0;i<FunctionKeyNum;i++)
-      functionKeyPressed[i]=false;
 }
 
 void MyMainView::timerEvent(QTimerEvent *event)
@@ -521,9 +570,11 @@ void MyMainView::timerEvent(QTimerEvent *event)
                emit(wins(0,w));
             }
             QString str = i18n("Press %1 for new round")
-                        .arg(KAccel::keyToString(
-                           options.functionKey[FunctionKeyStart]));
+               .arg(KAccel::keyToString( ( ( KTMainWindow* )( parent( )->parent( ) ) )
+                                         ->actionCollection( )->action( "game_start" )
+                                         ->accel( ) ) );
             emit(setStatusText(str,IDS_MAIN));
+            stop( );
          }
          else
             timerID=startTimer(options.refreshTime);      
@@ -962,9 +1013,9 @@ void MyMainView::keySetup()
       pause();
    KeySetup dialog(&options,this);
    dialog.exec();
-   QString str = i18n("Press %1 to start/resume")
-              .arg(KAccel::keyToString(options.functionKey[FunctionKeyStart]));
-   emit(setStatusText(str,IDS_MAIN));
+//   QString str = i18n("Press %1 to start/resume")
+//           .arg(KAccel::keyToString(options.functionKey[FunctionKeyStart]));
+//   emit(setStatusText(str,IDS_MAIN));
 }
 
 void MyMainView::aiSetup()

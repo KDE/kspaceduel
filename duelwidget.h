@@ -17,11 +17,13 @@ public slots:
    void newRound();
    void keySetup();
    void pause();
+   void togglePause();
    void aiSetup();
    void hitpointSetup();
    void graphicSetup();
    void gameSetup();
    void writeConfig();
+   void start();
 
    void energy(int pn,int en);
    void hitPoints(int pn,int hp);

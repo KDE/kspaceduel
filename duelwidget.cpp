@@ -90,3 +90,13 @@ void DuelWidget::pause()
 {
    playfield->pause();
 }
+
+void DuelWidget::togglePause()
+{
+   playfield->togglePause();
+}
+
+void DuelWidget::start()
+{
+   playfield->start();
+}

@@ -7,30 +7,31 @@
 #include <klocale.h>
 #include <kapp.h>
 #include <kaccel.h>
+#include <qvbox.h>
 
 #include "dialogs.h"
 
 KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
-      :QDialog(parent,name,true)
+      :KDialogBase( parent, name, true, i18n( "KeySetup" ), Ok|Cancel|Default )
 {
    int i,p;
+   QWidget* topWidget = new QWidget( this );
+   setMainWidget( topWidget );
 
    waitForKey=-1;
    options=opt;
 
-   setCaption(i18n("Key Setup"));
+//   setCaption(i18n("Key Setup"));
 
    for(p=0;p<2;p++)
       for(i=0;i<PlayerKeyNum;i++)
          key[p][i]=opt->playerKey[p][i];
-   for(i=0;i<FunctionKeyNum;i++)
-      fkey[i]=opt->functionKey[i];
 
-   QVBoxLayout *topLayout=new QVBoxLayout(this,10);
+   QVBoxLayout *topLayout = new QVBoxLayout( topWidget, 0, spacingHint( ) );
 
    QGroupBox *bplayer[2];
-   bplayer[0]=new QGroupBox(i18n("Red Player"),this);
-   bplayer[1]=new QGroupBox(i18n("Blue Player"),this);
+   bplayer[0]=new QGroupBox(i18n("Red Player"), topWidget );
+   bplayer[1]=new QGroupBox(i18n("Blue Player"), topWidget );
  
    for(p=0;p<2;p++)
    {
@@ -44,6 +45,7 @@ KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
          keyName[p][i]=new QLabel(KAccel::keyToString((unsigned)key[p][i]),bplayer[p]);
          keyName[p][i]->setLineWidth(1);
          keyName[p][i]->setFrameStyle(QFrame::Sunken|QFrame::Panel);
+         keyName[p][i]->setMinimumSize( 80, 10 );
       }
    }
 
@@ -51,7 +53,7 @@ KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
    for(p=0;p<2;p++)
    {
       grid[p]=new QGridLayout(bplayer[p],PlayerKeyNum+1,2,10);
-      grid[p]->addRowSpacing(0,5);
+      grid[p]->addRowSpacing( 0, spacingHint( ) );
       grid[p]->setRowStretch(0,0);
       for(i=0;i<PlayerKeyNum;i++)
       {
@@ -74,44 +76,11 @@ KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
    connect(button[1][PlayerKeyShot],SIGNAL(clicked()),SLOT(keyShot2()));
    connect(button[1][PlayerKeyMine],SIGNAL(clicked()),SLOT(keyMine2()));
 
-   QHBoxLayout *players=new QHBoxLayout;
+   QHBoxLayout *players=new QHBoxLayout( );
    topLayout->addLayout(players,PlayerKeyNum);
    players->addWidget(bplayer[0]);
    players->addWidget(bplayer[1]);
 
-   QGroupBox *bgeneral=new QGroupBox(i18n("General"),this);
-   QGridLayout *generalgrid=new QGridLayout(bgeneral,FunctionKeyNum+1,2,10);
-   generalgrid->addRowSpacing(0,5);
-   generalgrid->setRowStretch(0,0);
-
-   fbutton[FunctionKeyStart]=new QPushButton(i18n("Start/Pause"),bgeneral);
-   for(i=0;i<FunctionKeyNum;i++)
-   {
-      fKeyName[i]=new QLabel(KAccel::keyToString(fkey[i]),bgeneral);
-      fKeyName[i]->setLineWidth(1);
-      fKeyName[i]->setFrameStyle(QFrame::Sunken|QFrame::Panel);
-      fbutton[i]->setToggleButton(true);
-      generalgrid->addWidget(fbutton[i],i+1,0);
-      generalgrid->addWidget(fKeyName[i],i+1,1);
-      generalgrid->setRowStretch(i+1,1);
-   }
-   generalgrid->activate();
-   topLayout->addWidget(bgeneral,FunctionKeyNum);
-   connect(fbutton[FunctionKeyStart],SIGNAL(clicked()),SLOT(keyStart()));
-   
-   QHBoxLayout *buttons=new QHBoxLayout;
-   topLayout->addLayout(buttons,1);
-   ok=new QPushButton(i18n("OK"),this);
-   ok->setDefault(true);
-   connect(ok,SIGNAL(clicked()),SLOT(okPressed()));
-   cancel=new QPushButton(i18n("Cancel"),this);
-   connect(cancel,SIGNAL(clicked()),SLOT(reject()));
-   defaults=new QPushButton(i18n("Defaults"),this);
-   connect(defaults,SIGNAL(clicked()),SLOT(defaultsPressed()));
-   buttons->addWidget(defaults);
-   buttons->addWidget(cancel);
-   buttons->addWidget(ok);
-   resize(440,350);
    topLayout->activate();
 }
 
@@ -121,13 +90,11 @@ void KeySetup::setButtons(int pl,int b)
    for(p=0;p<2;p++)
       for(i=0;i<PlayerKeyNum;i++)
          button[p][i]->setOn((pl==p)&&(b==i));
-   for(i=0;i<FunctionKeyNum;i++)
-      fbutton[i]->setOn(pl==2);
    waitForKey=b;
    player=pl;
 }
 
-void KeySetup::defaultsPressed()
+void KeySetup::slotDefault()
 {
    int p,i;
    key[0][PlayerKeyLeft]=Key_S;
@@ -139,17 +106,14 @@ void KeySetup::defaultsPressed()
    key[1][PlayerKeyRight]=Key_Right;
    key[1][PlayerKeyAcc]=Key_Up;
    key[1][PlayerKeyShot]=Key_Down;
-   key[1][PlayerKeyMine]=Key_Control;
-   fkey[FunctionKeyStart]=Key_Space;
+   key[1][PlayerKeyMine]=Key_Insert;
 
    for(p=0;p<2;p++)
       for(i=0;i<PlayerKeyNum;i++)
          keyName[p][i]->setText(KAccel::keyToString(key[p][i]));
-   for(i=0;i<FunctionKeyNum;i++)
-      fKeyName[i]->setText(KAccel::keyToString(fkey[i]));
 }
 
-void KeySetup::okPressed()
+void KeySetup::slotOk()
 {
    int p,i,j;
    bool sameKey=false;
@@ -160,15 +124,11 @@ void KeySetup::okPressed()
          sameKey=sameKey||(key[0][i]==key[0][j]);
       for(j=0;j<PlayerKeyNum;j++)
          sameKey=sameKey||(key[0][i]==key[1][j]);
-      for(j=0;j<FunctionKeyNum;j++)
-         sameKey=sameKey||(key[0][i]==fkey[j]);
    }
    for(i=0;i<PlayerKeyNum;i++)
    {
       for(j=i+1;j<PlayerKeyNum;j++)
          sameKey=sameKey||(key[1][i]==key[1][j]);
-      for(j=0;j<FunctionKeyNum;j++)
-         sameKey=sameKey||(key[1][i]==fkey[j]);
    }
    if(sameKey)
       sameKey=QMessageBox::warning(this,i18n("Key Setup"),
@@ -179,8 +139,6 @@ void KeySetup::okPressed()
       for(p=0;p<2;p++)
          for(i=0;i<PlayerKeyNum;i++)
             options->playerKey[p][i]=key[p][i];
-      for(i=0;i<FunctionKeyNum;i++)
-         options->functionKey[i]=fkey[i];
       
       accept();
    }
@@ -236,11 +194,6 @@ void KeySetup::keyMine2()
    setButtons(1,PlayerKeyMine);
 }
 
-void KeySetup::keyStart()
-{
-   setButtons(2,FunctionKeyStart);
-}
-
 void KeySetup::keyPressEvent(QKeyEvent *ev)
 {
    if(waitForKey>=0)
@@ -249,11 +202,6 @@ void KeySetup::keyPressEvent(QKeyEvent *ev)
       {
          key[player][waitForKey]=ev->key();
          keyName[player][waitForKey]->setText(KAccel::keyToString(ev->key()));
-      }
-      else
-      {
-         fkey[waitForKey]=ev->key();
-         fKeyName[waitForKey]->setText(KAccel::keyToString(ev->key()));
       }
       setButtons(-1,-1);
       ev->accept();
@@ -343,7 +291,8 @@ const int LCDLen=6;
 
 ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
                          QWidget *parent,const char *name)
-      :QDialog(parent,name,true)
+      :KDialogBase( parent, name, true, i18n( "Game Setup" ),
+                    Ok|Cancel|Default|Help )
 {
    QLabel *label[EditNum];
    QGridLayout *stacklayout[TabNum];
@@ -352,8 +301,9 @@ ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
    
    int i;
    
-   resize(450,400);
-   setCaption(i18n("Game Setup"));
+   //resize(450,400);
+   //setCaption(i18n("Game Setup"));
+   setHelp( "kspaceduel/options.html", "OptionsConfiguration" );
    
    customConfig=custom;
    config=*customConfig;
@@ -361,7 +311,8 @@ ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
    options=*opt;
 
    box=new QGroupBox(i18n("Config"),this);
-   QVBoxLayout *boxlayout=new QVBoxLayout(box,10);
+   setMainWidget( box );
+   QVBoxLayout *boxlayout = new QVBoxLayout( box, spacingHint( ) );
    
    tabs=new QTabWidget(box);
    for(i=0;i<TabNum;i++)
@@ -388,8 +339,6 @@ ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
       configCombo->insertItem(i18n(predefinedConfigName[i]));
    configCombo->insertItem(i18n("Custom"));
 
-   QVBoxLayout *toplayout=new QVBoxLayout(this,10);
-   toplayout->addWidget(box);
    boxlayout->addSpacing(9);
    boxlayout->addWidget(configCombo);
    boxlayout->addWidget(tabs);
@@ -407,27 +356,6 @@ ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
    for(i=0;i<TabNum;i++)
       tabs->addTab(configWidgets[i],i18n(TabName[i]));
    
-   QHBoxLayout *blayout=new QHBoxLayout;
-   toplayout->addLayout(blayout);
-
-   help=new QPushButton(i18n("Help"),this);
-   connect(help,SIGNAL(clicked()),SLOT(helpPressed()));
-   defaults=new QPushButton(i18n("Defaults"),this);
-   connect(defaults,SIGNAL(clicked()),SLOT(defaultsPressed()));
-   cancel=new QPushButton(i18n("Cancel"),this);
-   connect(cancel,SIGNAL(clicked()),SLOT(reject()));
-   ok=new QPushButton(i18n("OK"),this);
-   ok->setDefault(true);
-   connect(ok,SIGNAL(clicked()),SLOT(okPressed()));
-
-   blayout->addWidget(help);
-   blayout->addWidget(defaults);
-   blayout->addWidget(cancel);
-   blayout->addWidget(ok);
-
-   toplayout->activate();
-   boxlayout->activate();
-
    configCombo->setCurrentItem(opt->lastConfig);
    if(opt->lastConfig==predefinedConfigNum)
    {
@@ -441,6 +369,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
       for(i=0;i<EditNum;i++)
          slider[i]->setEnabled(false);
    }
+   enableButton( Default, opt->lastConfig == predefinedConfigNum );
 }
 
 void ConfigSetup::valueChanged(int ednum,int value)
@@ -487,7 +416,7 @@ void ConfigSetup::valueChanged(int ednum,double value)
       }
 }
 
-void ConfigSetup::okPressed()
+void ConfigSetup::slotOk()
 {
    *customConfig=config;
    *gameOptions=options;
@@ -495,12 +424,7 @@ void ConfigSetup::okPressed()
    accept();
 }
 
-void ConfigSetup::helpPressed()
-{
-   KApplication::kApplication()->invokeHTMLHelp("kspaceduel/index-3.html","opt-conf");
-}
-
-void ConfigSetup::defaultsPressed()
+void ConfigSetup::slotDefault()
 {
    config=predefinedConfig[0];
    displayConfig(config);
@@ -515,7 +439,7 @@ void ConfigSetup::configSelected(int num)
       options.lastConfig=num;
       for(i=0;i<EditNum;i++)
          slider[i]->setEnabled(num==predefinedConfigNum);
-      defaults->setEnabled(num==predefinedConfigNum);
+      enableButton( Default, num==predefinedConfigNum );
       if(num<predefinedConfigNum)
          displayConfig(predefinedConfig[num]);
       else
@@ -629,32 +553,21 @@ void ConfigSetup::sliderChanged(int val)
 char AiSetup::DifficultyName[DNUM][10]={"Trainee","Normal","Hard","Insane"};
 
 AiSetup::AiSetup(SOptions *opt,QWidget *parent,const char *name)
-      :QDialog(parent,name,true)
+      :KDialogBase( parent, name, true, i18n( "Ai Setup" ), Ok|Cancel|Help )
 {
    QGroupBox *playerbox[2];
    int i,j;
 
    options=opt;
 
-   resize(300,170);
-   setCaption(i18n("Ai Setup"));
+//   resize(300,170);
+//   setCaption(i18n("Ai Setup"));
+   setHelp("kspaceduel/ai.html","");
    
-   help=new QPushButton(i18n("Help"),this);
-   connect(help,SIGNAL(clicked()),SLOT(helpPressed()));
-   cancel=new QPushButton(i18n("Cancel"),this);
-   connect(cancel,SIGNAL(clicked()),SLOT(reject()));
-   ok=new QPushButton(i18n("OK"),this);
-   ok->setDefault(true);
-   connect(ok,SIGNAL(clicked()),SLOT(okPressed()));
-
-   QVBoxLayout *toplayout=new QVBoxLayout(this,10);
-   QHBoxLayout *playout=new QHBoxLayout;
-   QHBoxLayout *blayout=new QHBoxLayout;
-   toplayout->addLayout(playout,3);
-   toplayout->addLayout(blayout,1);   
-
-   playerbox[0]=new QGroupBox(i18n("Red Player"),this);
-   playerbox[1]=new QGroupBox(i18n("Blue Player"),this);
+   QHBox* box = makeHBoxMainWidget();
+   
+   playerbox[0]=new QGroupBox(i18n("Red Player"),box);
+   playerbox[1]=new QGroupBox(i18n("Blue Player"),box);
 
    QVBoxLayout *pboxlayout[2];
    QLabel *label[2];
@@ -677,17 +590,9 @@ AiSetup::AiSetup(SOptions *opt,QWidget *parent,const char *name)
       pboxlayout[i]->addWidget(AiCombo[i]);
       pboxlayout[i]->activate();
    }
-   playout->addWidget(playerbox[0]);
-   playout->addWidget(playerbox[1]);
-
-   blayout->addWidget(help);
-   blayout->addWidget(cancel);
-   blayout->addWidget(ok);
-
-   toplayout->activate();
 }
 
-void AiSetup::okPressed()
+void AiSetup::slotOk()
 {
    int i;
    for(i=0;i<2;i++)
@@ -698,23 +603,20 @@ void AiSetup::okPressed()
    accept();
 }
 
-void AiSetup::helpPressed()
-{
-   KApplication::kApplication()->invokeHTMLHelp("kspaceduel/index-4.html","");
-}
-
-
 HitpointSetup::HitpointSetup(SOptions *opt,QWidget *parent,const char *name)
-      :QDialog(parent,name,true)
+      :KDialogBase( parent, name, true, i18n( "Handicap Setup" ),
+                    Ok|Help|Cancel )
 {
    hpred=opt->startHitPoints[0];
    hpblue=opt->startHitPoints[1];
    options=opt;
 
-   setCaption(i18n("Handicap Setup"));
+//   setCaption(i18n("Handicap Setup"));
+   setHelp( "kspaceduel/options.html", "OptionsHandicap" );
 
    QSlider *blueSlider,*redSlider;
    QGroupBox *box=new QGroupBox(i18n("Hit points"),this);
+   setMainWidget( box );
 
    QLCDNumber *bluelcd=new QLCDNumber(2,box);
    QLCDNumber *redlcd=new QLCDNumber(2,box);
@@ -731,26 +633,8 @@ HitpointSetup::HitpointSetup(SOptions *opt,QWidget *parent,const char *name)
    QLabel *redLabel=new QLabel(i18n("Red Player"),box);
    QLabel *blueLabel=new QLabel(i18n("Blue Player"),box);
 
-   QPushButton *okButton=new QPushButton(i18n("OK"),this);
-   connect(okButton,SIGNAL(clicked()),SLOT(okPressed()));
-   okButton->setDefault(true);
-   QPushButton *helpButton=new QPushButton(i18n("Help"),this);
-   connect(helpButton,SIGNAL(clicked()),SLOT(helpPressed()));
-   QPushButton *cancelButton=new QPushButton(i18n("Cancel"),this);
-   connect(cancelButton,SIGNAL(clicked()),SLOT(reject()));
-
-   QVBoxLayout *toplayout=new QVBoxLayout(this,10);
-   toplayout->addWidget(box);
-
-   QHBoxLayout *buttonlayout=new QHBoxLayout();
-   toplayout->addLayout(buttonlayout);
-
-   buttonlayout->addWidget(helpButton);
-   buttonlayout->addWidget(cancelButton);
-   buttonlayout->addWidget(okButton);
-
-   QVBoxLayout *boxlayout=new QVBoxLayout(box,10);
-   boxlayout->addSpacing(10);
+   QVBoxLayout *boxlayout = new QVBoxLayout( box, spacingHint( ) );
+   boxlayout->addSpacing(spacingHint()/*10*/);
    QGridLayout *grid=new QGridLayout(2,3);
    boxlayout->addLayout(grid);
    
@@ -762,15 +646,9 @@ HitpointSetup::HitpointSetup(SOptions *opt,QWidget *parent,const char *name)
    grid->addWidget(redlcd,1,2);
    
    boxlayout->activate();
-   toplayout->activate();
 }
 
-void HitpointSetup::helpPressed()
-{
-   KApplication::kApplication()->invokeHTMLHelp("kspaceduel/index-3.html","opt-hand");
-}
-
-void HitpointSetup::okPressed()
+void HitpointSetup::slotOk()
 {
    options->startHitPoints[1]=(unsigned)hpblue;
    options->startHitPoints[0]=(unsigned)hpred;
@@ -789,13 +667,18 @@ void HitpointSetup::blueSliderChanged(int val)
 
 
 GraphicSetup::GraphicSetup(SOptions *opt,QWidget *parent,const char *name)
-      :QDialog(parent,name,true)
+      :KDialogBase( parent, name, true, i18n( "Graphics Setup" ),
+                    Ok|Cancel|Help|Default )
 {
    options=opt;
    refreshtime=opt->refreshTime;
 
-   setCaption(i18n("Graphics Setup"));
+//   setCaption(i18n("Graphics Setup"));
    QGroupBox *box=new QGroupBox(i18n("Graphics"),this);
+   setMainWidget( box );
+
+   setHelp( "kspaceduel/options.html", "OptionsGraphics" );
+
    QLabel *refreshlabel=new QLabel(i18n("Refresh time"),box);
    refreshslider=new QSlider(10,100,10,refreshtime,QSlider::Horizontal,box);
    refreshnumber=new QLCDNumber(3,box);
@@ -803,34 +686,14 @@ GraphicSetup::GraphicSetup(SOptions *opt,QWidget *parent,const char *name)
    connect(refreshslider,SIGNAL(valueChanged(int)),SLOT(refreshSliderChanged(int)));
    connect(refreshslider,SIGNAL(valueChanged(int)),refreshnumber,SLOT(display(int)));
    
-   QPushButton *okbutton=new QPushButton(i18n("OK"),this);
-   connect(okbutton,SIGNAL(clicked()),SLOT(okPressed()));
-   okbutton->setDefault(true);
-   QPushButton *helpbutton=new QPushButton(i18n("Help"),this);
-   connect(helpbutton,SIGNAL(clicked()),SLOT(helpPressed()));
-   QPushButton *defaultsbutton=new QPushButton(i18n("Defaults"),this);
-   connect(defaultsbutton,SIGNAL(clicked()),SLOT(defaultsPressed()));
-   QPushButton *cancelbutton=new QPushButton(i18n("Cancel"),this);
-   connect(cancelbutton,SIGNAL(clicked()),SLOT(reject()));
-
-   QVBoxLayout *toplayout=new QVBoxLayout(this,10);
-   toplayout->addWidget(box);
-   QHBoxLayout *buttonlayout=new QHBoxLayout();
-   toplayout->addLayout(buttonlayout);
-   buttonlayout->addWidget(helpbutton);
-   buttonlayout->addWidget(defaultsbutton);
-   buttonlayout->addWidget(cancelbutton);
-   buttonlayout->addWidget(okbutton);
-
-   QVBoxLayout *boxlayout=new QVBoxLayout(box,10);
-   boxlayout->addSpacing(10);
+   QVBoxLayout *boxlayout=new QVBoxLayout(box,spacingHint());
+   boxlayout->addSpacing(spacingHint());
    QGridLayout *partslayout=new QGridLayout(1,3);
    boxlayout->addLayout(partslayout);
    partslayout->addWidget(refreshlabel,0,0);
    partslayout->addWidget(refreshslider,0,1);
    partslayout->addWidget(refreshnumber,0,2);
    boxlayout->activate();
-   toplayout->activate();
 }
 
 void GraphicSetup::refreshSliderChanged(int val)
@@ -838,20 +701,15 @@ void GraphicSetup::refreshSliderChanged(int val)
    refreshtime=val;
 }
 
-void GraphicSetup::okPressed()
+void GraphicSetup::slotOk()
 {
    options->refreshTime=refreshtime;
    accept();
 }
 
-void GraphicSetup::defaultsPressed()
+void GraphicSetup::slotDefault()
 {
    refreshtime=33;
    refreshslider->setValue(refreshtime);
    refreshnumber->display(refreshtime);
-}
-
-void GraphicSetup::helpPressed()
-{
-   KApplication::kApplication()->invokeHTMLHelp("kspaceduel/index-3.html","opt-graph");
 }

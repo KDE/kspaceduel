@@ -24,8 +24,11 @@ public:
 public slots:   
    void newRound();
    void newGame();
+   void togglePause( );
    void pause();
    void resume();
+   void start();
+   void stop();
    void gameSetup();
    void keySetup();
    void writeConfig();
@@ -61,7 +64,6 @@ private:
 
    int timerID;
    bool playerKeyPressed[2][PlayerKeyNum];
-   bool functionKeyPressed[FunctionKeyNum];
    bool bulletShot[2];
    bool minePut[2];
    bool waitForStart;

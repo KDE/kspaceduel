@@ -8,9 +8,6 @@
 #define PlayerKeyMine  4
 #define PlayerKeyNum   5
 
-#define FunctionKeyStart 0
-#define FunctionKeyNum   1
-
 #define ROTNUM 64
 
 #define MV_BACKGROUND "sprites/backgr.png"
