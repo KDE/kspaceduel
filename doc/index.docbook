@@ -28,8 +28,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
  
-<date>2002-02-06</date>
-<releaseinfo>1.00.00</releaseinfo>
+<date>2003-09-17</date>
+<releaseinfo>1.1</releaseinfo>
 
 <abstract>
 <para>&kspaceduel; is an space arcade game. </para>
@@ -172,17 +172,12 @@ craft.</para>
 
 <para>&kspaceduel; has many, many options you can adjust to increase the enjoyment
 of this game.</para>
-<para>All of the game options can be changed using the
-<guimenu>Settings</guimenu> menu.  </para> 
 
-<para>Configuration is divided into 5 sections:</para>
+<para>Configuration is divided into two sections:</para>
 
 <itemizedlist>
 <listitem><para><link linkend="options-keys">Player Keys</link></para></listitem>
-<listitem><para><link linkend="options-configurations">Game</link></para></listitem>
-<listitem><para><link linkend="options-handicap">Handicap</link></para></listitem>
-<listitem><para><link linkend="options-graphics">Graphics</link></para></listitem>
-<listitem><para><link linkend="ai">AI</link></para></listitem>
+<listitem><para><link linkend="options-configurations">Game Settings</link></para></listitem>
 </itemizedlist>
 
 <sect2 id="options-keys">
@@ -194,27 +189,15 @@ bindings</link>.</para>
 
 <para>Keys can be configured by:  </para>
 
-<para>Selecting <menuchoice> <guimenu>Settings</guimenu><guimenuitem>Player
-Keys...</guimenuitem> </menuchoice> from the menubar.</para>
+<para>Selecting <menuchoice> <guimenu>Settings</guimenu><guimenuitem>Configure
+Shortcuts...</guimenuitem> </menuchoice> from the menubar.</para>
 
-<para>This will bring up a dialog box.</para>
-
-<screenshot>
-<screeninfo>Configure Player Keys</screeninfo>
-<mediaobject>
-<imageobject><imagedata fileref="kspaceduel1.png" format="PNG"/></imageobject>
-<textobject><phrase>Configure Player Keys</phrase></textobject>
-</mediaobject>
-</screenshot>   
+<para>This will bring up a dialog box which lets you configure all hotkeys,
+including the keys used for steering the space ships, for firing bullets, and
+for laying mines.</para>
 
 <para>You can see that each player (Red and Blue), have 5 keystrokes
 corresponding to Rotate Left, Rotate Right, Accelerate, Shot, and Mines.</para>
-
-<para>To change a key, click on the button for the correct player.  Then press
-the key you want for that control.</para>
-
-<para>When the key is detected, it will show the new key in the box to the right
-of the button.</para>
 
 <para>When you are finished configuring your keys, you should click on
 <guibutton>OK</guibutton> to apply your changes.</para>
@@ -226,7 +209,6 @@ press <guibutton>OK</guibutton>.</para>
 <para>If you want to abandon the changes you made, and return to your previously
 selected keys, simply click <guibutton>Cancel</guibutton>, and your changes
 will be lost.</para>
-
 </sect2>
 
 <sect2 id="options-configurations">
@@ -235,10 +217,12 @@ will be lost.</para>
 <para>All game settings of &kspaceduel; are configurable.</para>
 
 <para>If you want to change the game settings, simply select
-<menuchoice><guimenu>Settings</guimenu><guimenuitem>Game...</guimenuitem> 
+<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kspaceduel;...</guimenuitem> 
 </menuchoice> from the menubar.</para>
 
-<para>This will bring up a dialog box with 7 tabs across the top.</para>
+<para>This will bring up a dialog box with two pages, labelled
+<guilabel>General</guilabel> and <guilabel>Game</guilabel>. The first page
+is rather simple, the second one has seven tabs across the top.</para>
 
 <para>Settings are collected in different configurations. You can choose from
 several pre-defined configurations.</para>
@@ -269,6 +253,39 @@ lost.</para>
 
 <sect3 id="general">
 <title><guilabel>General</guilabel></title>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Hit Points</guilabel></term>
+<listitem><para>These two sliders allow you to define the hitpoints for each
+of the two players; you might want to decrease the hitpoints for a player
+to give that player a handycap.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Refresh time</guilabel></term>
+<listitem><para>Time between two screen refreshes in milliseconds.  All other
+settings are independent of the refresh time.</para></listitem>
+</varlistentry>
+</variablelist>
+
+<varlistentry>
+<term><guilabel>Red Player</guilabel></term>
+<listitem><para>Here you can define whether the red player gets controlled by
+the AI, and also choose the skill level of the AI for this player. Just
+experiment with the different skill level to find one which fits you.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Blue Player</guilabel></term>
+<listitem><para>This works the same as the options for the <guilabel>Red
+Player</guilabel> described above.</para></listitem>
+</varlistentry>
+</sect3>
+
+<sect3 id="game">
+<title><guilabel>Game</guilabel></title>
 
 <variablelist>
 <varlistentry>
@@ -437,65 +454,6 @@ powerup.</para></listitem>
 
 </sect3>
 </sect2>
-
-<sect2 id="options-handicap">
-<title><guimenuitem>Handicap</guimenuitem> </title>
-
-<para>You can specify the number of hit points each player has at the begin of a
-new round by selecting <menuchoice>
-<guimenu>Options</guimenu><guimenuitem>Handicap...</guimenuitem>
-</menuchoice> from the menubar.</para>
-
-</sect2>
-
-<sect2 id="options-graphics">
-<title><guilabel>Graphics</guilabel></title>
-
-<variablelist>
-<varlistentry>
-<term><guilabel>Refresh time</guilabel></term>
-<listitem><para>Time between two screen refreshes in milliseconds.  All other
-settings are independent of the refresh time.</para></listitem>
-</varlistentry>
-</variablelist>
-
-</sect2>
-
-</sect1>
-
-<sect1 id="ai">
-<title><guilabel>AI</guilabel></title>
-
-<para>Each ship can be controlled by the computer. You can choose a difficulty
-for each ship.</para>
-<para>The <abbrev>AI</abbrev> is optimized for the default config, but can
-mamage with other configs.  Just try...</para> 
-<para>To alter the <acronym>AI</acronym> settings on either or both players,
-simply select <menuchoice><guimenu>Settings</guimenu>
- <guimenuitem>AI...</guimenuitem> </menuchoice> from the menubar.</para>
-
-<para>This will bring up a dialog box.</para>
-
-<screenshot>
-<screeninfo><acronym>AI</acronym> Configure Dialog</screeninfo>
-<mediaobject>
-<imageobject><imagedata fileref="kspaceduel2.png" format="PNG"/></imageobject>
-<textobject><phrase><acronym>AI</acronym> Configure Dialog</phrase></textobject>
-</mediaobject>
-</screenshot>  
-
-<para>For each player, there is a check box labled <guilabel>Player is
-AI</guilabel>.  If this box is checked, the computer will control that
-ship.</para> 
-
-<para>Below that, is a drop down box, with several levels of <acronym>AI</acronym>
-<guilabel>intelligence</guilabel>. Select the level that is appropriate for
-you.</para> 
-
-<para>When you are done, simply click <guibutton>OK</guibutton>.  If you want
-to leave things as they were before, click <guibutton>Cancel</guibutton>, to
-abort your changes.</para>
-
 </sect1>
 </chapter>
 
@@ -513,9 +471,9 @@ abort your changes.</para>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">
-&Ctrl;<keycap>G</keycap></keycombo></shortcut>
-<guimenu>Game</guimenu><guimenuitem>New Game</guimenuitem> </menuchoice></term>
-<listitem><para>Starts a new game of &kspaceduel;</para></listitem>
+&Ctrl;<keycap>N</keycap></keycombo></shortcut>
+<guimenu>Game</guimenu><guimenuitem>New</guimenuitem> </menuchoice></term>
+<listitem><para>Starts a new game of &kspaceduel;.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -528,7 +486,7 @@ abort your changes.</para>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut><keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo></shortcut>
+<shortcut><keycombo action="simul"><keycap>P</keycap></keycombo></shortcut>
 <guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem> </menuchoice></term>
 <listitem><para>Pauses and unpauses the game.</para></listitem>
 </varlistentry>
@@ -567,66 +525,22 @@ status bar will be hidden.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Save Settings</guimenuitem>
-</menuchoice></term>
-<listitem><para>Saves your current setup to a configuration file.  These
-settings will be reloaded when you start &kspaceduel; again.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
 <guimenu>Settings</guimenu>
 <guimenuitem>Configure Shortcuts...</guimenuitem>
 </menuchoice></term>
-<listitem><para>Allows you to change the keyboard shortcuts for &kspaceduel;</para>
-
-<note><para>Be careful not to confuse this option with configuring players keys.
-Players Keys are the keys used during the game (Rotate Left, Bullets, etc).
-This option allows you to change the keyboard shortcuts for <quote>Pause
-Game</quote>, <quote>New Game</quote>, &etc;</para></note></listitem>
+<listitem><para>Allows you to change the keyboard shortcuts for &kspaceduel;,
+including the keys for steering the space ship, firing bullets &etc;.</para>
+</listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Player Keys...</guimenuitem>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure &kspaceduel;...</guimenuitem>
 </menuchoice></term>
-<listitem><para>Allows you to configure the keys used during game play.</para>
-<para>For more detailed instructions, see the section entitled <link linkend="options-keys">Keys</link>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Game...</guimenuitem> </menuchoice></term>
-<listitem><para>Allows you to configure game options</para>
-<para>For more detailed instructions, see the section entitled <link linkend="options-configurations">Game Configuration</link>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Handicap...</guimenuitem> </menuchoice></term>
-<listitem><para>Allows you to handicap a player to make the game more
-challenging (or easy).</para>
-<para>For more detailed instructions, see the section entitled <link
-linkend="options-handicap">Handicap</link>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Graphics...</guimenuitem> </menuchoice></term>
-<listitem><para>Allows you to change the graphics refresh rate.</para><para>For
-more detailed instructions, see the section entitled <link
-linkend="options-graphics">Graphics</link>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Ai...</guimenuitem> </menuchoice></term>
-<listitem><para>Allows you to alter the nature of the computers play.</para>
-<para>For more detailed instructions, see the section entitled <link
-linkend="ai">AI</link>.</para></listitem>
+<listitem><para>Opens a configuration dialog which lets you define many
+settings of the game, refer to the chapter <link linkend="options">Game
+Options</link> for further information.</para></listitem>
 </varlistentry>
 </variablelist>
 
@@ -651,9 +565,9 @@ linkend="ai">AI</link>.</para></listitem>
 <thead><row><entry>Key Combo</entry><entry>Action</entry></row></thead>
 <tbody>
 <row><entry><keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo></entry><entry>Quit &kspaceduel;</entry></row>
-<row><entry><keycombo action="simul">&Ctrl;<keycap>G</keycap></keycombo></entry><entry>New Game</entry></row>
+<row><entry><keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo></entry><entry>New Game</entry></row>
 <row><entry><keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo></entry><entry>New Round</entry></row>
-<row><entry><keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo></entry><entry>Pause Game</entry></row>
+<row><entry><keycombo action="simul"><keycap>P</keycap></keycombo></entry><entry>Pause Game</entry></row>
 <row><entry><keycombo action="simul"><keycap>F1</keycap></keycombo></entry><entry>Help Contents</entry></row>
 <row><entry><keycombo action="simul">&Shift;<keycap>F1</keycap></keycombo></entry><entry>Whats This Help</entry></row>
 <row><entry><keycombo action="simul"><keycap>Space</keycap></keycombo></entry><entry>Start Game</entry></row>
