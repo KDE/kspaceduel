@@ -27,13 +27,13 @@ void MyTopLevelWidget::initActions( )
    
    KStdAction::quit( this, SLOT( quit( ) ), actionCollection( ) );
 
-   ( void )new KAction( i18n( "New &Game" ), "newgame", 
+   ( void )new KAction( i18n( "New &Game" ), "spnewgame", 
                         CTRL + Key_G, wview, SLOT( newGame( ) ),
                         actionCollection( ), "new_game" );
-   ( void )new KAction( i18n( "&New Round" ), "newround",
+   ( void )new KAction( i18n( "&New Round" ), "spnewround",
                         CTRL + Key_N, wview, SLOT( newRound( ) ),
                         actionCollection( ), "new_round" );
-   newAct = new KToggleAction( i18n( "&Pause" ), "pausegame", 
+   newAct = new KToggleAction( i18n( "&Pause" ), "sppausegame", 
                                CTRL + Key_P, wview, SLOT( togglePause( ) ),
                                actionCollection( ), "pause" );
    newAct->setChecked( false );
