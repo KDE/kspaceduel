@@ -627,7 +627,7 @@ linkend="options-graphics">Graphics</link>.</para></listitem>
 <guimenuitem><accel>A</accel>i...</guimenuitem> </menuchoice></term>
 <listitem><para>Allows you to alter the nature of the computers play.</para>
 <para>For more detailed instructions, see the section entitled <link
-linkend="AI">AI</link>.</para></listitem>
+linkend="ai">AI</link>.</para></listitem>
 </varlistentry>
 </variablelist>
 
