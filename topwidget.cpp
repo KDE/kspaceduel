@@ -25,7 +25,8 @@ void MyTopLevelWidget::initActions( )
 {
    KToggleAction* newAct;
    
-   KStdAction::quit( this, SLOT( quit( ) ), actionCollection( ) );
+   ( void )new KAction( i18n( "&Quit" ), "exit", CTRL + Key_Q, this,
+                        SLOT( quit( ) ), actionCollection( ), "game_quit" );
 
    ( void )new KAction( i18n( "New &Game" ), "spnewgame", 
                         CTRL + Key_G, wview, SLOT( newGame( ) ),

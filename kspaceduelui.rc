@@ -1,11 +1,10 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="kpovmodeler" version="1">
+<kpartgui name="kpovmodeler" version="2">
 <MenuBar>
    <Menu name="game"><text>&amp;Game</text>
-      <Action name="new_game"/>
-      <Action name="new_round"/>
-      <Separator/>
-      <Action name="pause"/>
+      <Action name="new_game" append="new_merge"/>
+      <Action name="new_round" append="new_merge"/>
+      <Action name="pause" append="misc_merge"/>
    </Menu>
    <Menu name="settings"><text>&amp;Settings</text>
       <Action name="options_player_keys"/>
@@ -25,4 +24,4 @@
    <Action name="new_round"/>
    <Action name="pause"/>
 </Toolbar>
-
+</kpartgui>

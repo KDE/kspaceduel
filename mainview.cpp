@@ -512,9 +512,9 @@ void MyMainView::newRound()
    field.update();
    
    QString str = i18n("Press %1 to start")
-      .arg(KAccel::keyToString( ( ( KTMainWindow* )( parent( )->parent( ) ) )
+      .arg( i18n(KAccel::keyToString( ( ( KTMainWindow* )( parent( )->parent( ) ) )
                                 ->actionCollection( )->action( "game_start" )
-                                ->accel( ) ) );
+                                ->accel( )) ) );
    emit(setStatusText(str,IDS_MAIN));
    emit( setStatusText( "", IDS_PAUSE ) );
    stop( );
@@ -569,9 +569,9 @@ void MyMainView::timerEvent(QTimerEvent *event)
                emit(wins(0,w));
             }
             QString str = i18n("Press %1 for new round")
-               .arg(KAccel::keyToString( ( ( KTMainWindow* )( parent( )->parent( ) ) )
+               .arg(i18n(KAccel::keyToString( ( ( KTMainWindow* )( parent( )->parent( ) ) )
                                          ->actionCollection( )->action( "game_start" )
-                                         ->accel( ) ) );
+                                         ->accel( )) ) );
             emit(setStatusText(str,IDS_MAIN));
             stop( );
          }
