@@ -27,7 +27,7 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
  
-<date>11/08/2000</date>
+<date>21/10/2000</date>
 <releaseinfo>1.0.1</releaseinfo>                   
 
 <abstract>
@@ -765,7 +765,7 @@ linkend="OptionsKeys">Player Keys...</link>.</para>
 <para>
 Program copyright 1999-2000 Andreas Zehender <email>az@azweb.de</email></para>
 <para>Documentation copyright 2000 Andreas Zehender <email>az@azweb.de</email></para>
-<para>Documentation updated for KDE 2.0 by Mike McBride <email>mmcbride@ematic.com</email></para>
+<para>Documentation updated for KDE 2.0 by Mike McBride <email>mpmcbride7@yahoo.com</email></para>
 
 &license-links;
 </chapter>                  
