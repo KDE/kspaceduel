@@ -33,7 +33,9 @@
 <abstract>
 <para>&kspace; is an space arcade game. </para>
 <para>Two ships fly around the sun and try to shoot eachother.</para>
+<para>This documentation was last updated for version 1.0.</para>
 </abstract>
+
 
 <keywordset>
 <keyword>Space duel</keyword>
@@ -89,7 +91,7 @@ lists.</para>
  
 </sect1>         
 </chapter>
-<chapter id="the-game">
+<chapter id="TheGame">
 <title>The Game</title>
 
 <sect1 id="RulesOfTheGame">
@@ -176,7 +178,7 @@ player.</para></listitem>
 <title>The &kspace; screen</title>
 
 <screenshot>
-<screeninfo>Configure Player Keyes</screeninfo>
+<screeninfo>KSpaceduel Main Screen</screeninfo>
 <mediaobject>
 <imageobject><imagedata fileref="kspaceduel3.png" format="png"></imageobject>
 </mediaobject>
@@ -200,7 +202,7 @@ craft.</para>
 
 <para>&kspace; has many, many options you can adjust to increase the enjoyment
 of this game.</para>
-<para>All of the game options can be changed using the "Sessions" menu.  </para>
+<para>All of the game options can be changed using the "Settings" menu.  </para>
 <para>Configuration is divided into 5 sections:</para>
 
 <itemizedlist>
@@ -259,6 +261,12 @@ will be lost.</para>
 
 <para>All game settings of &kspace; are configurable.</para>
 
+<para>If you want to change the game settings, simply select
+<menuchoice><guimenu>Settings</guimenu><guimenuitem>Game...</guimenuitem> 
+</menuchoice> from the menubar.</para>
+
+<para>This will bring up a dialog box with 7 tabs across the top.</para>
+
 <para>Settings are collected in different configurations. You can choose from
 several pre-defined configurations.</para>
 
@@ -272,12 +280,6 @@ be able to make any changes to these options.</para></note>
 author of the game. It can be implemented in a future version (send the part
 [Game] in the file
 "<filename>~/.kde/share/config/kspaceduelrc</filename>").</para></tip> 
-
-<para>If you want to change the game settings, simply select
-<menuchoice><guimenu>Settings</guimenu><guimenuitem>Game...</guimenuitem> 
-</menuchoice> from the menubar.</para>
-
-<para>This will bring up a dialog box with 7 tabs across the top.</para>
 
 <para>When you are finished altering the options, you should click on
 "<guibutton>OK</guibutton>" to apply your changes.</para> 
@@ -567,7 +569,7 @@ The file menu consists of a single option</para>
 <term><menuchoice>
 <shortcut><keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo></shortcut>
 <guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem> </menuchoice></term>
-<listitem><para>Pauses the game</para><para>Once the game is paused, you can press any key to resume the game.</para></listitem>
+<listitem><para>Pauses and unpauses the game.</para></listitem>
 </varlistentry>
 </variablelist>
 
@@ -675,7 +677,7 @@ document).</para>
 </varlistentry>
 
 <varlistentry>
-<term><anchor id="bug"><menuchoice>
+<term><anchor id="whats-this"><menuchoice>
 <shortcut><keycombo><keycap>Shift</keycap><keycap>F1</keycap></keycombo></shortcut>
 <guimenu>Help</guimenu><guimenuitem>What's This?</guimenuitem></menuchoice></term>
 <listitem>
@@ -686,7 +688,7 @@ function.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><anchor id="whats-this"><menuchoice>
+<term><anchor id="bug"><menuchoice>
 <guimenu>Help</guimenu><guimenuitem>Report
 Bug...</guimenuitem></menuchoice></term>
 <listitem><para>If you have a good idea for the next version of the game, or the
@@ -735,7 +737,7 @@ information.</para></listitem>
 </informaltable>
 
 <para>The Menu Key Bindings can be changed by selecting <menuchoice>
-<guimenu>Sessions</guimenu> <guimenuitem>Configure Key Bindings</guimenuitem>
+<guimenu>Settings</guimenu> <guimenuitem>Configure Key Bindings</guimenuitem>
 </menuchoice></para>
 
 <para><emphasis>Game Play</emphasis></para>
