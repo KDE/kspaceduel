@@ -33,7 +33,7 @@ MyTopLevelWidget::MyTopLevelWidget(const char* name)
    popup->insItem(i18n("&Save Options"),"&Save Options",this,SLOT(saveOptions()));
    menu.insertItem(i18n("&Options"),popup);
 
-   menu.insertItem(i18n("&Help"),kapp->helpMenu(true, i18n("KSpaceduel")
+   menu.insertItem(i18n("&Help"),helpMenu(i18n("KSpaceduel")
 	+" "+KSPACEDUEL_VERSION
 	+ i18n("\n\nby Andreas Zehender")
 	+ " (azehende@ba-stuttgart.de)"));
