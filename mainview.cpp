@@ -209,7 +209,7 @@ void MyMainView::readConfig(KConfig *cfg)
 void MyMainView::writeConfig()
 {
    KConfig *cfg;
-   cfg=KApplication::getKApplication()->getConfig();
+   cfg=KApplication::kApplication()->config();
    cfg->setGroup("Game");
    cfg->writeEntry("refreshTime",options.refreshTime);
    cfg->writeEntry("lastConfig",options.lastConfig);

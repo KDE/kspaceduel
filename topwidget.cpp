@@ -33,10 +33,10 @@ MyTopLevelWidget::MyTopLevelWidget(const char* name)
    popup->insItem(i18n("&Save Options"),"&Save Options",this,SLOT(saveOptions()));
    menu.insertItem(i18n("&Options"),popup);
 
-   menu.insertItem(i18n("&Help"),kapp->getHelpMenu(true, i18n("KSpaceduel")
-                                                   +" "+KSPACEDUEL_VERSION
-                                                   + i18n("\n\nby Andreas Zehender")
-                                                   + " (azehende@ba-stuttgart.de)"));
+   menu.insertItem(i18n("&Help"),kapp->helpMenu(true, i18n("KSpaceduel")
+	+" "+KSPACEDUEL_VERSION
+	+ i18n("\n\nby Andreas Zehender")
+	+ " (azehende@ba-stuttgart.de)"));
 
    keys->readSettings();
 
@@ -53,7 +53,7 @@ MyTopLevelWidget::MyTopLevelWidget(const char* name)
    setView(&wview);
    setStatusBar(&statusbar);
 
-   readConfig(kapp->getConfig());
+   readConfig(kapp->config());
 }
 
 void MyTopLevelWidget::start()
@@ -84,7 +84,7 @@ void MyTopLevelWidget::writeConfig(KConfig *cfg)
 
 void MyTopLevelWidget::quit()
 {
-   writeConfig(kapp->getConfig());
+   writeConfig(kapp->config());
    kapp->quit();
 }
 

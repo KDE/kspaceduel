@@ -497,7 +497,7 @@ void ConfigSetup::okPressed()
 
 void ConfigSetup::helpPressed()
 {
-   KApplication::getKApplication()->invokeHTMLHelp("kspaceduel/index-3.html","opt-conf");
+   KApplication::kApplication()->invokeHTMLHelp("kspaceduel/index-3.html","opt-conf");
 }
 
 void ConfigSetup::defaultsPressed()
@@ -700,7 +700,7 @@ void AiSetup::okPressed()
 
 void AiSetup::helpPressed()
 {
-   KApplication::getKApplication()->invokeHTMLHelp("kspaceduel/index-4.html","");
+   KApplication::kApplication()->invokeHTMLHelp("kspaceduel/index-4.html","");
 }
 
 
@@ -767,7 +767,7 @@ HitpointSetup::HitpointSetup(SOptions *opt,QWidget *parent,const char *name)
 
 void HitpointSetup::helpPressed()
 {
-   KApplication::getKApplication()->invokeHTMLHelp("kspaceduel/index-3.html","opt-hand");
+   KApplication::kApplication()->invokeHTMLHelp("kspaceduel/index-3.html","opt-hand");
 }
 
 void HitpointSetup::okPressed()
@@ -853,5 +853,5 @@ void GraphicSetup::defaultsPressed()
 
 void GraphicSetup::helpPressed()
 {
-   KApplication::getKApplication()->invokeHTMLHelp("kspaceduel/index-3.html","opt-graph");
+   KApplication::kApplication()->invokeHTMLHelp("kspaceduel/index-3.html","opt-graph");
 }
