@@ -47,7 +47,7 @@ KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
       button[p][PlayerKeyMine]=new QPushButton(i18n("Verb","Mine"),bplayer[p]);
       for(i=0;i<PlayerKeyNum;i++)
       {
-         keyName[p][i]=new QLabel(KAccel::keyToString((unsigned)key[p][i]),bplayer[p]);
+         keyName[p][i]=new QLabel(KKey::keyToString((unsigned)key[p][i],true),bplayer[p]);
          keyName[p][i]->setLineWidth(1);
          keyName[p][i]->setFrameStyle(QFrame::Sunken|QFrame::Panel);
          keyName[p][i]->setMinimumSize( 80, 10 );
@@ -117,7 +117,7 @@ void KeySetup::slotDefault()
 
    for(p=0;p<2;p++)
       for(i=0;i<PlayerKeyNum;i++)
-         keyName[p][i]->setText(KAccel::keyToString(key[p][i]));
+         keyName[p][i]->setText(KKey::keyToString(key[p][i], true));
 }
 
 void KeySetup::slotOk()
@@ -210,7 +210,7 @@ void KeySetup::keyPressEvent(QKeyEvent *ev)
       if(player<2)
       {
          key[player][waitForKey]=ev->key();
-         keyName[player][waitForKey]->setText(KAccel::keyToString(ev->key()));
+         keyName[player][waitForKey]->setText(KKey::keyToString(ev->key(), true));
       }
       setButtons(-1,-1);
       ev->accept();

@@ -248,17 +248,17 @@ void MyMainView::writeConfig()
    cfg->writeEntry("startHitPoints",options.startHitPoints[0]);
 
    cfg->setGroup("Player2");
-   cfg->writeEntry("KeyLeft",KAccel::keyToString(options.playerKey[1][PlayerKeyLeft]));
-   cfg->writeEntry("KeyRight",KAccel::keyToString(options.playerKey[1][PlayerKeyRight]));
-   cfg->writeEntry("KeyAcc",KAccel::keyToString(options.playerKey[1][PlayerKeyAcc]));
-   cfg->writeEntry("KeyShot",KAccel::keyToString(options.playerKey[1][PlayerKeyShot]));
-   cfg->writeEntry("KeyMine",KAccel::keyToString(options.playerKey[1][PlayerKeyMine]));
+   cfg->writeEntry("KeyLeft",KKey::keyToString(options.playerKey[1][PlayerKeyLeft]));
+   cfg->writeEntry("KeyRight",KKey::keyToString(options.playerKey[1][PlayerKeyRight]));
+   cfg->writeEntry("KeyAcc",KKey::keyToString(options.playerKey[1][PlayerKeyAcc]));
+   cfg->writeEntry("KeyShot",KKey::keyToString(options.playerKey[1][PlayerKeyShot]));
+   cfg->writeEntry("KeyMine",KKey::keyToString(options.playerKey[1][PlayerKeyMine]));
    cfg->setGroup("Player1");
-   cfg->writeEntry("KeyLeft",KAccel::keyToString(options.playerKey[0][PlayerKeyLeft]));
-   cfg->writeEntry("KeyRight",KAccel::keyToString(options.playerKey[0][PlayerKeyRight]));
-   cfg->writeEntry("KeyAcc",KAccel::keyToString(options.playerKey[0][PlayerKeyAcc]));
-   cfg->writeEntry("KeyShot",KAccel::keyToString(options.playerKey[0][PlayerKeyShot]));
-   cfg->writeEntry("KeyMine",KAccel::keyToString(options.playerKey[0][PlayerKeyMine]));
+   cfg->writeEntry("KeyLeft",KKey::keyToString(options.playerKey[0][PlayerKeyLeft]));
+   cfg->writeEntry("KeyRight",KKey::keyToString(options.playerKey[0][PlayerKeyRight]));
+   cfg->writeEntry("KeyAcc",KKey::keyToString(options.playerKey[0][PlayerKeyAcc]));
+   cfg->writeEntry("KeyShot",KKey::keyToString(options.playerKey[0][PlayerKeyShot]));
+   cfg->writeEntry("KeyMine",KKey::keyToString(options.playerKey[0][PlayerKeyMine]));
    cfg->setGroup("Game");
 
    cfg->writeEntry("player1IsAi",options.isAi[0]);
@@ -513,9 +513,9 @@ void MyMainView::newRound()
    field.update();
    
    QString str = i18n("Press %1 to start")
-      .arg( KAccel::keyToString( ( (KMainWindow*)(parent()->parent()) )
+      .arg( KKey::keyToString( ( (KMainWindow*)(parent()->parent()) )
                                 ->actionCollection()->action("game_start")
-                                ->accel()) );
+                                ->accel(), true) );
    emit(setStatusText(str,IDS_MAIN));
    emit( setStatusText( "", IDS_PAUSE ) );
    stop( );
@@ -580,9 +580,9 @@ void MyMainView::timerEvent(QTimerEvent *event)
                emit(wins(0,w));
             }
             QString str = i18n("Press %1 for new round")
-               .arg(KAccel::keyToString( ( ( KMainWindow* )( parent( )->parent( ) ) )
+               .arg(KKey::keyToString( ( ( KMainWindow* )( parent( )->parent( ) ) )
                                          ->actionCollection( )->action( "game_start" )
-                                         ->accel( )) );
+                                         ->accel( ), true) );
             emit(setStatusText(str,IDS_MAIN));
             stop( );
          }
@@ -1024,7 +1024,7 @@ void MyMainView::keySetup()
    KeySetup dialog(&options,this);
    dialog.exec();
 //   QString str = i18n("Press %1 to start/resume")
-//           .arg(KAccel::keyToString(options.functionKey[FunctionKeyStart]));
+//           .arg(KKey::keyToString(options.functionKey[FunctionKeyStart]));
 //   emit(setStatusText(str,IDS_MAIN));
 }
 
