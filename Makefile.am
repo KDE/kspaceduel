@@ -32,3 +32,6 @@ apps_DATA = kspaceduel.desktop
 
 rcdir=$(kde_datadir)/kspaceduel
 rc_DATA = kspaceduelui.rc
+
+install-data-local:
+	rm -rf $(kde_appsdir)/Games/kspaceduel.desktop
