@@ -27,7 +27,7 @@ MyMainView::MyMainView(QWidget *parent, const char *name)
    QPixmap backgr((const char *)(locate("appdata", MV_BACKGROUND)));
    field.setBackgroundPixmap(backgr);
 
-   view.setResizePolicy(QScrollView::ResizeOne);
+   view.setResizePolicy(QScrollView::AutoOne);
    view.setHScrollBarMode(QScrollView::AlwaysOff);
    view.setVScrollBarMode(QScrollView::AlwaysOff);
    
