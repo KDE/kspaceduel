@@ -1,0 +1,22 @@
+# KDE Config File
+[KDE Desktop Entry]
+Comment[C]=Twoplayer arcade space game
+Comment[pt]=Aplicação
+Comment[fi]=Sovellus
+SwallowExec=
+SwallowTitle=
+Comment[fr]=Application
+BinaryPattern=
+Comment[sk]=Aplikácia
+Name[C]=Spaceduel
+MimeType=
+Name[de]=Spaceduel
+Exec=kspaceduel -caption "%c"
+Comment[pt_BR]=Aplicação
+Icon=kspaceduel.xpm
+TerminalOptions=
+Path=
+Type=Application
+Comment[it]=Applicazione
+Comment[de]=Zwei-Spieler Arcade Weltraumspiel
+Terminal=0

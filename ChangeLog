@@ -1,0 +1,11 @@
+version 1.0
+  * [Andreas Zehender]  Portet to Qt-2.0
+  * [Andreas Zehender]  Changed option dialogs  	
+	
+version 0.2.2
+  * [Andreas Zehender]  fixed error in ExplosionSprite::setSequence
+
+version 0.2.1
+  * [Andreas Zehender]  Implemented movements, bullets, mines 
+  * [Andreas Zehender]  First released version 
+
