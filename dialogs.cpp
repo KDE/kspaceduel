@@ -1,20 +1,11 @@
-#include <qpushbutton.h>
 #include <qlabel.h>
 #include <qcombobox.h>
 #include <qtabwidget.h>
 #include <qslider.h>
 #include <qlcdnumber.h>
-#include <qcheckbox.h>
-#include <qgroupbox.h>
 #include <qlayout.h>
-#include <qvalidator.h>
-#include <qvbox.h>
 
-#include <kmessagebox.h>
-#include <kconfig.h>
 #include <klocale.h>
-#include <kapplication.h>
-#include <kaccel.h>
 
 #include "dialogs.h"
 

@@ -1,26 +1,18 @@
 #include "mainview.h"
-#include "topwidget.h"
 
-#include <qpixmap.h>
-#include <qpoint.h>
 #include <math.h>
-#include <qcolor.h>
 #include <qbitmap.h>
 #include <qfile.h>
 #include <qvbox.h>
 
 #include <kapplication.h>
-#include <kaccel.h>
 #include <kaction.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
-#include <kglobal.h>
 #include <kconfig.h>
-#include <kstdgameaction.h>
 #include <kautoconfig.h>
 #include <kiconloader.h>
 
-#include "defines.h"
 #include "ai.h"
 #include "general.h"
 

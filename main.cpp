@@ -1,5 +1,4 @@
 #include <kapplication.h>
-#include <klocale.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 

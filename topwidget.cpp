@@ -1,16 +1,12 @@
 #include <klocale.h>
-#include <kapplication.h>
 #include <kaccel.h>
 #include <kkeydialog.h>
-#include <kstdaction.h>
 #include <kaction.h>
 #include <kstdgameaction.h>
 #include <qlayout.h>
 #include <kstatusbar.h>
 
 #include "topwidget.h"
-#include "version.h"
-#include "defines.h"
 #include "mainview.h"
 #include "playerinfo.h"
 

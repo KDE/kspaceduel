@@ -4,7 +4,6 @@
 #include <klocale.h>
 #include <kstandarddirs.h>
 
-#include "defines.h"
 
 PlayerInfo::PlayerInfo(int pnr,QWidget *parent,const char *name)
       :QFrame(parent,name),

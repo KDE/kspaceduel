@@ -1,9 +1,6 @@
 #include <math.h>
 
 #include "ai.h"
-#include "sprites.h"
-#include "structs.h"
-#include "defines.h"
 #include "mathroutines.h"
 
 int Ai::calcFrameIncrement[DNUM]={15,8,6,2};
