@@ -8,6 +8,7 @@
 #include "topwidget.h"
 #include "version.h"
 #include "defines.h"
+#include <kstatusbar.h>
 
 MyTopLevelWidget::MyTopLevelWidget(const char* name)
       :KMainWindow(0, name)
