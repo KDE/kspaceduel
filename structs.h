@@ -1,17 +1,6 @@
 #ifndef __SP_STRUCTS_H
 #define __SP_STRUCTS_H
 
-enum Difficulty {DTRAINEE=0,DNORMAL,DHARD,DINSANE,DNUM};
-
-struct SOptions
-{
-   double timeAfterKill;
-   int playerKey[2][PlayerKeyNum];
-   unsigned refreshTime,startHitPoints[2],lastConfig;
-   bool isAi[2];
-   Difficulty aiDifficulty[2];
-};
-
 struct SConfig
 {
    double gamespeed,gravity,acc,energyNeed,sunEnergy,rotationSpeed,
@@ -23,6 +12,9 @@ struct SConfig
    double powerupEnergyAmount;
    unsigned powerupShieldAmount;
 };
+
+bool operator!=(const SConfig &s1, const SConfig &s2);
+
 #define predefinedConfigNum 4
 const SConfig predefinedConfig[]={{1.0, 2200.0, 0.2, 1.0, 9000.0, 1.0,
                                    15.0, 65.0, 3.0, 10.0, 5.0,

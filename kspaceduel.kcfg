@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
+<kcfg>
+  <kcfgfile name="kspaceduelrc"/>
+  <group name="Game">
+    <entry name="TimeAfterKill" type="Double" key="timeAfterKill">
+      <default>42.9</default>
+    </entry>
+    <entry name="StartHitPoints$(Player)" type="Int" key="startHitPointsP$(Player)">
+      <parameter name="Player" type="Int" min="0" max="1"/>
+       <default>99</default>
+       <min>1</min>
+       <max>99</max> 
+    </entry>
+    <entry name="Player$(Player)IsAi" type="Bool" key="player$(Player)IsAi">
+      <parameter name="Player" type="Int" min="0" max="1"/>
+      <default param="0">false</default>
+      <default param="1">true</default>
+    </entry>
+    <entry name="AiDifficulty$(Player)" type="Enum" key="ai$(Player)Difficulty">
+      <parameter name="Player" type="Int" min="0" max="1"/>
+      <choices>
+        <choice name="Trainee"/>
+        <choice name="Normal"/>
+        <choice name="Hard"/>
+        <choice name="Insane"/>
+      </choices>
+      <default>Normal</default>
+    </entry>
+    <entry name="LastConfig" type="Int" key="lastConfig">
+      <default>0</default>
+    </entry>
+    <entry name="RefreshTime" type="Int" key="refreshTime">
+      <default>33</default>
+       <min>10</min>
+       <max>100</max> 
+    </entry>
+  </group>
+</kcfg>

@@ -73,13 +73,10 @@
                 </widget>
                 <widget class="QSlider" row="1" column="1">
                     <property name="name">
-                        <cstring>startHitPointsP2</cstring>
+                        <cstring>kcfg_StartHitPoints1</cstring>
                     </property>
                     <property name="minValue">
                         <number>1</number>
-                    </property>
-                    <property name="value">
-                        <number>99</number>
                     </property>
                     <property name="orientation">
                         <enum>Horizontal</enum>
@@ -87,13 +84,10 @@
                 </widget>
                 <widget class="QSlider" row="0" column="1">
                     <property name="name">
-                        <cstring>startHitPointsP1</cstring>
+                        <cstring>kcfg_StartHitPoints0</cstring>
                     </property>
                     <property name="minValue">
                         <number>1</number>
-                    </property>
-                    <property name="value">
-                        <number>99</number>
                     </property>
                     <property name="orientation">
                         <enum>Horizontal</enum>
@@ -122,7 +116,7 @@
                 </widget>
                 <widget class="QSlider">
                     <property name="name">
-                        <cstring>refreshTime</cstring>
+                        <cstring>kcfg_RefreshTime</cstring>
                     </property>
                     <property name="minValue">
                         <number>10</number>
@@ -169,7 +163,7 @@
         </spacer>
         <widget class="QGroupBox" row="2" column="0">
             <property name="name">
-                <cstring>ai1Difficulty</cstring>
+                <cstring>groupBox1</cstring>
             </property>
             <property name="title">
                 <string>Red Player</string>
@@ -180,7 +174,7 @@
                 </property>
                 <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="2">
                     <property name="name">
-                        <cstring>player1IsAi</cstring>
+                        <cstring>kcfg_Player0IsAi</cstring>
                     </property>
                     <property name="text">
                         <string>Player is AI</string>
@@ -219,7 +213,7 @@
                         </property>
                     </item>
                     <property name="name">
-                        <cstring>comboBox1</cstring>
+                        <cstring>kcfg_AiDifficulty0</cstring>
                     </property>
                     <property name="enabled">
                         <bool>false</bool>
@@ -243,7 +237,7 @@
                 </property>
                 <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="2">
                     <property name="name">
-                        <cstring>player2IsAi</cstring>
+                        <cstring>kcfg_Player1IsAi</cstring>
                     </property>
                     <property name="text">
                         <string>Player is AI</string>
@@ -282,7 +276,7 @@
                         </property>
                     </item>
                     <property name="name">
-                        <cstring>ai2Difficulty</cstring>
+                        <cstring>kcfg_AiDifficulty1</cstring>
                     </property>
                     <property name="enabled">
                         <bool>false</bool>
@@ -297,45 +291,45 @@
 </widget>
 <connections>
     <connection>
-        <sender>startHitPointsP1</sender>
+        <sender>kcfg_StartHitPoints0</sender>
         <signal>valueChanged(int)</signal>
         <receiver>lCDNumber1</receiver>
         <slot>display(int)</slot>
     </connection>
     <connection>
-        <sender>startHitPointsP2</sender>
+        <sender>kcfg_StartHitPoints1</sender>
         <signal>valueChanged(int)</signal>
         <receiver>lCDNumber2</receiver>
         <slot>display(int)</slot>
     </connection>
     <connection>
-        <sender>refreshTime</sender>
+        <sender>kcfg_RefreshTime</sender>
         <signal>valueChanged(int)</signal>
         <receiver>lCDNumber3</receiver>
         <slot>display(int)</slot>
     </connection>
     <connection>
-        <sender>player1IsAi</sender>
+        <sender>kcfg_Player0IsAi</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel1</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>player1IsAi</sender>
+        <sender>kcfg_Player0IsAi</sender>
         <signal>toggled(bool)</signal>
-        <receiver>comboBox1</receiver>
+        <receiver>kcfg_AiDifficulty0</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>player2IsAi</sender>
+        <sender>kcfg_Player1IsAi</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel2</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>player2IsAi</sender>
+        <sender>kcfg_Player1IsAi</sender>
         <signal>toggled(bool)</signal>
-        <receiver>ai2Difficulty</receiver>
+        <receiver>kcfg_AiDifficulty1</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
 </connections>

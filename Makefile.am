@@ -7,7 +7,8 @@ bin_PROGRAMS = 	kspaceduel
 
 # Which sources should be compiled for kspaceduel.
 kspaceduel_SOURCES = general.ui mathroutines.cpp topwidget.cpp \
-	playerinfo.cpp sprites.cpp mainview.cpp dialogs.cpp ai.cpp main.cpp
+	playerinfo.cpp sprites.cpp mainview.cpp dialogs.cpp ai.cpp \
+	main.cpp options.kcfgc
 
 kspaceduel_METASOURCES = AUTO
 EXTRA_DIST = kspaceduel.desktop kspaceduel.xpm mini-kspaceduel.xpm
@@ -28,6 +29,7 @@ messages: rc.cpp
 KDE_ICON = kspaceduel
 
 xdg_apps_DATA = kspaceduel.desktop
+kde_kcfg_DATA = kspaceduel.kcfg
 
 rcdir=$(kde_datadir)/kspaceduel
 rc_DATA = kspaceduelui.rc

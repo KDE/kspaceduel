@@ -9,20 +9,26 @@ class QSlider;
 class QLCDNumber;
 class QCheckBox;
 
-#include <kdialogbase.h>
+#include <kconfigdialog.h>
 
 #include "defines.h"
 #include "structs.h"
+
 
 class ConfigSetup:public QWidget
 {
    Q_OBJECT
 public:
-   ConfigSetup(SConfig *custom,SOptions *opt,QWidget *parent,const char* name=0);
+   ConfigSetup(SConfig *custom,QWidget *parent=0,const char* name=0);
 
-public slots:
-   void slotOk();
-   void slotDefault();
+   bool hasChanged();
+   bool isDefault();
+   void updateSettings();
+   void updateWidgets();
+   void updateWidgetsDefault();
+
+signals:
+   void changed();
 
 protected slots:
    void configSelected(int num);
@@ -66,7 +72,31 @@ private:
    
    QComboBox *configCombo;
    SConfig *customConfig,config;
-   SOptions *gameOptions,options;
+   
+   int selectedConfig;
+};
+
+class SettingsDialog : public KConfigDialog
+{
+        Q_OBJECT
+public:
+        SettingsDialog(SConfig *customConfig, QWidget *parent=0, const char *name=0);
+        ~SettingsDialog();
+
+signals:
+        void settingsUpdated();
+
+private slots:
+        void updateWidgets();
+        void updateWidgetsDefault();
+        void updateSettings();
+                                        
+private:
+        bool hasChanged();
+        bool isDefault();
+
+private:
+        ConfigSetup* cs;
 };
 
 #endif

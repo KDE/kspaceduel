@@ -8,7 +8,7 @@
 
 #include "sprites.h"
 #include "dialogs.h"
-
+#include "options.h"
 
 enum Rotation {RLEFT,RNONE,RRIGHT};
 
@@ -40,7 +40,7 @@ class Ai
 {
 public:
    Ai(int pn,ShipSprite* s[2],QPtrList<BulletSprite> *b[2],
-      QPtrList<MineSprite> *m[2],SConfig *c,SOptions *o);
+      QPtrList<MineSprite> *m[2],SConfig *c);
    void newRound();
    void think();
    bool rotateLeft(){return rotation==RLEFT;}
@@ -60,7 +60,6 @@ private:
    void chooseAction();
 
    SConfig *cfg;
-   SOptions *opt;
 
    KRandomSequence random;
 
@@ -89,12 +88,12 @@ private:
        //SpriteField width and height
    double sfwidth,sfheight,sfwidth_2,sfheight_2; 
        //Difficulty
-   static int calcFrameIncrement[DNUM];
-   static int calcPositionNumber[DNUM];
-   static int calcShotDirections[DNUM];
-   static int calcCollisions[DNUM];
-   static int calcNextShot[DNUM];
-   static double calcShotRandom[DNUM];
+   static int calcFrameIncrement[Options::EnumAiDifficulty::COUNT];
+   static int calcPositionNumber[Options::EnumAiDifficulty::COUNT];
+   static int calcShotDirections[Options::EnumAiDifficulty::COUNT];
+   static int calcCollisions[Options::EnumAiDifficulty::COUNT];
+   static int calcNextShot[Options::EnumAiDifficulty::COUNT];
+   static double calcShotRandom[Options::EnumAiDifficulty::COUNT];
 
    int calculateCollisions;
    int waitShot;

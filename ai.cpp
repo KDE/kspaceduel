@@ -2,22 +2,22 @@
 
 #include "ai.h"
 #include "mathroutines.h"
+#include "options.h"
 
-int Ai::calcFrameIncrement[DNUM]={15,8,6,2};
-int Ai::calcPositionNumber[DNUM]={10,15,20,60};
-int Ai::calcShotDirections[DNUM]={4,7,10,12};
-int Ai::calcCollisions[DNUM]={30,15,10,10};
-int Ai::calcNextShot[DNUM]={300,200,90,60};
+int Ai::calcFrameIncrement[Options::EnumAiDifficulty::COUNT] = {15,8,6,2};
+int Ai::calcPositionNumber[Options::EnumAiDifficulty::COUNT] = {10,15,20,60};
+int Ai::calcShotDirections[Options::EnumAiDifficulty::COUNT] = {4,7,10,12};
+int Ai::calcCollisions[Options::EnumAiDifficulty::COUNT]     = {30,15,10,10};
+int Ai::calcNextShot[Options::EnumAiDifficulty::COUNT]       = {300,200,90,60};
 
 Ai::Ai(int pn,ShipSprite* s[2],QPtrList<BulletSprite>* b[2],
-       QPtrList<MineSprite>* m[2],SConfig *c,SOptions *o)
+       QPtrList<MineSprite>* m[2],SConfig *c)
 {
    int i;
 
    playerNumber=pn;
    opponentNumber=(pn+1)%2;
    cfg=c;
-   opt=o;
 
    for(i=0;i<2;i++)
    {
@@ -25,7 +25,7 @@ Ai::Ai(int pn,ShipSprite* s[2],QPtrList<BulletSprite>* b[2],
       bullets[i]=b[i];
       mines[i]=m[i];
       shipsNextPositions[i]=new QMemArray<AiSprite>
-         ((int)(calcPositionNumber[opt->aiDifficulty[playerNumber]]/cfg->gamespeed));
+         ((int)(calcPositionNumber[Options::aiDifficulty(playerNumber)]/cfg->gamespeed));
       aiMines[i]=new QMemArray<AiSprite>(cfg->maxMines);
       mineNumber[i]=0;
    }
@@ -49,10 +49,10 @@ void Ai::newRound()
    borderTime=-1;
    sunTime=-1;
 
-   calculateCollisions=(int)(calcCollisions[opt->aiDifficulty[playerNumber]]
+   calculateCollisions=(int)(calcCollisions[Options::aiDifficulty(playerNumber)]
                              /cfg->gamespeed);
    waitShot=(int) rint( random.getDouble() * 
-	          calcNextShot[opt->aiDifficulty[playerNumber]]
+	          calcNextShot[Options::aiDifficulty(playerNumber)]
                   /cfg->gamespeed);
 
    myShots.clear();
@@ -72,7 +72,7 @@ void Ai::think()
       waitShot--;
    
    calculateNextPositions();
-   if(opt->aiDifficulty[playerNumber]!=DTRAINEE)
+   if(Options::aiDifficulty(playerNumber)!=Options::EnumAiDifficulty::Trainee)
       testForHits();
    if(waitShot<=0)
    {
@@ -174,7 +174,7 @@ void Ai::calculateNextPositions()
    unsigned int i,j;
    MineSprite *ms;
 
-   j=(int)(calcPositionNumber[opt->aiDifficulty[playerNumber]]/cfg->gamespeed);
+   j=(int)(calcPositionNumber[Options::aiDifficulty(playerNumber)]/cfg->gamespeed);
    
    if(shipsNextPositions[0]->size() != j)
       for(i=0;i<2;i++)
@@ -182,7 +182,7 @@ void Ai::calculateNextPositions()
    
    for(i=0;i<2;i++)
       nextPositions(ship[i]->toAiSprite(),shipsNextPositions[i],
-                    calcFrameIncrement[opt->aiDifficulty[playerNumber]]);
+                    calcFrameIncrement[Options::aiDifficulty(playerNumber)]);
 
    if(cfg->maxMines > aiMines[0]->size())
       for(i=0;i<2;i++)
@@ -214,7 +214,7 @@ void Ai::tryShots()
    rot=ship[playerNumber]->getRotation();
    
        //Each 'frameIncrement' frames a shot is tried
-   frameIncrement=(int)((2*M_PI/calcShotDirections[opt->aiDifficulty[playerNumber]])
+   frameIncrement=(int)((2*M_PI/calcShotDirections[Options::aiDifficulty(playerNumber)])
                         /cfg->rotationSpeed);
    if(frameIncrement==0)
       frameIncrement=1;
@@ -253,7 +253,7 @@ void Ai::tryShots()
                shot.sun=false;
 
                hit=firstObject(shot,f*frameIncrement,
-                               calcFrameIncrement[opt->aiDifficulty[playerNumber]]);
+                               calcFrameIncrement[Options::aiDifficulty(playerNumber)]);
                if((hit.object!=HNOTHING) &&
                   !((hit.object==HSHIP)&&(hit.playerNumber==playerNumber)))
                {
@@ -403,7 +403,7 @@ void Ai::testForHits()
          for(bullet=bullets[i]->first();bullet;bullet=bullets[i]->next())
          {
             shot=bullet->toAiSprite();
-            hit=firstObject(shot,0,calcFrameIncrement[opt->aiDifficulty[playerNumber]]);
+            hit=firstObject(shot,0,calcFrameIncrement[Options::aiDifficulty(playerNumber)]);
             if(hit.object==HMINE)
             {
                h=new Hit(hit);
@@ -425,13 +425,13 @@ void Ai::testForHits()
              !(*shipsNextPositions[playerNumber])[i].sun;i++)
       {
          if((borderTime<0) && (*shipsNextPositions[playerNumber])[i].border)
-            borderTime=i*calcFrameIncrement[opt->aiDifficulty[playerNumber]];
+            borderTime=i*calcFrameIncrement[Options::aiDifficulty(playerNumber)];
       
          dx=(*shipsNextPositions[playerNumber])[i].x;
          dy=(*shipsNextPositions[playerNumber])[i].y;
          distance=dx*dx+dy*dy;
          if((distance<3025)&&(sunTime<0))
-            sunTime=i*calcFrameIncrement[opt->aiDifficulty[playerNumber]];
+            sunTime=i*calcFrameIncrement[Options::aiDifficulty(playerNumber)];
 
          if(!hitfound)
             for(p=0;p<2;p++)
@@ -445,7 +445,7 @@ void Ai::testForHits()
                      hit.object=HMINE;
                      hit.playerNumber=p;
                      hit.objectNumber=m;
-                     hit.hitTime=i*calcFrameIncrement[opt->aiDifficulty[playerNumber]];
+                     hit.hitTime=i*calcFrameIncrement[Options::aiDifficulty(playerNumber)];
                      hit.distance=distance;
                      if(distance<100)
                         hitfound=true;
@@ -457,7 +457,7 @@ void Ai::testForHits()
          h=new Hit(hit);
          objectsHitByShip.append(h);
       }
-      calculateCollisions=(int)(calcCollisions[opt->aiDifficulty[playerNumber]]/cfg->gamespeed);
+      calculateCollisions=(int)(calcCollisions[Options::aiDifficulty(playerNumber)]/cfg->gamespeed);
    }
 }
 
@@ -662,7 +662,7 @@ void Ai::chooseAction()
             score=bestScore;
             calculateCollisions = 0;
             waitShot=(int) rint( random.getDouble() * 
-	                         calcNextShot[opt->aiDifficulty[playerNumber]]
+	                         calcNextShot[Options::aiDifficulty(playerNumber)]
                                  /cfg->gamespeed);
          }
       }

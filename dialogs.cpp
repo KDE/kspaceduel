@@ -7,28 +7,61 @@
 
 #include <klocale.h>
 
+#include "options.h"
 #include "dialogs.h"
+#include "general.h"
 
-#ifdef kspaceduel_only_for_xgettext
-   i18n("Game speed:"),i18n("Shot speed:"),i18n("Energy need:"),i18n("Max number:"),
-   i18n("Damage:"),i18n("Life time:"),i18n("Reload time:"),i18n("Mine fuel:"),
-   i18n("Energy need:"),i18n("Activate time:"),i18n("Damage:"),i18n("Max number:"),
-   i18n("Reload time:"),i18n("Acceleration:"),i18n("Energy need:"),
-   i18n("Rotation speed:"),i18n("Energy need:"),i18n("Crash damage:"),
-   i18n("Sun energy:"),i18n("Gravity:"),i18n("Position X:"),i18n("Position Y:"),
-   i18n("Velocity X:"),i18n("Velocity Y:"),
-   i18n("Appearance time:"),i18n("Life time:"),i18n("Energy amount:"),i18n("Shield amount:")
-#endif
+bool operator!=(const SConfig &s1, const SConfig &s2)
+{
+   return
+(s1.gamespeed != s2.gamespeed) ||
+(s1.gravity != s2.gravity) ||
+(s1.acc != s2.acc) ||
+(s1.energyNeed != s2.energyNeed) ||
+(s1.sunEnergy != s2.sunEnergy) ||
+(s1.rotationSpeed != s2.rotationSpeed) ||
+(s1.mineActivateTime != s2.mineActivateTime) ||
+(s1.mineFuel != s2.mineFuel) ||
+(s1.shotSpeed != s2.shotSpeed) ||
+(s1.shotEnergyNeed != s2.shotEnergyNeed) ||
+(s1.mineEnergyNeed != s2.mineEnergyNeed) ||
+(s1.rotationEnergyNeed != s2.rotationEnergyNeed) ||
+(s1.startPosX != s2.startPosX) ||
+(s1.startPosY != s2.startPosY) ||
+(s1.startVelX != s2.startVelX) ||
+(s1.startVelY != s2.startVelY) ||
+(s1.bulletLifeTime != s2.bulletLifeTime) ||
+(s1.mineReloadTime != s2.mineReloadTime) ||
+(s1.bulletReloadTime != s2.bulletReloadTime) ||
+(s1.bulletDamage != s2.bulletDamage) ||
+(s1.shipDamage != s2.shipDamage) ||
+(s1.mineDamage != s2.mineDamage) ||
+(s1.maxBullets != s2.maxBullets) ||
+(s1.maxMines != s2.maxMines) ||
+(s1.powerupLifeTime != s2.powerupLifeTime) ||
+(s1.powerupRefreshTime != s2.powerupRefreshTime) ||
+(s1.powerupEnergyAmount != s2.powerupEnergyAmount) ||
+(s1.powerupShieldAmount != s2.powerupShieldAmount);
+}
+
 
 char ConfigSetup::LabelName[EditNum][25]=
-{ "Game speed:",
- "Shot speed:","Energy need:","Max number:","Damage:","Life time:","Reload time:",
- "Mine fuel:","Energy need:","Activate time:","Damage:","Max number:","Reload time:",
- "Acceleration:","Energy need:","Rotation speed:",
- "Energy need:","Crash damage:",
- "Sun energy:","Gravity:",
- "Position X:","Position Y:","Velocity X:","Velocity Y:",
-  "Appearance time:","Life time:","Energy amount:","Shield amount:"};
+{
+   I18N_NOOP("Game speed:"),	I18N_NOOP("Shot speed:"),
+   I18N_NOOP("Energy need:"),	I18N_NOOP("Max number:"),
+   I18N_NOOP("Damage:"),	I18N_NOOP("Life time:"),
+   I18N_NOOP("Reload time:"),	I18N_NOOP("Mine fuel:"),
+   I18N_NOOP("Energy need:"),	I18N_NOOP("Activate time:"),
+   I18N_NOOP("Damage:"),	I18N_NOOP("Max number:"),
+   I18N_NOOP("Reload time:"),	I18N_NOOP("Acceleration:"),
+   I18N_NOOP("Energy need:"),	I18N_NOOP("Rotation speed:"),
+   I18N_NOOP("Energy need:"),	I18N_NOOP("Crash damage:"),
+   I18N_NOOP("Sun energy:"),	I18N_NOOP("Gravity:"),
+   I18N_NOOP("Position X:"),	I18N_NOOP("Position Y:"),
+   I18N_NOOP("Velocity X:"),	I18N_NOOP("Velocity Y:"),
+   I18N_NOOP("Appearance time:"),I18N_NOOP("Life time:"),
+   I18N_NOOP("Energy amount:"),	I18N_NOOP("Shield amount:")
+};
 
 enum ConfigSetup::Type ConfigSetup::VarType[EditNum]=
 {VarFloat,
@@ -80,8 +113,7 @@ int ConfigSetup::Position[EditNum]=
 
 const int LCDLen=6;
 
-ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
-                         QWidget *parent,const char *name)
+ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent,const char *name)
       :QWidget( parent, name )
 {
    QLabel *label[EditNum];
@@ -95,11 +127,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
    //setCaption(i18n("Game Setup"));
    //setHelp( "OptionsConfigurations" );
    
-   customConfig=custom;
-   config=*customConfig;
-   gameOptions=opt;
-   options=*opt;
-
+   
    //box=new QGroupBox(i18n("Config"),this);
    //setMainWidget( box );
    QVBoxLayout *boxlayout = new QVBoxLayout( this, 6 );
@@ -150,26 +178,24 @@ ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
    tabs->addTab(configWidgets[4],i18n("Sun"));
    tabs->addTab(configWidgets[5],i18n("Start"));
    tabs->addTab(configWidgets[6],i18n("Powerups"));
- 
-   configCombo->setCurrentItem(opt->lastConfig);
-   if(opt->lastConfig==predefinedConfigNum)
-   {
-      displayConfig(config);
-      for(i=0;i<EditNum;i++)
-         slider[i]->setEnabled(true);
-   }
-   else
-   {
-      displayConfig(predefinedConfig[opt->lastConfig]);
-      for(i=0;i<EditNum;i++)
-         slider[i]->setEnabled(false);
-   }
-   //enableButton( Default, opt->lastConfig == predefinedConfigNum );
+
+   customConfig=custom;
+
+   updateWidgets();
+}
+
+void ConfigSetup::updateWidgets()
+{
+   config=*customConfig;
+   selectedConfig = -1;
+   configCombo->setCurrentItem(Options::lastConfig());
+   configSelected(Options::lastConfig());
 }
 
 void ConfigSetup::valueChanged(int ednum,int value)
 {
-   if(options.lastConfig==predefinedConfigNum)
+   if(selectedConfig==predefinedConfigNum)
+   {
       switch(ednum)
       {
          case EditMaxBullets:config.maxBullets=value;break;
@@ -179,11 +205,14 @@ void ConfigSetup::valueChanged(int ednum,int value)
          case EditShipDamage:config.shipDamage=value;break;
          case EditPowerupShieldAmount:config.powerupShieldAmount=value;break;
       }
+      emit changed();
+   }
 }
 
 void ConfigSetup::valueChanged(int ednum,double value)
 {
-   if(options.lastConfig==predefinedConfigNum)
+   if(selectedConfig==predefinedConfigNum)
+   {
       switch(ednum)
       {
          case EditSunEnergy:config.sunEnergy=value;break;
@@ -209,29 +238,46 @@ void ConfigSetup::valueChanged(int ednum,double value)
          case EditPowerupLifeTime:config.powerupLifeTime=value;break;
          case EditPowerupEnergyAmount:config.powerupEnergyAmount=value;break;
       }
+      emit changed();
+   }
 }
 
-void ConfigSetup::slotOk()
+void ConfigSetup::updateSettings()
 {
    *customConfig=config;
-   *gameOptions=options;
-   
-   //accept();
+
+   Options::setLastConfig(selectedConfig);
+   Options::writeConfig();
 }
 
-void ConfigSetup::slotDefault()
+bool ConfigSetup::hasChanged()
 {
-   config=predefinedConfig[0];
-   displayConfig(config);
+   if (configCombo->currentItem() != Options::lastConfig())
+      return true;
+
+   if (configCombo->currentItem() != predefinedConfigNum)
+      return false;
+
+   return ((*customConfig) != config);
+}
+
+void ConfigSetup::updateWidgetsDefault()
+{
+   configCombo->setCurrentItem(0);
+   configSelected(0);
+}
+
+bool ConfigSetup::isDefault()
+{
+   return configCombo->currentItem() == 0;
 }
 
 void ConfigSetup::configSelected(int num)
 {
    int i;
-   
-   if(!((options.lastConfig==predefinedConfigNum)&&(num==predefinedConfigNum)))
+   if(!((selectedConfig==predefinedConfigNum)&&(num==predefinedConfigNum)))
    {
-      options.lastConfig=num;
+      selectedConfig = num;
       for(i=0;i<EditNum;i++)
          slider[i]->setEnabled(num==predefinedConfigNum);
       //enableButton( Default, num==predefinedConfigNum );
@@ -239,6 +285,7 @@ void ConfigSetup::configSelected(int num)
          displayConfig(predefinedConfig[num]);
       else
          displayConfig(config);
+      emit changed();
    }
 }
 
@@ -339,6 +386,49 @@ void ConfigSetup::sliderChanged(int val)
          valueChanged(i,val);
    }
       
+}
+
+SettingsDialog::SettingsDialog(SConfig *customConfig, QWidget *parent, const char *name)
+  : KConfigDialog( parent, name, Options::self())
+{
+  General *general = new General();
+  addPage(general, i18n("General"), "package_settings", i18n("General Settings"));
+
+  cs = new ConfigSetup(customConfig);
+  addPage(cs, i18n("Game"), "kspaceduel", i18n("Game Settings"));
+  connect(cs, SIGNAL(changed()), this, SLOT(updateButtons()));
+ 
+//  resize(600,400);
+}
+
+SettingsDialog::~SettingsDialog()
+{
+}
+
+void SettingsDialog::updateWidgetsDefault()
+{
+   cs->updateWidgetsDefault();
+}
+
+void SettingsDialog::updateWidgets()
+{
+  cs->updateWidgets();
+}
+
+void SettingsDialog::updateSettings()
+{
+   cs->updateSettings();
+   emit settingsUpdated();
+}
+ 
+bool SettingsDialog::hasChanged()
+{
+   return cs->hasChanged();
+}
+
+bool SettingsDialog::isDefault()
+{
+   return cs->isDefault();
 }
 
 #include "dialogs.moc"

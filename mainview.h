@@ -11,7 +11,6 @@ class KActionCollection;
 #include "sprites.h"
 #include "dialogs.h"
 class Ai;
-class KDialogBase;
 
 #ifdef sun
 #undef sun
@@ -61,12 +60,10 @@ protected:
    void collisions();
 private:
    KActionCollection *actionCollection;
-   KDialogBase *settings;
 
    QCanvas field;
    QCanvasView view;
 
-   SOptions options;
    SConfig customConfig,config;
 
    int timerID;

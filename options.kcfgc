@@ -1,0 +1,5 @@
+# Code generation options for kconfig_compiler
+File=kspaceduel.kcfg
+ClassName=Options
+Singleton=true
+Mutators=true

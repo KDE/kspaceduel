@@ -11,11 +11,10 @@
 #include <kstandarddirs.h>
 #include <kglobalsettings.h>
 #include <kconfig.h>
-#include <kautoconfig.h>
 #include <kiconloader.h>
 
 #include "ai.h"
-#include "general.h"
+#include "options.h"
 
 KToggleAction *MyMainView::pauseAction = 0;
 
@@ -115,21 +114,9 @@ void MyMainView::readConfig()
    int i;
 
    cfg->setGroup("Game");
-   options.refreshTime=cfg->readUnsignedNumEntry("refreshTime",33);
-   options.lastConfig=cfg->readUnsignedNumEntry("lastConfig",0);
-
    customConfig.gamespeed=cfg->readDoubleNumEntry("gamespeed",
                                                   predefinedConfig[0].gamespeed);
 
-   options.isAi[0]=cfg->readBoolEntry("player1IsAi",false);
-   options.isAi[1]=cfg->readBoolEntry("player2IsAi",false);
-   options.aiDifficulty[0]=
-      (Difficulty)cfg->readUnsignedNumEntry("ai1Difficulty",(unsigned)DNORMAL);
-   options.aiDifficulty[1]=
-      (Difficulty)cfg->readUnsignedNumEntry("ai2Difficulty",(unsigned)DNORMAL);
-
-   options.timeAfterKill=
-      cfg->readDoubleNumEntry("timeAfterKill",1.3*33);
    customConfig.gravity=
       cfg->readDoubleNumEntry("gravity",predefinedConfig[0].gravity);
    customConfig.acc=
@@ -187,16 +174,13 @@ void MyMainView::readConfig()
       cfg->readDoubleNumEntry("powerupEnergyAmount",
                               predefinedConfig[0].powerupEnergyAmount);
 
-   options.startHitPoints[1]=cfg->readUnsignedNumEntry("startHitPointsP2",99);
-   options.startHitPoints[0]=cfg->readUnsignedNumEntry("startHitPointsP1",99);
-
-   if(options.lastConfig < predefinedConfigNum)
-      config=modifyConfig(predefinedConfig[options.lastConfig]);
+   if(Options::lastConfig() < predefinedConfigNum)
+      config=modifyConfig(predefinedConfig[Options::lastConfig()]);
    else
       config=modifyConfig(customConfig);
 
    for(i=0;i<2;i++)
-      ai[i]=new Ai(i,ship,bullets,mines,&config,&options);
+      ai[i]=new Ai(i,ship,bullets,mines,&config);
 }
 
 void MyMainView::writeConfig()
@@ -204,10 +188,6 @@ void MyMainView::writeConfig()
    KConfig *cfg;
    cfg=KApplication::kApplication()->config();
    cfg->setGroup("Game");
-   cfg->writeEntry("refreshTime",options.refreshTime);
-   cfg->writeEntry("lastConfig",options.lastConfig);
-   cfg->writeEntry("gamespeed",customConfig.gamespeed);
-   cfg->writeEntry("timeAfterKill",options.timeAfterKill);
 
    cfg->writeEntry("gravity",customConfig.gravity);
    cfg->writeEntry("acceleration",customConfig.acc);
@@ -243,7 +223,7 @@ void MyMainView::writeConfig()
 SConfig MyMainView::modifyConfig(SConfig conf)
 {
    SConfig newConfig=conf;
-   newConfig.gamespeed*=options.refreshTime/33.0;
+   newConfig.gamespeed*=Options::refreshTime()/33.0;
    newConfig.acc*=newConfig.gamespeed;
    newConfig.rotationSpeed*=newConfig.gamespeed*M_PI/ROTNUM*4;
    newConfig.energyNeed*=newConfig.gamespeed;
@@ -368,7 +348,7 @@ void MyMainView::pause()
 void MyMainView::resume()
 {
    waitForStart=false;
-   timerID=startTimer(options.refreshTime);
+   timerID=startTimer(Options::refreshTime());
    emit(setStatusText("",IDS_PAUSE));
    emit(setStatusText("",IDS_MAIN));
 }
@@ -382,7 +362,7 @@ void MyMainView::start( )
    else if( waitForStart )
    {
       waitForStart = false;
-      timerID=startTimer(options.refreshTime);
+      timerID=startTimer(Options::refreshTime());
       emit(setStatusText("",IDS_PAUSE));
       emit(setStatusText("",IDS_MAIN));
       pauseAction->setEnabled( true );
@@ -481,7 +461,7 @@ void MyMainView::newRound()
    {
       ship[i]->show();
       ship[i]->setEnergy(99.9);
-      ship[i]->setHitPoints(options.startHitPoints[i]);
+      ship[i]->setHitPoints(Options::startHitPoints(i));
       ship[i]->stop(false);
       ship[i]->setExplosion(-1);
       emit(energy(i,(int)ship[i]->getEnergy()));
@@ -586,7 +566,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
       if( !stopped )
       {
          for(i=0;i<2;i++)
-            if(options.isAi[i]&&(ship[i]->getHitPoints()>0))
+            if(Options::playerIsAi(i)&&(ship[i]->getHitPoints()>0))
                ai[i]->think();
 
          moveMines();
@@ -595,7 +575,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
          moveShips();
          calculatePowerups();
          collisions();
-         timerID=startTimer(options.refreshTime);
+         timerID=startTimer(Options::refreshTime());
       }
       field.update();
    }
@@ -611,6 +591,7 @@ void MyMainView::moveShips()
 
    for(i=0;i<2;i++)
    {
+      bool playerIsAi = Options::playerIsAi(i);
       olde=(int)ship[i]->getEnergy();
       if(ship[i]->getHitPoints()==0)
       {
@@ -624,13 +605,13 @@ void MyMainView::moveShips()
                                          config.gamespeed);
 
 
-         if(!options.isAi[i]&&playerKeyPressed[i][PlayerKeyRight]
-            || options.isAi[i]&&ai[i]->rotateRight())
+         if(!playerIsAi&&playerKeyPressed[i][PlayerKeyRight]
+            || playerIsAi&&ai[i]->rotateRight())
             ship[i]->rotateRight(config.rotationEnergyNeed,
                                  config.rotationSpeed);
 
-         if(!options.isAi[i]&&playerKeyPressed[i][PlayerKeyLeft]
-            || options.isAi[i]&&ai[i]->rotateLeft())
+         if(!playerIsAi&&playerKeyPressed[i][PlayerKeyLeft]
+            || playerIsAi&&ai[i]->rotateLeft())
             ship[i]->rotateLeft(config.rotationEnergyNeed,
                                 config.rotationSpeed);
 
@@ -641,8 +622,8 @@ void MyMainView::moveShips()
          nf=ship[i]->frame();
          nx=cos(nr);
          ny=sin(nr);
-         if((!options.isAi[i]&&playerKeyPressed[i][PlayerKeyAcc]
-             || options.isAi[i]&&ai[i]->accelerate())
+         if((!playerIsAi&&playerKeyPressed[i][PlayerKeyAcc]
+             || playerIsAi&&ai[i]->accelerate())
             &&(en>config.energyNeed))
          {
             en-=config.energyNeed;
@@ -654,8 +635,8 @@ void MyMainView::moveShips()
 
          ship[i]->forward(config.gamespeed);
              //Bullets and Mines
-         if(!options.isAi[i]&&playerKeyPressed[i][PlayerKeyShot]
-            ||options.isAi[i]&&ai[i]->shootBullet())
+         if(!playerIsAi&&playerKeyPressed[i][PlayerKeyShot]
+            ||playerIsAi&&ai[i]->shootBullet())
          {
             if((en>config.shotEnergyNeed) && (!ship[i]->reloadsBullet()))
             {
@@ -677,8 +658,8 @@ void MyMainView::moveShips()
                }
             }
          }
-         if(!options.isAi[i]&&playerKeyPressed[i][PlayerKeyMine]
-            || options.isAi[i]&&ai[i]->layMine())
+         if(!Options::playerIsAi(i)&&playerKeyPressed[i][PlayerKeyMine]
+            || Options::playerIsAi(i)&&ai[i]->layMine())
          {
             if((en>config.mineEnergyNeed) && (!ship[i]->reloadsMine()))
             {
@@ -995,7 +976,7 @@ void MyMainView::collisions()
          expl=new ExplosionSprite(explosionsequence,&field,ship[pl]);
          expl->show();
          explosions.append(expl);
-         gameEnd=options.timeAfterKill/config.gamespeed;
+         gameEnd=Options::timeAfterKill()/config.gamespeed;
       }
    }
 }
@@ -1005,37 +986,19 @@ void MyMainView::gameSetup()
   if(!waitForStart)
     pause();
    
-  settings = new KDialogBase(KDialogBase::IconList, i18n("Configure"), KDialogBase::Default | KDialogBase::Ok | KDialogBase::Apply | KDialogBase::Cancel , KDialogBase::Ok, this, "SettingsDialog", false, WDestructiveClose ); 
-  KAutoConfig *kautoconfig = new KAutoConfig(settings, "KAutoConfig");
-	  
-  connect(settings, SIGNAL(okClicked()), kautoconfig, SLOT(saveSettings()));
-  connect(settings, SIGNAL(okClicked()), this, SLOT(closeSettings()));
-  connect(settings, SIGNAL(applyClicked()), kautoconfig, SLOT(saveSettings()));
-  connect(settings, SIGNAL(defaultClicked()), kautoconfig, SLOT(resetSettings()));
+  if (KConfigDialog::showDialog("settings"))
+    return;
 
-  QVBox *frame = settings->addVBoxPage(i18n("General"),i18n("General Settings"), SmallIcon("package_settings", 32));
-  General *general = new General(frame, "General");
-  kautoconfig->addWidget(general, "Game");
-
-  frame = settings->addVBoxPage(i18n("Game"),i18n("Game Settings"), SmallIcon("kspaceduel", 32));
-  ConfigSetup*cs = new ConfigSetup(&customConfig,&options,frame);
-  connect(settings, SIGNAL(okClicked()), cs, SLOT(slotOk()));
-  connect(settings, SIGNAL(defaultClicked()), cs, SLOT(slotDefault()));
-  connect(settings, SIGNAL(applyClicked()), cs, SLOT(slotOk()));
-  
-  kautoconfig->retrieveSettings();
-  connect(kautoconfig, SIGNAL(settingsChanged()), this, SLOT(readConfig()));
- 
-  settings->resize(500,400);
+  SettingsDialog *settings=new SettingsDialog(&customConfig,this,"settings");
+  connect(settings, SIGNAL(settingsUpdated()),this,SLOT(closeSettings()));
   settings->show();
 }
 
 void MyMainView::closeSettings(){
-  if(options.lastConfig<predefinedConfigNum)
-    config=modifyConfig(predefinedConfig[options.lastConfig]);
+  if(Options::lastConfig()<predefinedConfigNum)
+    config=modifyConfig(predefinedConfig[Options::lastConfig()]);
   else
     config=modifyConfig(customConfig);
-  settings->close(true);
 }
 
 QCanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern,
