@@ -1,5 +1,6 @@
 #include <klocale.h>
 #include <kapplication.h>
+#include <kaccel.h>
 #include <kkeydialog.h>
 #include <kstdaction.h>
 #include <kaction.h>
