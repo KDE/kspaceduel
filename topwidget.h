@@ -1,11 +1,12 @@
 #ifndef __MY_TOP_WIDGET_H
 #define __MY_TOP_WIDGET_H
 
-#include <ktmainwindow.h>
+#include <kmainwindow.h>
+#include <kaction.h>
 class KConfig;
 #include "duelwidget.h"
 
-class MyTopLevelWidget:public KTMainWindow
+class MyTopLevelWidget:public KMainWindow
 {
    Q_OBJECT
 public:
@@ -26,6 +27,8 @@ protected:
    void initStatusBar( );
 private:
    DuelWidget* wview;
+   KToggleAction *toolbarAct;
+   KToggleAction *statusbarAct;
 };
 
 #endif

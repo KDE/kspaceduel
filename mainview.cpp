@@ -347,7 +347,7 @@ void MyMainView::pause()
    if( !waitForStart )
    {
       KToggleAction* pauseAction = ( KToggleAction* )
-         ( (KTMainWindow* )parent( )->parent( ) )
+         ( (KMainWindow* )parent( )->parent( ) )
          ->actionCollection( )->action( "pause" );
       pauseAction->setChecked( true );
       
@@ -367,7 +367,7 @@ void MyMainView::resume()
 
 void MyMainView::start( )
 {
-   KActionCollection* collection = ( ( KTMainWindow* )parent( )->parent( ) )
+   KActionCollection* collection = ( ( KMainWindow* )parent( )->parent( ) )
       ->actionCollection( );
    KToggleAction* pauseAction;
 
@@ -390,7 +390,7 @@ void MyMainView::start( )
 void MyMainView::stop()
 {
    KToggleAction* pauseAction = ( KToggleAction* )
-      ( (KTMainWindow* )parent( )->parent( ) )
+      ( (KMainWindow* )parent( )->parent( ) )
       ->actionCollection( )->action( "pause" );
    pauseAction->setEnabled( false );
    pauseAction->setChecked( false );
@@ -512,7 +512,7 @@ void MyMainView::newRound()
    field.update();
    
    QString str = i18n("Press %1 to start")
-      .arg( KAccel::keyToString( ( ( KTMainWindow* )( parent( )->parent( ) ) )
+      .arg( KAccel::keyToString( ( ( KMainWindow* )( parent( )->parent( ) ) )
                                 ->actionCollection( )->action( "game_start" )
                                 ->accel( )) );
    emit(setStatusText(str,IDS_MAIN));
@@ -569,7 +569,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
                emit(wins(0,w));
             }
             QString str = i18n("Press %1 for new round")
-               .arg(KAccel::keyToString( ( ( KTMainWindow* )( parent( )->parent( ) ) )
+               .arg(KAccel::keyToString( ( ( KMainWindow* )( parent( )->parent( ) ) )
                                          ->actionCollection( )->action( "game_start" )
                                          ->accel( )) );
             emit(setStatusText(str,IDS_MAIN));
@@ -1088,3 +1088,5 @@ QCanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern
    QCanvasPixmapArray* newarray = new QCanvasPixmapArray( pixmaplist, pointlist );
    return newarray;
 }
+
+#include "mainview.moc"

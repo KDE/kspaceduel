@@ -10,13 +10,13 @@
 #include "defines.h"
 
 MyTopLevelWidget::MyTopLevelWidget(const char* name)
-      :KTMainWindow(name)
+      :KMainWindow(0, name)
 {
    wview = new DuelWidget( this );
    initActions( );
    initStatusBar( );
 
-   setView(wview);
+   setCentralWidget(wview);
 
    readConfig(kapp->config());
 }
@@ -56,9 +56,9 @@ void MyTopLevelWidget::initActions( )
    ( void )new KAction( i18n( "&Ai..." ), 0, wview,
                         SLOT( aiSetup( ) ),
                         actionCollection( ), "options_ai" );
-   KStdAction::showToolbar( this, SLOT( showToolBar( ) ),
+   toolbarAct = KStdAction::showToolbar( this, SLOT( showToolBar( ) ),
                             actionCollection( ) );
-   KStdAction::showStatusbar( this, SLOT( showStatusBar( ) ),
+   statusbarAct = KStdAction::showStatusbar( this, SLOT( showStatusBar( ) ),
                               actionCollection( ) );
 
    KStdAction::saveOptions( this, SLOT( saveOptions( ) ),
@@ -73,8 +73,8 @@ void MyTopLevelWidget::initStatusBar( )
    statusBar( )->insertItem(i18n(" paused "),IDS_PAUSE);
    statusBar( )->insertItem("   ",IDS_MAIN);
 
-   QObject::connect(wview,SIGNAL(setStatusText(const char*,int)),
-                    SLOT(setStatusText(const char*,int)));
+   QObject::connect(wview,SIGNAL(setStatusText(const QString &,int)),
+                    SLOT(setStatusText(const QString &,int)));
 
 }
 
@@ -124,20 +124,22 @@ void MyTopLevelWidget::keySetup()
 
 void MyTopLevelWidget::showToolBar( )
 {
-   if( toolBar( )->isVisible( ) )
-      toolBar( )->hide( );
+   if( toolbarAct->isChecked() )
+      toolBar("mainToolBar")->show( );
    else
-      toolBar( )->show( );
+      toolBar("mainToolBar")->hide( );
 }
 
 void MyTopLevelWidget::showStatusBar( )
 {
-   if( statusBar( )->isVisible( ) )
-      statusBar( )->hide( );
-   else
+   if( statusbarAct->isChecked() )
       statusBar( )->show( );
+   else
+      statusBar( )->hide( );
 }
 
 MyTopLevelWidget::~MyTopLevelWidget( )
 {
 }
+
+#include "topwidget.moc"

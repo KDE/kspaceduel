@@ -79,3 +79,4 @@ void PlayerInfo::setWins(int w)
    wins.display(w);
 }
 
+#include "playerinfo.moc"

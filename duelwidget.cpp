@@ -26,8 +26,13 @@ DuelWidget::DuelWidget(QWidget *parent,const char *name)
    QObject::connect(playfield,SIGNAL(hitPoints(int,int)),
                     SLOT(hitPoints(int,int)));
    QObject::connect(playfield,SIGNAL(wins(int,int)),SLOT(wins(int,int)));
-   QObject::connect(playfield,SIGNAL(setStatusText(const char*,int)),
-                    SIGNAL(setStatusText(const char*,int)));
+   QObject::connect(playfield,SIGNAL(setStatusText(const QString &,int)),
+                    SLOT(slotStatusText(const QString &,int)));
+}
+
+void DuelWidget::slotStatusText(const QString &str, int id)
+{
+   emit setStatusText(str, id);
 }
 
 void DuelWidget::newGame()
@@ -104,3 +109,5 @@ void DuelWidget::start()
 {
    playfield->start();
 }
+
+#include "duelwidget.moc"

@@ -721,3 +721,5 @@ void GraphicSetup::slotDefault()
    refreshslider->setValue(refreshtime);
    refreshnumber->display(refreshtime);
 }
+
+#include "dialogs.moc"

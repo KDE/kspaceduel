@@ -29,6 +29,8 @@ public slots:
    void energy(int pn,int en);
    void hitPoints(int pn,int hp);
    void wins(int pn,int w);
+private slots:
+   void slotStatusText(const QString &str, int id);
 signals:   
    void setStatusText(const QString & str,int id);
 private:
