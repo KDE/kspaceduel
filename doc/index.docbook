@@ -27,8 +27,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
  
-<date>31/07/2000</date>
-<releaseinfo>1.00.00</releaseinfo>                   
+<date>11/08/2000</date>
+<releaseinfo>1.0.1</releaseinfo>                   
 
 <abstract>
 <para>&kspace; is an space arcade game. </para>
@@ -531,20 +531,6 @@ abort your changes.</para>
 
 <para>The following sections briefly describe each menubar option.</para>
 
-<sect1 id="file-menu"><title>File Menu</title><para>
-The file menu consists of a single option</para>
-
-<variablelist>
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycombo><keycap>Ctrl</keycap><keycap>q</keycap></keycombo></shortcut>
-<guimenu>File</guimenu><guimenuitem>Quit</guimenuitem> </menuchoice></term>
-<listitem><para><action>Quits</action> &kspace;</para></listitem>
-</varlistentry>
-</variablelist>
-
-</sect1>
-
 <sect1 id="games-menu">
 <title>Games Menu</title>
 
@@ -570,6 +556,12 @@ The file menu consists of a single option</para>
 <shortcut><keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo></shortcut>
 <guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem> </menuchoice></term>
 <listitem><para>Pauses and unpauses the game.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo><keycap>Ctrl</keycap><keycap>q</keycap></keycombo></shortcut>
+<guimenu>Game</guimenu><guimenuitem>Quit</guimenuitem> </menuchoice></term>
+<listitem><para><action>Quits</action> &kspace;</para></listitem>
 </varlistentry>
 </variablelist>
 
