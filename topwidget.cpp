@@ -40,11 +40,11 @@ MyTopLevelWidget::MyTopLevelWidget(const char* name)
 
    keys->readSettings();
 
-   statusbar.setInsertOrder(KStatusBar::RightToLeft);
-   statusbar.setBorderWidth(2);
+//   statusbar.setInsertOrder(KStatusBar::RightToLeft);
+//   statusbar.setBorderWidth(2);
    statusbar.insertItem(i18n(" paused "),IDS_PAUSE);
    statusbar.insertItem("   ",IDS_MAIN);
-   statusbar.setFrameStyle(QFrame::Panel|QFrame::Raised);
+//   statusbar.setFrameStyle(QFrame::Panel|QFrame::Raised);
 
    QObject::connect(&wview,SIGNAL(setStatusText(const char*,int)),
                     SLOT(setStatusText(const char*,int)));
