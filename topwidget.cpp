@@ -127,9 +127,9 @@ void MyTopLevelWidget::keySetup()
 void MyTopLevelWidget::showToolBar( )
 {
    if( toolbarAct->isChecked() )
-      toolBar("mainToolBar")->show( );
+      toolBar()->show( );
    else
-      toolBar("mainToolBar")->hide( );
+      toolBar()->hide( );
 }
 
 void MyTopLevelWidget::showStatusBar( )
