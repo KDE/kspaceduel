@@ -138,9 +138,9 @@ void KeySetup::slotOk()
    }
    if(sameKey)
      sameKey = KMessageBox::warningContinueCancel(this,
-				    i18n("Key Setup"),
          i18n("There are multiple functions for a key\n"
-	      "Continue?"), i18n("Key Setup"))
+              "Continue?"),
+	      i18n("Key Setup"), i18n("&OK"))
        == KMessageBox::Cancel;
    if(!sameKey)
    {
