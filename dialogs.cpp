@@ -101,7 +101,7 @@ KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
    
    QHBoxLayout *buttons=new QHBoxLayout;
    topLayout->addLayout(buttons,1);
-   ok=new QPushButton(i18n("Ok"),this);
+   ok=new QPushButton(i18n("OK"),this);
    ok->setDefault(true);
    connect(ok,SIGNAL(clicked()),SLOT(okPressed()));
    cancel=new QPushButton(i18n("Cancel"),this);
@@ -416,7 +416,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
    connect(defaults,SIGNAL(clicked()),SLOT(defaultsPressed()));
    cancel=new QPushButton(i18n("Cancel"),this);
    connect(cancel,SIGNAL(clicked()),SLOT(reject()));
-   ok=new QPushButton(i18n("Ok"),this);
+   ok=new QPushButton(i18n("OK"),this);
    ok->setDefault(true);
    connect(ok,SIGNAL(clicked()),SLOT(okPressed()));
 
@@ -643,7 +643,7 @@ AiSetup::AiSetup(SOptions *opt,QWidget *parent,const char *name)
    connect(help,SIGNAL(clicked()),SLOT(helpPressed()));
    cancel=new QPushButton(i18n("Cancel"),this);
    connect(cancel,SIGNAL(clicked()),SLOT(reject()));
-   ok=new QPushButton(i18n("Ok"),this);
+   ok=new QPushButton(i18n("OK"),this);
    ok->setDefault(true);
    connect(ok,SIGNAL(clicked()),SLOT(okPressed()));
 
@@ -731,7 +731,7 @@ HitpointSetup::HitpointSetup(SOptions *opt,QWidget *parent,const char *name)
    QLabel *redLabel=new QLabel(i18n("Red Player"),box);
    QLabel *blueLabel=new QLabel(i18n("Blue Player"),box);
 
-   QPushButton *okButton=new QPushButton(i18n("Ok"),this);
+   QPushButton *okButton=new QPushButton(i18n("OK"),this);
    connect(okButton,SIGNAL(clicked()),SLOT(okPressed()));
    okButton->setDefault(true);
    QPushButton *helpButton=new QPushButton(i18n("Help"),this);
@@ -803,7 +803,7 @@ GraphicSetup::GraphicSetup(SOptions *opt,QWidget *parent,const char *name)
    connect(refreshslider,SIGNAL(valueChanged(int)),SLOT(refreshSliderChanged(int)));
    connect(refreshslider,SIGNAL(valueChanged(int)),refreshnumber,SLOT(display(int)));
    
-   QPushButton *okbutton=new QPushButton(i18n("Ok"),this);
+   QPushButton *okbutton=new QPushButton(i18n("OK"),this);
    connect(okbutton,SIGNAL(clicked()),SLOT(okPressed()));
    okbutton->setDefault(true);
    QPushButton *helpbutton=new QPushButton(i18n("Help"),this);
