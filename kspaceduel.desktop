@@ -1,5 +1,4 @@
-# KDE Config File
-[KDE Desktop Entry]
+[Desktop Entry]
 SwallowExec=
 SwallowTitle=
 BinaryPattern=kspaceduel;
@@ -7,6 +6,7 @@ Name=Spaceduel
 MimeType=
 Exec=kspaceduel -caption "%c"
 Comment=A two player arcade game
+Comment[de]=Ein Arkade-Spiel für zwei Teilnehmer
 Icon=kspaceduel.xpm
 TerminalOptions=
 Path=

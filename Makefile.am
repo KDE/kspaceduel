@@ -1,6 +1,6 @@
 # this 10 paths are KDE specific. Use them:
 # kde_htmldir       Where your docs should go to. (contains lang subdirs)
-# kde_appsdir       Where your application file (.kdelnk) should go to. 
+# kde_appsdir       Where your application file (.desktop) should go to. 
 # kde_icondir       Where your icon should go to.
 # kde_sounddir      Where system sounds should go to.
 # kde_datadir       Where you install application data. (Use a subdir)
@@ -27,7 +27,7 @@ kspaceduel_SOURCES = mathroutines.cpp topwidget.cpp duelwidget.cpp playerinfo.cp
                 sprites.cpp mainview.cpp dialogs.cpp ai.cpp main.cpp
 
 kspaceduel_METASOURCES = USE_AUTOMOC
-EXTRA_DIST = kspaceduel.kdelnk kspaceduel.xpm mini-kspaceduel.xpm
+EXTRA_DIST = kspaceduel.desktop kspaceduel.xpm mini-kspaceduel.xpm
 
 # the library search path. 
 kspaceduel_LDFLAGS = $(all_libraries) $(KDE_RPATH)
@@ -56,7 +56,7 @@ messages:
 # if you have more of them, create a subdirectory with an extra Makefile 
 install-data-local: 
 	$(mkinstalldirs) $(APPSDIR)
-	$(INSTALL_DATA) $(srcdir)/kspaceduel.kdelnk $(APPSDIR)
+	$(INSTALL_DATA) $(srcdir)/kspaceduel.desktop $(APPSDIR)
 	$(mkinstalldirs) $(kde_icondir)
 	$(INSTALL_DATA) $(srcdir)/kspaceduel.xpm $(kde_icondir)
 	$(mkinstalldirs) $(kde_minidir)
@@ -64,6 +64,6 @@ install-data-local:
 
 # remove ALL you have installed in install-data-local or install-exec-local
 uninstall-local:
-	-rm -f $(APPSDIR)/kspaceduel.kdelnk
+	-rm -f $(APPSDIR)/kspaceduel.desktop
 	-rm -f $(kde_icondir)/kspaceduel.xpm
 	-rm -f $(kde_minidir)/kspaceduel.xpm
