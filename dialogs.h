@@ -103,7 +103,7 @@ class AiSetup : public QDialog
 {
    Q_OBJECT
 public:
-   AiSetup::AiSetup(SOptions *opt,QWidget *parent,const char *name=0);
+   AiSetup(SOptions *opt,QWidget *parent,const char *name=0);
 protected slots:
    void okPressed();
    void helpPressed();
@@ -119,7 +119,7 @@ class HitpointSetup : public QDialog
 {
    Q_OBJECT
 public:
-   HitpointSetup::HitpointSetup(SOptions *opt,QWidget *parent,const char*name=0);
+   HitpointSetup(SOptions *opt,QWidget *parent,const char*name=0);
 protected slots:
    void okPressed();
    void helpPressed();
@@ -134,7 +134,7 @@ class GraphicSetup : public QDialog
 {
    Q_OBJECT
 public:
-   GraphicSetup::GraphicSetup(SOptions *opt,QWidget *parent,const char *name=0);
+   GraphicSetup(SOptions *opt,QWidget *parent,const char *name=0);
 public slots:
    void refreshSliderChanged(int);
    void okPressed();

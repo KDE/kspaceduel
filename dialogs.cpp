@@ -787,7 +787,7 @@ void HitpointSetup::blueSliderChanged(int val)
 }
 
 
-GraphicSetup::GraphicSetup(SOptions *opt,QWidget *parent,const char *name=0)
+GraphicSetup::GraphicSetup(SOptions *opt,QWidget *parent,const char *name)
       :QDialog(parent,name,true)
 {
    options=opt;
