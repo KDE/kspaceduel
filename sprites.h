@@ -4,6 +4,10 @@
 #include <QwSpriteField.h>
 #include "defines.h"
 
+#ifdef sun
+#undef sun
+#endif
+
 struct AiSprite
 {
    double x,y,dx,dy;

@@ -17,7 +17,7 @@ APPSDIR = $(kde_appsdir)/Games
 INCLUDES= $(all_includes)
 # claim, which subdirectories you want to install
 # if you don't have subdirectories, comment it
-SUBDIRS = sprites html 
+SUBDIRS = sprites  
 
 # you can add here more. This one gets installed 
 bin_PROGRAMS = 	kspaceduel

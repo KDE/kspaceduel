@@ -9,6 +9,10 @@
 #include "dialogs.h"
 #include "ai.h"
 
+#ifdef sun
+#undef sun
+#endif
+
 class MyMainView:public QWidget
 {
    Q_OBJECT
