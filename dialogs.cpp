@@ -116,7 +116,7 @@ void KeySetup::slotDefault()
 
    for(p=0;p<2;p++)
       for(i=0;i<PlayerKeyNum;i++)
-         keyName[p][i]->setText(i18n(KAccel::keyToString(key[p][i])));
+         keyName[p][i]->setText(KAccel::keyToString(key[p][i]));
 }
 
 void KeySetup::slotOk()
@@ -209,7 +209,7 @@ void KeySetup::keyPressEvent(QKeyEvent *ev)
       if(player<2)
       {
          key[player][waitForKey]=ev->key();
-         keyName[player][waitForKey]->setText(i18n(KAccel::keyToString(ev->key())));
+         keyName[player][waitForKey]->setText(KAccel::keyToString(ev->key()));
       }
       setButtons(-1,-1);
       ev->accept();
