@@ -14,45 +14,17 @@ class QCheckBox;
 #include "defines.h"
 #include "structs.h"
 
-
-class KeySetup:public KDialogBase
-{
-   Q_OBJECT
-public:
-   KeySetup(SOptions *opt,QWidget *parent=0,const char *name=0);
-protected slots:
-   void slotOk();
-   void slotDefault();
-   void keyLeft1();
-   void keyRight1();
-   void keyAcc1();
-   void keyShot1();
-   void keyMine1();
-   void keyLeft2();
-   void keyRight2();
-   void keyAcc2();
-   void keyShot2();
-   void keyMine2();
-protected:
-   virtual void keyPressEvent(QKeyEvent *ev);
-   void setButtons(int pl,int b);
-private:
-   SOptions *options;
-   QLabel *keyName[2][PlayerKeyNum];
-   QPushButton *button[2][PlayerKeyNum];
-   int waitForKey,player,key[2][PlayerKeyNum];
-};
-
-class ConfigSetup:public KDialogBase
+class ConfigSetup:public QWidget
 {
    Q_OBJECT
 public:
    ConfigSetup(SConfig *custom,SOptions *opt,QWidget *parent,const char* name=0);
 
-protected slots:
+public slots:
    void slotOk();
-//   void helpPressed();
    void slotDefault();
+
+protected slots:
    void configSelected(int num);
    void sliderChanged(int val);
 protected:   
@@ -97,47 +69,4 @@ private:
    SOptions *gameOptions,options;
 };
 
-class AiSetup : public KDialogBase
-{
-   Q_OBJECT
-public:
-   AiSetup(SOptions *opt,QWidget *parent,const char *name=0);
-protected slots:
-   void slotOk();
-private:
-   SOptions *options;
-   QComboBox *AiCombo[2];
-   QCheckBox *AiCheck[2];
-   static char DifficultyName[DNUM][10];
-};
-
-class HitpointSetup : public KDialogBase
-{
-   Q_OBJECT
-public:
-   HitpointSetup(SOptions *opt,QWidget *parent,const char*name=0);
-protected slots:
-   void slotOk();
-   void redSliderChanged(int);
-   void blueSliderChanged(int);
-private:
-   int hpred,hpblue;
-   SOptions *options;
-};
-
-class GraphicSetup : public KDialogBase
-{
-   Q_OBJECT
-public:
-   GraphicSetup(SOptions *opt,QWidget *parent,const char *name=0);
-public slots:
-   void refreshSliderChanged(int);
-   void slotOk();
-   void slotDefault();
-private:
-   int refreshtime;
-   SOptions *options;
-   QSlider *refreshslider;
-   QLCDNumber *refreshnumber;
-};
 #endif

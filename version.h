@@ -1,1 +1,1 @@
-#define KSPACEDUEL_VERSION "1.0"
+#define KSPACEDUEL_VERSION "1.1"

@@ -4,66 +4,112 @@
 #include <kkeydialog.h>
 #include <kstdaction.h>
 #include <kaction.h>
-#include <kconfig.h>
-#include <kstatusbar.h>
 #include <kstdgameaction.h>
+#include <qlayout.h>
+#include <kstatusbar.h>
 
 #include "topwidget.h"
 #include "version.h"
 #include "defines.h"
-#include "duelwidget.h"
 #include "mainview.h"
-
+#include "playerinfo.h"
 
 MyTopLevelWidget::MyTopLevelWidget()
 {
-   wview = new DuelWidget( this );
-   initActions( );
+   initGameWidgets();
    initStatusBar( );
+   initActions( );
+   setAutoSaveSettings();
+}
 
-   setCentralWidget(wview);
+void MyTopLevelWidget::initGameWidgets( ){
+   QWidget *w = new QWidget(this);
+   
+   playerinfo[0]=new PlayerInfo(0,w);
+   playerinfo[1]=new PlayerInfo(1,w);
+   playfield=new MyMainView(w);
 
-   readConfig(kapp->config());
+   QBoxLayout *toplayout=new QHBoxLayout(w);
+   toplayout->addWidget(playerinfo[0]);
+   toplayout->addWidget(playfield);
+   toplayout->addWidget(playerinfo[1]);
+   toplayout->activate();
+
+   playfield->setFocusPolicy(QWidget::StrongFocus);
+   playfield->setFocus();
+
+   QObject::connect(playfield,SIGNAL(energy(int,int)),
+                    SLOT(energy(int,int)));
+   QObject::connect(playfield,SIGNAL(hitPoints(int,int)),
+                    SLOT(hitPoints(int,int)));
+   QObject::connect(playfield,SIGNAL(wins(int,int)),SLOT(wins(int,int)));
+   QObject::connect(playfield,SIGNAL(setStatusText(const QString &,int)),
+                    SLOT(setStatusText(const QString &,int)));
+
+   setCentralWidget(w);
+}
+
+void MyTopLevelWidget::energy(int pn,int en)
+{
+   playerinfo[pn]->setEnergy(en);
+}
+
+void MyTopLevelWidget::hitPoints(int pn,int hp)
+{
+   playerinfo[pn]->setHitpoints(hp);
+}
+
+void MyTopLevelWidget::wins(int pn,int w)
+{
+   playerinfo[pn]->setWins(w);
 }
 
 void MyTopLevelWidget::initActions( )
 {
-   KStdGameAction::quit(this, SLOT(quit()), actionCollection());
-   KStdGameAction::gameNew(wview, SLOT(newGame()), actionCollection());
+   KStdGameAction::quit(this, SLOT(close()), actionCollection());
+   KStdGameAction::gameNew(playfield, SLOT(newGame()), actionCollection());
    ( void )new KAction( i18n( "&New Round" ), "spnewround",
-                        CTRL + Key_N, wview, SLOT( newRound( ) ),
+                        CTRL + Key_N, playfield, SLOT( newRound( ) ),
                         actionCollection( ), "new_round" );
    MyMainView::pauseAction =
-       KStdGameAction::pause(wview, SLOT(togglePause()), actionCollection());
+       KStdGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
    MyMainView::pauseAction->setChecked( false );
-   KAction* gameStart = new KAction( i18n( "Start" ), GAME_START_SHORTCUT, wview, SLOT( start( ) ),
-                        actionCollection( ), "game_start" );
+   KAction* gameStart = new KAction( i18n( "Start" ), GAME_START_SHORTCUT,
+	   playfield, SLOT( start( ) ), actionCollection( ), "game_start" );
 
-   KStdAction::keyBindings( this, SLOT( keySetup( ) ), actionCollection( ) );
-   ( void )new KAction( i18n( "Player &Keys..." ), 0, wview,
-                        SLOT( keySetup( ) ), actionCollection( ),
-                        "options_player_keys" );
-   ( void )new KAction( i18n( "&Game..." ), 0, wview, SLOT( gameSetup( ) ),
-                        actionCollection( ), "options_game" );
-   ( void )new KAction( i18n( "&Handicap..." ), 0, wview,
-                        SLOT( hitpointSetup( ) ),
-                        actionCollection( ), "options_handicap" );
-   ( void )new KAction( i18n( "Gra&phics..." ), 0, wview,
-                        SLOT( graphicSetup( ) ),
-                        actionCollection( ), "options_graphics" );
-   ( void )new KAction( i18n( "&AI..." ), 0, wview,
-                        SLOT( aiSetup( ) ),
-                        actionCollection( ), "options_ai" );
-   toolbarAct = KStdAction::showToolbar( this, SLOT( showToolBar( ) ),
-                            actionCollection( ) );
-   statusbarAct = KStdAction::showStatusbar( this, SLOT( showStatusBar( ) ),
-                              actionCollection( ) );
-
-   KStdAction::saveOptions( this, SLOT( saveOptions( ) ),
-                            actionCollection( ) );
+   KStdAction::preferences(playfield, SLOT(gameSetup()), actionCollection());
+  
+   setStandardToolBarMenuEnabled( true );
+   createStandardStatusBarAction();
 
    KAccel* acc = new KAccel(this);
    gameStart->plugAccel(acc);
+  
+   // Default keys
+   actionCollection()->setAutoConnectShortcuts(false);
+   (void)new KAction(i18n("Player 1 Rotate Left"), Key_S, 0, 0,
+		     actionCollection(), "P1KeyLeft");
+   (void)new KAction(i18n("Player 1 Rotate Right"), Key_F, 0, 0,
+		     actionCollection(), "P1KeyRight");
+   (void)new KAction(i18n("Player 1 Accelerate"), Key_E, 0, 0,
+		     actionCollection(), "P1KeyAcc");
+   (void)new KAction(i18n("Player 1 Shot"), Key_D, 0, 0,
+		     actionCollection(), "P1Shot");
+   (void)new KAction(i18n("Player 1 Mine"), Key_A, 0, 0,
+		     actionCollection(), "P1Mine");
+
+   (void)new KAction(i18n("Player 2 Rotate Left"), Key_Left, 0, 0,
+		     actionCollection(), "P2KeyLeft");
+   (void)new KAction(i18n("Player 2 Rotate Right"), Key_Right, 0, 0,
+		     actionCollection(), "P2KeyRight");
+   (void)new KAction(i18n("Player 2 Accelerate"), Key_Up, 0, 0,
+		     actionCollection(), "P2KeyAcc");
+   (void)new KAction(i18n("Player 2 Shot"), Key_Down, 0, 0,
+		     actionCollection(), "P2Shot");
+   (void)new KAction(i18n("Player 2 Mine"), Key_Insert, 0, 0,
+		     actionCollection(), "P2Mine");
+   actionCollection()->setAutoConnectShortcuts(true);
+   playfield->setActionCollection(actionCollection());
 
    createGUI();
 
@@ -74,16 +120,12 @@ void MyTopLevelWidget::initStatusBar( )
    statusBar( )->insertItem(i18n(" paused "),IDS_PAUSE,1);
    statusBar( )->insertItem("   ",IDS_MAIN,1);
    statusBar( )->insertItem("",42,2);
-
-   QObject::connect(wview,SIGNAL(setStatusText(const QString &,int)),
-                    SLOT(setStatusText(const QString &,int)));
-
 }
 
 void MyTopLevelWidget::start()
 {
-   wview->newGame();
-   wview->newRound();
+   playfield->newGame();
+   playfield->newRound();
 }
 
 void MyTopLevelWidget::setStatusText(const QString & str,int id)
@@ -91,57 +133,10 @@ void MyTopLevelWidget::setStatusText(const QString & str,int id)
    statusBar( )->changeItem(str,id);
 }
 
-void MyTopLevelWidget::readConfig(KConfig *cfg)
-{
-   QSize s(640,480);
-   cfg->setGroup("Graphic");
-   resize(cfg->readSizeEntry("WindowSize",&s));
-   wview->readConfig(cfg);
-}
-
-void MyTopLevelWidget::writeConfig(KConfig *cfg)
-{
-   QSize s=size();
-   cfg->setGroup("Graphic");
-   cfg->writeEntry("WindowSize",s);
-}
-
-void MyTopLevelWidget::quit()
-{
-   writeConfig(kapp->config());
-   kapp->quit();
-}
-
-void MyTopLevelWidget::saveOptions()
-{
-   wview->writeConfig();
-}
-
 void MyTopLevelWidget::keySetup()
 {
-   wview->pause();
-   KKeyDialog::configureKeys( actionCollection( ), xmlFile(),
-                              false, this );
-}
-
-void MyTopLevelWidget::showToolBar( )
-{
-   if( toolbarAct->isChecked() )
-      toolBar()->show( );
-   else
-      toolBar()->hide( );
-}
-
-void MyTopLevelWidget::showStatusBar( )
-{
-   if( statusbarAct->isChecked() )
-      statusBar( )->show( );
-   else
-      statusBar( )->hide( );
-}
-
-MyTopLevelWidget::~MyTopLevelWidget( )
-{
+   playfield->pause();
+   KKeyDialog::configureKeys( actionCollection( ), xmlFile(), false, this );
 }
 
 #include "topwidget.moc"

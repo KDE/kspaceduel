@@ -3,34 +3,31 @@
 
 #include <kmainwindow.h>
 
-class KConfig;
-class DuelWidget;
-class KToggleAction;
-
+class PlayerInfo;
+class MyMainView;
 
 class MyTopLevelWidget:public KMainWindow
 {
    Q_OBJECT
 public:
    MyTopLevelWidget();
-   ~MyTopLevelWidget( );
    void start();
-public slots:
+
+private slots:
    void setStatusText(const QString & text,int id);
-   void quit();
-   void saveOptions();
    void keySetup();
-   void showToolBar( );
-   void showStatusBar( );
+   void energy(int pn,int en);
+   void hitPoints(int pn,int hp);
+   void wins(int pn,int w);
+
 protected:
-   void readConfig(KConfig *cfg);
-   void writeConfig(KConfig *cfg);
    void initActions( );
    void initStatusBar( );
+   void initGameWidgets();
+
 private:
-   DuelWidget* wview;
-   KToggleAction *toolbarAct;
-   KToggleAction *statusbarAct;
+   PlayerInfo *playerinfo[2];
+   MyMainView *playfield;
 };
 
 #endif

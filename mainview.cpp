@@ -7,6 +7,7 @@
 #include <qcolor.h>
 #include <qbitmap.h>
 #include <qfile.h>
+#include <qvbox.h>
 
 #include <kapplication.h>
 #include <kaccel.h>
@@ -16,9 +17,12 @@
 #include <kglobal.h>
 #include <kconfig.h>
 #include <kstdgameaction.h>
+#include <kautoconfig.h>
+#include <kiconloader.h>
 
 #include "defines.h"
 #include "ai.h"
+#include "general.h"
 
 KToggleAction *MyMainView::pauseAction = 0;
 
@@ -98,15 +102,23 @@ MyMainView::MyMainView(QWidget *parent)
 
    waitForStart=false;
    textSprite=0;
+   readConfig();
 }
 
 MyMainView::~MyMainView()
 {
    killTimers();
+   writeConfig();
 }
 
-void MyMainView::readConfig(KConfig *cfg)
+void MyMainView::setActionCollection(KActionCollection *a)
 {
+   actionCollection = a;
+}
+
+void MyMainView::readConfig()
+{
+   KConfig *cfg = kapp->config();
    int i;
 
    cfg->setGroup("Game");
@@ -182,20 +194,8 @@ void MyMainView::readConfig(KConfig *cfg)
       cfg->readDoubleNumEntry("powerupEnergyAmount",
                               predefinedConfig[0].powerupEnergyAmount);
 
-   cfg->setGroup("Player2");
-   options.playerKey[1][PlayerKeyLeft]=KAccel::stringToKey(cfg->readEntry("KeyLeft","Left"));
-   options.playerKey[1][PlayerKeyRight]=KAccel::stringToKey(cfg->readEntry("KeyRight","Right"));
-   options.playerKey[1][PlayerKeyAcc]=KAccel::stringToKey(cfg->readEntry("KeyAcc","Up"));
-   options.playerKey[1][PlayerKeyShot]=KAccel::stringToKey(cfg->readEntry("KeyShot","Down"));
-   options.playerKey[1][PlayerKeyMine]=KAccel::stringToKey(cfg->readEntry("KeyMine","Insert"));
-   options.startHitPoints[1]=cfg->readUnsignedNumEntry("startHitPoints",99);
-   cfg->setGroup("Player1");
-   options.playerKey[0][PlayerKeyLeft]=KAccel::stringToKey(cfg->readEntry("KeyLeft","S"));
-   options.playerKey[0][PlayerKeyRight]=KAccel::stringToKey(cfg->readEntry("KeyRight","F"));
-   options.playerKey[0][PlayerKeyAcc]=KAccel::stringToKey(cfg->readEntry("KeyAcc","E"));
-   options.playerKey[0][PlayerKeyShot]=KAccel::stringToKey(cfg->readEntry("KeyShot","D"));
-   options.playerKey[0][PlayerKeyMine]=KAccel::stringToKey(cfg->readEntry("KeyMine","A"));
-   options.startHitPoints[0]=cfg->readUnsignedNumEntry("startHitPoints",99);
+   options.startHitPoints[1]=cfg->readUnsignedNumEntry("startHitPointsP2",99);
+   options.startHitPoints[0]=cfg->readUnsignedNumEntry("startHitPointsP1",99);
 
    if(options.lastConfig<predefinedConfigNum)
       config=modifyConfig(predefinedConfig[options.lastConfig]);
@@ -246,23 +246,9 @@ void MyMainView::writeConfig()
    cfg->writeEntry("powerupShieldAmount",customConfig.powerupShieldAmount);
    cfg->writeEntry("powerupEnergyAmount",customConfig.powerupEnergyAmount);
 
-   cfg->setGroup("Player2");
-   cfg->writeEntry("startHitPoints",options.startHitPoints[1]);
-   cfg->setGroup("Player1");
-   cfg->writeEntry("startHitPoints",options.startHitPoints[0]);
+   cfg->writeEntry("startHitPointsP2",options.startHitPoints[1]);
+   cfg->writeEntry("startHitPointsP1",options.startHitPoints[0]);
 
-   cfg->setGroup("Player2");
-   cfg->writeEntry("KeyLeft",KKey(options.playerKey[1][PlayerKeyLeft]).toStringInternal());
-   cfg->writeEntry("KeyRight",KKey(options.playerKey[1][PlayerKeyRight]).toStringInternal());
-   cfg->writeEntry("KeyAcc",KKey(options.playerKey[1][PlayerKeyAcc]).toStringInternal());
-   cfg->writeEntry("KeyShot",KKey(options.playerKey[1][PlayerKeyShot]).toStringInternal());
-   cfg->writeEntry("KeyMine",KKey(options.playerKey[1][PlayerKeyMine]).toStringInternal());
-   cfg->setGroup("Player1");
-   cfg->writeEntry("KeyLeft",KKey(options.playerKey[0][PlayerKeyLeft]).toStringInternal());
-   cfg->writeEntry("KeyRight",KKey(options.playerKey[0][PlayerKeyRight]).toStringInternal());
-   cfg->writeEntry("KeyAcc",KKey(options.playerKey[0][PlayerKeyAcc]).toStringInternal());
-   cfg->writeEntry("KeyShot",KKey(options.playerKey[0][PlayerKeyShot]).toStringInternal());
-   cfg->writeEntry("KeyMine",KKey(options.playerKey[0][PlayerKeyMine]).toStringInternal());
    cfg->setGroup("Game");
 
    cfg->writeEntry("player1IsAi",options.isAi[0]);
@@ -286,10 +272,6 @@ SConfig MyMainView::modifyConfig(SConfig conf)
 
 void MyMainView::keyPressEvent(QKeyEvent *ev)
 {
-   int key=ev->key();
-   int i,p;
-   bool accept=false;
-
    if((gameEnd<=0.0)&&(gameEnd>-2.0))
    {
       /*
@@ -310,6 +292,35 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
    }
    else
    {
+      KKey key(ev);
+      bool accept=true;
+
+      if(actionCollection->action("P1KeyLeft")->shortcut().contains(key))
+            playerKeyPressed[0][PlayerKeyLeft]=true;
+      else if(actionCollection->action("P2KeyLeft")->shortcut().contains(key))
+            playerKeyPressed[1][PlayerKeyLeft]=true;
+      
+      else if(actionCollection->action("P1KeyRight")->shortcut().contains(key))
+            playerKeyPressed[0][PlayerKeyRight]=true;
+      else if(actionCollection->action("P2KeyRight")->shortcut().contains(key))
+            playerKeyPressed[1][PlayerKeyRight]=true;
+      
+      else if(actionCollection->action("P1KeyAcc")->shortcut().contains(key))
+            playerKeyPressed[0][PlayerKeyAcc]=true;
+      else if(actionCollection->action("P2KeyAcc")->shortcut().contains(key))
+            playerKeyPressed[1][PlayerKeyAcc]=true;
+      
+      else if(actionCollection->action("P1Shot")->shortcut().contains(key))
+            playerKeyPressed[0][PlayerKeyShot]=true;
+      else if(actionCollection->action("P2Shot")->shortcut().contains(key))
+            playerKeyPressed[1][PlayerKeyShot]=true;
+      
+      else if(actionCollection->action("P1Mine")->shortcut().contains(key))
+            playerKeyPressed[0][PlayerKeyMine]=true;
+      else if(actionCollection->action("P2Mine")->shortcut().contains(key))
+            playerKeyPressed[1][PlayerKeyMine]=true;
+      else
+        accept = false;
       /*
       if((key==options.functionKey[FunctionKeyStart])
          && (!functionKeyPressed[FunctionKeyStart]))
@@ -318,33 +329,45 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
          pause();
       }
       */
-      for(p=0;p<2;p++)
-         for(i=0;i<PlayerKeyNum;i++)
-            if(key==options.playerKey[p][i])
-            {
-               playerKeyPressed[p][i]=true;
-               accept=true;
-            }
       if(!accept)
-         ev->ignore();
+	ev->ignore();
    }
-
 }
 
 void MyMainView::keyReleaseEvent(QKeyEvent *ev)
 {
-   int i,p,key=ev->key();
-   bool accept=false;
+   KKey key(ev);
+   bool accept=true;
 
-   for(p=0;p<2;p++)
-      for(i=0;i<PlayerKeyNum;i++)
-         if(key==options.playerKey[p][i])
-         {
-            playerKeyPressed[p][i]=false;
-            accept=true;
-         }
+   if(actionCollection->action("P1KeyLeft")->shortcut().contains(key))
+      playerKeyPressed[0][PlayerKeyLeft]=false;
+   else if(actionCollection->action("P2KeyLeft")->shortcut().contains(key))
+      playerKeyPressed[1][PlayerKeyLeft]=false;
+      
+   else if(actionCollection->action("P1KeyRight")->shortcut().contains(key))
+      playerKeyPressed[0][PlayerKeyRight]=false;
+   else if(actionCollection->action("P2KeyRight")->shortcut().contains(key))
+      playerKeyPressed[1][PlayerKeyRight]=false;
+      
+   else if(actionCollection->action("P1KeyAcc")->shortcut().contains(key))
+      playerKeyPressed[0][PlayerKeyAcc]=false;
+   else if(actionCollection->action("P2KeyAcc")->shortcut().contains(key))
+      playerKeyPressed[1][PlayerKeyAcc]=false;
+      
+   else if(actionCollection->action("P1Shot")->shortcut().contains(key))
+      playerKeyPressed[0][PlayerKeyShot]=false;
+   else if(actionCollection->action("P2Shot")->shortcut().contains(key))
+      playerKeyPressed[1][PlayerKeyShot]=false;
+      
+   else if(actionCollection->action("P1Mine")->shortcut().contains(key))
+      playerKeyPressed[0][PlayerKeyMine]=false;
+   else if(actionCollection->action("P2Mine")->shortcut().contains(key))
+      playerKeyPressed[1][PlayerKeyMine]=false;
+   else
+      accept = false;
+
    if(!accept)
-      ev->ignore();
+     ev->ignore();
 }
 
 void MyMainView::pause()
@@ -998,47 +1021,38 @@ void MyMainView::gameSetup()
 {
    if(!waitForStart)
       pause();
-   ConfigSetup dialog(&customConfig,&options,this);
-   dialog.exec();
-   if(options.lastConfig<predefinedConfigNum)
-      config=modifyConfig(predefinedConfig[options.lastConfig]);
-   else
-      config=modifyConfig(customConfig);
+   
+   settings = new KDialogBase(KDialogBase::IconList, i18n("Configure"), KDialogBase::Default | KDialogBase::Ok | KDialogBase::Apply | KDialogBase::Cancel , KDialogBase::Ok, this, "SettingsDialog", false, WDestructiveClose ); 
+  KAutoConfig *kautoconfig = new KAutoConfig(settings, "KAutoConfig");
+	  
+  connect(settings, SIGNAL(okClicked()), kautoconfig, SLOT(saveSettings()));
+  connect(settings, SIGNAL(okClicked()), this, SLOT(closeSettings()));
+  connect(settings, SIGNAL(applyClicked()), kautoconfig, SLOT(saveSettings()));
+  connect(settings, SIGNAL(defaultClicked()), kautoconfig, SLOT(resetSettings()));
+
+  QVBox *frame = settings->addVBoxPage(i18n("General"),i18n("General Settings"), SmallIcon("package_settings", 32));
+  General *general = new General(frame, "General");
+  kautoconfig->addWidget(general, "Game");
+
+  frame = settings->addVBoxPage(i18n("Game"),i18n("Game Settings"), SmallIcon("kspaceduel", 32));
+  ConfigSetup*cs = new ConfigSetup(&customConfig,&options,frame);
+  connect(settings, SIGNAL(okClicked()), cs, SLOT(slotOk()));
+  connect(settings, SIGNAL(defaultClicked()), cs, SLOT(slotDefault()));
+  connect(settings, SIGNAL(applyClicked()), cs, SLOT(slotOk()));
+  
+  kautoconfig->retrieveSettings();
+  connect(kautoconfig, SIGNAL(settingsChanged()), this, SLOT(readConfig()));
+ 
+  settings->resize(500,400);
+  settings->show();
 }
 
-void MyMainView::keySetup()
-{
-   if(!waitForStart)
-      pause();
-   KeySetup dialog(&options,this);
-   dialog.exec();
-//   QString str = i18n("Press %1 to start/resume")
-//           .arg(KKey::keyToString(options.functionKey[FunctionKeyStart]));
-//   emit(setStatusText(str,IDS_MAIN));
-}
-
-void MyMainView::aiSetup()
-{
-   if(!waitForStart)
-      pause();
-   AiSetup dialog(&options,this);
-   dialog.exec();
-}
-
-void MyMainView::hitpointSetup()
-{
-   if(!waitForStart)
-      pause();
-   HitpointSetup dialog(&options,this);
-   dialog.exec();
-}
-
-void MyMainView::graphicSetup()
-{
-   if(!waitForStart)
-      pause();
-   GraphicSetup dialog(&options,this);
-   dialog.exec();
+void MyMainView::closeSettings(){
+  if(options.lastConfig<predefinedConfigNum)
+    config=modifyConfig(predefinedConfig[options.lastConfig]);
+  else
+    config=modifyConfig(customConfig);
+  settings->close(true);
 }
 
 QCanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern,

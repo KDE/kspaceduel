@@ -6,7 +6,7 @@ SUBDIRS = sprites pics
 bin_PROGRAMS = 	kspaceduel
 
 # Which sources should be compiled for kspaceduel.
-kspaceduel_SOURCES = mathroutines.cpp topwidget.cpp duelwidget.cpp \
+kspaceduel_SOURCES = general.ui mathroutines.cpp topwidget.cpp \
 	playerinfo.cpp sprites.cpp mainview.cpp dialogs.cpp ai.cpp main.cpp
 
 kspaceduel_METASOURCES = AUTO
@@ -16,7 +16,7 @@ kspaceduel_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 kspaceduel_LDADD   = $(LIB_KDEGAMES)
 
 # this option you can leave out. Just, if you use "make dist", you need it
-noinst_HEADERS = mathroutines.h topwidget.h duelwidget.h playerinfo.h \
+noinst_HEADERS = mathroutines.h topwidget.h playerinfo.h \
 		 sprites.h dialogs.h mainview.h defines.h ai.h structs.h \
 		 version.h
 

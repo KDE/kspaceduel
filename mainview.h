@@ -4,13 +4,14 @@
 #include <qwidget.h>
 #include <qimage.h>
 
-class KConfig;
 class KToggleAction;
+class KActionCollection;
 #include <krandomsequence.h>
 
 #include "sprites.h"
 #include "dialogs.h"
 class Ai;
+class KDialogBase;
 
 #ifdef sun
 #undef sun
@@ -22,9 +23,9 @@ class MyMainView:public QWidget
 public:
    MyMainView(QWidget *parent=0);
    ~MyMainView();
-   void readConfig(KConfig *cfg);
 
    static KToggleAction *pauseAction;
+   void setActionCollection(KActionCollection *a);
 
 public slots:
    void newRound();
@@ -35,11 +36,9 @@ public slots:
    void start();
    void stop();
    void gameSetup();
-   void keySetup();
+   void closeSettings();
+   void readConfig();
    void writeConfig();
-   void aiSetup();
-   void hitpointSetup();
-   void graphicSetup();
 signals:
    void hitPoints(int pn,int hp);
    void energy(int pn,int en);
@@ -61,6 +60,9 @@ protected:
    void calculatePowerups();
    void collisions();
 private:
+   KActionCollection *actionCollection;
+   KDialogBase *settings;
+
    QCanvas field;
    QCanvasView view;
 
@@ -100,9 +102,6 @@ private:
 //Ai
    Ai *ai[2];
 
-
 };
-
-
 
 #endif
