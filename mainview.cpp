@@ -9,6 +9,8 @@
 #include <kapp.h>
 #include <kaccel.h>
 #include <klocale.h>
+#include <kstddirs.h>
+#include <kglobal.h>
 
 #include <stdlib.h>
 #include <time.h>
@@ -17,7 +19,7 @@
 
 MyMainView::MyMainView(QWidget *parent, const char *name)
       :QWidget(parent,name),
-       field((const char *)(MV_PREFIX+MV_BACKGROUND),
+       field((const char *)(locate("appdata", MV_BACKGROUND)),
              DEF_WIDTH,DEF_HEIGHT,10,200),
        view(&field,this)
 {
@@ -35,47 +37,48 @@ MyMainView::MyMainView(QWidget *parent, const char *name)
 
 
    QwSpritePixmapSequence *sunsequence
-      =new QwSpritePixmapSequence(MV_PREFIX+MV_SUN_PPM,
-                                  MV_PREFIX+MV_SUN_PBM);
+      =new QwSpritePixmapSequence(locate("appdata", MV_SUN_PPM),
+                                  locate("appdata", MV_SUN_PBM));
    sun=new SunSprite(sunsequence);
    sun->moveTo(width()/2-1,height()/2-1);
    sun->show();
 
-   explosionsequence=new QwSpritePixmapSequence(MV_PREFIX+MV_EXPLOSION_PPM,
-                                                MV_PREFIX+MV_EXPLOSION_PBM,31);
+   QString tmp = KGlobal::dirs()->findResourceDir("appdata", QString().sprintf(MV_EXPLOSION_PPM, 0));
+   explosionsequence=new QwSpritePixmapSequence(tmp + MV_EXPLOSION_PPM,
+                                                tmp + MV_EXPLOSION_PBM,31);
    mineexplosionsequence=
-      new QwSpritePixmapSequence(MV_PREFIX+MV_MINEEX_PPM,
-                                 MV_PREFIX+MV_MINEEX_PBM,18);
+      new QwSpritePixmapSequence(tmp + MV_MINEEX_PPM,
+                                 tmp + MV_MINEEX_PBM,18);
 
-   shipsequence[0]=new QwSpritePixmapSequence(MV_PREFIX+MV_SHIP1_PPM,
-                                              MV_PREFIX+MV_SHIP1_PBM,
+   shipsequence[0]=new QwSpritePixmapSequence(tmp + MV_SHIP1_PPM,
+                                              tmp + MV_SHIP1_PBM,
                                               ROTNUM);
-   shipsequence[1]=new QwSpritePixmapSequence(MV_PREFIX+MV_SHIP2_PPM,
-                                              MV_PREFIX+MV_SHIP2_PBM,
+   shipsequence[1]=new QwSpritePixmapSequence(tmp + MV_SHIP2_PPM,
+                                              tmp + MV_SHIP2_PBM,
                                               ROTNUM);
    ship[0]=new ShipSprite(shipsequence[0],0);
    ship[1]=new ShipSprite(shipsequence[1],1);
 
-   bulletsequence[0]=new QwSpritePixmapSequence(MV_PREFIX+MV_BULLET1_PPM,
-                                                MV_PREFIX+MV_BULLET1_PBM);
-   bulletsequence[1]=new QwSpritePixmapSequence(MV_PREFIX+MV_BULLET2_PPM,
-                                                MV_PREFIX+MV_BULLET2_PBM);
-   minesequence[0]=new QwSpritePixmapSequence(MV_PREFIX+MV_MINE1_PPM,
-                                              MV_PREFIX+MV_MINE1_PBM,2);
-   minesequence[1]=new QwSpritePixmapSequence(MV_PREFIX+MV_MINE2_PPM,
-                                              MV_PREFIX+MV_MINE2_PBM,2);
+   bulletsequence[0]=new QwSpritePixmapSequence(locate("appdata", MV_BULLET1_PPM),
+                                                locate("appdata", MV_BULLET1_PBM));
+   bulletsequence[1]=new QwSpritePixmapSequence(locate("appdata", MV_BULLET2_PPM),
+                                                locate("appdata", MV_BULLET2_PBM));
+   minesequence[0]=new QwSpritePixmapSequence(tmp + MV_MINE1_PPM,
+                                              tmp + MV_MINE1_PBM,2);
+   minesequence[1]=new QwSpritePixmapSequence(tmp + MV_MINE2_PPM,
+                                              tmp + MV_MINE2_PBM,2);
    powerupsequence[PowerupSprite::PowerupMine]
-      =new QwSpritePixmapSequence(MV_PREFIX+MV_POWERMINE_PPM,
-                                  MV_PREFIX+MV_POWERMINE_PBM);
+      =new QwSpritePixmapSequence(locate("appdata", MV_POWERMINE_PPM),
+                                  locate("appdata", MV_POWERMINE_PBM));
    powerupsequence[PowerupSprite::PowerupBullet]
-      =new QwSpritePixmapSequence(MV_PREFIX+MV_POWERBULLET_PPM,
-                                  MV_PREFIX+MV_POWERBULLET_PBM);
+      =new QwSpritePixmapSequence(locate("appdata", MV_POWERBULLET_PPM),
+                                  locate("appdata", MV_POWERBULLET_PBM));
    powerupsequence[PowerupSprite::PowerupShield]
-      =new QwSpritePixmapSequence(MV_PREFIX+MV_POWERSHIELD_PPM,
-                                  MV_PREFIX+MV_POWERSHIELD_PBM);
+      =new QwSpritePixmapSequence(locate("appdata", MV_POWERSHIELD_PPM),
+                                  locate("appdata", MV_POWERSHIELD_PBM));
    powerupsequence[PowerupSprite::PowerupEnergy]
-      =new QwSpritePixmapSequence(MV_PREFIX+MV_POWERENERGY_PPM,
-                                  MV_PREFIX+MV_POWERENERGY_PBM);
+      =new QwSpritePixmapSequence(locate("appdata", MV_POWERENERGY_PPM),
+                                  locate("appdata", MV_POWERENERGY_PBM));
    
    for(i=0;i<2;i++)
    {

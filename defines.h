@@ -1,5 +1,3 @@
-#include <kapp.h>
-
 #define IDS_PAUSE 1
 #define IDS_MAIN 2
 
@@ -15,7 +13,6 @@
 
 #define ROTNUM 64
 
-#define MV_PREFIX kapp->kde_datadir()+"/kspaceduel/"
 #define MV_BACKGROUND "sprites/backgr.png"
 
 #define MV_SHIP1_PPM "sprites/ship1/ship%02d.ppm"

@@ -2,6 +2,7 @@
 #include <qpixmap.h>
 #include <qtooltip.h>
 #include <klocale.h>
+#include <kstddirs.h>
 
 #include "defines.h"
 
@@ -26,19 +27,22 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent,const char *name)
    QToolTip::add(&lwins,i18n("Wins"));
 
    lplayer.setGeometry(5,5,35,35);
+   lplayer.setIndent(0);
    lenergy.setGeometry(5,80,35,35);
+   lenergy.setIndent(0);
    lwins.setGeometry(5,155,35,35);
+   lwins.setIndent(0);
 
    for(i=0;i<4;i++)
    {
       str.sprintf("sprites/playerinfo/ship%i%i.pnm",pnr+1,i);
-      pix[i]=new QPixmap(MV_PREFIX+str);
+      pix[i]=new QPixmap(locate("appdata", str));
    }
 
    lplayer.setPixmap(*pix[0]);
    currentPixmap=0;
-   lenergy.setPixmap(QPixmap(MV_PREFIX+"sprites/playerinfo/energy.pnm"));
-   lwins.setPixmap(QPixmap(MV_PREFIX+"sprites/playerinfo/win.pnm"));
+   lenergy.setPixmap(QPixmap(locate("appdata", "sprites/playerinfo/energy.pnm")));
+   lwins.setPixmap(QPixmap(locate("appdata", "sprites/playerinfo/win.pnm")));
 
    hitpoints.setGeometry(9,45,26,26);
    energy.setGeometry(9,120,26,26);

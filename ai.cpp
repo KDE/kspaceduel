@@ -7,7 +7,7 @@
 #include "defines.h"
 #include "mathroutines.h"
 
-int Ai::calcFrameIncrement[DNUM]={15,10,6,2};
+int Ai::calcFrameIncrement[DNUM]={15,8,6,2};
 int Ai::calcPositionNumber[DNUM]={10,15,20,60};
 int Ai::calcShotDirections[DNUM]={4,7,10,12};
 int Ai::calcCollisions[DNUM]={30,15,10,10};
