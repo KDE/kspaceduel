@@ -1,6 +1,7 @@
 #include <kapp.h>
 #include <klocale.h>
 #include <kcmdlineargs.h>
+#include <kaboutdata.h>
 
 #include "version.h"
 #include "topwidget.h"
@@ -9,7 +10,11 @@ static const char *description = I18N_NOOP("KDE Space Game");
 
 int main(int argc,char **argv)
 {
-   KCmdLineArgs::init(argc,argv,"kspaceduel", description,  KSPACEDUEL_VERSION );
+   KAboutData aboutData( "kspaceduel", I18N_NOOP("KSpaceDuel"), 
+      KSPACEDUEL_VERSION, description, KAboutData::GPL, 
+      "(c) 1998, Andreas Zehender");
+   aboutData.addAuthor("Andreas Zehender",0, "azehende@ba-stuttgart.de");
+   KCmdLineArgs::init( argc, argv, &aboutData );
 
    KApplication myapplication;
    MyTopLevelWidget top;
