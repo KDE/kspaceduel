@@ -677,7 +677,7 @@ linkend="ai">AI</link>.</para></listitem>
 <row><entry>Rotate Left</entry><entry>S</entry><entry>Left Arrow</entry></row>
 <row><entry>Rotate Right</entry><entry>F</entry><entry>Right Arrow</entry></row>
 <row><entry>Accelerate</entry><entry>E</entry><entry>Up Arrow</entry></row>
-<row><entry>Shot</entry><entry>E</entry><entry>Down Arrow</entry></row>
+<row><entry>Shot</entry><entry>D</entry><entry>Down Arrow</entry></row>
 <row><entry>Mines</entry><entry>A</entry><entry>Insert</entry></row>
 </tbody>
 </tgroup>
