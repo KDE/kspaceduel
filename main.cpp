@@ -5,7 +5,7 @@
 #include "version.h"
 #include "topwidget.h"
 
-static const char *description = I18N_NOOP("KDE Space Game");
+static const char description[] = I18N_NOOP("KDE Space Game");
 
 int main(int argc,char **argv)
 {
