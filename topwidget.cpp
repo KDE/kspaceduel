@@ -84,27 +84,39 @@ void MyTopLevelWidget::initActions( )
 
    // Default keys
    actionCollection()->setAutoConnectShortcuts(false);
-   (void)new KAction(i18n("Player 1 Rotate Left"), Key_S, 0, 0,
-		     actionCollection(), "P1KeyLeft");
-   (void)new KAction(i18n("Player 1 Rotate Right"), Key_F, 0, 0,
+   KAction* ac;
+   ac = new KAction(i18n("Player 1 Rotate Left"), Key_S, 0, 0,
+		    actionCollection(), "P1KeyLeft");
+   ac->setEnabled( false );
+   ac = new KAction(i18n("Player 1 Rotate Right"), Key_F, 0, 0,
 		     actionCollection(), "P1KeyRight");
-   (void)new KAction(i18n("Player 1 Accelerate"), Key_E, 0, 0,
-		     actionCollection(), "P1KeyAcc");
-   (void)new KAction(i18n("Player 1 Shot"), Key_D, 0, 0,
-		     actionCollection(), "P1Shot");
-   (void)new KAction(i18n("Player 1 Mine"), Key_A, 0, 0,
-		     actionCollection(), "P1Mine");
+   ac->setEnabled( false );
+   ac = new KAction(i18n("Player 1 Accelerate"), Key_E, 0, 0,
+		    actionCollection(), "P1KeyAcc");
+   ac->setEnabled( false );
+   ac = new KAction(i18n("Player 1 Shot"), Key_D, 0, 0,
+		    actionCollection(), "P1Shot");
+   ac->setEnabled( false );
+   ac = new KAction(i18n("Player 1 Mine"), Key_A, 0, 0,
+		    actionCollection(), "P1Mine");
+   ac->setEnabled( false );
 
-   (void)new KAction(i18n("Player 2 Rotate Left"), Key_Left, 0, 0,
-		     actionCollection(), "P2KeyLeft");
-   (void)new KAction(i18n("Player 2 Rotate Right"), Key_Right, 0, 0,
-		     actionCollection(), "P2KeyRight");
-   (void)new KAction(i18n("Player 2 Accelerate"), Key_Up, 0, 0,
-		     actionCollection(), "P2KeyAcc");
-   (void)new KAction(i18n("Player 2 Shot"), Key_Down, 0, 0,
-		     actionCollection(), "P2Shot");
-   (void)new KAction(i18n("Player 2 Mine"), Key_Insert, 0, 0,
-		     actionCollection(), "P2Mine");
+   ac = new KAction(i18n("Player 2 Rotate Left"), Key_Left, 0, 0,
+		    actionCollection(), "P2KeyLeft");
+   ac->setEnabled( false );
+   ac = new KAction(i18n("Player 2 Rotate Right"), Key_Right, 0, 0,
+		    actionCollection(), "P2KeyRight");
+   ac->setEnabled( false );
+   ac = new KAction(i18n("Player 2 Accelerate"), Key_Up, 0, 0,
+		    actionCollection(), "P2KeyAcc");
+   ac->setEnabled( false );
+   ac = new KAction(i18n("Player 2 Shot"), Key_Down, 0, 0,
+		    actionCollection(), "P2Shot");
+   ac->setEnabled( false );
+   ac = new KAction(i18n("Player 2 Mine"), Key_Insert, 0, 0,
+		    actionCollection(), "P2Mine");
+   ac->setEnabled( false );
+
    actionCollection()->setAutoConnectShortcuts(true);
    playfield->setActionCollection(actionCollection());
 
@@ -133,7 +145,7 @@ void MyTopLevelWidget::setStatusText(const QString & str,int id)
 void MyTopLevelWidget::keySetup()
 {
    playfield->pause();
-   KKeyDialog::configure( actionCollection( ), this, false );
+   KKeyDialog::configure( actionCollection( ), this, true );
 }
 
 #include "topwidget.moc"
