@@ -1,10 +1,9 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="kpovmodeler" version="4">
+<kpartgui name="kspaceduel" version="5">
+
 <MenuBar>
    <Menu name="game"><text>&amp;Game</text>
-      <Action name="new_game" append="new_merge"/>
       <Action name="new_round" append="new_merge"/>
-      <Action name="pause" append="misc_merge"/>
    </Menu>
    <Menu name="settings"><text>&amp;Settings</text>
       <Action name="options_player_keys" append="save_merge"/>
@@ -16,8 +15,9 @@
 </MenuBar>
 
 <Toolbar name="mainToolBar"><text>Main Toolbar</text>
-   <Action name="new_game"/>
+   <Action name="game_new"/>
    <Action name="new_round"/>
-   <Action name="pause"/>
+   <Action name="game_pause"/>
 </Toolbar>
+
 </kpartgui>

@@ -11,7 +11,7 @@ DuelWidget::DuelWidget(QWidget *parent,const char *name)
    playerinfo[0]=new PlayerInfo(0,this);
    playerinfo[1]=new PlayerInfo(1,this);
    playfield=new MyMainView(this);
-   
+
    QBoxLayout *toplayout=new QHBoxLayout(this);
    toplayout->addWidget(playerinfo[0]);
    toplayout->addWidget(playfield);

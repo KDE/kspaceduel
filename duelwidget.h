@@ -31,7 +31,7 @@ public slots:
    void wins(int pn,int w);
 private slots:
    void slotStatusText(const QString &str, int id);
-signals:   
+signals:
    void setStatusText(const QString & str,int id);
 private:
    MyMainView *playfield;

@@ -14,7 +14,7 @@ kspaceduel_METASOURCES = AUTO
 EXTRA_DIST = kspaceduel.desktop kspaceduel.xpm mini-kspaceduel.xpm
 
 kspaceduel_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-kspaceduel_LDADD   = $(LIB_KDEUI)
+kspaceduel_LDADD   = $(LIB_KDEGAMES)
 
 # this option you can leave out. Just, if you use "make dist", you need it
 noinst_HEADERS = mathroutines.h topwidget.h duelwidget.h playerinfo.h \

@@ -2,15 +2,17 @@
 #define __MY_TOP_WIDGET_H
 
 #include <kmainwindow.h>
-#include <kaction.h>
+
 class KConfig;
-#include "duelwidget.h"
+class DuelWidget;
+class KToggleAction;
+
 
 class MyTopLevelWidget:public KMainWindow
 {
    Q_OBJECT
 public:
-   MyTopLevelWidget(const char *name=0);
+   MyTopLevelWidget();
    ~MyTopLevelWidget( );
    void start();
 public slots:

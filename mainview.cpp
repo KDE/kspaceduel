@@ -1,10 +1,12 @@
 #include "mainview.h"
 #include "topwidget.h"
+
 #include <qpixmap.h>
 #include <qpoint.h>
 #include <math.h>
 #include <qcolor.h>
 #include <qbitmap.h>
+#include <qfile.h>
 
 #include <kapplication.h>
 #include <kaccel.h>
@@ -13,15 +15,17 @@
 #include <kstandarddirs.h>
 #include <kglobal.h>
 #include <kconfig.h>
-#include <qfile.h>
+#include <kstdgameaction.h>
 
 #include "defines.h"
 #include "ai.h"
 
-MyMainView::MyMainView(QWidget *parent, const char *name)
-      :QWidget(parent,name),
-       field(DEF_WIDTH,DEF_HEIGHT),
-       view(&field,this)
+KToggleAction *MyMainView::pauseAction = 0;
+
+MyMainView::MyMainView(QWidget *parent)
+    :QWidget(parent),
+    field(DEF_WIDTH,DEF_HEIGHT),
+    view(&field,this)
 {
    int i,p;
 
@@ -32,7 +36,7 @@ MyMainView::MyMainView(QWidget *parent, const char *name)
    view.setResizePolicy(QScrollView::AutoOne);
    view.setHScrollBarMode(QScrollView::AlwaysOff);
    view.setVScrollBarMode(QScrollView::AlwaysOff);
-   
+
    for(p=0;p<2;p++)
    {
       for(i=0;i<PlayerKeyNum;i++)
@@ -77,7 +81,7 @@ MyMainView::MyMainView(QWidget *parent, const char *name)
       = loadOldPixmapSequence( tmp + MV_POWERSHIELD_PPM, tmp + MV_POWERSHIELD_PBM );
    powerupsequence[PowerupSprite::PowerupEnergy]
       = loadOldPixmapSequence( tmp + MV_POWERENERGY_PPM, tmp + MV_POWERENERGY_PBM );
-   
+
    for(i=0;i<2;i++)
    {
       // ship[i]->setBoundsAction(QwRealMobileSprite::Wrap);
@@ -88,7 +92,7 @@ MyMainView::MyMainView(QWidget *parent, const char *name)
       mines[i]->setAutoDelete(true);
 
    }
-      
+
    explosions.setAutoDelete(true);
    powerups.setAutoDelete(true);
 
@@ -104,11 +108,11 @@ MyMainView::~MyMainView()
 void MyMainView::readConfig(KConfig *cfg)
 {
    int i;
-   
+
    cfg->setGroup("Game");
    options.refreshTime=cfg->readUnsignedNumEntry("refreshTime",33);
    options.lastConfig=cfg->readUnsignedNumEntry("lastConfig",0);
-   
+
    customConfig.gamespeed=cfg->readDoubleNumEntry("gamespeed",
                                                   predefinedConfig[0].gamespeed);
 
@@ -192,7 +196,7 @@ void MyMainView::readConfig(KConfig *cfg)
    options.playerKey[0][PlayerKeyShot]=KAccel::stringToKey(cfg->readEntry("KeyShot","D"));
    options.playerKey[0][PlayerKeyMine]=KAccel::stringToKey(cfg->readEntry("KeyMine","A"));
    options.startHitPoints[0]=cfg->readUnsignedNumEntry("startHitPoints",99);
-   
+
    if(options.lastConfig<predefinedConfigNum)
       config=modifyConfig(predefinedConfig[options.lastConfig]);
    else
@@ -211,7 +215,7 @@ void MyMainView::writeConfig()
    cfg->writeEntry("lastConfig",options.lastConfig);
    cfg->writeEntry("gamespeed",customConfig.gamespeed);
    cfg->writeEntry("timeAfterKill",options.timeAfterKill);
-      
+
    cfg->writeEntry("gravity",customConfig.gravity);
    cfg->writeEntry("acceleration",customConfig.acc);
    cfg->writeEntry("bulletDamage",customConfig.bulletDamage);
@@ -231,7 +235,7 @@ void MyMainView::writeConfig()
    cfg->writeEntry("mineFuel",customConfig.mineFuel);
    cfg->writeEntry("shotEnergyNeed",customConfig.shotEnergyNeed);
    cfg->writeEntry("mineEnergyNeed",customConfig.mineEnergyNeed);
-      
+
    cfg->writeEntry("startPosX",customConfig.startPosX);
    cfg->writeEntry("startPosY",customConfig.startPosY);
    cfg->writeEntry("startVelX",customConfig.startVelX);
@@ -241,7 +245,7 @@ void MyMainView::writeConfig()
    cfg->writeEntry("powerupRefreshTime",customConfig.powerupRefreshTime);
    cfg->writeEntry("powerupShieldAmount",customConfig.powerupShieldAmount);
    cfg->writeEntry("powerupEnergyAmount",customConfig.powerupEnergyAmount);
-      
+
    cfg->setGroup("Player2");
    cfg->writeEntry("startHitPoints",options.startHitPoints[1]);
    cfg->setGroup("Player1");
@@ -347,9 +351,6 @@ void MyMainView::pause()
 {
    if( !waitForStart )
    {
-      KToggleAction* pauseAction = ( KToggleAction* )
-         ( (KMainWindow* )parent( )->parent( ) )
-         ->actionCollection( )->action( "pause" );
       pauseAction->setChecked( true );
 
       waitForStart=true;
@@ -368,10 +369,6 @@ void MyMainView::resume()
 
 void MyMainView::start( )
 {
-   KActionCollection* collection = ( ( KMainWindow* )parent( )->parent( ) )
-      ->actionCollection( );
-   KToggleAction* pauseAction;
-
    if( ( gameEnd <= 0.0 ) && ( gameEnd > -2.0 ) )
    {
       newRound( );
@@ -382,7 +379,6 @@ void MyMainView::start( )
       timerID=startTimer(options.refreshTime);
       emit(setStatusText("",IDS_PAUSE));
       emit(setStatusText("",IDS_MAIN));
-      pauseAction = ( KToggleAction* )collection->action( "pause" );
       pauseAction->setEnabled( true );
       pauseAction->setChecked( false );
    }
@@ -390,9 +386,6 @@ void MyMainView::start( )
 
 void MyMainView::stop()
 {
-   KToggleAction* pauseAction = ( KToggleAction* )
-      ( (KMainWindow* )parent( )->parent( ) )
-      ->actionCollection( )->action( "pause" );
    pauseAction->setEnabled( false );
    pauseAction->setChecked( false );
 
@@ -513,9 +506,7 @@ void MyMainView::newRound()
    field.update();
 
    QString str = i18n("Press %1 to start")
-      .arg( ( (KMainWindow*)(parent()->parent()) )
-                                ->actionCollection()->action("game_start")
-                                ->shortcut().toString() );
+                 .arg(KShortcut(GAME_START_SHORTCUT).toString());
    emit(setStatusText(str,IDS_MAIN));
    emit( setStatusText( "", IDS_PAUSE ) );
    stop( );
@@ -580,9 +571,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
                emit(wins(0,w));
             }
             QString str = i18n("Press %1 for new round")
-               .arg(( ( KMainWindow* )( parent( )->parent( ) ) )
-                                         ->actionCollection( )->action( "game_start" )
-                                         ->shortcut( ).toString() );
+                          .arg(KShortcut(GAME_START_SHORTCUT).toString());
             emit(setStatusText(str,IDS_MAIN));
             stop( );
          }
@@ -1052,7 +1041,7 @@ void MyMainView::graphicSetup()
    dialog.exec();
 }
 
-QCanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern, 
+QCanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern,
                             const QString& maskpattern, int framecount)
 {
    int image;
@@ -1063,7 +1052,7 @@ QCanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern
    QBitmap *bitmap;
    int hotx=0, hoty=0;
    QPoint *point;
-      
+
    for( image=0; image < framecount; image++ )
    {
       // #### Why is this a QString??
@@ -1076,7 +1065,7 @@ QCanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern
          char line[128];
          file.readLine( line, 128 ); // Skip "P6"/"P3" line
          file.readLine( line, 128 );
-         
+
          while ( line[0] == '#' )
          {
             // Comment line - see if it has additional parameters

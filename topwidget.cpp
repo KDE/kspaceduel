@@ -5,16 +5,18 @@
 #include <kstdaction.h>
 #include <kaction.h>
 #include <kconfig.h>
+#include <kstatusbar.h>
+#include <kstdgameaction.h>
 
 #include "topwidget.h"
 #include "version.h"
 #include "defines.h"
-#include <kstatusbar.h>
+#include "duelwidget.h"
+#include "mainview.h"
 
-MyTopLevelWidget::MyTopLevelWidget(const char* name)
-      :KMainWindow(0, name)
+
+MyTopLevelWidget::MyTopLevelWidget()
 {
-   setCaption("");
    wview = new DuelWidget( this );
    initActions( );
    initStatusBar( );
@@ -26,24 +28,17 @@ MyTopLevelWidget::MyTopLevelWidget(const char* name)
 
 void MyTopLevelWidget::initActions( )
 {
-   KToggleAction* newAct;
-   
-   ( void )new KAction( i18n( "&Quit" ), "exit", CTRL + Key_Q, this,
-                        SLOT( quit( ) ), actionCollection( ), "game_quit" );
-
-   ( void )new KAction( i18n( "New &Game" ), "spnewgame", 
-                        CTRL + Key_G, wview, SLOT( newGame( ) ),
-                        actionCollection( ), "new_game" );
+   KStdGameAction::quit(this, SLOT(quit()), actionCollection());
+   KStdGameAction::gameNew(wview, SLOT(newGame()), actionCollection());
    ( void )new KAction( i18n( "&New Round" ), "spnewround",
                         CTRL + Key_N, wview, SLOT( newRound( ) ),
                         actionCollection( ), "new_round" );
-   newAct = new KToggleAction( i18n( "&Pause" ), "sppausegame", 
-                               CTRL + Key_P, wview, SLOT( togglePause( ) ),
-                               actionCollection( ), "pause" );
-   newAct->setChecked( false );
-   KAction* gameStart = new KAction( i18n( "Start" ), Key_Space, wview, SLOT( start( ) ),
+   MyMainView::pauseAction =
+       KStdGameAction::pause(wview, SLOT(togglePause()), actionCollection());
+   MyMainView::pauseAction->setChecked( false );
+   KAction* gameStart = new KAction( i18n( "Start" ), GAME_START_SHORTCUT, wview, SLOT( start( ) ),
                         actionCollection( ), "game_start" );
-   
+
    KStdAction::keyBindings( this, SLOT( keySetup( ) ), actionCollection( ) );
    ( void )new KAction( i18n( "Player &Keys..." ), 0, wview,
                         SLOT( keySetup( ) ), actionCollection( ),
@@ -70,7 +65,7 @@ void MyTopLevelWidget::initActions( )
    KAccel* acc = new KAccel(this);
    gameStart->plugAccel(acc);
 
-   createGUI( "kspaceduelui.rc" );
+   createGUI();
 
 }
 
@@ -126,7 +121,7 @@ void MyTopLevelWidget::keySetup()
 {
    wview->pause();
    KKeyDialog::configureKeys( actionCollection( ), xmlFile(),
-                              false, this );   
+                              false, this );
 }
 
 void MyTopLevelWidget::showToolBar( )

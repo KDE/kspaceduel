@@ -1,3 +1,6 @@
+#include <qnamespace.h>
+
+
 #define IDS_PAUSE 1
 #define IDS_MAIN 2
 
@@ -60,3 +63,4 @@
 #define SHOTDIST 14
 #define EPSILON 0.1
 
+#define GAME_START_SHORTCUT Qt::Key_Space

@@ -5,7 +5,9 @@
 #include <qimage.h>
 
 class KConfig;
+class KToggleAction;
 #include <krandomsequence.h>
+
 #include "sprites.h"
 #include "dialogs.h"
 class Ai;
@@ -18,11 +20,13 @@ class MyMainView:public QWidget
 {
    Q_OBJECT
 public:
-   MyMainView(QWidget *parent=0, const char *name=0);
+   MyMainView(QWidget *parent=0);
    ~MyMainView();
    void readConfig(KConfig *cfg);
-   
-public slots:   
+
+   static KToggleAction *pauseAction;
+
+public slots:
    void newRound();
    void newGame();
    void togglePause( );
@@ -41,7 +45,7 @@ signals:
    void energy(int pn,int en);
    void wins(int pn,int w);
    void setStatusText(const QString & str,int id);
-   
+
 protected:
    virtual void resizeEvent(QResizeEvent *event);
    virtual void timerEvent(QTimerEvent *event);
@@ -59,7 +63,7 @@ protected:
 private:
    QCanvas field;
    QCanvasView view;
-   
+
    SOptions options;
    SConfig customConfig,config;
 
@@ -70,7 +74,7 @@ private:
    bool waitForStart;
    double gameEnd;
    double timeToNextPowerup;
-   
+
 // sprites
    QPtrList<QImage> shipImages;
    QPtrList<QPoint> points;
@@ -81,7 +85,7 @@ private:
    QCanvasPixmapArray *minesequence[2];
    QCanvasPixmapArray *mineexplosionsequence;
    QCanvasPixmapArray *powerupsequence[PowerupSprite::PowerupNum];
-   
+
 
    ShipSprite *ship[2];
    SunSprite *sun;
@@ -95,8 +99,8 @@ private:
 
 //Ai
    Ai *ai[2];
-   
-   
+
+
 };
 
 
