@@ -48,6 +48,7 @@ protected:
    void moveBullets();
    void moveMines();
    void moveExplosions();
+   void calculatePoverups();
    void collisions();
 private:
    QwImageSpriteField field;
@@ -63,6 +64,7 @@ private:
    bool minePut[2];
    bool waitForStart;
    double gameEnd;
+   double timeToNextPoverup;
    
 // sprites
    QList<QImage> shipImages;
@@ -73,6 +75,7 @@ private:
    QwSpritePixmapSequence *explosionsequence;
    QwSpritePixmapSequence *minesequence[2];
    QwSpritePixmapSequence *mineexplosionsequence;
+   QwSpritePixmapSequence *poverupsequence[PoverupSprite::PoverupNum];
    
 
    ShipSprite *ship[2];
@@ -81,6 +84,7 @@ private:
    QList<BulletSprite> *bullets[2];
    QList<MineSprite> *mines[2];
    QList<ExplosionSprite> explosions;
+   QList<PoverupSprite> poverups;
 //Ai
    Ai *ai[2];
 };

@@ -1,6 +1,5 @@
 #include <math.h>
 #include <stdlib.h>
-#include <time.h>
 
 #include "ai.h"
 #include "sprites.h"
@@ -8,20 +7,17 @@
 #include "defines.h"
 #include "mathroutines.h"
 
-int Ai::calcFrameIncrement[DNUM]={10,5,3,2};
-int Ai::calcPositionNumber[DNUM]={15,30,40,80};
+int Ai::calcFrameIncrement[DNUM]={15,10,6,2};
+int Ai::calcPositionNumber[DNUM]={10,15,20,60};
 int Ai::calcShotDirections[DNUM]={4,7,10,12};
 int Ai::calcCollisions[DNUM]={30,15,10,10};
 int Ai::calcNextShot[DNUM]={300,200,90,60};
-double Ai::calcShotRandom[DNUM]={M_PI/4,M_PI/18,M_PI/36,0.0};
 
 Ai::Ai(int pn,ShipSprite* s[2],QList<BulletSprite>* b[2],
        QList<MineSprite>* m[2],SConfig *c,SOptions *o)
 {
    int i;
 
-   srand(time(NULL));
-   
    playerNumber=pn;
    opponentNumber=(pn+1)%2;
    cfg=c;
@@ -81,8 +77,11 @@ void Ai::think()
    calculateNextPositions();
    if(opt->aiDifficulty[playerNumber]!=DTRAINEE)
       testForHits();
-   tryShots();
-   shotScores();
+   if(waitShot<=0)
+   {
+      tryShots();
+      shotScores();
+   }
    chooseAction();
 
 
@@ -226,7 +225,8 @@ void Ai::tryShots()
    frameNum=(int)(M_PI/(frameIncrement*cfg->rotationSpeed));
 
        //if too much bullets are on the playfield, no shot is tried
-   if(bullets[playerNumber]->count()<cfg->maxBullets)
+   if(bullets[playerNumber]->count() <
+      (cfg->maxBullets+ship[playerNumber]->getBulletPoverups()))
    {
       for(f=0;f<=frameNum;f++)
       {

@@ -39,6 +39,15 @@
 #define MV_MINEEX_PPM "sprites/explosion/mineex%02d.ppm"
 #define MV_MINEEX_PBM "sprites/explosion/mineex%02d.pbm"
 
+#define MV_POVERBULLET_PPM "sprites/poverups/pbullet.ppm"
+#define MV_POVERBULLET_PBM "sprites/poverups/pbullet.pbm"
+#define MV_POVERMINE_PPM "sprites/poverups/pmine.ppm"
+#define MV_POVERMINE_PBM "sprites/poverups/pmine.pbm"
+#define MV_POVERSHIELD_PPM "sprites/poverups/pshield.ppm"
+#define MV_POVERSHIELD_PBM "sprites/poverups/pshield.pbm"
+#define MV_POVERENERGY_PPM "sprites/poverups/penergy.ppm"
+#define MV_POVERENERGY_PBM "sprites/poverups/penergy.pbm"
+
 #define DEF_WIDTH 640
 #define DEF_HEIGHT 480
 
@@ -50,6 +59,7 @@
 #define S_BULLET S_BASE+2
 #define S_MINE S_BASE+3
 #define S_EXPLOSION S_BASE+4
+#define S_POVERUP S_BASE+5
 
 #define SHOTDIST 14
 #define EPSILON 0.1

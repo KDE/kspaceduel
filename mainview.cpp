@@ -7,24 +7,11 @@
 #include <qkeycode.h>
 
 #include <kapp.h>
-#if KDE_VERSION_MAJOR == 0
-#include <kkeyconf.h>
-#endif
-
-#if KDE_VERSION_MAJOR == 1
-#if KDE_VERSION_MINOR == 0
-#include <kkeyconf.h>
-#else
 #include <kaccel.h>
-#endif
-#endif
-
-#if KDE_VERSION_MAJOR > 1
-#include <kaccel.h>
-#endif
 #include <klocale.h>
 
 #include <stdlib.h>
+#include <time.h>
 #include "defines.h"
 
 
@@ -77,6 +64,19 @@ MyMainView::MyMainView(QWidget *parent, const char *name)
                                               MV_PREFIX+MV_MINE1_PBM,2);
    minesequence[1]=new QwSpritePixmapSequence(MV_PREFIX+MV_MINE2_PPM,
                                               MV_PREFIX+MV_MINE2_PBM,2);
+   poverupsequence[PoverupSprite::PoverupMine]
+      =new QwSpritePixmapSequence(MV_PREFIX+MV_POVERMINE_PPM,
+                                  MV_PREFIX+MV_POVERMINE_PBM);
+   poverupsequence[PoverupSprite::PoverupBullet]
+      =new QwSpritePixmapSequence(MV_PREFIX+MV_POVERBULLET_PPM,
+                                  MV_PREFIX+MV_POVERBULLET_PBM);
+   poverupsequence[PoverupSprite::PoverupShield]
+      =new QwSpritePixmapSequence(MV_PREFIX+MV_POVERSHIELD_PPM,
+                                  MV_PREFIX+MV_POVERSHIELD_PBM);
+   poverupsequence[PoverupSprite::PoverupEnergy]
+      =new QwSpritePixmapSequence(MV_PREFIX+MV_POVERENERGY_PPM,
+                                  MV_PREFIX+MV_POVERENERGY_PBM);
+   
    for(i=0;i<2;i++)
    {
       ship[i]->setBoundsAction(QwRealMobileSprite::Wrap);
@@ -89,6 +89,7 @@ MyMainView::MyMainView(QWidget *parent, const char *name)
    }
       
    explosions.setAutoDelete(true);
+   poverups.setAutoDelete(true);
 
    waitForStart=false;
    textSprite=0;
@@ -165,6 +166,17 @@ void MyMainView::readConfig(KConfig *cfg)
       cfg->readDoubleNumEntry("startVelX",predefinedConfig[0].startVelX);
    customConfig.startVelY=
       cfg->readDoubleNumEntry("startVelY",predefinedConfig[0].startVelY);
+   customConfig.poverupLifeTime=
+      cfg->readDoubleNumEntry("poverupLifeTime",predefinedConfig[0].poverupLifeTime);
+   customConfig.poverupRefreshTime=
+      cfg->readDoubleNumEntry("poverupRefreshTime",predefinedConfig[0].poverupRefreshTime);
+   customConfig.poverupShieldAmount=
+      cfg->readUnsignedNumEntry("poverupShieldAmount",
+                              predefinedConfig[0].poverupShieldAmount);
+   customConfig.poverupEnergyAmount=
+      cfg->readDoubleNumEntry("poverupEnergyAmount",
+                              predefinedConfig[0].poverupEnergyAmount);
+
    options.functionKey[FunctionKeyStart]=stringToKey(cfg->readEntry("KeyStart","Space"));
 
    cfg->setGroup("Player2");
@@ -181,7 +193,7 @@ void MyMainView::readConfig(KConfig *cfg)
    options.playerKey[0][PlayerKeyShot]=stringToKey(cfg->readEntry("KeyShot","D"));
    options.playerKey[0][PlayerKeyMine]=stringToKey(cfg->readEntry("KeyMine","A"));
    options.startHitPoints[0]=cfg->readUnsignedNumEntry("startHitPoints",99);
-
+   
    if(options.lastConfig<predefinedConfigNum)
       config=modifyConfig(predefinedConfig[options.lastConfig]);
    else
@@ -225,6 +237,11 @@ void MyMainView::writeConfig()
    cfg->writeEntry("startPosY",customConfig.startPosY);
    cfg->writeEntry("startVelX",customConfig.startVelX);
    cfg->writeEntry("startVelY",customConfig.startVelY);
+
+   cfg->writeEntry("poverupLifeTime",customConfig.poverupLifeTime);
+   cfg->writeEntry("poverupRefreshTime",customConfig.poverupRefreshTime);
+   cfg->writeEntry("poverupShieldAmount",customConfig.poverupShieldAmount);
+   cfg->writeEntry("poverupEnergyAmount",customConfig.poverupEnergyAmount);
       
    cfg->setGroup("Player2");
    cfg->writeEntry("startHitPoints",options.startHitPoints[1]);
@@ -352,6 +369,7 @@ void MyMainView::resizeEvent(QResizeEvent *event)
    double mx,my;
    MineSprite *mine;
    BulletSprite *bullet;
+   PoverupSprite *poverup;
    int i,current;
 
    mx=(event->size().width()-event->oldSize().width())/2.0;
@@ -382,15 +400,27 @@ void MyMainView::resizeEvent(QResizeEvent *event)
       }
       if(current>=0)
          bullets[i]->at(current);
-      if(textSprite)
-         textSprite->moveBy((int)mx,(int)my);
+
    }
+   if(textSprite)
+      textSprite->moveBy((int)mx,(int)my);
+   current=poverups.at();
+   for(poverup=poverups.first();poverup;poverup=poverups.next())
+      poverup->moveBy(mx,my);
+   if(current>=0)
+      poverups.at(current);
 }
 
 void MyMainView::newRound()
 {
    double mx,my;
    int i;
+
+   srand(time(NULL));
+   
+   timeToNextPoverup=(double)(rand() % (int)config.poverupRefreshTime);
+   poverups.clear();
+
    killTimers();
    mx=width()/2.0;
    my=height()/2.0;
@@ -418,6 +448,8 @@ void MyMainView::newRound()
       mines[i]->clear();
       ship[i]->mine(0.0);
       ship[i]->bullet(0.0);
+      ship[i]->setBulletPoverups(0);
+      ship[i]->setMinePoverups(0);
 
       ai[i]->newRound();
    }
@@ -508,6 +540,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
       moveBullets();
       moveExplosions();
       moveShips();
+      calculatePoverups();
       collisions();
       field.update();
    }
@@ -571,7 +604,8 @@ void MyMainView::moveShips()
          {
             if((en>config.shotEnergyNeed) && (!ship[i]->reloadsBullet()))
             {
-               if(bullets[i]->count()<config.maxBullets)
+               if(bullets[i]->count() <
+                  (config.maxBullets+ship[i]->getBulletPoverups()))
                {
                   ship[i]->bullet(config.bulletReloadTime);
                   en-=config.shotEnergyNeed;
@@ -593,7 +627,8 @@ void MyMainView::moveShips()
          {
             if((en>config.mineEnergyNeed) && (!ship[i]->reloadsMine()))
             {
-               if(mines[i]->count()<config.maxMines)
+               if(mines[i]->count() <
+                  (config.maxMines+ship[i]->getMinePoverups()))
                {
                   ship[i]->mine(config.mineReloadTime);
                   en-=config.mineEnergyNeed;
@@ -678,6 +713,42 @@ void MyMainView::moveExplosions()
          ex=explosions.next();
    }
 }
+
+void MyMainView::calculatePoverups()
+{
+   PoverupSprite *sp;
+   int type,x,y;
+
+   sp=poverups.first();
+   while(sp)
+   {
+      sp->setLifetime(sp->getLifetime()-config.gamespeed);
+      if(sp->getLifetime()<0)
+      {
+         poverups.removeRef(sp);
+         sp=poverups.current();
+      }
+      else
+         sp=poverups.next();
+   }
+   timeToNextPoverup-=config.gamespeed;
+   if(timeToNextPoverup<0)
+   {
+      timeToNextPoverup=(double)(rand() % (int)config.poverupRefreshTime);
+      type=rand() % PoverupSprite::PoverupNum;
+      sp=new PoverupSprite(poverupsequence[type],type,config.poverupLifeTime);
+      do
+      {
+         x=(rand()%(width()-40))+20;
+         y=(rand()%(height()-40))+20;
+      }
+      while(((x-width()/2)*(x-width()/2)+(y-height()/2)*(y-height()/2))<(50*50));
+      sp->moveTo(x,y);
+      poverups.append(sp);
+      sp->show();
+   }
+}
+
 void MyMainView::collisions()
 {
    int pl,hp,op,oldhp[2],ohp;
@@ -686,9 +757,11 @@ void MyMainView::collisions()
    BulletSprite *bullet;
    MineSprite *mine;
    ExplosionSprite *expl;
-   ShipSprite* s;
+   ShipSprite *s;
+   PoverupSprite *pover;
    QList<QwSpriteFieldGraphic> hitlist;
    double ndx[2],ndy[2];
+   double en;
 
    for(pl=0;pl<2;pl++)
    {
@@ -701,7 +774,7 @@ void MyMainView::collisions()
          {
             sprite=ship[pl]->at(pix);
             if(sprite)
-               if((sprite->rtti()<S_EXPLOSION)
+               if((sprite->rtti()!=S_EXPLOSION)
                   && !((sprite->rtti()!=S_SUN)&&(ship[pl]->getHitPoints()==0)))
                   if(ship[pl]->exact(pix))
                      if(!hitlist.containsRef(sprite))
@@ -751,8 +824,36 @@ void MyMainView::collisions()
                      mine->setVelocity(ndx[0],ndy[0]);
                      hp-=config.mineDamage;
                   }
+                  break;
+               case S_POVERUP:
+                  pover=(PoverupSprite *)sprite;
+                  switch(pover->getType())
+                  {
+                     case PoverupSprite::PoverupShield:
+                        hp+=config.poverupShieldAmount;
+                        break;
+                     case PoverupSprite::PoverupEnergy:
+                        en=ship[pl]->getEnergy()+config.poverupEnergyAmount;
+                        if(en>99)
+                           en=99;
+                        ship[pl]->setEnergy(en);
+                        break;
+                     case PoverupSprite::PoverupMine:
+                        ship[pl]->setMinePoverups(
+                           ship[pl]->getMinePoverups()+1);
+                        break;
+                     case PoverupSprite::PoverupBullet:
+                        ship[pl]->setBulletPoverups(
+                           ship[pl]->getMinePoverups()+1);
+                        break;
+                  }
+                  pover->hide();
+                  poverups.removeRef(pover);
+                  break;
             }
          }
+         if(hp>99)
+            hp=99;
          ship[pl]->setHitPoints(hp);
       }
 

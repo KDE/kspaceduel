@@ -6,22 +6,7 @@
 #include <klocale.h>
 
 #include <kapp.h>
-#if KDE_VERSION_MAJOR == 0
-#include <kkeyconf.h>
-#endif
-
-#if KDE_VERSION_MAJOR == 1
-#if KDE_VERSION_MINOR == 0
-#include <kkeyconf.h>
-#else
 #include <kaccel.h>
-#endif
-#endif
-
-#if KDE_VERSION_MAJOR > 1
-#include <kaccel.h>
-#endif
-
 #include "dialogs.h"
 
 KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
@@ -283,7 +268,8 @@ void KeySetup::keyPressEvent(QKeyEvent *ev)
    i18n("Reload time"),i18n("Acceleration"),i18n("Energy need"),
    i18n("Rotation speed"),i18n("Energy need"),i18n("Crash damage"),
    i18n("Sun energy"),i18n("Gravity"),i18n("Position X"),i18n("Position Y"),
-   i18n("Velocity X",i18n("Velocity Y")
+   i18n("Velocity X",i18n("Velocity Y"),
+   i18n("Appearance time"),i18n("Life time"),i18n("Energy Amount"),i18n("Shield Amount")
 #endif
 
 char ConfigSetup::LabelName[EditNum][25]=
@@ -293,7 +279,8 @@ char ConfigSetup::LabelName[EditNum][25]=
  "Acceleration","Energy need","Rotation speed",
  "Energy need","Crash damage",
  "Sun energy","Gravity",
- "Position X","Position Y","Velocity X","Velocity Y"};
+ "Position X","Position Y","Velocity X","Velocity Y",
+  "Appearance time","Life time","Energy Amount","Shield Amount"};
 
 enum ConfigSetup::Type ConfigSetup::VarType[EditNum]=
 {VarFloat,
@@ -302,7 +289,8 @@ enum ConfigSetup::Type ConfigSetup::VarType[EditNum]=
  VarFloat,VarFloat,VarFloat,
  VarFloat,VarInt,
  VarFloat,VarFloat,
- VarFloat,VarFloat,VarFloat,VarFloat};
+ VarFloat,VarFloat,VarFloat,VarFloat,
+ VarFloat,VarFloat,VarFloat,VarInt};
 
 double ConfigSetup::EditVal[EditNum][3]=
 {{0.2,4.0,1},
@@ -311,7 +299,8 @@ double ConfigSetup::EditVal[EditNum][3]=
  {0,1.0,0.2},{0,10,1.0},{0.1,4,1},
  {0,10,0.2},{0,100,50},
  {1000,30000,9000},{0,10000,2200},
- {-250,250,-130},{-180,180,-100},{-10,10,3},{-10,10,-1.7}};
+ {-250,250,-130},{-180,180,-100},{-10,10,3},{-10,10,-1.7},
+ {200,4000,800},{200,4000,400},{0,99,50},{0,99,30}};
 
 int ConfigSetup::EditDiv[EditNum]=
 {100,
@@ -320,7 +309,8 @@ int ConfigSetup::EditDiv[EditNum]=
  100,10,10,
  10,1,
  1,1,
- 10,10,100,100};
+ 10,10,100,100,
+ 1,1,1,1};
 
 int ConfigSetup::Parent[EditNum]=
 {TabGeneral,
@@ -328,7 +318,8 @@ int ConfigSetup::Parent[EditNum]=
  TabMine,TabMine,TabMine,TabMine,TabMine,TabMine,
  TabShip,TabShip,TabShip,TabShip,TabShip,
  TabSun,TabSun,
- TabStart,TabStart,TabStart,TabStart};
+ TabStart,TabStart,TabStart,TabStart,
+ TabPoverups,TabPoverups,TabPoverups,TabPoverups};
 
 int ConfigSetup::Position[EditNum]=
 {0,
@@ -336,15 +327,16 @@ int ConfigSetup::Position[EditNum]=
  0,1,2,3,4,5,
  0,1,2,3,4,
  0,1,
+ 0,1,2,3,
  0,1,2,3};
 
 #ifdef kspaceduel_only_for_xgettext
  i18n("General"),i18n("Bullet"),i18n("Mine"),i18n("Ship"),i18n("Sun"),
- i18n("Start");
+ i18n("Start"),i18n("Poverups")
 #endif
 
 const char *ConfigSetup::TabName[TabNum]=
-{"General","Bullet","Mine","Ship","Sun","Start"};
+{"General","Bullet","Mine","Ship","Sun","Start","Poverups"};
 
 const int LCDLen=6;
 
@@ -386,6 +378,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
                             QSlider::Horizontal,configWidgets[Parent[i]]);
       connect(slider[i],SIGNAL(valueChanged(int)),SLOT(sliderChanged(int)));
       value[i]=new QLCDNumber(LCDLen,configWidgets[Parent[i]]);
+      value[i]->setFrameStyle(QFrame::NoFrame);
    }
 
    configCombo=new QComboBox(false,box);
@@ -459,6 +452,7 @@ void ConfigSetup::valueChanged(int ednum,int value)
          case EditMaxMines:config.maxMines=value;break;
          case EditMineDamage:config.mineDamage=value;break;
          case EditShipDamage:config.shipDamage=value;break;
+         case EditPoverupShieldAmount:config.poverupShieldAmount=value;break;
       }
 }
 
@@ -486,6 +480,9 @@ void ConfigSetup::valueChanged(int ednum,double value)
          case EditEnergyNeed:config.energyNeed=value;break;
          case EditRotationSpeed:config.rotationSpeed=value;break;
          case EditRotationEnergyNeed:config.rotationEnergyNeed=value;break;
+         case EditPoverupRefreshTime:config.poverupRefreshTime=value;break;
+         case EditPoverupLifeTime:config.poverupLifeTime=value;break;
+         case EditPoverupEnergyAmount:config.poverupEnergyAmount=value;break;
       }
 }
 
@@ -556,6 +553,11 @@ void ConfigSetup::displayConfig(SConfig cfg)
    setValue(EditRotationSpeed,cfg.rotationSpeed);
    setValue(EditRotationEnergyNeed,cfg.rotationEnergyNeed);
    setValue(EditShipDamage,cfg.shipDamage);
+
+   setValue(EditPoverupLifeTime,cfg.poverupLifeTime);
+   setValue(EditPoverupRefreshTime,cfg.poverupRefreshTime);
+   setValue(EditPoverupShieldAmount,cfg.poverupShieldAmount);
+   setValue(EditPoverupEnergyAmount,cfg.poverupEnergyAmount);
 }
 
 void ConfigSetup::setValue(int ednum,int val)

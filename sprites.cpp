@@ -10,6 +10,15 @@ SunSprite::SunSprite(QwSpritePixmapSequence *seq)
 }
 
 
+PoverupSprite::PoverupSprite(QwSpritePixmapSequence *seq, int t,
+                             double lifetime)
+      :QwSprite(seq)
+{
+   time=lifetime;
+   type=t;
+}
+
+
 MobileSprite::MobileSprite(QwSpritePixmapSequence *seq, int pn)
       :QwRealMobileSprite(seq)
 {
@@ -79,6 +88,8 @@ ShipSprite::ShipSprite(QwSpritePixmapSequence *seq,int pn)
    explosion=-1;
    z(-20);
    rotation=0;
+   bulletPoverups=0;
+   minePoverups=0;
 }
 
 ShipSprite::ShipSprite(int pn)
@@ -90,6 +101,8 @@ ShipSprite::ShipSprite(int pn)
    explosion=-1;
    z(-20);
    rotation=0;
+   bulletPoverups=0;
+   minePoverups=0;
 }
 
 void ShipSprite::setRotation(double r)

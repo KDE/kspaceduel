@@ -18,7 +18,24 @@ class SunSprite:public QwSprite
 {
 public:
    SunSprite(QwSpritePixmapSequence *seq);
-   virtual int rtti() const {return S_SUN;};
+   virtual int rtti() const {return S_SUN;}
+};
+
+
+class PoverupSprite:public QwSprite
+{
+public:
+   enum {PoverupMine=0, PoverupBullet, PoverupShield, PoverupEnergy,
+         PoverupNum};
+   PoverupSprite(QwSpritePixmapSequence *seq, int t, double lifetime);
+   virtual int rtti() const {return S_POVERUP;}
+
+   double getLifetime() {return time;}
+   void setLifetime(double t) {time=t;}
+   int getType() {return type;}
+private:
+   double time;
+   int type;
 };
 
 class MobileSprite:public QwRealMobileSprite
@@ -48,24 +65,28 @@ class ShipSprite:public MobileSprite
 public:
    ShipSprite(QwSpritePixmapSequence *seq,int pn);
    ShipSprite(int pn);
-   virtual int rtti() const {return S_SHIP;};
-   int getHitPoints() {return hitpoints;};
-   void setHitPoints(int hp) {hitpoints=(hp<0?0:hp);};
-   double getEnergy() {return energy;};
-   void setEnergy(double e) {energy=(e<0?0:e);};
-   void setWins(int w) {wins=w;};
-   int getWins() {return wins;};
-   void setExplosion(int f) {explosion=f;};
-   int getExplosion() {return explosion;};
+   virtual int rtti() const {return S_SHIP;}
+   int getHitPoints() {return hitpoints;}
+   void setHitPoints(int hp) {hitpoints=(hp<0?0:hp);}
+   double getEnergy() {return energy;}
+   void setEnergy(double e) {energy=(e<0?0:e);}
+   void setWins(int w) {wins=w;}
+   int getWins() {return wins;}
+   void setExplosion(int f) {explosion=f;}
+   int getExplosion() {return explosion;}
    void setRotation(double r);
-   double getRotation() {return rotation;};
+   double getRotation() {return rotation;}
    void rotateRight(double rotationEnergyNeed,double rotationSpeed);
    void rotateLeft(double rotationEnergyNeed,double rotationSpeed);
-   void bullet(double reloadTime) {reloadBulletTime=reloadTime;};
-   bool reloadsBullet(double t=0.0) {return reloadBulletTime>t;};
-   void mine(double reloadTime) {reloadMineTime=reloadTime;};
-   bool reloadsMine(double t=0.0) {return reloadMineTime>t;};
-   bool explodes() {return explosion>=0;};
+   void bullet(double reloadTime) {reloadBulletTime=reloadTime;}
+   bool reloadsBullet(double t=0.0) {return reloadBulletTime>t;}
+   void mine(double reloadTime) {reloadMineTime=reloadTime;}
+   bool reloadsMine(double t=0.0) {return reloadMineTime>t;}
+   bool explodes() {return explosion>=0;}
+   void setMinePoverups(int m) {minePoverups=m;}
+   int getMinePoverups() {return minePoverups;}
+   void setBulletPoverups(int b) {bulletPoverups=b;}
+   int getBulletPoverups() {return bulletPoverups;}
    virtual void forward(double mult);
    virtual void forward(double mult,int fr);
    virtual void calculateGravityAndEnergy(double gravity,double sunEnergy,
@@ -73,6 +94,7 @@ public:
 private:
    int hitpoints, wins, explosion;
    double energy,rotation,reloadBulletTime,reloadMineTime;
+   int bulletPoverups,minePoverups;
 };
 
 class BulletSprite:public MobileSprite
@@ -80,10 +102,10 @@ class BulletSprite:public MobileSprite
 public:
    BulletSprite(QwSpritePixmapSequence *seq,int pn,double lifetime);
    BulletSprite(int pn,double lifetime);
-   virtual int rtti() const {return S_BULLET;};
+   virtual int rtti() const {return S_BULLET;}
    virtual void forward(double mult);
    virtual void forward(double mult,int fr);
-   bool timeOut() {return time<=0;};
+   bool timeOut() {return time<=0;}
 private:
    double time;
 };
@@ -93,14 +115,14 @@ class MineSprite:public MobileSprite
 public:
    MineSprite(QwSpritePixmapSequence *seq,int pn,double atime,double f);
    MineSprite(int pn,double atime,double f);
-   virtual int rtti() const {return S_MINE;};
-   bool isActive() {return active;};
-   double getFuel() {return fuel;};
-   void setFuel(double f) {fuel=(f<0.0?0.0:f);};
+   virtual int rtti() const {return S_MINE;}
+   bool isActive() {return active;}
+   double getFuel() {return fuel;}
+   void setFuel(double f) {fuel=(f<0.0?0.0:f);}
    virtual void forward(double mult);
    void explode(QwSpritePixmapSequence* s);
-   bool explodes() {return expl;};
-   bool over() {return (expl&&(explosiontime>(timeToGo-0.1)));};
+   bool explodes() {return expl;}
+   bool over() {return (expl&&(explosiontime>(timeToGo-0.1)));}
    virtual void calculateGravity(double gravity,double mult);
 private:
    bool expl,active;
@@ -112,8 +134,8 @@ class ExplosionSprite:public QwRealSprite
 public:
    ExplosionSprite(QwSpritePixmapSequence *seq,MobileSprite *sp);
    ExplosionSprite(MobileSprite *sp);
-   virtual int rtti() const {return S_EXPLOSION;};
-   bool isOver() {return over;};
+   virtual int rtti() const {return S_EXPLOSION;}
+   bool isOver() {return over;}
    virtual void forward(double mult);
    void setSequence(QwSpritePixmapSequence *seq);
 private:
