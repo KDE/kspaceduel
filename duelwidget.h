@@ -16,6 +16,7 @@ public slots:
    void newGame();
    void newRound();
    void keySetup();
+   void pause();
    void aiSetup();
    void hitpointSetup();
    void graphicSetup();

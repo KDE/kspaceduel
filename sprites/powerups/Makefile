@@ -161,14 +161,13 @@ topdir = /usr/src/kde/kdegames
 x_includes = .
 x_libraries = /usr/X11R6/lib
 
-playerdir = $(kde_datadir)/kspaceduel/sprites/powerups
-player_DATA = pbullet.pbm penergy.pbm pmine.pbm pshield.pbm pbullet.ppm penergy.ppm pmine.ppm pshield.ppm     
-
-EXTRA_DIST = $(player_DATA)
+powerdir = $(kde_datadir)/kspaceduel/sprites/powerups
+power_DATA = pbullet.ppm pmine.pbm pshield.ppm penergy.pbm pmine.ppm pbullet.pbm penergy.ppm pshield.pbm             
+EXTRA_DIST = $(power_DATA)
 mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
 CONFIG_HEADER = ../../../config.h
 CONFIG_CLEAN_FILES = 
-DATA =  $(player_DATA)
+DATA =  $(power_DATA)
 
 DIST_COMMON =  Makefile.am Makefile.in
 
@@ -187,23 +186,23 @@ Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
 	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
 
 
-install-playerDATA: $(player_DATA)
+install-powerDATA: $(power_DATA)
 	@$(NORMAL_INSTALL)
-	$(mkinstalldirs) $(DESTDIR)$(playerdir)
-	@list='$(player_DATA)'; for p in $$list; do \
+	$(mkinstalldirs) $(DESTDIR)$(powerdir)
+	@list='$(power_DATA)'; for p in $$list; do \
 	  if test -f $(srcdir)/$$p; then \
-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(playerdir)/$$p"; \
-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(playerdir)/$$p; \
+	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(powerdir)/$$p"; \
+	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(powerdir)/$$p; \
 	  else if test -f $$p; then \
-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(playerdir)/$$p"; \
-	    $(INSTALL_DATA) $$p $(DESTDIR)$(playerdir)/$$p; \
+	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(powerdir)/$$p"; \
+	    $(INSTALL_DATA) $$p $(DESTDIR)$(powerdir)/$$p; \
 	  fi; fi; \
 	done
 
-uninstall-playerDATA:
+uninstall-powerDATA:
 	@$(NORMAL_UNINSTALL)
-	list='$(player_DATA)'; for p in $$list; do \
-	  rm -f $(DESTDIR)$(playerdir)/$$p; \
+	list='$(power_DATA)'; for p in $$list; do \
+	  rm -f $(DESTDIR)$(powerdir)/$$p; \
 	done
 tags: TAGS
 TAGS:
@@ -240,20 +239,20 @@ installcheck: installcheck-am
 install-exec-am:
 install-exec: install-exec-am
 
-install-data-am: install-playerDATA
+install-data-am: install-powerDATA
 install-data: install-data-am
 
 install-am: all-am
 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 install: install-am
-uninstall-am: uninstall-playerDATA
+uninstall-am: uninstall-powerDATA
 uninstall: uninstall-am
 all-am: Makefile $(DATA)
 all-redirect: all-am
 install-strip:
 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
 installdirs:
-	$(mkinstalldirs)  $(DESTDIR)$(playerdir)
+	$(mkinstalldirs)  $(DESTDIR)$(powerdir)
 
 
 mostlyclean-generic:
@@ -284,10 +283,10 @@ maintainer-clean-am:  maintainer-clean-generic distclean-am
 
 maintainer-clean: maintainer-clean-am
 
-.PHONY: uninstall-playerDATA install-playerDATA tags distdir info-am \
-info dvi-am dvi check check-am installcheck-am installcheck \
-install-exec-am install-exec install-data-am install-data install-am \
-install uninstall-am uninstall all-redirect all-am all installdirs \
+.PHONY: uninstall-powerDATA install-powerDATA tags distdir info-am info \
+dvi-am dvi check check-am installcheck-am installcheck install-exec-am \
+install-exec install-data-am install-data install-am install \
+uninstall-am uninstall all-redirect all-am all installdirs \
 mostlyclean-generic distclean-generic clean-generic \
 maintainer-clean-generic clean mostlyclean distclean maintainer-clean
 

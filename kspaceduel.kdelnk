@@ -2,11 +2,14 @@
 [KDE Desktop Entry]
 SwallowExec=
 SwallowTitle=
-BinaryPattern=
+BinaryPattern=kspaceduel;
+Name=Spaceduel
 MimeType=
 Exec=kspaceduel -caption "%c"
+Comment=A two player arcade game
 Icon=kspaceduel.xpm
 TerminalOptions=
 Path=
+DocPath=kspaceduel/index.html
 Type=Application
 Terminal=0

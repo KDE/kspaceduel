@@ -622,7 +622,9 @@ void ConfigSetup::sliderChanged(int val)
 }
 
 
-
+#ifdef kspaceduel_only_for_xgettext
+   i18n("Trainee"),i18n("Normal"),i18n("Hard"),i18n("Insane")
+#endif
 char AiSetup::DifficultyName[DNUM][10]={"Trainee","Normal","Hard","Insane"};
 
 AiSetup::AiSetup(SOptions *opt,QWidget *parent,const char *name)

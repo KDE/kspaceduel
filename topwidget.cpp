@@ -96,5 +96,6 @@ void MyTopLevelWidget::saveOptions()
 
 void MyTopLevelWidget::keySetup()
 {
+   wview.pause();
    KKeyDialog::configureKeys(keys);   
 }

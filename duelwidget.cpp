@@ -85,3 +85,8 @@ void DuelWidget::readConfig(KConfig *cfg)
 {
    playfield->readConfig(cfg);
 }
+
+void DuelWidget::pause()
+{
+   playfield->pause();
+}
