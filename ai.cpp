@@ -1,5 +1,4 @@
 #include <math.h>
-#include <stdlib.h>
 
 #include "ai.h"
 #include "sprites.h"
@@ -55,7 +54,8 @@ void Ai::newRound()
 
    calculateCollisions=(int)(calcCollisions[opt->aiDifficulty[playerNumber]]
                              /cfg->gamespeed);
-   waitShot=(int)((rand() % calcNextShot[opt->aiDifficulty[playerNumber]])
+   waitShot=(int) rint( random.getDouble() * 
+	          calcNextShot[opt->aiDifficulty[playerNumber]]
                   /cfg->gamespeed);
 
    myShots.clear();
@@ -664,8 +664,9 @@ void Ai::chooseAction()
             shoot=true;
             score=bestScore;
             calculateCollisions = 0;
-            waitShot=(int)((rand()% calcNextShot
-                            [opt->aiDifficulty[playerNumber]])/cfg->gamespeed);
+            waitShot=(int) rint( random.getDouble() * 
+	                         calcNextShot[opt->aiDifficulty[playerNumber]]
+                                 /cfg->gamespeed);
          }
       }
    }

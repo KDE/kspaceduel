@@ -4,6 +4,7 @@
 #include <qwidget.h>
 #include <qimage.h>
 #include <kconfig.h>
+#include <krandomsequence.h>
 #include "QwSpriteField.h"
 #include "sprites.h"
 #include "dialogs.h"
@@ -85,8 +86,13 @@ private:
    QList<MineSprite> *mines[2];
    QList<ExplosionSprite> explosions;
    QList<PowerupSprite> powerups;
+
+   KRandomSequence random;
+
 //Ai
    Ai *ai[2];
+   
+   
 };
 
 

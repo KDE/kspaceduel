@@ -1,6 +1,8 @@
 #ifndef __KSD_AI_H
 #define __KSD_AI_H
 
+#include <krandomsequence.h>
+
 #include <qpoint.h>
 #include <qlist.h>
 #include <qarray.h>
@@ -60,6 +62,9 @@ private:
 
    SConfig *cfg;
    SOptions *opt;
+
+   KRandomSequence random;
+
        //actions
    Rotation rotation;
    bool acc;

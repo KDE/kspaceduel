@@ -12,8 +12,6 @@
 #include <kstddirs.h>
 #include <kglobal.h>
 
-#include <stdlib.h>
-#include <time.h>
 #include "defines.h"
 
 
@@ -24,6 +22,8 @@ MyMainView::MyMainView(QWidget *parent, const char *name)
        view(&field,this)
 {
    int i,p;
+
+   random.setSeed(0); 
 
    for(p=0;p<2;p++)
    {
@@ -419,9 +419,7 @@ void MyMainView::newRound()
    double mx,my;
    int i;
 
-   srand(time(NULL));
-   
-   timeToNextPowerup=(double)(rand() % (int)config.powerupRefreshTime);
+   timeToNextPowerup=random.getDouble() * config.powerupRefreshTime;
    powerups.clear();
 
    killTimers();
@@ -737,13 +735,13 @@ void MyMainView::calculatePowerups()
    timeToNextPowerup-=config.gamespeed;
    if(timeToNextPowerup<0)
    {
-      timeToNextPowerup=(double)(rand() % (int)config.powerupRefreshTime);
-      type=rand() % PowerupSprite::PowerupNum;
+      timeToNextPowerup= random.getDouble() * config.powerupRefreshTime;
+      type= random.getLong(PowerupSprite::PowerupNum);
       sp=new PowerupSprite(powerupsequence[type],type,config.powerupLifeTime);
       do
       {
-         x=(rand()%(width()-40))+20;
-         y=(rand()%(height()-40))+20;
+         x = random.getLong(width()-40)+20;
+         y = random.getLong(height()-40)+20;
       }
       while(((x-width()/2)*(x-width()/2)+(y-height()/2)*(y-height()/2))<(50*50));
       sp->moveTo(x,y);
