@@ -82,9 +82,9 @@ MyMainView::MyMainView(QWidget *parent, const char *name)
    {
       // ship[i]->setBoundsAction(QwRealMobileSprite::Wrap);
       ship[i]->hide();
-      bullets[i]=new QList<BulletSprite>;
+      bullets[i]=new QPtrList<BulletSprite>;
       bullets[i]->setAutoDelete(true);
-      mines[i]=new QList<MineSprite>;
+      mines[i]=new QPtrList<MineSprite>;
       mines[i]->setAutoDelete(true);
 
    }
@@ -1056,8 +1056,8 @@ QCanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern
                             const QString& maskpattern, int framecount)
 {
    int image;
-   QList<QPixmap> pixmaplist;
-   QList<QPoint> pointlist;
+   QPtrList<QPixmap> pixmaplist;
+   QPtrList<QPoint> pointlist;
    QString dataname, maskname;
    QPixmap *pix;
    QBitmap *bitmap;

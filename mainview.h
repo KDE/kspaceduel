@@ -72,8 +72,8 @@ private:
    double timeToNextPowerup;
    
 // sprites
-   QList<QImage> shipImages;
-   QList<QPoint> points;
+   QPtrList<QImage> shipImages;
+   QPtrList<QPoint> points;
    QImage bulletImage;
    QCanvasPixmapArray *bulletsequence[2];
    QCanvasPixmapArray *shipsequence[2];
@@ -86,10 +86,10 @@ private:
    ShipSprite *ship[2];
    SunSprite *sun;
    QCanvasText *textSprite;
-   QList<BulletSprite> *bullets[2];
-   QList<MineSprite> *mines[2];
-   QList<ExplosionSprite> explosions;
-   QList<PowerupSprite> powerups;
+   QPtrList<BulletSprite> *bullets[2];
+   QPtrList<MineSprite> *mines[2];
+   QPtrList<ExplosionSprite> explosions;
+   QPtrList<PowerupSprite> powerups;
 
    KRandomSequence random;
 

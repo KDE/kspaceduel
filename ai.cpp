@@ -12,8 +12,8 @@ int Ai::calcShotDirections[DNUM]={4,7,10,12};
 int Ai::calcCollisions[DNUM]={30,15,10,10};
 int Ai::calcNextShot[DNUM]={300,200,90,60};
 
-Ai::Ai(int pn,ShipSprite* s[2],QList<BulletSprite>* b[2],
-       QList<MineSprite>* m[2],SConfig *c,SOptions *o)
+Ai::Ai(int pn,ShipSprite* s[2],QPtrList<BulletSprite>* b[2],
+       QPtrList<MineSprite>* m[2],SConfig *c,SOptions *o)
 {
    int i;
 
