@@ -34,7 +34,7 @@ kspaceduel_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
 # the libraries to link against. Be aware of the order. First the libraries,
 # that depend on the following ones.
-kspaceduel_LDADD   = -lkdeui -lkdecore -lQwSpriteField -lqt -lXext -lX11 $(LIBSOCKET)
+kspaceduel_LDADD   = -lQwSpriteField $(LIB_KDEUI)
 
 # this option you can leave out. Just, if you use "make dist", you need it
 noinst_HEADERS = mathroutines.h topwidget.h duelwidget.h playerinfo.h \
