@@ -4,6 +4,7 @@
 #include <qpoint.h>
 #include <math.h>
 #include <qcolor.h>
+#include <qbitmap.h>
 
 #include <kapp.h>
 #include <kaccel.h>
