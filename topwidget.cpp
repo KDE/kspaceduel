@@ -20,7 +20,7 @@ MyTopLevelWidget::MyTopLevelWidget()
 
 void MyTopLevelWidget::initGameWidgets( ){
    QWidget *w = new QWidget(this);
-   
+
    playerinfo[0]=new PlayerInfo(0,w);
    playerinfo[1]=new PlayerInfo(1,w);
    playfield=new MyMainView(w);
@@ -75,13 +75,13 @@ void MyTopLevelWidget::initActions( )
 
    KStdAction::keyBindings(this, SLOT(keySetup()), actionCollection());
    KStdAction::preferences(playfield, SLOT(gameSetup()), actionCollection());
-  
+
    setStandardToolBarMenuEnabled( true );
    createStandardStatusBarAction();
 
    KAccel* acc = new KAccel(this);
    gameStart->plugAccel(acc);
-  
+
    // Default keys
    actionCollection()->setAutoConnectShortcuts(false);
    (void)new KAction(i18n("Player 1 Rotate Left"), Key_S, 0, 0,
@@ -133,7 +133,7 @@ void MyTopLevelWidget::setStatusText(const QString & str,int id)
 void MyTopLevelWidget::keySetup()
 {
    playfield->pause();
-   KKeyDialog::configureKeys( actionCollection( ), xmlFile(), false, this );
+   KKeyDialog::configure( actionCollection( ), this, false );
 }
 
 #include "topwidget.moc"
