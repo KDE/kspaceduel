@@ -1,11 +1,13 @@
 #include <qgroupbox.h>
 #include <qlayout.h>
-#include <kconfig.h>
 #include <qvalidator.h>
-#include <klocale.h>
+#include <qmessagebox.h>
 
+#include <kconfig.h>
+#include <klocale.h>
 #include <kapp.h>
 #include <kaccel.h>
+
 #include "dialogs.h"
 
 KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
