@@ -22,13 +22,13 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
  
 <copyright>
-<year>1999-2000</year>
+<year>1999</year><year>2000</year>
 <holder>Andreas Zehender</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
  
-<date>2001-02-03</date>
+<date>2002-02-06</date>
 <releaseinfo>1.00.00</releaseinfo>
 
 <abstract>
@@ -449,7 +449,7 @@ new round by selecting <menuchoice>
 </sect2>
 
 <sect2 id="options-graphics">
-<title>Graphics</title>
+<title><guilabel>Graphics</guilabel></title>
 
 <variablelist>
 <varlistentry>
@@ -558,7 +558,7 @@ the toolbar will be hidden.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Show Status Bar</guimenuitem>
+<guimenu>Settings</guimenu><guimenuitem>Show Statusbar</guimenuitem>
 </menuchoice></term>
 <listitem><para>When selected, the status bar (the bar along the bottom of the
 screen which gives textual information) will be visible.  When not selected, the
@@ -576,7 +576,7 @@ settings will be reloaded when you start &kspaceduel; again.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
-<guimenuitem>Configure Key Bindings</guimenuitem>
+<guimenuitem>Configure Shortcuts...</guimenuitem>
 </menuchoice></term>
 <listitem><para>Allows you to change the keyboard shortcuts for &kspaceduel;</para>
 
@@ -588,7 +588,7 @@ Game</quote>, <quote>New Game</quote>, &etc;</para></note></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Player Keys</guimenuitem>
+<guimenu>Settings</guimenu><guimenuitem>Player Keys...</guimenuitem>
 </menuchoice></term>
 <listitem><para>Allows you to configure the keys used during game play.</para>
 <para>For more detailed instructions, see the section entitled <link linkend="options-keys">Keys</link>.</para></listitem>
@@ -604,7 +604,7 @@ Game</quote>, <quote>New Game</quote>, &etc;</para></note></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
-<guimenuitem>Handicap</guimenuitem> </menuchoice></term>
+<guimenuitem>Handicap...</guimenuitem> </menuchoice></term>
 <listitem><para>Allows you to handicap a player to make the game more
 challenging (or easy).</para>
 <para>For more detailed instructions, see the section entitled <link
@@ -698,7 +698,7 @@ linkend="options-keys">Player Keys...</link>.</para>
 <para>
 Program copyright 1999-2000 Andreas Zehender <email>az@azweb.de</email></para>
 <para>Documentation copyright 2000 Andreas Zehender <email>az@azweb.de</email></para>
-<para>Documentation updated for KDE 2.0 by Mike McBride <email>mpmcbride7@yahoo.com</email></para>
+<para>Documentation updated for &kde; 2.0 by Mike McBride <email>mpmcbride7@yahoo.com</email></para>
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
 &underFDL;
