@@ -1,7 +1,7 @@
 #ifndef __MY_TOP_WIDGET_H
 #define __MY_TOP_WIDGET_H
 
-#include <ktopwidget.h>
+#include <ktmainwindow.h>
 #include <kmenubar.h>
 #include <kaccel.h>
 #include <kaccelmenu.h>
