@@ -19,6 +19,7 @@
 </affiliation>
 </author>
 </authorgroup>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
  
 <copyright>
 <year>1999-2000</year>
@@ -746,6 +747,7 @@ linkend="options-keys">Player Keys...</link>.</para>
 Program copyright 1999-2000 Andreas Zehender <email>az@azweb.de</email></para>
 <para>Documentation copyright 2000 Andreas Zehender <email>az@azweb.de</email></para>
 <para>Documentation updated for KDE 2.0 by Mike McBride <email>mpmcbride7@yahoo.com</email></para>
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
 &underFDL;
 &underGPL;
