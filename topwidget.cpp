@@ -56,7 +56,7 @@ void MyTopLevelWidget::initActions( )
    ( void )new KAction( i18n( "Gra&phics..." ), 0, wview,
                         SLOT( graphicSetup( ) ),
                         actionCollection( ), "options_graphics" );
-   ( void )new KAction( i18n( "&Ai..." ), 0, wview,
+   ( void )new KAction( i18n( "&AI..." ), 0, wview,
                         SLOT( aiSetup( ) ),
                         actionCollection( ), "options_ai" );
    toolbarAct = KStdAction::showToolbar( this, SLOT( showToolBar( ) ),
