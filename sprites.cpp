@@ -6,7 +6,8 @@
 SunSprite::SunSprite(QCanvasPixmapArray *seq, QCanvas* canvas)
       :QCanvasSprite(seq, canvas)
 {
-   setZ(0);
+    // doesn't work with Qt 2.2.2 anymore
+    // setZ(0);
 }
 
 
@@ -80,7 +81,7 @@ void MobileSprite::calculateGravity(double gravity,double mult)
    {
       ex=x()-canvas()->width()/2.0;
       ey=y()-canvas()->height()/2.0;
-   
+
       abs_2=ex*ex+ey*ey;
       sq=sqrt(abs_2);
 
@@ -89,7 +90,7 @@ void MobileSprite::calculateGravity(double gravity,double mult)
       eg=gravity*mult;
       setVelocity(xVelocity()-eg*nx/abs_2,
                   yVelocity()-eg*ny/abs_2);
-   }   
+   }
 }
 
 AiSprite MobileSprite::toAiSprite()
@@ -171,7 +172,7 @@ void ShipSprite::calculateGravityAndEnergy(double gravity,double sunEnergy,
    {
       ex=x()-canvas()->width()/2.0;
       ey=y()-canvas()->height()/2.0;
-   
+
       abs_2=ex*ex+ey*ey;
       sq=sqrt(abs_2);
 
@@ -289,7 +290,7 @@ void MineSprite::calculateGravity(double gravity,double mult)
    {
       ex=x()-canvas()->width()/2.0;
       ey=y()-canvas()->height()/2.0;
-   
+
       abs_2=ex*ex+ey*ey;
       sq=sqrt(abs_2);
       nx=ex/sq;
@@ -320,7 +321,7 @@ void ExplosionSprite::forward(double mult)
    int of=frame();
    move(obj->x(),obj->y());
    time+=mult;
-   
+
    if(time>=timeToGo)
    {
       over=true;
