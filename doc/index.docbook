@@ -1,10 +1,9 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&kspaceduel;">
+  <!ENTITY package "kdegames">
   <!ENTITY % English "INCLUDE" > <!-- change language only here -->
   <!ENTITY % addindex "IGNORE">
-  
-   
 ]>
 
 <book lang="&language;">
@@ -48,7 +47,7 @@
 
 </bookinfo>
 
-<chapter id="Introduction">
+<chapter id="introduction">
 <title>Introduction</title>
 
 <para>&kspaceduel; is an space arcade game for two players.</para> 
@@ -60,19 +59,19 @@ other.</para>
 
 </chapter>
 
-<chapter id="TheGame">
+<chapter id="the-game">
 <title>The Game</title>
 <para>The idea of the game is simple (but addictive).  You try to destroy your opponent before he destroys you.</para>
 <para>Be careful not to hit the sun.</para>
-<sect1 id="RulesOfTheGame">
+<sect1 id="rules-of-the-game">
 <title>Rules of the Game</title>
-<sect2 id="ShipMovement">
+<sect2 id="ship-movement">
 <title>Ship Movement</title>
 <para>Each player controls one ship. </para>
 <para>The ships can rotate, accelerate, shoot and lay mines.</para>
 </sect2>
 
-<sect2 id="Energy">
+<sect2 id="energy">
 <title>Energy</title> 
 
 <para>Each ship has an amount of energy (refer to the game
@@ -89,7 +88,7 @@ at an angle to the panel or to the side of the panel.</para>
 
 </sect2>
 
-<sect2 id="HitPoints">
+<sect2 id="hit-points">
 <title>Hit points</title>
 
 <para>Collisions with own or other bullets or mines decrease the hit points of a
@@ -99,7 +98,7 @@ amount (Crash Damage). A ship is destroyed when it flies into the sun.</para>
 
 </sect2>
 
-<sect2 id="BulletsandMines">
+<sect2 id="bullets-and-mines">
 <title>Bullets and Mines </title>
 
 <para>Bullets fly around the sun like a ship. </para>
@@ -114,7 +113,7 @@ energy than those which are further away. </para>
 
 </sect2>
 
-<sect2 id="Powerups">
+<sect2 id="powerups">
 <title>Powerups</title>
 
 <para>From time to time powerups appear on the play field.</para>
@@ -269,11 +268,11 @@ lost.</para>
 <para>The settings are:</para>
 
 <sect3 id="general">
-<title>General</title>
+<title><guilabel>General</guilabel></title>
 
 <variablelist>
 <varlistentry>
-<term>Game speed</term>
+<term><guilabel>Game speed</guilabel></term>
 <listitem><para>Controls the speed of the whole game.</para></listitem>
 </varlistentry>
 </variablelist>
@@ -281,33 +280,33 @@ lost.</para>
 </sect3>
 
 <sect3 id="bullet">
-<title>Bullet</title>
+<title><guilabel>Bullet</guilabel></title>
 
 <variablelist>
 <varlistentry>
-<term>Shot speed</term>
+<term><guilabel>Shot speed</guilabel></term>
 <listitem><para>The speed of bullets</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Energy need</term>
+<term><guilabel>Energy need</guilabel></term>
 <listitem><para>The amount of energy needed for one shot.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Max number</term>
+<term><guilabel>Max number</guilabel></term>
 <listitem><para>The maximum number of bullets a player can have on the
 screen.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Damage</term>
+<term><guilabel>Damage</guilabel></term>
 <listitem><para>The number of hit points damage done when a bullet hits a
 ship.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Life time</term>
+<term><guilabel>Life time</guilabel></term>
 <listitem><para>The maximum life time of a bullet.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Reload time</term>
+<term><guilabel>Reload time</guilabel></term>
 <listitem><para>The time a ship needs to reload a bullet.</para></listitem>
 </varlistentry>
 </variablelist>
@@ -318,29 +317,29 @@ ship.</para></listitem>
 
 <variablelist>
 <varlistentry>
-<term>Mine fuel</term>
+<term><guilabel>Mine fuel</guilabel></term>
 <listitem><para>The amount of fuel on a mine.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Energy need</term>
+<term><guilabel>Energy need</guilabel></term>
 <listitem><para>The amount of energy needed for laying a mine.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Activate time</term>
+<term><guilabel>Activate time</guilabel></term>
 <listitem><para>The time a mine is inactive.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Damage</term>
+<term><guilabel>Damage</guilabel></term>
 <listitem><para>The number of hit points of damage done when a ship hits a
 mine.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Max number</term>
+<term><guilabel>Max number</guilabel></term>
 <listitem><para>Maximum number of mines a player can have on the
 screen.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Reload time</term>
+<term><guilabel>Reload time</guilabel></term>
 <listitem><para>The time a ship needs to reload a mine.</para></listitem>
 </varlistentry>
 </variablelist>
@@ -348,27 +347,27 @@ screen.</para></listitem>
 </sect3>
 
 <sect3 id="ship">
-<title>Ship</title>
+<title><guilabel>Ship</guilabel></title>
 
 <variablelist>
 <varlistentry>
-<term>Acceleration</term>
+<term><guilabel>Acceleration</guilabel></term>
 <listitem><para>Acceleration of the ships</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Energy need</term>
+<term><guilabel>Energy need</guilabel></term>
 <listitem><para>The energy needed to accelerate a ship.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Rotation speed</term>
+<term><guilabel>Rotation speed</guilabel></term>
 <listitem><para>The speed at which a ship rotates.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Energy need</term>
+<term><guilabel>Energy need</guilabel></term>
 <listitem><para>The energy needed to rotate a ship.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Crash damage</term>
+<term><guilabel>Crash damage</guilabel></term>
 <listitem><para>The number of hit points damage done when two ships
 collide.</para></listitem>
 </varlistentry>
@@ -377,16 +376,16 @@ collide.</para></listitem>
 </sect3>
 
 <sect3 id="sun">
-<title>Sun</title>
+<title><guilabel>Sun</guilabel></title>
 
 <variablelist>
 <varlistentry>
-<term>Sun energy</term>
+<term><guilabel>Sun energy</guilabel></term>
 <listitem><para>The strength of the sun.  The higher the value, the quicker
 ships will be recharged.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Gravity</term>
+<term><guilabel>Gravity</guilabel></term>
 <listitem><para>The strength of the gravitational pull of the
 sun.</para></listitem>
 </varlistentry>
@@ -395,43 +394,42 @@ sun.</para></listitem>
 </sect3>
 
 <sect3 id="start">
-<title>Start</title>
+<title><guilabel>Start</guilabel></title>
 
 <variablelist>
 <varlistentry>
-<term>Position X and Position Y</term>
+<term><guilabel>Position X</guilabel> and <guilabel>Position Y</guilabel></term>
 <listitem><para>The ships position at the beginning of a new round.  The ships
 start at opposite sides of the sun.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Velocity X and Velocity Y</term>
+<term><guilabel>Velocity X</guilabel> and <guilabel>Velocity Y</guilabel></term>
 <listitem><para>Velocity at the beginning of a new round.</para></listitem>
 </varlistentry>
 </variablelist>
 
 </sect3>
 
-
 <sect3 id="powerup-options">
-<title>Powerups:</title>
+<title><guilabel>Powerups</guilabel></title>
 
 <variablelist>
 <varlistentry>
-<term>Appearance time</term>
+<term><guilabel>Appearance time</guilabel></term>
 <listitem><para>Maximal time between the appearance of two
 powerups.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Life time</term>
+<term><guilabel>Life time</guilabel></term>
 <listitem><para>Maximal life time of a powerup.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Energy amount</term>
+<term><guilabel>Energy amount</guilabel></term>
 <listitem><para>Amount of energy a player gets from an energy
 powerup.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term>Shield amount</term>
+<term><guilabel>Shield amount</guilabel></term>
 <listitem><para>Amount of hit points a player gets from a shield
 powerup.</para></listitem>
 </varlistentry>
@@ -441,7 +439,7 @@ powerup.</para></listitem>
 </sect2>
 
 <sect2 id="options-handicap">
-<title>Handicap </title>
+<title><guimenuitem>Handicap</guimenuitem> </title>
 
 <para>You can specify the number of hit points each player has at the begin of a
 new round by selecting <menuchoice>
@@ -455,7 +453,7 @@ new round by selecting <menuchoice>
 
 <variablelist>
 <varlistentry>
-<term>Refresh time</term>
+<term><guilabel>Refresh time</guilabel></term>
 <listitem><para>Time between two screen refreshes in milliseconds.  All other
 settings are independent of the refresh time.</para></listitem>
 </varlistentry>
@@ -466,7 +464,7 @@ settings are independent of the refresh time.</para></listitem>
 </sect1>
 
 <sect1 id="ai">
-<title><acronym>AI</acronym></title>
+<title><guilabel>AI</guilabel></title>
 
 <para>Each ship can be controlled by the computer. You can choose a difficulty
 for each ship.</para>
@@ -515,32 +513,31 @@ abort your changes.</para>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">
-<keycap>Ctrl</keycap><keycap>G</keycap></keycombo></shortcut>
-<guimenu><accel>G</accel>ame</guimenu><guimenuitem>New <accel>G</accel>ame</guimenuitem> </menuchoice></term>
+&Ctrl;<keycap>G</keycap></keycombo></shortcut>
+<guimenu>Game</guimenu><guimenuitem>New Game</guimenuitem> </menuchoice></term>
 <listitem><para>Starts a new game of &kspaceduel;</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">
-<keycap>Ctrl</keycap><keycap>N</keycap></keycombo></shortcut>
-<guimenu><accel>G</accel>ame</guimenu><guimenuitem><accel>N</accel>ew Round</guimenuitem> </menuchoice></term>
+&Ctrl;<keycap>N</keycap></keycombo></shortcut>
+<guimenu>Game</guimenu><guimenuitem>New Round</guimenuitem> </menuchoice></term>
 <listitem><para>Starts a new round, at the current level.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut><keycombo action="simul">
-<keycap>Ctrl</keycap><keycap>P</keycap></keycombo></shortcut>
-<guimenu><accel>G</accel>ame</guimenu><guimenuitem><accel>P</accel>ause</guimenuitem> </menuchoice></term>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo></shortcut>
+<guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem> </menuchoice></term>
 <listitem><para>Pauses and unpauses the game.</para></listitem>
 </varlistentry>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl</keycap>
+<keycombo action="simul">&Ctrl;
 <keycap>Q</keycap></keycombo></shortcut>
-<guimenu><accel>G</accel>ame</guimenu><guimenuitem><accel>Q</accel>uit</guimenuitem>
+<guimenu>Game</guimenu><guimenuitem>Quit</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Quits</action> &kspaceduel;</para></listitem>
 </varlistentry>
@@ -554,14 +551,14 @@ abort your changes.</para>
 <variablelist>
 <varlistentry>
 <term><menuchoice>
-<guimenu><accel>S</accel>ettings</guimenu><guimenuitem>Show <accel>T</accel>oolbar</guimenuitem> </menuchoice></term>
+<guimenu>Settings</guimenu><guimenuitem>Show Toolbar</guimenuitem> </menuchoice></term>
 <listitem><para>When selected, the toolbar will be visible.  When not selected,
 the toolbar will be hidden.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu><accel>S</accel>ettings</guimenu><guimenuitem>Show St<accel>a</accel>tus Bar</guimenuitem>
+<guimenu>Settings</guimenu><guimenuitem>Show Status Bar</guimenuitem>
 </menuchoice></term>
 <listitem><para>When selected, the status bar (the bar along the bottom of the
 screen which gives textual information) will be visible.  When not selected, the
@@ -570,7 +567,7 @@ status bar will be hidden.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu><accel>S</accel>ettings</guimenu><guimenuitem><accel>S</accel>ave Settings</guimenuitem>
+<guimenu>Settings</guimenu><guimenuitem>Save Settings</guimenuitem>
 </menuchoice></term>
 <listitem><para>Saves your current setup to a configuration file.  These
 settings will be reloaded when you start &kspaceduel; again.</para></listitem>
@@ -578,8 +575,8 @@ settings will be reloaded when you start &kspaceduel; again.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu><accel>S</accel>ettings</guimenu>
-<guimenuitem>Configure <accel>K</accel>ey Bindings</guimenuitem>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Key Bindings</guimenuitem>
 </menuchoice></term>
 <listitem><para>Allows you to change the keyboard shortcuts for &kspaceduel;</para>
 
@@ -591,7 +588,7 @@ Game</quote>, <quote>New Game</quote>, &etc;</para></note></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu><accel>S</accel>ettings</guimenu><guimenuitem>Player <accel>K</accel>eys</guimenuitem>
+<guimenu>Settings</guimenu><guimenuitem>Player Keys</guimenuitem>
 </menuchoice></term>
 <listitem><para>Allows you to configure the keys used during game play.</para>
 <para>For more detailed instructions, see the section entitled <link linkend="options-keys">Keys</link>.</para></listitem>
@@ -599,15 +596,15 @@ Game</quote>, <quote>New Game</quote>, &etc;</para></note></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu><accel>S</accel>ettings</guimenu><guimenuitem><accel>G</accel>ame...</guimenuitem> </menuchoice></term>
+<guimenu>Settings</guimenu><guimenuitem>Game...</guimenuitem> </menuchoice></term>
 <listitem><para>Allows you to configure game options</para>
 <para>For more detailed instructions, see the section entitled <link linkend="options-configurations">Game Configuration</link>.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu><accel>S</accel>ettings</guimenu>
-<guimenuitem><accel>H</accel>andicap</guimenuitem> </menuchoice></term>
+<guimenu>Settings</guimenu>
+<guimenuitem>Handicap</guimenuitem> </menuchoice></term>
 <listitem><para>Allows you to handicap a player to make the game more
 challenging (or easy).</para>
 <para>For more detailed instructions, see the section entitled <link
@@ -616,8 +613,8 @@ linkend="options-handicap">Handicap</link>.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu><accel>S</accel>ettings</guimenu>
-<guimenuitem>Gra<accel>p</accel>hics...</guimenuitem> </menuchoice></term>
+<guimenu>Settings</guimenu>
+<guimenuitem>Graphics...</guimenuitem> </menuchoice></term>
 <listitem><para>Allows you to change the graphics refresh rate.</para><para>For
 more detailed instructions, see the section entitled <link
 linkend="options-graphics">Graphics</link>.</para></listitem>
@@ -625,8 +622,8 @@ linkend="options-graphics">Graphics</link>.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu><accel>S</accel>ettings</guimenu>
-<guimenuitem><accel>A</accel>i...</guimenuitem> </menuchoice></term>
+<guimenu>Settings</guimenu>
+<guimenuitem>Ai...</guimenuitem> </menuchoice></term>
 <listitem><para>Allows you to alter the nature of the computers play.</para>
 <para>For more detailed instructions, see the section entitled <link
 linkend="ai">AI</link>.</para></listitem>
@@ -638,54 +635,8 @@ linkend="ai">AI</link>.</para></listitem>
 <sect1 id="help-menu">
 <title><guimenu>Help</guimenu> Menu</title>
 
-<variablelist>
-<varlistentry>
-<term><anchor id="contents"/><menuchoice>
-<shortcut><keycap>F1</keycap></shortcut>
-<guimenu><accel>H</accel>elp</guimenu><guimenuitem><accel>C</accel>ontents</guimenuitem></menuchoice></term>
-<listitem>
-<para>This invokes the &kde; help system starting at the &kspaceduel; help pages (this
-document).</para>
-</listitem>
-</varlistentry>
+&help.menu.documentation;
 
-<varlistentry>
-<term><anchor id="whats-this"/><menuchoice>
-<shortcut><keycombo action="simul"><keycap>Shift</keycap><keycap>F1</keycap></keycombo></shortcut>
-<guimenu><accel>H</accel>elp</guimenu><guimenuitem>What's <accel>T</accel>his?</guimenuitem></menuchoice></term>
-<listitem>
-<para>This changes the mouse cursor to a combination arrow and question mark.
-Clicking on items within &kspaceduel; with this arrow will open a help window (if
-one exists for the particular item) explaining the item's
-function.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><anchor id="bug"/><menuchoice>
-<guimenu><accel>H</accel>elp</guimenu><guimenuitem><accel>R</accel>eport
-Bug...</guimenuitem></menuchoice></term>
-<listitem><para>If you have a good idea for the next version of the game, or the
-program crashes on you, you can select this option to send a bug report to the
-author.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><anchor id="about-kspaceduel"/><menuchoice>
-<guimenu><accel>H</accel>elp</guimenu><guimenuitem><accel>A</accel>bout
-KSpaceduel</guimenuitem></menuchoice></term>
-<listitem><para>This will displays version and author
-information</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><anchor id="about-kde"/><menuchoice>
-<guimenu><accel>H</accel>elp</guimenu><guimenuitem>About
-<accel>K</accel>DE</guimenuitem></menuchoice></term>
-<listitem><para>This displays the &kde; version and other basic
-information.</para></listitem>
-</varlistentry>
-</variablelist>
 </sect1>
 
 <sect1 id="keys">
@@ -699,12 +650,12 @@ information.</para></listitem>
 <tgroup cols="2">
 <thead><row><entry>Key Combo</entry><entry>Action</entry></row></thead>
 <tbody>
-<row><entry><keycombo action="simul"><keycap>Ctrl</keycap><keycap>Q</keycap></keycombo></entry><entry>Quit &kspaceduel;</entry></row>
-<row><entry><keycombo action="simul"><keycap>Ctrl</keycap><keycap>G</keycap></keycombo></entry><entry>New Game</entry></row>
-<row><entry><keycombo action="simul"><keycap>Ctrl</keycap><keycap>N</keycap></keycombo></entry><entry>New Round</entry></row>
-<row><entry><keycombo action="simul"><keycap>Ctrl</keycap><keycap>P</keycap></keycombo></entry><entry>Pause Game</entry></row>
+<row><entry><keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo></entry><entry>Quit &kspaceduel;</entry></row>
+<row><entry><keycombo action="simul">&Ctrl;<keycap>G</keycap></keycombo></entry><entry>New Game</entry></row>
+<row><entry><keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo></entry><entry>New Round</entry></row>
+<row><entry><keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo></entry><entry>Pause Game</entry></row>
 <row><entry><keycombo action="simul"><keycap>F1</keycap></keycombo></entry><entry>Help Contents</entry></row>
-<row><entry><keycombo action="simul"><keycap>Shift</keycap><keycap>F1</keycap></keycombo></entry><entry>Whats This Help</entry></row>
+<row><entry><keycombo action="simul">&Shift;<keycap>F1</keycap></keycombo></entry><entry>Whats This Help</entry></row>
 <row><entry><keycombo action="simul"><keycap>Space</keycap></keycombo></entry><entry>Start Game</entry></row>
 </tbody>
 </tgroup>
@@ -761,29 +712,14 @@ Program copyright 1999-2000 Andreas Zehender <email>az@azweb.de</email></para>
 <sect1 id="getting-kapp">
 <title>How to obtain &kspaceduel;</title>
  
-<para>&kspaceduel; is part of the KDE project <ulink
- url="http://www.kde.org">http://www.kde.org</ulink>. 
-&kspaceduel; can be found in the kdegames package on
-<ulink url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>, the
-main ftp site of the KDE project. </para>
+&install.intro.documentation;
+
 </sect1>
 
 <sect1 id="compilation">
 <title>Compilation and Installation</title>
  
-<para>In order to compile and install &kspaceduel; on your system, type the
-following in the base directory of the KDE distribution:</para>
-<screen width="40">
-<prompt>%</prompt> <userinput>cd kdegames</userinput>
-<prompt>%</prompt> <userinput>./configure</userinput>
-<prompt>%</prompt> <userinput>make</userinput>
-<prompt>%</prompt> <userinput>make install</userinput>
-</screen>
- 
-<para>Since &kspaceduel; uses <application>autoconf</application> and
-<application>automake</application> you should have not trouble compiling
-it.Should you run into problems please report them to the KDE mailing
-lists.</para>
+&install.compile.documentation;
  
 </sect1>         
 </appendix>
