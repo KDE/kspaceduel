@@ -15,7 +15,6 @@ MyTopLevelWidget::MyTopLevelWidget()
    initGameWidgets();
    initStatusBar( );
    initActions( );
-   setAutoSaveSettings();
 }
 
 void MyTopLevelWidget::initGameWidgets( ){
@@ -73,11 +72,7 @@ void MyTopLevelWidget::initActions( )
    KAction* gameStart = new KAction( i18n( "Start" ), GAME_START_SHORTCUT,
 	   playfield, SLOT( start( ) ), actionCollection( ), "game_start" );
 
-   KStdAction::keyBindings(this, SLOT(keySetup()), actionCollection());
    KStdAction::preferences(playfield, SLOT(gameSetup()), actionCollection());
-
-   setStandardToolBarMenuEnabled( true );
-   createStandardStatusBarAction();
 
    KAccel* acc = new KAccel(this);
    gameStart->plugAccel(acc);
@@ -120,8 +115,7 @@ void MyTopLevelWidget::initActions( )
    actionCollection()->setAutoConnectShortcuts(true);
    playfield->setActionCollection(actionCollection());
 
-   createGUI();
-
+   setupGUI();
 }
 
 void MyTopLevelWidget::initStatusBar( )
