@@ -22,13 +22,13 @@ public:
 };
 
 
-class PoverupSprite:public QwSprite
+class PowerupSprite:public QwSprite
 {
 public:
-   enum {PoverupMine=0, PoverupBullet, PoverupShield, PoverupEnergy,
-         PoverupNum};
-   PoverupSprite(QwSpritePixmapSequence *seq, int t, double lifetime);
-   virtual int rtti() const {return S_POVERUP;}
+   enum {PowerupMine=0, PowerupBullet, PowerupShield, PowerupEnergy,
+         PowerupNum};
+   PowerupSprite(QwSpritePixmapSequence *seq, int t, double lifetime);
+   virtual int rtti() const {return S_POWERUP;}
 
    double getLifetime() {return time;}
    void setLifetime(double t) {time=t;}
@@ -83,10 +83,10 @@ public:
    void mine(double reloadTime) {reloadMineTime=reloadTime;}
    bool reloadsMine(double t=0.0) {return reloadMineTime>t;}
    bool explodes() {return explosion>=0;}
-   void setMinePoverups(int m) {minePoverups=m;}
-   int getMinePoverups() {return minePoverups;}
-   void setBulletPoverups(int b) {bulletPoverups=b;}
-   int getBulletPoverups() {return bulletPoverups;}
+   void setMinePowerups(int m) {minePowerups=m;}
+   int getMinePowerups() {return minePowerups;}
+   void setBulletPowerups(int b) {bulletPowerups=b;}
+   int getBulletPowerups() {return bulletPowerups;}
    virtual void forward(double mult);
    virtual void forward(double mult,int fr);
    virtual void calculateGravityAndEnergy(double gravity,double sunEnergy,
@@ -94,7 +94,7 @@ public:
 private:
    int hitpoints, wins, explosion;
    double energy,rotation,reloadBulletTime,reloadMineTime;
-   int bulletPoverups,minePoverups;
+   int bulletPowerups,minePowerups;
 };
 
 class BulletSprite:public MobileSprite

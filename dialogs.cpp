@@ -319,7 +319,7 @@ int ConfigSetup::Parent[EditNum]=
  TabShip,TabShip,TabShip,TabShip,TabShip,
  TabSun,TabSun,
  TabStart,TabStart,TabStart,TabStart,
- TabPoverups,TabPoverups,TabPoverups,TabPoverups};
+ TabPowerups,TabPowerups,TabPowerups,TabPowerups};
 
 int ConfigSetup::Position[EditNum]=
 {0,
@@ -332,11 +332,11 @@ int ConfigSetup::Position[EditNum]=
 
 #ifdef kspaceduel_only_for_xgettext
  i18n("General"),i18n("Bullet"),i18n("Mine"),i18n("Ship"),i18n("Sun"),
- i18n("Start"),i18n("Poverups")
+ i18n("Start"),i18n("Powerups")
 #endif
 
 const char *ConfigSetup::TabName[TabNum]=
-{"General","Bullet","Mine","Ship","Sun","Start","Poverups"};
+{"General","Bullet","Mine","Ship","Sun","Start","Powerups"};
 
 const int LCDLen=6;
 
@@ -452,7 +452,7 @@ void ConfigSetup::valueChanged(int ednum,int value)
          case EditMaxMines:config.maxMines=value;break;
          case EditMineDamage:config.mineDamage=value;break;
          case EditShipDamage:config.shipDamage=value;break;
-         case EditPoverupShieldAmount:config.poverupShieldAmount=value;break;
+         case EditPowerupShieldAmount:config.powerupShieldAmount=value;break;
       }
 }
 
@@ -480,9 +480,9 @@ void ConfigSetup::valueChanged(int ednum,double value)
          case EditEnergyNeed:config.energyNeed=value;break;
          case EditRotationSpeed:config.rotationSpeed=value;break;
          case EditRotationEnergyNeed:config.rotationEnergyNeed=value;break;
-         case EditPoverupRefreshTime:config.poverupRefreshTime=value;break;
-         case EditPoverupLifeTime:config.poverupLifeTime=value;break;
-         case EditPoverupEnergyAmount:config.poverupEnergyAmount=value;break;
+         case EditPowerupRefreshTime:config.powerupRefreshTime=value;break;
+         case EditPowerupLifeTime:config.powerupLifeTime=value;break;
+         case EditPowerupEnergyAmount:config.powerupEnergyAmount=value;break;
       }
 }
 
@@ -554,10 +554,10 @@ void ConfigSetup::displayConfig(SConfig cfg)
    setValue(EditRotationEnergyNeed,cfg.rotationEnergyNeed);
    setValue(EditShipDamage,cfg.shipDamage);
 
-   setValue(EditPoverupLifeTime,cfg.poverupLifeTime);
-   setValue(EditPoverupRefreshTime,cfg.poverupRefreshTime);
-   setValue(EditPoverupShieldAmount,cfg.poverupShieldAmount);
-   setValue(EditPoverupEnergyAmount,cfg.poverupEnergyAmount);
+   setValue(EditPowerupLifeTime,cfg.powerupLifeTime);
+   setValue(EditPowerupRefreshTime,cfg.powerupRefreshTime);
+   setValue(EditPowerupShieldAmount,cfg.powerupShieldAmount);
+   setValue(EditPowerupEnergyAmount,cfg.powerupEnergyAmount);
 }
 
 void ConfigSetup::setValue(int ednum,int val)

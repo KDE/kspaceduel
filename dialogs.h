@@ -73,11 +73,11 @@ private:
          EditRotationEnergyNeed,EditShipDamage,
          EditSunEnergy,EditGravity,
          EditPosX,EditPosY,EditVelX,EditVelY,
-         EditPoverupRefreshTime,EditPoverupLifeTime,
-         EditPoverupEnergyAmount,EditPoverupShieldAmount,
+         EditPowerupRefreshTime,EditPowerupLifeTime,
+         EditPowerupEnergyAmount,EditPowerupShieldAmount,
          EditNum};
    enum {TabGeneral=0,TabBullet,TabMine,
-         TabShip,TabSun,TabStart,TabPoverups,TabNum};
+         TabShip,TabSun,TabStart,TabPowerups,TabNum};
    enum Type {VarInt,VarFloat};
    
    static char LabelName[EditNum][25];

@@ -226,7 +226,7 @@ void Ai::tryShots()
 
        //if too much bullets are on the playfield, no shot is tried
    if(bullets[playerNumber]->count() <
-      (cfg->maxBullets+ship[playerNumber]->getBulletPoverups()))
+      (cfg->maxBullets+ship[playerNumber]->getBulletPowerups()))
    {
       for(f=0;f<=frameNum;f++)
       {

@@ -20,9 +20,9 @@ struct SConfig
       rotationEnergyNeed,startPosX,startPosY,startVelX,startVelY,
       bulletLifeTime,mineReloadTime,bulletReloadTime;
    unsigned bulletDamage,shipDamage,mineDamage,maxBullets,maxMines;
-   double poverupLifeTime, poverupRefreshTime;
-   double poverupEnergyAmount;
-   unsigned poverupShieldAmount;
+   double powerupLifeTime, powerupRefreshTime;
+   double powerupEnergyAmount;
+   unsigned powerupShieldAmount;
 };
 #define predefinedConfigNum 4
 const SConfig predefinedConfig[]={{1.0, 2200.0, 0.2, 1.0, 9000.0, 1.0,
