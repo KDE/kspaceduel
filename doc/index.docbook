@@ -1,0 +1,232 @@
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN">
+<book lang="en">
+<bookinfo>
+<title>The KSpaceduel Handbook</title>
+<authorgroup>
+<author>
+<surname></surname>
+</author>
+</authorgroup>
+<date>Last updated 28 April 1999 for version 1.0. </date>
+<releaseinfo><!-- information about this particular version --></releaseinfo>
+<revhistory>
+<revision>
+<revnumber></revnumber>
+<date></date>
+</revision>
+</revhistory>
+<abstract>
+<para>KSpaceduel is an space arcade game. Two ships fly around the sun and
+try to shoot eachother.</para>
+<para>KSpaceduel is an space arcade game. Two ships fly around the sun and try to shoot eachother.</para><!-- Merge this with the previous paragraph; it comes from <META NAME="description" CONTENT="..."> --></abstract>
+<keywordset>
+<keyword>Space duel</keyword>
+<keyword>KDE</keyword>
+<keyword>game</keyword>
+<keyword>ships</keyword>
+<keyword>shooting</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="Introduction">
+<title>Introduction</title>
+<para>KSpaceduel is an space arcade game for two players. Each player controls a ship
+that flies around the sun and tries to shoot at the other ship.</para>
+</chapter>
+<chapter id="RulesoftheGame">
+<title>Rules of the Game</title>
+<sect1>
+<title>Ship Movement </title>
+<para>Each player controls one ship. </para>
+<para>The ships can rotate, accelerate, shoot and lay mines.</para>
+</sect1>
+<sect1>
+<title>Energy </title>
+<para>Each ship has an amount of energy (refer to the game options for values). </para>
+<para>Ships need energy for rotation, acceleration, shooting and laying mines. A ship
+gets energy from its solar panels. The amount of energy a ship gets depends on
+the distance from and direction to the sun. A ship gets more energy near the sun
+and less energy near the border. It gets the full amount of energy if the sun
+shines directly on the panels and less or even no energy if the sun shines at an
+angle to the panel or to the side of the panel.</para>
+<para>If a ship has no energy it can't navigate or shoot. </para>
+</sect1>
+<sect1>
+<title>Hit points</title>
+<para>
+Collisions with own or other bullets or mines decrease the hit points of a ship.
+If two ships collide, the weaker ship is destroyed and the hit points of the
+stronger ship are decreased by the hit points of the weaker ship plus an amount
+(Crash Damage). A ship is destroyed when it flies into the sun.</para>
+</sect1>
+<sect1>
+<title>Bullets and Mines </title>
+<para>Bullets fly around the sun like a ship. </para>
+<para>Mines have an amount of energy to stay at the same position. When the energy is
+spent, the mine falls into the sun. Mines near the sun need more energy than
+those which are further away. </para>
+<para>Mines can be destroyed with bullets. </para>
+<para>By default a ship can have 5 bullets and 3 mines on the screen. </para>
+</sect1>
+</chapter>
+<chapter id="Options">
+<title>Options</title>
+<sect1>
+<title>Keys </title>
+<para>Keys can be configured with the &quot;Options/Keys...&quot; menu item.</para>
+</sect1>
+<sect1>
+<title>Configurations </title>
+<para>All settings of the game are configurable with the &quot;Options/Game...&quot;
+menu item.</para>
+<para>Settings are collected in different configurations. If you choose the "Custom"
+configuration, you can define all settings for yourself. If you have found an
+interesting configuration, mail it to the author of the game. It can be
+implemented in a future version (send the part &quot;&lsqb;Game]&quot; in the file
+&quot; /.kde/share/config/kspaceduelrc&quot;).</para>
+<para>The settings are:</para>
+<para><itemizedlist>
+<listitem>
+<para><emphasis remap="bf">Sun</emphasis>
+<itemizedlist>
+<listitem>
+<para><emphasis remap="bf">Sun energy:</emphasis> The strength of the sun. The higher the value the
+quicker ships will be charged.</para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Gravity:</emphasis> The strength of the gravitational pull of the sun.</para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Bullet</emphasis>
+<itemizedlist>
+<listitem>
+<para><emphasis remap="bf">Shot speed:</emphasis> The speed of bullets. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Energy need:</emphasis> The amount of energy needed for one shot. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Max number:</emphasis> The maximum number of bullets a player can have on the
+screen.</para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Damage:</emphasis> The number of hit points damage done when a bullet hits a ship. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Life time:</emphasis> The maximum life time of a bullet.</para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Reload time:</emphasis> The time a ship needs to reload a bullet. </para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Mine</emphasis>
+<itemizedlist>
+<listitem>
+<para><emphasis remap="bf">Mine fuel:</emphasis> The amount of fuel on a mine</para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Energy need:</emphasis> The amount of energy needed for laying a mine </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Activate time:</emphasis> The time a mine is inactive, </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Damage:</emphasis> The number of hit points of damage done when a ship hits a mine </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Max number:</emphasis> maximum number of mines a player can have on the screen </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Reload time:</emphasis> The time a ship needs to reload a mine. </para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">General</emphasis>
+<itemizedlist>
+<listitem>
+<para><emphasis remap="bf">Game speed:</emphasis> controls the speed of the whole game </para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Start</emphasis>
+<itemizedlist>
+<listitem>
+<para><emphasis remap="bf">Position X</emphasis> and <emphasis remap="bf">Position Y:</emphasis> the ships position at the begin of
+a new round. The ships start at opposite sides of the sun.</para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Velocity X</emphasis> and <emphasis remap="bf">Velocity Y:</emphasis> velocity at the begin of a new
+round Ship: </para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Ship</emphasis>
+<itemizedlist>
+<listitem>
+<para><emphasis remap="bf">Acceleration:</emphasis> Acceleration of the ships </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Energy need:</emphasis> The energy needed to accelerate a ship. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Rotation speed:</emphasis> The speed at which a ship rotates. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Energy need:</emphasis> The energy needed to rotate a ship. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Crash damage:</emphasis> The number of hit points damage done when two ships
+collide. </para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</sect1>
+<sect1>
+<title>Handicap </title>
+<para>You can specify the number of hit points each player has at the begin of a new
+round with &quot;Options/Handicap...&quot;.</para>
+</sect1>
+<sect1>
+<title>Graphics</title>
+<para><emphasis remap="bf">Refreshtime:</emphasis> Time between two screen refreshs in ms. All settings are
+independent of the refreshtime!</para>
+</sect1>
+</chapter>
+<chapter id="Ai">
+<title>Ai</title>
+<para>Each ship can be controlled by the computer. You can choose a difficulty for
+each ship.</para>
+<para>The ai is optimized for the default config, but can mamage with other configs.
+Just try...</para>
+</chapter>
+<chapter id="License">
+<title>License</title>
+<para>KSpaceduel Copyright 1998 Andreas Zehender
+<ulink url="mailto:azehende@ba-stuttgart.de">azehende@ba-stuttgart.de</ulink></para>
+<para>KSpaceduel uses QwSpriteField, Copyright Warwick Allison. See
+<ulink url="http://trolls.troll.no/warwick/QwSpriteField">http://trolls.troll.no/warwick/QwSpriteField</ulink> for further
+information.</para>
+<para>KSpaceduel is released under the GPL.</para>
+</chapter>
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+End:
+-->

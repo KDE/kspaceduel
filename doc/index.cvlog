@@ -1,0 +1,78 @@
+=== LinuxDoc conversion errors ===================
+-> Check if any important attributes have been left behind.
+    INPUT                     OUTPUT
+Line Tag                  Line Tag
+   5 `HTMLURL'               0 `<affiliation><address><email><ulink>'
+   6 `'                      0 `'
+! Check the authorname (<collab><collabname> instead of <author><name>?)
+  11 `TOC'                   0 `'
+  69 `&nbsp;'                0 ` '
+! if you really want an non-breaking space, you should encode it as in entity
+  78 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  80 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  82 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  84 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  86 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  87 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  88 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  90 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  91 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  92 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  94 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  96 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  97 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  98 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+  99 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 100 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 101 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 103 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 105 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 107 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 109 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 109 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 111 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 111 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 114 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+-> Check if any important attributes have been left behind.
+    INPUT                     OUTPUT
+Line Tag                  Line Tag
+ 116 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 117 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 118 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 119 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 120 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 132 `BF'                    0 `<emphasis remap="bf">'
+! Check and correct manually
+ 145 `HTMLURL'               0 `<ulink>'
+ 149 `URL'                   0 `<ulink>'
+=== NIF conversion errors ========================
