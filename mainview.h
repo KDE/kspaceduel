@@ -5,7 +5,6 @@
 #include <qimage.h>
 #include <kconfig.h>
 #include <krandomsequence.h>
-#include "QwSpriteField.h"
 #include "sprites.h"
 #include "dialogs.h"
 #include "ai.h"
@@ -45,6 +44,8 @@ protected:
    virtual void keyPressEvent(QKeyEvent *event);
    virtual void keyReleaseEvent(QKeyEvent *event);
    SConfig modifyConfig(SConfig conf);
+   QCanvasPixmapArray* loadOldPixmapSequence(const QString& datapattern,
+                           const QString& maskpattern, int framecount=1);
    void moveShips();
    void moveBullets();
    void moveMines();
@@ -52,8 +53,8 @@ protected:
    void calculatePowerups();
    void collisions();
 private:
-   QwImageSpriteField field;
-   QwSpriteFieldView view;
+   QCanvas field;
+   QCanvasView view;
    
    SOptions options;
    SConfig customConfig,config;
@@ -71,17 +72,17 @@ private:
    QList<QImage> shipImages;
    QList<QPoint> points;
    QImage bulletImage;
-   QwSpritePixmapSequence *bulletsequence[2];
-   QwSpritePixmapSequence *shipsequence[2];
-   QwSpritePixmapSequence *explosionsequence;
-   QwSpritePixmapSequence *minesequence[2];
-   QwSpritePixmapSequence *mineexplosionsequence;
-   QwSpritePixmapSequence *powerupsequence[PowerupSprite::PowerupNum];
+   QCanvasPixmapArray *bulletsequence[2];
+   QCanvasPixmapArray *shipsequence[2];
+   QCanvasPixmapArray *explosionsequence;
+   QCanvasPixmapArray *minesequence[2];
+   QCanvasPixmapArray *mineexplosionsequence;
+   QCanvasPixmapArray *powerupsequence[PowerupSprite::PowerupNum];
    
 
    ShipSprite *ship[2];
    SunSprite *sun;
-   QwTextSprite *textSprite;
+   QCanvasText *textSprite;
    QList<BulletSprite> *bullets[2];
    QList<MineSprite> *mines[2];
    QList<ExplosionSprite> explosions;

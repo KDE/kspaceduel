@@ -11,20 +11,26 @@
 #include <klocale.h>
 #include <kstddirs.h>
 #include <kglobal.h>
+#include <qfile.h>
 
 #include "defines.h"
 
 
 MyMainView::MyMainView(QWidget *parent, const char *name)
       :QWidget(parent,name),
-       field((const char *)(locate("appdata", MV_BACKGROUND)),
-             DEF_WIDTH,DEF_HEIGHT,10,200),
+       field(DEF_WIDTH,DEF_HEIGHT),
        view(&field,this)
 {
    int i,p;
 
-   random.setSeed(0); 
+   random.setSeed(0);
+   QPixmap backgr((const char *)(locate("appdata", MV_BACKGROUND)));
+   field.setBackgroundPixmap(backgr);
 
+   view.setResizePolicy(QScrollView::ResizeOne);
+   view.setHScrollBarMode(QScrollView::AlwaysOff);
+   view.setVScrollBarMode(QScrollView::AlwaysOff);
+   
    for(p=0;p<2;p++)
    {
       for(i=0;i<PlayerKeyNum;i++)
@@ -35,54 +41,46 @@ MyMainView::MyMainView(QWidget *parent, const char *name)
    for(i=0;i<FunctionKeyNum;i++)
       functionKeyPressed[i]=false;
 
+   QString tmp = KGlobal::dirs()->findResourceDir("appdata", (QString)MV_BACKGROUND);
 
-   QwSpritePixmapSequence *sunsequence
-      =new QwSpritePixmapSequence(locate("appdata", MV_SUN_PPM),
-                                  locate("appdata", MV_SUN_PBM));
-   sun=new SunSprite(sunsequence);
-   sun->moveTo(width()/2-1,height()/2-1);
+   QCanvasPixmapArray *sunsequence
+      = loadOldPixmapSequence( tmp + MV_SUN_PPM, tmp + MV_SUN_PBM );
+   sun=new SunSprite(sunsequence, &field);
+   sun->move(width()/2-1,height()/2-1);
    sun->show();
 
-   QString tmp = KGlobal::dirs()->findResourceDir("appdata", QString().sprintf(MV_EXPLOSION_PPM, 0));
-   explosionsequence=new QwSpritePixmapSequence(tmp + MV_EXPLOSION_PPM,
-                                                tmp + MV_EXPLOSION_PBM,31);
-   mineexplosionsequence=
-      new QwSpritePixmapSequence(tmp + MV_MINEEX_PPM,
-                                 tmp + MV_MINEEX_PBM,18);
+   explosionsequence = loadOldPixmapSequence( tmp + MV_EXPLOSION_PPM,
+                                              tmp + MV_EXPLOSION_PBM, 31 );
+   mineexplosionsequence = loadOldPixmapSequence(tmp + MV_MINEEX_PPM,
+                                                 tmp + MV_MINEEX_PBM, 18 );
 
-   shipsequence[0]=new QwSpritePixmapSequence(tmp + MV_SHIP1_PPM,
-                                              tmp + MV_SHIP1_PBM,
-                                              ROTNUM);
-   shipsequence[1]=new QwSpritePixmapSequence(tmp + MV_SHIP2_PPM,
-                                              tmp + MV_SHIP2_PBM,
-                                              ROTNUM);
-   ship[0]=new ShipSprite(shipsequence[0],0);
-   ship[1]=new ShipSprite(shipsequence[1],1);
+   shipsequence[0] = loadOldPixmapSequence( tmp + MV_SHIP1_PPM,
+                                            tmp + MV_SHIP1_PBM, ROTNUM );
+   shipsequence[1] = loadOldPixmapSequence( tmp + MV_SHIP2_PPM,
+                                            tmp + MV_SHIP2_PBM, ROTNUM);
+   ship[0]=new ShipSprite(shipsequence[0],&field,0);
+   ship[1]=new ShipSprite(shipsequence[1],&field,1);
 
-   bulletsequence[0]=new QwSpritePixmapSequence(locate("appdata", MV_BULLET1_PPM),
-                                                locate("appdata", MV_BULLET1_PBM));
-   bulletsequence[1]=new QwSpritePixmapSequence(locate("appdata", MV_BULLET2_PPM),
-                                                locate("appdata", MV_BULLET2_PBM));
-   minesequence[0]=new QwSpritePixmapSequence(tmp + MV_MINE1_PPM,
-                                              tmp + MV_MINE1_PBM,2);
-   minesequence[1]=new QwSpritePixmapSequence(tmp + MV_MINE2_PPM,
-                                              tmp + MV_MINE2_PBM,2);
+   bulletsequence[0] = loadOldPixmapSequence( tmp + MV_BULLET1_PPM,
+                                              tmp + MV_BULLET1_PBM );
+   bulletsequence[1] = loadOldPixmapSequence( tmp + MV_BULLET2_PPM,
+                                              tmp + MV_BULLET2_PBM );
+   minesequence[0] = loadOldPixmapSequence( tmp + MV_MINE1_PPM,
+                                            tmp + MV_MINE1_PBM, 2);
+   minesequence[1] = loadOldPixmapSequence( tmp + MV_MINE2_PPM,
+                                            tmp + MV_MINE2_PBM, 2);
    powerupsequence[PowerupSprite::PowerupMine]
-      =new QwSpritePixmapSequence(locate("appdata", MV_POWERMINE_PPM),
-                                  locate("appdata", MV_POWERMINE_PBM));
+      = loadOldPixmapSequence( tmp + MV_POWERMINE_PPM, tmp + MV_POWERMINE_PBM );
    powerupsequence[PowerupSprite::PowerupBullet]
-      =new QwSpritePixmapSequence(locate("appdata", MV_POWERBULLET_PPM),
-                                  locate("appdata", MV_POWERBULLET_PBM));
+      = loadOldPixmapSequence( tmp + MV_POWERBULLET_PPM, tmp + MV_POWERBULLET_PBM );
    powerupsequence[PowerupSprite::PowerupShield]
-      =new QwSpritePixmapSequence(locate("appdata", MV_POWERSHIELD_PPM),
-                                  locate("appdata", MV_POWERSHIELD_PBM));
+      = loadOldPixmapSequence( tmp + MV_POWERSHIELD_PPM, tmp + MV_POWERSHIELD_PBM );
    powerupsequence[PowerupSprite::PowerupEnergy]
-      =new QwSpritePixmapSequence(locate("appdata", MV_POWERENERGY_PPM),
-                                  locate("appdata", MV_POWERENERGY_PBM));
+      = loadOldPixmapSequence( tmp + MV_POWERENERGY_PPM, tmp + MV_POWERENERGY_PBM );
    
    for(i=0;i<2;i++)
    {
-      ship[i]->setBoundsAction(QwRealMobileSprite::Wrap);
+      // ship[i]->setBoundsAction(QwRealMobileSprite::Wrap);
       ship[i]->hide();
       bullets[i]=new QList<BulletSprite>;
       bullets[i]->setAutoDelete(true);
@@ -380,16 +378,18 @@ void MyMainView::resizeEvent(QResizeEvent *event)
    QWidget::resizeEvent(event);
    view.resize(width(),height());
    field.resize(width(),height());
-   sun->moveTo(width()/2-1,height()/2-1);
+
+   // printf("%d %d\n",field.width(),field.height());
+   sun->move(width()/2-1,height()/2-1);
 
    for(i=0;i<2;i++)
    {
-      ship[i]->adoptSpritefieldBounds();
+      // ship[i]->adoptSpritefieldBounds();
       ship[i]->moveBy(mx,my);
       current=mines[i]->at();
       for(mine=mines[i]->first();mine;mine=mines[i]->next())
       {
-         mine->adoptSpritefieldBounds();
+         // mine->adoptSpritefieldBounds();
          mine->moveBy(mx,my);
       }
       if(current>=0)
@@ -398,7 +398,7 @@ void MyMainView::resizeEvent(QResizeEvent *event)
       current=bullets[i]->at();
       for(bullet=bullets[i]->first();bullet;bullet=bullets[i]->next())
       {
-         bullet->adoptSpritefieldBounds();
+         // bullet->adoptSpritefieldBounds();
          bullet->moveBy(mx,my);
       }
       if(current>=0)
@@ -425,13 +425,13 @@ void MyMainView::newRound()
    killTimers();
    mx=width()/2.0;
    my=height()/2.0;
-   ship[0]->moveTo(mx+config.startPosX,my+config.startPosY);
+   ship[0]->move(mx+config.startPosX,my+config.startPosY);
    ship[0]->setRotation(0.0);
-   ship[0]->frame(0);
+   ship[0]->setFrame(0);
    
-   ship[1]->moveTo(mx-config.startPosX,my-config.startPosY);
+   ship[1]->move(mx-config.startPosX,my-config.startPosY);
    ship[1]->setRotation(M_PI);
-   ship[1]->frame(ROTNUM/2);
+   ship[1]->setFrame(ROTNUM/2);
 
    ship[0]->setVelocity(config.startVelX,config.startVelY);
    ship[1]->setVelocity(-config.startVelX,-config.startVelY);
@@ -497,8 +497,8 @@ void MyMainView::timerEvent(QTimerEvent *event)
          gameEnd-=1.0;
          if(gameEnd<=0.0)
          {
-            textSprite=new QwTextSprite;
-            textSprite->moveTo(width()/2,height()/2-90);
+            textSprite=new QCanvasText(&field);
+            textSprite->move(width()/2,height()/2-90);
             textSprite->setTextFlags(AlignCenter);
             textSprite->setColor(qRgb(255,160,0));
             textSprite->setFont(QFont("Helvetica",14));
@@ -592,8 +592,8 @@ void MyMainView::moveShips()
             &&(en>config.energyNeed))
          {
             en-=config.energyNeed;
-            ship[i]->setVelocity(ship[i]->dX()+nx*config.acc,
-                                 ship[i]->dY()-ny*config.acc);
+            ship[i]->setVelocity(ship[i]->xVelocity()+nx*config.acc,
+                                 ship[i]->yVelocity()-ny*config.acc);
          }
          if(en>99.9)
             en=99.9;
@@ -610,13 +610,13 @@ void MyMainView::moveShips()
                {
                   ship[i]->bullet(config.bulletReloadTime);
                   en-=config.shotEnergyNeed;
-                  bullet=new BulletSprite(bulletsequence[i],i,
+                  bullet=new BulletSprite(bulletsequence[i],&field,i,
                                           config.bulletLifeTime);
-                  bullet->moveTo(ship[i]->exact_x()+nx*SHOTDIST,
-                                 ship[i]->exact_y()-ny*SHOTDIST);
-                  bullet->setVelocity(ship[i]->dX()+nx*config.shotSpeed,
-                                      ship[i]->dY()-ny*config.shotSpeed);
-                  bullet->setBoundsAction(QwRealMobileSprite::Wrap);
+                  bullet->move(ship[i]->x()+nx*SHOTDIST,
+                                 ship[i]->y()-ny*SHOTDIST);
+                  bullet->setVelocity(ship[i]->xVelocity()+nx*config.shotSpeed,
+                                      ship[i]->yVelocity()-ny*config.shotSpeed);
+                  // bullet->setBoundsAction(QwRealMobileSprite::Wrap);
                   bullet->show();
                   
                   bullets[i]->append(bullet);
@@ -633,11 +633,11 @@ void MyMainView::moveShips()
                {
                   ship[i]->mine(config.mineReloadTime);
                   en-=config.mineEnergyNeed;
-                  mine=new MineSprite(minesequence[i],i,
+                  mine=new MineSprite(minesequence[i],&field,i,
                                       config.mineActivateTime,config.mineFuel);
-                  mine->moveTo(ship[i]->exact_x(),ship[i]->exact_y());
+                  mine->move(ship[i]->x(),ship[i]->y());
                   mine->setVelocity(0,0);
-                  mine->setBoundsAction(QwRealMobileSprite::Wrap);
+                  //mine->setBoundsAction(QwRealMobileSprite::Wrap);
                   mine->show();
                   mines[i]->append(mine);
                }
@@ -737,14 +737,15 @@ void MyMainView::calculatePowerups()
    {
       timeToNextPowerup= random.getDouble() * config.powerupRefreshTime;
       type= random.getLong(PowerupSprite::PowerupNum);
-      sp=new PowerupSprite(powerupsequence[type],type,config.powerupLifeTime);
+      sp=new PowerupSprite(powerupsequence[type],&field,type,
+                           config.powerupLifeTime);
       do
       {
          x = random.getLong(width()-40)+20;
          y = random.getLong(height()-40)+20;
       }
       while(((x-width()/2)*(x-width()/2)+(y-height()/2)*(y-height()/2))<(50*50));
-      sp->moveTo(x,y);
+      sp->move(x,y);
       powerups.append(sp);
       sp->show();
    }
@@ -753,39 +754,39 @@ void MyMainView::calculatePowerups()
 void MyMainView::collisions()
 {
    int pl,hp,op,oldhp[2],ohp;
-   Pix pix;
-   QwSpriteFieldGraphic *sprite;
+   QCanvasItemList unexact;
+   QCanvasItem *sprite;
    BulletSprite *bullet;
    MineSprite *mine;
    ExplosionSprite *expl;
    ShipSprite *s;
    PowerupSprite *power;
-   QList<QwSpriteFieldGraphic> hitlist;
+   QCanvasItemList hitlist;
    double ndx[2],ndy[2];
    double en;
+   QCanvasItemList::Iterator it;
 
    for(pl=0;pl<2;pl++)
    {
       if(!ship[pl]->isStopped())
       {
-         pix=ship[pl]->neighbourhood(ship[pl]->frame());
+         unexact.clear();
+         unexact=ship[pl]->collisions(false);
          oldhp[pl]=hp=ship[pl]->getHitPoints();
          hitlist.clear();
-         while(pix)
+         for(it=unexact.begin(); it != unexact.end(); ++it)
          {
-            sprite=ship[pl]->at(pix);
-            if(sprite)
-               if((sprite->rtti()!=S_EXPLOSION)
-                  && !((sprite->rtti()!=S_SUN)&&(ship[pl]->getHitPoints()==0)))
-                  if(ship[pl]->exact(pix))
-                     if(!hitlist.containsRef(sprite))
-                        hitlist.append(sprite);
-            ship[pl]->next(pix);
+            sprite = (*it);
+            if((sprite->rtti()!=S_EXPLOSION)
+               && !((sprite->rtti()!=S_SUN)&&(ship[pl]->getHitPoints()==0)))
+               if(ship[pl]->collidesWith(sprite))
+                  if(!hitlist.contains(sprite))
+                     hitlist.append(sprite);
          }
-         ship[pl]->end(pix);
 
-         for(sprite=hitlist.first();sprite;sprite=hitlist.next())
+         for(it=hitlist.begin(); it != hitlist.end(); ++it)
          {
+            sprite = (*it);
             switch(sprite->rtti())
             {
                case S_SUN:
@@ -805,10 +806,10 @@ void MyMainView::collisions()
                   {
                      s->setHitPoints(ohp-hp-config.shipDamage);
                      emit(hitPoints(s->getPlayerNumber(),s->getHitPoints()));
-                     ndx[0]=((1-EPSILON)*ship[0]->dX()+(1+EPSILON)*ship[1]->dX())/2.0;
-                     ndy[0]=((1-EPSILON)*ship[0]->dY()+(1+EPSILON)*ship[1]->dY())/2.0;
-                     ndx[1]=((1-EPSILON)*ship[1]->dX()+(1+EPSILON)*ship[0]->dX())/2.0;
-                     ndy[1]=((1-EPSILON)*ship[1]->dY()+(1+EPSILON)*ship[0]->dY())/2.0;
+                     ndx[0]=((1-EPSILON)*ship[0]->xVelocity()+(1+EPSILON)*ship[1]->xVelocity())/2.0;
+                     ndy[0]=((1-EPSILON)*ship[0]->yVelocity()+(1+EPSILON)*ship[1]->yVelocity())/2.0;
+                     ndx[1]=((1-EPSILON)*ship[1]->xVelocity()+(1+EPSILON)*ship[0]->xVelocity())/2.0;
+                     ndy[1]=((1-EPSILON)*ship[1]->yVelocity()+(1+EPSILON)*ship[0]->yVelocity())/2.0;
                      ship[0]->setVelocity(ndx[0],ndy[0]);
                      ship[1]->setVelocity(ndx[1],ndy[1]);
                      hp-=ohp+config.shipDamage;
@@ -819,8 +820,8 @@ void MyMainView::collisions()
                   if(mine->isActive()&& !mine->explodes())
                   {
                      mine->explode(mineexplosionsequence);
-                     ndx[0]=(ship[pl]->dX()+0.3*mine->dX())/1.3;
-                     ndy[0]=(ship[pl]->dY()+0.3*mine->dY())/1.3;
+                     ndx[0]=(ship[pl]->xVelocity()+0.3*mine->xVelocity())/1.3;
+                     ndy[0]=(ship[pl]->yVelocity()+0.3*mine->yVelocity())/1.3;
                      ship[pl]->setVelocity(ndx[0],ndy[0]);
                      mine->setVelocity(ndx[0],ndy[0]);
                      hp-=config.mineDamage;
@@ -862,55 +863,55 @@ void MyMainView::collisions()
       {
          if(!mine->explodes())
          {
-            pix=mine->neighbourhood(mine->frame());
+            unexact.clear();
+            unexact=mine->collisions(false);
             hitlist.clear();
-            while(pix)
+            for( it=unexact.begin(); it != unexact.end(); ++it )
             {
-               sprite=mine->at(pix);
-               if(sprite)
-                  if(sprite->rtti()==S_BULLET)
-                     if(mine->exact(pix))
-                        if(!hitlist.containsRef(sprite))
-                           hitlist.append(sprite);
-               mine->next(pix);
+               sprite = (*it);
+               if(sprite->rtti()==S_BULLET)
+                  if(mine->collidesWith(sprite))
+                     if(!hitlist.contains(sprite))
+                        hitlist.append(sprite);
             }
-            mine->end(pix);
             if(hitlist.count()>0)
             {
                mine->explode(mineexplosionsequence);
-               for(sprite=hitlist.first();sprite;sprite=hitlist.next())
+               for(it=hitlist.begin(); it != hitlist.end(); ++it)
                {
-                  bullet=(BulletSprite*)sprite;
+                  bullet=(BulletSprite*)(*it);
                   bullets[bullet->getPlayerNumber()]->removeRef(bullet);
                }
             }
          }
       }
    }
-   pix=sun->neighbourhood(sun->frame());
+   
    hitlist.clear();
-   while(pix)
+   unexact.clear();
+   unexact=sun->collisions(false);
+   for( it = unexact.begin(); it != unexact.end(); ++it)
    {
-      sprite=sun->at(pix);
+      sprite=(*it);
       switch(sprite->rtti())
       {
          case S_BULLET:
-            if(sun->exact(pix))
-               if(!hitlist.containsRef(sprite))
+            if(sun->collidesWith(sprite))
+               if(!hitlist.contains(sprite))
                   hitlist.append(sprite);
             break;
          case S_MINE:
             if(!((MobileSprite*)sprite)->isStopped())
-               if(sun->exact(pix))
-                  if(!hitlist.containsRef(sprite))
+               if(sun->collidesWith(sprite))
+                  if(!hitlist.contains(sprite))
                      hitlist.append(sprite);
             break;
       }
-      sun->next(pix);
    }
-   sun->end(pix);
-   for(sprite=hitlist.first();sprite;sprite=hitlist.next())
+
+   for(it=hitlist.begin(); it != hitlist.end(); ++it)
    {
+      sprite=(*it);
       switch(sprite->rtti())
       {
          case S_BULLET:
@@ -937,7 +938,7 @@ void MyMainView::collisions()
       {
          op=(pl+1)%2;
          ship[pl]->setExplosion((int)(EXPLOSION_TIME/config.gamespeed));
-         expl=new ExplosionSprite(explosionsequence,ship[pl]);
+         expl=new ExplosionSprite(explosionsequence,&field,ship[pl]);
          expl->show();
          explosions.append(expl);
          gameEnd=options.timeAfterKill/config.gamespeed;
@@ -991,4 +992,51 @@ void MyMainView::graphicSetup()
       pause();
    GraphicSetup dialog(&options,this);
    dialog.exec();
+}
+
+QCanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern, 
+                            const QString& maskpattern, int framecount)
+{
+   int image;
+   QList<QPixmap> pixmaplist;
+   QList<QPoint> pointlist;
+   QString dataname, maskname;
+   QPixmap *pix;
+   QBitmap *bitmap;
+   int hotx=0, hoty=0;
+   QPoint *point;
+      
+   for( image=0; image < framecount; image++ )
+   {
+      dataname.sprintf( datapattern, image );
+      maskname.sprintf( maskpattern, image );
+
+      QFile file(dataname);
+      if( file.open( IO_ReadOnly ) )
+      {
+         char line[128];
+         file.readLine( line, 128 ); // Skip "P6"/"P3" line
+         file.readLine( line, 128 );
+         
+         while ( line[0] == '#' )
+         {
+            // Comment line - see if it has additional parameters
+            if ( 0 == strncmp( line,"# HOTSPOT ", 10 ) )
+               sscanf( line+10, "%d %d", &hotx, &hoty);
+
+            file.readLine( line, 128 );
+         }
+         point = new QPoint( hotx, hoty );
+         pointlist.append( point );
+      }
+
+      pix = new QPixmap( dataname );
+      bitmap = new QBitmap( maskname );
+      pix->setMask( *bitmap );
+
+      pixmaplist.append( pix );
+   }
+
+   QCanvasPixmapArray* newarray = new QCanvasPixmapArray( pixmaplist, pointlist );
+   return newarray;
 }
