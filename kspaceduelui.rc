@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="kpovmodeler">
+<kpartgui name="kpovmodeler" version="1">
 <MenuBar>
    <Menu name="game"><text>&amp;Game</text>
       <Action name="new_game"/>
