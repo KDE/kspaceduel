@@ -535,6 +535,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
 {
    unsigned w;
    int i;
+   bool stopped = false;
 
    if(event->timerId()==timerID)
    {
@@ -544,6 +545,14 @@ void MyMainView::timerEvent(QTimerEvent *event)
          gameEnd-=1.0;
          if(gameEnd<=0.0)
          {
+            stopped = true;
+            if(textSprite)
+            {
+               textSprite->hide();
+               delete textSprite;
+               textSprite=0;
+            }
+            
             textSprite=new QCanvasText(&field);
             textSprite->move(width()/2,height()/2-90);
             textSprite->setTextFlags(AlignCenter);
@@ -576,22 +585,22 @@ void MyMainView::timerEvent(QTimerEvent *event)
             emit(setStatusText(str,IDS_MAIN));
             stop( );
          }
-         else
-            timerID=startTimer(options.refreshTime);      
       }
-      else
-         timerID=startTimer(options.refreshTime);
 
-      for(i=0;i<2;i++)
-         if(options.isAi[i]&&(ship[i]->getHitPoints()>0))
-            ai[i]->think();
-      
-      moveMines();
-      moveBullets();
-      moveExplosions();
-      moveShips();
-      calculatePowerups();
-      collisions();
+      if( !stopped )
+      {
+         for(i=0;i<2;i++)
+            if(options.isAi[i]&&(ship[i]->getHitPoints()>0))
+               ai[i]->think();
+         
+         moveMines();
+         moveBullets();
+         moveExplosions();
+         moveShips();
+         calculatePowerups();
+         collisions();
+         timerID=startTimer(options.refreshTime);
+      }
       field.update();
    }
 }
