@@ -248,17 +248,17 @@ void MyMainView::writeConfig()
    cfg->writeEntry("startHitPoints",options.startHitPoints[0]);
 
    cfg->setGroup("Player2");
-   cfg->writeEntry("KeyLeft",KKey::keyToString(options.playerKey[1][PlayerKeyLeft]));
-   cfg->writeEntry("KeyRight",KKey::keyToString(options.playerKey[1][PlayerKeyRight]));
-   cfg->writeEntry("KeyAcc",KKey::keyToString(options.playerKey[1][PlayerKeyAcc]));
-   cfg->writeEntry("KeyShot",KKey::keyToString(options.playerKey[1][PlayerKeyShot]));
-   cfg->writeEntry("KeyMine",KKey::keyToString(options.playerKey[1][PlayerKeyMine]));
+   cfg->writeEntry("KeyLeft",KKey(options.playerKey[1][PlayerKeyLeft]).toStringInternal());
+   cfg->writeEntry("KeyRight",KKey(options.playerKey[1][PlayerKeyRight]).toStringInternal());
+   cfg->writeEntry("KeyAcc",KKey(options.playerKey[1][PlayerKeyAcc]).toStringInternal());
+   cfg->writeEntry("KeyShot",KKey(options.playerKey[1][PlayerKeyShot]).toStringInternal());
+   cfg->writeEntry("KeyMine",KKey(options.playerKey[1][PlayerKeyMine]).toStringInternal());
    cfg->setGroup("Player1");
-   cfg->writeEntry("KeyLeft",KKey::keyToString(options.playerKey[0][PlayerKeyLeft]));
-   cfg->writeEntry("KeyRight",KKey::keyToString(options.playerKey[0][PlayerKeyRight]));
-   cfg->writeEntry("KeyAcc",KKey::keyToString(options.playerKey[0][PlayerKeyAcc]));
-   cfg->writeEntry("KeyShot",KKey::keyToString(options.playerKey[0][PlayerKeyShot]));
-   cfg->writeEntry("KeyMine",KKey::keyToString(options.playerKey[0][PlayerKeyMine]));
+   cfg->writeEntry("KeyLeft",KKey(options.playerKey[0][PlayerKeyLeft]).toStringInternal());
+   cfg->writeEntry("KeyRight",KKey(options.playerKey[0][PlayerKeyRight]).toStringInternal());
+   cfg->writeEntry("KeyAcc",KKey(options.playerKey[0][PlayerKeyAcc]).toStringInternal());
+   cfg->writeEntry("KeyShot",KKey(options.playerKey[0][PlayerKeyShot]).toStringInternal());
+   cfg->writeEntry("KeyMine",KKey(options.playerKey[0][PlayerKeyMine]).toStringInternal());
    cfg->setGroup("Game");
 
    cfg->writeEntry("player1IsAi",options.isAi[0]);
@@ -324,7 +324,7 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
       if(!accept)
          ev->ignore();
    }
-   
+
 }
 
 void MyMainView::keyReleaseEvent(QKeyEvent *ev)
@@ -351,7 +351,7 @@ void MyMainView::pause()
          ( (KMainWindow* )parent( )->parent( ) )
          ->actionCollection( )->action( "pause" );
       pauseAction->setChecked( true );
-      
+
       waitForStart=true;
       killTimers();
       emit setStatusText(i18n(" paused "), IDS_PAUSE);
@@ -395,7 +395,7 @@ void MyMainView::stop()
       ->actionCollection( )->action( "pause" );
    pauseAction->setEnabled( false );
    pauseAction->setChecked( false );
-   
+
    killTimers();
    waitForStart = true;
 }
@@ -471,7 +471,7 @@ void MyMainView::newRound()
    ship[0]->move(mx+config.startPosX,my+config.startPosY);
    ship[0]->setRotation(0.0);
    ship[0]->setFrame(0);
-   
+
    ship[1]->move(mx-config.startPosX,my-config.startPosY);
    ship[1]->setRotation(M_PI);
    ship[1]->setFrame(ROTNUM/2);
@@ -511,11 +511,11 @@ void MyMainView::newRound()
       textSprite=0;
    }
    field.update();
-   
+
    QString str = i18n("Press %1 to start")
-      .arg( KKey::keyToString( ( (KMainWindow*)(parent()->parent()) )
+      .arg( ( (KMainWindow*)(parent()->parent()) )
                                 ->actionCollection()->action("game_start")
-                                ->accel(), true) );
+                                ->shortcut().toString() );
    emit(setStatusText(str,IDS_MAIN));
    emit( setStatusText( "", IDS_PAUSE ) );
    stop( );
@@ -553,7 +553,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
                delete textSprite;
                textSprite=0;
             }
-            
+
             textSprite=new QCanvasText(&field);
             textSprite->move(width()/2,height()/2-90);
             textSprite->setTextFlags(AlignCenter);
@@ -580,9 +580,9 @@ void MyMainView::timerEvent(QTimerEvent *event)
                emit(wins(0,w));
             }
             QString str = i18n("Press %1 for new round")
-               .arg(KKey::keyToString( ( ( KMainWindow* )( parent( )->parent( ) ) )
+               .arg(( ( KMainWindow* )( parent( )->parent( ) ) )
                                          ->actionCollection( )->action( "game_start" )
-                                         ->accel( ), true) );
+                                         ->shortcut( ).toString() );
             emit(setStatusText(str,IDS_MAIN));
             stop( );
          }
@@ -593,7 +593,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
          for(i=0;i<2;i++)
             if(options.isAi[i]&&(ship[i]->getHitPoints()>0))
                ai[i]->think();
-         
+
          moveMines();
          moveBullets();
          moveExplosions();
@@ -628,7 +628,7 @@ void MyMainView::moveShips()
          ship[i]->calculateGravityAndEnergy(config.gravity,config.sunEnergy,
                                          config.gamespeed);
 
-         
+
          if(!options.isAi[i]&&playerKeyPressed[i][PlayerKeyRight]
             || options.isAi[i]&&ai[i]->rotateRight())
             ship[i]->rotateRight(config.rotationEnergyNeed,
@@ -638,11 +638,11 @@ void MyMainView::moveShips()
             || options.isAi[i]&&ai[i]->rotateLeft())
             ship[i]->rotateLeft(config.rotationEnergyNeed,
                                 config.rotationSpeed);
- 
+
          en=ship[i]->getEnergy();
          nr=ship[i]->getRotation();
 
-         
+
          nf=ship[i]->frame();
          nx=cos(nr);
          ny=sin(nr);
@@ -677,7 +677,7 @@ void MyMainView::moveShips()
                                       ship[i]->yVelocity()-ny*config.shotSpeed);
                   // bullet->setBoundsAction(QwRealMobileSprite::Wrap);
                   bullet->show();
-                  
+
                   bullets[i]->append(bullet);
                }
             }
@@ -945,7 +945,7 @@ void MyMainView::collisions()
          }
       }
    }
-   
+
    hitlist.clear();
    unexact.clear();
    unexact=sun->collisions(false);
