@@ -1,9 +1,9 @@
-<!DOCTYPE book PUBLIC  "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN" [
+<?xml version="1.0" ?><!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&kspaceduel;">
-  <!ENTITY % English "INCLUDE" -- change language only here -->
+  <!ENTITY % English "INCLUDE" > <!-- change language only here -->
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % ents PUBLIC "-//KDE//ENTITIES Documentation V1.0//EN">
-  %ents; 
+  
+   
 ]>
 
 <book lang="&language;">
@@ -149,7 +149,7 @@ player.</para></listitem>
 <screenshot>
 <screeninfo>&kspaceduel; Main Screen</screeninfo>
 <mediaobject>
-<imageobject><imagedata fileref="kspaceduel3.png" format="PNG"></imageobject>
+<imageobject><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
 <textobject><phrase>&kspaceduel; Main Screen</phrase></textobject>
 </mediaobject>
 </screenshot>   
@@ -202,7 +202,7 @@ Keys...</guimenuitem> </menuchoice> from the menubar.</para>
 <screenshot>
 <screeninfo>Configure Player Keys</screeninfo>
 <mediaobject>
-<imageobject><imagedata fileref="kspaceduel1.png" format="PNG"></imageobject>
+<imageobject><imagedata fileref="kspaceduel1.png" format="PNG"/></imageobject>
 <textobject><phrase>Configure Player Keys</phrase></textobject>
 </mediaobject>
 </screenshot>   
@@ -480,7 +480,7 @@ simply select <menuchoice><guimenu>Settings</guimenu>
 <screenshot>
 <screeninfo><acronym>AI</acronym> Configure Dialog</screeninfo>
 <mediaobject>
-<imageobject><imagedata fileref="kspaceduel2.png" format="PNG"></imageobject>
+<imageobject><imagedata fileref="kspaceduel2.png" format="PNG"/></imageobject>
 <textobject><phrase><acronym>AI</acronym> Configure Dialog</phrase></textobject>
 </mediaobject>
 </screenshot>  
@@ -639,7 +639,7 @@ linkend="ai">AI</link>.</para></listitem>
 
 <variablelist>
 <varlistentry>
-<term><anchor id="contents"><menuchoice>
+<term><anchor id="contents"/><menuchoice>
 <shortcut><keycap>F1</keycap></shortcut>
 <guimenu><accel>H</accel>elp</guimenu><guimenuitem><accel>C</accel>ontents</guimenuitem></menuchoice></term>
 <listitem>
@@ -649,7 +649,7 @@ document).</para>
 </varlistentry>
 
 <varlistentry>
-<term><anchor id="whats-this"><menuchoice>
+<term><anchor id="whats-this"/><menuchoice>
 <shortcut><keycombo action="simul"><keycap>Shift</keycap><keycap>F1</keycap></keycombo></shortcut>
 <guimenu><accel>H</accel>elp</guimenu><guimenuitem>What's <accel>T</accel>his?</guimenuitem></menuchoice></term>
 <listitem>
@@ -660,7 +660,7 @@ function.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><anchor id="bug"><menuchoice>
+<term><anchor id="bug"/><menuchoice>
 <guimenu><accel>H</accel>elp</guimenu><guimenuitem><accel>R</accel>eport
 Bug...</guimenuitem></menuchoice></term>
 <listitem><para>If you have a good idea for the next version of the game, or the
@@ -670,7 +670,7 @@ author.</para>
 </varlistentry>
 
 <varlistentry>
-<term><anchor id="about-kspaceduel"><menuchoice>
+<term><anchor id="about-kspaceduel"/><menuchoice>
 <guimenu><accel>H</accel>elp</guimenu><guimenuitem><accel>A</accel>bout
 KSpaceduel</guimenuitem></menuchoice></term>
 <listitem><para>This will displays version and author
@@ -678,7 +678,7 @@ information</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><anchor id="about-kde"><menuchoice>
+<term><anchor id="about-kde"/><menuchoice>
 <guimenu><accel>H</accel>elp</guimenu><guimenuitem>About
 <accel>K</accel>DE</guimenuitem></menuchoice></term>
 <listitem><para>This displays the &kde; version and other basic
@@ -717,9 +717,9 @@ information.</para></listitem>
 
 <informaltable frame="all">
 <tgroup cols="3">
-<colspec colname="c1">
-<colspec colname="c2">
-<colspec colname="c3">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
 <thead><row><entry>Action</entry><entry>Red Player</entry><entry>Blue Player</entry></row></thead>
 <tbody>
 <row><entry>Rotate Left</entry><entry>S</entry><entry>Left Arrow</entry></row>
@@ -795,3 +795,4 @@ sgml-omittag: nil
 sgml-shorttag: t
 End:
 -->
+
