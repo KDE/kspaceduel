@@ -10,7 +10,7 @@ bin_PROGRAMS = 	kspaceduel
 kspaceduel_SOURCES = mathroutines.cpp topwidget.cpp duelwidget.cpp \
 	playerinfo.cpp sprites.cpp mainview.cpp dialogs.cpp ai.cpp main.cpp
 
-kspaceduel_METASOURCES = USE_AUTOMOC
+kspaceduel_METASOURCES = AUTO
 EXTRA_DIST = kspaceduel.desktop kspaceduel.xpm mini-kspaceduel.xpm
 
 kspaceduel_LDFLAGS = $(all_libraries) $(KDE_RPATH)
