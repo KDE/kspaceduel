@@ -3,7 +3,6 @@
 #include <qtooltip.h>
 #include <klocale.h>
 #include <kstddirs.h>
-#include <qpixmap.h>
 
 #include "defines.h"
 
