@@ -27,9 +27,9 @@ Ai::Ai(int pn,ShipSprite* s[2],QPtrList<BulletSprite>* b[2],
       ship[i]=s[i];
       bullets[i]=b[i];
       mines[i]=m[i];
-      shipsNextPositions[i]=new QArray<AiSprite>
+      shipsNextPositions[i]=new QMemArray<AiSprite>
          ((int)(calcPositionNumber[opt->aiDifficulty[playerNumber]]/cfg->gamespeed));
-      aiMines[i]=new QArray<AiSprite>(cfg->maxMines);
+      aiMines[i]=new QMemArray<AiSprite>(cfg->maxMines);
       mineNumber[i]=0;
    }
    myShots.setAutoDelete(true);
@@ -161,7 +161,7 @@ AiSprite Ai::nextPosition(AiSprite sp,double mult)
    return sp; 
 }
 
-void Ai::nextPositions(AiSprite sp,QArray<AiSprite> *a,int frames)
+void Ai::nextPositions(AiSprite sp,QMemArray<AiSprite> *a,int frames)
 {
    int i,num;
    double fmult=cfg->gamespeed*frames;
