@@ -23,6 +23,7 @@ Name[zh_TW]=KSpaceDuel 太空大戰
 MimeType=
 Exec=kspaceduel %i %m -caption "%c"
 GenericName=Arcade Game
+GenericName[af]=arkade speletjie
 GenericName[ar]=لعبة أركاد
 GenericName[be]=Аркадная гульня
 GenericName[bg]=Игра в Галерия със сводове
