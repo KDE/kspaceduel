@@ -13,7 +13,7 @@ MyTopLevelWidget::MyTopLevelWidget(const char* name)
    KAccelMenu *popup;
 
    popup=new KAccelMenu(keys);
-   popup->insItem(i18n("&Quit"),"&Quit",this,SLOT(quit()),KAccel::Quit);
+   popup->insItem(i18n("&Quit"),"&Quit",this,SLOT(quit()),KStdAccel::Quit);
    menu.insertItem(i18n("&File"),popup);
    
    popup=new KAccelMenu(keys);
