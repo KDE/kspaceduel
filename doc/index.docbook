@@ -1,25 +1,38 @@
-<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN">
+<!DOCTYPE book PUBLIC  "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN" [
+  <!ENTITY kspace "<application>KSpaceduel</application>">
+  <!ENTITY kappname "&kspace;" -- this only *seems* redundant -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % ents PUBLIC "-//KDE//ENTITIES Application-Variable Entities V1.0//EN">
+  %ents; 
+]>
+
 <book lang="en">
-
 <bookinfo>
-<title>The KSpaceduel Handbook</title>
-
+<title>The Kapp Handbook</title>
+ 
 <authorgroup>
 <author>
-<firstname>Andreas</firstname>
+<firstname>Andreas </firstname>
 <surname>Zehender</surname>
+<affiliation>
+<address><email>az@azweb.de</email></address>
+</affiliation>
 </author>
 </authorgroup>
+ 
+<copyright>
+<year>1999-2000</year>
+<holder>Andreas Zehender</holder>
+</copyright>
 
-<date>05/05/2000</date>
-<releaseinfo>1.00.00</releaseinfo>
+<legalnotice>&FDLNotice;</legalnotice>
+ 
+<date>31/07/2000</date>
+<releaseinfo>1.00.00</releaseinfo>                   
 
 <abstract>
-<para>
-<application>KSpaceduel</application> is an space arcade game. Two ships fly around the sun and
-try to shoot eachother.
-</para>
-<para>This documentation was last updated for version 1.0.</para>
+<para>&kspace; is an space arcade game. </para>
+<para>Two ships fly around the sun and try to shoot eachother.</para>
 </abstract>
 
 <keywordset>
@@ -32,15 +45,51 @@ try to shoot eachother.
 
 </bookinfo>
 
-
 <chapter id="Introduction">
 <title>Introduction</title>
 
-<para><application>KSpaceduel</application> is an space arcade game for two players. Each player controls a ship
-that flies around the sun and tries to shoot at the other ship.</para>
+<para>&kspace is an space arcade game for two players.</para> 
+
+<para>Each player controls a ship that flies around the sun and tries to shoot
+at the other ship. You can play &kspace; with another person, against the
+computer, or you can have the computer control both ships and play each
+other.</para>
+
 </chapter>
 
-<chapter id="TheGame">
+<chapter id="installation">
+<title>Installation</title>
+ 
+<sect1 id="getting-kapp">
+<title>How to obtain &kspace;</title>
+ 
+<para>&kspace; is part of the KDE project <ulink
+ url="http://www.kde.org">http://www.kde.org</ulink>. 
+&kspace; can be found in the kdegames package on
+<ulink url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>, the
+main ftp site of the KDE project. </para>
+</sect1>
+
+<sect1 id="compilation">
+<title>Compilation and installation</title>
+ 
+<para>In order to compile and install &kspace; on your system, type the
+following in the base directory of the KDE distribution:</para>
+<screen width="40">
+<prompt>%</prompt> <userinput>cd kdegames</userinput>
+<prompt>%</prompt> <userinput>./configure</userinput>
+<prompt>%</prompt> <userinput>make</userinput>
+<prompt>%</prompt> <userinput>make install</userinput>
+</screen>
+ 
+<para>Since &kspace; uses <application>autoconf</application> and
+<application>automake</application> you should have not trouble compiling
+it.Should you run into problems please report them to the KDE mailing
+lists.</para>
+ 
+</sect1>         
+</chapter>
+<chapter id="the-game">
 <title>The Game</title>
 
 <sect1 id="RulesOfTheGame">
@@ -52,34 +101,45 @@ that flies around the sun and tries to shoot at the other ship.</para>
 </sect2>
 
 <sect2 id="Energy">
-<title>Energy</title>
-<para>Each ship has an amount of energy (refer to the game options for values). </para>
-<para>Ships need energy for rotation, acceleration, shooting and laying mines. A ship
-gets energy from its solar panels. The amount of energy a ship gets depends on
-the distance from and direction to the sun. A ship gets more energy near the sun
-and less energy near the border. It gets the full amount of energy if the sun
-shines directly on the panels and less or even no energy if the sun shines at an
-angle to the panel or to the side of the panel.</para>
+<title>Energy</title> 
+
+<para>Each ship has an amount of energy (refer to the game
+options for values). </para> 
+
+<para>Ships need energy for rotation, acceleration, shooting and laying mines. A
+ship gets energy from its solar panels. The amount of energy a ship gets depends
+on the distance from and direction to the sun. A ship gets more energy near the
+sun and less energy near the border. It gets the full amount of energy if the
+sun shines directly on the panels and less or even no energy if the sun shines
+at an angle to the panel or to the side of the panel.</para>
+
 <para>If a ship has no energy it can't navigate or shoot. </para>
+
 </sect2>
 
 <sect2 id="HitPoints">
 <title>Hit points</title>
-<para>
-Collisions with own or other bullets or mines decrease the hit points of a ship.
-If two ships collide, the weaker ship is destroyed and the hit points of the
-stronger ship are decreased by the hit points of the weaker ship plus an amount
-(Crash Damage). A ship is destroyed when it flies into the sun.</para>
+
+<para>Collisions with own or other bullets or mines decrease the hit points of a
+ship.  If two ships collide, the weaker ship is destroyed and the hit points of
+the stronger ship are decreased by the hit points of the weaker ship plus an
+amount (Crash Damage). A ship is destroyed when it flies into the sun.</para>
+
 </sect2>
 
 <sect2 id="BulletsandMines">
 <title>Bullets and Mines </title>
+
 <para>Bullets fly around the sun like a ship. </para>
-<para>Mines have an amount of energy to stay at the same position. When the energy is
-spent, the mine falls into the sun. Mines near the sun need more energy than
-those which are further away. </para>
+
+<para>Mines have an amount of energy to stay at the same position. When the
+energy is spent, the mine falls into the sun. Mines near the sun need more
+energy than those which are further away. </para>
+
 <para>Mines can be destroyed with bullets. </para>
+
 <para>By default a ship can have 5 bullets and 3 mines on the screen. </para>
+
 </sect2>
 
 <sect2 id="Powerups">
@@ -87,221 +147,634 @@ those which are further away. </para>
 
 <para>From time to time powerups appear on the play field.</para>
 
-<para>There are four different powerups:
-<itemizedlist>
-<listitem>
-<para>Mine: The maximum number of mines is increased for the player.</para>
-</listitem>
-<listitem>
-<para>Bullet: The maximum number of bullets is increased for the player.</para>
-</listitem>
-<listitem>
-<para>Energie (yellow sphere): The player gets energy.</para>
-</listitem>
-<listitem>
-<para>Schild (blue sphere): The player gets hit points.</para>
-</listitem>
-</itemizedlist>
-</para>
+<para>There are four different powerups:</para>
+
+<variablelist>
+<varlistentry>
+<term>Mine</term>
+<listitem><para>The maximum number of mines is increased for the
+player.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Bullet</term>
+<listitem><para>The maximum number of bullets is increased for the
+player.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Energy (yellow sphere)</term>
+<listitem><para>The player gets energy.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Shield (blue sphere)</term>
+<listitem><para>The player gets hit points</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="screen">
+<title>The &kspace; screen</title>
+
+<screenshot>
+<screeninfo>Configure Player Keyes</screeninfo>
+<mediaobject>
+<imageobject><imagedata fileref="kspaceduel3.png" format="png"></imageobject>
+</mediaobject>
+</screenshot>   
+
+<para>You can see that the central part of the &kspace; screen is the playing
+area.  To the left and the right are the Red Player's and the Blue Player's
+stats.</para>
+<para>The top box on the player stats, represents the "Hit Points" of the
+craft.</para>
+<para>The middle box on the player stats, represents the battery power.</para>
+<para>The bottom box on the player stats, shows the number of wins.</para>
+<para>The top of the playing area is occupied by the menubar</para>
+<para>The bottom of the playing area is the status bar.</para>
+
 </sect2>
 </sect1>
 
 <sect1 id="Options">
-<title>Options</title>
+<title>Game Options</title>
+
+<para>&kspace; has many, many options you can adjust to increase the enjoyment
+of this game.</para>
+<para>All of the game options can be changed using the "Sessions" menu.  </para>
+<para>Configuration is divided into 5 sections:</para>
+
+<itemizedlist>
+<listitem><para><link linkend="OptionsKeys">Player Keys</link></para></listitem>
+<listitem><para><link linkend="OptionsConfigurations">Game</link></para></listitem>
+<listitem><para><link linkend="OptionsHandicap">Handicap</link></para></listitem>
+<listitem><para><link linkend="OptionsGraphics">Graphics</link></para></listitem>
+<listitem><para><link linkend="AI">AI</link></para></listitem>
+</itemizedlist>
 
 <sect2 id="OptionsKeys">
 <title>Keys</title>
-<para>Keys can be configured with the
-<menuchoice>
-  <guimenu>Options</guimenu><guimenuitem>Keys...</guimenuitem>
-</menuchoice>
-menu item.</para>
+
+<para>&kspace; has a default set of keys to control the game.  For a list of
+default keys see the section entitled <link linkend="keys">Default key
+bindings</link>.</para>
+
+<para>Keys can be configured by:  </para>
+
+<para>Selecting <menuchoice> <guimenu>Settings</guimenu><guimenuitem>Player
+Keys...</guimenuitem> </menuchoice> from the menubar.</para>
+
+<para>This will bring up a dialog box.</para>
+
+<screenshot>
+<screeninfo>Configure Player Keyes</screeninfo>
+<mediaobject>
+<imageobject><imagedata fileref="kspaceduel1.png" format="png"></imageobject>
+</mediaobject>
+</screenshot>   
+
+<para>You can see that each player (Red and Blue), have 5 keystrokes
+corresponding to Rotate Left, Rotate Right, Accelerate, Shot, and Mines.</para>
+
+<para>To change a key, click on the button for the correct player.  Then press
+the key you want for that control.</para>
+
+<para>When the key is detected, it will show the new key in the box to the right
+of the button.</para>
+
+<para>When you are finished configuring your keys, you should click on
+"<guibutton>OK</guibutton>" to apply your changes.</para>
+
+<para>If you want to restore the default keys, simply click on the
+"<guibutton>Default</guibutton>" button once. To make these changes permenant,
+press "<guibutton>OK</guibutton>".</para> 
+
+<para>If you want to abandon the changes you made, and return to your previously
+selected keys, simply click "<guibutton>Cancel</guibutton>", and your changes
+will be lost.</para>
+
 </sect2>
 
 <sect2 id="OptionsConfigurations">
-<title>Configurations</title>
-<para>All settings of the game are configurable with the
-<menuchoice>
-  <guimenu>Options</guimenu><guimenuitem>Game...</guimenuitem>
-</menuchoice>
-menu item.</para>
-<para>Settings are collected in different configurations. If you choose the "Custom"
-configuration, you can define all settings for yourself. If you have found an
-interesting configuration, mail it to the author of the game. It can be
-implemented in a future version (send the part [Game] in the file "~/.kde/share/config/kspaceduelrc").</para>
+<title>Game Configuration</title>
+
+<para>All game settings of &kspace; are configurable.</para>
+
+<para>Settings are collected in different configurations. You can choose from
+several pre-defined configurations.</para>
+
+<para>If you choose the "<guilabel>Custom</guilabel>" configuration, you can
+define all settings for yourself.</para> 
+
+<note><para>If you have not selected "<guilabel>Custom</guilabel>", you will not
+be able to make any changes to these options.</para></note>
+
+<tip><para> If you have found an interesting configuration, mail it to the
+author of the game. It can be implemented in a future version (send the part
+[Game] in the file
+"<filename>~/.kde/share/config/kspaceduelrc</filename>").</para></tip> 
+
+<para>If you want to change the game settings, simply select
+<menuchoice><guimenu>Settings</guimenu><guimenuitem>Game...</guimenuitem> 
+</menuchoice> from the menubar.</para>
+
+<para>This will bring up a dialog box with 7 tabs across the top.</para>
+
+<para>When you are finished altering the options, you should click on
+"<guibutton>OK</guibutton>" to apply your changes.</para> 
+
+<para>If you want to restore the default, simply click on the
+"<guibutton>Default</guibutton>" button once. To make these changes permenant,
+press "<guibutton>OK</guibutton>".</para> 
+
+<para>If you want to abandon the changes you made, and return to your previous
+options, simply click "<guibutton>Cancel</guibutton>", and your changes will be
+lost.</para>
+
 <para>The settings are:</para>
-<para>
-<itemizedlist>
-<listitem>
-<para><emphasis remap="bf">Sun</emphasis>
-<itemizedlist>
-<listitem>
-<para><emphasis remap="bf">Sun energy:</emphasis> The strength of the sun. The higher the value the
-quicker ships will be charged.</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Gravity:</emphasis> The strength of the gravitational pull of the sun.</para>
-</listitem>
-</itemizedlist>
-</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Bullet</emphasis>
-<itemizedlist>
-<listitem>
-<para><emphasis remap="bf">Shot speed:</emphasis> The speed of bullets. </para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Energy need:</emphasis> The amount of energy needed for one shot. </para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Max number:</emphasis> The maximum number of bullets a player can have on the
-screen.</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Damage:</emphasis> The number of hit points damage done when a bullet hits a ship. </para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Life time:</emphasis> The maximum life time of a bullet.</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Reload time:</emphasis> The time a ship needs to reload a bullet. </para>
-</listitem>
-</itemizedlist>
-</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Mine</emphasis>
-<itemizedlist>
-<listitem>
-<para><emphasis remap="bf">Mine fuel:</emphasis> The amount of fuel on a mine</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Energy need:</emphasis> The amount of energy needed for laying a mine </para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Activate time:</emphasis> The time a mine is inactive, </para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Damage:</emphasis> The number of hit points of damage done when a ship hits a mine </para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Max number:</emphasis> maximum number of mines a player can have on the screen </para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Reload time:</emphasis> The time a ship needs to reload a mine. </para>
-</listitem>
-</itemizedlist>
-</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">General</emphasis>
-<itemizedlist>
-<listitem>
-<para><emphasis remap="bf">Game speed:</emphasis> controls the speed of the whole game </para>
-</listitem>
-</itemizedlist>
-</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Start</emphasis>
-<itemizedlist>
-<listitem>
-<para><emphasis remap="bf">Position X</emphasis> and <emphasis remap="bf">Position Y:</emphasis> the ships position at the begin of
-a new round. The ships start at opposite sides of the sun.</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Velocity X</emphasis> and <emphasis remap="bf">Velocity Y:</emphasis> velocity at the begin of a new
-round Ship: </para>
-</listitem>
-</itemizedlist>
-</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Ship</emphasis>
-<itemizedlist>
-<listitem>
-<para><emphasis remap="bf">Acceleration:</emphasis> Acceleration of the ships </para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Energy need:</emphasis> The energy needed to accelerate a ship. </para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Rotation speed:</emphasis> The speed at which a ship rotates. </para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Energy need:</emphasis> The energy needed to rotate a ship. </para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Crash damage:</emphasis> The number of hit points damage done when two ships
-collide. </para>
-</listitem>
-</itemizedlist>
-</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Powerups:</emphasis>
-<itemizedlist>
-<listitem>
-<para><emphasis remap="bf">Appearance time:</emphasis> Maximal time between the appearance of two powerups.</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Life time:</emphasis> Maximal life time of a powerup.</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Energie amount:</emphasis> Amount of energy a player gets from a energy powerup.</para>
-</listitem>
-<listitem>
-<para><emphasis remap="bf">Shield amount:</emphasis> Amount of hit points a player gets from a shield powerup.</para>
-</listitem>
-</itemizedlist>
-</para>
-</listitem>
-</itemizedlist>
-</para>
+
+<sect3 id="general">
+<title>General</title>
+
+<variablelist>
+<varlistentry>
+<term>Game speed</term>
+<listitem><para>Controls the speed of the whole game.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="bullet">
+<title>Bullet</title>
+
+<variablelist>
+<varlistentry>
+<term>Shot speed</term>
+<listitem><para>The speed of bullets</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Energy need</term>
+<listitem><para>The amount of energy needed for one shot.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Max number</term>
+<listitem><para>The maximum number of bullets a player can have on the
+screen.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Damage</term>
+<listitem><para>The number of hit points damage done when a bullet hits a
+ship.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Life time</term>
+<listitem><para>The maximum life time of a bullet.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Reload time</term>
+<listitem><para>The time a ship needs to reload a bullet.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+<sect3 id="mine">
+<title>Mine</title>
+
+<variablelist>
+<varlistentry>
+<term>Mine fuel</term>
+<listitem><para>The amount of fuel on a mine.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Energy need</term>
+<listitem><para>The amount of energy needed for laying a mine.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Activate time</term>
+<listitem><para>The time a mine is inactive.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Damage</term>
+<listitem><para>The number of hit points of damage done when a ship hits a
+mine.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Max number</term>
+<listitem><para>Maximum number of mines a player can have on the
+screen.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Reload time</term>
+<listitem><para>The time a ship needs to reload a mine.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="ship">
+<title>Ship</title>
+
+<variablelist>
+<varlistentry>
+<term>Acceleration</term>
+<listitem><para>Acceleration of the ships</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Energy need</term>
+<listitem><para>The energy needed to accelerate a ship.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Rotation speed</term>
+<listitem><para>The speed at which a ship rotates.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Energy need</term>
+<listitem><para>The energy needed to rotate a ship.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Crash damage</term>
+<listitem><para>The number of hit points damage done when two ships
+collide.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="sun">
+<title>Sun</title>
+
+<variablelist>
+<varlistentry>
+<term>Sun energy</term>
+<listitem><para>The strength of the sun.  The higher the value, the quicker
+ships will be recharged.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Gravity</term>
+<listitem><para>The strength of the gravitational pull of the
+sun.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="start">
+<title>Start</title>
+
+<variablelist>
+<varlistentry>
+<term>Position X and Position Y</term>
+<listitem><para>The ships position at the beginning of a new round.  The ships
+start at opposite sides of the sun.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Velocity X and Velocity Y</term>
+<listitem><para>Velocity at the beginning of a new round.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+
+<sect3 id="powerup-options">
+<title>Powerups:</title>
+
+<variablelist>
+<varlistentry>
+<term>Appearance time</term>
+<listitem><para>Maximal time between the appearance of two
+powerups.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Life time</term>
+<listitem><para>Maximal life time of a powerup.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Energy amount</term>
+<listitem><para>Amount of energy a player gets from an energy
+powerup.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Shield amount</term>
+<listitem><para>Amount of hit points a player gets from a shield
+powerup.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
 </sect2>
 
 <sect2 id="OptionsHandicap">
 <title>Handicap </title>
-<para>You can specify the number of hit points each player has at the begin of a new
-round with
-<menuchoice>
-  <guimenu>Options</guimenu><guimenuitem>Handicap...</guimenuitem>
-</menuchoice>
-</para>
+
+<para>You can specify the number of hit points each player has at the begin of a
+new round by selecting <menuchoice>
+<guimenu>Options</guimenu><guimenuitem>Handicap...</guimenuitem>
+</menuchoice> from the menubar.</para>
+
 </sect2>
 
 <sect2 id="OptionsGraphics">
 <title>Graphics</title>
-<para><emphasis remap="bf">Refreshtime:</emphasis> Time between two screen refreshs in ms. All settings are
-independent of the refreshtime!</para>
+
+<variablelist>
+<varlistentry>
+<term>Refresh time</term>
+<listitem><para>Time between two screen refreshes in milliseconds.  All other
+settings are independent of the refresh time.</para></listitem>
+</varlistentry>
+</variablelist>
+
 </sect2>
 
 </sect1>
 
-
 <sect1 id="Ai">
 <title>Ai</title>
-<para>Each ship can be controlled by the computer. You can choose a difficulty for
-each ship.</para>
-<para>The ai is optimized for the default config, but can mamage with other configs.
-Just try...</para>
+
+<para>Each ship can be controlled by the computer. You can choose a difficulty
+for each ship.</para>
+<para>The <abbrev>AI</abbrev> is optimized for the default config, but can
+mamage with other configs.  Just try...</para> 
+<para>To alter the <abbrev>AI</abbrev> settings on either or both players,
+simply select <menuchoice><guimenu>Settings</guimenu>
+ <guimenuitem>AI...</guimenuitem> </menuchoice> from the menubar.</para>
+
+<para>This will bring up a dialog box.</para>
+
+<screenshot>
+<screeninfo>AI Configure Dialog</screeninfo>
+<mediaobject>
+<imageobject><imagedata fileref="kspaceduel2.png" format="png"></imageobject>
+</mediaobject>
+</screenshot>  
+
+<para>For each player, there is a check box labled "<guilabel>Player is
+AI</guilabel>".  If this box is checked, the computer will control that
+ship.</para> 
+
+<para>Below that, is a drop down box, with several levels of <abbrev>AI</abbrev>
+"<guilabel>intelligence</guilabel>". Select the level that is appropriate for
+you.</para> 
+
+<para>When you are done, simply click "<guibutton>OK</guibutton>".  If you want
+to leave things as they were before, click "<guibutton>Cancel</guibutton>", to
+abort your changes.</para>
+
 </sect1>
 </chapter>
 
+<chapter id="command">
+<title>Commands/Keyboard Shortcuts</title>
 
-<chapter id="Credits">
-<title>Credits and License</title>
-<para><application>KSpaceduel</application></para>
-<para>Program copyright 1998 Andreas Zehender <email>az@azweb.de</email></para>
-<para>Documentation copyright 2000 Andreas Zehender <email>az@azweb.de</email></para>
+<para>The following sections briefly describe each menubar option.</para>
 
-<para>
-This program is licensed under the terms of the
-<ulink url="common/gpl-license.html">GNU GPL</ulink>.
-</para>
+<sect1 id="file-menu"><title>File Menu</title><para>
+The file menu consists of a single option</para>
 
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo><keycap>Ctrl</keycap><keycap>q</keycap></keycombo></shortcut>
+<guimenu>File</guimenu><guimenuitem>Quit</guimenuitem> </menuchoice></term>
+<listitem><para><action>Quits</action> &kspace;</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="games-menu">
+<title>Games Menu</title>
+
+<para>The games menu is used to start and pause the game.</para>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo><keycap>Ctrl</keycap><keycap>G</keycap></keycombo></shortcut>
+<guimenu>Game</guimenu><guimenuitem>New Game</guimenuitem> </menuchoice></term>
+<listitem><para>Starts a new game of &kspace;</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo></shortcut>
+<guimenu>Game</guimenu><guimenuitem>New Round</guimenuitem> </menuchoice></term>
+<listitem><para>Starts a new round, at the current level.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo></shortcut>
+<guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem> </menuchoice></term>
+<listitem><para>Pauses the game</para><para>Once the game is paused, you can press any key to resume the game.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="settings-menu">
+<title>Settings Menu</title>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Show Toolbar</guimenuitem> </menuchoice></term>
+<listitem><para>When selected, the toolbar will be visible.  When not selected,
+the toolbar will be hidden.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Show Status Bar</guimenuitem>
+</menuchoice></term>
+<listitem><para>When selected, the status bar (the bar along the bottom of the
+screen which gives textual information) will be visible.  When not selected, the
+status bar will be hidden.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Save Options</guimenuitem>
+</menuchoice></term>
+<listitem><para>Saves your current setup to a configuration file.  These
+settings will be reloaded when you start &kspace again.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Configure Key Bindings</guimenuitem>
+</menuchoice></term>
+<listitem><para>Allows you to change the keyboard shortcuts for &kspace;</para>
+
+<note><para>Be careful not to confuse this option with configuring players keys.
+Players Keys are the keys used during the game (Rotate Left, Bullets, etc).
+This option allows you to change the keyboard shortcuts for "Pause Game", "New
+Game", etc</para></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Player Keys</guimenuitem>
+</menuchoice></term>
+<listitem><para>Allows you to configure the keys used during game play.</para>
+<para>For more detailed instructions, see the section entitled <link linkend="OptionsKeys">Keys</link>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Game...</guimenuitem> </menuchoice></term>
+<listitem><para>Allows you to configure game options</para>
+<para>For more detailed instructions, see the section entitled <link linkend="OptionsConfigurations">Game Configuration</link>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Handicap</guimenuitem> </menuchoice></term>
+<listitem><para>Allows you to handicap a player to make the game more
+challenging (or easy).</para>
+<para>For more detailed instructions, see the section entitled <link
+linkend="OptionsHandicap">Handicap</link>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Graphics</guimenuitem> </menuchoice></term>
+<listitem><para>Allows you to change the graphics refresh rate.</para><para>For
+more detailed instructions, see the section entitled <link
+linkend="OptionsGraphics">Graphics</link>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>AI</guimenuitem> </menuchoice></term>
+<listitem><para>Allows you to alter the nature of the computers play.</para>
+<para>For more detailed instructions, see the section entitled <link
+linkend="AI">AI</link>.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="help-menu">
+<title>Help Menu</title>
+
+<variablelist>
+<varlistentry>
+<term><anchor id="contents"><menuchoice>
+<shortcut><keycombo><keycap>F1</keycap></keycombo></shortcut>
+<guimenu>Help</guimenu><guimenuitem>Contents</guimenuitem></menuchoice></term>
+<listitem>
+<para>This invokes the KDE help system starting at the &kspace; help pages (this
+document).</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><anchor id="bug"><menuchoice>
+<shortcut><keycombo><keycap>Shift</keycap><keycap>F1</keycap></keycombo></shortcut>
+<guimenu>Help</guimenu><guimenuitem>What's This?</guimenuitem></menuchoice></term>
+<listitem>
+<para>This changes the mouse cursor to a combination arrow and question mark.
+Clicking on items within &kspace; with this arrow will open a help window (if
+one exists for the particular item) explaining the item's
+function.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><anchor id="whats-this"><menuchoice>
+<guimenu>Help</guimenu><guimenuitem>Report
+Bug...</guimenuitem></menuchoice></term>
+<listitem><para>If you have a good idea for the next version of the game, or the
+program crashes on you, you can select this option to send a bug report to the
+author.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><anchor id="about-kspaceduel"><menuchoice>
+<guimenu>Help</guimenu><guimenuitem>About
+KSpaceduel</guimenuitem></menuchoice></term>
+<listitem><para>This will displays version and author
+information</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><anchor id="about-kde"><menuchoice>
+<guimenu>Help</guimenu><guimenuitem>About KDE</guimenuitem></menuchoice></term>
+<listitem><para>This displays the KDE version and other basic
+information.</para></listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="keys">
+<title>Default Key Bindings</title>
+
+<para>The following tables show you the default key bindings.</para>
+
+<para><emphasis>Menu bindings</emphasis></para>
+
+<informaltable frame=all>
+<tgroup cols=2>
+<thead><row><entry>Key Combo</entry><entry>Action</entry></row></thead>
+<tbody>
+<row><entry><keycombo><keycap>Ctrl</keycap><keycap>Q</keycap></keycombo></entry><entry>Quit &kspace;</entry></row>
+<row><entry><keycombo><keycap>Ctrl</keycap><keycap>G</keycap></keycombo></entry><entry>New Game</entry></row>
+<row><entry><keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo></entry><entry>New Round</entry></row>
+<row><entry><keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo></entry><entry>Pause Game</entry></row>
+<row><entry><keycombo><keycap>F1</keycap></keycombo></entry><entry>Help Contents</entry></row>
+<row><entry><keycombo><keycap>Shift</keycap><keycap>F1</keycap></keycombo></entry><entry>Whats This Help</entry></row>
+<row><entry><keycombo><keycap>Space</keycap></keycombo></entry><entry>Start Game</entry></row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para>The Menu Key Bindings can be changed by selecting <menuchoice>
+<guimenu>Sessions</guimenu> <guimenuitem>Configure Key Bindings</guimenuitem>
+</menuchoice></para>
+
+<para><emphasis>Game Play</emphasis></para>
+
+<informaltable frame=all>
+<tgroup cols=3>
+<colspec colname=c1>
+<colspec colname=c2>
+<colspec colname=c3>
+<thead><row><entry>Action</entry><entry>Red Player</entry><entry>Blue Player</entry></row></thead>
+<tbody>
+<row><entry>Rotate Left</entry><entry>S</entry><entry>Left Arrow</entry></row>
+<row><entry>Rotate Right</entry><entry>F</entry><entry>Right Arrow</entry></row>
+<row><entry>Accelerate</entry><entry>E</entry><entry>Up Arrow</entry></row>
+<row><entry>Shot</entry><entry>E</entry><entry>Down Arrow</entry></row>
+<row><entry>Mines</entry><entry>A</entry><entry>Insert</entry></row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para>To change these keys, refer to the section entitled <link
+linkend="OptionsKeys">Player Keys...</link>.</para>
+
+</sect1>
 </chapter>
+
+<chapter id="credits">
+<title>Credits and License</title>
+ 
+<para>
+&kspace;
+</para>
+<para>
+Program copyright 1999-2000 Andreas Zehender <email>az@azweb.de</email></para>
+<para>Documentation copyright 2000 Andreas Zehender <email>az@azweb.de</email></para>
+<para>Documentation updated for KDE 2.0 by Mike McBride <email>mmcbride@ematic.com</email></para>
+
+&license-links;
+</chapter>                  
 </book>
 <!--
 Local Variables:
