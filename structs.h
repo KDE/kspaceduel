@@ -51,9 +51,4 @@ const SConfig predefinedConfig[]={{1.0, 2200.0, 0.2, 1.0, 9000.0, 1.0,
 const char predefinedConfigName[predefinedConfigNum][15]=
 {"Default","Bullet","Chaos","Lack of energy"}; 
 
-#ifdef kspaceduel_only_for_xgettext
-i18n( "Default" ), i18n( "Bullet" ), i18n( "Chaos" ), i18n( "Lack of energy" )
-#endif
-
-
 #endif

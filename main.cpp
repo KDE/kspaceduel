@@ -24,3 +24,8 @@ int main(int argc,char **argv)
    top->start();
    return myapplication.exec();
 }
+
+#ifdef kspaceduel_only_for_xgettext
+i18n( "Default" ), i18n( "Bullet" ), i18n( "Chaos" ), i18n( "Lack of energy" )
+#endif     
+
