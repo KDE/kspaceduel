@@ -44,10 +44,10 @@ KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
       button[p][PlayerKeyRight]=new QPushButton(i18n("Rotate Right"),bplayer[p]);
       button[p][PlayerKeyAcc]=new QPushButton(i18n("Accelerate"),bplayer[p]);
       button[p][PlayerKeyShot]=new QPushButton(i18n("Shot"),bplayer[p]);
-      button[p][PlayerKeyMine]=new QPushButton(i18n("Mine"),bplayer[p]);
+      button[p][PlayerKeyMine]=new QPushButton(i18n("Verb","Mine"),bplayer[p]);
       for(i=0;i<PlayerKeyNum;i++)
       {
-         keyName[p][i]=new QLabel(KAccel::keyToString((unsigned)key[p][i]),bplayer[p]);
+         keyName[p][i]=new QLabel(KAccel::keyToString((unsigned)key[p][i],true),bplayer[p]);
          keyName[p][i]->setLineWidth(1);
          keyName[p][i]->setFrameStyle(QFrame::Sunken|QFrame::Panel);
          keyName[p][i]->setMinimumSize( 80, 10 );
@@ -116,7 +116,7 @@ void KeySetup::slotDefault()
 
    for(p=0;p<2;p++)
       for(i=0;i<PlayerKeyNum;i++)
-         keyName[p][i]->setText(KAccel::keyToString(key[p][i]));
+         keyName[p][i]->setText(KAccel::keyToString(key[p][i], true));
 }
 
 void KeySetup::slotOk()
@@ -209,7 +209,7 @@ void KeySetup::keyPressEvent(QKeyEvent *ev)
       if(player<2)
       {
          key[player][waitForKey]=ev->key();
-         keyName[player][waitForKey]->setText(KAccel::keyToString(ev->key()));
+         keyName[player][waitForKey]->setText(KAccel::keyToString(ev->key(), true));
       }
       setButtons(-1,-1);
       ev->accept();
@@ -287,14 +287,6 @@ int ConfigSetup::Position[EditNum]=
  0,1,2,3,
  0,1,2,3};
 
-#ifdef kspaceduel_only_for_xgettext
- i18n("General"),i18n("Bullet"),i18n("Mine"),i18n("Ship"),i18n("Sun"),
- i18n("Start"),i18n("Powerups")
-#endif
-
-const char *ConfigSetup::TabName[TabNum]=
-{"General","Bullet","Mine","Ship","Sun","Start","Powerups"};
-
 const int LCDLen=6;
 
 ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
@@ -361,9 +353,13 @@ ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
    for(i=0;i<TabNum;i++)
       stacklayout[i]->activate();
 
-   for(i=0;i<TabNum;i++)
-      tabs->addTab(configWidgets[i],i18n(TabName[i]));
-   
+   tabs->addTab(configWidgets[i],i18n("General"));
+   tabs->addTab(configWidgets[i],i18n("Bullet"));
+   tabs->addTab(configWidgets[i],i18n("Name","Mine"));
+   tabs->addTab(configWidgets[i],i18n("Ship"));
+   tabs->addTab(configWidgets[i],i18n("Start"));
+   tabs->addTab(configWidgets[i],i18n("Powerups"));
+ 
    configCombo->setCurrentItem(opt->lastConfig);
    if(opt->lastConfig==predefinedConfigNum)
    {
