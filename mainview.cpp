@@ -549,6 +549,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
             textSprite->setTextFlags(AlignCenter);
             textSprite->setColor(qRgb(255,160,0));
             textSprite->setFont(QFont("Helvetica",14));
+            textSprite->show( );
             if(ship[0]->getHitPoints()==0)
             {
                if(ship[1]->getHitPoints()==0)
