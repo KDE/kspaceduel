@@ -225,7 +225,7 @@ void KeySetup::keyPressEvent(QKeyEvent *ev)
    i18n("Reload time"),i18n("Acceleration"),i18n("Energy need"),
    i18n("Rotation speed"),i18n("Energy need"),i18n("Crash damage"),
    i18n("Sun energy"),i18n("Gravity"),i18n("Position X"),i18n("Position Y"),
-   i18n("Velocity X",i18n("Velocity Y"),
+   i18n("Velocity X"),i18n("Velocity Y"),
    i18n("Appearance time"),i18n("Life time"),i18n("Energy Amount"),i18n("Shield Amount")
 #endif
 
