@@ -479,7 +479,7 @@ simply select <menuchoice><guimenu>Settings</guimenu>
 <screenshot>
 <screeninfo><acronym>AI</acronym> Configure Dialog</screeninfo>
 <mediaobject>
-<imageobject><imagedata fileref="kspaceduel2.png" format="png"></imageobject>
+<imageobject><imagedata fileref="kspaceduel2.png" format="PNG"></imageobject>
 <textobject><phrase><acronym>AI</acronym> Configure Dialog</phrase></textobject>
 </mediaobject>
 </screenshot>  
