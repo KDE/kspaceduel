@@ -9,6 +9,7 @@
 #include <kaction.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
+#include <kglobalsettings.h>
 #include <kconfig.h>
 #include <kautoconfig.h>
 #include <kiconloader.h>
@@ -554,7 +555,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
             textSprite->move(width()/2,height()/2-90);
             textSprite->setTextFlags(AlignCenter);
             textSprite->setColor(qRgb(255,160,0));
-            textSprite->setFont(QFont("Helvetica",14));
+            textSprite->setFont(QFont(KGlobalSettings::generalFont().family(),14));
             textSprite->show( );
             if(ship[0]->getHitPoints()==0)
             {
