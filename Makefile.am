@@ -1,3 +1,4 @@
+AM_CPPFLAGS = -UQT_NO_ASCII_CAST
 appsdir = $(kde_appsdir)/Games
 INCLUDES= $(all_includes)
 
