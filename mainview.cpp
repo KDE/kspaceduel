@@ -350,9 +350,8 @@ void MyMainView::pause()
 {
    waitForStart=true;
    killTimers();
-   QString str;
-   str.sprintf(i18n("Press %s to start/resume"),
-              (const char*)KAccel::keyToString(options.functionKey[FunctionKeyStart]));
+   QString str = i18n("Press %1 to start/resume")
+              .arg(KAccel::keyToString(options.functionKey[FunctionKeyStart]));
    emit(setStatusText(i18n(" paused "),IDS_PAUSE));  
    emit(setStatusText(str,IDS_MAIN));
 }
@@ -521,9 +520,8 @@ void MyMainView::timerEvent(QTimerEvent *event)
                ship[0]->setWins(w);
                emit(wins(0,w));
             }
-            QString str;
-            str.sprintf(i18n("Press %s for new round"),
-                        (const char*)KAccel::keyToString(
+            QString str = i18n("Press %1 for new round")
+                        .arg(KAccel::keyToString(
                            options.functionKey[FunctionKeyStart]));
             emit(setStatusText(str,IDS_MAIN));
          }
@@ -964,9 +962,8 @@ void MyMainView::keySetup()
       pause();
    KeySetup dialog(&options,this);
    dialog.exec();
-   QString str;
-   str.sprintf(i18n("Press %s to start/resume"),
-              (const char*)KAccel::keyToString(options.functionKey[FunctionKeyStart]));
+   QString str = i18n("Press %1 to start/resume")
+              .arg(KAccel::keyToString(options.functionKey[FunctionKeyStart]));
    emit(setStatusText(str,IDS_MAIN));
 }
 
