@@ -40,16 +40,18 @@ try to shoot eachother.
 that flies around the sun and tries to shoot at the other ship.</para>
 </chapter>
 
-<chapter id="RulesoftheGame">
-<title>Rules of the Game</title>
+<chapter id="TheGame">
+<title>The Game</title>
 
-<sect1 id="ShipMovement">
+<sect1 id="RulesOfTheGame">
+<title>Rules of the Game</title>
+<sect2 id="ShipMovement">
 <title>Ship Movement</title>
 <para>Each player controls one ship. </para>
 <para>The ships can rotate, accelerate, shoot and lay mines.</para>
-</sect1>
+</sect2>
 
-<sect1 id="Energy">
+<sect2 id="Energy">
 <title>Energy</title>
 <para>Each ship has an amount of energy (refer to the game options for values). </para>
 <para>Ships need energy for rotation, acceleration, shooting and laying mines. A ship
@@ -59,18 +61,18 @@ and less energy near the border. It gets the full amount of energy if the sun
 shines directly on the panels and less or even no energy if the sun shines at an
 angle to the panel or to the side of the panel.</para>
 <para>If a ship has no energy it can't navigate or shoot. </para>
-</sect1>
+</sect2>
 
-<sect1 id="HitPoints">
+<sect2 id="HitPoints">
 <title>Hit points</title>
 <para>
 Collisions with own or other bullets or mines decrease the hit points of a ship.
 If two ships collide, the weaker ship is destroyed and the hit points of the
 stronger ship are decreased by the hit points of the weaker ship plus an amount
 (Crash Damage). A ship is destroyed when it flies into the sun.</para>
-</sect1>
+</sect2>
 
-<sect1 id="BulletsandMines">
+<sect2 id="BulletsandMines">
 <title>Bullets and Mines </title>
 <para>Bullets fly around the sun like a ship. </para>
 <para>Mines have an amount of energy to stay at the same position. When the energy is
@@ -78,9 +80,9 @@ spent, the mine falls into the sun. Mines near the sun need more energy than
 those which are further away. </para>
 <para>Mines can be destroyed with bullets. </para>
 <para>By default a ship can have 5 bullets and 3 mines on the screen. </para>
-</sect1>
+</sect2>
 
-<sect1 id="Powerups">
+<sect2 id="Powerups">
 <title>Powerups</title>
 
 <para>From time to time powerups appear on the play field.</para>
@@ -101,20 +103,27 @@ those which are further away. </para>
 </listitem>
 </itemizedlist>
 </para>
+</sect2>
 </sect1>
-</chapter>
 
-<chapter id="Options">
+<sect1 id="Options">
 <title>Options</title>
 
-<sect1 id="OptionsKeys">
+<sect2 id="OptionsKeys">
 <title>Keys</title>
-<para>Keys can be configured with the Options/Keys... menu item.</para>
-</sect1>
+<para>Keys can be configured with the
+<menuchoice>
+  <guimenu>Options</guimenu><guimenuitem>Keys...</guimenuitem>
+</menuchoice>
+menu item.</para>
+</sect2>
 
-<sect1 id="OptionsConfigurations">
+<sect2 id="OptionsConfigurations">
 <title>Configurations</title>
-<para>All settings of the game are configurable with the Options/Game...
+<para>All settings of the game are configurable with the
+<menuchoice>
+  <guimenu>Options</guimenu><guimenuitem>Game...</guimenuitem>
+</menuchoice>
 menu item.</para>
 <para>Settings are collected in different configurations. If you choose the "Custom"
 configuration, you can define all settings for yourself. If you have found an
@@ -250,28 +259,34 @@ collide. </para>
 </listitem>
 </itemizedlist>
 </para>
-</sect1>
+</sect2>
 
-<sect1 id="OptionsHandicap">
+<sect2 id="OptionsHandicap">
 <title>Handicap </title>
 <para>You can specify the number of hit points each player has at the begin of a new
-round with Options/Handicap...</para>
-</sect1>
-<sect1 id="OptionsGraphics">
+round with
+<menuchoice>
+  <guimenu>Options</guimenu><guimenuitem>Handicap...</guimenuitem>
+</menuchoice>
+</para>
+</sect2>
+
+<sect2 id="OptionsGraphics">
 <title>Graphics</title>
 <para><emphasis remap="bf">Refreshtime:</emphasis> Time between two screen refreshs in ms. All settings are
 independent of the refreshtime!</para>
+</sect2>
+
 </sect1>
 
-</chapter>
 
-
-<chapter id="Ai">
+<sect1 id="Ai">
 <title>Ai</title>
 <para>Each ship can be controlled by the computer. You can choose a difficulty for
 each ship.</para>
 <para>The ai is optimized for the default config, but can mamage with other configs.
 Just try...</para>
+</sect1>
 </chapter>
 
 
