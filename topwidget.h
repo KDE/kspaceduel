@@ -13,7 +13,7 @@ public:
    ~MyTopLevelWidget( );
    void start();
 public slots:
-   void setStatusText(const char* text,int id);
+   void setStatusText(const QString & text,int id);
    void quit();
    void saveOptions();
    void keySetup();

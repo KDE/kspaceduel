@@ -36,7 +36,9 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent,const char *name)
 
    for(i=0;i<4;i++)
    {
-      str.sprintf("sprites/playerinfo/ship%i%i.pnm",pnr+1,i);
+      str = QString::fromLatin1("sprites/playerinfo/ship%1%2.pnm")
+        .arg(pnr+1)
+        .arg(i);
       pix[i]=new QPixmap(locate("appdata", str));
    }
 

@@ -83,7 +83,7 @@ void MyTopLevelWidget::start()
    wview->newRound();
 }
 
-void MyTopLevelWidget::setStatusText(const char* str,int id)
+void MyTopLevelWidget::setStatusText(const QString & str,int id)
 {
    statusBar( )->changeItem(str,id);
 }

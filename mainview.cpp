@@ -25,7 +25,7 @@ MyMainView::MyMainView(QWidget *parent, const char *name)
    int i,p;
 
    random.setSeed(0);
-   QPixmap backgr((const char *)(locate("appdata", MV_BACKGROUND)));
+   QPixmap backgr(locate("appdata", MV_BACKGROUND));
    field.setBackgroundPixmap(backgr);
 
    view.setResizePolicy(QScrollView::AutoOne);
@@ -353,7 +353,7 @@ void MyMainView::pause()
       
       waitForStart=true;
       killTimers();
-      emit(setStatusText(i18n(" paused "),IDS_PAUSE));
+      emit setStatusText(i18n(" paused "), IDS_PAUSE);
    }
 }
 
@@ -1055,8 +1055,9 @@ QCanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern
       
    for( image=0; image < framecount; image++ )
    {
-      dataname.sprintf( datapattern, image );
-      maskname.sprintf( maskpattern, image );
+      // #### Why is this a QString??
+      dataname.sprintf( datapattern.ascii(), image );
+      maskname.sprintf( maskpattern.ascii(), image );
 
       QFile file(dataname);
       if( file.open( IO_ReadOnly ) )

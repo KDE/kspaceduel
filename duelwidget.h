@@ -30,7 +30,7 @@ public slots:
    void hitPoints(int pn,int hp);
    void wins(int pn,int w);
 signals:   
-   void setStatusText(const char* str,int id);
+   void setStatusText(const QString & str,int id);
 private:
    MyMainView *playfield;
    PlayerInfo *playerinfo[2];

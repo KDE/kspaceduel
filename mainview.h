@@ -40,7 +40,7 @@ signals:
    void hitPoints(int pn,int hp);
    void energy(int pn,int en);
    void wins(int pn,int w);
-   void setStatusText(const char* str,int id);
+   void setStatusText(const QString & str,int id);
    
 protected:
    virtual void resizeEvent(QResizeEvent *event);
