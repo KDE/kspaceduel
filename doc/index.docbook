@@ -27,8 +27,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
  
-<date>21/10/2000</date>
-<releaseinfo>1.0.1</releaseinfo>                   
+<date>25/11/2000</date>
+<releaseinfo>1.0</releaseinfo>                   
 
 <abstract>
 <para>&kspace; is an space arcade game. </para>
@@ -191,7 +191,7 @@ stats.</para>
 craft.</para>
 <para>The middle box on the player stats, represents the battery power.</para>
 <para>The bottom box on the player stats, shows the number of wins.</para>
-<para>The top of the playing area is occupied by the menubar</para>
+<para>The top of the playing area is occupied by the menubar and toolbar.</para>
 <para>The bottom of the playing area is the status bar.</para>
 
 </sect2>
