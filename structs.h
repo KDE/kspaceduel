@@ -49,6 +49,6 @@ const SConfig predefinedConfig[]={{1.0, 2200.0, 0.2, 1.0, 9000.0, 1.0,
                                    20, 50, 30, 5, 3,
                                    400.0, 800.0, 50, 30}};
 const char predefinedConfigName[predefinedConfigNum][15]=
-{"Default","Bullet","Chaos","Lack of energy"}; 
+{"Default","Bullet","Chaos","Lack of Energy"}; 
 
 #endif

@@ -221,25 +221,25 @@ void KeySetup::keyPressEvent(QKeyEvent *ev)
 }
 
 #ifdef kspaceduel_only_for_xgettext
-   i18n("Game speed"),i18n("Shot speed"),i18n("Energy need"),i18n("Max number"),
-   i18n("Damage"),i18n("Life time"),i18n("Reload time"),i18n("Mine fuel"),
-   i18n("Energy need"),i18n("Activate time"),i18n("Damage"),i18n("Max number"),
-   i18n("Reload time"),i18n("Acceleration"),i18n("Energy need"),
-   i18n("Rotation speed"),i18n("Energy need"),i18n("Crash damage"),
-   i18n("Sun energy"),i18n("Gravity"),i18n("Position X"),i18n("Position Y"),
-   i18n("Velocity X"),i18n("Velocity Y"),
-   i18n("Appearance time"),i18n("Life time"),i18n("Energy Amount"),i18n("Shield Amount")
+   i18n("Game speed:"),i18n("Shot speed:"),i18n("Energy need:"),i18n("Max number:"),
+   i18n("Damage:"),i18n("Life time:"),i18n("Reload time:"),i18n("Mine fuel:"),
+   i18n("Energy need:"),i18n("Activate time:"),i18n("Damage:"),i18n("Max number:"),
+   i18n("Reload time:"),i18n("Acceleration:"),i18n("Energy need:"),
+   i18n("Rotation speed:"),i18n("Energy need:"),i18n("Crash damage:"),
+   i18n("Sun energy:"),i18n("Gravity:"),i18n("Position X:"),i18n("Position Y:"),
+   i18n("Velocity X:"),i18n("Velocity Y:"),
+   i18n("Appearance time:"),i18n("Life time:"),i18n("Energy amount:"),i18n("Shield amount:")
 #endif
 
 char ConfigSetup::LabelName[EditNum][25]=
-{ "Game speed",
- "Shot speed","Energy need","Max number","Damage","Life time","Reload time",
- "Mine fuel","Energy need","Activate time","Damage","Max number","Reload time",
- "Acceleration","Energy need","Rotation speed",
- "Energy need","Crash damage",
- "Sun energy","Gravity",
- "Position X","Position Y","Velocity X","Velocity Y",
-  "Appearance time","Life time","Energy Amount","Shield Amount"};
+{ "Game speed:",
+ "Shot speed:","Energy need:","Max number:","Damage:","Life time:","Reload time:",
+ "Mine fuel:","Energy need:","Activate time:","Damage:","Max number:","Reload time:",
+ "Acceleration:","Energy need:","Rotation speed:",
+ "Energy need:","Crash damage:",
+ "Sun energy:","Gravity:",
+ "Position X:","Position Y:","Velocity X:","Velocity Y:",
+  "Appearance time:","Life time:","Energy amount:","Shield amount:"};
 
 enum ConfigSetup::Type ConfigSetup::VarType[EditNum]=
 {VarFloat,
@@ -560,7 +560,7 @@ void ConfigSetup::sliderChanged(int val)
 char AiSetup::DifficultyName[DNUM][10]={"Trainee","Normal","Hard","Insane"};
 
 AiSetup::AiSetup(SOptions *opt,QWidget *parent,const char *name)
-      :KDialogBase( parent, name, true, i18n( "Ai Setup" ), Ok|Cancel|Help )
+      :KDialogBase( parent, name, true, i18n( "AI Setup" ), Ok|Cancel|Help )
 {
    QGroupBox *playerbox[2];
    int i,j;
@@ -622,14 +622,14 @@ HitpointSetup::HitpointSetup(SOptions *opt,QWidget *parent,const char *name)
    setHelp( "OptionsHandicap" );
 
    QSlider *blueSlider,*redSlider;
-   QGroupBox *box=new QGroupBox(i18n("Hit points"),this);
+   QGroupBox *box=new QGroupBox(i18n("Hit Points"),this);
    setMainWidget( box );
 
    QLCDNumber *bluelcd=new QLCDNumber(2,box);
    QLCDNumber *redlcd=new QLCDNumber(2,box);
    bluelcd->display(hpblue);
    redlcd->display(hpred);
-   
+
    blueSlider=new QSlider(1,99,10,hpblue,QSlider::Horizontal,box);
    connect(blueSlider,SIGNAL(valueChanged(int)),SLOT(blueSliderChanged(int)));
    connect(blueSlider,SIGNAL(valueChanged(int)),bluelcd,SLOT(display(int)));
@@ -637,8 +637,8 @@ HitpointSetup::HitpointSetup(SOptions *opt,QWidget *parent,const char *name)
    connect(redSlider,SIGNAL(valueChanged(int)),SLOT(redSliderChanged(int)));
    connect(redSlider,SIGNAL(valueChanged(int)),redlcd,SLOT(display(int)));
 
-   QLabel *redLabel=new QLabel(i18n("Red Player"),box);
-   QLabel *blueLabel=new QLabel(i18n("Blue Player"),box);
+   QLabel *redLabel=new QLabel(i18n("Red player:"),box);
+   QLabel *blueLabel=new QLabel(i18n("Blue player:"),box);
 
    QVBoxLayout *boxlayout = new QVBoxLayout( box, spacingHint( ) );
    boxlayout->addSpacing(2 * spacingHint()/*10*/);
@@ -686,7 +686,7 @@ GraphicSetup::GraphicSetup(SOptions *opt,QWidget *parent,const char *name)
 
    setHelp( "OptionsGraphics" );
 
-   QLabel *refreshlabel=new QLabel(i18n("Refresh time"),box);
+   QLabel *refreshlabel=new QLabel(i18n("Refresh time:"),box);
    refreshslider=new QSlider(10,100,10,refreshtime,QSlider::Horizontal,box);
    refreshnumber=new QLCDNumber(3,box);
    refreshnumber->display(refreshtime);
