@@ -32,10 +32,9 @@ noinst_HEADERS = mathroutines.h topwidget.h duelwidget.h playerinfo.h \
 # them while "make clean", use CLEANFILES
 DISTCLEANFILES = $(kspaceduel_METASOURCES)
 
-# make messages.po. Move this one to $(podir)/ and "make merge" in po
 # the -x is for skipping messages already translated in kdelibs
 messages:
-	$(XGETTEXT) -C -kI18N_NOOP -ki18n -x $(includedir)/kde.pot $(kspaceduel_SOURCES) && mv messages.po $(podir)/kspaceduel.pot
+	$(XGETTEXT) $(kspaceduel_SOURCES) -o $(podir)/kspaceduel.pot
 
 KDE_ICON = kspaceduel
 
