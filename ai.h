@@ -3,7 +3,7 @@
 
 #include <krandomsequence.h>
 
-#include <qlist.h>
+#include <qptrlist.h>
 #include <qmemarray.h>
 
 #include "sprites.h"
