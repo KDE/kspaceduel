@@ -333,9 +333,9 @@ void MyMainView::pause()
    waitForStart=true;
    killTimers();
    QString str;
-   str.sprintf(klocale->translate("Press %s to start/resume"),
+   str.sprintf(i18n("Press %s to start/resume"),
               (const char*)keyToString(options.functionKey[FunctionKeyStart]));
-   emit(setStatusText(klocale->translate(" paused "),IDS_PAUSE));  
+   emit(setStatusText(i18n(" paused "),IDS_PAUSE));  
    emit(setStatusText(str,IDS_MAIN));
 }
 
@@ -472,10 +472,10 @@ void MyMainView::timerEvent(QTimerEvent *event)
             if(ship[0]->getHitPoints()==0)
             {
                if(ship[1]->getHitPoints()==0)
-                  textSprite->setText(klocale->translate("draw round"));
+                  textSprite->setText(i18n("draw round"));
                else
                {
-                  textSprite->setText(klocale->translate("blue player won the round"));
+                  textSprite->setText(i18n("blue player won the round"));
                   w=ship[1]->getWins()+1;
                   ship[1]->setWins(w);
                   emit(wins(1,w));
@@ -483,13 +483,13 @@ void MyMainView::timerEvent(QTimerEvent *event)
             }
             else
             {
-               textSprite->setText(klocale->translate("red player won the round"));
+               textSprite->setText(i18n("red player won the round"));
                w=ship[0]->getWins()+1;
                ship[0]->setWins(w);
                emit(wins(0,w));
             }
             QString str;
-            str.sprintf(klocale->translate("Press %s for new round"),
+            str.sprintf(i18n("Press %s for new round"),
                         (const char*)keyToString(
                            options.functionKey[FunctionKeyStart]));
             emit(setStatusText(str,IDS_MAIN));
@@ -862,7 +862,7 @@ void MyMainView::keySetup()
    KeySetup dialog(&options,this);
    dialog.exec();
    QString str;
-   str.sprintf(klocale->translate("Press %s to start/resume"),
+   str.sprintf(i18n("Press %s to start/resume"),
               (const char*)keyToString(options.functionKey[FunctionKeyStart]));
    emit(setStatusText(str,IDS_MAIN));
 }

@@ -2,7 +2,7 @@
 #include <qpixmap.h>
 #include <qtooltip.h>
 #include <klocale.h>
-#include <kapp.h>
+
 #include "defines.h"
 
 PlayerInfo::PlayerInfo(int pnr,QWidget *parent,const char *name)
