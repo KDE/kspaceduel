@@ -1,3 +1,5 @@
+#include <kapp.h>
+
 #define IDS_PAUSE 1
 #define IDS_MAIN 2
 
