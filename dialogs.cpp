@@ -8,18 +8,18 @@
 #include <qgroupbox.h>
 #include <qlayout.h>
 #include <qvalidator.h>
-#include <qmessagebox.h>
+#include <qvbox.h>
 
+#include <kmessagebox.h>
 #include <kconfig.h>
 #include <klocale.h>
 #include <kapp.h>
 #include <kaccel.h>
-#include <qvbox.h>
 
 #include "dialogs.h"
 
 KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
-      :KDialogBase( parent, name, true, i18n( "KeySetup" ), Ok|Cancel|Default )
+  : KDialogBase( parent, name, true, i18n( "Key Setup" ), Ok|Cancel|Default )
 {
    int i,p;
    QWidget* topWidget = new QWidget( this );
@@ -28,11 +28,9 @@ KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
    waitForKey=-1;
    options=opt;
 
-//   setCaption(i18n("Key Setup"));
-
-   for(p=0;p<2;p++)
-      for(i=0;i<PlayerKeyNum;i++)
-         key[p][i]=opt->playerKey[p][i];
+   for( p = 0; p < 2; p++ )
+     for( i = 0; i < PlayerKeyNum; i++ )
+       key[p][i] = opt->playerKey[p][i];
 
    QVBoxLayout *topLayout = new QVBoxLayout( topWidget, 0, spacingHint( ) );
 
@@ -40,7 +38,7 @@ KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
    bplayer[0]=new QGroupBox(i18n("Red Player"), topWidget );
    bplayer[1]=new QGroupBox(i18n("Blue Player"), topWidget );
  
-   for(p=0;p<2;p++)
+   for( p = 0; p < 2; p++ )
    {
       button[p][PlayerKeyLeft]=new QPushButton(i18n("Rotate Left"),bplayer[p]);
       button[p][PlayerKeyRight]=new QPushButton(i18n("Rotate Right"),bplayer[p]);
@@ -138,9 +136,11 @@ void KeySetup::slotOk()
          sameKey=sameKey||(key[1][i]==key[1][j]);
    }
    if(sameKey)
-      sameKey=QMessageBox::warning(this,i18n("Key Setup"),
-	     i18n("There are multiple functions for a key\nContinue?"),
-				   i18n("Yes"), i18n("No"))!=0;
+     sameKey = KMessageBox::warningContinueCancel(this,
+				    i18n("Key Setup"),
+         i18n("There are multiple functions for a key\n"
+	      "Continue?"), i18n("Key Setup"), i18n("OK"))
+       == KMessageBox::Cancel;
    if(!sameKey)
    {
       for(p=0;p<2;p++)
