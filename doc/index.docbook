@@ -267,7 +267,6 @@ to give that player a handycap.</para></listitem>
 <listitem><para>Time between two screen refreshes in milliseconds.  All other
 settings are independent of the refresh time.</para></listitem>
 </varlistentry>
-</variablelist>
 
 <varlistentry>
 <term><guilabel>Red Player</guilabel></term>
@@ -282,6 +281,8 @@ experiment with the different skill level to find one which fits you.</para>
 <listitem><para>This works the same as the options for the <guilabel>Red
 Player</guilabel> described above.</para></listitem>
 </varlistentry>
+</variablelist>
+
 </sect3>
 
 <sect3 id="game">
