@@ -1,4 +1,3 @@
-appsdir = $(kde_appsdir)/Games/Arcade
 INCLUDES= -I$(top_srcdir)/libkdegames $(all_includes)
 
 SUBDIRS = sprites pics
@@ -28,10 +27,7 @@ messages: rc.cpp
 
 KDE_ICON = kspaceduel
 
-apps_DATA = kspaceduel.desktop
+xdg_apps_DATA = kspaceduel.desktop
 
 rcdir=$(kde_datadir)/kspaceduel
 rc_DATA = kspaceduelui.rc
-
-install-data-local:
-	rm -rf $(DESTDIR)$(kde_appsdir)/Games/kspaceduel.desktop
