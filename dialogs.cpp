@@ -583,7 +583,7 @@ AiSetup::AiSetup(SOptions *opt,QWidget *parent,const char *name)
       pboxlayout[i]=new QVBoxLayout(playerbox[i],10);
       pboxlayout[i]->addSpacing(10);
       
-      AiCheck[i]=new QCheckBox(i18n("Player is ai"),playerbox[i]);
+      AiCheck[i]=new QCheckBox(i18n("Player is AI"),playerbox[i]);
       AiCheck[i]->setChecked(options->isAi[i]);
       pboxlayout[i]->addWidget(AiCheck[i]);
 
