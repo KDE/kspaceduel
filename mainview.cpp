@@ -24,7 +24,7 @@ MyMainView::MyMainView(QWidget *parent)
     view(&field,this)
 {
    int i,p;
-
+   setMinimumSize(600,400);
    random.setSeed(0);
    QPixmap backgr(locate("appdata", MV_BACKGROUND));
    field.setBackgroundPixmap(backgr);

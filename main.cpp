@@ -18,7 +18,6 @@ int main(int argc,char **argv)
    KApplication myapplication;
    MyTopLevelWidget* top = new MyTopLevelWidget( );
    myapplication.setMainWidget(top);
-   top->setMinimumSize(640,480);
    top->show();
    top->start();
    return myapplication.exec();

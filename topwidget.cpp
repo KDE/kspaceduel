@@ -15,6 +15,7 @@ MyTopLevelWidget::MyTopLevelWidget()
    initGameWidgets();
    initStatusBar( );
    initActions( );
+   setupGUI( );
 }
 
 void MyTopLevelWidget::initGameWidgets( ){
@@ -114,8 +115,6 @@ void MyTopLevelWidget::initActions( )
 
    actionCollection()->setAutoConnectShortcuts(true);
    playfield->setActionCollection(actionCollection());
-
-   setupGUI();
 }
 
 void MyTopLevelWidget::initStatusBar( )
