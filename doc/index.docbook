@@ -27,13 +27,12 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
  
-<date>16/12/2000</date>
+<date>03/02/2001</date>
 <releaseinfo>1.0.0</releaseinfo>
 
 <abstract>
 <para>&kspaceduel; is an space arcade game. </para>
 <para>Two ships fly around the sun and try to shoot eachother.</para>
-<para>This documentation was last updated for version 1.0.</para>
 </abstract>
 
 
@@ -61,7 +60,8 @@ other.</para>
 
 <chapter id="TheGame">
 <title>The Game</title>
-
+<para>The idea of the game is simple (but addictive).  You try to destroy your opponent before he destroys you.</para>
+<para>Be careful not to hit the sun.</para>
 <sect1 id="RulesOfTheGame">
 <title>Rules of the Game</title>
 <sect2 id="ShipMovement">
