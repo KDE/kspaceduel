@@ -1,7 +1,6 @@
 #include <qgroupbox.h>
 #include <qlayout.h>
 #include <kconfig.h>
-#include <kmsgbox.h>
 #include <qvalidator.h>
 #include <klocale.h>
 
@@ -170,9 +169,9 @@ void KeySetup::okPressed()
          sameKey=sameKey||(key[1][i]==fkey[j]);
    }
    if(sameKey)
-      sameKey=KMsgBox::yesNo(this,i18n("Key Setup"),
-           i18n("There are multiple functions for a key\nContinue?"),
-           KMsgBox::EXCLAMATION)!=0;
+      sameKey=QMessageBox::warning(this,i18n("Key Setup"),
+	     i18n("There are multiple functions for a key\nContinue?"),
+				   i18n("Yes"), i18n("No"))!=0;
    if(!sameKey)
    {
       for(p=0;p<2;p++)
