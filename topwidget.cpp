@@ -39,7 +39,7 @@ void MyTopLevelWidget::initActions( )
                                CTRL + Key_P, wview, SLOT( togglePause( ) ),
                                actionCollection( ), "pause" );
    newAct->setChecked( false );
-   ( void )new KAction( i18n( "Start" ), Key_Space, wview, SLOT( start( ) ),
+   KAction* gameStart = new KAction( i18n( "Start" ), Key_Space, wview, SLOT( start( ) ),
                         actionCollection( ), "game_start" );
    
    KStdAction::keyBindings( this, SLOT( keySetup( ) ), actionCollection( ) );
@@ -64,6 +64,9 @@ void MyTopLevelWidget::initActions( )
 
    KStdAction::saveOptions( this, SLOT( saveOptions( ) ),
                             actionCollection( ) );
+
+   KAccel* acc = new KAccel(this);
+   gameStart->plugAccel(acc);
 
    createGUI( "kspaceduelui.rc" );
 
@@ -120,7 +123,7 @@ void MyTopLevelWidget::saveOptions()
 void MyTopLevelWidget::keySetup()
 {
    wview->pause();
-   KKeyDialog::configureKeys( actionCollection( ), "kspaceduelui.rc",
+   KKeyDialog::configureKeys( actionCollection( ), xmlFile(),
                               false, this );   
 }
 

@@ -15,10 +15,6 @@
    </Menu>
 </MenuBar>
 
-<Menu name="dummymenu"><text>Nothing</text>
-   <Action name="game_start"/>
-</Menu>
-
 <Toolbar name="mainToolBar"><text>Main Toolbar</text>
    <Action name="new_game"/>
    <Action name="new_round"/>
