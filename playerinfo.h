@@ -4,7 +4,7 @@
 #include <qframe.h>
 #include <qlabel.h>
 class QPixmap;
-#include <qlcdnum.h>
+#include <qlcdnumber.h>
 #include <qcolor.h>
 
 class PlayerInfo:public QFrame

@@ -1,6 +1,6 @@
 #include <qpushbutton.h>
 #include <qlabel.h>
-#include <qcombo.h>
+#include <qcombobox.h>
 #include <qtabwidget.h>
 #include <qslider.h>
 #include <qlcdnumber.h>
