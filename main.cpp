@@ -12,7 +12,7 @@ int main(int argc,char **argv)
 {
    KAboutData aboutData( "kspaceduel", I18N_NOOP("KSpaceDuel"), 
       KSPACEDUEL_VERSION, description, KAboutData::License_GPL, 
-      "(c) 1998, Andreas Zehender");
+      "(c) 1998-2000, Andreas Zehender");
    aboutData.addAuthor("Andreas Zehender",0, "az@azweb.de");
    KCmdLineArgs::init( argc, argv, &aboutData );
 

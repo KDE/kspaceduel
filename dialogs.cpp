@@ -19,7 +19,7 @@
 #include "dialogs.h"
 
 KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
-  : KDialogBase( parent, name, true, i18n( "Key Setup" ), Ok|Cancel|Default )
+  : KDialogBase( parent, name, true, i18n( "Key Setup" ), Ok|Cancel|Default|Help )
 {
    int i,p;
    QWidget* topWidget = new QWidget( this );
@@ -87,6 +87,7 @@ KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
    players->addWidget(bplayer[1]);
 
    topLayout->activate();
+   setHelp( "Keys" );
 }
 
 void KeySetup::setButtons(int pl,int b)
@@ -310,7 +311,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,SOptions *opt,
    
    //resize(450,400);
    //setCaption(i18n("Game Setup"));
-   setHelp( "kspaceduel/options.html", "OptionsConfiguration" );
+   setHelp( "OptionsConfigurations" );
    
    customConfig=custom;
    config=*customConfig;
@@ -569,7 +570,7 @@ AiSetup::AiSetup(SOptions *opt,QWidget *parent,const char *name)
 
 //   resize(300,170);
 //   setCaption(i18n("Ai Setup"));
-   setHelp("kspaceduel/ai.html","");
+   setHelp( "Ai" );
    
    QHBox* box = makeHBoxMainWidget();
    
@@ -619,7 +620,7 @@ HitpointSetup::HitpointSetup(SOptions *opt,QWidget *parent,const char *name)
    options=opt;
 
 //   setCaption(i18n("Handicap Setup"));
-   setHelp( "kspaceduel/options.html", "OptionsHandicap" );
+   setHelp( "OptionsHandicap" );
 
    QSlider *blueSlider,*redSlider;
    QGroupBox *box=new QGroupBox(i18n("Hit points"),this);
@@ -684,7 +685,7 @@ GraphicSetup::GraphicSetup(SOptions *opt,QWidget *parent,const char *name)
    QGroupBox *box=new QGroupBox(i18n("Graphics"),this);
    setMainWidget( box );
 
-   setHelp( "kspaceduel/options.html", "OptionsGraphics" );
+   setHelp( "OptionsGraphics" );
 
    QLabel *refreshlabel=new QLabel(i18n("Refresh time"),box);
    refreshslider=new QSlider(10,100,10,refreshtime,QSlider::Horizontal,box);
