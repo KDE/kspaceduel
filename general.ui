@@ -63,7 +63,7 @@
                         <cstring>textLabel3</cstring>
                     </property>
                     <property name="text">
-                        <string>Blue player:</string>
+                        <string>Red player:</string>
                     </property>
                 </widget>
                 <widget class="QLabel" row="1" column="0">
@@ -71,7 +71,7 @@
                         <cstring>textLabel4</cstring>
                     </property>
                     <property name="text">
-                        <string>Red player:</string>
+                        <string>Blue player:</string>
                     </property>
                 </widget>
                 <widget class="QSlider" row="1" column="1">
@@ -193,6 +193,9 @@
                     <property name="name">
                         <cstring>textLabel1</cstring>
                     </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
                     <property name="text">
                         <string>Difficulty:</string>
                     </property>
@@ -220,6 +223,9 @@
                     </item>
                     <property name="name">
                         <cstring>comboBox1</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
                     </property>
                     <property name="currentItem">
                         <number>1</number>
@@ -250,6 +256,9 @@
                     <property name="name">
                         <cstring>textLabel2</cstring>
                     </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
                     <property name="text">
                         <string>Difficulty:</string>
                     </property>
@@ -278,6 +287,9 @@
                     <property name="name">
                         <cstring>ai2Difficulty</cstring>
                     </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
                     <property name="currentItem">
                         <number>1</number>
                     </property>
@@ -304,6 +316,30 @@
         <signal>valueChanged(int)</signal>
         <receiver>lCDNumber3</receiver>
         <slot>display(int)</slot>
+    </connection>
+    <connection>
+        <sender>player1IsAi</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel1</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>player1IsAi</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>comboBox1</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>player2IsAi</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel2</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>player2IsAi</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ai2Difficulty</receiver>
+        <slot>setEnabled(bool)</slot>
     </connection>
 </connections>
 <layoutdefaults spacing="6" margin="11"/>

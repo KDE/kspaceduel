@@ -189,7 +189,7 @@ void MyMainView::readConfig()
    options.startHitPoints[1]=cfg->readUnsignedNumEntry("startHitPointsP2",99);
    options.startHitPoints[0]=cfg->readUnsignedNumEntry("startHitPointsP1",99);
 
-   if(options.lastConfig<predefinedConfigNum)
+   if(options.lastConfig < predefinedConfigNum)
       config=modifyConfig(predefinedConfig[options.lastConfig]);
    else
       config=modifyConfig(customConfig);
@@ -237,16 +237,6 @@ void MyMainView::writeConfig()
    cfg->writeEntry("powerupRefreshTime",customConfig.powerupRefreshTime);
    cfg->writeEntry("powerupShieldAmount",customConfig.powerupShieldAmount);
    cfg->writeEntry("powerupEnergyAmount",customConfig.powerupEnergyAmount);
-
-   cfg->writeEntry("startHitPointsP2",options.startHitPoints[1]);
-   cfg->writeEntry("startHitPointsP1",options.startHitPoints[0]);
-
-   cfg->setGroup("Game");
-
-   cfg->writeEntry("player1IsAi",options.isAi[0]);
-   cfg->writeEntry("player2IsAi",options.isAi[1]);
-   cfg->writeEntry("ai1Difficulty",(unsigned)options.aiDifficulty[0]);
-   cfg->writeEntry("ai2Difficulty",(unsigned)options.aiDifficulty[1]);
 }
 
 SConfig MyMainView::modifyConfig(SConfig conf)
@@ -1011,10 +1001,10 @@ void MyMainView::collisions()
 
 void MyMainView::gameSetup()
 {
-   if(!waitForStart)
-      pause();
+  if(!waitForStart)
+    pause();
    
-   settings = new KDialogBase(KDialogBase::IconList, i18n("Configure"), KDialogBase::Default | KDialogBase::Ok | KDialogBase::Apply | KDialogBase::Cancel , KDialogBase::Ok, this, "SettingsDialog", false, WDestructiveClose ); 
+  settings = new KDialogBase(KDialogBase::IconList, i18n("Configure"), KDialogBase::Default | KDialogBase::Ok | KDialogBase::Apply | KDialogBase::Cancel , KDialogBase::Ok, this, "SettingsDialog", false, WDestructiveClose ); 
   KAutoConfig *kautoconfig = new KAutoConfig(settings, "KAutoConfig");
 	  
   connect(settings, SIGNAL(okClicked()), kautoconfig, SLOT(saveSettings()));

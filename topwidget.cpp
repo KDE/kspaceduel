@@ -73,6 +73,7 @@ void MyTopLevelWidget::initActions( )
    KAction* gameStart = new KAction( i18n( "Start" ), GAME_START_SHORTCUT,
 	   playfield, SLOT( start( ) ), actionCollection( ), "game_start" );
 
+   KStdAction::keyBindings(this, SLOT(keySetup()), actionCollection());
    KStdAction::preferences(playfield, SLOT(gameSetup()), actionCollection());
   
    setStandardToolBarMenuEnabled( true );
