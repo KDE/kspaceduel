@@ -2,4 +2,4 @@
 File=kspaceduel.kcfg
 ClassName=Options
 Singleton=true
-Mutators=true
+Mutators=LastConfig
