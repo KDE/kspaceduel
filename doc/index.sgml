@@ -1,0 +1,154 @@
+<!doctype linuxdoc system>
+
+<article>
+<title>The KSpaceduel Handbook
+<author><htmlurl name="Andreas Zehender" url="mailto:azehende@ba-stuttgart.de">
+<date>Last updated 28 April 1999 for version 1.0. 
+<abstract>KSpaceduel is an space arcade game. Two ships fly around the sun and
+try to shoot eachother.
+</abstract>
+
+<toc>
+
+<sect>Introduction
+<p>
+KSpaceduel is an space arcade game for two players. Each player controls a ship
+that flies around the sun and tries to shoot at the other ship.
+
+<sect>Rules of the Game
+
+<sect1>Ship Movement 
+<p>
+Each player controls one ship. 
+
+The ships can rotate, accelerate, shoot and lay mines.
+
+<sect1>Energy 
+<p>
+Each ship has an amount of energy (refer to the game options for values). 
+
+Ships need energy for rotation, acceleration, shooting and laying mines. A ship
+gets energy from its solar panels. The amount of energy a ship gets depends on
+the distance from and direction to the sun. A ship gets more energy near the sun
+and less energy near the border. It gets the full amount of energy if the sun
+shines directly on the panels and less or even no energy if the sun shines at an
+angle to the panel or to the side of the panel.
+
+If a ship has no energy it can't navigate or shoot. 
+
+<sect1>Hit points
+
+Collisions with own or other bullets or mines decrease the hit points of a ship.
+If two ships collide, the weaker ship is destroyed and the hit points of the
+stronger ship are decreased by the hit points of the weaker ship plus an amount
+(Crash Damage). A ship is destroyed when it flies into the sun.
+
+<sect1>Bullets and Mines 
+<p>
+Bullets fly around the sun like a ship. 
+
+Mines have an amount of energy to stay at the same position. When the energy is
+spent, the mine falls into the sun. Mines near the sun need more energy than
+those which are further away. 
+
+Mines can be destroyed with bullets. 
+
+By default a ship can have 5 bullets and 3 mines on the screen. 
+
+<sect>Options
+
+<sect1>Keys 
+<p>
+Keys can be configured with the &quot;Options/Keys...&quot; menu item.
+
+<sect1>Configurations 
+<p>
+All settings of the game are configurable with the &quot;Options/Game...&quot;
+menu item.
+
+Settings are collected in different configurations. If you choose the "Custom"
+configuration, you can define all settings for yourself. If you have found an
+interesting configuration, mail it to the author of the game. It can be
+implemented in a future version (send the part &quot;[Game]&quot; in the file
+&quot;~/.kde/share/config/kspaceduelrc&quot;).
+
+The settings are:
+
+<itemize>
+<item><bf/Sun/
+  <itemize>
+  <item><bf/Sun energy:/ The strength of the sun. The higher the value the
+  quicker ships will be charged.
+  <item><bf/Gravity:/ The strength of the gravitational pull of the sun.
+  </itemize>
+<item><bf/Bullet/
+  <itemize>
+  <item><bf/Shot speed:/ The speed of bullets. 
+  <item><bf/Energy need:/ The amount of energy needed for one shot. 
+  <item><bf/Max number:/ The maximum number of bullets a player can have on the
+  screen.
+  <item><bf/Damage:/ The number of hit points damage done when a bullet hits a ship. 
+  <item><bf/Life time:/ The maximum life time of a bullet.
+  <item><bf/Reload time:/ The time a ship needs to reload a bullet. 
+  </itemize>
+<item><bf/Mine/
+  <itemize>
+  <item><bf/Mine fuel:/ The amount of fuel on a mine
+  <item><bf/Energy need:/ The amount of energy needed for laying a mine 
+  <item><bf/Activate time:/ The time a mine is inactive, 
+  <item><bf/Damage:/ The number of hit points of damage done when a ship hits a mine 
+  <item><bf/Max number:/ maximum number of mines a player can have on the screen 
+  <item><bf/Reload time:/ The time a ship needs to reload a mine. 
+  </itemize>
+<item><bf/General/
+  <itemize>
+  <item><bf/Game speed:/ controls the speed of the whole game 
+  </itemize>
+<item><bf/Start/
+  <itemize>
+  <item><bf/Position X/ and <bf/Position Y:/ the ships position at the begin of
+  a new round. The ships start at opposite sides of the sun.
+  <item><bf/Velocity X/ and <bf/Velocity Y:/ velocity at the begin of a new
+  round Ship: 
+  </itemize>
+<item><bf/Ship/
+  <itemize>
+  <item><bf/Acceleration:/ Acceleration of the ships 
+  <item><bf/Energy need:/ The energy needed to accelerate a ship. 
+  <item><bf/Rotation speed:/ The speed at which a ship rotates. 
+  <item><bf/Energy need:/ The energy needed to rotate a ship. 
+  <item><bf/Crash damage:/ The number of hit points damage done when two ships
+  collide. 
+  </itemize>
+</itemize>
+
+<sect1>Handicap 
+<p>
+You can specify the number of hit points each player has at the begin of a new
+round with &quot;Options/Handicap...&quot;.
+
+<sect1>Graphics
+<p>
+<bf/Refreshtime:/ Time between two screen refreshs in ms. All settings are
+independent of the refreshtime!
+
+<sect>Ai
+<p>
+Each ship can be controlled by the computer. You can choose a difficulty for
+each ship.
+
+The ai is optimized for the default config, but can mamage with other configs.
+Just try...
+
+<sect>License
+<p>
+KSpaceduel Copyright 1998 Andreas Zehender
+<htmlurl url="mailto:azehende@ba-stuttgart.de"
+name="azehende@ba-stuttgart.de">
+
+KSpaceduel uses QwSpriteField, Copyright Warwick Allison. See
+<url url="http://trolls.troll.no/warwick/QwSpriteField"> for further
+information.
+
+KSpaceduel is released under the GPL.
+</article>
