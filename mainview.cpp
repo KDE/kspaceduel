@@ -180,21 +180,21 @@ void MyMainView::readConfig(KConfig *cfg)
       cfg->readDoubleNumEntry("powerupEnergyAmount",
                               predefinedConfig[0].powerupEnergyAmount);
 
-   options.functionKey[FunctionKeyStart]=stringToKey(cfg->readEntry("KeyStart","Space"));
+   options.functionKey[FunctionKeyStart]=KAccel::stringToKey(cfg->readEntry("KeyStart","Space"));
 
    cfg->setGroup("Player2");
-   options.playerKey[1][PlayerKeyLeft]=stringToKey(cfg->readEntry("KeyLeft","Left"));
-   options.playerKey[1][PlayerKeyRight]=stringToKey(cfg->readEntry("KeyRight","Right"));
-   options.playerKey[1][PlayerKeyAcc]=stringToKey(cfg->readEntry("KeyAcc","Up"));
-   options.playerKey[1][PlayerKeyShot]=stringToKey(cfg->readEntry("KeyShot","Down"));
-   options.playerKey[1][PlayerKeyMine]=stringToKey(cfg->readEntry("KeyMine","Control"));
+   options.playerKey[1][PlayerKeyLeft]=KAccel::stringToKey(cfg->readEntry("KeyLeft","Left"));
+   options.playerKey[1][PlayerKeyRight]=KAccel::stringToKey(cfg->readEntry("KeyRight","Right"));
+   options.playerKey[1][PlayerKeyAcc]=KAccel::stringToKey(cfg->readEntry("KeyAcc","Up"));
+   options.playerKey[1][PlayerKeyShot]=KAccel::stringToKey(cfg->readEntry("KeyShot","Down"));
+   options.playerKey[1][PlayerKeyMine]=KAccel::stringToKey(cfg->readEntry("KeyMine","Control"));
    options.startHitPoints[1]=cfg->readUnsignedNumEntry("startHitPoints",99);
    cfg->setGroup("Player1");
-   options.playerKey[0][PlayerKeyLeft]=stringToKey(cfg->readEntry("KeyLeft","S"));
-   options.playerKey[0][PlayerKeyRight]=stringToKey(cfg->readEntry("KeyRight","F"));
-   options.playerKey[0][PlayerKeyAcc]=stringToKey(cfg->readEntry("KeyAcc","E"));
-   options.playerKey[0][PlayerKeyShot]=stringToKey(cfg->readEntry("KeyShot","D"));
-   options.playerKey[0][PlayerKeyMine]=stringToKey(cfg->readEntry("KeyMine","A"));
+   options.playerKey[0][PlayerKeyLeft]=KAccel::stringToKey(cfg->readEntry("KeyLeft","S"));
+   options.playerKey[0][PlayerKeyRight]=KAccel::stringToKey(cfg->readEntry("KeyRight","F"));
+   options.playerKey[0][PlayerKeyAcc]=KAccel::stringToKey(cfg->readEntry("KeyAcc","E"));
+   options.playerKey[0][PlayerKeyShot]=KAccel::stringToKey(cfg->readEntry("KeyShot","D"));
+   options.playerKey[0][PlayerKeyMine]=KAccel::stringToKey(cfg->readEntry("KeyMine","A"));
    options.startHitPoints[0]=cfg->readUnsignedNumEntry("startHitPoints",99);
    
    if(options.lastConfig<predefinedConfigNum)
@@ -252,19 +252,19 @@ void MyMainView::writeConfig()
    cfg->writeEntry("startHitPoints",options.startHitPoints[0]);
 
    cfg->setGroup("Player2");
-   cfg->writeEntry("KeyLeft",keyToString(options.playerKey[1][PlayerKeyLeft]));
-   cfg->writeEntry("KeyRight",keyToString(options.playerKey[1][PlayerKeyRight]));
-   cfg->writeEntry("KeyAcc",keyToString(options.playerKey[1][PlayerKeyAcc]));
-   cfg->writeEntry("KeyShot",keyToString(options.playerKey[1][PlayerKeyShot]));
-   cfg->writeEntry("KeyMine",keyToString(options.playerKey[1][PlayerKeyMine]));
+   cfg->writeEntry("KeyLeft",KAccel::keyToString(options.playerKey[1][PlayerKeyLeft]));
+   cfg->writeEntry("KeyRight",KAccel::keyToString(options.playerKey[1][PlayerKeyRight]));
+   cfg->writeEntry("KeyAcc",KAccel::keyToString(options.playerKey[1][PlayerKeyAcc]));
+   cfg->writeEntry("KeyShot",KAccel::keyToString(options.playerKey[1][PlayerKeyShot]));
+   cfg->writeEntry("KeyMine",KAccel::keyToString(options.playerKey[1][PlayerKeyMine]));
    cfg->setGroup("Player1");
-   cfg->writeEntry("KeyLeft",keyToString(options.playerKey[0][PlayerKeyLeft]));
-   cfg->writeEntry("KeyRight",keyToString(options.playerKey[0][PlayerKeyRight]));
-   cfg->writeEntry("KeyAcc",keyToString(options.playerKey[0][PlayerKeyAcc]));
-   cfg->writeEntry("KeyShot",keyToString(options.playerKey[0][PlayerKeyShot]));
-   cfg->writeEntry("KeyMine",keyToString(options.playerKey[0][PlayerKeyMine]));
+   cfg->writeEntry("KeyLeft",KAccel::keyToString(options.playerKey[0][PlayerKeyLeft]));
+   cfg->writeEntry("KeyRight",KAccel::keyToString(options.playerKey[0][PlayerKeyRight]));
+   cfg->writeEntry("KeyAcc",KAccel::keyToString(options.playerKey[0][PlayerKeyAcc]));
+   cfg->writeEntry("KeyShot",KAccel::keyToString(options.playerKey[0][PlayerKeyShot]));
+   cfg->writeEntry("KeyMine",KAccel::keyToString(options.playerKey[0][PlayerKeyMine]));
    cfg->setGroup("Game");
-   cfg->writeEntry("KeyStart",keyToString(options.functionKey[FunctionKeyStart]));
+   cfg->writeEntry("KeyStart",KAccel::keyToString(options.functionKey[FunctionKeyStart]));
    cfg->writeEntry("player1IsAi",options.isAi[0]);
    cfg->writeEntry("player2IsAi",options.isAi[1]);
    cfg->writeEntry("ai1Difficulty",(unsigned)options.aiDifficulty[0]);
@@ -354,7 +354,7 @@ void MyMainView::pause()
    killTimers();
    QString str;
    str.sprintf(i18n("Press %s to start/resume"),
-              (const char*)keyToString(options.functionKey[FunctionKeyStart]));
+              (const char*)KAccel::keyToString(options.functionKey[FunctionKeyStart]));
    emit(setStatusText(i18n(" paused "),IDS_PAUSE));  
    emit(setStatusText(str,IDS_MAIN));
 }
@@ -525,7 +525,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
             }
             QString str;
             str.sprintf(i18n("Press %s for new round"),
-                        (const char*)keyToString(
+                        (const char*)KAccel::keyToString(
                            options.functionKey[FunctionKeyStart]));
             emit(setStatusText(str,IDS_MAIN));
          }
@@ -967,7 +967,7 @@ void MyMainView::keySetup()
    dialog.exec();
    QString str;
    str.sprintf(i18n("Press %s to start/resume"),
-              (const char*)keyToString(options.functionKey[FunctionKeyStart]));
+              (const char*)KAccel::keyToString(options.functionKey[FunctionKeyStart]));
    emit(setStatusText(str,IDS_MAIN));
 }
 

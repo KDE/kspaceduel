@@ -41,7 +41,7 @@ KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
       button[p][PlayerKeyMine]=new QPushButton(i18n("Mine"),bplayer[p]);
       for(i=0;i<PlayerKeyNum;i++)
       {
-         keyName[p][i]=new QLabel(keyToString((unsigned)key[p][i]),bplayer[p]);
+         keyName[p][i]=new QLabel(KAccel::keyToString((unsigned)key[p][i]),bplayer[p]);
          keyName[p][i]->setLineWidth(1);
          keyName[p][i]->setFrameStyle(QFrame::Sunken|QFrame::Panel);
       }
@@ -87,7 +87,7 @@ KeySetup::KeySetup(SOptions *opt,QWidget *parent,const char *name)
    fbutton[FunctionKeyStart]=new QPushButton(i18n("Start/Pause"),bgeneral);
    for(i=0;i<FunctionKeyNum;i++)
    {
-      fKeyName[i]=new QLabel(keyToString(fkey[i]),bgeneral);
+      fKeyName[i]=new QLabel(KAccel::keyToString(fkey[i]),bgeneral);
       fKeyName[i]->setLineWidth(1);
       fKeyName[i]->setFrameStyle(QFrame::Sunken|QFrame::Panel);
       fbutton[i]->setToggleButton(true);
@@ -144,9 +144,9 @@ void KeySetup::defaultsPressed()
 
    for(p=0;p<2;p++)
       for(i=0;i<PlayerKeyNum;i++)
-         keyName[p][i]->setText(keyToString(key[p][i]));
+         keyName[p][i]->setText(KAccel::keyToString(key[p][i]));
    for(i=0;i<FunctionKeyNum;i++)
-      fKeyName[i]->setText(keyToString(fkey[i]));
+      fKeyName[i]->setText(KAccel::keyToString(fkey[i]));
 }
 
 void KeySetup::okPressed()
@@ -248,12 +248,12 @@ void KeySetup::keyPressEvent(QKeyEvent *ev)
       if(player<2)
       {
          key[player][waitForKey]=ev->key();
-         keyName[player][waitForKey]->setText(keyToString(ev->key()));
+         keyName[player][waitForKey]->setText(KAccel::keyToString(ev->key()));
       }
       else
       {
          fkey[waitForKey]=ev->key();
-         fKeyName[waitForKey]->setText(keyToString(ev->key()));
+         fKeyName[waitForKey]->setText(KAccel::keyToString(ev->key()));
       }
       setButtons(-1,-1);
       ev->accept();
