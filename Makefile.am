@@ -1,4 +1,4 @@
-appsdir = $(kde_appsdir)/Arcade
+appsdir = $(kde_appsdir)/Games/Arcade
 INCLUDES= $(all_includes)
 
 SUBDIRS = sprites pics
