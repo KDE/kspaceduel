@@ -1,5 +1,9 @@
-#include "duelwidget.h"
 #include <qlayout.h>
+#include <kconfig.h>
+
+#include "duelwidget.h"
+#include "playerinfo.h"
+#include "mainview.h"
 
 DuelWidget::DuelWidget(QWidget *parent,const char *name)
       :QWidget(parent,name)

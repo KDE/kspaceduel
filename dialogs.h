@@ -1,14 +1,14 @@
 #ifndef __SP_DIALOG_H
 #define __SP_DIALOG_H
 
-#include <qdialog.h>
-#include <qpushbutton.h>
-#include <qlabel.h>
-#include <qcombo.h>
-#include <qtabwidget.h>
-#include <qslider.h>
-#include <qlcdnumber.h>
-#include <qcheckbox.h>
+class QPushButton;
+class QLabel;
+class QComboBox;
+class QTabWidget;
+class QSlider;
+class QLCDNumber;
+class QCheckBox;
+
 #include <kdialogbase.h>
 
 #include "defines.h"
@@ -40,7 +40,6 @@ private:
    SOptions *options;
    QLabel *keyName[2][PlayerKeyNum];
    QPushButton *button[2][PlayerKeyNum];
-   QPushButton *ok, *cancel, *defaults;
    int waitForKey,player,key[2][PlayerKeyNum];
 };
 

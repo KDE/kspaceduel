@@ -3,11 +3,12 @@
 
 #include <qwidget.h>
 #include <qimage.h>
-#include <kconfig.h>
+
+class KConfig;
 #include <krandomsequence.h>
 #include "sprites.h"
 #include "dialogs.h"
-#include "ai.h"
+class Ai;
 
 #ifdef sun
 #undef sun

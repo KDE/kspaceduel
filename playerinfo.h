@@ -3,7 +3,7 @@
 
 #include <qframe.h>
 #include <qlabel.h>
-#include <qpixmap.h>
+class QPixmap;
 #include <qlcdnum.h>
 #include <qcolor.h>
 

@@ -1,11 +1,9 @@
 #include "mainview.h"
 #include "topwidget.h"
 #include <qpixmap.h>
-#include <qimage.h>
 #include <qpoint.h>
 #include <math.h>
 #include <qcolor.h>
-#include <qkeycode.h>
 
 #include <kapp.h>
 #include <kaccel.h>
@@ -13,10 +11,11 @@
 #include <klocale.h>
 #include <kstddirs.h>
 #include <kglobal.h>
+#include <kconfig.h>
 #include <qfile.h>
 
 #include "defines.h"
-
+#include "ai.h"
 
 MyMainView::MyMainView(QWidget *parent, const char *name)
       :QWidget(parent,name),

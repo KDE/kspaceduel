@@ -3,10 +3,9 @@
 
 #include <krandomsequence.h>
 
-#include <qpoint.h>
 #include <qlist.h>
 #include <qarray.h>
-#include <qvector.h>
+
 #include "sprites.h"
 #include "dialogs.h"
 

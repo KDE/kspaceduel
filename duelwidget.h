@@ -2,9 +2,10 @@
 #define __DUEL_WIDGET_H
 
 #include <qwidget.h>
-#include <kconfig.h>
-#include "playerinfo.h"
-#include "mainview.h"
+class KConfig;
+
+class PlayerInfo;
+class MyMainView;
 
 class DuelWidget:public QWidget
 {

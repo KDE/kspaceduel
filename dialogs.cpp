@@ -1,3 +1,10 @@
+#include <qpushbutton.h>
+#include <qlabel.h>
+#include <qcombo.h>
+#include <qtabwidget.h>
+#include <qslider.h>
+#include <qlcdnumber.h>
+#include <qcheckbox.h>
 #include <qgroupbox.h>
 #include <qlayout.h>
 #include <qvalidator.h>

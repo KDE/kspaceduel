@@ -1,11 +1,13 @@
 #include <klocale.h>
 #include <kapp.h>
-#include <qmessagebox.h>
 #include <kkeydialog.h>
 #include <kstdaction.h>
 #include <kaction.h>
+#include <kconfig.h>
+
 #include "topwidget.h"
 #include "version.h"
+#include "defines.h"
 
 MyTopLevelWidget::MyTopLevelWidget(const char* name)
       :KTMainWindow(name),wview(this)

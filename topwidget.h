@@ -2,10 +2,7 @@
 #define __MY_TOP_WIDGET_H
 
 #include <ktmainwindow.h>
-#include <kmenubar.h>
-#include <kaccel.h>
-#include <kaccelmenu.h>
-#include <kconfig.h>
+class KConfig;
 #include "duelwidget.h"
 
 class MyTopLevelWidget:public KTMainWindow
