@@ -56,11 +56,11 @@ messages:
 # if you have more of them, create a subdirectory with an extra Makefile 
 install-data-local: 
 	$(mkinstalldirs) $(APPSDIR)
-	$(INSTALL_DATA) kspaceduel.kdelnk $(APPSDIR)
+	$(INSTALL_DATA) $(srcdir)/kspaceduel.kdelnk $(APPSDIR)
 	$(mkinstalldirs) $(kde_icondir)
-	$(INSTALL_DATA) kspaceduel.xpm $(kde_icondir)
+	$(INSTALL_DATA) $(srcdir)/kspaceduel.xpm $(kde_icondir)
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-kspaceduel.xpm $(kde_minidir)/kspaceduel.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kspaceduel.xpm $(kde_minidir)/kspaceduel.xpm
 
 # remove ALL you have installed in install-data-local or install-exec-local
 uninstall-local:
