@@ -2,7 +2,7 @@
 #include <qpixmap.h>
 #include <qtooltip.h>
 #include <klocale.h>
-#include <kstddirs.h>
+#include <kstandarddirs.h>
 
 #include "defines.h"
 

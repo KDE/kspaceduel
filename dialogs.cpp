@@ -13,7 +13,7 @@
 #include <kmessagebox.h>
 #include <kconfig.h>
 #include <klocale.h>
-#include <kapp.h>
+#include <kapplication.h>
 #include <kaccel.h>
 
 #include "dialogs.h"

@@ -6,11 +6,11 @@
 #include <qcolor.h>
 #include <qbitmap.h>
 
-#include <kapp.h>
+#include <kapplication.h>
 #include <kaccel.h>
 #include <kaction.h>
 #include <klocale.h>
-#include <kstddirs.h>
+#include <kstandarddirs.h>
 #include <kglobal.h>
 #include <kconfig.h>
 #include <qfile.h>
