@@ -10,12 +10,13 @@
 #include "defines.h"
 
 MyTopLevelWidget::MyTopLevelWidget(const char* name)
-      :KTMainWindow(name),wview(this)
+      :KTMainWindow(name)
 {
+   wview = new DuelWidget( this );
    initActions( );
    initStatusBar( );
 
-   setView(&wview);
+   setView(wview);
 
    readConfig(kapp->config());
 }
@@ -27,31 +28,31 @@ void MyTopLevelWidget::initActions( )
    KStdAction::quit( this, SLOT( quit( ) ), actionCollection( ) );
 
    ( void )new KAction( i18n( "New &Game" ), "newgame", 
-                        CTRL + Key_G, &wview, SLOT( newGame( ) ),
+                        CTRL + Key_G, wview, SLOT( newGame( ) ),
                         actionCollection( ), "new_game" );
    ( void )new KAction( i18n( "&New Round" ), "newround",
-                        CTRL + Key_N, &wview, SLOT( newRound( ) ),
+                        CTRL + Key_N, wview, SLOT( newRound( ) ),
                         actionCollection( ), "new_round" );
    newAct = new KToggleAction( i18n( "&Pause" ), "pausegame", 
-                               CTRL + Key_P, &wview, SLOT( togglePause( ) ),
+                               CTRL + Key_P, wview, SLOT( togglePause( ) ),
                                actionCollection( ), "pause" );
    newAct->setChecked( false );
-   ( void )new KAction( i18n( "Start" ), Key_Space, &wview, SLOT( start( ) ),
+   ( void )new KAction( i18n( "Start" ), Key_Space, wview, SLOT( start( ) ),
                         actionCollection( ), "game_start" );
    
    KStdAction::keyBindings( this, SLOT( keySetup( ) ), actionCollection( ) );
-   ( void )new KAction( i18n( "Player &Keys..." ), 0, &wview,
+   ( void )new KAction( i18n( "Player &Keys..." ), 0, wview,
                         SLOT( keySetup( ) ), actionCollection( ),
                         "options_player_keys" );
-   ( void )new KAction( i18n( "&Game..." ), 0, &wview, SLOT( gameSetup( ) ),
+   ( void )new KAction( i18n( "&Game..." ), 0, wview, SLOT( gameSetup( ) ),
                         actionCollection( ), "options_game" );
-   ( void )new KAction( i18n( "&Handicap..." ), 0, &wview,
+   ( void )new KAction( i18n( "&Handicap..." ), 0, wview,
                         SLOT( hitpointSetup( ) ),
                         actionCollection( ), "options_handicap" );
-   ( void )new KAction( i18n( "Gra&phics..." ), 0, &wview,
+   ( void )new KAction( i18n( "Gra&phics..." ), 0, wview,
                         SLOT( graphicSetup( ) ),
                         actionCollection( ), "options_graphics" );
-   ( void )new KAction( i18n( "&Ai..." ), 0, &wview,
+   ( void )new KAction( i18n( "&Ai..." ), 0, wview,
                         SLOT( aiSetup( ) ),
                         actionCollection( ), "options_ai" );
    KStdAction::showToolbar( this, SLOT( showToolBar( ) ),
@@ -71,15 +72,15 @@ void MyTopLevelWidget::initStatusBar( )
    statusBar( )->insertItem(i18n(" paused "),IDS_PAUSE);
    statusBar( )->insertItem("   ",IDS_MAIN);
 
-   QObject::connect(&wview,SIGNAL(setStatusText(const char*,int)),
+   QObject::connect(wview,SIGNAL(setStatusText(const char*,int)),
                     SLOT(setStatusText(const char*,int)));
 
 }
 
 void MyTopLevelWidget::start()
 {
-   wview.newGame();
-   wview.newRound();
+   wview->newGame();
+   wview->newRound();
 }
 
 void MyTopLevelWidget::setStatusText(const char* str,int id)
@@ -92,7 +93,7 @@ void MyTopLevelWidget::readConfig(KConfig *cfg)
    QSize s(640,480);
    cfg->setGroup("Graphic");
    resize(cfg->readSizeEntry("WindowSize",&s));
-   wview.readConfig(cfg);
+   wview->readConfig(cfg);
 }
 
 void MyTopLevelWidget::writeConfig(KConfig *cfg)
@@ -110,12 +111,12 @@ void MyTopLevelWidget::quit()
 
 void MyTopLevelWidget::saveOptions()
 {
-   wview.writeConfig();
+   wview->writeConfig();
 }
 
 void MyTopLevelWidget::keySetup()
 {
-   wview.pause();
+   wview->pause();
    KKeyDialog::configureKeys( actionCollection( ), "kspaceduelui.rc",
                               false, this );   
 }
@@ -134,4 +135,8 @@ void MyTopLevelWidget::showStatusBar( )
       statusBar( )->hide( );
    else
       statusBar( )->show( );
+}
+
+MyTopLevelWidget::~MyTopLevelWidget( )
+{
 }

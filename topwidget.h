@@ -10,6 +10,7 @@ class MyTopLevelWidget:public KTMainWindow
    Q_OBJECT
 public:
    MyTopLevelWidget(const char *name=0);
+   ~MyTopLevelWidget( );
    void start();
 public slots:
    void setStatusText(const char* text,int id);
@@ -24,7 +25,7 @@ protected:
    void initActions( );
    void initStatusBar( );
 private:
-   DuelWidget wview;
+   DuelWidget* wview;
 };
 
 #endif

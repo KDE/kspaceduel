@@ -17,10 +17,10 @@ int main(int argc,char **argv)
    KCmdLineArgs::init( argc, argv, &aboutData );
 
    KApplication myapplication;
-   MyTopLevelWidget top;
-   myapplication.setMainWidget(&top);
-   top.setMinimumSize(640,480);
-   top.show();
-   top.start();
+   MyTopLevelWidget* top = new MyTopLevelWidget( );
+   myapplication.setMainWidget(top);
+   top->setMinimumSize(640,480);
+   top->show();
+   top->start();
    return myapplication.exec();
 }
