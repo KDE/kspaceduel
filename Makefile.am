@@ -23,8 +23,8 @@ noinst_HEADERS = mathroutines.h topwidget.h duelwidget.h playerinfo.h \
 
 DISTCLEANFILES = $(kspaceduel_METASOURCES)
 
-messages:
-	$(XGETTEXT) $(kspaceduel_SOURCES) -o $(podir)/kspaceduel.pot
+messages: rc.cpp
+	$(XGETTEXT) *.cpp -o $(podir)/kspaceduel.pot
 
 KDE_ICON = kspaceduel
 
