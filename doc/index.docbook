@@ -535,6 +535,15 @@ including the keys for steering the space ship, firing bullets &etc;.</para>
 </varlistentry>
 
 <varlistentry>
+<term>
+<menuchoice><guimenu>Settings</guimenu>
+<guimenuitem>Configure Toolbars...</guimenuitem>
+</menuchoice></term>
+<listitem><para>Display the standard KDE Toolbar Configuration Dialog.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
 <guimenuitem>Configure &kspaceduel;...</guimenuitem>
