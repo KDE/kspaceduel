@@ -1,3 +1,5 @@
+//Added by qt3to4:
+#include <QLabel>
 #ifndef __SP_DIALOG_H
 #define __SP_DIALOG_H
 

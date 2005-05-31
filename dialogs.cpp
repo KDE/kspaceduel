@@ -4,6 +4,10 @@
 #include <qslider.h>
 #include <qlcdnumber.h>
 #include <qlayout.h>
+//Added by qt3to4:
+#include <QVBoxLayout>
+#include <Q3Frame>
+#include <QGridLayout>
 
 #include <klocale.h>
 
@@ -145,10 +149,10 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent,const char *name)
       slider[i]=new QSlider(EditVal[i][0]*EditDiv[i],EditVal[i][1]*EditDiv[i],
                             (EditVal[i][1]-EditVal[i][0])/10,
                             EditVal[i][2]*EditDiv[i],
-                            QSlider::Horizontal,configWidgets[Parent[i]]);
+                            Qt::Horizontal,configWidgets[Parent[i]]);
       connect(slider[i],SIGNAL(valueChanged(int)),SLOT(sliderChanged(int)));
       value[i]=new QLCDNumber(LCDLen,configWidgets[Parent[i]]);
-      value[i]->setFrameStyle(QFrame::NoFrame);
+      value[i]->setFrameStyle(Q3Frame::NoFrame);
    }
 
    configCombo=new QComboBox(false,this);

@@ -4,6 +4,9 @@
 #include <kaction.h>
 #include <kstdgameaction.h>
 #include <qlayout.h>
+//Added by qt3to4:
+#include <QHBoxLayout>
+#include <QBoxLayout>
 #include <kstatusbar.h>
 
 #include "topwidget.h"
@@ -31,7 +34,7 @@ void MyTopLevelWidget::initGameWidgets( ){
    toplayout->addWidget(playerinfo[1]);
    toplayout->activate();
 
-   playfield->setFocusPolicy(QWidget::StrongFocus);
+   playfield->setFocusPolicy(Qt::StrongFocus);
    playfield->setFocus();
 
    QObject::connect(playfield,SIGNAL(energy(int,int)),
@@ -65,7 +68,7 @@ void MyTopLevelWidget::initActions( )
    KStdGameAction::quit(this, SLOT(close()), actionCollection());
    KStdGameAction::gameNew(playfield, SLOT(newGame()), actionCollection());
    ( void )new KAction( i18n( "&New Round" ), "spnewround",
-                        CTRL + Key_N, playfield, SLOT( newRound( ) ),
+                        Qt::CTRL + Qt::Key_N, playfield, SLOT( newRound( ) ),
                         actionCollection( ), "new_round" );
    MyMainView::pauseAction =
        KStdGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
@@ -81,35 +84,35 @@ void MyTopLevelWidget::initActions( )
    // Default keys
    actionCollection()->setAutoConnectShortcuts(false);
    KAction* ac;
-   ac = new KAction(i18n("Player 1 Rotate Left"), Key_S, 0, 0,
+   ac = new KAction(i18n("Player 1 Rotate Left"), Qt::Key_S, 0, 0,
 		    actionCollection(), "P1KeyLeft");
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 1 Rotate Right"), Key_F, 0, 0,
+   ac = new KAction(i18n("Player 1 Rotate Right"), Qt::Key_F, 0, 0,
 		     actionCollection(), "P1KeyRight");
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 1 Accelerate"), Key_E, 0, 0,
+   ac = new KAction(i18n("Player 1 Accelerate"), Qt::Key_E, 0, 0,
 		    actionCollection(), "P1KeyAcc");
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 1 Shot"), Key_D, 0, 0,
+   ac = new KAction(i18n("Player 1 Shot"), Qt::Key_D, 0, 0,
 		    actionCollection(), "P1Shot");
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 1 Mine"), Key_A, 0, 0,
+   ac = new KAction(i18n("Player 1 Mine"), Qt::Key_A, 0, 0,
 		    actionCollection(), "P1Mine");
    ac->setEnabled( false );
 
-   ac = new KAction(i18n("Player 2 Rotate Left"), Key_Left, 0, 0,
+   ac = new KAction(i18n("Player 2 Rotate Left"), Qt::Key_Left, 0, 0,
 		    actionCollection(), "P2KeyLeft");
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 2 Rotate Right"), Key_Right, 0, 0,
+   ac = new KAction(i18n("Player 2 Rotate Right"), Qt::Key_Right, 0, 0,
 		    actionCollection(), "P2KeyRight");
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 2 Accelerate"), Key_Up, 0, 0,
+   ac = new KAction(i18n("Player 2 Accelerate"), Qt::Key_Up, 0, 0,
 		    actionCollection(), "P2KeyAcc");
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 2 Shot"), Key_Down, 0, 0,
+   ac = new KAction(i18n("Player 2 Shot"), Qt::Key_Down, 0, 0,
 		    actionCollection(), "P2Shot");
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 2 Mine"), Key_Insert, 0, 0,
+   ac = new KAction(i18n("Player 2 Mine"), Qt::Key_Insert, 0, 0,
 		    actionCollection(), "P2Mine");
    ac->setEnabled( false );
 

@@ -3,8 +3,14 @@
 #include <math.h>
 #include <qbitmap.h>
 #include <qfile.h>
-#include <qvbox.h>
-
+#include <q3vbox.h>
+//Added by qt3to4:
+#include <QPixmap>
+#include <Q3PtrList>
+#include <QKeyEvent>
+#include <QTimerEvent>
+#include <QResizeEvent>
+#include <QAbstractEventDispatcher>
 #include <kapplication.h>
 #include <kaction.h>
 #include <klocale.h>
@@ -29,9 +35,9 @@ MyMainView::MyMainView(QWidget *parent)
    QPixmap backgr(locate("appdata", MV_BACKGROUND));
    field.setBackgroundPixmap(backgr);
 
-   view.setResizePolicy(QScrollView::AutoOne);
-   view.setHScrollBarMode(QScrollView::AlwaysOff);
-   view.setVScrollBarMode(QScrollView::AlwaysOff);
+   view.setResizePolicy(Q3ScrollView::AutoOne);
+   view.setHScrollBarMode(Q3ScrollView::AlwaysOff);
+   view.setVScrollBarMode(Q3ScrollView::AlwaysOff);
 
    for(p=0;p<2;p++)
    {
@@ -43,7 +49,7 @@ MyMainView::MyMainView(QWidget *parent)
 
    QString tmp = KGlobal::dirs()->findResourceDir("appdata", (QString)MV_BACKGROUND);
 
-   QCanvasPixmapArray *sunsequence
+   Q3CanvasPixmapArray *sunsequence
       = loadOldPixmapSequence( tmp + MV_SUN_PPM, tmp + MV_SUN_PBM );
    sun=new SunSprite(sunsequence, &field);
    sun->move(width()/2-1,height()/2-1);
@@ -82,9 +88,9 @@ MyMainView::MyMainView(QWidget *parent)
    {
       // ship[i]->setBoundsAction(QwRealMobileSprite::Wrap);
       ship[i]->hide();
-      bullets[i]=new QPtrList<BulletSprite>;
+      bullets[i]=new Q3PtrList<BulletSprite>;
       bullets[i]->setAutoDelete(true);
-      mines[i]=new QPtrList<MineSprite>;
+      mines[i]=new Q3PtrList<MineSprite>;
       mines[i]->setAutoDelete(true);
 
    }
@@ -99,7 +105,7 @@ MyMainView::MyMainView(QWidget *parent)
 
 MyMainView::~MyMainView()
 {
-   killTimers();
+   QAbstractEventDispatcher::instance()->unregisterTimers(this);
    writeConfig();
 }
 
@@ -340,7 +346,7 @@ void MyMainView::pause()
       pauseAction->setChecked( true );
 
       waitForStart=true;
-      killTimers();
+      QAbstractEventDispatcher::instance()->unregisterTimers(this);
       emit setStatusText(i18n(" paused "), IDS_PAUSE);
    }
 }
@@ -375,7 +381,7 @@ void MyMainView::stop()
    pauseAction->setEnabled( false );
    pauseAction->setChecked( false );
 
-   killTimers();
+   QAbstractEventDispatcher::instance()->unregisterTimers(this);
    waitForStart = true;
 }
 
@@ -444,7 +450,7 @@ void MyMainView::newRound()
    timeToNextPowerup=random.getDouble() * config.powerupRefreshTime;
    powerups.clear();
 
-   killTimers();
+   QAbstractEventDispatcher::instance()->unregisterTimers(this);
    mx=width()/2.0;
    my=height()/2.0;
    ship[0]->move(mx+config.startPosX,my+config.startPosY);
@@ -517,7 +523,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
 
    if(event->timerId()==timerID)
    {
-      killTimers();
+      QAbstractEventDispatcher::instance()->unregisterTimers(this);
       if(gameEnd>0.0)
       {
          gameEnd-=1.0;
@@ -531,9 +537,9 @@ void MyMainView::timerEvent(QTimerEvent *event)
                textSprite=0;
             }
 
-            textSprite=new QCanvasText(&field);
+            textSprite=new Q3CanvasText(&field);
             textSprite->move(width()/2,height()/2-90);
-            textSprite->setTextFlags(AlignCenter);
+            textSprite->setTextFlags(Qt::AlignCenter);
             textSprite->setColor(qRgb(255,160,0));
             textSprite->setFont(QFont(KGlobalSettings::generalFont().family(),14));
             textSprite->show( );
@@ -789,17 +795,17 @@ void MyMainView::calculatePowerups()
 void MyMainView::collisions()
 {
    int pl,hp,op,oldhp[2],ohp;
-   QCanvasItemList unexact;
-   QCanvasItem *sprite;
+   Q3CanvasItemList unexact;
+   Q3CanvasItem *sprite;
    BulletSprite *bullet;
    MineSprite *mine;
    ExplosionSprite *expl;
    ShipSprite *s;
    PowerupSprite *power;
-   QCanvasItemList hitlist;
+   Q3CanvasItemList hitlist;
    double ndx[2],ndy[2];
    double en;
-   QCanvasItemList::Iterator it;
+   Q3CanvasItemList::Iterator it;
 
    for(pl=0;pl<2;pl++)
    {
@@ -1001,12 +1007,12 @@ void MyMainView::closeSettings(){
     config=modifyConfig(customConfig);
 }
 
-QCanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern,
+Q3CanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern,
                             const QString& maskpattern, int framecount)
 {
    int image;
-   QPtrList<QPixmap> pixmaplist;
-   QPtrList<QPoint> pointlist;
+   Q3PtrList<QPixmap> pixmaplist;
+   Q3PtrList<QPoint> pointlist;
    QString dataname, maskname;
    QPixmap *pix;
    QBitmap *bitmap;
@@ -1020,7 +1026,7 @@ QCanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern
       maskname.sprintf( maskpattern.ascii(), image );
 
       QFile file(dataname);
-      if( file.open( IO_ReadOnly ) )
+      if( file.open( QIODevice::ReadOnly ) )
       {
          char line[128];
          file.readLine( line, 128 ); // Skip "P6"/"P3" line
@@ -1045,7 +1051,7 @@ QCanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern
       pixmaplist.append( pix );
    }
 
-   QCanvasPixmapArray* newarray = new QCanvasPixmapArray( pixmaplist, pointlist );
+   Q3CanvasPixmapArray* newarray = new Q3CanvasPixmapArray( pixmaplist, pointlist );
    return newarray;
 }
 
