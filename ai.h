@@ -4,7 +4,7 @@
 #include <krandomsequence.h>
 
 #include <q3ptrlist.h>
-#include <q3memarray.h>
+
 
 #include "sprites.h"
 #include "dialogs.h"
@@ -50,7 +50,7 @@ public:
    bool layMine(){return mine;}
 private:
    AiSprite nextPosition(AiSprite sp,double mult);
-   void nextPositions(AiSprite sp,Q3MemArray<AiSprite> *a,int frames);
+   void nextPositions(AiSprite sp,QVector<AiSprite> *a,int frames);
    Hit firstObject(AiSprite shot,int shotframes,int frames);
    void shotScores();
    void calculateNextPositions();
@@ -76,8 +76,8 @@ private:
    ShipSprite *ship[2];
    Q3PtrList<BulletSprite> *bullets[2];
    Q3PtrList<MineSprite> *mines[2];
-   Q3MemArray<AiSprite> *shipsNextPositions[2];
-   Q3MemArray<AiSprite> *aiMines[2];
+   QVector<AiSprite> *shipsNextPositions[2];
+   QVector<AiSprite> *aiMines[2];
    int mineNumber[2];
        //possible Hits
    Q3PtrList<Shot> myShots;

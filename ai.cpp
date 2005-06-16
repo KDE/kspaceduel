@@ -5,7 +5,7 @@
 #include "options.h"
 //Added by qt3to4:
 #include <Q3PtrList>
-#include <Q3MemArray>
+#include <QVector>
 
 int Ai::calcFrameIncrement[Options::EnumAiDifficulty::COUNT] = {15,8,6,2};
 int Ai::calcPositionNumber[Options::EnumAiDifficulty::COUNT] = {10,15,20,60};
@@ -27,9 +27,9 @@ Ai::Ai(int pn,ShipSprite* s[2],Q3PtrList<BulletSprite>* b[2],
       ship[i]=s[i];
       bullets[i]=b[i];
       mines[i]=m[i];
-      shipsNextPositions[i]=new Q3MemArray<AiSprite>
+      shipsNextPositions[i]=new QVector<AiSprite>
          ((int)(calcPositionNumber[Options::aiDifficulty(playerNumber)]/cfg->gamespeed));
-      aiMines[i]=new Q3MemArray<AiSprite>(cfg->maxMines);
+      aiMines[i]=new QVector<AiSprite>(cfg->maxMines);
       mineNumber[i]=0;
    }
    myShots.setAutoDelete(true);
@@ -161,7 +161,7 @@ AiSprite Ai::nextPosition(AiSprite sp,double mult)
    return sp; 
 }
 
-void Ai::nextPositions(AiSprite sp,Q3MemArray<AiSprite> *a,int frames)
+void Ai::nextPositions(AiSprite sp,QVector<AiSprite> *a,int frames)
 {
    int i,num;
    double fmult=cfg->gamespeed*frames;
