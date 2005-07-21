@@ -174,7 +174,8 @@ void Ai::nextPositions(AiSprite sp,QVector<AiSprite> *a,int frames)
 
 void Ai::calculateNextPositions()
 {
-   unsigned int i,j;
+   unsigned int i;
+	int j;
    MineSprite *ms;
 
    j=(int)(calcPositionNumber[Options::aiDifficulty(playerNumber)]/cfg->gamespeed);
@@ -357,7 +358,7 @@ Hit Ai::firstObject(AiSprite shot,int time,int frames)
 void Ai::testForHits()
 {
    AiSprite shot;
-   unsigned int i;
+   int i;
    int m,p;
    BulletSprite *bullet;
    Hit *h;
