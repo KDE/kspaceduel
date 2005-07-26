@@ -251,6 +251,7 @@ void Ai::tryShots()
                shot.dx=me.dx+nx*cfg->shotSpeed;
                shot.dy=me.dy+ny*cfg->shotSpeed;
                shot.sun=false;
+               shot.border=false;
 
                hit=firstObject(shot,f*frameIncrement,
                                calcFrameIncrement[Options::aiDifficulty(playerNumber)]);
