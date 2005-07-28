@@ -1,7 +1,7 @@
 #ifndef __SPRITE_OBJECTS_H
 #define __SPRITE_OBJECTS_H
 
-#include <qcanvas.h>
+#include <q3canvas.h>
 #include "defines.h"
 
 #ifdef sun
@@ -14,20 +14,20 @@ struct AiSprite
    bool sun, border;
 };
 
-class SunSprite:public QCanvasSprite
+class SunSprite:public Q3CanvasSprite
 {
 public:
-   SunSprite(QCanvasPixmapArray* seq, QCanvas* canvas);
+   SunSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas);
    virtual int rtti() const {return S_SUN;}
 };
 
 
-class PowerupSprite:public QCanvasSprite
+class PowerupSprite:public Q3CanvasSprite
 {
 public:
    enum {PowerupMine=0, PowerupBullet, PowerupShield, PowerupEnergy,
          PowerupNum};
-   PowerupSprite(QCanvasPixmapArray* seq, QCanvas* canvas, int t, double lifetime);
+   PowerupSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int t, double lifetime);
    virtual int rtti() const {return S_POWERUP;}
 
    double getLifetime() {return time;}
@@ -38,10 +38,10 @@ private:
    int type;
 };
 
-class MobileSprite:public QCanvasSprite
+class MobileSprite:public Q3CanvasSprite
 {
 public:
-   MobileSprite(QCanvasPixmapArray* array, QCanvas* canvas, int pn);
+   MobileSprite(Q3CanvasPixmapArray* array, Q3Canvas* canvas, int pn);
 
    virtual void forward(double mult,int frame);
    virtual void forward(double mult);
@@ -63,7 +63,7 @@ protected:
 class ShipSprite:public MobileSprite
 {
 public:
-   ShipSprite(QCanvasPixmapArray* seq, QCanvas* canvas, int pn);
+   ShipSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int pn);
    virtual int rtti() const {return S_SHIP;}
    int getHitPoints() {return hitpoints;}
    void setHitPoints(int hp) {hitpoints=(hp<0?0:hp);}
@@ -99,7 +99,7 @@ private:
 class BulletSprite:public MobileSprite
 {
 public:
-   BulletSprite(QCanvasPixmapArray* seq, QCanvas* canvas, int pn,double lifetime);
+   BulletSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int pn,double lifetime);
    virtual int rtti() const {return S_BULLET;}
    virtual void forward(double mult);
    virtual void forward(double mult,int fr);
@@ -111,13 +111,13 @@ private:
 class MineSprite:public MobileSprite
 {
 public:
-   MineSprite(QCanvasPixmapArray* seq, QCanvas* canvas, int pn,double atime,double f);
+   MineSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int pn,double atime,double f);
    virtual int rtti() const {return S_MINE;}
    bool isActive() {return active;}
    double getFuel() {return fuel;}
    void setFuel(double f) {fuel=(f<0.0?0.0:f);}
    virtual void forward(double mult);
-   void explode(QCanvasPixmapArray* s);
+   void explode(Q3CanvasPixmapArray* s);
    bool explodes() {return expl;}
    bool over() {return (expl&&(explosiontime>(timeToGo-0.1)));}
    virtual void calculateGravity(double gravity,double mult);
@@ -126,14 +126,14 @@ private:
    double activateTime,fuel,timeToGo,explosiontime;
 };
 
-class ExplosionSprite:public QCanvasSprite
+class ExplosionSprite:public Q3CanvasSprite
 {
 public:
-   ExplosionSprite(QCanvasPixmapArray *seq, QCanvas* field, MobileSprite *sp);
+   ExplosionSprite(Q3CanvasPixmapArray *seq, Q3Canvas* field, MobileSprite *sp);
    virtual int rtti() const {return S_EXPLOSION;}
    bool isOver() {return over;}
    virtual void forward(double mult);
-   void setSequence(QCanvasPixmapArray *seq);
+   void setSequence(Q3CanvasPixmapArray *seq);
 private:
    double timeToGo,time;
    bool over;

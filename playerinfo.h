@@ -1,13 +1,15 @@
 #ifndef __PLAYER_INFO_H
 #define __PLAYER_INFO_H
 
-#include <qframe.h>
+#include <q3frame.h>
 #include <qlabel.h>
+//Added by qt3to4:
+#include <QPixmap>
 class QPixmap;
 #include <qlcdnumber.h>
 #include <qcolor.h>
 
-class PlayerInfo:public QFrame
+class PlayerInfo:public Q3Frame
 {
    Q_OBJECT
 public:

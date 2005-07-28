@@ -3,8 +3,8 @@
 
 #include <krandomsequence.h>
 
-#include <qptrlist.h>
-#include <qmemarray.h>
+#include <q3ptrlist.h>
+
 
 #include "sprites.h"
 #include "dialogs.h"
@@ -39,8 +39,8 @@ struct Shot
 class Ai
 {
 public:
-   Ai(int pn,ShipSprite* s[2],QPtrList<BulletSprite> *b[2],
-      QPtrList<MineSprite> *m[2],SConfig *c);
+   Ai(int pn,ShipSprite* s[2],Q3PtrList<BulletSprite> *b[2],
+      Q3PtrList<MineSprite> *m[2],SConfig *c);
    void newRound();
    void think();
    bool rotateLeft(){return rotation==RLEFT;}
@@ -50,7 +50,7 @@ public:
    bool layMine(){return mine;}
 private:
    AiSprite nextPosition(AiSprite sp,double mult);
-   void nextPositions(AiSprite sp,QMemArray<AiSprite> *a,int frames);
+   void nextPositions(AiSprite sp,QVector<AiSprite> *a,int frames);
    Hit firstObject(AiSprite shot,int shotframes,int frames);
    void shotScores();
    void calculateNextPositions();
@@ -74,15 +74,15 @@ private:
        //sprites
    int playerNumber,opponentNumber;
    ShipSprite *ship[2];
-   QPtrList<BulletSprite> *bullets[2];
-   QPtrList<MineSprite> *mines[2];
-   QMemArray<AiSprite> *shipsNextPositions[2];
-   QMemArray<AiSprite> *aiMines[2];
+   Q3PtrList<BulletSprite> *bullets[2];
+   Q3PtrList<MineSprite> *mines[2];
+   QVector<AiSprite> *shipsNextPositions[2];
+   QVector<AiSprite> *aiMines[2];
    int mineNumber[2];
        //possible Hits
-   QPtrList<Shot> myShots;
-   QPtrList<Hit> objectsHitByShip;
-   QPtrList<Hit> minesHitByShot;
+   Q3PtrList<Shot> myShots;
+   Q3PtrList<Hit> objectsHitByShip;
+   Q3PtrList<Hit> minesHitByShot;
    int borderTime;
    int sunTime;
        //SpriteField width and height

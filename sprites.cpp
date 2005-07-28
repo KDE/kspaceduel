@@ -3,25 +3,25 @@
 #include <math.h>
 
 
-SunSprite::SunSprite(QCanvasPixmapArray *seq, QCanvas* canvas)
-      :QCanvasSprite(seq, canvas)
+SunSprite::SunSprite(Q3CanvasPixmapArray *seq, Q3Canvas* canvas)
+      :Q3CanvasSprite(seq, canvas)
 {
     // doesn't work with Qt 2.2.2 anymore
     // setZ(0);
 }
 
 
-PowerupSprite::PowerupSprite(QCanvasPixmapArray* seq, QCanvas* canvas, int t,
+PowerupSprite::PowerupSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int t,
                              double lifetime)
-      :QCanvasSprite(seq, canvas)
+      :Q3CanvasSprite(seq, canvas)
 {
    time=lifetime;
    type=t;
 }
 
 
-MobileSprite::MobileSprite(QCanvasPixmapArray* seq, QCanvas* canvas, int pn)
-      :QCanvasSprite(seq, canvas)
+MobileSprite::MobileSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int pn)
+      :Q3CanvasSprite(seq, canvas)
 {
    stopped=false;
    playerNumber=pn;
@@ -31,7 +31,7 @@ void MobileSprite::forward(double mult, int fr)
 {
    if(!stopped)
    {
-      QCanvasSprite::moveBy(xVelocity()*mult,yVelocity()*mult);
+      Q3CanvasSprite::moveBy(xVelocity()*mult,yVelocity()*mult);
       checkBounds();
       setFrame(fr);
    }
@@ -43,7 +43,7 @@ void MobileSprite::forward(double mult)
 {
    if(!stopped)
    {
-      QCanvasSprite::moveBy(xVelocity()*mult,yVelocity()*mult);
+      Q3CanvasSprite::moveBy(xVelocity()*mult,yVelocity()*mult);
       checkBounds();
    }
 }
@@ -107,7 +107,7 @@ AiSprite MobileSprite::toAiSprite()
    return as;
 }
 
-ShipSprite::ShipSprite(QCanvasPixmapArray* seq, QCanvas* canvas, int pn)
+ShipSprite::ShipSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int pn)
       :MobileSprite(seq,canvas,pn)
 {
    hitpoints=99;
@@ -215,7 +215,7 @@ void ShipSprite::rotateLeft(double rotationEnergyNeed,double rotationSpeed)
    }
 }
 
-BulletSprite::BulletSprite(QCanvasPixmapArray* seq,QCanvas* canvas, int pn,double lifetime)
+BulletSprite::BulletSprite(Q3CanvasPixmapArray* seq,Q3Canvas* canvas, int pn,double lifetime)
       :MobileSprite(seq,canvas,pn)
 {
    setZ(-10);
@@ -234,7 +234,7 @@ void BulletSprite::forward(double mult,int fr)
    time-=mult;
 }
 
-MineSprite::MineSprite(QCanvasPixmapArray* seq, QCanvas* canvas, int pn,double atime,double f)
+MineSprite::MineSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int pn,double atime,double f)
       :MobileSprite(seq,canvas,pn)
 {
    activateTime=atime;
@@ -246,7 +246,7 @@ MineSprite::MineSprite(QCanvasPixmapArray* seq, QCanvas* canvas, int pn,double a
    active=false;
 }
 
-void MineSprite::explode(QCanvasPixmapArray *seq)
+void MineSprite::explode(Q3CanvasPixmapArray *seq)
 {
    setSequence(seq);
    timeToGo=seq->count();
@@ -304,8 +304,8 @@ void MineSprite::calculateGravity(double gravity,double mult)
    }
 }
 
-ExplosionSprite::ExplosionSprite(QCanvasPixmapArray* seq, QCanvas* canvas, MobileSprite *sp)
-      :QCanvasSprite(seq, canvas)
+ExplosionSprite::ExplosionSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, MobileSprite *sp)
+      :Q3CanvasSprite(seq, canvas)
 {
    over=false;
    setZ(-5);
@@ -333,8 +333,8 @@ void ExplosionSprite::forward(double mult)
 }
 
 
-void ExplosionSprite::setSequence(QCanvasPixmapArray *seq)
+void ExplosionSprite::setSequence(Q3CanvasPixmapArray *seq)
 {
    timeToGo=seq->count();
-   QCanvasSprite::setSequence(seq);
+   Q3CanvasSprite::setSequence(seq);
 }

@@ -3,6 +3,11 @@
 
 #include <qwidget.h>
 #include <qimage.h>
+//Added by qt3to4:
+#include <QTimerEvent>
+#include <QResizeEvent>
+#include <QKeyEvent>
+#include <Q3PtrList>
 
 class KToggleAction;
 class KActionCollection;
@@ -50,7 +55,7 @@ protected:
    virtual void keyPressEvent(QKeyEvent *event);
    virtual void keyReleaseEvent(QKeyEvent *event);
    SConfig modifyConfig(SConfig conf);
-   QCanvasPixmapArray* loadOldPixmapSequence(const QString& datapattern,
+   Q3CanvasPixmapArray* loadOldPixmapSequence(const QString& datapattern,
                            const QString& maskpattern, int framecount=1);
    void moveShips();
    void moveBullets();
@@ -61,8 +66,8 @@ protected:
 private:
    KActionCollection *actionCollection;
 
-   QCanvas field;
-   QCanvasView view;
+   Q3Canvas field;
+   Q3CanvasView view;
 
    SConfig customConfig,config;
 
@@ -75,24 +80,24 @@ private:
    double timeToNextPowerup;
 
 // sprites
-   QPtrList<QImage> shipImages;
-   QPtrList<QPoint> points;
+   Q3PtrList<QImage> shipImages;
+   Q3PtrList<QPoint> points;
    QImage bulletImage;
-   QCanvasPixmapArray *bulletsequence[2];
-   QCanvasPixmapArray *shipsequence[2];
-   QCanvasPixmapArray *explosionsequence;
-   QCanvasPixmapArray *minesequence[2];
-   QCanvasPixmapArray *mineexplosionsequence;
-   QCanvasPixmapArray *powerupsequence[PowerupSprite::PowerupNum];
+   Q3CanvasPixmapArray *bulletsequence[2];
+   Q3CanvasPixmapArray *shipsequence[2];
+   Q3CanvasPixmapArray *explosionsequence;
+   Q3CanvasPixmapArray *minesequence[2];
+   Q3CanvasPixmapArray *mineexplosionsequence;
+   Q3CanvasPixmapArray *powerupsequence[PowerupSprite::PowerupNum];
 
 
    ShipSprite *ship[2];
    SunSprite *sun;
-   QCanvasText *textSprite;
-   QPtrList<BulletSprite> *bullets[2];
-   QPtrList<MineSprite> *mines[2];
-   QPtrList<ExplosionSprite> explosions;
-   QPtrList<PowerupSprite> powerups;
+   Q3CanvasText *textSprite;
+   Q3PtrList<BulletSprite> *bullets[2];
+   Q3PtrList<MineSprite> *mines[2];
+   Q3PtrList<ExplosionSprite> explosions;
+   Q3PtrList<PowerupSprite> powerups;
 
    KRandomSequence random;
 

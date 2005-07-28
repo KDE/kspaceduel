@@ -3,6 +3,9 @@
 #include "ai.h"
 #include "mathroutines.h"
 #include "options.h"
+//Added by qt3to4:
+#include <Q3PtrList>
+#include <QVector>
 
 int Ai::calcFrameIncrement[Options::EnumAiDifficulty::COUNT] = {15,8,6,2};
 int Ai::calcPositionNumber[Options::EnumAiDifficulty::COUNT] = {10,15,20,60};
@@ -10,8 +13,8 @@ int Ai::calcShotDirections[Options::EnumAiDifficulty::COUNT] = {4,7,10,12};
 int Ai::calcCollisions[Options::EnumAiDifficulty::COUNT]     = {30,15,10,10};
 int Ai::calcNextShot[Options::EnumAiDifficulty::COUNT]       = {300,200,90,60};
 
-Ai::Ai(int pn,ShipSprite* s[2],QPtrList<BulletSprite>* b[2],
-       QPtrList<MineSprite>* m[2],SConfig *c)
+Ai::Ai(int pn,ShipSprite* s[2],Q3PtrList<BulletSprite>* b[2],
+       Q3PtrList<MineSprite>* m[2],SConfig *c)
 {
    int i;
 
@@ -24,9 +27,9 @@ Ai::Ai(int pn,ShipSprite* s[2],QPtrList<BulletSprite>* b[2],
       ship[i]=s[i];
       bullets[i]=b[i];
       mines[i]=m[i];
-      shipsNextPositions[i]=new QMemArray<AiSprite>
+      shipsNextPositions[i]=new QVector<AiSprite>
          ((int)(calcPositionNumber[Options::aiDifficulty(playerNumber)]/cfg->gamespeed));
-      aiMines[i]=new QMemArray<AiSprite>(cfg->maxMines);
+      aiMines[i]=new QVector<AiSprite>(cfg->maxMines);
       mineNumber[i]=0;
    }
    myShots.setAutoDelete(true);
@@ -158,7 +161,7 @@ AiSprite Ai::nextPosition(AiSprite sp,double mult)
    return sp; 
 }
 
-void Ai::nextPositions(AiSprite sp,QMemArray<AiSprite> *a,int frames)
+void Ai::nextPositions(AiSprite sp,QVector<AiSprite> *a,int frames)
 {
    int i,num;
    double fmult=cfg->gamespeed*frames;
@@ -171,7 +174,8 @@ void Ai::nextPositions(AiSprite sp,QMemArray<AiSprite> *a,int frames)
 
 void Ai::calculateNextPositions()
 {
-   unsigned int i,j;
+   unsigned int i;
+	int j;
    MineSprite *ms;
 
    j=(int)(calcPositionNumber[Options::aiDifficulty(playerNumber)]/cfg->gamespeed);
@@ -355,7 +359,7 @@ Hit Ai::firstObject(AiSprite shot,int time,int frames)
 void Ai::testForHits()
 {
    AiSprite shot;
-   unsigned int i;
+   int i;
    int m,p;
    BulletSprite *bullet;
    Hit *h;
