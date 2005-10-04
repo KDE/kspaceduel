@@ -1,6 +1,7 @@
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
+#include <klocale.h>
 
 #include "version.h"
 #include "topwidget.h"
