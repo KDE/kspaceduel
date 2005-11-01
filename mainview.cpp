@@ -18,6 +18,7 @@
 #include <kglobalsettings.h>
 #include <kconfig.h>
 #include <kiconloader.h>
+#include <kglobal.h>
 
 #include "ai.h"
 #include "options.h"
@@ -116,7 +117,7 @@ void MyMainView::setActionCollection(KActionCollection *a)
 
 void MyMainView::readConfig()
 {
-   KConfig *cfg = kapp->config();
+   KConfig *cfg = KGlobal::config();
    int i;
 
    cfg->setGroup("Game");
