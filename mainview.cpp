@@ -193,7 +193,7 @@ void MyMainView::readConfig()
 void MyMainView::writeConfig()
 {
    KConfig *cfg;
-   cfg=KApplication::kApplication()->sessionConfig();
+   cfg=KGlobal::config();
    cfg->setGroup("Game");
 
    cfg->writeEntry("gravity",customConfig.gravity);
