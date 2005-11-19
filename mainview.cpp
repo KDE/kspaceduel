@@ -117,68 +117,67 @@ void MyMainView::setActionCollection(KActionCollection *a)
 
 void MyMainView::readConfig()
 {
-   KConfig *cfg = KGlobal::config();
+   KConfigGroup game(KGlobal::config(), "Game");
    int i;
 
-   cfg->setGroup("Game");
-   customConfig.gamespeed=cfg->readDoubleNumEntry("gamespeed",
+   customConfig.gamespeed=game.readDoubleNumEntry("gamespeed",
                                                   predefinedConfig[0].gamespeed);
 
    customConfig.gravity=
-      cfg->readDoubleNumEntry("gravity",predefinedConfig[0].gravity);
+      game.readDoubleNumEntry("gravity",predefinedConfig[0].gravity);
    customConfig.acc=
-      cfg->readDoubleNumEntry("acceleration",predefinedConfig[0].acc);
+      game.readDoubleNumEntry("acceleration",predefinedConfig[0].acc);
    customConfig.bulletDamage=
-      cfg->readUnsignedNumEntry("bulletDamage",predefinedConfig[0].bulletDamage);
+      game.readUnsignedNumEntry("bulletDamage",predefinedConfig[0].bulletDamage);
    customConfig.bulletLifeTime=
-      cfg->readDoubleNumEntry("bulletLifeTime",predefinedConfig[0].bulletLifeTime);
+      game.readDoubleNumEntry("bulletLifeTime",predefinedConfig[0].bulletLifeTime);
    customConfig.bulletReloadTime=
-      cfg->readDoubleNumEntry("bulletReloadTime",predefinedConfig[0].bulletReloadTime);
+      game.readDoubleNumEntry("bulletReloadTime",predefinedConfig[0].bulletReloadTime);
    customConfig.mineDamage=
-      cfg->readUnsignedNumEntry("mineDamage",predefinedConfig[0].mineDamage);
+      game.readUnsignedNumEntry("mineDamage",predefinedConfig[0].mineDamage);
    customConfig.shipDamage=
-      cfg->readUnsignedNumEntry("shipDamage",predefinedConfig[0].shipDamage);
+      game.readUnsignedNumEntry("shipDamage",predefinedConfig[0].shipDamage);
    customConfig.maxBullets=
-      cfg->readUnsignedNumEntry("maxBullets",predefinedConfig[0].maxBullets);
+      game.readUnsignedNumEntry("maxBullets",predefinedConfig[0].maxBullets);
    customConfig.maxMines=
-      cfg->readUnsignedNumEntry("maxMines",predefinedConfig[0].maxMines);
+      game.readUnsignedNumEntry("maxMines",predefinedConfig[0].maxMines);
    customConfig.mineReloadTime=
-      cfg->readDoubleNumEntry("mineReloadTime",predefinedConfig[0].mineReloadTime);
+      game.readDoubleNumEntry("mineReloadTime",predefinedConfig[0].mineReloadTime);
    customConfig.rotationSpeed=
-      cfg->readDoubleNumEntry("rotationSpeed",predefinedConfig[0].rotationSpeed);
+      game.readDoubleNumEntry("rotationSpeed",predefinedConfig[0].rotationSpeed);
    customConfig.shotSpeed=
-      cfg->readDoubleNumEntry("shotSpeed",predefinedConfig[0].shotSpeed);
+      game.readDoubleNumEntry("shotSpeed",predefinedConfig[0].shotSpeed);
    customConfig.energyNeed=
-      cfg->readDoubleNumEntry("accEnergyNeed",predefinedConfig[0].energyNeed);
+      game.readDoubleNumEntry("accEnergyNeed",predefinedConfig[0].energyNeed);
    customConfig.rotationEnergyNeed=
-      cfg->readDoubleNumEntry("rotationEnergyNeed",predefinedConfig[0].rotationEnergyNeed);
+      game.readDoubleNumEntry("rotationEnergyNeed",predefinedConfig[0].rotationEnergyNeed);
    customConfig.sunEnergy=
-      cfg->readDoubleNumEntry("sunEnergy",predefinedConfig[0].sunEnergy);
+      game.readDoubleNumEntry("sunEnergy",predefinedConfig[0].sunEnergy);
    customConfig.mineActivateTime=
-      cfg->readDoubleNumEntry("mineActivateTime",predefinedConfig[0].mineActivateTime);
+      game.readDoubleNumEntry("mineActivateTime",predefinedConfig[0].mineActivateTime);
    customConfig.mineFuel=
-      cfg->readDoubleNumEntry("mineFuel",predefinedConfig[0].mineFuel);
+      game.readDoubleNumEntry("mineFuel",predefinedConfig[0].mineFuel);
    customConfig.shotEnergyNeed=
-      cfg->readDoubleNumEntry("shotEnergyNeed",predefinedConfig[0].shotEnergyNeed);
+      game.readDoubleNumEntry("shotEnergyNeed",predefinedConfig[0].shotEnergyNeed);
    customConfig.mineEnergyNeed=
-      cfg->readDoubleNumEntry("mineEnergyNeed",predefinedConfig[0].mineEnergyNeed);
+      game.readDoubleNumEntry("mineEnergyNeed",predefinedConfig[0].mineEnergyNeed);
    customConfig.startPosX=
-      cfg->readDoubleNumEntry("startPosX",predefinedConfig[0].startPosX);
+      game.readDoubleNumEntry("startPosX",predefinedConfig[0].startPosX);
    customConfig.startPosY=
-      cfg->readDoubleNumEntry("startPosY",predefinedConfig[0].startPosY);
+      game.readDoubleNumEntry("startPosY",predefinedConfig[0].startPosY);
    customConfig.startVelX=
-      cfg->readDoubleNumEntry("startVelX",predefinedConfig[0].startVelX);
+      game.readDoubleNumEntry("startVelX",predefinedConfig[0].startVelX);
    customConfig.startVelY=
-      cfg->readDoubleNumEntry("startVelY",predefinedConfig[0].startVelY);
+      game.readDoubleNumEntry("startVelY",predefinedConfig[0].startVelY);
    customConfig.powerupLifeTime=
-      cfg->readDoubleNumEntry("powerupLifeTime",predefinedConfig[0].powerupLifeTime);
+      game.readDoubleNumEntry("powerupLifeTime",predefinedConfig[0].powerupLifeTime);
    customConfig.powerupRefreshTime=
-      cfg->readDoubleNumEntry("powerupRefreshTime",predefinedConfig[0].powerupRefreshTime);
+      game.readDoubleNumEntry("powerupRefreshTime",predefinedConfig[0].powerupRefreshTime);
    customConfig.powerupShieldAmount=
-      cfg->readUnsignedNumEntry("powerupShieldAmount",
+      game.readUnsignedNumEntry("powerupShieldAmount",
                               predefinedConfig[0].powerupShieldAmount);
    customConfig.powerupEnergyAmount=
-      cfg->readDoubleNumEntry("powerupEnergyAmount",
+      game.readDoubleNumEntry("powerupEnergyAmount",
                               predefinedConfig[0].powerupEnergyAmount);
 
    if(Options::lastConfig() < predefinedConfigNum)
@@ -192,39 +191,37 @@ void MyMainView::readConfig()
 
 void MyMainView::writeConfig()
 {
-   KConfig *cfg;
-   cfg=KGlobal::config();
-   cfg->setGroup("Game");
+   KConfigGroup game(KGlobal::config(), "Game");
+    
+   game.writeEntry("gravity",customConfig.gravity);
+   game.writeEntry("acceleration",customConfig.acc);
+   game.writeEntry("bulletDamage",customConfig.bulletDamage);
+   game.writeEntry("bulletLifeTime",customConfig.bulletLifeTime);
+   game.writeEntry("bulletReloadTime",customConfig.bulletReloadTime);
+   game.writeEntry("mineDamage",customConfig.mineDamage);
+   game.writeEntry("shipDamage",customConfig.shipDamage);
+   game.writeEntry("maxBullets",customConfig.maxBullets);
+   game.writeEntry("maxMines",customConfig.maxMines);
+   game.writeEntry("rotationSpeed",customConfig.rotationSpeed);
+   game.writeEntry("shotSpeed",customConfig.shotSpeed);
+   game.writeEntry("accEnergyNeed",customConfig.energyNeed);
+   game.writeEntry("rotationEnergyNeed",customConfig.rotationEnergyNeed);
+   game.writeEntry("sunEnergy",customConfig.sunEnergy);
+   game.writeEntry("mineActivateTime",customConfig.mineActivateTime);
+   game.writeEntry("mineReloadTime",customConfig.mineReloadTime);
+   game.writeEntry("mineFuel",customConfig.mineFuel);
+   game.writeEntry("shotEnergyNeed",customConfig.shotEnergyNeed);
+   game.writeEntry("mineEnergyNeed",customConfig.mineEnergyNeed);
 
-   cfg->writeEntry("gravity",customConfig.gravity);
-   cfg->writeEntry("acceleration",customConfig.acc);
-   cfg->writeEntry("bulletDamage",customConfig.bulletDamage);
-   cfg->writeEntry("bulletLifeTime",customConfig.bulletLifeTime);
-   cfg->writeEntry("bulletReloadTime",customConfig.bulletReloadTime);
-   cfg->writeEntry("mineDamage",customConfig.mineDamage);
-   cfg->writeEntry("shipDamage",customConfig.shipDamage);
-   cfg->writeEntry("maxBullets",customConfig.maxBullets);
-   cfg->writeEntry("maxMines",customConfig.maxMines);
-   cfg->writeEntry("rotationSpeed",customConfig.rotationSpeed);
-   cfg->writeEntry("shotSpeed",customConfig.shotSpeed);
-   cfg->writeEntry("accEnergyNeed",customConfig.energyNeed);
-   cfg->writeEntry("rotationEnergyNeed",customConfig.rotationEnergyNeed);
-   cfg->writeEntry("sunEnergy",customConfig.sunEnergy);
-   cfg->writeEntry("mineActivateTime",customConfig.mineActivateTime);
-   cfg->writeEntry("mineReloadTime",customConfig.mineReloadTime);
-   cfg->writeEntry("mineFuel",customConfig.mineFuel);
-   cfg->writeEntry("shotEnergyNeed",customConfig.shotEnergyNeed);
-   cfg->writeEntry("mineEnergyNeed",customConfig.mineEnergyNeed);
+   game.writeEntry("startPosX",customConfig.startPosX);
+   game.writeEntry("startPosY",customConfig.startPosY);
+   game.writeEntry("startVelX",customConfig.startVelX);
+   game.writeEntry("startVelY",customConfig.startVelY);
 
-   cfg->writeEntry("startPosX",customConfig.startPosX);
-   cfg->writeEntry("startPosY",customConfig.startPosY);
-   cfg->writeEntry("startVelX",customConfig.startVelX);
-   cfg->writeEntry("startVelY",customConfig.startVelY);
-
-   cfg->writeEntry("powerupLifeTime",customConfig.powerupLifeTime);
-   cfg->writeEntry("powerupRefreshTime",customConfig.powerupRefreshTime);
-   cfg->writeEntry("powerupShieldAmount",customConfig.powerupShieldAmount);
-   cfg->writeEntry("powerupEnergyAmount",customConfig.powerupEnergyAmount);
+   game.writeEntry("powerupLifeTime",customConfig.powerupLifeTime);
+   game.writeEntry("powerupRefreshTime",customConfig.powerupRefreshTime);
+   game.writeEntry("powerupShieldAmount",customConfig.powerupShieldAmount);
+   game.writeEntry("powerupEnergyAmount",customConfig.powerupEnergyAmount);
 }
 
 SConfig MyMainView::modifyConfig(SConfig conf)
