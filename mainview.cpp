@@ -120,64 +120,64 @@ void MyMainView::readConfig()
    KConfigGroup game(KGlobal::config(), "Game");
    int i;
 
-   customConfig.gamespeed=game.readDoubleNumEntry("gamespeed",
+   customConfig.gamespeed=game.readEntry("gamespeed",
                                                   predefinedConfig[0].gamespeed);
 
    customConfig.gravity=
-      game.readDoubleNumEntry("gravity",predefinedConfig[0].gravity);
+      game.readEntry("gravity",predefinedConfig[0].gravity);
    customConfig.acc=
-      game.readDoubleNumEntry("acceleration",predefinedConfig[0].acc);
+      game.readEntry("acceleration",predefinedConfig[0].acc);
    customConfig.bulletDamage=
-      game.readUnsignedNumEntry("bulletDamage",predefinedConfig[0].bulletDamage);
+      game.readEntry("bulletDamage",predefinedConfig[0].bulletDamage);
    customConfig.bulletLifeTime=
-      game.readDoubleNumEntry("bulletLifeTime",predefinedConfig[0].bulletLifeTime);
+      game.readEntry("bulletLifeTime",predefinedConfig[0].bulletLifeTime);
    customConfig.bulletReloadTime=
-      game.readDoubleNumEntry("bulletReloadTime",predefinedConfig[0].bulletReloadTime);
+      game.readEntry("bulletReloadTime",predefinedConfig[0].bulletReloadTime);
    customConfig.mineDamage=
-      game.readUnsignedNumEntry("mineDamage",predefinedConfig[0].mineDamage);
+      game.readEntry("mineDamage",predefinedConfig[0].mineDamage);
    customConfig.shipDamage=
-      game.readUnsignedNumEntry("shipDamage",predefinedConfig[0].shipDamage);
+      game.readEntry("shipDamage",predefinedConfig[0].shipDamage);
    customConfig.maxBullets=
-      game.readUnsignedNumEntry("maxBullets",predefinedConfig[0].maxBullets);
+      game.readEntry("maxBullets",predefinedConfig[0].maxBullets);
    customConfig.maxMines=
-      game.readUnsignedNumEntry("maxMines",predefinedConfig[0].maxMines);
+      game.readEntry("maxMines",predefinedConfig[0].maxMines);
    customConfig.mineReloadTime=
-      game.readDoubleNumEntry("mineReloadTime",predefinedConfig[0].mineReloadTime);
+      game.readEntry("mineReloadTime",predefinedConfig[0].mineReloadTime);
    customConfig.rotationSpeed=
-      game.readDoubleNumEntry("rotationSpeed",predefinedConfig[0].rotationSpeed);
+      game.readEntry("rotationSpeed",predefinedConfig[0].rotationSpeed);
    customConfig.shotSpeed=
-      game.readDoubleNumEntry("shotSpeed",predefinedConfig[0].shotSpeed);
+      game.readEntry("shotSpeed",predefinedConfig[0].shotSpeed);
    customConfig.energyNeed=
-      game.readDoubleNumEntry("accEnergyNeed",predefinedConfig[0].energyNeed);
+      game.readEntry("accEnergyNeed",predefinedConfig[0].energyNeed);
    customConfig.rotationEnergyNeed=
-      game.readDoubleNumEntry("rotationEnergyNeed",predefinedConfig[0].rotationEnergyNeed);
+      game.readEntry("rotationEnergyNeed",predefinedConfig[0].rotationEnergyNeed);
    customConfig.sunEnergy=
-      game.readDoubleNumEntry("sunEnergy",predefinedConfig[0].sunEnergy);
+      game.readEntry("sunEnergy",predefinedConfig[0].sunEnergy);
    customConfig.mineActivateTime=
-      game.readDoubleNumEntry("mineActivateTime",predefinedConfig[0].mineActivateTime);
+      game.readEntry("mineActivateTime",predefinedConfig[0].mineActivateTime);
    customConfig.mineFuel=
-      game.readDoubleNumEntry("mineFuel",predefinedConfig[0].mineFuel);
+      game.readEntry("mineFuel",predefinedConfig[0].mineFuel);
    customConfig.shotEnergyNeed=
-      game.readDoubleNumEntry("shotEnergyNeed",predefinedConfig[0].shotEnergyNeed);
+      game.readEntry("shotEnergyNeed",predefinedConfig[0].shotEnergyNeed);
    customConfig.mineEnergyNeed=
-      game.readDoubleNumEntry("mineEnergyNeed",predefinedConfig[0].mineEnergyNeed);
+      game.readEntry("mineEnergyNeed",predefinedConfig[0].mineEnergyNeed);
    customConfig.startPosX=
-      game.readDoubleNumEntry("startPosX",predefinedConfig[0].startPosX);
+      game.readEntry("startPosX",predefinedConfig[0].startPosX);
    customConfig.startPosY=
-      game.readDoubleNumEntry("startPosY",predefinedConfig[0].startPosY);
+      game.readEntry("startPosY",predefinedConfig[0].startPosY);
    customConfig.startVelX=
-      game.readDoubleNumEntry("startVelX",predefinedConfig[0].startVelX);
+      game.readEntry("startVelX",predefinedConfig[0].startVelX);
    customConfig.startVelY=
-      game.readDoubleNumEntry("startVelY",predefinedConfig[0].startVelY);
+      game.readEntry("startVelY",predefinedConfig[0].startVelY);
    customConfig.powerupLifeTime=
-      game.readDoubleNumEntry("powerupLifeTime",predefinedConfig[0].powerupLifeTime);
+      game.readEntry("powerupLifeTime",predefinedConfig[0].powerupLifeTime);
    customConfig.powerupRefreshTime=
-      game.readDoubleNumEntry("powerupRefreshTime",predefinedConfig[0].powerupRefreshTime);
+      game.readEntry("powerupRefreshTime",predefinedConfig[0].powerupRefreshTime);
    customConfig.powerupShieldAmount=
-      game.readUnsignedNumEntry("powerupShieldAmount",
+      game.readEntry("powerupShieldAmount",
                               predefinedConfig[0].powerupShieldAmount);
    customConfig.powerupEnergyAmount=
-      game.readDoubleNumEntry("powerupEnergyAmount",
+      game.readEntry("powerupEnergyAmount",
                               predefinedConfig[0].powerupEnergyAmount);
 
    if(Options::lastConfig() < predefinedConfigNum)
