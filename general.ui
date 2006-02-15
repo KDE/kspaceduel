@@ -72,7 +72,7 @@
                     <property name="name">
                         <cstring>kcfg_StartHitPoints1</cstring>
                     </property>
-                    <property name="minValue">
+                    <property name="minimum">
                         <number>1</number>
                     </property>
                     <property name="orientation">
@@ -83,7 +83,7 @@
                     <property name="name">
                         <cstring>kcfg_StartHitPoints0</cstring>
                     </property>
-                    <property name="minValue">
+                    <property name="minimum">
                         <number>1</number>
                     </property>
                     <property name="orientation">
@@ -115,10 +115,10 @@
                     <property name="name">
                         <cstring>kcfg_RefreshTime</cstring>
                     </property>
-                    <property name="minValue">
+                    <property name="minimum">
                         <number>10</number>
                     </property>
-                    <property name="maxValue">
+                    <property name="maximum">
                         <number>100</number>
                     </property>
                     <property name="value">

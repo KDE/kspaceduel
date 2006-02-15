@@ -19,13 +19,13 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent,const char *name)
    
    lplayer.setFrameStyle(Panel|Sunken);
    lplayer.setMargin(0);
-   QToolTip::add(&lplayer,i18n("Hit points"));
+   lplayer.setToolTip(i18n("Hit points"));
    lenergy.setFrameStyle(Panel|Sunken);
    lenergy.setMargin(0);
-   QToolTip::add(&lenergy,i18n("Energy"));
+   lenergy.setToolTip(i18n("Energy"));
    lwins.setFrameStyle(Panel|Sunken);
    lwins.setMargin(0);
-   QToolTip::add(&lwins,i18n("Wins"));
+   lwins.setToolTip(i18n("Wins"));
 
    lplayer.setGeometry(5,5,35,35);
    lplayer.setIndent(0);
@@ -51,11 +51,11 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent,const char *name)
    energy.setGeometry(9,120,26,26);
    wins.setGeometry(9,195,26,26);
    hitpoints.setFrameStyle(NoFrame);
-   QToolTip::add(&hitpoints,i18n("Hit points"));
+   hitpoints.setToolTip(i18n("Hit points"));
    energy.setFrameStyle(NoFrame);
-   QToolTip::add(&energy,i18n("Energy"));
+   energy.setToolTip(i18n("Energy"));
    wins.setFrameStyle(NoFrame);
-   QToolTip::add(&wins,i18n("Wins"));
+   wins.setToolTip(i18n("Wins"));
 }
        
 void PlayerInfo::setHitpoints(int h)
