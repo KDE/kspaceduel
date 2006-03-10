@@ -1,0 +1,21 @@
+kde4_header()
+
+include_directories( ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}  )
+
+
+########### install files ###############
+
+install_files( ${DATA_INSTALL_DIR}/kspaceduel/sprites/playerinfo FILES energy.pnm mine.pnm ship10.pnm ship11.pnm ship12.pnm ship13.pnm ship20.pnm  ship21.pnm ship22.pnm ship23.pnm win.pnm )
+
+kde4_footer()
+
+
+
+#original Makefile.am contents follow:
+
+#playerdir = $(kde_datadir)/kspaceduel/sprites/playerinfo
+#player_DATA = \
+#energy.pnm mine.pnm ship10.pnm ship11.pnm ship12.pnm ship13.pnm ship20.pnm \
+#ship21.pnm ship22.pnm ship23.pnm win.pnm
+#
+#EXTRA_DIST = $(player_DATA)
