@@ -26,7 +26,7 @@ kde4_add_kcfg_files(kspaceduel_SRCS options.kcfgc )
 
 kde4_add_executable(kspaceduel ${kspaceduel_SRCS})
 
-target_link_libraries(kspaceduel  ${QT_AND_KDECORE_LIBS} )
+target_link_libraries(kspaceduel  ${LIB_KDEUI} kdegames)
 
 install_targets(/bin kspaceduel )
 
