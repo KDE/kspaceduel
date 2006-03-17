@@ -1,4 +1,5 @@
 kde4_header()
+project(kspaceduel)
 
 add_subdirectory( sprites ) 
 add_subdirectory( pics ) 
