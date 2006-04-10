@@ -1,5 +1,5 @@
 #include <klocale.h>
-#include <kaccel.h>
+
 #include <kkeydialog.h>
 #include <kaction.h>
 #include <kstdgameaction.h>
