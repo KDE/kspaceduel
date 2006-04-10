@@ -177,7 +177,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent,const char *name)
 
    tabs->addTab(configWidgets[0],i18n("General"));
    tabs->addTab(configWidgets[1],i18n("Bullet"));
-   tabs->addTab(configWidgets[2],i18n("Name","Mine"));
+   tabs->addTab(configWidgets[2],i18nc("Name","Mine"));
    tabs->addTab(configWidgets[3],i18n("Ship"));
    tabs->addTab(configWidgets[4],i18n("Sun"));
    tabs->addTab(configWidgets[5],i18n("Start"));

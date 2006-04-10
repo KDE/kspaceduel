@@ -495,8 +495,8 @@ void MyMainView::newRound()
    }
    field.update();
 
-   QString str = i18n("Press %1 to start")
-                 .arg(KShortcut(GAME_START_SHORTCUT).toString());
+   QString str = i18n("Press %1 to start",
+                  KShortcut(GAME_START_SHORTCUT).toString());
    emit(setStatusText(str,IDS_MAIN));
    emit( setStatusText( "", IDS_PAUSE ) );
    stop( );
@@ -560,8 +560,8 @@ void MyMainView::timerEvent(QTimerEvent *event)
                ship[0]->setWins(w);
                emit(wins(0,w));
             }
-            QString str = i18n("Press %1 for new round")
-                          .arg(KShortcut(GAME_START_SHORTCUT).toString());
+            QString str = i18n("Press %1 for new round",
+                           KShortcut(GAME_START_SHORTCUT).toString());
             emit(setStatusText(str,IDS_MAIN));
             stop( );
          }
