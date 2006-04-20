@@ -158,8 +158,8 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent,const char *name)
    configCombo=new QComboBox(false,this);
    connect(configCombo,SIGNAL(activated(int)),SLOT(configSelected(int)));
    for(i=0;i<predefinedConfigNum;i++)
-      configCombo->insertItem(i18n(predefinedConfigName[i]));
-   configCombo->insertItem(i18n("Custom"));
+      configCombo->addItem(i18n(predefinedConfigName[i]));
+   configCombo->addItem(i18n("Custom"));
 
    boxlayout->addSpacing( 2 * 6 );
    boxlayout->addWidget(configCombo);
