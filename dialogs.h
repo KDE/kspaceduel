@@ -21,7 +21,7 @@ class ConfigSetup:public QWidget
 {
    Q_OBJECT
 public:
-   ConfigSetup(SConfig *custom,QWidget *parent=0,const char* name=0);
+   ConfigSetup(SConfig *custom,QWidget *parent=0);
 
    bool hasChanged();
    bool isDefault();

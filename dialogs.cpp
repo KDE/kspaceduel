@@ -117,8 +117,8 @@ int ConfigSetup::Position[EditNum]=
 
 const int LCDLen=6;
 
-ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent,const char *name)
-      :QWidget( parent, name )
+ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
+      :QWidget( parent )
 {
    QLabel *label[EditNum];
    QGridLayout *stacklayout[TabNum];
@@ -134,28 +134,31 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent,const char *name)
    
    //box=new QGroupBox(i18n("Config"),this);
    //setMainWidget( box );
-   QVBoxLayout *boxlayout = new QVBoxLayout( this, 6 );
+   QVBoxLayout *boxlayout = new QVBoxLayout( this );
+   boxlayout->setMargin(6);
    
    tabs=new QTabWidget(this);
    for(i=0;i<TabNum;i++)
    {
       configWidgets[i]=new QWidget(tabs);
-      stacklayout[i]=new QGridLayout(configWidgets[i],6,3,10);
+      stacklayout[i]=new QGridLayout(configWidgets[i]);
+      stacklayout[i]->setMargin(10);
    }
    
    for(i=0;i<EditNum;i++)
    {
       label[i]=new QLabel(i18n(LabelName[i]),configWidgets[Parent[i]]);
-      slider[i]=new QSlider(EditVal[i][0]*EditDiv[i],EditVal[i][1]*EditDiv[i],
-                            (EditVal[i][1]-EditVal[i][0])/10,
-                            EditVal[i][2]*EditDiv[i],
-                            Qt::Horizontal,configWidgets[Parent[i]]);
+      slider[i]=new QSlider(Qt::Horizontal,configWidgets[Parent[i]]);
+      slider[i]->setRange(EditVal[i][0]*EditDiv[i], EditVal[i][1]*EditDiv[i]);
+      slider[i]->setPageStep((EditVal[i][1]-EditVal[i][0])/10);
+      slider[i]->setValue(EditVal[i][2]*EditDiv[i]);
       connect(slider[i],SIGNAL(valueChanged(int)),SLOT(sliderChanged(int)));
       value[i]=new QLCDNumber(LCDLen,configWidgets[Parent[i]]);
       value[i]->setFrameStyle(Q3Frame::NoFrame);
    }
 
-   configCombo=new QComboBox(false,this);
+   configCombo=new QComboBox(this);
+   configCombo->setEditable(false);
    connect(configCombo,SIGNAL(activated(int)),SLOT(configSelected(int)));
    for(i=0;i<predefinedConfigNum;i++)
       configCombo->addItem(i18n(predefinedConfigName[i]));
@@ -192,7 +195,7 @@ void ConfigSetup::updateWidgets()
 {
    config=*customConfig;
    selectedConfig = -1;
-   configCombo->setCurrentItem(Options::lastConfig());
+   configCombo->setCurrentIndex(Options::lastConfig());
    configSelected(Options::lastConfig());
 }
 
@@ -256,10 +259,10 @@ void ConfigSetup::updateSettings()
 
 bool ConfigSetup::hasChanged()
 {
-   if (configCombo->currentItem() != Options::lastConfig())
+   if (configCombo->currentIndex() != Options::lastConfig())
       return true;
 
-   if (configCombo->currentItem() != predefinedConfigNum)
+   if (configCombo->currentIndex() != predefinedConfigNum)
       return false;
 
    return ((*customConfig) != config);
@@ -267,13 +270,13 @@ bool ConfigSetup::hasChanged()
 
 void ConfigSetup::updateWidgetsDefault()
 {
-   configCombo->setCurrentItem(0);
+   configCombo->setCurrentIndex(0);
    configSelected(0);
 }
 
 bool ConfigSetup::isDefault()
 {
-   return configCombo->currentItem() == 0;
+   return configCombo->currentIndex() == 0;
 }
 
 void ConfigSetup::configSelected(int num)
