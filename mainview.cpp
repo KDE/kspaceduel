@@ -259,8 +259,11 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
    }
    else
    {
+     bool accept=true;
+
+#warning KKey does no longer exist
+#if 0
       KKey key(ev);
-      bool accept=true;
 
       if(actionCollection->action("P1KeyLeft")->shortcut().contains(key))
             playerKeyPressed[0][PlayerKeyLeft]=true;
@@ -296,6 +299,7 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
          pause();
       }
       */
+#endif
       if(!accept)
 	ev->ignore();
    }
@@ -303,8 +307,10 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
 
 void MyMainView::keyReleaseEvent(QKeyEvent *ev)
 {
-   KKey key(ev);
    bool accept=true;
+#warning KKey does no longer exist
+#if 0
+   KKey key(ev);
 
    if(actionCollection->action("P1KeyLeft")->shortcut().contains(key))
       playerKeyPressed[0][PlayerKeyLeft]=false;
@@ -333,6 +339,7 @@ void MyMainView::keyReleaseEvent(QKeyEvent *ev)
    else
       accept = false;
 
+#endif
    if(!accept)
      ev->ignore();
 }
@@ -1020,8 +1027,8 @@ Q3CanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapatter
    for( image=0; image < framecount; image++ )
    {
       // #### Why is this a QString??
-      dataname.sprintf( datapattern.ascii(), image );
-      maskname.sprintf( maskpattern.ascii(), image );
+      dataname.sprintf( datapattern.toLatin1().constData(), image );
+      maskname.sprintf( maskpattern.toLatin1().constData(), image );
 
       QFile file(dataname);
       if( file.open( QIODevice::ReadOnly ) )

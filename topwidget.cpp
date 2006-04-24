@@ -78,11 +78,9 @@ void MyTopLevelWidget::initActions( )
 
    KStdAction::preferences(playfield, SLOT(gameSetup()), actionCollection());
 
-   KAccel* acc = new KAccel(this);
-   gameStart->plugAccel(acc);
-
    // Default keys
-   actionCollection()->setAutoConnectShortcuts(false);
+#warning assuming this is not neccessary anymore
+   // actionCollection()->setAutoConnectShortcuts(false);
    KAction* ac;
    ac = new KAction(i18n("Player 1 Rotate Left"), Qt::Key_S, 0, 0,
 		    actionCollection(), "P1KeyLeft");
@@ -116,7 +114,7 @@ void MyTopLevelWidget::initActions( )
 		    actionCollection(), "P2Mine");
    ac->setEnabled( false );
 
-   actionCollection()->setAutoConnectShortcuts(true);
+   // actionCollection()->setAutoConnectShortcuts(true);
    playfield->setActionCollection(actionCollection());
 }
 
@@ -141,7 +139,7 @@ void MyTopLevelWidget::setStatusText(const QString & str,int id)
 void MyTopLevelWidget::keySetup()
 {
    playfield->pause();
-   KKeyDialog::configure( actionCollection( ), this, true );
+   KKeyDialog::configure( actionCollection( ), KKeyChooser::LetterShortcutsAllowed, this, true );
 }
 
 #include "topwidget.moc"
