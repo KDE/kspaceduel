@@ -43,7 +43,7 @@ void Ai::newRound()
    rotateFramesNumber=0;
    shoot=false;
    score=1e10;
-   
+
    rotation=RNONE;
    acc=false;
    bullet=false;
@@ -54,7 +54,7 @@ void Ai::newRound()
 
    calculateCollisions=(int)(calcCollisions[Options::aiDifficulty(playerNumber)]
                              /cfg->gamespeed);
-   waitShot=(int) rint( random.getDouble() * 
+   waitShot=(int) rint( random.getDouble() *
 	          calcNextShot[Options::aiDifficulty(playerNumber)]
                   /cfg->gamespeed);
 
@@ -66,14 +66,14 @@ void Ai::newRound()
 void Ai::think()
 {
    setSpriteFieldSize();
-   
+
    myShots.clear();
    borderTime=-1;
    sunTime=-1;
    score--;
    if(waitShot>0)
       waitShot--;
-   
+
    calculateNextPositions();
    if(Options::aiDifficulty(playerNumber)!=Options::EnumAiDifficulty::Trainee)
       testForHits();
@@ -96,7 +96,7 @@ void Ai::think()
             bullet=true;
             shoot=false;
          }
-         else 
+         else
             bullet=false;
          score=1e10;
       }
@@ -108,7 +108,7 @@ void Ai::think()
    }
    else
       rotateFramesNumber--;
-      
+
 }
 
 
@@ -155,10 +155,10 @@ AiSprite Ai::nextPosition(AiSprite sp,double mult)
             sp.y+=sfheight;
             sp.border=true;
          }
-      }      
+      }
    }
 
-   return sp; 
+   return sp;
 }
 
 void Ai::nextPositions(AiSprite sp,QVector<AiSprite> *a,int frames)
@@ -175,15 +175,15 @@ void Ai::nextPositions(AiSprite sp,QVector<AiSprite> *a,int frames)
 void Ai::calculateNextPositions()
 {
    unsigned int i;
-	int j;
+   int j;
    MineSprite *ms;
 
    j=(int)(calcPositionNumber[Options::aiDifficulty(playerNumber)]/cfg->gamespeed);
-   
+
    if(shipsNextPositions[0]->size() != j)
       for(i=0;i<2;i++)
          shipsNextPositions[i]->resize(j);
-   
+
    for(i=0;i<2;i++)
       nextPositions(ship[i]->toAiSprite(),shipsNextPositions[i],
                     calcFrameIncrement[Options::aiDifficulty(playerNumber)]);
@@ -216,7 +216,7 @@ void Ai::tryShots()
 
    me=ship[playerNumber]->toAiSprite();
    rot=ship[playerNumber]->getRotation();
-   
+
        //Each 'frameIncrement' frames a shot is tried
    frameIncrement=(int)((2*M_PI/calcShotDirections[Options::aiDifficulty(playerNumber)])
                         /cfg->rotationSpeed);
@@ -247,7 +247,7 @@ void Ai::tryShots()
                   nr=rot+frameIncrement*f*cfg->rotationSpeed;
                else
                   nr=rot-frameIncrement*f*cfg->rotationSpeed;
-               
+
                nx=cos(nr);
                ny=sin(nr);
                shot.x=me.x+nx*SHOTDIST;
@@ -289,7 +289,7 @@ Hit Ai::firstObject(AiSprite shot,int time,int frames)
    optime=shipsNextPositions[0]->size();
 
    num=optime-basetime;
-   
+
    if(num>0)
    {
       for(t=0;(t<num)&&(!hitfound)&&(!shot.sun);t++)
@@ -317,7 +317,7 @@ Hit Ai::firstObject(AiSprite shot,int time,int frames)
                   hit.playerNumber=i;
                   hit.hitTime=basetime*frames;
                   hit.distance=dist;
-               }    
+               }
                shiplastdist=dist;
             }
                 //other ship
@@ -336,7 +336,7 @@ Hit Ai::firstObject(AiSprite shot,int time,int frames)
                distx=(*(aiMines[i]))[m].x-shot.x;
                disty=(*(aiMines[i]))[m].y-shot.y;
                dist=distx*distx+disty*disty;
-               
+
                if(dist<hit.distance)
                {
                   hit.object=HMINE;
@@ -355,7 +355,7 @@ Hit Ai::firstObject(AiSprite shot,int time,int frames)
 
    return hit;
 }
- 
+
 void Ai::testForHits()
 {
    AiSprite shot;
@@ -425,13 +425,13 @@ void Ai::testForHits()
 
       hit.object=HNOTHING;
       hit.distance=400;
-   
+
       for(i=0;(i<shipsNextPositions[0]->size()) &&
              !(*shipsNextPositions[playerNumber])[i].sun;i++)
       {
          if((borderTime<0) && (*shipsNextPositions[playerNumber])[i].border)
             borderTime=i*calcFrameIncrement[Options::aiDifficulty(playerNumber)];
-      
+
          dx=(*shipsNextPositions[playerNumber])[i].x;
          dy=(*shipsNextPositions[playerNumber])[i].y;
          distance=dx*dx+dy*dy;
@@ -473,7 +473,7 @@ void Ai::shotScores()
    bool found,foundmh;
    double dist,dx,dy,fuel;
 
-   
+
    dx=(*shipsNextPositions[playerNumber])[0].x-(*shipsNextPositions[opponentNumber])[0].x;
    dy=(*shipsNextPositions[playerNumber])[0].y-(*shipsNextPositions[opponentNumber])[0].y;
    dist=dx*dx+dy*dy;
@@ -535,7 +535,7 @@ void Ai::chooseAction()
    Hit *nextHit=0;
    int shotHitTime;
 
-   
+
    shotHitTime=1000000;
    nextHit=0;
 /*   for(h=objectsHitByShip.first();h;h=objectsHitByShip.next())
@@ -545,15 +545,15 @@ void Ai::chooseAction()
             nextHit=h;
             shotHitTime=h->hitTime;
             }*/
-   
+
    if((borderTime>0) || (sunTime>0) || (nextHit))
-   {   
+   {
       actualpos=ship[playerNumber]->toAiSprite();
       posangle=rectToAngle(actualpos.x,actualpos.y);
-      
+
       movephi=rectToAngle((*shipsNextPositions[playerNumber])[0].x,
                           (*shipsNextPositions[playerNumber])[0].y) - posangle;
-      
+
       phileft=movephi+cfg->rotationSpeed;
       phiright=movephi-cfg->rotationSpeed;
 
@@ -620,7 +620,7 @@ void Ai::chooseAction()
                torotate-=2*M_PI;
             framesleft=(int)(torotate/phileft+0.5);
          }
-         
+
          if(phiright>0)
             framesright=1000;
          else
@@ -631,7 +631,7 @@ void Ai::chooseAction()
                torotate+=2*M_PI;
             framesright=(int)(torotate/phiright+0.5);
          }
-      
+
          if(framesright<framesleft)
          {
             rotation=RRIGHT;
@@ -643,13 +643,13 @@ void Ai::chooseAction()
             rotateFramesNumber=framesleft;
          }
          shoot=false;
-         
+
       }
    }
    else
    {
-      
-      bestShot=0;   
+
+      bestShot=0;
       for(s=myShots.first();s;s=myShots.next())
          if(s->score<bestScore)
          {
@@ -666,7 +666,7 @@ void Ai::chooseAction()
             shoot=true;
             score=bestScore;
             calculateCollisions = 0;
-            waitShot=(int) rint( random.getDouble() * 
+            waitShot=(int) rint( random.getDouble() *
 	                         calcNextShot[Options::aiDifficulty(playerNumber)]
                                  /cfg->gamespeed);
          }
