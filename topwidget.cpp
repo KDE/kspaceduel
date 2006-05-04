@@ -73,8 +73,9 @@ void MyTopLevelWidget::initActions( )
    MyMainView::pauseAction =
        KStdGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
    MyMainView::pauseAction->setChecked( false );
-   KAction* gameStart = new KAction( i18n( "Start" ), GAME_START_SHORTCUT,
-	   playfield, SLOT( start( ) ), actionCollection( ), "game_start" );
+   KAction *gameStart = new KAction( i18n( "Start" ), actionCollection( ), "game_start" );
+   connect(gameStart, SIGNAL(triggered(bool) ), playfield, SLOT( start( ) ));
+   object->setShortcut(GAME_START_SHORTCUT);
 
    KStdAction::preferences(playfield, SLOT(gameSetup()), actionCollection());
 
