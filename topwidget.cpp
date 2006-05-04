@@ -75,7 +75,7 @@ void MyTopLevelWidget::initActions( )
    MyMainView::pauseAction->setChecked( false );
    KAction *gameStart = new KAction( i18n( "Start" ), actionCollection( ), "game_start" );
    connect(gameStart, SIGNAL(triggered(bool) ), playfield, SLOT( start( ) ));
-   object->setShortcut(GAME_START_SHORTCUT);
+   gameStart->setShortcut(GAME_START_SHORTCUT);
 
    KStdAction::preferences(playfield, SLOT(gameSetup()), actionCollection());
 
