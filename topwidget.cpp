@@ -83,36 +83,36 @@ void MyTopLevelWidget::initActions( )
 #warning assuming this is not neccessary anymore
    // actionCollection()->setAutoConnectShortcuts(false);
    KAction* ac;
-   ac = new KAction(i18n("Player 1 Rotate Left"), Qt::Key_S, 0, 0,
-		    actionCollection(), "P1KeyLeft");
+   ac = new KAction(i18n("Player 1 Rotate Left"), actionCollection(), "P1KeyLeft");
+   ac->setShortcut(Qt::Key_S);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 1 Rotate Right"), Qt::Key_F, 0, 0,
-		     actionCollection(), "P1KeyRight");
+   ac = new KAction(i18n("Player 1 Rotate Right"), actionCollection(), "P1KeyRight");
+   ac->setShortcut(Qt::Key_F);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 1 Accelerate"), Qt::Key_E, 0, 0,
-		    actionCollection(), "P1KeyAcc");
+   ac = new KAction(i18n("Player 1 Accelerate"), actionCollection(), "P1KeyAcc");
+   ac->setShortcut(Qt::Key_E);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 1 Shot"), Qt::Key_D, 0, 0,
-		    actionCollection(), "P1Shot");
+   ac = new KAction(i18n("Player 1 Shot"), actionCollection(), "P1Shot");
+   ac->setShortcut(Qt::Key_D);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 1 Mine"), Qt::Key_A, 0, 0,
-		    actionCollection(), "P1Mine");
+   ac = new KAction(i18n("Player 1 Mine"), actionCollection(), "P1Mine");
+   ac->setShortcut(Qt::Key_A);
    ac->setEnabled( false );
 
-   ac = new KAction(i18n("Player 2 Rotate Left"), Qt::Key_Left, 0, 0,
-		    actionCollection(), "P2KeyLeft");
+   ac = new KAction(i18n("Player 2 Rotate Left"), actionCollection(), "P2KeyLeft");
+   ac->setShortcut(Qt::Key_Left);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 2 Rotate Right"), Qt::Key_Right, 0, 0,
-		    actionCollection(), "P2KeyRight");
+   ac = new KAction(i18n("Player 2 Rotate Right"), actionCollection(), "P2KeyRight");
+   ac->setShortcut(Qt::Key_Right);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 2 Accelerate"), Qt::Key_Up, 0, 0,
-		    actionCollection(), "P2KeyAcc");
+   ac = new KAction(i18n("Player 2 Accelerate"), actionCollection(), "P2KeyAcc");
+   ac->setShortcut(Qt::Key_Up);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 2 Shot"), Qt::Key_Down, 0, 0,
-		    actionCollection(), "P2Shot");
+   ac = new KAction(i18n("Player 2 Shot"), actionCollection(), "P2Shot");
+   ac->setShortcut(Qt::Key_Down);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 2 Mine"), Qt::Key_Insert, 0, 0,
-		    actionCollection(), "P2Mine");
+   ac = new KAction(i18n("Player 2 Mine"), actionCollection(), "P2Mine");
+   ac->setShortcut(Qt::Key_Insert);
    ac->setEnabled( false );
 
    // actionCollection()->setAutoConnectShortcuts(true);
