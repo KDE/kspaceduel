@@ -4,6 +4,7 @@
 #include <qbitmap.h>
 #include <qfile.h>
 #include <q3vbox.h>
+#include <ktoggleaction.h>
 //Added by qt3to4:
 #include <QPixmap>
 #include <Q3PtrList>
