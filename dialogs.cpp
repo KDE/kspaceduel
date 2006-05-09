@@ -1,9 +1,9 @@
-#include <qlabel.h>
-#include <qcombobox.h>
+#include <QLabel>
+#include <QComboBox>
 #include <qtabwidget.h>
 #include <qslider.h>
 #include <qlcdnumber.h>
-#include <qlayout.h>
+#include <QLayout>
 //Added by qt3to4:
 #include <QVBoxLayout>
 #include <Q3Frame>

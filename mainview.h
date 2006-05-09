@@ -1,7 +1,7 @@
 #ifndef __MY_MAIN_VIEW_H
 #define __MY_MAIN_VIEW_H
 
-#include <qwidget.h>
+#include <QWidget>
 #include <qimage.h>
 //Added by qt3to4:
 #include <QTimerEvent>

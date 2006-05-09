@@ -1,6 +1,6 @@
 #include "playerinfo.h"
 #include <qpixmap.h>
-#include <qtooltip.h>
+#include <QToolTip>
 //Added by qt3to4:
 #include <Q3Frame>
 #include <klocale.h>

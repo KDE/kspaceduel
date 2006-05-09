@@ -2,7 +2,7 @@
 
 #include <math.h>
 #include <qbitmap.h>
-#include <qfile.h>
+#include <QFile>
 #include <q3vbox.h>
 #include <ktoggleaction.h>
 //Added by qt3to4:

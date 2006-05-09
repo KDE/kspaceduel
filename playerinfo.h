@@ -2,12 +2,12 @@
 #define __PLAYER_INFO_H
 
 #include <q3frame.h>
-#include <qlabel.h>
+#include <QLabel>
 //Added by qt3to4:
 #include <QPixmap>
 class QPixmap;
 #include <qlcdnumber.h>
-#include <qcolor.h>
+#include <QColor>
 
 class PlayerInfo:public Q3Frame
 {
