@@ -7,7 +7,7 @@ add_subdirectory( explosion )
 add_subdirectory( sun ) 
 add_subdirectory( powerups ) 
 
-include_directories( ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}  )
+
 
 
 ########### install files ###############
