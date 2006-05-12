@@ -1,4 +1,3 @@
-kde4_header()
 
 
 
@@ -7,7 +6,6 @@ kde4_header()
 
 install_files( ${DATA_INSTALL_DIR}/kspaceduel/sprites/sun FILES sun.ppm sun.pbm )
 
-kde4_footer()
 
 
 

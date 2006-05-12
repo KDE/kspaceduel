@@ -1,4 +1,3 @@
-kde4_header()
 
 
 
@@ -7,7 +6,6 @@ kde4_header()
 
 install_files( ${DATA_INSTALL_DIR}/kspaceduel/sprites/powerups FILES pbullet.pbm pbullet.ppm penergy.pbm penergy.ppm pmine.pbm pmine.ppm  pshield.pbm pshield.ppm )
 
-kde4_footer()
 
 
 

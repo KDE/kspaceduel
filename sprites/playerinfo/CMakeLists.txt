@@ -1,4 +1,3 @@
-kde4_header()
 
 
 
@@ -7,7 +6,6 @@ kde4_header()
 
 install_files( ${DATA_INSTALL_DIR}/kspaceduel/sprites/playerinfo FILES energy.pnm mine.pnm ship10.pnm ship11.pnm ship12.pnm ship13.pnm ship20.pnm  ship21.pnm ship22.pnm ship23.pnm win.pnm )
 
-kde4_footer()
 
 
 

@@ -1,4 +1,3 @@
-kde4_header()
 project(kspaceduel)
 
 add_subdirectory( sprites ) 
@@ -40,7 +39,6 @@ install_files( ${DATA_INSTALL_DIR}/kspaceduel FILES kspaceduelui.rc )
 
 kde4_install_icons( ${ICON_INSTALL_DIR}  hicolor )
 
-kde4_footer()
 
 
 

@@ -1,4 +1,3 @@
-kde4_header()
 
 add_subdirectory( ship1 ) 
 add_subdirectory( ship2 ) 
@@ -14,7 +13,6 @@ add_subdirectory( powerups )
 
 install_files( ${DATA_INSTALL_DIR}/kspaceduel/sprites FILES backgr.png )
 
-kde4_footer()
 
 
 
