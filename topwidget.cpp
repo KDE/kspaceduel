@@ -69,8 +69,10 @@ void MyTopLevelWidget::initActions( )
 {
    KStdGameAction::quit(this, SLOT(close()), actionCollection());
    KStdGameAction::gameNew(playfield, SLOT(newGame()), actionCollection());
-   ( void )new KAction( i18n( "&New Round" ), "spnewround",
-                        Qt::CTRL + Qt::Key_N, playfield, SLOT( newRound( ) ), actionCollection( ), "new_round" );
+   KAction* newRoundAct = new KAction( KIcon("spnewround"), i18n( "&New Round" ), actionCollection(), "new_round" );
+   newRoundAct->setShortcut( Qt::CTRL + Qt::Key_N );
+   connect( newRoundAct, SIGNAL( triggered(bool) ), playfield, SLOT( newRound( ) ) );
+
    MyMainView::pauseAction =
        KStdGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
    MyMainView::pauseAction->setChecked( false );

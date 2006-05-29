@@ -13,7 +13,17 @@
 
 #include "options.h"
 #include "dialogs.h"
-#include "general.h"
+#include "ui_general.h"
+
+class General : public QWidget, public Ui::General
+{
+public:
+    General(QWidget* parent=0)
+        : QWidget(parent)
+        {
+            setupUi(this);
+        }
+};
 
 bool operator!=(const SConfig &s1, const SConfig &s2)
 {

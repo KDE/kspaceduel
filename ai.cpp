@@ -3,8 +3,6 @@
 #include "ai.h"
 #include "mathroutines.h"
 #include "options.h"
-//Added by qt3to4:
-#include <Q3PtrList>
 #include <QVector>
 
 int Ai::calcFrameIncrement[Options::EnumAiDifficulty::COUNT] = {15,8,6,2};
