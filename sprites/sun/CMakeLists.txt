@@ -4,7 +4,7 @@
 
 ########### install files ###############
 
-install_files( ${DATA_INSTALL_DIR}/kspaceduel/sprites/sun FILES sun.ppm sun.pbm )
+install( FILES sun.ppm sun.pbm  DESTINATION  ${DATA_INSTALL_DIR}/kspaceduel/sprites/sun )
 
 
 

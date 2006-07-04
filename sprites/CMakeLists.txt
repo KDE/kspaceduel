@@ -11,7 +11,7 @@ add_subdirectory( powerups )
 
 ########### install files ###############
 
-install_files( ${DATA_INSTALL_DIR}/kspaceduel/sprites FILES backgr.png )
+install( FILES backgr.png  DESTINATION  ${DATA_INSTALL_DIR}/kspaceduel/sprites )
 
 
 
