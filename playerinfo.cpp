@@ -45,7 +45,7 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent,const char *name)
    lplayer.setPixmap(*pix[0]);
    currentPixmap=0;
    lenergy.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/energy.pnm")));
-   lwins.setPixmap(QPixmap(locate("appdata", "sprites/playerinfo/win.pnm")));
+   lwins.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/win.pnm")));
 
    hitpoints.setGeometry(9,45,26,26);
    energy.setGeometry(9,120,26,26);
