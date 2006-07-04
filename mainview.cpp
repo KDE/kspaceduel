@@ -34,7 +34,7 @@ MyMainView::MyMainView(QWidget *parent)
    int i,p;
    setMinimumSize(600,400);
    random.setSeed(0);
-   QPixmap backgr(locate("appdata", MV_BACKGROUND));
+   QPixmap backgr(KStandardDirs::locate("appdata", MV_BACKGROUND));
    field.setBackgroundPixmap(backgr);
 
    view.setResizePolicy(Q3ScrollView::AutoOne);
