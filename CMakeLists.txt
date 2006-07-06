@@ -28,7 +28,7 @@ kde4_add_executable(kspaceduel ${kspaceduel_SRCS})
 
 target_link_libraries(kspaceduel  ${KDE4_KDEUI_LIBS} kdegames)
 
-install_targets(/bin kspaceduel )
+install(TARGETS kspaceduel  DESTINATION ${BIN_INSTALL_DIR} )
 
 
 ########### install files ###############
