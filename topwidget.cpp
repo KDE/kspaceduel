@@ -5,6 +5,7 @@
 #include <kkeydialog.h>
 #include <kaction.h>
 #include <kstdgameaction.h>
+#include <kicon.h>
 #include <QLayout>
 //Added by qt3to4:
 #include <QHBoxLayout>
