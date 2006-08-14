@@ -37,7 +37,7 @@ install( FILES kspaceduel.desktop  DESTINATION  ${XDG_APPS_DIR} )
 install( FILES kspaceduel.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES kspaceduelui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kspaceduel )
 
-kde4_install_icons( ${ICON_INSTALL_DIR}  hicolor )
+kde4_install_icons( ${ICON_INSTALL_DIR}   )
 
 
 
