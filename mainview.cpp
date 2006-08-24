@@ -306,11 +306,11 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
    }
 }
 
-void MyMainView::keyReleaseEvent(QKeyEvent *ev)
+void MyMainView::keyReleaseEvent(QKeyEvent *)
 {
-   bool accept=true;
 #warning KKey does no longer exist
 #if 0
+   bool accept=true;
    KKey key(ev);
 
    if(actionCollection->action("P1KeyLeft")->shortcut().contains(key))
@@ -340,9 +340,9 @@ void MyMainView::keyReleaseEvent(QKeyEvent *ev)
    else
       accept = false;
 
-#endif
    if(!accept)
      ev->ignore();
+#endif
 }
 
 void MyMainView::pause()
