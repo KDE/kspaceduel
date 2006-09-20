@@ -18,12 +18,12 @@
 <address><email>az@azweb.de</email></address>
 </affiliation>
 </author>
-</authorgroup>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
  
 <copyright>
 <year>1999</year><year>2000</year>
-<holder>Andreas Zehender</holder>
+<holder>&Andreas.Zehender;</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
@@ -539,7 +539,7 @@ including the keys for steering the space ship, firing bullets &etc;.</para>
 <menuchoice><guimenu>Settings</guimenu>
 <guimenuitem>Configure Toolbars...</guimenuitem>
 </menuchoice></term>
-<listitem><para>Display the standard KDE Toolbar Configuration Dialog.</para>
+<listitem><para>Display the standard &kde; Toolbar Configuration Dialog.</para>
 </listitem>
 </varlistentry>
 
@@ -620,9 +620,9 @@ linkend="options-keys">Player Keys...</link>.</para>
 &kspaceduel;
 </para>
 <para>
-Program copyright 1999-2000 Andreas Zehender <email>az@azweb.de</email></para>
-<para>Documentation copyright 2000 Andreas Zehender <email>az@azweb.de</email></para>
-<para>Documentation updated for &kde; 2.0 by Mike McBride <email>mpmcbride7@yahoo.com</email></para>
+Program copyright 1999-2000 &Andreas.Zehender; <email>az@azweb.de</email></para>
+<para>Documentation copyright 2000 &Andreas.Zehender; <email>az@azweb.de</email></para>
+<para>Documentation updated for &kde; 2.0 by &Mike.McBride; &Mike.McBride.mail;</para>
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
 &underFDL;
