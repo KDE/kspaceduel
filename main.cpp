@@ -17,9 +17,9 @@ int main(int argc,char **argv)
    KCmdLineArgs::init( argc, argv, &aboutData );
 
    KApplication myapplication;
-   MyTopLevelWidget top;
-   top.show();
-   top.start();
+   MyTopLevelWidget *top = new MyTopLevelWidget;
+   top->show();
+   top->start();
    return myapplication.exec();
 }
 
