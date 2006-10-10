@@ -6,7 +6,7 @@
 #include <QLayout>
 //Added by qt3to4:
 #include <QVBoxLayout>
-#include <Q3Frame>
+#include <QFrame>
 #include <QGridLayout>
 
 #include <klocale.h>
@@ -164,7 +164,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
       slider[i]->setValue(EditVal[i][2]*EditDiv[i]);
       connect(slider[i],SIGNAL(valueChanged(int)),SLOT(sliderChanged(int)));
       value[i]=new QLCDNumber(LCDLen,configWidgets[Parent[i]]);
-      value[i]->setFrameStyle(Q3Frame::NoFrame);
+      value[i]->setFrameStyle(QFrame::NoFrame);
    }
 
    configCombo=new QComboBox(this);
