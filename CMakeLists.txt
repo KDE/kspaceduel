@@ -18,7 +18,7 @@ set(kspaceduel_SRCS
    ai.cpp 
    main.cpp )
 
-kde4_automoc(${kspaceduel_SRCS})
+kde4_automoc(kspaceduel ${kspaceduel_SRCS})
 
 kde4_add_ui_files(kspaceduel_SRCS general.ui )
 
