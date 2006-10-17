@@ -2,13 +2,12 @@
 #include <qpixmap.h>
 #include <QToolTip>
 //Added by qt3to4:
-#include <Q3Frame>
 #include <klocale.h>
 #include <kstandarddirs.h>
 
 
-PlayerInfo::PlayerInfo(int pnr,QWidget *parent,const char *name)
-      :Q3Frame(parent,name),
+PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
+      :QFrame(parent),
        lplayer(this),lenergy(this),lwins(this),
        hitpoints(2,this),energy(2,this),wins(2,this)
 {
