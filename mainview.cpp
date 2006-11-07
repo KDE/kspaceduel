@@ -262,7 +262,9 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
    {
      bool accept=true;
 
+#ifdef __GNUC__
 #warning KKey does no longer exist
+#endif
 #if 0
       KKey key(ev);
 
@@ -308,7 +310,9 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
 
 void MyMainView::keyReleaseEvent(QKeyEvent *)
 {
+#ifdef __GNUC__
 #warning KKey does no longer exist
+#endif
 #if 0
    bool accept=true;
    KKey key(ev);

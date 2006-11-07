@@ -84,7 +84,9 @@ void MyTopLevelWidget::initActions( )
    KStdAction::preferences(playfield, SLOT(gameSetup()), actionCollection());
 
    // Default keys
+#ifdef __GNUC__
 #warning assuming this is not necessary anymore
+#endif
    // actionCollection()->setAutoConnectShortcuts(false);
    KAction* ac;
    ac = new KAction(i18n("Player 1 Rotate Left"), actionCollection(), "P1KeyLeft");
