@@ -15,6 +15,7 @@
 #include <kapplication.h>
 #include <kaction.h>
 #include <klocale.h>
+#include <kactioncollection.h>
 #include <kstandarddirs.h>
 #include <kglobalsettings.h>
 #include <kconfig.h>
@@ -262,35 +263,29 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
    {
      bool accept=true;
 
-#ifdef __GNUC__
-#warning KKey does no longer exist
-#endif
-#if 0
-      KKey key(ev);
-
-      if(actionCollection->action("P1KeyLeft")->shortcut().contains(key))
+      if(actionCollection->action("P1KeyLeft")->shortcuts().contains(ev->key()))
             playerKeyPressed[0][PlayerKeyLeft]=true;
-      else if(actionCollection->action("P2KeyLeft")->shortcut().contains(key))
+      else if(actionCollection->action("P2KeyLeft")->shortcuts().contains(ev->key()))
             playerKeyPressed[1][PlayerKeyLeft]=true;
       
-      else if(actionCollection->action("P1KeyRight")->shortcut().contains(key))
+      else if(actionCollection->action("P1KeyRight")->shortcuts().contains(ev->key()))
             playerKeyPressed[0][PlayerKeyRight]=true;
-      else if(actionCollection->action("P2KeyRight")->shortcut().contains(key))
+      else if(actionCollection->action("P2KeyRight")->shortcuts().contains(ev->key()))
             playerKeyPressed[1][PlayerKeyRight]=true;
       
-      else if(actionCollection->action("P1KeyAcc")->shortcut().contains(key))
+      else if(actionCollection->action("P1KeyAcc")->shortcuts().contains(ev->key()))
             playerKeyPressed[0][PlayerKeyAcc]=true;
-      else if(actionCollection->action("P2KeyAcc")->shortcut().contains(key))
+      else if(actionCollection->action("P2KeyAcc")->shortcuts().contains(ev->key()))
             playerKeyPressed[1][PlayerKeyAcc]=true;
       
-      else if(actionCollection->action("P1Shot")->shortcut().contains(key))
+      else if(actionCollection->action("P1Shot")->shortcuts().contains(ev->key()))
             playerKeyPressed[0][PlayerKeyShot]=true;
-      else if(actionCollection->action("P2Shot")->shortcut().contains(key))
+      else if(actionCollection->action("P2Shot")->shortcuts().contains(ev->key()))
             playerKeyPressed[1][PlayerKeyShot]=true;
       
-      else if(actionCollection->action("P1Mine")->shortcut().contains(key))
+      else if(actionCollection->action("P1Mine")->shortcuts().contains(ev->key()))
             playerKeyPressed[0][PlayerKeyMine]=true;
-      else if(actionCollection->action("P2Mine")->shortcut().contains(key))
+      else if(actionCollection->action("P2Mine")->shortcuts().contains(ev->key()))
             playerKeyPressed[1][PlayerKeyMine]=true;
       else
         accept = false;
@@ -302,51 +297,44 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
          pause();
       }
       */
-#endif
       if(!accept)
 	ev->ignore();
    }
 }
 
-void MyMainView::keyReleaseEvent(QKeyEvent *)
+void MyMainView::keyReleaseEvent(QKeyEvent *ev)
 {
-#ifdef __GNUC__
-#warning KKey does no longer exist
-#endif
-#if 0
    bool accept=true;
-   KKey key(ev);
 
-   if(actionCollection->action("P1KeyLeft")->shortcut().contains(key))
+   if(actionCollection->action("P1KeyLeft")->shortcuts().contains(ev->key()))
       playerKeyPressed[0][PlayerKeyLeft]=false;
-   else if(actionCollection->action("P2KeyLeft")->shortcut().contains(key))
+   else if(actionCollection->action("P2KeyLeft")->shortcuts().contains(ev->key()))
       playerKeyPressed[1][PlayerKeyLeft]=false;
       
-   else if(actionCollection->action("P1KeyRight")->shortcut().contains(key))
+   else if(actionCollection->action("P1KeyRight")->shortcuts().contains(ev->key()))
       playerKeyPressed[0][PlayerKeyRight]=false;
-   else if(actionCollection->action("P2KeyRight")->shortcut().contains(key))
+   else if(actionCollection->action("P2KeyRight")->shortcuts().contains(ev->key()))
       playerKeyPressed[1][PlayerKeyRight]=false;
       
-   else if(actionCollection->action("P1KeyAcc")->shortcut().contains(key))
+   else if(actionCollection->action("P1KeyAcc")->shortcuts().contains(ev->key()))
       playerKeyPressed[0][PlayerKeyAcc]=false;
-   else if(actionCollection->action("P2KeyAcc")->shortcut().contains(key))
+   else if(actionCollection->action("P2KeyAcc")->shortcuts().contains(ev->key()))
       playerKeyPressed[1][PlayerKeyAcc]=false;
       
-   else if(actionCollection->action("P1Shot")->shortcut().contains(key))
+   else if(actionCollection->action("P1Shot")->shortcuts().contains(ev->key()))
       playerKeyPressed[0][PlayerKeyShot]=false;
-   else if(actionCollection->action("P2Shot")->shortcut().contains(key))
+   else if(actionCollection->action("P2Shot")->shortcuts().contains(ev->key()))
       playerKeyPressed[1][PlayerKeyShot]=false;
       
-   else if(actionCollection->action("P1Mine")->shortcut().contains(key))
+   else if(actionCollection->action("P1Mine")->shortcuts().contains(ev->key()))
       playerKeyPressed[0][PlayerKeyMine]=false;
-   else if(actionCollection->action("P2Mine")->shortcut().contains(key))
+   else if(actionCollection->action("P2Mine")->shortcuts().contains(ev->key()))
       playerKeyPressed[1][PlayerKeyMine]=false;
    else
       accept = false;
 
    if(!accept)
      ev->ignore();
-#endif
 }
 
 void MyMainView::pause()
