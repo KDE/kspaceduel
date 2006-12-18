@@ -159,9 +159,9 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    {
       label[i]=new QLabel(i18n(LabelName[i]),configWidgets[Parent[i]]);
       slider[i]=new QSlider(Qt::Horizontal,configWidgets[Parent[i]]);
-      slider[i]->setRange(EditVal[i][0]*EditDiv[i], EditVal[i][1]*EditDiv[i]);
-      slider[i]->setPageStep((EditVal[i][1]-EditVal[i][0])/10);
-      slider[i]->setValue(EditVal[i][2]*EditDiv[i]);
+      slider[i]->setRange((int)(EditVal[i][0]*EditDiv[i]), (int)(EditVal[i][1]*EditDiv[i]));
+      slider[i]->setPageStep((int)((EditVal[i][1]-EditVal[i][0])/10));
+      slider[i]->setValue((int)(EditVal[i][2]*EditDiv[i]));
       connect(slider[i],SIGNAL(valueChanged(int)),SLOT(sliderChanged(int)));
       value[i]=new QLCDNumber(LCDLen,configWidgets[Parent[i]]);
       value[i]->setFrameStyle(QFrame::NoFrame);
