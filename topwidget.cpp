@@ -1,6 +1,6 @@
 #include <klocale.h>
 
-#include <kstdaction.h>
+#include <kstandardaction.h>
 #include <ktoggleaction.h>
 #include <kkeydialog.h>
 #include <kaction.h>
@@ -82,7 +82,7 @@ void MyTopLevelWidget::initActions( )
    gameStart->setShortcut(GAME_START_SHORTCUT);
    playfield->addAction(gameStart);
 
-   KStdAction::preferences(playfield, SLOT(gameSetup()), actionCollection());
+   KStandardAction::preferences(playfield, SLOT(gameSetup()), actionCollection());
 
    // Default keys
 #ifdef __GNUC__
