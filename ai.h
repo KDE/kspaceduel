@@ -1,3 +1,5 @@
+/* Copyright 1999-2001 Andreas Zehender <az@azweb.de> */
+
 #ifndef __KSD_AI_H
 #define __KSD_AI_H
 

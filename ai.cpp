@@ -1,3 +1,5 @@
+/* Copyright 1999-2001 Andreas Zehender <az@azweb.de> */
+
 #include <math.h>
 
 #include "ai.h"

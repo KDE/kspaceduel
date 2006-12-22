@@ -1,3 +1,5 @@
+/* Copyright 1999-2001 Andreas Zehender <az@azweb.de> */
+
 //Added by qt3to4:
 #include <QLabel>
 #ifndef __SP_DIALOG_H
