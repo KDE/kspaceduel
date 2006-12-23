@@ -658,7 +658,7 @@ void MyMainView::moveShips()
 	    {
 		    double alpha;
 		    alpha = fabs(atan(ship[i]->yVelocity()/ship[i]->xVelocity()));
-		    ship[i]->yVelocity()<< endl;
+		    //ship[i]->yVelocity()<< endl;
 		    ship[i]->setVelocity(MAX_VELOCITY*cos(alpha)*fabs(ship[i]->xVelocity())/ship[i]->xVelocity(),
                                  MAX_VELOCITY*sin(alpha)*fabs(ship[i]->yVelocity())/ship[i]->yVelocity());
 	    }
