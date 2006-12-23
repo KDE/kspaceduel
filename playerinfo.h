@@ -30,7 +30,7 @@ class PlayerInfo:public QFrame
 {
    Q_OBJECT
 public:
-   PlayerInfo(int pnr,QWidget *parent=0);
+   explicit PlayerInfo(int pnr,QWidget *parent=0);
 public slots:
    void setHitpoints(int h);
    void setEnergy(int e);
