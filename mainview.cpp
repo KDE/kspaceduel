@@ -481,7 +481,7 @@ void MyMainView::newRound()
    for(i=0;i<2;i++)
    {
       ship[i]->show();
-      ship[i]->setEnergy(99.9);
+      ship[i]->setEnergy(MAX_ENERGY);
       ship[i]->setHitPoints(Options::startHitPoints(i));
       ship[i]->stop(false);
       ship[i]->setExplosion(-1);
@@ -643,16 +643,28 @@ void MyMainView::moveShips()
          nf=ship[i]->frame();
          nx=cos(nr);
          ny=sin(nr);
-         if((!playerIsAi&&playerKeyPressed[i][PlayerKeyAcc]
+         if ( ((!playerIsAi && playerKeyPressed[i][PlayerKeyAcc])
              || playerIsAi&&ai[i]->accelerate())
-            &&(en>config.energyNeed))
+	     && (en>config.energyNeed) )
          {
             en-=config.energyNeed;
             ship[i]->setVelocity(ship[i]->xVelocity()+nx*config.acc,
                                  ship[i]->yVelocity()-ny*config.acc);
+	    
+	    // limit speed to avoid "tunneling" through other objects
+	    // FIXME: find a more elegant way
+	    if (ship[i]->xVelocity()*ship[i]->xVelocity()+
+		ship[i]->yVelocity()*ship[i]->yVelocity() > MAX_VELOCITY*MAX_VELOCITY)
+	    {
+		    double alpha;
+		    alpha = fabs(atan(ship[i]->yVelocity()/ship[i]->xVelocity()));
+		    ship[i]->yVelocity()<< endl;
+		    ship[i]->setVelocity(MAX_VELOCITY*cos(alpha)*fabs(ship[i]->xVelocity())/ship[i]->xVelocity(),
+                                 MAX_VELOCITY*sin(alpha)*fabs(ship[i]->yVelocity())/ship[i]->yVelocity());
+	    }
          }
-         if(en>99.9)
-            en=99.9;
+         if(en>MAX_ENERGY)
+            en=MAX_ENERGY;
 
          ship[i]->forward(config.gamespeed);
              //Bullets and Mines
@@ -892,8 +904,8 @@ void MyMainView::collisions()
                         break;
                      case PowerupSprite::PowerupEnergy:
                         en=ship[pl]->getEnergy()+config.powerupEnergyAmount;
-                        if(en>99)
-                           en=99;
+                        if(en>MAX_ENERGY)
+                           en=MAX_ENERGY;
                         ship[pl]->setEnergy(en);
                         break;
                      case PowerupSprite::PowerupMine:
@@ -910,8 +922,8 @@ void MyMainView::collisions()
                   break;
             }
          }
-         if(hp>99)
-            hp=99;
+         if(hp>MAX_HP)
+            hp=MAX_HP;
          ship[pl]->setHitPoints(hp);
       }
 
