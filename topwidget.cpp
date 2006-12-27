@@ -21,7 +21,7 @@ This program is free software; you can redistribute it and/or modify
 #include <ktoggleaction.h>
 #include <kkeydialog.h>
 #include <kaction.h>
-#include <kstdgameaction.h>
+#include <kstandardgameaction.h>
 #include <kicon.h>
 #include <QLayout>
 //Added by qt3to4:
@@ -85,14 +85,14 @@ void MyTopLevelWidget::wins(int pn,int w)
 
 void MyTopLevelWidget::initActions( )
 {
-   KStdGameAction::quit(this, SLOT(close()), actionCollection());
-   KStdGameAction::gameNew(playfield, SLOT(newGame()), actionCollection());
+   KStandardGameAction::quit(this, SLOT(close()), actionCollection());
+   KStandardGameAction::gameNew(playfield, SLOT(newGame()), actionCollection());
    KAction* newRoundAct = new KAction( KIcon("spnewround"), i18n( "&New Round" ), actionCollection(), "new_round" );
    newRoundAct->setShortcut( Qt::CTRL + Qt::Key_R );
    connect( newRoundAct, SIGNAL( triggered(bool) ), playfield, SLOT( newRound( ) ) );
 
    MyMainView::pauseAction =
-       KStdGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
+       KStandardGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
    MyMainView::pauseAction->setChecked( false );
    KAction *gameStart = new KAction( i18n( "Start" ), actionCollection( ), "game_start" );
    connect(gameStart, SIGNAL(triggered(bool) ), playfield, SLOT( start( ) ));
