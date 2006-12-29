@@ -52,7 +52,7 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
 
    for(i=0;i<4;i++)
    {
-      str = QString::fromLatin1("sprites/playerinfo/ship%1%2.pnm")
+      str = QString::fromLatin1("sprites/playerinfo/ship%1%2.png")
         .arg(pnr+1)
         .arg(i);
       pix[i]=new QPixmap(KStandardDirs::locate("appdata", str));
@@ -60,8 +60,8 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
 
    lplayer.setPixmap(*pix[0]);
    currentPixmap=0;
-   lenergy.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/energy.pnm")));
-   lwins.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/win.pnm")));
+   lenergy.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/energy.png")));
+   lwins.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/win.png")));
 
    hitpoints.setGeometry(9,45,26,26);
    energy.setGeometry(9,120,26,26);
