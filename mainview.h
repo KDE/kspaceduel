@@ -19,15 +19,19 @@ This program is free software; you can redistribute it and/or modify
 #define __MY_MAIN_VIEW_H
 
 #include <QWidget>
-#include <qimage.h>
 //Added by qt3to4:
 #include <QTimerEvent>
 #include <QResizeEvent>
 #include <QKeyEvent>
 #include <Q3PtrList>
+#include <QLinkedList>
+
+#include <QGraphicsScene>
+#include <QGraphicsView>
 
 class KToggleAction;
 class KActionCollection;
+class QGraphicsSimpleTextItem;
 #include <krandomsequence.h>
 
 #include "sprites.h"
@@ -47,6 +51,7 @@ public:
 
    static KToggleAction *pauseAction;
    void setActionCollection(KActionCollection *a);
+   bool readSprites();
 
 public slots:
    void newRound();
@@ -72,8 +77,6 @@ protected:
    virtual void keyPressEvent(QKeyEvent *event);
    virtual void keyReleaseEvent(QKeyEvent *event);
    SConfig modifyConfig(SConfig conf);
-   Q3CanvasPixmapArray* loadOldPixmapSequence(const QString& datapattern,
-                           const QString& maskpattern, int framecount=1);
    void moveShips();
    void moveBullets();
    void moveMines();
@@ -83,8 +86,8 @@ protected:
 private:
    KActionCollection *actionCollection;
 
-   Q3Canvas field;
-   Q3CanvasView view;
+   QGraphicsScene field;
+   QGraphicsView view;
 
    SConfig customConfig,config;
 
@@ -99,18 +102,17 @@ private:
 // sprites
    Q3PtrList<QImage> shipImages;
    Q3PtrList<QPoint> points;
-   QImage bulletImage;
-   Q3CanvasPixmapArray *bulletsequence[2];
-   Q3CanvasPixmapArray *shipsequence[2];
-   Q3CanvasPixmapArray *explosionsequence;
-   Q3CanvasPixmapArray *minesequence[2];
-   Q3CanvasPixmapArray *mineexplosionsequence;
-   Q3CanvasPixmapArray *powerupsequence[PowerupSprite::PowerupNum];
-
+   
+   QPixmap *sunpixmap;
+   QPixmap *shippixmap[2];
+   QPixmap *bulletpixmap[2];
+   QPixmap *poweruppixmap[PowerupSprite::PowerupNum];
+   
+   QMap<int, QList<QPixmap> > animation;
 
    ShipSprite *ship[2];
    SunSprite *sun;
-   Q3CanvasText *textSprite;
+   QGraphicsSimpleTextItem *textSprite;
    Q3PtrList<BulletSprite> *bullets[2];
    Q3PtrList<MineSprite> *mines[2];
    Q3PtrList<ExplosionSprite> explosions;

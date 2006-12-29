@@ -18,7 +18,10 @@ This program is free software; you can redistribute it and/or modify
 #ifndef __SPRITE_OBJECTS_H
 #define __SPRITE_OBJECTS_H
 
-#include <q3canvas.h>
+#include <QGraphicsPixmapItem>
+
+class QGraphicsScene;
+
 #include "defines.h"
 
 #ifdef sun
@@ -31,57 +34,84 @@ struct AiSprite
    bool sun, border;
 };
 
-class SunSprite:public Q3CanvasSprite
+class SunSprite:public QGraphicsPixmapItem
 {
 public:
-   SunSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas);
-   virtual int rtti() const {return S_SUN;}
+   SunSprite(QPixmap* pixmap, QGraphicsScene* scene);
+   virtual int type() const {return S_SUN;}
 };
 
-
-class PowerupSprite:public Q3CanvasSprite
+class PowerupSprite:public QGraphicsPixmapItem
 {
 public:
    enum {PowerupMine=0, PowerupBullet, PowerupShield, PowerupEnergy,
          PowerupNum};
-   PowerupSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int t, double lifetime);
-   virtual int rtti() const {return S_POWERUP;}
+   PowerupSprite(QPixmap* pixmap, QGraphicsScene* scene, int t, double lifetime);
+   virtual int type() const {return S_POWERUP;}
 
    double getLifetime() {return time;}
    void setLifetime(double t) {time=t;}
-   int getType() {return type;}
+   int getType() {return mtype;}
 private:
    double time;
-   int type;
+   int mtype;
 };
 
-class MobileSprite:public Q3CanvasSprite
+class MobileSprite:public QGraphicsPixmapItem
 {
 public:
-   MobileSprite(Q3CanvasPixmapArray* array, Q3Canvas* canvas, int pn);
+   MobileSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn);
 
    virtual void forward(double mult,int frame);
    virtual void forward(double mult);
    virtual void calculateGravity(double gravity,double mult);
-   int spriteFieldWidth(){return canvas()->width();}
-   int spriteFieldHeight(){return canvas()->height();}
+   int spriteFieldWidth();
+   int spriteFieldHeight();
+   double xVelocity(){return xvel;}
+   double yVelocity(){return yvel;}
+   void setVelocity(double vx, double vy);
    AiSprite toAiSprite();
 
    bool isStopped() {return stopped;}
    void stop(bool s=true) {stopped=s;}
    int getPlayerNumber() {return playerNumber;}
 protected:
+   MobileSprite(QGraphicsItem* parent = 0, QGraphicsScene * scene = 0, int pn = 0);
+	
    void checkBounds();
    bool stopped;
    int playerNumber;
+   double xvel;
+   double yvel;
 };
 
+class AnimatedSprite:public MobileSprite
+{
+public:
+   AnimatedSprite(const QList<QPixmap> &animation, QGraphicsScene *scene = 0, int pn=0);
+
+   void setFrame(int frame);
+   inline int frame() const
+   { return currentFrame; }
+   inline int frameCount() const
+   { return frames.size(); }
+   inline QPixmap image(int frame) const
+   { return frames.isEmpty() ? QPixmap() : frames.at(frame % frames.size()); }
+   QPainterPath shape() const;
+   void setAnimation(const QList<QPixmap> &animation);
+
+   void advance(int phase);
+
+private:
+   int currentFrame;
+   QList<QPixmap> frames;
+};
 
 class ShipSprite:public MobileSprite
 {
 public:
-   ShipSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int pn);
-   virtual int rtti() const {return S_SHIP;}
+   ShipSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn);
+   virtual int type() const {return S_SHIP;}
    int getHitPoints() {return hitpoints;}
    void setHitPoints(int hp) {hitpoints=(hp<0?0:hp);}
    double getEnergy() {return energy;}
@@ -111,13 +141,14 @@ private:
    int hitpoints, wins, explosion;
    double energy,rotation,reloadBulletTime,reloadMineTime;
    int bulletPowerups,minePowerups;
+   double angle; // current rotation angle
 };
 
 class BulletSprite:public MobileSprite
 {
 public:
-   BulletSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int pn,double lifetime);
-   virtual int rtti() const {return S_BULLET;}
+   BulletSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn,double lifetime);
+   virtual int type() const {return S_BULLET;}
    virtual void forward(double mult);
    virtual void forward(double mult,int fr);
    bool timeOut() {return time<=0;}
@@ -125,32 +156,33 @@ private:
    double time;
 };
 
-class MineSprite:public MobileSprite
+class MineSprite:public AnimatedSprite
 {
 public:
-   MineSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int pn,double atime,double f);
-   virtual int rtti() const {return S_MINE;}
+   MineSprite(const QList<QPixmap> &animation, const QList<QPixmap> &exploanimation, QGraphicsScene* scene, int pn,double atime,double f);
+   virtual int type() const {return S_MINE;}
    bool isActive() {return active;}
    double getFuel() {return fuel;}
    void setFuel(double f) {fuel=(f<0.0?0.0:f);}
    virtual void forward(double mult);
-   void explode(Q3CanvasPixmapArray* s);
+   void explode();
    bool explodes() {return expl;}
    bool over() {return (expl&&(explosiontime>(timeToGo-0.1)));}
    virtual void calculateGravity(double gravity,double mult);
 private:
    bool expl,active;
    double activateTime,fuel,timeToGo,explosiontime;
+   QList<QPixmap> exploframes; // when mine explodes, we set frames to exploframes (needed because both player's mines have
+   				// the same explosion animation
 };
 
-class ExplosionSprite:public Q3CanvasSprite
+class ExplosionSprite:public AnimatedSprite
 {
 public:
-   ExplosionSprite(Q3CanvasPixmapArray *seq, Q3Canvas* field, MobileSprite *sp);
-   virtual int rtti() const {return S_EXPLOSION;}
+   ExplosionSprite(const QList<QPixmap> &animation, QGraphicsScene *scene = 0, MobileSprite *sp = 0);
+   virtual int type() const {return S_EXPLOSION;}
    bool isOver() {return over;}
    virtual void forward(double mult);
-   void setSequence(Q3CanvasPixmapArray *seq);
 private:
    double timeToGo,time;
    bool over;

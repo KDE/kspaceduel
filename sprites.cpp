@@ -18,27 +18,38 @@ This program is free software; you can redistribute it and/or modify
 #include "sprites.h"
 #include "mathroutines.h"
 #include <math.h>
+#include <kdebug.h>
+#include <QGraphicsScene>
+
+#include "mainview.h"
 
 
-SunSprite::SunSprite(Q3CanvasPixmapArray *seq, Q3Canvas* canvas)
-      :Q3CanvasSprite(seq, canvas)
+SunSprite::SunSprite(QPixmap* pixmap, QGraphicsScene* scene)
+      :QGraphicsPixmapItem(*pixmap, 0, scene)
 {
     // doesn't work with Qt 2.2.2 anymore
     // setZ(0);
 }
 
 
-PowerupSprite::PowerupSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int t,
+PowerupSprite::PowerupSprite(QPixmap* pixmap, QGraphicsScene* scene, int t,
                              double lifetime)
-      :Q3CanvasSprite(seq, canvas)
+      :QGraphicsPixmapItem(*pixmap, 0, scene)
 {
    time=lifetime;
-   type=t;
+   mtype=t;
 }
 
 
-MobileSprite::MobileSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int pn)
-      :Q3CanvasSprite(seq, canvas)
+MobileSprite::MobileSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn)
+      :QGraphicsPixmapItem(*pixmap, 0, scene)
+{
+   stopped=false;
+   playerNumber=pn;
+}
+
+MobileSprite::MobileSprite(QGraphicsItem * parent, QGraphicsScene * scene, int pn)
+      :QGraphicsPixmapItem(parent, scene)
 {
    stopped=false;
    playerNumber=pn;
@@ -48,19 +59,20 @@ void MobileSprite::forward(double mult, int fr)
 {
    if(!stopped)
    {
-      Q3CanvasSprite::moveBy(xVelocity()*mult,yVelocity()*mult);
+      QGraphicsPixmapItem::moveBy(xVelocity()*mult,yVelocity()*mult);
       checkBounds();
-      setFrame(fr);
+      // FIXME
+      //setFrame(fr);
    }
-   else
-      setFrame(fr);
+  // else
+    //  setFrame(fr);
 }
 
 void MobileSprite::forward(double mult)
 {
    if(!stopped)
    {
-      Q3CanvasSprite::moveBy(xVelocity()*mult,yVelocity()*mult);
+      QGraphicsPixmapItem::moveBy(xVelocity()*mult,yVelocity()*mult);
       checkBounds();
    }
 }
@@ -72,8 +84,8 @@ void MobileSprite::checkBounds()
 
    cx = x();
    cy = y();
-   ch = canvas()->height();
-   cw = canvas()->width();
+   ch = (int)scene()->height();
+   cw = (int)scene()->width();
 
    if ( (int)(cx+0.5) < 0 )
       cx = cw - 1 - fmod( -cx, cw );
@@ -86,7 +98,7 @@ void MobileSprite::checkBounds()
    if ( (cx != x()) || (cy != y()) )
    {
       // printf("%5.2f %5.2f %5.2f %5.2f\n", x(), y(), cx, cy);
-      move( cx, cy );
+      setPos(QPointF(cx, cy));
    }
 }
 
@@ -96,8 +108,8 @@ void MobileSprite::calculateGravity(double gravity,double mult)
 
    if(!stopped)
    {
-      ex=x()-canvas()->width()/2.0;
-      ey=y()-canvas()->height()/2.0;
+      ex=x()-scene()->width()/2.0;
+      ey=y()-scene()->height()/2.0;
 
       abs_2=ex*ex+ey*ey;
       sq=sqrt(abs_2);
@@ -110,13 +122,29 @@ void MobileSprite::calculateGravity(double gravity,double mult)
    }
 }
 
+int MobileSprite::spriteFieldWidth()
+{
+	return (int)scene()->width();
+}
+
+int MobileSprite::spriteFieldHeight()
+{
+	return (int)scene()->height();
+}
+
+void MobileSprite::setVelocity(double vx, double vy)
+{
+	xvel = vx;
+	yvel = vy;
+}
+
 AiSprite MobileSprite::toAiSprite()
 {
        // y direction: screen:       bottom to top
        //              mathematical: top to bottom
    AiSprite as;
-   as.x=x()-canvas()->width()/2.0;
-   as.y=-(y()-canvas()->height()/2.0);
+   as.x=x()-scene()->width()/2.0;
+   as.y=-(y()-scene()->height()/2.0);
    as.dx=xVelocity();
    as.dy=-yVelocity();
    as.sun=false;
@@ -124,29 +152,75 @@ AiSprite MobileSprite::toAiSprite()
    return as;
 }
 
-ShipSprite::ShipSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int pn)
-      :MobileSprite(seq,canvas,pn)
+AnimatedSprite::AnimatedSprite(const QList<QPixmap> &animation,
+                                        QGraphicsScene *scene, int pn)
+    : MobileSprite(0, scene)
 {
-   hitpoints=99;
-   energy=99.9;
+	frames = animation;
+	currentFrame = 0;
+	setFrame(0);
+}
+
+void AnimatedSprite::setFrame(int frame)
+{
+    if (!frames.isEmpty()) {
+        currentFrame = frame % frames.size();
+        setPixmap(frames.at(currentFrame));
+    }
+}
+
+void AnimatedSprite::advance(int phase)
+{
+    if (phase == 1 && !frames.isEmpty()) {
+        currentFrame = (currentFrame + 1) % frames.size();
+        setPixmap(frames.at(currentFrame));
+    }
+}
+
+QPainterPath AnimatedSprite::shape() const
+{
+    QPainterPath path;
+    path.addRect(0, 0,
+                 frames.at(currentFrame).width(),
+                 frames.at(currentFrame).height());
+    return path;
+}
+
+void AnimatedSprite::setAnimation(const QList<QPixmap> &animation)
+{
+	frames = animation;
+	setFrame(0);
+}
+
+ShipSprite::ShipSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn)
+      :MobileSprite(pixmap,scene,pn)
+{
+   hitpoints=MAX_HP;
+   energy=MAX_ENERGY;
    explosion=-1;
-   setZ(-20);
+   setZValue(-20);
    rotation=0;
    bulletPowerups=0;
    minePowerups=0;
+   angle = 0;
 }
 
 void ShipSprite::setRotation(double r)
 {
-   int nf,of=frame();
+   //int nf,of=frame();
    rotation=r;
    if(rotation<0)
       rotation-=((int)(rotation/(2*M_PI))-1)*2*M_PI;
    if(rotation>=2*M_PI)
       rotation-=(int)(rotation/(2*M_PI))*2*M_PI;
-   nf=(int)(rotation/(2*M_PI)*ROTNUM)%ROTNUM;
-   if(nf!=of)
-      setFrame(nf);
+  // nf=(int)(rotation/(2*M_PI)*ROTNUM)%ROTNUM;
+  //  if(nf!=of)
+  //    setFrame(nf);*/
+   translate(10.5,17);
+   rotate(-(rotation-angle)*57.3);
+   //kDebug() << rotation-angle << endl;
+   translate(-10.5,-17);
+   angle = rotation;
 }
 
 void ShipSprite::forward(double mult)
@@ -187,8 +261,8 @@ void ShipSprite::calculateGravityAndEnergy(double gravity,double sunEnergy,
 
    if(!stopped)
    {
-      ex=x()-canvas()->width()/2.0;
-      ey=y()-canvas()->height()/2.0;
+      ex=x()-scene()->width()/2.0;
+      ey=y()-scene()->height()/2.0;
 
       abs_2=ex*ex+ey*ey;
       sq=sqrt(abs_2);
@@ -232,10 +306,10 @@ void ShipSprite::rotateLeft(double rotationEnergyNeed,double rotationSpeed)
    }
 }
 
-BulletSprite::BulletSprite(Q3CanvasPixmapArray* seq,Q3Canvas* canvas, int pn,double lifetime)
-      :MobileSprite(seq,canvas,pn)
+BulletSprite::BulletSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn,double lifetime)
+      :MobileSprite(pixmap,scene,pn)
 {
-   setZ(-10);
+   setZValue(-10);
    time=lifetime;
 }
 
@@ -251,11 +325,12 @@ void BulletSprite::forward(double mult,int fr)
    time-=mult;
 }
 
-MineSprite::MineSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int pn,double atime,double f)
-      :MobileSprite(seq,canvas,pn)
+MineSprite::MineSprite(const QList<QPixmap> &animation, const QList<QPixmap> &exploanimation, QGraphicsScene* scene, int pn,double atime,double f)
+      :AnimatedSprite(animation,scene,pn)
 {
+   exploframes = exploanimation;
    activateTime=atime;
-   setZ(-25);
+   setZValue(-25);
    fuel=f;
    explosiontime=0;
    timeToGo=0.0;
@@ -263,14 +338,13 @@ MineSprite::MineSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, int pn,double
    active=false;
 }
 
-void MineSprite::explode(Q3CanvasPixmapArray *seq)
+void MineSprite::explode()
 {
-   setSequence(seq);
-   timeToGo=seq->count();
+   setAnimation(exploframes);
+   timeToGo=frameCount();
    expl=true;
-   setFrame(0);
    explosiontime=0.0;
-   setZ(-8);
+   setZValue(-8);
    setFuel(0.0);
 }
 
@@ -305,8 +379,8 @@ void MineSprite::calculateGravity(double gravity,double mult)
 
    if(!stopped)
    {
-      ex=x()-canvas()->width()/2.0;
-      ey=y()-canvas()->height()/2.0;
+      ex=x()-scene()->width()/2.0;
+      ey=y()-scene()->height()/2.0;
 
       abs_2=ex*ex+ey*ey;
       sq=sqrt(abs_2);
@@ -321,22 +395,22 @@ void MineSprite::calculateGravity(double gravity,double mult)
    }
 }
 
-ExplosionSprite::ExplosionSprite(Q3CanvasPixmapArray* seq, Q3Canvas* canvas, MobileSprite *sp)
-      :Q3CanvasSprite(seq, canvas)
+ExplosionSprite::ExplosionSprite(const QList<QPixmap> &animation, QGraphicsScene *scene, MobileSprite *sp)
+      :AnimatedSprite(animation, scene)
 {
    over=false;
-   setZ(-5);
+   setZValue(-5);
    obj=sp;
-   timeToGo=seq->count();
+   timeToGo = frameCount();
    time=0;
 
-   move(sp->x(),sp->y());
+   setPos(QPointF(sp->x(),sp->y()));
 }
 
 void ExplosionSprite::forward(double mult)
 {
    int of=frame();
-   move(obj->x(),obj->y());
+   setPos(QPointF(obj->x(),obj->y()));
    time+=mult;
 
    if(time>=timeToGo)
@@ -347,11 +421,4 @@ void ExplosionSprite::forward(double mult)
    else
       if((int)time!=of)
          setFrame((int)time);
-}
-
-
-void ExplosionSprite::setSequence(Q3CanvasPixmapArray *seq)
-{
-   timeToGo=seq->count();
-   Q3CanvasSprite::setSequence(seq);
 }

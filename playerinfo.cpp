@@ -16,7 +16,6 @@ This program is free software; you can redistribute it and/or modify
 */
 
 #include "playerinfo.h"
-#include <qpixmap.h>
 #include <QToolTip>
 //Added by qt3to4:
 #include <klocale.h>

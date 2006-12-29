@@ -4,7 +4,7 @@
 
 ########### install files ###############
 
-install( FILES pbullet.pbm pbullet.ppm penergy.pbm penergy.ppm pmine.pbm pmine.ppm  pshield.pbm pshield.ppm  DESTINATION  ${DATA_INSTALL_DIR}/kspaceduel/sprites/powerups )
+install( FILES pbullet.png penergy.png pmine.png pshield.png  DESTINATION  ${DATA_INSTALL_DIR}/kspaceduel/sprites/powerups )
 
 
 
