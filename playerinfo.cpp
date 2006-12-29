@@ -15,11 +15,12 @@ This program is free software; you can redistribute it and/or modify
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "playerinfo.h"
 #include <QToolTip>
-//Added by qt3to4:
+
 #include <klocale.h>
 #include <kstandarddirs.h>
+
+#include "playerinfo.h"
 
 
 PlayerInfo::PlayerInfo(int pnr,QWidget *parent)

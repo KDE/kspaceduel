@@ -18,14 +18,13 @@ This program is free software; you can redistribute it and/or modify
 #ifndef __KSD_AI_H
 #define __KSD_AI_H
 
-#include <krandomsequence.h>
-
 #include <q3ptrlist.h>
 
+#include <krandomsequence.h>
 
-#include "sprites.h"
 #include "dialogs.h"
 #include "options.h"
+#include "sprites.h"
 
 enum Rotation {RLEFT,RNONE,RRIGHT};
 

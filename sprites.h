@@ -19,7 +19,6 @@ This program is free software; you can redistribute it and/or modify
 #define __SPRITE_OBJECTS_H
 
 #include <QGraphicsPixmapItem>
-
 class QGraphicsScene;
 
 #include "defines.h"

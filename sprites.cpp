@@ -15,13 +15,15 @@ This program is free software; you can redistribute it and/or modify
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "sprites.h"
-#include "mathroutines.h"
 #include <math.h>
-#include <kdebug.h>
+
 #include <QGraphicsScene>
 
+#include <kdebug.h>
+
 #include "mainview.h"
+#include "mathroutines.h"
+#include "sprites.h"
 
 
 SunSprite::SunSprite(QPixmap* pixmap, QGraphicsScene* scene)

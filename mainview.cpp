@@ -18,31 +18,27 @@ This program is free software; you can redistribute it and/or modify
 #include "mainview.h"
 
 #include <math.h>
-#include <qbitmap.h>
-#include <QFile>
-#include <q3vbox.h>
-#include <ktoggleaction.h>
-//Added by qt3to4:
-#include <QPixmap>
-#include <Q3PtrList>
-#include <QKeyEvent>
-#include <QTimerEvent>
-#include <QResizeEvent>
-#include <QAbstractEventDispatcher>
-#include <kapplication.h>
-#include <kaction.h>
-#include <klocale.h>
-#include <kactioncollection.h>
-#include <kstandarddirs.h>
-#include <kglobalsettings.h>
-#include <kconfig.h>
-#include <kiconloader.h>
-#include <kglobal.h>
 
+#include <kaction.h>
+#include <kactioncollection.h>
+#include <kapplication.h>
+#include <kconfig.h>
+#include <kglobal.h>
+#include <kglobalsettings.h>
+#include <kiconloader.h>
+#include <klocale.h>
+#include <kstandarddirs.h>
+#include <ktoggleaction.h>
+
+#include <Q3PtrList>
+#include <QAbstractEventDispatcher>
 #include <QBrush>
-#include <qfileinfo.h>
-#include <qdir.h>
+#include <QDir>
+#include <QFileInfo>
 #include <QGraphicsSimpleTextItem>
+#include <QKeyEvent>
+#include <QResizeEvent>
+#include <QTimerEvent>
 
 #include "ai.h"
 #include "options.h"

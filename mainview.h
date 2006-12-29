@@ -18,24 +18,20 @@ This program is free software; you can redistribute it and/or modify
 #ifndef __MY_MAIN_VIEW_H
 #define __MY_MAIN_VIEW_H
 
-#include <QWidget>
-//Added by qt3to4:
-#include <QTimerEvent>
-#include <QResizeEvent>
-#include <QKeyEvent>
 #include <Q3PtrList>
-#include <QLinkedList>
-
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <QLinkedList>
+#include <QTimerEvent>
+#include <QWidget>
 
+#include <krandomsequence.h>
 class KToggleAction;
 class KActionCollection;
 class QGraphicsSimpleTextItem;
-#include <krandomsequence.h>
 
-#include "sprites.h"
 #include "dialogs.h"
+#include "sprites.h"
 class Ai;
 
 #ifdef sun
