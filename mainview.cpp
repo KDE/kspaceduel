@@ -90,8 +90,8 @@ MyMainView::MyMainView(QWidget *parent)
    
    sunpixmap = new QPixmap(tmp + MV_SUN_PNG);
    sun=new SunSprite(sunpixmap, &field);
-   // FIXME: don't use fixed sun size (75x75)
-   sun->setPos(QPointF(width()/2-1-37,height()/2-1-37));
+   sun->setPos(QPointF(width()/2-1-(sun->width()/2),
+                       height()/2-1-(sun->height()/2)));
    
    shippixmap[0] = new QPixmap(tmp + MV_SHIP1_PNG);
    shippixmap[1] = new QPixmap(tmp + MV_SHIP2_PNG);
@@ -450,8 +450,8 @@ void MyMainView::resizeEvent(QResizeEvent *event)
 
    // printf("%d %d\n",field.width(),field.height());
 
-   // FIXME don't use fixed sun size (75x75)
-   sun->setPos(QPointF(width()/2-1-37,height()/2-1-37));
+   sun->setPos(QPointF(width()/2-1-(sun->width()/2),
+                       height()/2-1-(sun->height()/2)));
 
    for(i=0;i<2;i++)
    {
@@ -497,10 +497,12 @@ void MyMainView::newRound()
    QAbstractEventDispatcher::instance()->unregisterTimers(this);
    mx=width()/2.0;
    my=height()/2.0;
-   ship[0]->setPos(QPointF(mx+config.startPosX,my+config.startPosY));
+   ship[0]->setPos(QPointF(mx+config.startPosX-(ship[0]->width()/2),
+                           my+config.startPosY-(ship[0]->height()/2)));
    ship[0]->setRotation(0.0);
 
-   ship[1]->setPos(QPointF(mx-config.startPosX,my-config.startPosY));
+   ship[1]->setPos(QPointF(mx-config.startPosX-(ship[1]->width()/2),
+                           my-config.startPosY-(ship[1]->height()/2)));
    ship[1]->setRotation(M_PI);
 
    ship[0]->setVelocity(config.startVelX,config.startVelY);
@@ -707,7 +709,7 @@ void MyMainView::moveShips()
                   bullet=new BulletSprite(bulletpixmap[i],&field,i,
                                           config.bulletLifeTime);
 		  QPointF p;
-		  p = ship[i]->mapToScene(QPointF(11.5,17));
+		  p = ship[i]->mapToScene(ship[i]->center());
 		  bullet->setPos(QPointF(p.x()+nx*SHOTDIST,p.y()-ny*SHOTDIST));
                   bullet->setVelocity(ship[i]->xVelocity()+nx*config.shotSpeed,
                                       ship[i]->yVelocity()-ny*config.shotSpeed);
@@ -734,7 +736,9 @@ void MyMainView::moveShips()
 		     mine=new MineSprite(animation[ID_MINE2],animation[ID_MINEEXPLO],&field,i,
                                       config.mineActivateTime,config.mineFuel);
 		  QPointF p;
-		  mine->setPos(ship[i]->mapToScene(QPointF(4,10.5)));
+		  mine->setPos(ship[i]->mapToScene(ship[i]->center()));
+                  // move mine to center
+                  mine->moveBy(-mine->center().x(),-mine->center().y());
                   mine->setVelocity(0,0);
                   //mine->setBoundsAction(QwRealMobileSprite::Wrap);
                   mine->show();
@@ -974,7 +978,7 @@ void MyMainView::collisions()
                mine->explode();
 	       foreach (QGraphicsItem *item, hitlist)
                {
-		  // FIXME: why does it crash with qgraphicsitem_cast?
+                  // FIXME: why does it crash with qgraphicsitem_cast?
 		  bullet = static_cast<BulletSprite*>(item);// qgraphicsitem_cast<BulletSprite*>(item);
                   bullets[bullet->getPlayerNumber()]->removeRef(bullet);
                }

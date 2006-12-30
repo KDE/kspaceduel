@@ -25,9 +25,42 @@ This program is free software; you can redistribute it and/or modify
 #include "mathroutines.h"
 #include "sprites.h"
 
+SimpleSprite::SimpleSprite(QPixmap* pixmap, QGraphicsScene* scene)
+      :QGraphicsPixmapItem(*pixmap, 0, scene)
+{
+   init();
+}
+
+SimpleSprite::SimpleSprite(QGraphicsItem * parent, QGraphicsScene * scene)
+      :QGraphicsPixmapItem(parent, scene)
+{
+   init();
+}
+
+void SimpleSprite::init()
+{
+   m_width = pixmap().width();
+   m_height = pixmap().height();
+   m_center = QPointF(m_width/2.0f,m_height/2.0f);
+}
+
+int SimpleSprite::width()
+{
+   return m_width;
+}
+
+int SimpleSprite::height()
+{
+   return m_height;
+}
+
+QPointF SimpleSprite::center()
+{
+   return m_center;
+}
 
 SunSprite::SunSprite(QPixmap* pixmap, QGraphicsScene* scene)
-      :QGraphicsPixmapItem(*pixmap, 0, scene)
+      :SimpleSprite(pixmap, scene)
 {
     // doesn't work with Qt 2.2.2 anymore
     // setZ(0);
@@ -36,7 +69,7 @@ SunSprite::SunSprite(QPixmap* pixmap, QGraphicsScene* scene)
 
 PowerupSprite::PowerupSprite(QPixmap* pixmap, QGraphicsScene* scene, int t,
                              double lifetime)
-      :QGraphicsPixmapItem(*pixmap, 0, scene)
+      :SimpleSprite(pixmap, scene)
 {
    time=lifetime;
    mtype=t;
@@ -44,14 +77,14 @@ PowerupSprite::PowerupSprite(QPixmap* pixmap, QGraphicsScene* scene, int t,
 
 
 MobileSprite::MobileSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn)
-      :QGraphicsPixmapItem(*pixmap, 0, scene)
+      :SimpleSprite(pixmap, scene)
 {
    stopped=false;
    playerNumber=pn;
 }
 
 MobileSprite::MobileSprite(QGraphicsItem * parent, QGraphicsScene * scene, int pn)
-      :QGraphicsPixmapItem(parent, scene)
+      :SimpleSprite(parent, scene)
 {
    stopped=false;
    playerNumber=pn;

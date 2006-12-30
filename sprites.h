@@ -33,14 +33,31 @@ struct AiSprite
    bool sun, border;
 };
 
-class SunSprite:public QGraphicsPixmapItem
+class SimpleSprite: public QGraphicsPixmapItem
+{
+   public:
+      int width();
+      int height();
+      QPointF center();
+   private:
+      void init();
+      
+      int m_width;
+      int m_height;
+      QPointF m_center;
+   protected:
+      SimpleSprite(QPixmap* pixmap, QGraphicsScene* scene);
+      SimpleSprite(QGraphicsItem* parent = 0, QGraphicsScene * scene = 0);
+};
+
+class SunSprite:public SimpleSprite
 {
 public:
    SunSprite(QPixmap* pixmap, QGraphicsScene* scene);
    virtual int type() const {return S_SUN;}
 };
 
-class PowerupSprite:public QGraphicsPixmapItem
+class PowerupSprite:public SimpleSprite
 {
 public:
    enum {PowerupMine=0, PowerupBullet, PowerupShield, PowerupEnergy,
@@ -56,7 +73,7 @@ private:
    int mtype;
 };
 
-class MobileSprite:public QGraphicsPixmapItem
+class MobileSprite:public SimpleSprite
 {
 public:
    MobileSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn);
