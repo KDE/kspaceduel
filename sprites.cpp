@@ -434,7 +434,8 @@ ExplosionSprite::ExplosionSprite(const QList<QPixmap> &animation, QGraphicsScene
       :AnimatedSprite(animation, scene)
 {
    over=false;
-   setZValue(-5);
+   //setZValue(-5);
+   setZValue(5);
    obj=sp;
    timeToGo = frameCount();
    time=0;
