@@ -6,6 +6,6 @@ maybe port to SVG (partially?)
 refactoring (split up sprites.h/cpp?)
 clean up
 fix bug: clicking on playfield
-fix bug: starting positions first round
+[DONE]fix bug: starting positions first round
 fix bug: shortcut configuration
 

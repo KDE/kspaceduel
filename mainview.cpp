@@ -456,7 +456,7 @@ void MyMainView::resizeEvent(QResizeEvent *event)
    for(i=0;i<2;i++)
    {
       // ship[i]->adoptSpritefieldBounds();
-      ship[i]->setPos(QPointF(mx,my));
+      ship[i]->moveBy(mx,my);
       current=mines[i]->at();
       for(mine=mines[i]->first();mine;mine=mines[i]->next())
       {
