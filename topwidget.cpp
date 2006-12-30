@@ -149,7 +149,6 @@ void MyTopLevelWidget::initStatusBar( )
 void MyTopLevelWidget::start()
 {
    playfield->newGame();
-   playfield->newRound();
 }
 
 void MyTopLevelWidget::setStatusText(const QString & str,int id)
