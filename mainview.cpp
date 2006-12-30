@@ -582,7 +582,6 @@ void MyMainView::timerEvent(QTimerEvent *event)
             }
             textSprite=new QGraphicsSimpleTextItem(0,&field);
 	    // FIXME
-            textSprite->setPos(QPointF(width()/2,height()/2-90));
            // textSprite->setTextFlags(Qt::AlignCenter);
 	    textSprite->setPen(QPen(QColor(255,160,0)));
             textSprite->setFont(QFont(KGlobalSettings::generalFont().family(),14));
@@ -606,6 +605,9 @@ void MyMainView::timerEvent(QTimerEvent *event)
                ship[0]->setWins(w);
                emit(wins(0,w));
             }
+            // must do this after setting text, because length is unknown until now
+            textSprite->setPos(QPointF((width()-textSprite->boundingRect().width()) / 2,height()/2-90));
+            
             QString str = i18n("Press %1 for new round",
                            KShortcut(GAME_START_SHORTCUT).toString());
             emit(setStatusText(str,IDS_MAIN));
