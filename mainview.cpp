@@ -974,7 +974,8 @@ void MyMainView::collisions()
                mine->explode();
 	       foreach (QGraphicsItem *item, hitlist)
                {
-		  bullet = qgraphicsitem_cast<BulletSprite*>(item);
+		  // FIXME: why does it crash with qgraphicsitem_cast?
+		  bullet = static_cast<BulletSprite*>(item);// qgraphicsitem_cast<BulletSprite*>(item);
                   bullets[bullet->getPlayerNumber()]->removeRef(bullet);
                }
             }
