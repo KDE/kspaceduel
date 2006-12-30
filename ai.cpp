@@ -53,6 +53,17 @@ Ai::Ai(int pn,ShipSprite* s[2],Q3PtrList<BulletSprite>* b[2],
    minesHitByShot.setAutoDelete(true);
 }
 
+Ai::~Ai()
+{
+   int i;
+   
+   for (i=0;i<2;i++)
+   {
+      delete shipsNextPositions[i];
+      delete aiMines[i];
+   }
+}
+
 void Ai::newRound()
 {
    accelerateFramesNumber=0;

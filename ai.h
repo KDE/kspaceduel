@@ -57,6 +57,7 @@ class Ai
 public:
    Ai(int pn,ShipSprite* s[2],Q3PtrList<BulletSprite> *b[2],
       Q3PtrList<MineSprite> *m[2],SConfig *c);
+   ~Ai();
    void newRound();
    void think();
    bool rotateLeft(){return rotation==RLEFT;}

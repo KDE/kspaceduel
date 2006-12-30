@@ -130,7 +130,19 @@ MyMainView::MyMainView(QWidget *parent)
 
 MyMainView::~MyMainView()
 {
+   int i;
    QAbstractEventDispatcher::instance()->unregisterTimers(this);
+
+   delete sunpixmap;
+   for(i=0;i<2;i++)
+   {
+      delete shippixmap[i];
+      delete bulletpixmap[i];
+      delete ai[i];
+   }
+   for(i=0;i<4;i++)
+      delete poweruppixmap[i];
+   
    writeConfig();
 }
 
