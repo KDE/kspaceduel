@@ -18,37 +18,15 @@ This program is free software; you can redistribute it and/or modify
 #ifndef __SPRITE_OBJECTS_H
 #define __SPRITE_OBJECTS_H
 
-#include <QGraphicsPixmapItem>
+//#include <QGraphicsPixmapItem>
 class QGraphicsScene;
 
 #include "defines.h"
+#include "spritebase.h"
 
 #ifdef sun
 #undef sun
 #endif
-
-struct AiSprite
-{
-   double x,y,dx,dy;
-   bool sun, border;
-};
-
-class SimpleSprite: public QGraphicsPixmapItem
-{
-   public:
-      int width();
-      int height();
-      QPointF center();
-   private:
-      void init();
-      
-      int m_width;
-      int m_height;
-      QPointF m_center;
-   protected:
-      SimpleSprite(QPixmap* pixmap, QGraphicsScene* scene);
-      SimpleSprite(QGraphicsItem* parent = 0, QGraphicsScene * scene = 0);
-};
 
 class SunSprite:public SimpleSprite
 {
@@ -71,56 +49,6 @@ public:
 private:
    double time;
    int mtype;
-};
-
-class MobileSprite:public SimpleSprite
-{
-public:
-   MobileSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn);
-
-   virtual void forward(double mult,int frame);
-   virtual void forward(double mult);
-   virtual void calculateGravity(double gravity,double mult);
-   int spriteFieldWidth();
-   int spriteFieldHeight();
-   double xVelocity(){return xvel;}
-   double yVelocity(){return yvel;}
-   void setVelocity(double vx, double vy);
-   AiSprite toAiSprite();
-
-   bool isStopped() {return stopped;}
-   void stop(bool s=true) {stopped=s;}
-   int getPlayerNumber() {return playerNumber;}
-protected:
-   MobileSprite(QGraphicsItem* parent = 0, QGraphicsScene * scene = 0, int pn = 0);
-	
-   void checkBounds();
-   bool stopped;
-   int playerNumber;
-   double xvel;
-   double yvel;
-};
-
-class AnimatedSprite:public MobileSprite
-{
-public:
-   explicit AnimatedSprite(const QList<QPixmap> &animation, QGraphicsScene *scene = 0, int pn=0);
-
-   void setFrame(int frame);
-   inline int frame() const
-   { return currentFrame; }
-   inline int frameCount() const
-   { return frames.size(); }
-   inline QPixmap image(int frame) const
-   { return frames.isEmpty() ? QPixmap() : frames.at(frame % frames.size()); }
-   QPainterPath shape() const;
-   void setAnimation(const QList<QPixmap> &animation);
-
-   void advance(int phase);
-
-private:
-   int currentFrame;
-   QList<QPixmap> frames;
 };
 
 class ShipSprite:public MobileSprite

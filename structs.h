@@ -60,4 +60,10 @@ const SConfig predefinedConfig[]={{1.0, 2200.0, 0.2, 1.0, 9000.0, 1.0,
 const char predefinedConfigName[predefinedConfigNum][15]=
 {"Default","Bullet","Chaos","Lack of Energy"}; 
 
+struct AiSprite
+{
+   double x,y,dx,dy;
+   bool sun, border;
+};
+
 #endif
