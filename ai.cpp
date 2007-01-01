@@ -17,10 +17,11 @@ This program is free software; you can redistribute it and/or modify
 
 #include <math.h>
 
+#include <QVector>
+
 #include "ai.h"
 #include "mathroutines.h"
 #include "options.h"
-#include <QVector>
 
 int Ai::calcFrameIncrement[Options::EnumAiDifficulty::COUNT] = {15,8,6,2};
 int Ai::calcPositionNumber[Options::EnumAiDifficulty::COUNT] = {10,15,20,60};
@@ -50,6 +51,17 @@ Ai::Ai(int pn,ShipSprite* s[2],Q3PtrList<BulletSprite>* b[2],
    myShots.setAutoDelete(true);
    objectsHitByShip.setAutoDelete(true);
    minesHitByShot.setAutoDelete(true);
+}
+
+Ai::~Ai()
+{
+   int i;
+   
+   for (i=0;i<2;i++)
+   {
+      delete shipsNextPositions[i];
+      delete aiMines[i];
+   }
 }
 
 void Ai::newRound()

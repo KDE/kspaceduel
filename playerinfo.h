@@ -20,11 +20,8 @@ This program is free software; you can redistribute it and/or modify
 
 #include <QFrame>
 #include <QLabel>
-//Added by qt3to4:
-#include <QPixmap>
+#include <QLCDNumber>
 class QPixmap;
-#include <qlcdnumber.h>
-#include <QColor>
 
 class PlayerInfo:public QFrame
 {

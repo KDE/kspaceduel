@@ -15,21 +15,14 @@ This program is free software; you can redistribute it and/or modify
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include <QLabel>
-#include <QComboBox>
-#include <qtabwidget.h>
-#include <qslider.h>
-#include <qlcdnumber.h>
-#include <QLayout>
-//Added by qt3to4:
-#include <QVBoxLayout>
-#include <QFrame>
 #include <QGridLayout>
+#include <QLCDNumber>
+#include <QSlider>
 
 #include <klocale.h>
 
-#include "options.h"
 #include "dialogs.h"
+#include "options.h"
 #include "ui_general.h"
 
 class General : public QWidget, public Ui::General

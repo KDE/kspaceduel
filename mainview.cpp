@@ -18,46 +18,65 @@ This program is free software; you can redistribute it and/or modify
 #include "mainview.h"
 
 #include <math.h>
-#include <qbitmap.h>
-#include <QFile>
-#include <q3vbox.h>
-#include <ktoggleaction.h>
-//Added by qt3to4:
-#include <QPixmap>
-#include <Q3PtrList>
-#include <QKeyEvent>
-#include <QTimerEvent>
-#include <QResizeEvent>
-#include <QAbstractEventDispatcher>
-#include <kapplication.h>
+
 #include <kaction.h>
-#include <klocale.h>
 #include <kactioncollection.h>
-#include <kstandarddirs.h>
-#include <kglobalsettings.h>
+#include <kapplication.h>
 #include <kconfig.h>
-#include <kiconloader.h>
 #include <kglobal.h>
+#include <kglobalsettings.h>
+#include <kiconloader.h>
+#include <klocale.h>
+#include <kstandarddirs.h>
+#include <ktoggleaction.h>
+
+#include <Q3PtrList>
+#include <QAbstractEventDispatcher>
+#include <QBrush>
+#include <QDir>
+#include <QFileInfo>
+#include <QGraphicsSimpleTextItem>
+#include <QKeyEvent>
+#include <QResizeEvent>
+#include <QTimerEvent>
 
 #include "ai.h"
 #include "options.h"
 
 KToggleAction *MyMainView::pauseAction = 0;
 
+static struct
+ {
+     int id;
+     const char *path;
+ }
+ kspd_animations [] =
+ {
+     { ID_EXPLOSION, "explosion/explos%1.png"},
+     { ID_MINE1, "ship1/mine%1.png"},
+     { ID_MINE2, "ship2/mine%1.png"},
+     { ID_MINEEXPLO, "explosion/mineex%1.png"},
+     { 0, 0}
+ };
+
 MyMainView::MyMainView(QWidget *parent)
     :QWidget(parent),
-    field(DEF_WIDTH,DEF_HEIGHT),
+    field(this),//0,0,DEF_WIDTH,DEF_HEIGHT),
     view(&field,this)
 {
    int i,p;
    setMinimumSize(600,400);
    random.setSeed(0);
    QPixmap backgr(KStandardDirs::locate("appdata", MV_BACKGROUND));
-   field.setBackgroundPixmap(backgr);
+   
+   field.setBackgroundBrush(QBrush(backgr));
+   view.setCacheMode(QGraphicsView::CacheBackground);
 
-   view.setResizePolicy(Q3ScrollView::AutoOne);
-   view.setHScrollBarMode(Q3ScrollView::AlwaysOff);
-   view.setVScrollBarMode(Q3ScrollView::AlwaysOff);
+   setFocusPolicy(Qt::StrongFocus);
+   // FIXME: is this needed anymore?
+   //view.setResizePolicy(Q3ScrollView::AutoOne);
+   view.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+   view.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
    for(p=0;p<2;p++)
    {
@@ -68,42 +87,27 @@ MyMainView::MyMainView(QWidget *parent)
    }
 
    QString tmp = KGlobal::dirs()->findResourceDir("appdata", (QString)MV_BACKGROUND);
-
-   Q3CanvasPixmapArray *sunsequence
-      = loadOldPixmapSequence( tmp + MV_SUN_PPM, tmp + MV_SUN_PBM );
-   sun=new SunSprite(sunsequence, &field);
-   sun->move(width()/2-1,height()/2-1);
-   sun->show();
-
-   explosionsequence = loadOldPixmapSequence( tmp + MV_EXPLOSION_PPM,
-                                              tmp + MV_EXPLOSION_PBM, 31 );
-   mineexplosionsequence = loadOldPixmapSequence(tmp + MV_MINEEX_PPM,
-                                                 tmp + MV_MINEEX_PBM, 18 );
-
-   shipsequence[0] = loadOldPixmapSequence( tmp + MV_SHIP1_PPM,
-                                            tmp + MV_SHIP1_PBM, ROTNUM );
-   shipsequence[1] = loadOldPixmapSequence( tmp + MV_SHIP2_PPM,
-                                            tmp + MV_SHIP2_PBM, ROTNUM);
-   ship[0]=new ShipSprite(shipsequence[0],&field,0);
-   ship[1]=new ShipSprite(shipsequence[1],&field,1);
-
-   bulletsequence[0] = loadOldPixmapSequence( tmp + MV_BULLET1_PPM,
-                                              tmp + MV_BULLET1_PBM );
-   bulletsequence[1] = loadOldPixmapSequence( tmp + MV_BULLET2_PPM,
-                                              tmp + MV_BULLET2_PBM );
-   minesequence[0] = loadOldPixmapSequence( tmp + MV_MINE1_PPM,
-                                            tmp + MV_MINE1_PBM, 2);
-   minesequence[1] = loadOldPixmapSequence( tmp + MV_MINE2_PPM,
-                                            tmp + MV_MINE2_PBM, 2);
-   powerupsequence[PowerupSprite::PowerupMine]
-      = loadOldPixmapSequence( tmp + MV_POWERMINE_PPM, tmp + MV_POWERMINE_PBM );
-   powerupsequence[PowerupSprite::PowerupBullet]
-      = loadOldPixmapSequence( tmp + MV_POWERBULLET_PPM, tmp + MV_POWERBULLET_PBM );
-   powerupsequence[PowerupSprite::PowerupShield]
-      = loadOldPixmapSequence( tmp + MV_POWERSHIELD_PPM, tmp + MV_POWERSHIELD_PBM );
-   powerupsequence[PowerupSprite::PowerupEnergy]
-      = loadOldPixmapSequence( tmp + MV_POWERENERGY_PPM, tmp + MV_POWERENERGY_PBM );
-
+   
+   sunpixmap = new QPixmap(tmp + MV_SUN_PNG);
+   sun=new SunSprite(sunpixmap, &field);
+   sun->setPos(QPointF(width()/2-1-(sun->width()/2),
+                       height()/2-1-(sun->height()/2)));
+   
+   shippixmap[0] = new QPixmap(tmp + MV_SHIP1_PNG);
+   shippixmap[1] = new QPixmap(tmp + MV_SHIP2_PNG);
+   ship[0]=new ShipSprite(shippixmap[0],&field,0);
+   ship[1]=new ShipSprite(shippixmap[1],&field,1);
+   
+   bulletpixmap[0] = new QPixmap(tmp + MV_BULLET1_PNG);
+   bulletpixmap[1] = new QPixmap(tmp + MV_BULLET2_PNG);
+   
+   poweruppixmap[0] = new QPixmap( tmp + MV_POWERMINE_PNG);
+   poweruppixmap[1] = new QPixmap( tmp + MV_POWERBULLET_PNG);
+   poweruppixmap[2] = new QPixmap( tmp + MV_POWERSHIELD_PNG);
+   poweruppixmap[3] = new QPixmap( tmp + MV_POWERENERGY_PNG);
+      
+   readSprites();
+   
    for(i=0;i<2;i++)
    {
       // ship[i]->setBoundsAction(QwRealMobileSprite::Wrap);
@@ -114,6 +118,7 @@ MyMainView::MyMainView(QWidget *parent)
       mines[i]->setAutoDelete(true);
 
    }
+   
 
    explosions.setAutoDelete(true);
    powerups.setAutoDelete(true);
@@ -125,7 +130,19 @@ MyMainView::MyMainView(QWidget *parent)
 
 MyMainView::~MyMainView()
 {
+   int i;
    QAbstractEventDispatcher::instance()->unregisterTimers(this);
+
+   delete sunpixmap;
+   for(i=0;i<2;i++)
+   {
+      delete shippixmap[i];
+      delete bulletpixmap[i];
+      delete ai[i];
+   }
+   for(i=0;i<4;i++)
+      delete poweruppixmap[i];
+   
    writeConfig();
 }
 
@@ -133,6 +150,27 @@ void MyMainView::setActionCollection(KActionCollection *a)
 {
    actionCollection = a;
 }
+
+ bool MyMainView::readSprites()
+ {
+     QString sprites_prefix = KGlobal::dirs()->findResourceDir("appdata", (QString)MV_BACKGROUND) + "sprites/";
+
+     int i = 0;
+     while ( kspd_animations[i].id )
+     {
+         QList<QPixmap> anim;
+         QString wildcard = sprites_prefix + kspd_animations[i].path;
+         wildcard.replace("%1", "*");
+         QFileInfo fi(wildcard);
+         foreach (QString entry, QDir(fi.path(), fi.fileName()).entryList())
+             anim << QPixmap(fi.path() + "/" + entry);
+         animation.insert( kspd_animations[i].id, anim );
+         i++;
+     }
+
+     // FixMe: test!
+     return true;
+ }
 
 void MyMainView::readConfig()
 {
@@ -420,10 +458,12 @@ void MyMainView::resizeEvent(QResizeEvent *event)
    my=(event->size().height()-event->oldSize().height())/2.0;
    QWidget::resizeEvent(event);
    view.resize(width(),height());
-   field.resize(width(),height());
+   field.setSceneRect(0, 0, width(),height());
 
    // printf("%d %d\n",field.width(),field.height());
-   sun->move(width()/2-1,height()/2-1);
+
+   sun->setPos(QPointF(width()/2-1-(sun->width()/2),
+                       height()/2-1-(sun->height()/2)));
 
    for(i=0;i<2;i++)
    {
@@ -450,6 +490,7 @@ void MyMainView::resizeEvent(QResizeEvent *event)
    }
    if(textSprite)
       textSprite->moveBy((int)mx,(int)my);
+   
    current=powerups.at();
    for(powerup=powerups.first();powerup;powerup=powerups.next())
       powerup->moveBy(mx,my);
@@ -468,13 +509,13 @@ void MyMainView::newRound()
    QAbstractEventDispatcher::instance()->unregisterTimers(this);
    mx=width()/2.0;
    my=height()/2.0;
-   ship[0]->move(mx+config.startPosX,my+config.startPosY);
+   ship[0]->setPos(QPointF(mx+config.startPosX-(ship[0]->width()/2),
+                           my+config.startPosY-(ship[0]->height()/2)));
    ship[0]->setRotation(0.0);
-   ship[0]->setFrame(0);
 
-   ship[1]->move(mx-config.startPosX,my-config.startPosY);
+   ship[1]->setPos(QPointF(mx-config.startPosX-(ship[1]->width()/2),
+                           my-config.startPosY-(ship[1]->height()/2)));
    ship[1]->setRotation(M_PI);
-   ship[1]->setFrame(ROTNUM/2);
 
    ship[0]->setVelocity(config.startVelX,config.startVelY);
    ship[1]->setVelocity(-config.startVelX,-config.startVelY);
@@ -551,11 +592,10 @@ void MyMainView::timerEvent(QTimerEvent *event)
                delete textSprite;
                textSprite=0;
             }
-
-            textSprite=new Q3CanvasText(&field);
-            textSprite->move(width()/2,height()/2-90);
-            textSprite->setTextFlags(Qt::AlignCenter);
-            textSprite->setColor(qRgb(255,160,0));
+            textSprite=new QGraphicsSimpleTextItem(0,&field);
+	    // FIXME
+           // textSprite->setTextFlags(Qt::AlignCenter);
+	    textSprite->setPen(QPen(QColor(255,160,0)));
             textSprite->setFont(QFont(KGlobalSettings::generalFont().family(),14));
             textSprite->show( );
             if(ship[0]->getHitPoints()==0)
@@ -577,6 +617,9 @@ void MyMainView::timerEvent(QTimerEvent *event)
                ship[0]->setWins(w);
                emit(wins(0,w));
             }
+            // must do this after setting text, because length is unknown until now
+            textSprite->setPos(QPointF((width()-textSprite->boundingRect().width()) / 2,height()/2-90));
+            
             QString str = i18n("Press %1 for new round",
                            KShortcut(GAME_START_SHORTCUT).toString());
             emit(setStatusText(str,IDS_MAIN));
@@ -639,8 +682,7 @@ void MyMainView::moveShips()
          en=ship[i]->getEnergy();
          nr=ship[i]->getRotation();
 
-
-         nf=ship[i]->frame();
+         nf = 0;
          nx=cos(nr);
          ny=sin(nr);
          if ( ((!playerIsAi && playerKeyPressed[i][PlayerKeyAcc])
@@ -666,6 +708,7 @@ void MyMainView::moveShips()
             en=MAX_ENERGY;
 
          ship[i]->forward(config.gamespeed);
+	 
              //Bullets and Mines
          if(!playerIsAi&&playerKeyPressed[i][PlayerKeyShot]
             ||playerIsAi&&ai[i]->shootBullet())
@@ -677,15 +720,15 @@ void MyMainView::moveShips()
                {
                   ship[i]->bullet(config.bulletReloadTime);
                   en-=config.shotEnergyNeed;
-                  bullet=new BulletSprite(bulletsequence[i],&field,i,
+                  bullet=new BulletSprite(bulletpixmap[i],&field,i,
                                           config.bulletLifeTime);
-                  bullet->move(ship[i]->x()+nx*SHOTDIST,
-                                 ship[i]->y()-ny*SHOTDIST);
+		  QPointF p;
+		  p = ship[i]->mapToScene(ship[i]->center());
+		  bullet->setPos(QPointF(p.x()+nx*SHOTDIST,p.y()-ny*SHOTDIST));
                   bullet->setVelocity(ship[i]->xVelocity()+nx*config.shotSpeed,
                                       ship[i]->yVelocity()-ny*config.shotSpeed);
                   // bullet->setBoundsAction(QwRealMobileSprite::Wrap);
                   bullet->show();
-
                   bullets[i]->append(bullet);
                }
             }
@@ -700,9 +743,16 @@ void MyMainView::moveShips()
                {
                   ship[i]->mine(config.mineReloadTime);
                   en-=config.mineEnergyNeed;
-                  mine=new MineSprite(minesequence[i],&field,i,
+		  if (i==0)
+                     mine=new MineSprite(animation[ID_MINE1],animation[ID_MINEEXPLO],&field,i,
                                       config.mineActivateTime,config.mineFuel);
-                  mine->move(ship[i]->x(),ship[i]->y());
+		  else
+		     mine=new MineSprite(animation[ID_MINE2],animation[ID_MINEEXPLO],&field,i,
+                                      config.mineActivateTime,config.mineFuel);
+		  QPointF p;
+		  mine->setPos(ship[i]->mapToScene(ship[i]->center()));
+                  // move mine to center
+                  mine->moveBy(-mine->center().x(),-mine->center().y());
                   mine->setVelocity(0,0);
                   //mine->setBoundsAction(QwRealMobileSprite::Wrap);
                   mine->show();
@@ -804,7 +854,7 @@ void MyMainView::calculatePowerups()
    {
       timeToNextPowerup= random.getDouble() * config.powerupRefreshTime;
       type= random.getLong(PowerupSprite::PowerupNum);
-      sp=new PowerupSprite(powerupsequence[type],&field,type,
+     sp=new PowerupSprite(poweruppixmap[type],&field,type,
                            config.powerupLifeTime);
       do
       {
@@ -812,7 +862,7 @@ void MyMainView::calculatePowerups()
          y = random.getLong(height()-40)+20;
       }
       while(((x-width()/2)*(x-width()/2)+(y-height()/2)*(y-height()/2))<(50*50));
-      sp->move(x,y);
+      sp->setPos(QPointF(x,y));
       powerups.append(sp);
       sp->show();
    }
@@ -821,40 +871,37 @@ void MyMainView::calculatePowerups()
 void MyMainView::collisions()
 {
    int pl,hp,op,oldhp[2],ohp;
-   Q3CanvasItemList unexact;
-   Q3CanvasItem *sprite;
+   QList<QGraphicsItem *> unexact;
+   QGraphicsItem *sprite;
    BulletSprite *bullet;
    MineSprite *mine;
    ExplosionSprite *expl;
    ShipSprite *s;
    PowerupSprite *power;
-   Q3CanvasItemList hitlist;
+   QList<QGraphicsItem *> hitlist;
    double ndx[2],ndy[2];
    double en;
-   Q3CanvasItemList::Iterator it;
 
    for(pl=0;pl<2;pl++)
    {
       if(!ship[pl]->isStopped())
       {
          unexact.clear();
-         unexact=ship[pl]->collisions(false);
+	 unexact = ship[pl]->collidingItems(Qt::IntersectsItemBoundingRect);
          oldhp[pl]=hp=ship[pl]->getHitPoints();
          hitlist.clear();
-         for(it=unexact.begin(); it != unexact.end(); ++it)
+	 foreach (sprite, unexact)
          {
-            sprite = (*it);
-            if((sprite->rtti()!=S_EXPLOSION)
-               && !((sprite->rtti()!=S_SUN)&&(ship[pl]->getHitPoints()==0)))
-               if(ship[pl]->collidesWith(sprite))
+            if((sprite->type()!=S_EXPLOSION)
+               && !((sprite->type()!=S_SUN)&&(ship[pl]->getHitPoints()==0)))
+               if(ship[pl]->collidesWithItem(sprite))
                   if(!hitlist.contains(sprite))
                      hitlist.append(sprite);
          }
 
-         for(it=hitlist.begin(); it != hitlist.end(); ++it)
+         foreach (sprite, hitlist)
          {
-            sprite = (*it);
-            switch(sprite->rtti())
+            switch(sprite->type())
             {
                case S_SUN:
                   hp=0;
@@ -886,7 +933,7 @@ void MyMainView::collisions()
                   mine=(MineSprite *)sprite;
                   if(mine->isActive()&& !mine->explodes())
                   {
-                     mine->explode(mineexplosionsequence);
+                     mine->explode();
                      ndx[0]=(ship[pl]->xVelocity()+0.3*mine->xVelocity())/1.3;
                      ndy[0]=(ship[pl]->yVelocity()+0.3*mine->yVelocity())/1.3;
                      ship[pl]->setVelocity(ndx[0],ndy[0]);
@@ -931,22 +978,22 @@ void MyMainView::collisions()
          if(!mine->explodes())
          {
             unexact.clear();
-            unexact=mine->collisions(false);
+            unexact=mine->collidingItems(Qt::IntersectsItemBoundingRect);
             hitlist.clear();
-            for( it=unexact.begin(); it != unexact.end(); ++it )
+	    foreach (sprite, unexact)
             {
-               sprite = (*it);
-               if(sprite->rtti()==S_BULLET)
-                  if(mine->collidesWith(sprite))
+               if(sprite->type()==S_BULLET)
+                  if(mine->collidesWithItem(sprite))
                      if(!hitlist.contains(sprite))
                         hitlist.append(sprite);
             }
             if(hitlist.count()>0)
             {
-               mine->explode(mineexplosionsequence);
-               for(it=hitlist.begin(); it != hitlist.end(); ++it)
+               mine->explode();
+	       foreach (QGraphicsItem *item, hitlist)
                {
-                  bullet=(BulletSprite*)(*it);
+                  // FIXME: why does it crash with qgraphicsitem_cast?
+		  bullet = static_cast<BulletSprite*>(item);// qgraphicsitem_cast<BulletSprite*>(item);
                   bullets[bullet->getPlayerNumber()]->removeRef(bullet);
                }
             }
@@ -956,30 +1003,30 @@ void MyMainView::collisions()
 
    hitlist.clear();
    unexact.clear();
-   unexact=sun->collisions(false);
-   for( it = unexact.begin(); it != unexact.end(); ++it)
+   unexact=sun->collidingItems(Qt::IntersectsItemBoundingRect);
+   foreach (sprite, unexact)
    {
-      sprite=(*it);
-      switch(sprite->rtti())
+      switch(sprite->type())
       {
          case S_BULLET:
-            if(sun->collidesWith(sprite))
+            if(sun->collidesWithItem(sprite))
                if(!hitlist.contains(sprite))
                   hitlist.append(sprite);
             break;
          case S_MINE:
             if(!((MobileSprite*)sprite)->isStopped())
-               if(sun->collidesWith(sprite))
+               if(sun->collidesWithItem(sprite))
                   if(!hitlist.contains(sprite))
                      hitlist.append(sprite);
             break;
       }
    }
 
-   for(it=hitlist.begin(); it != hitlist.end(); ++it)
+//    for(it=hitlist.begin(); it != hitlist.end(); ++it)
+   foreach (sprite, hitlist)
    {
-      sprite=(*it);
-      switch(sprite->rtti())
+     // sprite=(*it);
+      switch(sprite->type())
       {
          case S_BULLET:
             bullet=(BulletSprite *)sprite;
@@ -990,7 +1037,7 @@ void MyMainView::collisions()
             mine=(MineSprite*)sprite;
             mine->stop();
             if(!mine->explodes())
-               mine->explode(mineexplosionsequence);
+               mine->explode();
             break;
       }
    }
@@ -1005,7 +1052,7 @@ void MyMainView::collisions()
       {
          op=(pl+1)%2;
          ship[pl]->setExplosion((int)(EXPLOSION_TIME/config.gamespeed));
-         expl=new ExplosionSprite(explosionsequence,&field,ship[pl]);
+	 expl = new ExplosionSprite(animation[ID_EXPLOSION],&field,ship[pl]);
          expl->show();
          explosions.append(expl);
          gameEnd=Options::timeAfterKill()/config.gamespeed;
@@ -1031,54 +1078,6 @@ void MyMainView::closeSettings(){
     config=modifyConfig(predefinedConfig[Options::lastConfig()]);
   else
     config=modifyConfig(customConfig);
-}
-
-Q3CanvasPixmapArray* MyMainView::loadOldPixmapSequence(const QString& datapattern,
-                            const QString& maskpattern, int framecount)
-{
-   int image;
-   Q3PtrList<QPixmap> pixmaplist;
-   Q3PtrList<QPoint> pointlist;
-   QString dataname, maskname;
-   QPixmap *pix;
-   QBitmap *bitmap;
-   int hotx=0, hoty=0;
-   QPoint *point;
-
-   for( image=0; image < framecount; image++ )
-   {
-      // #### Why is this a QString??
-      dataname.sprintf( datapattern.toLatin1().constData(), image );
-      maskname.sprintf( maskpattern.toLatin1().constData(), image );
-
-      QFile file(dataname);
-      if( file.open( QIODevice::ReadOnly ) )
-      {
-         char line[128];
-         file.readLine( line, 128 ); // Skip "P6"/"P3" line
-         file.readLine( line, 128 );
-
-         while ( line[0] == '#' )
-         {
-            // Comment line - see if it has additional parameters
-            if ( 0 == strncmp( line,"# HOTSPOT ", 10 ) )
-               sscanf( line+10, "%d %d", &hotx, &hoty);
-
-            file.readLine( line, 128 );
-         }
-         point = new QPoint( hotx, hoty );
-         pointlist.append( point );
-      }
-
-      pix = new QPixmap( dataname );
-      bitmap = new QBitmap( maskname );
-      pix->setMask( *bitmap );
-
-      pixmaplist.append( pix );
-   }
-
-   Q3CanvasPixmapArray* newarray = new Q3CanvasPixmapArray( pixmaplist, pointlist );
-   return newarray;
 }
 
 #include "mainview.moc"

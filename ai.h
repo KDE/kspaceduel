@@ -18,14 +18,13 @@ This program is free software; you can redistribute it and/or modify
 #ifndef __KSD_AI_H
 #define __KSD_AI_H
 
-#include <krandomsequence.h>
-
 #include <q3ptrlist.h>
 
+#include <krandomsequence.h>
 
-#include "sprites.h"
 #include "dialogs.h"
 #include "options.h"
+#include "sprites.h"
 
 enum Rotation {RLEFT,RNONE,RRIGHT};
 
@@ -58,6 +57,7 @@ class Ai
 public:
    Ai(int pn,ShipSprite* s[2],Q3PtrList<BulletSprite> *b[2],
       Q3PtrList<MineSprite> *m[2],SConfig *c);
+   ~Ai();
    void newRound();
    void think();
    bool rotateLeft(){return rotation==RLEFT;}

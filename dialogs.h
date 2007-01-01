@@ -15,18 +15,13 @@ This program is free software; you can redistribute it and/or modify
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-//Added by qt3to4:
-#include <QLabel>
 #ifndef __SP_DIALOG_H
 #define __SP_DIALOG_H
 
-class QPushButton;
-class QLabel;
 class QComboBox;
 class QTabWidget;
 class QSlider;
 class QLCDNumber;
-class QCheckBox;
 
 #include <kconfigdialog.h>
 

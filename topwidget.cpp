@@ -15,23 +15,19 @@ This program is free software; you can redistribute it and/or modify
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include <klocale.h>
-
-#include <kstandardaction.h>
-#include <ktoggleaction.h>
-#include <kkeydialog.h>
-#include <kaction.h>
-#include <kstandardgameaction.h>
-#include <kicon.h>
 #include <QLayout>
-//Added by qt3to4:
-#include <QHBoxLayout>
-#include <QBoxLayout>
-#include <kstatusbar.h>
 
-#include "topwidget.h"
+#include <kicon.h>
+#include <kkeydialog.h>
+#include <klocale.h>
+#include <kstandardaction.h>
+#include <kstandardgameaction.h>
+#include <kstatusbar.h>
+#include <ktoggleaction.h>
+
 #include "mainview.h"
 #include "playerinfo.h"
+#include "topwidget.h"
 
 MyTopLevelWidget::MyTopLevelWidget()
 {
@@ -153,7 +149,6 @@ void MyTopLevelWidget::initStatusBar( )
 void MyTopLevelWidget::start()
 {
    playfield->newGame();
-   playfield->newRound();
 }
 
 void MyTopLevelWidget::setStatusText(const QString & str,int id)

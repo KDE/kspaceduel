@@ -1,5 +1,11 @@
 todo:
 -----
 
-sound!!!!!
-
+sounds (using Phonon)
+maybe port to SVG (partially?)
+refactoring (split up sprites.h/cpp?)
+clean up
+fix bug: clicking on playfield
+[DONE]fix bug: starting positions first round
+fix bug: shortcut configuration
+fix bug: ships don't have the same size
