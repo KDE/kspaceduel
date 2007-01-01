@@ -163,7 +163,7 @@ void MyMainView::setActionCollection(KActionCollection *a)
          wildcard.replace("%1", "*");
          QFileInfo fi(wildcard);
          foreach (QString entry, QDir(fi.path(), fi.fileName()).entryList())
-             anim << QPixmap(fi.path() + "/" + entry);
+             anim << QPixmap(fi.path() + '/' + entry);
          animation.insert( kspd_animations[i].id, anim );
          i++;
      }
@@ -556,7 +556,7 @@ void MyMainView::newRound()
    QString str = i18n("Press %1 to start",
                   KShortcut(GAME_START_SHORTCUT).toString());
    emit(setStatusText(str,IDS_MAIN));
-   emit( setStatusText( "", IDS_PAUSE ) );
+   emit(setStatusText( "", IDS_PAUSE ));
    stop( );
 }
 
@@ -1022,10 +1022,8 @@ void MyMainView::collisions()
       }
    }
 
-//    for(it=hitlist.begin(); it != hitlist.end(); ++it)
    foreach (sprite, hitlist)
    {
-     // sprite=(*it);
       switch(sprite->type())
       {
          case S_BULLET:

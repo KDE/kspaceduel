@@ -104,7 +104,7 @@ protected:
 class AnimatedSprite:public MobileSprite
 {
 public:
-   AnimatedSprite(const QList<QPixmap> &animation, QGraphicsScene *scene = 0, int pn=0);
+   explicit AnimatedSprite(const QList<QPixmap> &animation, QGraphicsScene *scene = 0, int pn=0);
 
    void setFrame(int frame);
    inline int frame() const
@@ -195,7 +195,7 @@ private:
 class ExplosionSprite:public AnimatedSprite
 {
 public:
-   ExplosionSprite(const QList<QPixmap> &animation, QGraphicsScene *scene = 0, MobileSprite *sp = 0);
+   explicit ExplosionSprite(const QList<QPixmap> &animation, QGraphicsScene *scene = 0, MobileSprite *sp = 0);
    virtual int type() const {return S_EXPLOSION;}
    bool isOver() {return over;}
    virtual void forward(double mult);
