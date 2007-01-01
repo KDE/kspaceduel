@@ -24,6 +24,7 @@ This program is free software; you can redistribute it and/or modify
 #include <kstandardgameaction.h>
 #include <kstatusbar.h>
 #include <ktoggleaction.h>
+#include <kactioncollection.h>
 
 #include "mainview.h"
 #include "playerinfo.h"
@@ -81,57 +82,75 @@ void MyTopLevelWidget::wins(int pn,int w)
 
 void MyTopLevelWidget::initActions( )
 {
-   KStandardGameAction::quit(this, SLOT(close()), actionCollection());
-   KStandardGameAction::gameNew(playfield, SLOT(newGame()), actionCollection());
-   KAction* newRoundAct = new KAction( KIcon("spnewround"), i18n( "&New Round" ), actionCollection(), "new_round" );
+   QAction* ac;
+
+   ac = KStandardGameAction::quit(this, SLOT(close()), this);
+   actionCollection()->addAction(ac->objectName(), ac);
+   ac = KStandardGameAction::gameNew(playfield, SLOT(newGame()), this);
+   actionCollection()->addAction(ac->objectName(), ac);
+   QAction* newRoundAct = actionCollection()->addAction( "new_round" );
+   newRoundAct->setIcon( KIcon("spnewround") );
+   newRoundAct->setText( i18n( "&New Round" ) );
    newRoundAct->setShortcut( Qt::CTRL + Qt::Key_R );
    connect( newRoundAct, SIGNAL( triggered(bool) ), playfield, SLOT( newRound( ) ) );
 
    MyMainView::pauseAction =
-       KStandardGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
+       KStandardGameAction::pause(playfield, SLOT(togglePause()), this);
+   actionCollection()->addAction(MyMainView::pauseAction->objectName(), MyMainView::pauseAction);
    MyMainView::pauseAction->setChecked( false );
-   KAction *gameStart = new KAction( i18n( "Start" ), actionCollection( ), "game_start" );
+   QAction *gameStart = actionCollection()->addAction( "game_start" );
+   gameStart->setText( i18n( "Start" ) );
    connect(gameStart, SIGNAL(triggered(bool) ), playfield, SLOT( start( ) ));
    gameStart->setShortcut(GAME_START_SHORTCUT);
    playfield->addAction(gameStart);
 
-   KStandardAction::preferences(playfield, SLOT(gameSetup()), actionCollection());
+   ac = KStandardAction::preferences(playfield, SLOT(gameSetup()), this);
+   actionCollection()->addAction(ac->objectName(), ac);
 
    // Default keys
 #ifdef __GNUC__
 #warning assuming this is not necessary anymore
 #endif
    // actionCollection()->setAutoConnectShortcuts(false);
-   KAction* ac;
-   ac = new KAction(i18n("Player 1 Rotate Left"), actionCollection(), "P1KeyLeft");
+   ac = actionCollection()->addAction("P1KeyLeft");
+   ac->setText(i18n("Player 1 Rotate Left"));
    ac->setShortcut(Qt::Key_S);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 1 Rotate Right"), actionCollection(), "P1KeyRight");
+   ac = actionCollection()->addAction("P1KeyRight");
+   ac->setText(i18n("Player 1 Rotate Right"));
    ac->setShortcut(Qt::Key_F);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 1 Accelerate"), actionCollection(), "P1KeyAcc");
+   ac = actionCollection()->addAction("P1KeyAcc");
+   ac->setText(i18n("Player 1 Accelerate"));
    ac->setShortcut(Qt::Key_E);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 1 Shot"), actionCollection(), "P1Shot");
+   ac = actionCollection()->addAction("P1Shot");
+   ac->setText(i18n("Player 1 Shot"));
    ac->setShortcut(Qt::Key_D);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 1 Mine"), actionCollection(), "P1Mine");
+   ac = actionCollection()->addAction("P1Mine");
+   ac->setText(i18n("Player 1 Mine"));
    ac->setShortcut(Qt::Key_A);
    ac->setEnabled( false );
 
-   ac = new KAction(i18n("Player 2 Rotate Left"), actionCollection(), "P2KeyLeft");
+   ac = actionCollection()->addAction("P2KeyLeft");
+   ac->setText(i18n("Player 2 Rotate Left"));
    ac->setShortcut(Qt::Key_Left);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 2 Rotate Right"), actionCollection(), "P2KeyRight");
+   ac = actionCollection()->addAction("P2KeyRight");
+   ac->setText(i18n("Player 2 Rotate Right"));
    ac->setShortcut(Qt::Key_Right);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 2 Accelerate"), actionCollection(), "P2KeyAcc");
+   ac = actionCollection()->addAction("P2KeyAcc");
+   ac->setText(i18n("Player 2 Accelerate"));
    ac->setShortcut(Qt::Key_Up);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 2 Shot"), actionCollection(), "P2Shot");
+   ac = actionCollection()->addAction("P2Shot");
+   ac->setText(i18n("Player 2 Shot"));
    ac->setShortcut(Qt::Key_Down);
    ac->setEnabled( false );
-   ac = new KAction(i18n("Player 2 Mine"), actionCollection(), "P2Mine");
+   ac = actionCollection()->addAction("P2Mine");
+   ac->setText(i18n("Player 2 Mine"));
    ac->setShortcut(Qt::Key_Insert);
    ac->setEnabled( false );
 
