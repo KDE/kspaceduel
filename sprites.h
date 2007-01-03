@@ -18,7 +18,6 @@ This program is free software; you can redistribute it and/or modify
 #ifndef __SPRITE_OBJECTS_H
 #define __SPRITE_OBJECTS_H
 
-//#include <QGraphicsPixmapItem>
 class QGraphicsScene;
 
 #include "defines.h"
@@ -116,8 +115,8 @@ public:
 private:
    bool expl,active;
    double activateTime,fuel,timeToGo,explosiontime;
-   QList<QPixmap> exploframes; // when mine explodes, we set frames to exploframes (needed because both player's mines have
-   				// the same explosion animation
+   QList<QPixmap> exploframes; /* when mine explodes, we set frames to exploframes (needed because both player's mines have
+   			          the same explosion animation) */
 };
 
 class ExplosionSprite:public AnimatedSprite

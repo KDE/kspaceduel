@@ -1,4 +1,5 @@
 /* Copyright (C) 1998-2001 Andreas Zehender <az@azweb.de>
+   Copyright (C) 2006-2007 Dirk Rathlev <dirkrathlev@gmx.de>
 
 This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -167,7 +168,7 @@ void MyMainView::setActionCollection(KActionCollection *a)
          i++;
      }
 
-     // FixMe: test!
+     // FixMe: perform test!
      return true;
  }
 
@@ -295,28 +296,9 @@ SConfig MyMainView::modifyConfig(SConfig conf)
 
 void MyMainView::keyPressEvent(QKeyEvent *ev)
 {
-   if((gameEnd<=0.0)&&(gameEnd>-2.0))
-   {
-      /*
-      if(key==options.functionKey[FunctionKeyStart])
-         newRound();
-      */
-   }
-   else if(waitForStart)
-   {
-      /*
-      if((key==options.functionKey[FunctionKeyStart])
-         && (!functionKeyPressed[FunctionKeyStart]))
-      {
-         functionKeyPressed[FunctionKeyStart]=true;
-         resume();
-      }
-      */
-   }
-   else
-   {
-     bool accept=true;
-
+    // if-statement kept for historical reasons, maybe not needed anymore
+    if ( ((gameEnd>0.0) || (gameEnd<=-2.0)) && (!waitForStart) )
+    {
       if(actionCollection->action("P1KeyLeft")->shortcuts().contains(ev->key()))
             playerKeyPressed[0][PlayerKeyLeft]=true;
       else if(actionCollection->action("P2KeyLeft")->shortcuts().contains(ev->key()))
@@ -342,24 +324,12 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
       else if(actionCollection->action("P2Mine")->shortcuts().contains(ev->key()))
             playerKeyPressed[1][PlayerKeyMine]=true;
       else
-        accept = false;
-      /*
-      if((key==options.functionKey[FunctionKeyStart])
-         && (!functionKeyPressed[FunctionKeyStart]))
-      {
-         functionKeyPressed[FunctionKeyStart]=true;
-         pause();
-      }
-      */
-      if(!accept)
-	ev->ignore();
-   }
+        ev->ignore();
+    }
 }
 
 void MyMainView::keyReleaseEvent(QKeyEvent *ev)
 {
-   bool accept=true;
-
    if(actionCollection->action("P1KeyLeft")->shortcuts().contains(ev->key()))
       playerKeyPressed[0][PlayerKeyLeft]=false;
    else if(actionCollection->action("P2KeyLeft")->shortcuts().contains(ev->key()))
@@ -385,10 +355,7 @@ void MyMainView::keyReleaseEvent(QKeyEvent *ev)
    else if(actionCollection->action("P2Mine")->shortcuts().contains(ev->key()))
       playerKeyPressed[1][PlayerKeyMine]=false;
    else
-      accept = false;
-
-   if(!accept)
-     ev->ignore();
+      ev->ignore();
 }
 
 void MyMainView::pause()
@@ -834,7 +801,6 @@ void MyMainView::moveExplosions()
 void MyMainView::calculatePowerups()
 {
    PowerupSprite *sp;
-   int type,x,y;
 
    sp=powerups.first();
    while(sp)
@@ -851,6 +817,7 @@ void MyMainView::calculatePowerups()
    timeToNextPowerup-=config.gamespeed;
    if(timeToNextPowerup<0)
    {
+      int type,x,y;
       timeToNextPowerup= random.getDouble() * config.powerupRefreshTime;
       type= random.getLong(PowerupSprite::PowerupNum);
      sp=new PowerupSprite(poweruppixmap[type],&field,type,

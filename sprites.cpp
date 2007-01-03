@@ -1,4 +1,5 @@
 /* Copyright (C) 1998-2001 Andreas Zehender <az@azweb.de>
+   Copyright (C) 2006-2007 Dirk Rathlev <dirkrathlev@gmx.de>
 
 This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -27,8 +28,7 @@ This program is free software; you can redistribute it and/or modify
 SunSprite::SunSprite(QPixmap* pixmap, QGraphicsScene* scene)
       :SimpleSprite(pixmap, scene)
 {
-    // doesn't work with Qt 2.2.2 anymore
-    // setZ(0);
+    setZValue(0);
 }
 
 
@@ -55,19 +55,15 @@ ShipSprite::ShipSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn)
 
 void ShipSprite::setRotation(double r)
 {
-   //int nf,of=frame();
    rotation=r;
    if(rotation<0)
       rotation-=((int)(rotation/(2*M_PI))-1)*2*M_PI;
    if(rotation>=2*M_PI)
       rotation-=(int)(rotation/(2*M_PI))*2*M_PI;
-  // nf=(int)(rotation/(2*M_PI)*ROTNUM)%ROTNUM;
-  //  if(nf!=of)
-  //    setFrame(nf);*/
-   translate(10.5,17);
+
+   translate(center().x(),center().y());
    rotate(-(rotation-angle)*57.3);
-   //kDebug() << rotation-angle << endl;
-   translate(-10.5,-17);
+   translate(-center().x(),-center().y());
    angle = rotation;
 }
 
@@ -247,7 +243,6 @@ ExplosionSprite::ExplosionSprite(const QList<QPixmap> &animation, QGraphicsScene
       :AnimatedSprite(animation, scene)
 {
    over=false;
-   //setZValue(-5);
    setZValue(5);
    obj=sp;
    timeToGo = frameCount();
