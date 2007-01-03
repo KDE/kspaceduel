@@ -151,26 +151,26 @@ void MyMainView::setActionCollection(KActionCollection *a)
    actionCollection = a;
 }
 
- bool MyMainView::readSprites()
- {
-     QString sprites_prefix = KGlobal::dirs()->findResourceDir("appdata", (QString)MV_BACKGROUND) + "sprites/";
+bool MyMainView::readSprites()
+{
+   QString sprites_prefix = KGlobal::dirs()->findResourceDir("appdata", (QString)MV_BACKGROUND) + "sprites/";
 
-     int i = 0;
-     while ( kspd_animations[i].id )
-     {
-         QList<QPixmap> anim;
-         QString wildcard = sprites_prefix + kspd_animations[i].path;
-         wildcard.replace("%1", "*");
-         QFileInfo fi(wildcard);
-         foreach (QString entry, QDir(fi.path(), fi.fileName()).entryList())
-             anim << QPixmap(fi.path() + '/' + entry);
-         animation.insert( kspd_animations[i].id, anim );
-         i++;
-     }
+   int i = 0;
+   while ( kspd_animations[i].id )
+   {
+      QList<QPixmap> anim;
+      QString wildcard = sprites_prefix + kspd_animations[i].path;
+      wildcard.replace("%1", "*");
+      QFileInfo fi(wildcard);
+      foreach (QString entry, QDir(fi.path(), fi.fileName()).entryList())
+         anim << QPixmap(fi.path() + '/' + entry);
+      animation.insert( kspd_animations[i].id, anim );
+      i++;
+   }
 
-     // FixMe: perform test!
-     return true;
- }
+   // FixMe: perform test!
+   return true;
+}
 
 void MyMainView::readConfig()
 {
