@@ -96,9 +96,6 @@ private:
    double timeToNextPowerup;
 
 // sprites
-   Q3PtrList<QImage> shipImages;
-   Q3PtrList<QPoint> points;
-   
    QPixmap *sunpixmap;
    QPixmap *shippixmap[2];
    QPixmap *bulletpixmap[2];

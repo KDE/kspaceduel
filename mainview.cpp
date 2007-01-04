@@ -18,17 +18,6 @@ This program is free software; you can redistribute it and/or modify
 
 #include <math.h>
 
-#include <kaction.h>
-#include <kactioncollection.h>
-#include <kapplication.h>
-#include <kconfig.h>
-#include <kglobal.h>
-#include <kglobalsettings.h>
-#include <kiconloader.h>
-#include <klocale.h>
-#include <kstandarddirs.h>
-#include <ktoggleaction.h>
-
 #include <Q3PtrList>
 #include <QAbstractEventDispatcher>
 #include <QBrush>
@@ -38,6 +27,13 @@ This program is free software; you can redistribute it and/or modify
 #include <QKeyEvent>
 #include <QResizeEvent>
 #include <QTimerEvent>
+
+#include <kaction.h>
+#include <kactioncollection.h>
+#include <kglobalsettings.h>
+#include <klocale.h>
+#include <kstandarddirs.h>
+#include <ktoggleaction.h>
 
 #include "ai.h"
 #include "mainview.h"
@@ -151,6 +147,7 @@ void MyMainView::setActionCollection(KActionCollection *a)
    actionCollection = a;
 }
 
+/* taken from kasteroids (as the whole animation system). Thank you! */
 bool MyMainView::readSprites()
 {
    QString sprites_prefix = KGlobal::dirs()->findResourceDir("appdata", (QString)MV_BACKGROUND) + "sprites/";
