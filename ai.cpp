@@ -30,8 +30,8 @@ int Ai::calcShotDirections[Options::EnumAiDifficulty::COUNT] = {4,7,10,12};
 int Ai::calcCollisions[Options::EnumAiDifficulty::COUNT]     = {30,15,10,10};
 int Ai::calcNextShot[Options::EnumAiDifficulty::COUNT]       = {300,200,90,60};
 
-Ai::Ai(int pn,ShipSprite* s[2],Q3PtrList<BulletSprite>* b[2],
-       Q3PtrList<MineSprite>* m[2],SConfig *c)
+Ai::Ai(int pn,ShipSprite* s[2],QList<BulletSprite*>* b[2],
+       QList<MineSprite*>* m[2],SConfig *c)
 {
    int i;
 
@@ -49,9 +49,9 @@ Ai::Ai(int pn,ShipSprite* s[2],Q3PtrList<BulletSprite>* b[2],
       aiMines[i]=new QVector<AiSprite>(cfg->maxMines);
       mineNumber[i]=0;
    }
-   myShots.setAutoDelete(true);
-   objectsHitByShip.setAutoDelete(true);
-   minesHitByShot.setAutoDelete(true);
+//    myShots.setAutoDelete(true);
+//    objectsHitByShip.setAutoDelete(true);
+//    minesHitByShot.setAutoDelete(true);
 }
 
 Ai::~Ai()
@@ -63,6 +63,15 @@ Ai::~Ai()
       delete shipsNextPositions[i];
       delete aiMines[i];
    }
+   
+   qDeleteAll(myShots);
+   myShots.clear();
+   
+   qDeleteAll(objectsHitByShip);
+   objectsHitByShip.clear();
+   
+   qDeleteAll(minesHitByShot);
+   minesHitByShot.clear();
 }
 
 void Ai::newRound()
@@ -86,8 +95,11 @@ void Ai::newRound()
 	          calcNextShot[Options::aiDifficulty(playerNumber)]
                   /cfg->gamespeed);
 
+   qDeleteAll(myShots);
    myShots.clear();
+   qDeleteAll(objectsHitByShip);
    objectsHitByShip.clear();
+   qDeleteAll(minesHitByShot);
    minesHitByShot.clear();
 }
 
@@ -95,6 +107,7 @@ void Ai::think()
 {
    setSpriteFieldSize();
 
+   qDeleteAll(myShots);
    myShots.clear();
    borderTime=-1;
    sunTime=-1;
@@ -204,6 +217,7 @@ void Ai::calculateNextPositions()
 {
    unsigned int i;
    int j;
+   int k;
    MineSprite *ms;
 
    j=(int)(calcPositionNumber[Options::aiDifficulty(playerNumber)]/cfg->gamespeed);
@@ -222,14 +236,18 @@ void Ai::calculateNextPositions()
 
    for(i=0;i<2;i++)
    {
-      j=0;
-      ms=mines[i]->first();
+      for (j=0; j<mines[i]->size(); j++)
+      {
+         ms = mines[i]->value(k);
+         (*(aiMines[i]))[j]=ms->toAiSprite();
+      }
+      /*ms=mines[i]->first();
       while(ms)
       {
          (*(aiMines[i]))[j]=ms->toAiSprite();
          ms=mines[i]->next();
          j++;
-      }
+      }*/
       mineNumber[i]=j;
    }
 }
@@ -387,7 +405,7 @@ Hit Ai::firstObject(AiSprite shot,int time,int frames)
 void Ai::testForHits()
 {
    AiSprite shot;
-   int i;
+   int i,j;
    int m,p;
    BulletSprite *bullet;
    Hit *h;
@@ -398,43 +416,54 @@ void Ai::testForHits()
    if(calculateCollisions>0)
    {
       calculateCollisions--;
-      h=objectsHitByShip.first();
-      while(h)
+      //h=objectsHitByShip.first();
+      i=0;
+      while(i<objectsHitByShip.size())
       {
+         h = objectsHitByShip[i];
          if(h->hitTime>0)
          {
             h->hitTime--;
-            h=objectsHitByShip.next();
+            //h=objectsHitByShip.next();
+            i++;
          }
          else
          {
-            objectsHitByShip.remove();
-            h=objectsHitByShip.current();
+            objectsHitByShip.removeAt(i);
+            delete h;
+            //objectsHitByShip.remove();
+            //h=objectsHitByShip.current();
          }
       }
-      h=minesHitByShot.first();
-      while(h)
+//       h=minesHitByShot.first();
+      i=0;
+      while(i<minesHitByShot.size())
       {
+         h=minesHitByShot[i];
          if(h->hitTime>0)
          {
             h->hitTime--;
-            h=minesHitByShot.next();
+            i++;
          }
          else
          {
-            minesHitByShot.remove();
-            h=minesHitByShot.current();
+            minesHitByShot.removeAt(i);
+            delete h;
          }
       }
    }
    else
    {
+      qDeleteAll(objectsHitByShip);
       objectsHitByShip.clear();
+      qDeleteAll(minesHitByShot);
       minesHitByShot.clear();
       for(i=0;i<2;i++)
       {
-         for(bullet=bullets[i]->first();bullet;bullet=bullets[i]->next())
+         //for(bullet=bullets[i]->first();bullet;bullet=bullets[i]->next())
+         for (j=0; j<bullets[i]->size(); j++)
          {
+            bullet=bullets[i]->value(j);
             shot=bullet->toAiSprite();
             hit=firstObject(shot,0,calcFrameIncrement[Options::aiDifficulty(playerNumber)]);
             if(hit.object==HMINE)
@@ -500,14 +529,17 @@ void Ai::shotScores()
    Hit *h,*mh;
    bool found,foundmh;
    double dist,dx,dy,fuel;
+   int i,j,k;
 
 
    dx=(*shipsNextPositions[playerNumber])[0].x-(*shipsNextPositions[opponentNumber])[0].x;
    dy=(*shipsNextPositions[playerNumber])[0].y-(*shipsNextPositions[opponentNumber])[0].y;
    dist=dx*dx+dy*dy;
 
-   for(s=myShots.first();s;s=myShots.next())
+//    for(s=myShots.first();s;s=myShots.next())
+   for (j=0; j<myShots.size(); j++)
    {
+      s = myShots[j];
       fuel=(100-(ship[playerNumber]->getEnergy()-cfg->shotEnergyNeed));
       s->score=fuel*fuel/10 + s->hit.distance+s->hit.hitTime;
       if(dist > (75*75))
@@ -518,8 +550,10 @@ void Ai::shotScores()
       if(s->hit.object==HMINE)
       {
          found=false;
-         for(h=objectsHitByShip.first();h && !found;h=objectsHitByShip.next())
+//          for(h=objectsHitByShip.first();h && !found;h=objectsHitByShip.next())
+         for (i=0; i<objectsHitByShip.size() && !found; i++)
          {
+            h=objectsHitByShip[i];
             if((h->object==HMINE)&&(h->playerNumber==s->hit.playerNumber)
                &&(h->objectNumber==s->hit.objectNumber))
                    //ship will hit a mine that will be hitten by the shot
@@ -531,8 +565,10 @@ void Ai::shotScores()
                else
                {
                   foundmh=false;
-                  for(mh=minesHitByShot.first();mh && !foundmh;mh=minesHitByShot.next())
+                  for (k=0; k<minesHitByShot.size() && !found; k++)
+//                   for(mh=minesHitByShot.first();mh && !foundmh;mh=minesHitByShot.next())
                   {
+                     mh = minesHitByShot[k];
                      if((mh->playerNumber==s->hit.playerNumber)
                         &&(mh->objectNumber==s->hit.objectNumber))
                             //another shot will hit the mine
@@ -562,6 +598,7 @@ void Ai::chooseAction()
    bool rotateAndAccelerate=false;
    Hit *nextHit=0;
    int shotHitTime;
+   int i;
 
 
    shotHitTime=1000000;
@@ -678,12 +715,16 @@ void Ai::chooseAction()
    {
 
       bestShot=0;
-      for(s=myShots.first();s;s=myShots.next())
+      for (i=0; i<myShots.size(); i++)
+      {
+         s=myShots[i];
+//       for(s=myShots.first();s;s=myShots.next())
          if(s->score<bestScore)
          {
             bestScore=s->score;
             bestShot=s;
          }
+      }
       if(bestShot)
       {
          if((bestScore<score)&&(bestScore<400))

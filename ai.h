@@ -18,8 +18,6 @@ This program is free software; you can redistribute it and/or modify
 #ifndef __KSD_AI_H
 #define __KSD_AI_H
 
-#include <q3ptrlist.h>
-
 #include <krandomsequence.h>
 
 #include "dialogs.h"
@@ -55,8 +53,8 @@ struct Shot
 class Ai
 {
 public:
-   Ai(int pn,ShipSprite* s[2],Q3PtrList<BulletSprite> *b[2],
-      Q3PtrList<MineSprite> *m[2],SConfig *c);
+   Ai(int pn,ShipSprite* s[2],QList<BulletSprite*> *b[2],
+      QList<MineSprite*> *m[2],SConfig *c);
    ~Ai();
    void newRound();
    void think();
@@ -91,15 +89,15 @@ private:
        //sprites
    int playerNumber,opponentNumber;
    ShipSprite *ship[2];
-   Q3PtrList<BulletSprite> *bullets[2];
-   Q3PtrList<MineSprite> *mines[2];
+   QList<BulletSprite*> *bullets[2];
+   QList<MineSprite*> *mines[2];
    QVector<AiSprite> *shipsNextPositions[2];
    QVector<AiSprite> *aiMines[2];
    int mineNumber[2];
        //possible Hits
-   Q3PtrList<Shot> myShots;
-   Q3PtrList<Hit> objectsHitByShip;
-   Q3PtrList<Hit> minesHitByShot;
+   QList<Shot*> myShots;
+   QList<Hit*> objectsHitByShip;
+   QList<Hit*> minesHitByShot;
    int borderTime;
    int sunTime;
        //SpriteField width and height

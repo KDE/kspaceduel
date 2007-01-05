@@ -18,10 +18,9 @@ This program is free software; you can redistribute it and/or modify
 #ifndef __MY_MAIN_VIEW_H
 #define __MY_MAIN_VIEW_H
 
-#include <Q3PtrList>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include <QLinkedList>
+#include <QList>
 #include <QTimerEvent>
 #include <QWidget>
 
@@ -106,10 +105,14 @@ private:
    ShipSprite *ship[2];
    SunSprite *sun;
    QGraphicsSimpleTextItem *textSprite;
-   Q3PtrList<BulletSprite> *bullets[2];
-   Q3PtrList<MineSprite> *mines[2];
-   Q3PtrList<ExplosionSprite> explosions;
-   Q3PtrList<PowerupSprite> powerups;
+   //Q3PtrList<BulletSprite> *bullets[2];
+   //Q3PtrList<MineSprite> *mines[2];
+   //Q3PtrList<ExplosionSprite> explosions;
+   //Q3PtrList<PowerupSprite> powerups;
+   QList<BulletSprite*> *bullets[2];
+   QList<MineSprite*> *mines[2];
+   QList<ExplosionSprite*> explosions;
+   QList<PowerupSprite*> powerups;
 
    KRandomSequence random;
 
