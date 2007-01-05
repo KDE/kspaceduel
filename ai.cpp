@@ -412,13 +412,15 @@ void Ai::testForHits()
    Hit hit;
    bool hitfound=false;
    double distance,dx,dy;
+   int listsize; // used for cacheing QtList::size()
 
    if(calculateCollisions>0)
    {
       calculateCollisions--;
       //h=objectsHitByShip.first();
       i=0;
-      while(i<objectsHitByShip.size())
+      listsize = objectsHitByShip.size();
+      while(i<listsize)
       {
          h = objectsHitByShip[i];
          if(h->hitTime>0)
@@ -431,13 +433,15 @@ void Ai::testForHits()
          {
             objectsHitByShip.removeAt(i);
             delete h;
+            listsize--;
             //objectsHitByShip.remove();
             //h=objectsHitByShip.current();
          }
       }
 //       h=minesHitByShot.first();
       i=0;
-      while(i<minesHitByShot.size())
+      listsize = minesHitByShot.size();
+      while(i<listsize)
       {
          h=minesHitByShot[i];
          if(h->hitTime>0)
@@ -449,6 +453,7 @@ void Ai::testForHits()
          {
             minesHitByShot.removeAt(i);
             delete h;
+            listsize--;
          }
       }
    }
@@ -461,7 +466,8 @@ void Ai::testForHits()
       for(i=0;i<2;i++)
       {
          //for(bullet=bullets[i]->first();bullet;bullet=bullets[i]->next())
-         for (j=0; j<bullets[i]->size(); j++)
+         listsize = bullets[i]->size();
+         for (j=0; j<listsize; j++)
          {
             bullet=bullets[i]->value(j);
             shot=bullet->toAiSprite();
@@ -530,6 +536,7 @@ void Ai::shotScores()
    bool found,foundmh;
    double dist,dx,dy,fuel;
    int i,j,k;
+   int listsize,listsize2; // used for cacheing QtList::size()
 
 
    dx=(*shipsNextPositions[playerNumber])[0].x-(*shipsNextPositions[opponentNumber])[0].x;
@@ -537,7 +544,8 @@ void Ai::shotScores()
    dist=dx*dx+dy*dy;
 
 //    for(s=myShots.first();s;s=myShots.next())
-   for (j=0; j<myShots.size(); j++)
+   listsize = myShots.size();
+   for (j=0; j<listsize; j++)
    {
       s = myShots[j];
       fuel=(100-(ship[playerNumber]->getEnergy()-cfg->shotEnergyNeed));
@@ -565,7 +573,8 @@ void Ai::shotScores()
                else
                {
                   foundmh=false;
-                  for (k=0; k<minesHitByShot.size() && !found; k++)
+                  listsize2 = minesHitByShot.size();
+                  for (k=0; k<listsize2 && !found; k++)
 //                   for(mh=minesHitByShot.first();mh && !foundmh;mh=minesHitByShot.next())
                   {
                      mh = minesHitByShot[k];
@@ -599,7 +608,6 @@ void Ai::chooseAction()
    Hit *nextHit=0;
    int shotHitTime;
    int i;
-
 
    shotHitTime=1000000;
    nextHit=0;
@@ -713,9 +721,10 @@ void Ai::chooseAction()
    }
    else
    {
-
+      int listsize; // used for cacheing QtList::size()
       bestShot=0;
-      for (i=0; i<myShots.size(); i++)
+      listsize = myShots.size();
+      for (i=0; i<listsize; i++)
       {
          s=myShots[i];
 //       for(s=myShots.first();s;s=myShots.next())

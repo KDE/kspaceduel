@@ -425,6 +425,7 @@ void MyMainView::resizeEvent(QResizeEvent *event)
    BulletSprite *bullet;
 //    PowerupSprite *powerup;
    int i,current;
+   int listsize; // used for cacheing QtList::size()
 
    mx=(event->size().width()-event->oldSize().width())/2.0;
    my=(event->size().height()-event->oldSize().height())/2.0;
@@ -441,7 +442,9 @@ void MyMainView::resizeEvent(QResizeEvent *event)
    {
       // ship[i]->adoptSpritefieldBounds();
       ship[i]->moveBy(mx,my);
-      for (current=0; current<mines[i]->size(); current++)
+      
+      listsize = mines[i]->size();
+      for (current=0; current<listsize; current++)
       {
          // mine->adoptSpritefieldBounds();
          //mine->moveBy(mx,my);
@@ -456,7 +459,8 @@ void MyMainView::resizeEvent(QResizeEvent *event)
       if(current>=0)
          mines[i]->at(current);*/
       
-      for (current=0; current<bullets[i]->size(); current++)
+      listsize = bullets[i]->size();
+      for (current=0; current<listsize; current++)
       {
          // bullet->adoptSpritefieldBounds();
          bullets[i]->value(current)->moveBy(mx,my);
@@ -475,7 +479,8 @@ void MyMainView::resizeEvent(QResizeEvent *event)
    if(textSprite)
       textSprite->moveBy((int)mx,(int)my);
    
-   for (current=0; current<powerups.size(); current++)
+   listsize = powerups.size();
+   for (current=0; current<listsize; current++)
    {
       powerups[current]->moveBy(mx,my);
    }
@@ -774,11 +779,13 @@ void MyMainView::moveMines()
    int i;
    MineSprite* mine;
    int p;
+   int listsize; // used for cacheing QtList::size()
 
    for(p=0;p<2;p++)
    {
       i=0;
-      while (i<mines[p]->size())
+      listsize = mines[p]->size();
+      while (i<listsize)
       {
          mine = mines[p]->value(i);
          mine->calculateGravity(config.gravity,config.gamespeed);
@@ -788,6 +795,7 @@ void MyMainView::moveMines()
             mine->hide();
             mines[p]->removeAt(i);
             delete mine;
+            listsize--;
          }
          else
             i++;
@@ -813,11 +821,13 @@ void MyMainView::moveBullets()
 {
    int i,j;
    BulletSprite *sp;
+   int listsize; // used for cacheing QtList::size()
 
    for(i=0;i<2;i++)
    {
       j=0;
-      while (j<bullets[i]->size())
+      listsize = bullets[i]->size();
+      while (j<listsize)
       {
          sp = bullets[i]->value(j);
          sp->calculateGravity(config.gravity,config.gamespeed);
@@ -826,6 +836,7 @@ void MyMainView::moveBullets()
          {
             sp->hide();
             bullets[i]->removeAll(sp);
+            listsize--;
          }
          else
             j++;
@@ -851,8 +862,10 @@ void MyMainView::moveExplosions()
 {
    int i=0;
    ExplosionSprite *ex;
+   int listsize; // used for cacheing QtList::size()
    //ex=explosions.first();
-   while (i<explosions.size())
+   listsize = explosions.size();
+   while (i<listsize)
    {
       ex = explosions[i];
       ex->forward(config.gamespeed);
@@ -860,6 +873,7 @@ void MyMainView::moveExplosions()
       {
          explosions.removeAt(i);
          delete ex;
+         listsize--;
       }
       else
          i++;
@@ -882,7 +896,9 @@ void MyMainView::calculatePowerups()
 {
    int i=0;
    PowerupSprite *sp;
-   while (i<powerups.size())
+   int listsize; // used for cacheing QtList::size()
+   listsize = powerups.size();
+   while (i<listsize)
    {
       sp = powerups[i];
       sp->setLifetime(sp->getLifetime()-config.gamespeed);
@@ -890,6 +906,7 @@ void MyMainView::calculatePowerups()
       {
          powerups.removeAt(i);
          delete sp;
+         listsize--;
       }
       else
          i++;
@@ -942,6 +959,7 @@ void MyMainView::collisions()
    double ndx[2],ndy[2];
    double en;
    int i;
+   int listsize; // used for cacheing QtList::size()
 
    for(pl=0;pl<2;pl++)
    {
@@ -1039,7 +1057,8 @@ void MyMainView::collisions()
       }
 
       //for(mine=mines[pl]->first();mine;mine=mines[pl]->next())
-      for (i=0; i<mines[pl]->size(); i++)
+      listsize = mines[pl]->size();
+      for (i=0; i<listsize; i++)
       {
          mine = mines[pl]->value(i);
          if(!mine->explodes())
