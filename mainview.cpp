@@ -108,15 +108,9 @@ MyMainView::MyMainView(QWidget *parent)
       // ship[i]->setBoundsAction(QwRealMobileSprite::Wrap);
       ship[i]->hide();
       bullets[i]=new QList<BulletSprite*>;
-      //bullets[i]->setAutoDelete(true);
       mines[i]=new QList<MineSprite*>;
-      //mines[i]->setAutoDelete(true);
 
    }
-   
-
-   //explosions.setAutoDelete(true);
-   //powerups.setAutoDelete(true);
 
    waitForStart=false;
    textSprite=0;
@@ -421,9 +415,7 @@ void MyMainView::togglePause( )
 void MyMainView::resizeEvent(QResizeEvent *event)
 {
    double mx,my;
-//   MineSprite *mine;
    BulletSprite *bullet;
-//    PowerupSprite *powerup;
    int i,current;
    int listsize; // used for cacheing QtList::size()
 
@@ -447,17 +439,8 @@ void MyMainView::resizeEvent(QResizeEvent *event)
       for (current=0; current<listsize; current++)
       {
          // mine->adoptSpritefieldBounds();
-         //mine->moveBy(mx,my);
          mines[i]->value(current)->moveBy(mx,my);
       }
-      /*current=mines[i]->at();
-      for(mine=mines[i]->first();mine;mine=mines[i]->next())
-      {
-         // mine->adoptSpritefieldBounds();
-         mine->moveBy(mx,my);
-      }
-      if(current>=0)
-         mines[i]->at(current);*/
       
       listsize = bullets[i]->size();
       for (current=0; current<listsize; current++)
@@ -465,16 +448,6 @@ void MyMainView::resizeEvent(QResizeEvent *event)
          // bullet->adoptSpritefieldBounds();
          bullets[i]->value(current)->moveBy(mx,my);
       }
-
-      /*current=bullets[i]->at();
-      for(bullet=bullets[i]->first();bullet;bullet=bullets[i]->next())
-      {
-         // bullet->adoptSpritefieldBounds();
-         bullet->moveBy(mx,my);
-      }
-      if(current>=0)
-         bullets[i]->at(current);*/
-
    }
    if(textSprite)
       textSprite->moveBy((int)mx,(int)my);
@@ -484,17 +457,6 @@ void MyMainView::resizeEvent(QResizeEvent *event)
    {
       powerups[current]->moveBy(mx,my);
    }
-   /*QListIterator<PowerupSprite*>    it(powerups);
-   while (it.hasNext())
-   {
-       powerup = (it.next());
-       powerup->moveBy(mx,my);
-   }*/
-   /*current=powerups.at();
-   for(powerup=powerups.first();powerup;powerup=powerups.next())
-      powerup->moveBy(mx,my);
-   if(current>=0)
-      powerups.at(current);*/
 }
 
 void MyMainView::newRound()
@@ -529,11 +491,9 @@ void MyMainView::newRound()
       emit(energy(i,(int)ship[i]->getEnergy()));
       emit(hitPoints(i,ship[i]->getHitPoints()));
       bulletShot[i]=false;
-      //bullets[i]->clear();
       qDeleteAll(*bullets[i]);
       bullets[i]->clear();
       
-      //mines[i]->clear();
       qDeleteAll(*mines[i]);
       mines[i]->clear();
       
@@ -800,20 +760,6 @@ void MyMainView::moveMines()
          else
             i++;
       }
-      /*mine=mines[p]->first();
-      while(mine)
-      {
-         mine->calculateGravity(config.gravity,config.gamespeed);
-         mine->forward(config.gamespeed);
-         if(mine->over())
-         {
-            mine->hide();
-            mines[p]->remove();
-            mine=mines[p]->current();
-         }
-         else
-            mine=mines[p]->next();
-      }*/
    }
 }
 
@@ -841,20 +787,6 @@ void MyMainView::moveBullets()
          else
             j++;
       }
-      /*sp=bullets[i]->first();
-      while(sp)
-      {
-         sp->calculateGravity(config.gravity,config.gamespeed);
-         sp->forward(config.gamespeed);
-         if(sp->timeOut())
-         {
-            sp->hide();
-            bullets[i]->removeRef(sp);
-            sp=bullets[i]->current();
-         }
-         else
-            sp=bullets[i]->next();
-      }*/
    }
 }
 
@@ -863,7 +795,6 @@ void MyMainView::moveExplosions()
    int i=0;
    ExplosionSprite *ex;
    int listsize; // used for cacheing QtList::size()
-   //ex=explosions.first();
    listsize = explosions.size();
    while (i<listsize)
    {
@@ -878,18 +809,6 @@ void MyMainView::moveExplosions()
       else
          i++;
    }
-      
-  /* while(ex)
-   {
-      ex->forward(config.gamespeed);
-      if(ex->isOver())
-      {
-         explosions.removeRef(ex);
-         ex=explosions.current();
-      }
-      else
-         ex=explosions.next();
-   }*/
 }
 
 void MyMainView::calculatePowerups()
@@ -911,20 +830,6 @@ void MyMainView::calculatePowerups()
       else
          i++;
    }
-  /*PowerupSprite *sp;
-
-   sp=powerups.first();
-   while(sp)
-   {
-      sp->setLifetime(sp->getLifetime()-config.gamespeed);
-      if(sp->getLifetime()<0)
-      {
-         powerups.removeRef(sp);
-         sp=powerups.current();
-      }
-      else
-         sp=powerups.next();
-   }*/
    timeToNextPowerup-=config.gamespeed;
    if(timeToNextPowerup<0)
    {
@@ -1045,7 +950,6 @@ void MyMainView::collisions()
                         break;
                   }
                   power->hide();
-                  //powerups.removeRef(power);
                   powerups.removeAll(power);
                   delete power;
                   break;
@@ -1056,7 +960,6 @@ void MyMainView::collisions()
          ship[pl]->setHitPoints(hp);
       }
 
-      //for(mine=mines[pl]->first();mine;mine=mines[pl]->next())
       listsize = mines[pl]->size();
       for (i=0; i<listsize; i++)
       {
@@ -1117,7 +1020,6 @@ void MyMainView::collisions()
          case S_BULLET:
             bullet=(BulletSprite *)sprite;
             bullet->hide();
-            //bullets[bullet->getPlayerNumber()]->removeRef(bullet);
             bullets[bullet->getPlayerNumber()]->removeAll(bullet);
             delete bullet;
             break;
