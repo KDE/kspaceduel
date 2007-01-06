@@ -8,15 +8,16 @@ include_directories( ${CMAKE_SOURCE_DIR}/libkdegames  )
 
 ########### next target ###############
 
-set(kspaceduel_SRCS 
-   mathroutines.cpp 
-   topwidget.cpp 
-   playerinfo.cpp 
-   sprites.cpp 
-   mainview.cpp 
-   dialogs.cpp 
-   ai.cpp 
-   main.cpp )
+set(kspaceduel_SRCS
+   ai.cpp
+   dialogs.cpp
+   main.cpp
+   mainview.cpp
+   mathroutines.cpp
+   playerinfo.cpp
+   sprites.cpp
+   spritebase.cpp
+   topwidget.cpp)
 
 kde4_automoc(${kspaceduel_SRCS})
 

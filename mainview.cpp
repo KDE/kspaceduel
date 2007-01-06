@@ -1,4 +1,5 @@
 /* Copyright (C) 1998-2001 Andreas Zehender <az@azweb.de>
+   Copyright (C) 2006-2007 Dirk Rathlev <dirkrathlev@gmx.de>
 
 This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15,22 +16,8 @@ This program is free software; you can redistribute it and/or modify
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "mainview.h"
-
 #include <math.h>
 
-#include <kaction.h>
-#include <kactioncollection.h>
-#include <kapplication.h>
-#include <kconfig.h>
-#include <kglobal.h>
-#include <kglobalsettings.h>
-#include <kiconloader.h>
-#include <klocale.h>
-#include <kstandarddirs.h>
-#include <ktoggleaction.h>
-
-#include <Q3PtrList>
 #include <QAbstractEventDispatcher>
 #include <QBrush>
 #include <QDir>
@@ -40,7 +27,15 @@ This program is free software; you can redistribute it and/or modify
 #include <QResizeEvent>
 #include <QTimerEvent>
 
+#include <kaction.h>
+#include <kactioncollection.h>
+#include <kglobalsettings.h>
+#include <klocale.h>
+#include <kstandarddirs.h>
+#include <ktoggleaction.h>
+
 #include "ai.h"
+#include "mainview.h"
 #include "options.h"
 
 KToggleAction *MyMainView::pauseAction = 0;
@@ -112,16 +107,10 @@ MyMainView::MyMainView(QWidget *parent)
    {
       // ship[i]->setBoundsAction(QwRealMobileSprite::Wrap);
       ship[i]->hide();
-      bullets[i]=new Q3PtrList<BulletSprite>;
-      bullets[i]->setAutoDelete(true);
-      mines[i]=new Q3PtrList<MineSprite>;
-      mines[i]->setAutoDelete(true);
+      bullets[i]=new QList<BulletSprite*>;
+      mines[i]=new QList<MineSprite*>;
 
    }
-   
-
-   explosions.setAutoDelete(true);
-   powerups.setAutoDelete(true);
 
    waitForStart=false;
    textSprite=0;
@@ -139,9 +128,19 @@ MyMainView::~MyMainView()
       delete shippixmap[i];
       delete bulletpixmap[i];
       delete ai[i];
+      qDeleteAll(*mines[i]);
+      delete mines[i];
+      qDeleteAll(*bullets[i]);
+      delete bullets[i];
    }
    for(i=0;i<4;i++)
       delete poweruppixmap[i];
+   
+   qDeleteAll(powerups);
+   powerups.clear();
+   
+   qDeleteAll(explosions);
+   explosions.clear();
    
    writeConfig();
 }
@@ -151,26 +150,27 @@ void MyMainView::setActionCollection(KActionCollection *a)
    actionCollection = a;
 }
 
- bool MyMainView::readSprites()
- {
-     QString sprites_prefix = KGlobal::dirs()->findResourceDir("appdata", (QString)MV_BACKGROUND) + "sprites/";
+/* taken from kasteroids (as the whole animation system). Thank you! */
+bool MyMainView::readSprites()
+{
+   QString sprites_prefix = KGlobal::dirs()->findResourceDir("appdata", (QString)MV_BACKGROUND) + "sprites/";
 
-     int i = 0;
-     while ( kspd_animations[i].id )
-     {
-         QList<QPixmap> anim;
-         QString wildcard = sprites_prefix + kspd_animations[i].path;
-         wildcard.replace("%1", "*");
-         QFileInfo fi(wildcard);
-         foreach (QString entry, QDir(fi.path(), fi.fileName()).entryList())
-             anim << QPixmap(fi.path() + "/" + entry);
-         animation.insert( kspd_animations[i].id, anim );
-         i++;
-     }
+   int i = 0;
+   while ( kspd_animations[i].id )
+   {
+      QList<QPixmap> anim;
+      QString wildcard = sprites_prefix + kspd_animations[i].path;
+      wildcard.replace("%1", "*");
+      QFileInfo fi(wildcard);
+      foreach (QString entry, QDir(fi.path(), fi.fileName()).entryList())
+         anim << QPixmap(fi.path() + '/' + entry);
+      animation.insert( kspd_animations[i].id, anim );
+      i++;
+   }
 
-     // FixMe: test!
-     return true;
- }
+   // FixMe: perform test!
+   return true;
+}
 
 void MyMainView::readConfig()
 {
@@ -296,28 +296,9 @@ SConfig MyMainView::modifyConfig(SConfig conf)
 
 void MyMainView::keyPressEvent(QKeyEvent *ev)
 {
-   if((gameEnd<=0.0)&&(gameEnd>-2.0))
-   {
-      /*
-      if(key==options.functionKey[FunctionKeyStart])
-         newRound();
-      */
-   }
-   else if(waitForStart)
-   {
-      /*
-      if((key==options.functionKey[FunctionKeyStart])
-         && (!functionKeyPressed[FunctionKeyStart]))
-      {
-         functionKeyPressed[FunctionKeyStart]=true;
-         resume();
-      }
-      */
-   }
-   else
-   {
-     bool accept=true;
-
+    // if-statement kept for historical reasons, maybe not needed anymore
+    if ( ((gameEnd>0.0) || (gameEnd<=-2.0)) && (!waitForStart) )
+    {
       if(actionCollection->action("P1KeyLeft")->shortcuts().contains(ev->key()))
             playerKeyPressed[0][PlayerKeyLeft]=true;
       else if(actionCollection->action("P2KeyLeft")->shortcuts().contains(ev->key()))
@@ -343,24 +324,12 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
       else if(actionCollection->action("P2Mine")->shortcuts().contains(ev->key()))
             playerKeyPressed[1][PlayerKeyMine]=true;
       else
-        accept = false;
-      /*
-      if((key==options.functionKey[FunctionKeyStart])
-         && (!functionKeyPressed[FunctionKeyStart]))
-      {
-         functionKeyPressed[FunctionKeyStart]=true;
-         pause();
-      }
-      */
-      if(!accept)
-	ev->ignore();
-   }
+        ev->ignore();
+    }
 }
 
 void MyMainView::keyReleaseEvent(QKeyEvent *ev)
 {
-   bool accept=true;
-
    if(actionCollection->action("P1KeyLeft")->shortcuts().contains(ev->key()))
       playerKeyPressed[0][PlayerKeyLeft]=false;
    else if(actionCollection->action("P2KeyLeft")->shortcuts().contains(ev->key()))
@@ -386,10 +355,7 @@ void MyMainView::keyReleaseEvent(QKeyEvent *ev)
    else if(actionCollection->action("P2Mine")->shortcuts().contains(ev->key()))
       playerKeyPressed[1][PlayerKeyMine]=false;
    else
-      accept = false;
-
-   if(!accept)
-     ev->ignore();
+      ev->ignore();
 }
 
 void MyMainView::pause()
@@ -449,10 +415,9 @@ void MyMainView::togglePause( )
 void MyMainView::resizeEvent(QResizeEvent *event)
 {
    double mx,my;
-   MineSprite *mine;
    BulletSprite *bullet;
-   PowerupSprite *powerup;
    int i,current;
+   int listsize; // used for cacheing QtList::size()
 
    mx=(event->size().width()-event->oldSize().width())/2.0;
    my=(event->size().height()-event->oldSize().height())/2.0;
@@ -469,33 +434,29 @@ void MyMainView::resizeEvent(QResizeEvent *event)
    {
       // ship[i]->adoptSpritefieldBounds();
       ship[i]->moveBy(mx,my);
-      current=mines[i]->at();
-      for(mine=mines[i]->first();mine;mine=mines[i]->next())
+      
+      listsize = mines[i]->size();
+      for (current=0; current<listsize; current++)
       {
          // mine->adoptSpritefieldBounds();
-         mine->moveBy(mx,my);
+         mines[i]->value(current)->moveBy(mx,my);
       }
-      if(current>=0)
-         mines[i]->at(current);
-
-      current=bullets[i]->at();
-      for(bullet=bullets[i]->first();bullet;bullet=bullets[i]->next())
+      
+      listsize = bullets[i]->size();
+      for (current=0; current<listsize; current++)
       {
          // bullet->adoptSpritefieldBounds();
-         bullet->moveBy(mx,my);
+         bullets[i]->value(current)->moveBy(mx,my);
       }
-      if(current>=0)
-         bullets[i]->at(current);
-
    }
    if(textSprite)
       textSprite->moveBy((int)mx,(int)my);
    
-   current=powerups.at();
-   for(powerup=powerups.first();powerup;powerup=powerups.next())
-      powerup->moveBy(mx,my);
-   if(current>=0)
-      powerups.at(current);
+   listsize = powerups.size();
+   for (current=0; current<listsize; current++)
+   {
+      powerups[current]->moveBy(mx,my);
+   }
 }
 
 void MyMainView::newRound()
@@ -504,6 +465,7 @@ void MyMainView::newRound()
    int i;
 
    timeToNextPowerup=random.getDouble() * config.powerupRefreshTime;
+   qDeleteAll(powerups);
    powerups.clear();
 
    QAbstractEventDispatcher::instance()->unregisterTimers(this);
@@ -529,8 +491,12 @@ void MyMainView::newRound()
       emit(energy(i,(int)ship[i]->getEnergy()));
       emit(hitPoints(i,ship[i]->getHitPoints()));
       bulletShot[i]=false;
+      qDeleteAll(*bullets[i]);
       bullets[i]->clear();
+      
+      qDeleteAll(*mines[i]);
       mines[i]->clear();
+      
       ship[i]->mine(0.0);
       ship[i]->bullet(0.0);
       ship[i]->setBulletPowerups(0);
@@ -538,6 +504,7 @@ void MyMainView::newRound()
 
       ai[i]->newRound();
    }
+   qDeleteAll(explosions);
    explosions.clear();
    gameEnd=-10.0;
    for(i=0;i<PlayerKeyNum;i++)
@@ -556,7 +523,7 @@ void MyMainView::newRound()
    QString str = i18n("Press %1 to start",
                   KShortcut(GAME_START_SHORTCUT).toString());
    emit(setStatusText(str,IDS_MAIN));
-   emit( setStatusText( "", IDS_PAUSE ) );
+   emit(setStatusText( "", IDS_PAUSE ));
    stop( );
 }
 
@@ -769,89 +736,104 @@ void MyMainView::moveShips()
 
 void MyMainView::moveMines()
 {
+   int i;
    MineSprite* mine;
    int p;
+   int listsize; // used for cacheing QtList::size()
 
    for(p=0;p<2;p++)
    {
-      mine=mines[p]->first();
-      while(mine)
+      i=0;
+      listsize = mines[p]->size();
+      while (i<listsize)
       {
+         mine = mines[p]->value(i);
          mine->calculateGravity(config.gravity,config.gamespeed);
          mine->forward(config.gamespeed);
          if(mine->over())
          {
             mine->hide();
-            mines[p]->remove();
-            mine=mines[p]->current();
+            mines[p]->removeAt(i);
+            delete mine;
+            listsize--;
          }
          else
-            mine=mines[p]->next();
+            i++;
       }
    }
 }
 
 void MyMainView::moveBullets()
 {
-   int i;
+   int i,j;
    BulletSprite *sp;
+   int listsize; // used for cacheing QtList::size()
 
    for(i=0;i<2;i++)
    {
-      sp=bullets[i]->first();
-      while(sp)
+      j=0;
+      listsize = bullets[i]->size();
+      while (j<listsize)
       {
+         sp = bullets[i]->value(j);
          sp->calculateGravity(config.gravity,config.gamespeed);
          sp->forward(config.gamespeed);
          if(sp->timeOut())
          {
             sp->hide();
-            bullets[i]->removeRef(sp);
-            sp=bullets[i]->current();
+            bullets[i]->removeAll(sp);
+            listsize--;
          }
          else
-            sp=bullets[i]->next();
+            j++;
       }
    }
 }
 
 void MyMainView::moveExplosions()
 {
+   int i=0;
    ExplosionSprite *ex;
-   ex=explosions.first();
-   while(ex)
+   int listsize; // used for cacheing QtList::size()
+   listsize = explosions.size();
+   while (i<listsize)
    {
+      ex = explosions[i];
       ex->forward(config.gamespeed);
       if(ex->isOver())
       {
-         explosions.removeRef(ex);
-         ex=explosions.current();
+         explosions.removeAt(i);
+         delete ex;
+         listsize--;
       }
       else
-         ex=explosions.next();
+         i++;
    }
 }
 
 void MyMainView::calculatePowerups()
 {
+   int i=0;
    PowerupSprite *sp;
-   int type,x,y;
-
-   sp=powerups.first();
-   while(sp)
+   int listsize; // used for cacheing QtList::size()
+   listsize = powerups.size();
+   while (i<listsize)
    {
+      sp = powerups[i];
       sp->setLifetime(sp->getLifetime()-config.gamespeed);
-      if(sp->getLifetime()<0)
+      if (sp->getLifetime()<0)
       {
-         powerups.removeRef(sp);
-         sp=powerups.current();
+         powerups.removeAt(i);
+         delete sp;
+         listsize--;
       }
       else
-         sp=powerups.next();
+         i++;
    }
    timeToNextPowerup-=config.gamespeed;
    if(timeToNextPowerup<0)
    {
+      int type,x,y;
       timeToNextPowerup= random.getDouble() * config.powerupRefreshTime;
       type= random.getLong(PowerupSprite::PowerupNum);
      sp=new PowerupSprite(poweruppixmap[type],&field,type,
@@ -881,6 +863,8 @@ void MyMainView::collisions()
    QList<QGraphicsItem *> hitlist;
    double ndx[2],ndy[2];
    double en;
+   int i;
+   int listsize; // used for cacheing QtList::size()
 
    for(pl=0;pl<2;pl++)
    {
@@ -910,7 +894,9 @@ void MyMainView::collisions()
                case S_BULLET:
                   bullet=(BulletSprite *)sprite;
                   bullet->hide();
-                  bullets[bullet->getPlayerNumber()]->removeRef(bullet);
+                  //bullets[bullet->getPlayerNumber()]->removeRef(bullet);
+                  bullets[bullet->getPlayerNumber()]->removeAll(bullet);
+                  delete bullet;
                   hp-=config.bulletDamage;
                   break;
                case S_SHIP:
@@ -964,7 +950,8 @@ void MyMainView::collisions()
                         break;
                   }
                   power->hide();
-                  powerups.removeRef(power);
+                  powerups.removeAll(power);
+                  delete power;
                   break;
             }
          }
@@ -973,8 +960,10 @@ void MyMainView::collisions()
          ship[pl]->setHitPoints(hp);
       }
 
-      for(mine=mines[pl]->first();mine;mine=mines[pl]->next())
+      listsize = mines[pl]->size();
+      for (i=0; i<listsize; i++)
       {
+         mine = mines[pl]->value(i);
          if(!mine->explodes())
          {
             unexact.clear();
@@ -994,7 +983,9 @@ void MyMainView::collisions()
                {
                   // FIXME: why does it crash with qgraphicsitem_cast?
 		  bullet = static_cast<BulletSprite*>(item);// qgraphicsitem_cast<BulletSprite*>(item);
-                  bullets[bullet->getPlayerNumber()]->removeRef(bullet);
+//                   bullets[bullet->getPlayerNumber()]->removeRef(bullet);
+                  bullets[bullet->getPlayerNumber()]->removeAll(bullet);
+                  delete bullet;
                }
             }
          }
@@ -1022,16 +1013,15 @@ void MyMainView::collisions()
       }
    }
 
-//    for(it=hitlist.begin(); it != hitlist.end(); ++it)
    foreach (sprite, hitlist)
    {
-     // sprite=(*it);
       switch(sprite->type())
       {
          case S_BULLET:
             bullet=(BulletSprite *)sprite;
             bullet->hide();
-            bullets[bullet->getPlayerNumber()]->removeRef(bullet);
+            bullets[bullet->getPlayerNumber()]->removeAll(bullet);
+            delete bullet;
             break;
          case S_MINE:
             mine=(MineSprite*)sprite;
