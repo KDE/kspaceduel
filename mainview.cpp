@@ -1070,4 +1070,11 @@ void MyMainView::closeSettings(){
     config=modifyConfig(customConfig);
 }
 
+void MyMainView::focusOutEvent (QFocusEvent *event)
+{
+   /* FIXME: ugly hack, I think
+      it's maybe better to declare something like QMyScene:public QGraphicsScene and process input there */
+   setFocus(Qt::OtherFocusReason);
+}
+
 #include "mainview.moc"
