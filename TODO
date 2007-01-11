@@ -5,7 +5,7 @@ sounds (using Phonon)
 maybe port to SVG (partially?)
 [DONE]refactoring (split up sprites.h/cpp?)
 clean up
-fix bug: clicking on playfield
+[HACK (see MyMainView::focusOutEvent)]fix bug: clicking on playfield
 [DONE]fix bug: starting positions first round
 fix bug: shortcut configuration
 fix bug: ships don't have the same size

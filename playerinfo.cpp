@@ -77,14 +77,14 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
    wins.setSegmentStyle(QLCDNumber::Flat);
    if (pnr==0)
    {
-      hitpoints.setPaletteForegroundColor(Qt::darkRed);
-      energy.setPaletteForegroundColor(Qt::darkRed);
-      wins.setPaletteForegroundColor(Qt::darkRed);
+      hitpoints.setPaletteForegroundColor(QColor(251,37,37));
+      energy.setPaletteForegroundColor(QColor(251,37,37));
+      wins.setPaletteForegroundColor(QColor(251,37,37));
    } else
    {
-      hitpoints.setPaletteForegroundColor(Qt::darkBlue);
-      energy.setPaletteForegroundColor(Qt::darkBlue);
-      wins.setPaletteForegroundColor(Qt::darkBlue);
+      hitpoints.setPaletteForegroundColor(QColor(61,23,233));
+      energy.setPaletteForegroundColor(QColor(61,23,233));
+      wins.setPaletteForegroundColor(QColor(61,23,233));
    }
 }
        
