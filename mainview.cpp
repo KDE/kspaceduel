@@ -417,7 +417,7 @@ void MyMainView::resizeEvent(QResizeEvent *event)
    double mx,my;
    BulletSprite *bullet;
    int i,current;
-   int listsize; // used for cacheing QtList::size()
+   int listsize; // used for caching QtList::size()
 
    mx=(event->size().width()-event->oldSize().width())/2.0;
    my=(event->size().height()-event->oldSize().height())/2.0;
@@ -739,7 +739,7 @@ void MyMainView::moveMines()
    int i;
    MineSprite* mine;
    int p;
-   int listsize; // used for cacheing QtList::size()
+   int listsize; // used for caching QtList::size()
 
    for(p=0;p<2;p++)
    {
@@ -767,7 +767,7 @@ void MyMainView::moveBullets()
 {
    int i,j;
    BulletSprite *sp;
-   int listsize; // used for cacheing QtList::size()
+   int listsize; // used for caching QtList::size()
 
    for(i=0;i<2;i++)
    {
@@ -794,7 +794,7 @@ void MyMainView::moveExplosions()
 {
    int i=0;
    ExplosionSprite *ex;
-   int listsize; // used for cacheing QtList::size()
+   int listsize; // used for caching QtList::size()
    listsize = explosions.size();
    while (i<listsize)
    {
@@ -815,7 +815,7 @@ void MyMainView::calculatePowerups()
 {
    int i=0;
    PowerupSprite *sp;
-   int listsize; // used for cacheing QtList::size()
+   int listsize; // used for caching QtList::size()
    listsize = powerups.size();
    while (i<listsize)
    {
@@ -864,7 +864,7 @@ void MyMainView::collisions()
    double ndx[2],ndy[2];
    double en;
    int i;
-   int listsize; // used for cacheing QtList::size()
+   int listsize; // used for caching QtList::size()
 
    for(pl=0;pl<2;pl++)
    {

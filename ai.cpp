@@ -399,7 +399,7 @@ void Ai::testForHits()
    Hit hit;
    bool hitfound=false;
    double distance,dx,dy;
-   int listsize; // used for cacheing QtList::size()
+   int listsize; // used for caching QtList::size()
 
    if(calculateCollisions>0)
    {
@@ -517,7 +517,7 @@ void Ai::shotScores()
    bool found,foundmh;
    double dist,dx,dy,fuel;
    int i,j,k;
-   int listsize,listsize2; // used for cacheing QtList::size()
+   int listsize,listsize2; // used for caching QtList::size()
 
 
    dx=(*shipsNextPositions[playerNumber])[0].x-(*shipsNextPositions[opponentNumber])[0].x;
@@ -699,7 +699,7 @@ void Ai::chooseAction()
    }
    else
    {
-      int listsize; // used for cacheing QtList::size()
+      int listsize; // used for caching QtList::size()
       bestShot=0;
       listsize = myShots.size();
       for (i=0; i<listsize; i++)
