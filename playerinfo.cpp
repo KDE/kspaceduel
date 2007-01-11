@@ -68,10 +68,24 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
    wins.setGeometry(9,195,26,26);
    hitpoints.setFrameStyle(NoFrame);
    hitpoints.setToolTip(i18n("Hit points"));
+   hitpoints.setSegmentStyle(QLCDNumber::Flat);
    energy.setFrameStyle(NoFrame);
    energy.setToolTip(i18n("Energy"));
+   energy.setSegmentStyle(QLCDNumber::Flat);
    wins.setFrameStyle(NoFrame);
    wins.setToolTip(i18n("Wins"));
+   wins.setSegmentStyle(QLCDNumber::Flat);
+   if (pnr==0)
+   {
+      hitpoints.setPaletteForegroundColor(Qt::darkRed);
+      energy.setPaletteForegroundColor(Qt::darkRed);
+      wins.setPaletteForegroundColor(Qt::darkRed);
+   } else
+   {
+      hitpoints.setPaletteForegroundColor(Qt::darkBlue);
+      energy.setPaletteForegroundColor(Qt::darkBlue);
+      wins.setPaletteForegroundColor(Qt::darkBlue);
+   }
 }
        
 void PlayerInfo::setHitpoints(int h)
