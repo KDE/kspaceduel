@@ -162,7 +162,7 @@ bool MyMainView::readSprites()
       QString wildcard = sprites_prefix + kspd_animations[i].path;
       wildcard.replace("%1", "*");
       QFileInfo fi(wildcard);
-      foreach (QString entry, QDir(fi.path(), fi.fileName()).entryList())
+      foreach (const QString &entry, QDir(fi.path(), fi.fileName()).entryList())
          anim << QPixmap(fi.path() + '/' + entry);
       animation.insert( kspd_animations[i].id, anim );
       i++;
