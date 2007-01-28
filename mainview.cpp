@@ -33,6 +33,7 @@ This program is free software; you can redistribute it and/or modify
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <ktoggleaction.h>
+#include <kconfiggroup.h>
 
 #include "ai.h"
 #include "mainview.h"
