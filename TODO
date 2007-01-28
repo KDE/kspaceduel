@@ -10,3 +10,4 @@ clean up
 fix bug: shortcut configuration
 fix bug: ships don't have the same size
 check: ai may still use old coordinate system (may result in bad shots from ai)
+check: logic in void Ai::shotScores() (see FIXME)

@@ -322,7 +322,6 @@ Hit Ai::firstObject(AiSprite shot,int time,int frames)
    optime=shipsNextPositions[0]->size();
 
    num=optime-basetime;
-
    if(num>0)
    {
       for(t=0;(t<num)&&(!hitfound)&&(!shot.sun);t++)
@@ -553,13 +552,17 @@ void Ai::shotScores()
                {
                   foundmh=false;
                   listsize2 = minesHitByShot.size();
-                  for (k=0; k<listsize2 && !found; k++)
+                  for (k=0; k<listsize2 && !foundmh; k++)
                   {
                      mh = minesHitByShot[k];
                      if((mh->playerNumber==s->hit.playerNumber)
                         &&(mh->objectNumber==s->hit.objectNumber))
                             //another shot will hit the mine
                      {
+                     	/* FIXME: check (and understand) this function
+                     	   original version: "found" in for-clause, bot was never true
+                     	   foundmh set to false before but never changed */
+                     	foundmh = true;
                         if(mh->hitTime<s->hit.hitTime)
                            s->score+=500;
                         else
@@ -596,7 +599,6 @@ void Ai::chooseAction()
             nextHit=h;
             shotHitTime=h->hitTime;
             }*/
-
    if((borderTime>0) || (sunTime>0) || (nextHit))
    {
       actualpos=ship[playerNumber]->toAiSprite();
