@@ -84,7 +84,7 @@ sun and less energy near the border. It gets the full amount of energy if the
 sun shines directly on the panels and less or even no energy if the sun shines
 at an angle to the panel or to the side of the panel.</para>
 
-<para>If a ship has no energy it can't navigate or shoot. </para>
+<para>If a ship has no energy it cannot navigate or shoot. </para>
 
 </sect2>
 
@@ -579,7 +579,7 @@ Options</link> for further information.</para></listitem>
 <row><entry><keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo></entry><entry>New Round</entry></row>
 <row><entry><keycombo action="simul"><keycap>P</keycap></keycombo></entry><entry>Pause Game</entry></row>
 <row><entry><keycombo action="simul"><keycap>F1</keycap></keycombo></entry><entry>Help Contents</entry></row>
-<row><entry><keycombo action="simul">&Shift;<keycap>F1</keycap></keycombo></entry><entry>Whats This Help</entry></row>
+<row><entry><keycombo action="simul">&Shift;<keycap>F1</keycap></keycombo></entry><entry>What's This Help</entry></row>
 <row><entry><keycombo action="simul"><keycap>Space</keycap></keycombo></entry><entry>Start Game</entry></row>
 </tbody>
 </tgroup>
