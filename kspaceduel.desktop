@@ -9,7 +9,6 @@ Exec=kspaceduel -caption "%c"
 GenericName=Space Arcade Game
 GenericName[el]=Διαστημικό Arcade παιχνίδι
 GenericName[fr]=Jeu d'arcade dans l'espace
-GenericName[ja]=宇宙アーケードゲーム
 GenericName[x-test]=xxSpace Arcade Gamexx
 Icon=kspaceduel
 Path=
