@@ -33,6 +33,8 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
    QString str;
    int i;
    
+   QPalette palette;
+   
    lplayer.setFrameStyle(Panel|Sunken);
    lplayer.setMargin(0);
    lplayer.setToolTip(i18n("Hit points"));
@@ -77,15 +79,14 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
    wins.setSegmentStyle(QLCDNumber::Flat);
    if (pnr==0)
    {
-      hitpoints.setPaletteForegroundColor(QColor(251,37,37));
-      energy.setPaletteForegroundColor(QColor(251,37,37));
-      wins.setPaletteForegroundColor(QColor(251,37,37));
+      palette.setColor(hitpoints.foregroundRole(), QColor(251,37,37));
    } else
    {
-      hitpoints.setPaletteForegroundColor(QColor(61,23,233));
-      energy.setPaletteForegroundColor(QColor(61,23,233));
-      wins.setPaletteForegroundColor(QColor(61,23,233));
+      palette.setColor(hitpoints.foregroundRole(), QColor(61,23,233));
    }
+   hitpoints.setPalette(palette);
+   energy.setPalette(palette);
+   wins.setPalette(palette);
 }
        
 void PlayerInfo::setHitpoints(int h)
