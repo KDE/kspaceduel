@@ -94,7 +94,7 @@ class SettingsDialog : public KConfigDialog
 {
         Q_OBJECT
 public:
-        SettingsDialog(SConfig *customConfig, QWidget *parent=0, const char *name=0);
+        explicit SettingsDialog(SConfig *customConfig, QWidget *parent=0, const char *name=0);
         ~SettingsDialog();
 
 signals:
