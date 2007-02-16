@@ -1,13 +1,5 @@
 
-add_subdirectory( ship1 ) 
-add_subdirectory( ship2 ) 
-add_subdirectory( playerinfo ) 
-add_subdirectory( explosion ) 
-add_subdirectory( sun ) 
-add_subdirectory( powerups ) 
-
-
-
+add_subdirectory(playerinfo)
 
 ########### install files ###############
 

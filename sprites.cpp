@@ -25,23 +25,23 @@ This program is free software; you can redistribute it and/or modify
 #include "mathroutines.h"
 #include "sprites.h"
 
-SunSprite::SunSprite(QPixmap* pixmap, QGraphicsScene* scene)
-      :SimpleSprite(pixmap, scene)
+SunSprite::SunSprite(QSvgRenderer* svg, const QString& element)
+      :SimpleSprite(svg, element)
 {
     setZValue(0);
 }
 
 
-PowerupSprite::PowerupSprite(QPixmap* pixmap, QGraphicsScene* scene, int t,
+PowerupSprite::PowerupSprite(QSvgRenderer* svg, const QString& element, int t,
                              double lifetime)
-      :SimpleSprite(pixmap, scene)
+      :SimpleSprite(svg, element)
 {
    time=lifetime;
    mtype=t;
 }
 
-ShipSprite::ShipSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn)
-      :MobileSprite(pixmap,scene,pn)
+ShipSprite::ShipSprite(QSvgRenderer* svg, const QString& element, int pn)
+      :MobileSprite(svg, element,pn)
 {
    hitpoints=MAX_HP;
    energy=MAX_ENERGY;
@@ -150,8 +150,8 @@ void ShipSprite::rotateLeft(double rotationEnergyNeed,double rotationSpeed)
    }
 }
 
-BulletSprite::BulletSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn,double lifetime)
-      :MobileSprite(pixmap,scene,pn)
+BulletSprite::BulletSprite(QSvgRenderer* svg, const QString& element, int pn,double lifetime)
+      :MobileSprite(svg,element,pn)
 {
    setZValue(-10);
    time=lifetime;
@@ -169,8 +169,8 @@ void BulletSprite::forward(double mult,int fr)
    time-=mult;
 }
 
-MineSprite::MineSprite(const QList<QPixmap> &animation, const QList<QPixmap> &exploanimation, QGraphicsScene* scene, int pn,double atime,double f)
-      :AnimatedSprite(animation,scene,pn)
+MineSprite::MineSprite(QSvgRenderer* svg, const QList<QString>& animation, const QList<QString>& exploanimation, int pn,double atime,double f)
+      :AnimatedSprite(svg, animation,pn)
 {
    exploframes = exploanimation;
    activateTime=atime;
@@ -239,8 +239,8 @@ void MineSprite::calculateGravity(double gravity,double mult)
    }
 }
 
-ExplosionSprite::ExplosionSprite(const QList<QPixmap> &animation, QGraphicsScene *scene, MobileSprite *sp)
-      :AnimatedSprite(animation, scene)
+ExplosionSprite::ExplosionSprite(QSvgRenderer* svg, const QList<QString>& animation, MobileSprite *sp)
+      :AnimatedSprite(svg, animation)
 {
    over=false;
    setZValue(5);

@@ -18,34 +18,34 @@ This program is free software; you can redistribute it and/or modify
 #ifndef __SPRITE_BASE_H
 #define __SPRITE_BASE_H
 
-#include <QGraphicsPixmapItem>
+#include <QGraphicsSvgItem>
 class QGraphicsScene;
 
 //#include "defines.h"
 #include "spritebase.h"
 #include "structs.h"
 
-class SimpleSprite: public QGraphicsPixmapItem
+class SimpleSprite: public QGraphicsSvgItem
 {
    public:
       int width();
       int height();
       QPointF center();
-   private:
+   protected:
       void init();
-      
+
+    private:
       int m_width;
       int m_height;
       QPointF m_center;
    protected:
-      SimpleSprite(QPixmap* pixmap, QGraphicsScene* scene);
-      SimpleSprite(QGraphicsItem* parent = 0, QGraphicsScene * scene = 0);
+      SimpleSprite(QSvgRenderer* svg, const QString& element);
 };
 
 class MobileSprite:public SimpleSprite
 {
 public:
-   MobileSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn);
+   MobileSprite(QSvgRenderer* svg, const QString&, int pn);
 
    virtual void forward(double mult,int frame);
    virtual void forward(double mult);
@@ -61,8 +61,6 @@ public:
    void stop(bool s=true) {stopped=s;}
    int getPlayerNumber() {return playerNumber;}
 protected:
-   MobileSprite(QGraphicsItem* parent = 0, QGraphicsScene * scene = 0, int pn = 0);
-	
    void checkBounds();
    bool stopped;
    int playerNumber;
@@ -73,23 +71,23 @@ protected:
 class AnimatedSprite:public MobileSprite
 {
 public:
-   explicit AnimatedSprite(const QList<QPixmap> &animation, QGraphicsScene *scene = 0, int pn=0);
+   explicit AnimatedSprite(QSvgRenderer* svg, const QList<QString> &animation, int pn=0);
 
    void setFrame(int frame);
    inline int frame() const
    { return currentFrame; }
    inline int frameCount() const
    { return frames.size(); }
-   inline QPixmap image(int frame) const
-   { return frames.isEmpty() ? QPixmap() : frames.at(frame % frames.size()); }
+   inline QString element(int frame) const
+   { return frames.isEmpty() ? QString() : frames.at(frame % frames.size()); }
    QPainterPath shape() const;
-   void setAnimation(const QList<QPixmap> &animation);
+   void setAnimation(const QList<QString> &animation);
 
    void advance(int phase);
 
 private:
    int currentFrame;
-   QList<QPixmap> frames;
+   QList<QString> frames;
 };
 
 #endif

@@ -30,7 +30,8 @@ int main(int argc,char **argv)
    KAboutData aboutData( "kspaceduel", I18N_NOOP("KSpaceDuel"), 
       KSPACEDUEL_VERSION, description, KAboutData::License_GPL, 
       "(c) 1998-2001, Andreas Zehender");
-   aboutData.addAuthor("Andreas Zehender",0, "az@azweb.de");
+   aboutData.addAuthor("Andreas Zehender",I18N_NOOP("Original Program"), "az@azweb.de");
+   aboutData.addAuthor("Branan Riley",I18N_NOOP("SVG Renderer"), "branan@gmail.com");
    KCmdLineArgs::init( argc, argv, &aboutData );
 
    KApplication myapplication;

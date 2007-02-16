@@ -35,6 +35,8 @@ This program is free software; you can redistribute it and/or modify
 #include <ktoggleaction.h>
 #include <kconfiggroup.h>
 
+#include <KSvgRenderer>
+
 #include "ai.h"
 #include "mainview.h"
 #include "options.h"
@@ -48,10 +50,10 @@ static struct
  }
  kspd_animations [] =
  {
-     { ID_EXPLOSION, "explosion/explos%1.png"},
-     { ID_MINE1, "ship1/mine%1.png"},
-     { ID_MINE2, "ship2/mine%1.png"},
-     { ID_MINEEXPLO, "explosion/mineex%1.png"},
+     { ID_EXPLOSION, "explos%1"},
+     { ID_MINE1, "mine_red%1"},
+     { ID_MINE2, "mine_blue%1"},
+     { ID_MINEEXPLO, "mineex%1"},
      { 0, 0}
  };
 
@@ -82,25 +84,22 @@ MyMainView::MyMainView(QWidget *parent)
       minePut[p]=false;
    }
 
-   QString tmp = KGlobal::dirs()->findResourceDir("appdata", (QString)MV_BACKGROUND);
+   svgrender = new KSvgRenderer(KStandardDirs::locate("appdata", MV_SVG_FILE));
    
-   sunpixmap = new QPixmap(tmp + MV_SUN_PNG);
-   sun=new SunSprite(sunpixmap, &field);
+   sun=new SunSprite(svgrender, MV_SUN);
+   field.addItem(sun);
    sun->setPos(QPointF(width()/2-1-(sun->width()/2),
                        height()/2-1-(sun->height()/2)));
    
-   shippixmap[0] = new QPixmap(tmp + MV_SHIP1_PNG);
-   shippixmap[1] = new QPixmap(tmp + MV_SHIP2_PNG);
-   ship[0]=new ShipSprite(shippixmap[0],&field,0);
-   ship[1]=new ShipSprite(shippixmap[1],&field,1);
+   powerupelements[0] = MV_POWERMINE;
+   powerupelements[1] = MV_POWERBULLET;
+   powerupelements[2] = MV_POWERSHIELD;
+   powerupelements[3] = MV_POWERENERGY;
    
-   bulletpixmap[0] = new QPixmap(tmp + MV_BULLET1_PNG);
-   bulletpixmap[1] = new QPixmap(tmp + MV_BULLET2_PNG);
-   
-   poweruppixmap[0] = new QPixmap( tmp + MV_POWERMINE_PNG);
-   poweruppixmap[1] = new QPixmap( tmp + MV_POWERBULLET_PNG);
-   poweruppixmap[2] = new QPixmap( tmp + MV_POWERSHIELD_PNG);
-   poweruppixmap[3] = new QPixmap( tmp + MV_POWERENERGY_PNG);
+   ship[0]=new ShipSprite(svgrender, MV_SHIP1, 0);
+   ship[1]=new ShipSprite(svgrender, MV_SHIP2, 1);
+   field.addItem(ship[0]);
+   field.addItem(ship[1]);
       
    readSprites();
    
@@ -123,19 +122,14 @@ MyMainView::~MyMainView()
    int i;
    QAbstractEventDispatcher::instance()->unregisterTimers(this);
 
-   delete sunpixmap;
    for(i=0;i<2;i++)
    {
-      delete shippixmap[i];
-      delete bulletpixmap[i];
       delete ai[i];
       qDeleteAll(*mines[i]);
       delete mines[i];
       qDeleteAll(*bullets[i]);
       delete bullets[i];
    }
-   for(i=0;i<4;i++)
-      delete poweruppixmap[i];
    
    qDeleteAll(powerups);
    powerups.clear();
@@ -151,25 +145,30 @@ void MyMainView::setActionCollection(KActionCollection *a)
    actionCollection = a;
 }
 
-/* taken from kasteroids (as the whole animation system). Thank you! */
+/* Assumes that there are no gaps between animation frames. ie 1,2,3 will only have frames 1&2
+   recognized. It also assumes that there is at least one frame. */
+// FIXME: Add Check for existence of first frame
+// TODO: Add support for missing frames (ie 1,2,5)
 bool MyMainView::readSprites()
 {
-   QString sprites_prefix = KGlobal::dirs()->findResourceDir("appdata", (QString)MV_BACKGROUND) + "sprites/";
-
    int i = 0;
    while ( kspd_animations[i].id )
    {
-      QList<QPixmap> anim;
-      QString wildcard = sprites_prefix + kspd_animations[i].path;
-      wildcard.replace("%1", "*");
-      QFileInfo fi(wildcard);
-      foreach (const QString &entry, QDir(fi.path(), fi.fileName()).entryList())
-         anim << QPixmap(fi.path() + '/' + entry);
+      QList<QString> anim;
+      short frame = 0;
+      QString element = kspd_animations[i].path;
+      QString elem = element.arg(frame, 2, 10, QLatin1Char('0'));
+      do
+      {
+	 anim.append(elem);
+	 frame++;
+	 elem = element.arg(frame, 2, 10, QLatin1Char('0'));
+      } while ( svgrender->elementExists(elem) );
       animation.insert( kspd_animations[i].id, anim );
       i++;
    }
 
-   // FixMe: perform test!
+   // FIXME: Perform test!
    return true;
 }
 
@@ -476,8 +475,8 @@ void MyMainView::newRound()
                            my+config.startPosY-(ship[0]->height()/2)));
    ship[0]->setRotation(0.0);
 
-   ship[1]->setPos(QPointF(mx-config.startPosX-(ship[1]->width()/2),
-                           my-config.startPosY-(ship[1]->height()/2)));
+   ship[1]->setPos(QPointF(mx-config.startPosX+(ship[1]->width()/2),
+                           my-config.startPosY+(ship[1]->height()/2)));
    ship[1]->setRotation(M_PI);
 
    ship[0]->setVelocity(config.startVelX,config.startVelY);
@@ -688,8 +687,13 @@ void MyMainView::moveShips()
                {
                   ship[i]->bullet(config.bulletReloadTime);
                   en-=config.shotEnergyNeed;
-                  bullet=new BulletSprite(bulletpixmap[i],&field,i,
+		  if(i)
+		     bullet=new BulletSprite(svgrender, MV_BULLET2, i,
+					     config.bulletLifeTime);
+		  else
+		     bullet=new BulletSprite(svgrender, MV_BULLET1, i,
                                           config.bulletLifeTime);
+		  field.addItem(bullet);
 		  QPointF p;
 		  p = ship[i]->mapToScene(ship[i]->center());
 		  bullet->setPos(QPointF(p.x()+nx*SHOTDIST,p.y()-ny*SHOTDIST));
@@ -712,11 +716,12 @@ void MyMainView::moveShips()
                   ship[i]->mine(config.mineReloadTime);
                   en-=config.mineEnergyNeed;
 		  if (i==0)
-                     mine=new MineSprite(animation[ID_MINE1],animation[ID_MINEEXPLO],&field,i,
+                     mine=new MineSprite(svgrender,animation[ID_MINE1],animation[ID_MINEEXPLO],i,
                                       config.mineActivateTime,config.mineFuel);
 		  else
-		     mine=new MineSprite(animation[ID_MINE2],animation[ID_MINEEXPLO],&field,i,
+		     mine=new MineSprite(svgrender,animation[ID_MINE2],animation[ID_MINEEXPLO],i,
                                       config.mineActivateTime,config.mineFuel);
+		  field.addItem(mine);
 		  QPointF p;
 		  mine->setPos(ship[i]->mapToScene(ship[i]->center()));
                   // move mine to center
@@ -837,8 +842,9 @@ void MyMainView::calculatePowerups()
       int type,x,y;
       timeToNextPowerup= random.getDouble() * config.powerupRefreshTime;
       type= random.getLong(PowerupSprite::PowerupNum);
-     sp=new PowerupSprite(poweruppixmap[type],&field,type,
+      sp=new PowerupSprite(svgrender,powerupelements[type],type,
                            config.powerupLifeTime);
+      field.addItem(sp);
       do
       {
          x = random.getLong(width()-40)+20;
@@ -1043,7 +1049,8 @@ void MyMainView::collisions()
       {
          op=(pl+1)%2;
          ship[pl]->setExplosion((int)(EXPLOSION_TIME/config.gamespeed));
-	 expl = new ExplosionSprite(animation[ID_EXPLOSION],&field,ship[pl]);
+	 expl = new ExplosionSprite(svgrender,animation[ID_EXPLOSION],ship[pl]);
+	 field.addItem(expl);
          expl->show();
          explosions.append(expl);
          gameEnd=Options::timeAfterKill()/config.gamespeed;

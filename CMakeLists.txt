@@ -29,6 +29,7 @@ kde4_add_executable(kspaceduel ${kspaceduel_SRCS})
 target_link_libraries(kspaceduel  ${KDE4_KDEUI_LIBS} kdegames)
 
 install(TARGETS kspaceduel  DESTINATION ${BIN_INSTALL_DIR} )
+install(FILES default_theme.svgz DESTINATION ${DATA_INSTALL_DIR}/kspaceduel/sprites )
 
 
 ########### install files ###############

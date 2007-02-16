@@ -18,27 +18,24 @@ This program is free software; you can redistribute it and/or modify
 #include <math.h>
 
 #include <QGraphicsScene>
+#include <QSvgRenderer>
 
 #include <kdebug.h>
 
 #include "spritebase.h"
 
-SimpleSprite::SimpleSprite(QPixmap* pixmap, QGraphicsScene* scene)
-      :QGraphicsPixmapItem(*pixmap, 0, scene)
+SimpleSprite::SimpleSprite(QSvgRenderer* svg, const QString& element)
+      :QGraphicsSvgItem(0)
 {
-   init();
-}
-
-SimpleSprite::SimpleSprite(QGraphicsItem * parent, QGraphicsScene * scene)
-      :QGraphicsPixmapItem(parent, scene)
-{
+   setSharedRenderer(svg);
+   setElementId(element);
    init();
 }
 
 void SimpleSprite::init()
 {
-   m_width = pixmap().width();
-   m_height = pixmap().height();
+   m_width = boundingRect().width();
+   m_height = boundingRect().height();
    m_center = QPointF(m_width/2.0f,m_height/2.0f);
 }
 
@@ -57,15 +54,8 @@ QPointF SimpleSprite::center()
    return m_center;
 }
 
-MobileSprite::MobileSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn)
-      :SimpleSprite(pixmap, scene)
-{
-   stopped=false;
-   playerNumber=pn;
-}
-
-MobileSprite::MobileSprite(QGraphicsItem * parent, QGraphicsScene * scene, int pn)
-      :SimpleSprite(parent, scene)
+MobileSprite::MobileSprite(QSvgRenderer* svg, const QString& element, int pn)
+      :SimpleSprite(svg, element)
 {
    stopped=false;
    playerNumber=pn;
@@ -75,7 +65,7 @@ void MobileSprite::forward(double mult, int fr)
 {
    if(!stopped)
    {
-      QGraphicsPixmapItem::moveBy(xVelocity()*mult,yVelocity()*mult);
+      QGraphicsSvgItem::moveBy(xVelocity()*mult,yVelocity()*mult);
       checkBounds();
       // FIXME
       //setFrame(fr);
@@ -88,7 +78,7 @@ void MobileSprite::forward(double mult)
 {
    if(!stopped)
    {
-      QGraphicsPixmapItem::moveBy(xVelocity()*mult,yVelocity()*mult);
+      QGraphicsSvgItem::moveBy(xVelocity()*mult,yVelocity()*mult);
       checkBounds();
    }
 }
@@ -140,18 +130,18 @@ void MobileSprite::calculateGravity(double gravity,double mult)
 
 int MobileSprite::spriteFieldWidth()
 {
-	return (int)scene()->width();
+    return (int)scene()->width();
 }
 
 int MobileSprite::spriteFieldHeight()
 {
-	return (int)scene()->height();
+    return (int)scene()->height();
 }
 
 void MobileSprite::setVelocity(double vx, double vy)
 {
-	xvel = vx;
-	yvel = vy;
+    xvel = vx;
+    yvel = vy;
 }
 
 AiSprite MobileSprite::toAiSprite()
@@ -168,20 +158,20 @@ AiSprite MobileSprite::toAiSprite()
    return as;
 }
 
-AnimatedSprite::AnimatedSprite(const QList<QPixmap> &animation,
-                                        QGraphicsScene *scene, int pn)
-    : MobileSprite(0, scene)
+AnimatedSprite::AnimatedSprite(QSvgRenderer* svg,
+                               const QList<QString> &animation,
+                               int pn)
+    : MobileSprite(svg,animation[0],pn)
 {
-	frames = animation;
-	currentFrame = 0;
-	setFrame(0);
+    frames = animation;
+    currentFrame = 0;
 }
 
 void AnimatedSprite::setFrame(int frame)
 {
     if (!frames.isEmpty()) {
         currentFrame = frame % frames.size();
-        setPixmap(frames.at(currentFrame));
+        setElementId(frames.at(currentFrame));
     }
 }
 
@@ -189,7 +179,8 @@ void AnimatedSprite::advance(int phase)
 {
     if (phase == 1 && !frames.isEmpty()) {
         currentFrame = (currentFrame + 1) % frames.size();
-        setPixmap(frames.at(currentFrame));
+        setElementId(frames.at(currentFrame));
+        init();
     }
 }
 
@@ -197,13 +188,13 @@ QPainterPath AnimatedSprite::shape() const
 {
     QPainterPath path;
     path.addRect(0, 0,
-                 frames.at(currentFrame).width(),
-                 frames.at(currentFrame).height());
+                 boundingRect().width(),
+                 boundingRect().height());
     return path;
 }
 
-void AnimatedSprite::setAnimation(const QList<QPixmap> &animation)
+void AnimatedSprite::setAnimation(const QList<QString> &animation)
 {
-	frames = animation;
-	setFrame(0);
+    frames = animation;
+    setFrame(0);
 }

@@ -32,21 +32,23 @@ This program is free software; you can redistribute it and/or modify
 
 #define MV_BACKGROUND "sprites/backgr.png"
 
-#define MV_SHIP1_PNG "sprites/ship1/ship.png"
-#define MV_SHIP2_PNG "sprites/ship2/ship.png"
+#define MV_SVG_FILE "sprites/default_theme.svgz"
 
-#define MV_BULLET1_PNG "sprites/ship1/bullet.png"
-#define MV_BULLET2_PNG "sprites/ship2/bullet.png"
+#define MV_SHIP1 "ship_red"
+#define MV_SHIP2 "ship_blue"
 
-#define MV_MINE1_PNG "sprites/ship1/mine1.png"
-#define MV_MINE2_PNG "sprites/ship2/mine1.png"
+#define MV_BULLET1 "bullet_red"
+#define MV_BULLET2 "bullet_blue"
 
-#define MV_SUN_PNG "sprites/sun/sun.png"
+#define MV_MINE1 "mine_red00"
+#define MV_MINE2 "mine_blue00"
 
-#define MV_POWERBULLET_PNG "sprites/powerups/pbullet.png"
-#define MV_POWERMINE_PNG "sprites/powerups/pmine.png"
-#define MV_POWERSHIELD_PNG "sprites/powerups/pshield.png"
-#define MV_POWERENERGY_PNG "sprites/powerups/penergy.png"
+#define MV_SUN "sun"
+
+#define MV_POWERBULLET "pbullet"
+#define MV_POWERMINE "pmine"
+#define MV_POWERSHIELD "pshield"
+#define MV_POWERENERGY "penergy"
 
 #define DEF_WIDTH 640
 #define DEF_HEIGHT 480

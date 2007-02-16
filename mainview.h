@@ -23,6 +23,7 @@ This program is free software; you can redistribute it and/or modify
 #include <QList>
 #include <QTimerEvent>
 #include <QWidget>
+#include <QString>
 
 #include <krandomsequence.h>
 class KToggleAction;
@@ -95,21 +96,17 @@ private:
    double gameEnd;
    double timeToNextPowerup;
 
-// sprites
-   QPixmap *sunpixmap;
-   QPixmap *shippixmap[2];
-   QPixmap *bulletpixmap[2];
-   QPixmap *poweruppixmap[PowerupSprite::PowerupNum];
+// SVG sprites
+   QSvgRenderer* svgrender;
+   // This could probably be gotten rid of, but it'll be kind of a pain
+   QString powerupelements[PowerupSprite::PowerupNum];
    
-   QMap<int, QList<QPixmap> > animation;
+   QMap<int, QList<QString> > animation;
 
    ShipSprite *ship[2];
    SunSprite *sun;
    QGraphicsSimpleTextItem *textSprite;
-   //Q3PtrList<BulletSprite> *bullets[2];
-   //Q3PtrList<MineSprite> *mines[2];
-   //Q3PtrList<ExplosionSprite> explosions;
-   //Q3PtrList<PowerupSprite> powerups;
+
    QList<BulletSprite*> *bullets[2];
    QList<MineSprite*> *mines[2];
    QList<ExplosionSprite*> explosions;

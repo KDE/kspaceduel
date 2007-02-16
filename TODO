@@ -2,7 +2,9 @@ todo:
 -----
 
 sounds (using Phonon)
-maybe port to SVG (partially?)
+[DONE]maybe port to SVG (partially?)
+   -- Artwork still needs work
+   -- Background is still a PNG
 [DONE]refactoring (split up sprites.h/cpp?)
 clean up
 [HACK (see MyMainView::focusOutEvent)]fix bug: clicking on playfield

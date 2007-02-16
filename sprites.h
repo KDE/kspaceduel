@@ -30,7 +30,7 @@ class QGraphicsScene;
 class SunSprite:public SimpleSprite
 {
 public:
-   SunSprite(QPixmap* pixmap, QGraphicsScene* scene);
+   SunSprite(QSvgRenderer* svg, const QString& element);
    virtual int type() const {return S_SUN;}
 };
 
@@ -39,7 +39,7 @@ class PowerupSprite:public SimpleSprite
 public:
    enum {PowerupMine=0, PowerupBullet, PowerupShield, PowerupEnergy,
          PowerupNum};
-   PowerupSprite(QPixmap* pixmap, QGraphicsScene* scene, int t, double lifetime);
+   PowerupSprite(QSvgRenderer* svg, const QString& element, int t, double lifetime);
    virtual int type() const {return S_POWERUP;}
 
    double getLifetime() {return time;}
@@ -53,7 +53,7 @@ private:
 class ShipSprite:public MobileSprite
 {
 public:
-   ShipSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn);
+   ShipSprite(QSvgRenderer* svg, const QString& element, int pn);
    virtual int type() const {return S_SHIP;}
    int getHitPoints() {return hitpoints;}
    void setHitPoints(int hp) {hitpoints=(hp<0?0:hp);}
@@ -90,7 +90,7 @@ private:
 class BulletSprite:public MobileSprite
 {
 public:
-   BulletSprite(QPixmap* pixmap, QGraphicsScene* scene, int pn,double lifetime);
+   BulletSprite(QSvgRenderer* svg, const QString& elem, int pn,double lifetime);
    virtual int type() const {return S_BULLET;}
    virtual void forward(double mult);
    virtual void forward(double mult,int fr);
@@ -102,7 +102,7 @@ private:
 class MineSprite:public AnimatedSprite
 {
 public:
-   MineSprite(const QList<QPixmap> &animation, const QList<QPixmap> &exploanimation, QGraphicsScene* scene, int pn,double atime,double f);
+   MineSprite(QSvgRenderer* svg, const QList<QString> &animation, const QList<QString> &exploanimation, int pn,double atime,double f);
    virtual int type() const {return S_MINE;}
    bool isActive() {return active;}
    double getFuel() {return fuel;}
@@ -115,14 +115,14 @@ public:
 private:
    bool expl,active;
    double activateTime,fuel,timeToGo,explosiontime;
-   QList<QPixmap> exploframes; /* when mine explodes, we set frames to exploframes (needed because both player's mines have
+   QList<QString> exploframes; /* when mine explodes, we set frames to exploframes (needed because both player's mines have
    			          the same explosion animation) */
 };
 
 class ExplosionSprite:public AnimatedSprite
 {
 public:
-   explicit ExplosionSprite(const QList<QPixmap> &animation, QGraphicsScene *scene = 0, MobileSprite *sp = 0);
+   explicit ExplosionSprite(QSvgRenderer* svg, const QList<QString> &animation, MobileSprite *sp = 0);
    virtual int type() const {return S_EXPLOSION;}
    bool isOver() {return over;}
    virtual void forward(double mult);

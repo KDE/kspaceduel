@@ -1,3 +1,6 @@
+version 2.0
+  * [Branan Riley]  Ported Renderer to SVG
+
 version 1.0
   * [Andreas Zehender]  Portet to Qt-2.0
   * [Andreas Zehender]  Changed option dialogs  	
