@@ -518,7 +518,7 @@ void MyMainView::newRound()
       delete textSprite;
       textSprite=0;
    }
-   field.update();
+   //field.update();
 
    QString str = i18n("Press %1 to start",
                   KShortcut(GAME_START_SHORTCUT).toString());
@@ -608,7 +608,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
          collisions();
          timerID=startTimer(Options::refreshTime());
       }
-      field.update();
+     //field.update();
    }
 }
 
