@@ -1,165 +1,117 @@
 <ui version="4.0" >
- <author></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>General</class>
  <widget class="QWidget" name="General" >
   <property name="geometry" >
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>397</width>
-    <height>360</height>
+    <width>398</width>
+    <height>441</height>
    </rect>
   </property>
-  <layout class="QGridLayout" >
+  <layout class="QVBoxLayout" >
    <property name="margin" >
     <number>9</number>
    </property>
    <property name="spacing" >
     <number>6</number>
    </property>
-   <item row="3" column="1" >
-    <spacer>
-     <property name="orientation" >
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType" >
-      <enum>QSizePolicy::Expanding</enum>
-     </property>
-     <property name="sizeHint" >
-      <size>
-       <width>20</width>
-       <height>91</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="2" column="1" >
-    <widget class="QGroupBox" name="groupBox2" >
+   <item>
+    <widget class="QGroupBox" name="groupBox3" >
      <property name="title" >
-      <string>Blue Player</string>
+      <string>Hit Points</string>
      </property>
-     <layout class="QGridLayout" >
+     <layout class="QVBoxLayout" >
       <property name="margin" >
        <number>9</number>
       </property>
       <property name="spacing" >
        <number>6</number>
       </property>
-      <item row="1" column="1" >
-       <widget class="QComboBox" name="kcfg_AiDifficulty1" >
-        <property name="enabled" >
-         <bool>false</bool>
+      <item>
+       <layout class="QHBoxLayout" >
+        <property name="margin" >
+         <number>0</number>
         </property>
-        <property name="currentIndex" >
-         <number>1</number>
+        <property name="spacing" >
+         <number>6</number>
         </property>
         <item>
-         <property name="text" >
-          <string>Trainee</string>
-         </property>
+         <widget class="QLabel" name="textLabel3" >
+          <property name="text" >
+           <string>Red player:</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <property name="text" >
-          <string>Normal</string>
-         </property>
+         <widget class="QSlider" name="kcfg_StartHitPoints0" >
+          <property name="minimum" >
+           <number>1</number>
+          </property>
+          <property name="value" >
+           <number>99</number>
+          </property>
+          <property name="sliderPosition" >
+           <number>99</number>
+          </property>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
         </item>
         <item>
-         <property name="text" >
-          <string>Hard</string>
-         </property>
+         <widget class="QSpinBox" name="spinBox_2" >
+          <property name="value" >
+           <number>99</number>
+          </property>
+         </widget>
         </item>
-        <item>
-         <property name="text" >
-          <string>Insane</string>
-         </property>
-        </item>
-       </widget>
+       </layout>
       </item>
-      <item row="0" column="0" >
-       <widget class="QCheckBox" name="kcfg_Player1IsAi" >
-        <property name="text" >
-         <string>Player is AI</string>
+      <item>
+       <layout class="QHBoxLayout" >
+        <property name="margin" >
+         <number>0</number>
         </property>
-       </widget>
-      </item>
-      <item row="1" column="0" >
-       <widget class="QLabel" name="textLabel2" >
-        <property name="enabled" >
-         <bool>false</bool>
-        </property>
-        <property name="text" >
-         <string>Difficulty:</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="2" column="0" >
-    <widget class="QGroupBox" name="groupBox1" >
-     <property name="title" >
-      <string>Red Player</string>
-     </property>
-     <layout class="QGridLayout" >
-      <property name="margin" >
-       <number>9</number>
-      </property>
-      <property name="spacing" >
-       <number>6</number>
-      </property>
-      <item row="1" column="0" >
-       <widget class="QLabel" name="textLabel1" >
-        <property name="enabled" >
-         <bool>false</bool>
-        </property>
-        <property name="text" >
-         <string>Difficulty:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1" >
-       <widget class="QComboBox" name="kcfg_AiDifficulty0" >
-        <property name="enabled" >
-         <bool>false</bool>
-        </property>
-        <property name="currentIndex" >
-         <number>1</number>
+        <property name="spacing" >
+         <number>6</number>
         </property>
         <item>
-         <property name="text" >
-          <string>Trainee</string>
-         </property>
+         <widget class="QLabel" name="textLabel4" >
+          <property name="text" >
+           <string>Blue player:</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <property name="text" >
-          <string>Normal</string>
-         </property>
+         <widget class="QSlider" name="kcfg_StartHitPoints1" >
+          <property name="minimum" >
+           <number>1</number>
+          </property>
+          <property name="value" >
+           <number>99</number>
+          </property>
+          <property name="sliderPosition" >
+           <number>99</number>
+          </property>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
         </item>
         <item>
-         <property name="text" >
-          <string>Hard</string>
-         </property>
+         <widget class="QSpinBox" name="spinBox_3" >
+          <property name="value" >
+           <number>99</number>
+          </property>
+         </widget>
         </item>
-        <item>
-         <property name="text" >
-          <string>Insane</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="0" column="0" >
-       <widget class="QCheckBox" name="kcfg_Player0IsAi" >
-        <property name="text" >
-         <string>Player is AI</string>
-        </property>
-       </widget>
+       </layout>
       </item>
      </layout>
     </widget>
    </item>
-   <item row="1" column="0" colspan="2" >
+   <item>
     <widget class="QGroupBox" name="groupBox4" >
      <property name="title" >
       <string>Graphics</string>
@@ -195,86 +147,244 @@
        </widget>
       </item>
       <item>
-       <widget class="QLCDNumber" name="lCDNumber3" >
-        <property name="numDigits" >
-         <number>3</number>
+       <widget class="QSpinBox" name="spinBox" >
+        <property name="maximum" >
+         <number>100</number>
         </property>
-        <property name="value" stdset="0" >
-         <double>33</double>
+        <property name="minimum" >
+         <number>10</number>
+        </property>
+        <property name="value" >
+         <number>33</number>
         </property>
        </widget>
       </item>
      </layout>
     </widget>
    </item>
-   <item row="0" column="0" colspan="2" >
-    <widget class="QGroupBox" name="groupBox3" >
-     <property name="title" >
-      <string>Hit Points</string>
+   <item>
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
      </property>
-     <layout class="QGridLayout" >
-      <property name="margin" >
-       <number>9</number>
-      </property>
-      <property name="spacing" >
-       <number>6</number>
-      </property>
-      <item row="0" column="1" >
-       <widget class="QSlider" name="kcfg_StartHitPoints0" >
-        <property name="minimum" >
-         <number>1</number>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QGroupBox" name="groupBox1" >
+       <property name="title" >
+        <string>Red Player</string>
+       </property>
+       <layout class="QVBoxLayout" >
+        <property name="margin" >
+         <number>9</number>
         </property>
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
+        <property name="spacing" >
+         <number>6</number>
         </property>
-       </widget>
-      </item>
-      <item row="1" column="1" >
-       <widget class="QSlider" name="kcfg_StartHitPoints1" >
-        <property name="minimum" >
-         <number>1</number>
+        <item>
+         <layout class="QHBoxLayout" >
+          <property name="margin" >
+           <number>0</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QCheckBox" name="kcfg_Player0IsAi" >
+            <property name="text" >
+             <string>Player is AI</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" >
+          <property name="margin" >
+           <number>0</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="textLabel1" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>Difficulty:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="kcfg_AiDifficulty0" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="currentIndex" >
+             <number>1</number>
+            </property>
+            <item>
+             <property name="text" >
+              <string>Trainee</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>Normal</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>Hard</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>Insane</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox2" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>5</hsizetype>
+         <vsizetype>4</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="title" >
+        <string>Blue Player</string>
+       </property>
+       <layout class="QVBoxLayout" >
+        <property name="margin" >
+         <number>9</number>
         </property>
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
+        <property name="spacing" >
+         <number>6</number>
         </property>
-       </widget>
-      </item>
-      <item row="1" column="0" >
-       <widget class="QLabel" name="textLabel4" >
-        <property name="text" >
-         <string>Blue player:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0" >
-       <widget class="QLabel" name="textLabel3" >
-        <property name="text" >
-         <string>Red player:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2" >
-       <widget class="QLCDNumber" name="lCDNumber1" >
-        <property name="numDigits" >
-         <number>2</number>
-        </property>
-        <property name="value" stdset="0" >
-         <double>99</double>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2" >
-       <widget class="QLCDNumber" name="lCDNumber2" >
-        <property name="numDigits" >
-         <number>2</number>
-        </property>
-        <property name="value" stdset="0" >
-         <double>99</double>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
+        <item>
+         <layout class="QHBoxLayout" >
+          <property name="margin" >
+           <number>0</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QCheckBox" name="kcfg_Player1IsAi" >
+            <property name="text" >
+             <string>Player is AI</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" >
+          <property name="margin" >
+           <number>0</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="textLabel2" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>Difficulty:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="kcfg_AiDifficulty1" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="currentIndex" >
+             <number>1</number>
+            </property>
+            <item>
+             <property name="text" >
+              <string>Trainee</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>Normal</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>Hard</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>Insane</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>91</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>
@@ -283,66 +393,18 @@
  <resources/>
  <connections>
   <connection>
-   <sender>kcfg_StartHitPoints0</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>lCDNumber1</receiver>
-   <slot>display(int)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>kcfg_StartHitPoints1</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>lCDNumber2</receiver>
-   <slot>display(int)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>kcfg_RefreshTime</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>lCDNumber3</receiver>
-   <slot>display(int)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>kcfg_Player0IsAi</sender>
    <signal>toggled(bool)</signal>
    <receiver>textLabel1</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>42</x>
+     <y>221</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>42</x>
+     <y>249</y>
     </hint>
    </hints>
   </connection>
@@ -353,12 +415,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>42</x>
+     <y>221</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>126</x>
+     <y>249</y>
     </hint>
    </hints>
   </connection>
@@ -369,12 +431,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>234</x>
+     <y>221</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>234</x>
+     <y>249</y>
     </hint>
    </hints>
   </connection>
@@ -385,12 +447,108 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>234</x>
+     <y>221</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>318</x>
+     <y>249</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_StartHitPoints0</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_2</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>143</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>357</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>kcfg_StartHitPoints0</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>341</x>
+     <y>39</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>190</x>
+     <y>51</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_StartHitPoints1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_3</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>153</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>360</x>
+     <y>83</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>kcfg_StartHitPoints1</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>352</x>
+     <y>71</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>213</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>kcfg_RefreshTime</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>177</x>
+     <y>142</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>357</x>
+     <y>146</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>kcfg_RefreshTime</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>351</x>
+     <y>136</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>199</x>
+     <y>146</y>
     </hint>
    </hints>
   </connection>
