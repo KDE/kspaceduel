@@ -1,15 +1,19 @@
 todo:
 -----
 
+<fix bug> shortcut configuration
+<check> ai may still use old coordinate system (may result in bad shots from ai)
+<check> logic in void Ai::shotScores() (see FIXME)
 sounds (using Phonon)
+clean up
+remove dynamic config-dialog generation, switch to a UI file and proper KConfigXT usage.
+add support for multiple user-saved configurations
+online multiplayer (using GGZ most likely)
+[DONE?]<fix bug> ships don't have the same size
+   -- Seems to have been fixed by the SVG port
+[DONE]<fix bug> starting positions first round
 [DONE]maybe port to SVG (partially?)
    -- Artwork still needs work
-   -- Background is still a PNG
+   -- Background is still a PNG (fine since it tiles)
 [DONE]refactoring (split up sprites.h/cpp?)
-clean up
-[HACK (see MyMainView::focusOutEvent)]fix bug: clicking on playfield
-[DONE]fix bug: starting positions first round
-fix bug: shortcut configuration
-fix bug: ships don't have the same size
-check: ai may still use old coordinate system (may result in bad shots from ai)
-check: logic in void Ai::shotScores() (see FIXME)
+[HACK (see MyMainView::focusOutEvent)]<fix bug> clicking on playfield
