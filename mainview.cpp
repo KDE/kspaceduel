@@ -562,7 +562,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
             textSprite=new QGraphicsSimpleTextItem(0,&field);
 	    // FIXME
            // textSprite->setTextFlags(Qt::AlignCenter);
-	    textSprite->setPen(QPen(QColor(255,160,0)));
+	    textSprite->setBrush(QBrush(QColor(255,160,0)));
             textSprite->setFont(QFont(KGlobalSettings::generalFont().family(),14));
             textSprite->show( );
             if(ship[0]->getHitPoints()==0)
