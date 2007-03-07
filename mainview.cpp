@@ -415,7 +415,6 @@ void MyMainView::togglePause( )
 void MyMainView::resizeEvent(QResizeEvent *event)
 {
    double mx,my;
-   BulletSprite *bullet;
    int i,current;
    int listsize; // used for caching QtList::size()
 
@@ -1078,7 +1077,7 @@ void MyMainView::closeSettings(){
     config=modifyConfig(customConfig);
 }
 
-void MyMainView::focusOutEvent (QFocusEvent *event)
+void MyMainView::focusOutEvent (QFocusEvent /*event*/)
 {
    /* FIXME: ugly hack, I think
       it's maybe better to declare something like QMyScene:public QGraphicsScene and process input there */
