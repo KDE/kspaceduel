@@ -25,6 +25,7 @@ MimeType=
 Exec=kspaceduel -caption "%c"
 GenericName=Space Arcade Game
 GenericName[be]=Касмічная аркадная гульня
+GenericName[bg]=Космическа игра
 GenericName[ca]=Joc arcade d'espai
 GenericName[cs]=Vesmírná arkádová hra
 GenericName[cy]=Gêm Arcêd Ofod
