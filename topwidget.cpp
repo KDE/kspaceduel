@@ -18,7 +18,7 @@ This program is free software; you can redistribute it and/or modify
 #include <QLayout>
 
 #include <kicon.h>
-#include <kkeydialog.h>
+#include <kshortcutsdialog.h>
 #include <klocale.h>
 #include <kstandardaction.h>
 #include <kstandardgameaction.h>
@@ -178,7 +178,7 @@ void MyTopLevelWidget::setStatusText(const QString & str,int id)
 void MyTopLevelWidget::keySetup()
 {
    playfield->pause();
-   KKeyDialog::configure( actionCollection( ), KKeyChooser::LetterShortcutsAllowed, this, true );
+   KShortcutsDialog::configure( actionCollection( ), KShortcutsEditor::LetterShortcutsAllowed, this, true );
 }
 
 #include "topwidget.moc"
