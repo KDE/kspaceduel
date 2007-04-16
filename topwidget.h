@@ -18,12 +18,12 @@ This program is free software; you can redistribute it and/or modify
 #ifndef __MY_TOP_WIDGET_H
 #define __MY_TOP_WIDGET_H
 
-#include <kmainwindow.h>
+#include <kxmlguiwindow.h>
 
 class PlayerInfo;
 class MyMainView;
 
-class MyTopLevelWidget:public KMainWindow
+class MyTopLevelWidget:public KXmlGuiWindow
 {
    Q_OBJECT
 public:
