@@ -16,6 +16,8 @@ This program is free software; you can redistribute it and/or modify
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+#include "mainview.h"
+
 #include <math.h>
 
 #include <QAbstractEventDispatcher>
@@ -38,7 +40,6 @@ This program is free software; you can redistribute it and/or modify
 #include <KSvgRenderer>
 
 #include "ai.h"
-#include "mainview.h"
 #include "options.h"
 
 KToggleAction *MyMainView::pauseAction = 0;

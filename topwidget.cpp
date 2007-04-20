@@ -15,6 +15,8 @@ This program is free software; you can redistribute it and/or modify
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+#include "topwidget.h"
+
 #include <QLayout>
 
 #include <kicon.h>
@@ -28,7 +30,6 @@ This program is free software; you can redistribute it and/or modify
 
 #include "mainview.h"
 #include "playerinfo.h"
-#include "topwidget.h"
 
 MyTopLevelWidget::MyTopLevelWidget()
 {
