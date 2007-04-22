@@ -23,7 +23,7 @@ This program is free software; you can redistribute it and/or modify
 #include <QList>
 #include <QTimerEvent>
 #include <QWidget>
-#include <QString>
+
 
 #include <krandomsequence.h>
 class KToggleAction;
