@@ -90,8 +90,8 @@ void MyTopLevelWidget::initActions( )
    ac = KStandardGameAction::gameNew(playfield, SLOT(newGame()), this);
    actionCollection()->addAction(ac->objectName(), ac);
    QAction* newRoundAct = actionCollection()->addAction( "new_round" );
-   newRoundAct->setIcon( KIcon("spnewround") );
-   newRoundAct->setText( i18n( "&New Round" ) );
+   newRoundAct->setIcon( KIcon("document-revert") );
+   newRoundAct->setText( i18n( "&Restart" ) );
    newRoundAct->setShortcut( Qt::CTRL + Qt::Key_R );
    connect( newRoundAct, SIGNAL( triggered(bool) ), playfield, SLOT( newRound( ) ) );
 
