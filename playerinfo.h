@@ -28,12 +28,13 @@ class PlayerInfo:public QFrame
    Q_OBJECT
 public:
    explicit PlayerInfo(int pnr,QWidget *parent=0);
+   static void loadPixmaps();
 public slots:
    void setHitpoints(int h);
    void setEnergy(int e);
    void setWins(int w);
 private:
-   QPixmap* pix[4];
+   static QPixmap* pplayer[6];
    int currentPixmap;
    QLabel lplayer,lenergy,lwins;
    QLCDNumber hitpoints,energy,wins;

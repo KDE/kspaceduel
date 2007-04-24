@@ -42,6 +42,7 @@ MyTopLevelWidget::MyTopLevelWidget()
 void MyTopLevelWidget::initGameWidgets( ){
    QWidget *w = new QWidget(this);
 
+   PlayerInfo::loadPixmaps();
    playerinfo[0]=new PlayerInfo(0,w);
    playerinfo[1]=new PlayerInfo(1,w);
    playfield=new MyMainView(w);
@@ -90,8 +91,8 @@ void MyTopLevelWidget::initActions( )
    ac = KStandardGameAction::gameNew(playfield, SLOT(newGame()), this);
    actionCollection()->addAction(ac->objectName(), ac);
    QAction* newRoundAct = actionCollection()->addAction( "new_round" );
-   newRoundAct->setIcon( KIcon("document-revert") );
-   newRoundAct->setText( i18n( "&Restart" ) );
+   newRoundAct->setIcon( KIcon("bell") );
+   newRoundAct->setText( i18n( "&New Round" ) );
    newRoundAct->setShortcut( Qt::CTRL + Qt::Key_R );
    connect( newRoundAct, SIGNAL( triggered(bool) ), playfield, SLOT( newRound( ) ) );
 

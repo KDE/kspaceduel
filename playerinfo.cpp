@@ -17,9 +17,21 @@ This program is free software; you can redistribute it and/or modify
 
 #include "playerinfo.h"
 
+#include <kicon.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
 
+QPixmap* PlayerInfo::pplayer[6];
+
+void PlayerInfo::loadPixmaps()
+{
+    pplayer[0] = new QPixmap(KIcon("battery-discharging-100").pixmap(32,32));
+    pplayer[1] = new QPixmap(KIcon("battery-discharging-080").pixmap(32,32));
+    pplayer[2] = new QPixmap(KIcon("battery-discharging-060").pixmap(32,32));
+    pplayer[3] = new QPixmap(KIcon("battery-discharging-040").pixmap(32,32));
+    pplayer[4] = new QPixmap(KIcon("battery-discharging-020").pixmap(32,32));
+    pplayer[5] = new QPixmap(KIcon("battery-discharging-000").pixmap(32,32));
+}
 
 PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
       :QFrame(parent),
@@ -29,38 +41,39 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
    setFixedWidth(45);
    setFrameStyle(Panel|Raised);
    QString str;
-   int i;
+//   int i;
    
    QPalette palette;
    
-   lplayer.setFrameStyle(Panel|Sunken);
+   lplayer.setFrameStyle(NoFrame);
    lplayer.setMargin(0);
    lplayer.setToolTip(i18n("Hit points"));
-   lenergy.setFrameStyle(Panel|Sunken);
+   lenergy.setFrameStyle(NoFrame);
    lenergy.setMargin(0);
    lenergy.setToolTip(i18n("Energy"));
-   lwins.setFrameStyle(Panel|Sunken);
+   lwins.setFrameStyle(NoFrame);
    lwins.setMargin(0);
    lwins.setToolTip(i18n("Wins"));
 
    lplayer.setGeometry(5,5,35,35);
    lplayer.setIndent(0);
-   lenergy.setGeometry(5,80,35,35);
+   lenergy.setGeometry(5,80,32,32);
    lenergy.setIndent(0);
-   lwins.setGeometry(5,155,35,35);
+   lwins.setGeometry(5,152,35,35);
    lwins.setIndent(0);
 
-   for(i=0;i<4;i++)
+/*   for(i=0;i<4;i++)
    {
       str = QString::fromLatin1("sprites/playerinfo/ship%1%2.png")
         .arg(pnr+1)
         .arg(i);
       pix[i]=new QPixmap(KStandardDirs::locate("appdata", str));
-   }
+   }*/
 
-   lplayer.setPixmap(*pix[0]);
+   lplayer.setPixmap(*(pplayer[0]));
    currentPixmap=0;
-   lenergy.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/energy.png")));
+   //lenergy.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/energy.png")));
+   lenergy.setPixmap(KIcon("battery").pixmap(32,32));;
    lwins.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/win.png")));
 
    hitpoints.setGeometry(9,45,26,26);
@@ -89,11 +102,11 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
        
 void PlayerInfo::setHitpoints(int h)
 {
-   int p=3-h/25;
+   int p = 5-((h+19)/20);
    hitpoints.display(h);
    if(p!=currentPixmap)
    {
-      lplayer.setPixmap(*(pix[p]));
+      lplayer.setPixmap(*(pplayer[p]));
       currentPixmap=p;
    }
 }
