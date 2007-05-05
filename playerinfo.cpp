@@ -39,7 +39,6 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
        hitpoints(2,this),energy(2,this),wins(2,this)
 {
    setFixedWidth(45);
-   setFrameStyle(Panel|Raised);
    QString str;
 //   int i;
    

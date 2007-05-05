@@ -76,6 +76,7 @@ MyMainView::MyMainView(QWidget *parent)
    //view.setResizePolicy(Q3ScrollView::AutoOne);
    view.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
    view.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+   view.setFrameStyle(QFrame::NoFrame);
 
    for(p=0;p<2;p++)
    {
