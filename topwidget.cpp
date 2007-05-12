@@ -87,10 +87,10 @@ void MyTopLevelWidget::initActions( )
 {
    QAction* ac;
 
-   ac = KStandardGameAction::quit(this, SLOT(close()), this);
-   actionCollection()->addAction(ac->objectName(), ac);
-   ac = KStandardGameAction::gameNew(playfield, SLOT(newGame()), this);
-   actionCollection()->addAction(ac->objectName(), ac);
+   // Game
+   KStandardGameAction::gameNew(playfield, SLOT(newGame()), actionCollection());
+   KStandardGameAction::quit(this, SLOT(close()), actionCollection());
+   
    QAction* newRoundAct = actionCollection()->addAction( "new_round" );
    newRoundAct->setIcon( KIcon("bell") );
    newRoundAct->setText( i18n( "&New Round" ) );
@@ -98,8 +98,7 @@ void MyTopLevelWidget::initActions( )
    connect( newRoundAct, SIGNAL( triggered(bool) ), playfield, SLOT( newRound( ) ) );
 
    MyMainView::pauseAction =
-       KStandardGameAction::pause(playfield, SLOT(togglePause()), this);
-   actionCollection()->addAction(MyMainView::pauseAction->objectName(), MyMainView::pauseAction);
+       KStandardGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
    MyMainView::pauseAction->setChecked( false );
    QAction *gameStart = actionCollection()->addAction( "game_start" );
    gameStart->setText( i18n( "Start" ) );
@@ -107,8 +106,7 @@ void MyTopLevelWidget::initActions( )
    gameStart->setShortcut(GAME_START_SHORTCUT);
    playfield->addAction(gameStart);
 
-   ac = KStandardAction::preferences(playfield, SLOT(gameSetup()), this);
-   actionCollection()->addAction(ac->objectName(), ac);
+   KStandardAction::preferences(playfield, SLOT(gameSetup()), actionCollection());
 
    // Default keys
 #ifdef __GNUC__
