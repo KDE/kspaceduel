@@ -36,7 +36,7 @@ MyTopLevelWidget::MyTopLevelWidget()
 {
    initGameWidgets();
    initStatusBar( );
-   initActions( );
+   setupActions( );
    setupGUI( );
 }
 
@@ -84,7 +84,7 @@ void MyTopLevelWidget::wins(int pn,int w)
    playerinfo[pn]->setWins(w);
 }
 
-void MyTopLevelWidget::initActions( )
+void MyTopLevelWidget::setupActions()
 {
    QAction* ac;
 
