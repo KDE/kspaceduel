@@ -275,7 +275,7 @@ void ConfigSetup::updateSettings()
    *customConfig=config;
 
    Options::setLastConfig(selectedConfig);
-   Options::writeConfig();
+   Options::self()->writeConfig();
 }
 
 bool ConfigSetup::hasChanged()
