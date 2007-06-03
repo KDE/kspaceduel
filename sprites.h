@@ -18,7 +18,6 @@
 #ifndef __SPRITE_OBJECTS_H
 #define __SPRITE_OBJECTS_H
 
-class QGraphicsScene;
 
 #include "defines.h"
 #include "spritebase.h"

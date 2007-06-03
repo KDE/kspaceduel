@@ -19,7 +19,6 @@
 #define __SPRITE_BASE_H
 
 #include <QGraphicsSvgItem>
-class QGraphicsScene;
 
 //#include "defines.h"
 #include "spritebase.h"
