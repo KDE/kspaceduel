@@ -28,11 +28,11 @@ static const char description[] = I18N_NOOP("KDE Space Game");
 
 int main(int argc,char **argv)
 {
-   KAboutData aboutData( "kspaceduel", I18N_NOOP("KSpaceDuel"), 
-      KSPACEDUEL_VERSION, description, KAboutData::License_GPL, 
-      "(c) 1998-2001, Andreas Zehender");
-   aboutData.addAuthor("Andreas Zehender",I18N_NOOP("Original Program"), "az@azweb.de");
-   aboutData.addAuthor("Branan Riley",I18N_NOOP("SVG Renderer"), "branan@gmail.com");
+   KAboutData aboutData( "kspaceduel", 0, ki18n("KSpaceDuel"), 
+      KSPACEDUEL_VERSION, ki18n(description), KAboutData::License_GPL, 
+      ki18n("(c) 1998-2001, Andreas Zehender"));
+   aboutData.addAuthor(ki18n("Andreas Zehender"),ki18n("Original Program"), "az@azweb.de");
+   aboutData.addAuthor(ki18n("Branan Riley"),ki18n("SVG Renderer"), "branan@gmail.com");
    KCmdLineArgs::init( argc, argv, &aboutData );
 
    KApplication myapplication;
