@@ -18,8 +18,6 @@ set(kspaceduel_SRCS
    spritebase.cpp
    topwidget.cpp)
 
-kde4_automoc(${kspaceduel_SRCS})
-
 kde4_add_ui_files(kspaceduel_SRCS general.ui )
 
 kde4_add_kcfg_files(kspaceduel_SRCS options.kcfgc )
