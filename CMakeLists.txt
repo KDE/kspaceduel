@@ -3,8 +3,6 @@ project(kspaceduel)
 add_subdirectory( sprites ) 
 add_subdirectory( pics ) 
 
-include_directories( ${CMAKE_SOURCE_DIR}/libkdegames  )
-
 ########### next target ###############
 
 set(kspaceduel_SRCS
