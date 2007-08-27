@@ -15,8 +15,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef __SP_DIALOG_H
-#define __SP_DIALOG_H
+#ifndef KSPACEDUEL_DIALOGS_H
+#define KSPACEDUEL_DIALOGS_H
 
 class QComboBox;
 class QTabWidget;
@@ -113,4 +113,4 @@ private:
         ConfigSetup* cs;
 };
 
-#endif
+#endif // KSPACEDUEL_DIALOGS_H

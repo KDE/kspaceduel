@@ -15,11 +15,11 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef _KSD_MR_H
-#define _KSD_MR_H
+#ifndef KSPACEDUEL_MATHROUTINES_H
+#define KSPACEDUEL_MATHROUTINES_H
 
 double rectToAngle(double x,double y);
 double average(double phi1,double phi2);
 double difference(double phi1,double phi2);
 
-#endif
+#endif // KSPACEDUEL_MATHROUTINES_H

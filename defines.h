@@ -15,8 +15,10 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-// #include <qnamespace.h>
+#ifndef KSPACEDUEL_DEFINES_H
+#define KSPACEDUEL_DEFINES_H
 
+// #include <qnamespace.h>
 
 #define IDS_PAUSE 1
 #define IDS_MAIN 2
@@ -77,3 +79,5 @@
 #define ID_MINE1	1352
 #define ID_MINE2	1353
 #define ID_MINEEXPLO	1354
+
+#endif // KSPACEDUEL_DEFINES_H

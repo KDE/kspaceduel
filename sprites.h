@@ -15,9 +15,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef __SPRITE_OBJECTS_H
-#define __SPRITE_OBJECTS_H
-
+#ifndef KSPACEDUEL_SPRITES_H
+#define KSPACEDUEL_SPRITES_H
 
 #include "defines.h"
 #include "spritebase.h"
@@ -131,4 +130,4 @@ private:
    MobileSprite *obj;
 };
 
-#endif
+#endif // KSPACEDUEL_SPRITES_H
