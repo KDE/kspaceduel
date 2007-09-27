@@ -36,6 +36,8 @@ int main(int argc,char **argv)
    KCmdLineArgs::init( argc, argv, &aboutData );
 
    KApplication myapplication;
+   KGlobal::locale()->insertCatalog("libkdegames");
+
    MyTopLevelWidget *top = new MyTopLevelWidget;
    top->show();
    top->start();
