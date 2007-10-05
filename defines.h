@@ -65,7 +65,7 @@
 #define S_EXPLOSION S_BASE+4
 #define S_POWERUP S_BASE+5
 
-#define SHOTDIST 18 //14
+#define SHOTDIST 28 //14
 #define EPSILON 0.1
 #define PI180 57.296f // 180/Pi
 
