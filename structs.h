@@ -18,6 +18,8 @@
 #ifndef __SP_STRUCTS_H
 #define __SP_STRUCTS_H
 
+#include <klocalizedstring.h>
+
 struct SConfig
 {
    double gamespeed,gravity,acc,energyNeed,sunEnergy,rotationSpeed,
@@ -58,7 +60,7 @@ const SConfig predefinedConfig[]={{1.0, 2200.0, 0.2, 1.0, 9000.0, 1.0,
                                    20, 50, 30, 5, 3,
                                    400.0, 800.0, 50, 30}};
 const char predefinedConfigName[predefinedConfigNum][15]=
-{"Default","Bullet","Chaos","Lack of Energy"}; 
+{I18N_NOOP("Default"),I18N_NOOP("Bullet"),I18N_NOOP("Chaos"),I18N_NOOP("Lack of Energy")}; 
 
 struct AiSprite
 {
