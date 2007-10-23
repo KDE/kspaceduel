@@ -420,10 +420,10 @@ SettingsDialog::SettingsDialog(SConfig *customConfig, QWidget *parent, const cha
   : KConfigDialog( parent, name, Options::self())
 {
   General *general = new General();
-  addPage(general, i18n("General"), "package_settings", i18n("General Settings"));
+  addPage(general, i18n("General"), "games-config-options", i18n("General Settings"));
 
   cs = new ConfigSetup(customConfig);
-  addPage(cs, i18n("Game"), "kspaceduel", i18n("Game Settings"));
+  addPage(cs, i18n("Game"), "games-config-custom", i18n("Game Settings"));
   connect(cs, SIGNAL(changed()), this, SLOT(updateButtons()));
  
 //  resize(600,400);
