@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" ?>
+<?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&kspaceduel;">
   <!ENTITY kappversion "2.0"><!--Applicaion version. Use this variable everywhere it's needed.-->
   <!ENTITY docversion "1.1"><!--Document version. Use this variable everywhere it's needed.-->
-  <!ENTITY docupdate "2003-09-17"><!--Document version. Use this variable everywhere it's needed.-->
+  <!ENTITY docupdate "2007-11-14"><!--Document version. Use this variable everywhere it's needed.-->
   <!ENTITY package "kdegames">  <!-- do not change this! -->
   <!ENTITY % English "INCLUDE" > <!-- change language only here -->
   <!ENTITY % addindex "IGNORE"> <!-- do not change this! -->
@@ -29,9 +29,11 @@
  
 <copyright>
 	<year>1999</year><year>2000</year>
-	<holder>Andreas Zehender</holder>
+	<holder>&Andreas.Zehender;</holder>
 </copyright>
- 
+
+<legalnotice>&FDLNotice;</legalnotice>
+
 <date>&docupdate;</date><!-- Date of (re)writing, ro update. Use the variable definitions within header to change this value.-->
 <releaseinfo>&docversion;</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
  
@@ -63,26 +65,26 @@
 	<note><title>Gametype:</title><para> Arcade</para></note><!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
 	<note><title>Number of possible players:</title><para>Two</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
  <!--Short game description starts here. 3-4 sentences (paragraphs)-->
-	<para>The idea behind &kappname; is simple, but addictive. Each of two possible players controls a satellite spaceship orbiting the sun. As the game progresses players have to eliminate opponent’s spacecraft. As soon as the opponent’s satellite is destroyed, the remaining player wins the round.</para>
+	<para>The idea behind &kappname; is simple, but addictive. Each of two possible players controls a satellite spaceship orbiting the sun. As the game progresses players have to eliminate opponent's spacecraft. As soon as the opponent's satellite is destroyed, the remaining player wins the round.</para>
 </chapter>
  
-<chapter id="howto"><title>How to play</title> <!-- do not change this! -->
+<chapter id="howto"><title>How to Play</title> <!-- do not change this! -->
 <!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
 	<note><title>Objective:</title><para>Destroy the opponent's satellite, while keeping the own one in tact.</para></note><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
 	<para>
 	&kappname; loads directly into the game mode; however, the action does not start until either player makes the first move.</para>
-<note><title>Note:</title><para>If the opponent’s satellite is controlled by the built in artificial intelligence, game action does not start until the human player makes the first move.</para></note>
+<note><title>Note:</title><para>If the opponent's satellite is controlled by the built in artificial intelligence, game action does not start until the human player makes the first move.</para></note>
 <para>
-In &kappname; you control the ship’s rotation, acceleration, and weaponry. Your satellite is constantly drawn towards the sun by gravity. You have to adjust the rotation and acceleration of your ship to make it stay on course.</para>
+In &kappname; you control the ship's rotation, acceleration, and weaponry. Your satellite is constantly drawn towards the sun by gravity. You have to adjust the rotation and acceleration of your ship to make it stay on course.</para>
 <note><title>Note:</title><para>Approaching the sun too close causes the satellite to explode.</para></note>
-<para>In the same time you have to monitor the opponent’s movement and use your weapons consisting of bullets and mines, to destroy the enemy spacecraft. </para>
+<para>In the same time you have to monitor the opponent's movement and use your weapons consisting of bullets and mines, to destroy the enemy spacecraft. </para>
 <note><title>Note:</title><para> Your own weapons are as harmful to your satellite as they are to the enemy one.</para></note>
 </chapter>
  
 <chapter id="rules_and_tips"><title>Game Rules, Strategies and Tips</title> <!-- do not change this! -->
 	<sect1 id="screen">
-		<title>&kappname; game screen overview.</title>
+		<title>&kappname; Game Screen Overview.</title>
 		<screenshot>
 			<screeninfo>&kappname; game screen</screeninfo>
 			<mediaobject><imageobject><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
@@ -99,9 +101,8 @@ In &kappname; you control the ship’s rotation, acceleration, and weaponry. You
 		</itemizedlist>
 	</sect1>
 	<sect1 id="keys">
-		<title>Default Key Bindings</title>
-		<para>The following table contains the default key bindings for &kappname;.</para>
-		<para><emphasis>Menu bindings</emphasis></para>
+		<title>Default Shortcuts</title>
+		<para>The following table contains the default shortcuts for &kappname;.</para>
 		<informaltable frame="all">
 			<tgroup cols="3">
 			<colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
@@ -120,19 +121,19 @@ In &kappname; you control the ship’s rotation, acceleration, and weaponry. You
 	<sect1 id="rules">
 		<title>Rules</title>
 		<sect2 id="energy">
-			<title>About energy points.</title> 
+			<title>About Energy Points.</title> 
 			<itemizedlist>
 				<listitem><para>Each player controls one ship.</para></listitem>
 				<listitem><para>The ships can rotate, accelerate, shoot and set mines.</para></listitem>
 				<listitem><para>Each ship has a limited amount of energy required for rotation, acceleration, shooting and setting mines.</para></listitem>
 				<listitem><para>Each ship has a limited amount of energy.</para></listitem>
-				<listitem><para>Ships absorb solar energy required for the ship’s operation. The amount of energy the ship gets depends on the distance from and the direction to the sun.</para></listitem>
+				<listitem><para>Ships absorb solar energy required for the ship's operation. The amount of energy the ship gets depends on the distance from and the direction to the sun.</para></listitem>
 			</itemizedlist>
 			<note><title>Note:</title><para>A ship gets more energy near the sun and less energy near the border. It gets the full amount of energy if the
 sun shines directly on the solar panels and less or even no energy if the sun shines at an angle to the panels or at the other side of the panels.</para></note>
 		</sect2>
 		<sect2 id="bullets-and-mines">
-			<title>About bullets and mines.</title>
+			<title>About Bullets and Mines.</title>
 			<itemizedlist>
 				<listitem><para>Bullets fly around the sun just like a ship does.</para></listitem>
 				<listitem><para>Mines have an amount of energy to stay at the same position. When the energy is spent, the mines collide with the sun and disintegrate.</para></listitem>
@@ -142,11 +143,11 @@ sun shines directly on the solar panels and less or even no energy if the sun sh
 			</itemizedlist>
 		</sect2>
 		<sect2 id="hit-points">
-			<title>About hit points</title>
+			<title>About Hit Points</title>
 			<itemizedlist>
 				<listitem><para>Collision with own bullets, or enemy bullets or mines decreases the hit points.</para></listitem>
 				<listitem><para>If two ships collide then the weaker ship is destroyed and the hit points of the stronger ship are decreased by the amount of the hit points the weaker ship had.</para></listitem>
-				<listitem><para>If the satellite’s amount of hit points goes to zero then satellite explodes.</para></listitem>
+				<listitem><para>If the satellite's amount of hit points goes to zero then satellite explodes.</para></listitem>
 				<listitem><para>If a satellite collides with the sun it is destroyed regardless of the amount of hit points remaining.</para></listitem>
 			</itemizedlist>
 		</sect2>
@@ -192,7 +193,7 @@ sun shines directly on the solar panels and less or even no energy if the sun sh
 <varlistentry id="game-menu-new">
 <term><menuchoice>
 <shortcut><keycombo action="simul">
-&Ctrl;<keycap>N</keycap></keycombo></shortcut>
+&Ctrl;<keycap>R</keycap></keycombo></shortcut>
 <guimenu>Game</guimenu><guimenuitem>New Round</guimenuitem> </menuchoice></term>
 <listitem><para>Starts a new round, at the current level.</para></listitem>
 </varlistentry>
@@ -217,7 +218,7 @@ sun shines directly on the solar panels and less or even no energy if the sun sh
 </sect1>
 
 <sect1 id="settings-menu">
-<title><guimenu>Settings</guimenu> Menu</title>
+<title>The <guimenu>Settings</guimenu> Menu</title>
 
 <variablelist>
 <varlistentry>
@@ -292,11 +293,11 @@ Options</link> for further information.</para></listitem>
 </qandaentry>
 <qandaentry>
  <question><para>How do I restart the game? </para></question>
- <answer><para>To restart the game you can use <link linkend="game-menu-new">Game->New</link> option on the menubar.</para></answer>
+ <answer><para>To restart the game you can use <link linkend="game-menu-new"><menuchoice><guimenu>Game</guimenu><guimenuitem>New</guimenuitem></menuchoice></link> option on the menubar.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>How do I pause the game? </para></question>
- <answer><para>To pause &kappname; you can use <link linkend="game-menu-pause">Game->New</link> option on the menubar.</para></answer>
+ <answer><para>To pause &kappname; you can use <link linkend="game-menu-pause"><menuchoice><guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem></menuchoice></link> option on the menubar.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the way this game looks. Can I? </para></question>
@@ -312,23 +313,23 @@ Options</link> for further information.</para></listitem>
 </qandaentry>
 <qandaentry>
  <question><para>What are the control keys? </para></question>
- <answer><para>For the list of the default key bindings please refer to <link linkend="keys">‘Game Rules, Strategies and Tips’</link> section.</para></answer>
+ <answer><para>For the list of the default shortcuts please refer to <link linkend="keys">Default Shortcuts</link> section.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>I can't figure out what to do here! Are there hints? </para></question>
- <answer><para>No. &kappname; does not have a 'Hint' feature. However, if you carefully read through the <link linkend="rules_and_tips">‘Game Rules, Strategies and Tips’</link> section you shouldn’t have this problem.</para></answer>
+ <question><para>I cannot figure out what to do here! Are there hints? </para></question>
+ <answer><para>No. &kappname; does not have a 'Hint' feature. However, if you carefully read through the <link linkend="rules_and_tips">Game Rules, Strategies and Tips</link> section you shouldn't have this problem.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>I have to quit the game now, but I'm not finished yet. Can I save my progress?</para></question>
+ <question><para>I have to quit the game now, but I am not finished yet. Can I save my progress?</para></question>
   <answer><para>No. &kappname; does not have a 'Save' feature.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the game configuration. Where do I go? </para></question>
- <answer><para>Use <link linkend="settings-menu-settings">Settings->Configure &kappname;...</link> option on the menubar to access game settings.</para></answer><!--IMPORTANT!: this link has to send user to 'Interface Overview' section. So please setup the link structure accordingly.-->
+ <answer><para>Use the <link linkend="settings-menu-settings">Settings->Configure &kappname;...</link> option on the menubar to access game settings.</para></answer><!--IMPORTANT!: this link has to send user to 'Interface Overview' section. So please setup the link structure accordingly.-->
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the toolbar layout. What do I do?</para></question>
- <answer><para>Use <link linkend="settings-menu-toolbar">Settings->Configure Toolbars...</link> option on the menubar to access game settings.</para></answer><!--IMPORTANT!: this link has to send user to 'Interface Overview' section. So please setup the link structure accordingly.-->
+ <answer><para>Use the <link linkend="settings-menu-toolbar">Settings->Configure Toolbars...</link> option on the menubar to access game settings.</para></answer><!--IMPORTANT!: this link has to send user to 'Interface Overview' section. So please setup the link structure accordingly.-->
 </qandaentry>
 <!--Please add more Q&As if needed-->
  
@@ -339,11 +340,10 @@ Options</link> for further information.</para></listitem>
 <!--This section describes configuration GUI. If your game is configured using menubar exclusively, please remove this section.-->
   <sect1 id="options-keys">
     <title>Game Keys</title>
-     <para>&kappname; has a default set of keys to control the game.  For a list of default keys see the section entitled <link linkend="keys">Default key bindings</link>.</para>
-     <para>Keys can be configured by:</para>
-     <para>Selecting <menuchoice> <guimenu>Settings</guimenu><guimenuitem>Configure Shortcuts...</guimenuitem> </menuchoice> from the menubar.</para> 
+     <para>&kappname; has a default set of keys to control the game.  For a list of default keys see the section entitled <link linkend="keys">Default Shortcuts</link>.</para>
+     <para>Keys can be configured by selecting <menuchoice> <guimenu>Settings</guimenu><guimenuitem>Configure Shortcuts...</guimenuitem> </menuchoice> from the menubar.</para> 
      <para>This will bring up a dialog box which lets you configure all hotkeys, including the keys used for steering the space ships, for firing bullets, and for laying mines.</para>
-     <para>You can see that each player (Red and Blue), have 5 keystrokes corresponding to Rotate Left, Rotate Right, Accelerate, Shot, and Mines.</para>
+     <para>You can see that each player (Red and Blue), has 5 keystrokes corresponding to Rotate Left, Rotate Right, Accelerate, Shot, and Mines.</para>
      <para>When you are finished configuring your keys, you should click on <guibutton>OK</guibutton> to apply your changes.</para>
      <para>If you want to restore the default keys, simply click on the <guibutton>Default</guibutton> button once. To make these changes permenant, press <guibutton>OK</guibutton>.</para> 
      <para>If you want to abandon the changes you made, and return to your previously selected keys, simply click <guibutton>Cancel</guibutton>, and your changes will be lost.</para>
@@ -422,7 +422,7 @@ Options</link> for further information.</para></listitem>
 	</variablelist>
       </sect2>
       <sect2 id="mine">
-	<title>Mine</title>
+	<title><guilabel>Mine</guilabel></title>
 	<variablelist>
 	  <varlistentry>
 	    <term><guilabel>Mine fuel</guilabel></term>
