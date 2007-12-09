@@ -71,7 +71,7 @@ protected:
    virtual void timerEvent(QTimerEvent *event);
    virtual void keyPressEvent(QKeyEvent *event);
    virtual void keyReleaseEvent(QKeyEvent *event);
-   virtual void focusOutEvent (QFocusEvent /*event*/);
+   virtual void focusOutEvent (QFocusEvent * /*event*/);
    bool readSprites();
    SConfig modifyConfig(SConfig conf);
    void moveShips();
