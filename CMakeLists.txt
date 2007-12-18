@@ -20,6 +20,14 @@ kde4_add_ui_files(kspaceduel_SRCS general.ui )
 
 kde4_add_kcfg_files(kspaceduel_SRCS options.kcfgc )
 
+set(kspaceduel_icons
+	hi16-app-kspaceduel.png
+	hi32-app-kspaceduel.png
+	hi48-app-kspaceduel.png
+	hi64-app-kspaceduel.png
+	hi128-app-kspaceduel.png
+)
+kde4_add_win32_app_icon(kspaceduel_SRCS ${kspaceduel_icons})
 kde4_add_executable(kspaceduel ${kspaceduel_SRCS})
 
 target_link_libraries(kspaceduel  ${KDE4_KDEUI_LIBS} kdegames)
