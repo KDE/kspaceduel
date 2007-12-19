@@ -18,7 +18,6 @@
 
 #include "topwidget.h"
 
-#include <QLayout>
 
 #include <kicon.h>
 #include <kshortcutsdialog.h>
@@ -31,6 +30,8 @@
 
 #include "mainview.h"
 #include "playerinfo.h"
+
+#include <QBoxLayout>
 
 MyTopLevelWidget::MyTopLevelWidget()
 {

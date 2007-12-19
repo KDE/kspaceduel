@@ -23,8 +23,6 @@
 
 #include <QAbstractEventDispatcher>
 #include <QBrush>
-#include <QDir>
-#include <QFileInfo>
 #include <QGraphicsSimpleTextItem>
 #include <QKeyEvent>
 #include <QResizeEvent>
