@@ -425,7 +425,7 @@ SettingsDialog::SettingsDialog(SConfig *customConfig, QWidget *parent, const cha
   cs = new ConfigSetup(customConfig);
   addPage(cs, i18n("Game"), "games-config-custom", i18n("Game Settings"));
   connect(cs, SIGNAL(changed()), this, SLOT(updateButtons()));
- 
+  setHelp(QString(),"kspaceduel");
 //  resize(600,400);
 }
 
