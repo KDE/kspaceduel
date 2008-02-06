@@ -165,7 +165,7 @@ void MyTopLevelWidget::initStatusBar( )
 {
    statusBar( )->insertItem(i18n(" paused "),IDS_PAUSE,1);
    statusBar( )->insertItem("   ",IDS_MAIN,1);
-   statusBar( )->insertItem("",42,2);
+   statusBar( )->insertItem("",42,1);
 }
 
 void MyTopLevelWidget::start()
