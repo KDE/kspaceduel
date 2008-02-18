@@ -270,7 +270,7 @@ Options</link> for further information.</para></listitem>
 </sect1>
 
 <sect1 id="help"><!--This is a standard Help menubar entry. Only change if needed.-->
-<title>The <guimenuitem>Help</guimenuitem> Menu</title>
+<title>The <guimenu>Help</guimenu> Menu</title>
 &help.menu.documentation;
 </sect1>
 </chapter>
@@ -345,7 +345,7 @@ Options</link> for further information.</para></listitem>
      <para>This will bring up a dialog box which lets you configure all hotkeys, including the keys used for steering the space ships, for firing bullets, and for laying mines.</para>
      <para>You can see that each player (Red and Blue), has 5 keystrokes corresponding to Rotate Left, Rotate Right, Accelerate, Shot, and Mines.</para>
      <para>When you are finished configuring your keys, you should click on <guibutton>OK</guibutton> to apply your changes.</para>
-     <para>If you want to restore the default keys, simply click on the <guibutton>Default</guibutton> button once. To make these changes permenant, press <guibutton>OK</guibutton>.</para> 
+     <para>If you want to restore the default keys, simply click on the <guibutton>Default</guibutton> button once. To make these changes permanent, press <guibutton>OK</guibutton>.</para> 
      <para>If you want to abandon the changes you made, and return to your previously selected keys, simply click <guibutton>Cancel</guibutton>, and your changes will be lost.</para>
   </sect1>
 
@@ -359,7 +359,7 @@ Options</link> for further information.</para></listitem>
     <note><para>If you have not selected <guilabel>Custom</guilabel>, you will not be able to make any changes to these options.</para></note>
     <tip><para> If you have found an interesting configuration, mail it to the author of the game. It can be implemented in a future version (send the part [Game] in the file <filename>~/.kde/share/config/kspaceduelrc</filename>).</para></tip>
     <para>When you are finished altering the options, you should click on <guibutton>OK</guibutton> to apply your changes.</para>
-    <para>If you want to restore the default, simply click on the <guibutton>Default</guibutton> button once. To make these changes permenant, press <guibutton>OK</guibutton>.</para> 
+    <para>If you want to restore the default, simply click on the <guibutton>Default</guibutton> button once. To make these changes permanent, press <guibutton>OK</guibutton>.</para> 
     <para>If you want to abandon the changes you made, and return to your previous options, simply click <guibutton>Cancel</guibutton>, and your changes will be lost.</para>
     <para>The settings are:</para>
       <sect2 id="general">
