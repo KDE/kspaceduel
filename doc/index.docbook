@@ -289,11 +289,7 @@ Options</link> for further information.</para></listitem>
 </qandaentry>
 <qandaentry>
  <question><para>How do I start a new game? </para></question>
- <answer><para>&kappname; loads directly into the game mode; however, the action does not start until either player makes the first move.</para></answer>
-</qandaentry>
-<qandaentry>
- <question><para>How do I restart the game? </para></question>
- <answer><para>To restart the game you can use <link linkend="game-menu-new"><menuchoice><guimenu>Game</guimenu><guimenuitem>New</guimenuitem></menuchoice></link> option on the menubar.</para></answer>
+  <answer><para>You can start a new game using the <guibutton>New</guibutton> button on the toolbar, the <menuchoice><guimenu>Game</guimenu><guimenuitem>New</guimenuitem></menuchoice> menu entry on the menubar or using the default shortcut <keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>How do I pause the game? </para></question>
