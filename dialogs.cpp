@@ -21,7 +21,9 @@
 #include <QLCDNumber>
 #include <QSlider>
 
+#include <kcombobox.h>
 #include <klocale.h>
+#include <ktabwidget.h>
 
 #include "options.h"
 #include "ui_general.h"
@@ -158,7 +160,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    QVBoxLayout *boxlayout = new QVBoxLayout( this );
    boxlayout->setMargin(6);
    
-   tabs=new QTabWidget(this);
+   tabs=new KTabWidget(this);
    for(i=0;i<TabNum;i++)
    {
       configWidgets[i]=new QWidget(tabs);
@@ -178,12 +180,12 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
       value[i]->setFrameStyle(QFrame::NoFrame);
    }
 
-   configCombo=new QComboBox(this);
+   configCombo=new KComboBox(this);
    configCombo->setEditable(false);
    connect(configCombo,SIGNAL(activated(int)),SLOT(configSelected(int)));
    for(i=0;i<predefinedConfigNum;i++)
       configCombo->addItem(i18n(predefinedConfigName[i]));
-   configCombo->addItem(i18n("Custom"));
+   configCombo->addItem(i18nc("custom values","Custom"));
 
    boxlayout->addSpacing( 2 * 6 );
    boxlayout->addWidget(configCombo);
@@ -199,12 +201,12 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    for(i=0;i<TabNum;i++)
       stacklayout[i]->activate();
 
-   tabs->addTab(configWidgets[0],i18n("General"));
+   tabs->addTab(configWidgets[0],i18nc("general game settings","General"));
    tabs->addTab(configWidgets[1],i18n("Bullet"));
    tabs->addTab(configWidgets[2],i18nc("Name","Mine"));
    tabs->addTab(configWidgets[3],i18n("Ship"));
-   tabs->addTab(configWidgets[4],i18n("Sun"));
-   tabs->addTab(configWidgets[5],i18n("Start"));
+   tabs->addTab(configWidgets[4],i18nc("the star, Sol","Sun"));
+   tabs->addTab(configWidgets[5],i18nc("initial position and velocities of players","Start"));
    tabs->addTab(configWidgets[6],i18n("Powerups"));
 
    customConfig=custom;
@@ -420,10 +422,10 @@ SettingsDialog::SettingsDialog(SConfig *customConfig, QWidget *parent, const cha
   : KConfigDialog( parent, name, Options::self())
 {
   General *general = new General();
-  addPage(general, i18n("General"), "games-config-options", i18n("General Settings"));
+  addPage(general, i18nc("general settings","General"), "games-config-options", i18n("General Settings"));
 
   cs = new ConfigSetup(customConfig);
-  addPage(cs, i18n("Game"), "games-config-custom", i18n("Game Settings"));
+  addPage(cs, i18nc("game settings","Game"), "games-config-custom", i18n("Game Settings"));
   connect(cs, SIGNAL(changed()), this, SLOT(updateButtons()));
   setHelp(QString(),"kspaceduel");
 //  resize(600,400);

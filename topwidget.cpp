@@ -103,7 +103,7 @@ void MyTopLevelWidget::setupActions()
        KStandardGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
    MyMainView::pauseAction->setChecked( false );
    QAction *gameStart = actionCollection()->addAction( "game_start" );
-   gameStart->setText( i18n( "Start" ) );
+   gameStart->setText( i18nc( "start game","Start" ) );
    connect(gameStart, SIGNAL(triggered(bool) ), playfield, SLOT( start( ) ));
    gameStart->setShortcut(GAME_START_SHORTCUT);
    playfield->addAction(gameStart);
