@@ -30,7 +30,7 @@ int main(int argc,char **argv)
 {
    KAboutData aboutData( "kspaceduel", 0, ki18n("KSpaceDuel"), 
       KSPACEDUEL_VERSION, ki18n(description), KAboutData::License_GPL, 
-      ki18n("(c) 1998-2001, Andreas Zehender"));
+      ki18n("(c) 1998-2001, Andreas Zehender"), KLocalizedString(), "http://games.kde.org/kspaceduel" );
    aboutData.addAuthor(ki18n("Andreas Zehender"),ki18n("Original Program"), "az@azweb.de");
    aboutData.addAuthor(ki18n("Branan Riley"),ki18n("SVG Renderer"), "branan@gmail.com");
    KCmdLineArgs::init( argc, argv, &aboutData );
