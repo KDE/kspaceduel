@@ -532,11 +532,12 @@ Program copyright 1999-2000 &Andreas.Zehender; <email>az@azweb.de</email></para>
 <para>Documentation copyright 2000 &Andreas.Zehender; <email>az@azweb.de</email></para>
 <para>Documentation updated for &kde; &kdeappversion; &Mike.McBride; &Mike.McBride.mail;</para>
 
+<!-- !!!do not change ANYTHING after this line!!!! -->
+
 <!-- TRANS:CREDIT_FOR_TRANSLATORS --> 
 &underFDL;
 &underGPL;
 
-<!-- !!!do not change ANYTHING after this line!!!! -->
  
 </chapter>
   
