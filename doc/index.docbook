@@ -11,15 +11,15 @@
  
 <book lang="&language;"> <!-- do not change this! -->
 <bookinfo>
-	<title>The """&kappname;""" Handbook</title> <!-- This is the title of the docbook. Live as is unless change is necessary.-->
+    <title>The """&kappname;""" Handbook</title> <!-- This is the title of the docbook. Live as is unless change is necessary.-->
 <!-- List of immidiate authors begins here. -->
 <!--INPORTANT! - All other contributors: [to be determined] -->
 <authorgroup>
-	<author>
-		<firstname>Andreas</firstname>
-		<surname>Zehender</surname>
-		<affiliation><address><email>az@azweb.de</email></address></affiliation>
-	</author>
+    <author>
+        <firstname>Andreas</firstname>
+        <surname>Zehender</surname>
+        <affiliation><address><email>az@azweb.de</email></address></affiliation>
+    </author>
 <author>
 <firstname>Eugene</firstname><surname>Trounev</surname>
 <affiliation><address><email>eugene.trounev@gmail.com</email></address></affiliation>
@@ -28,8 +28,8 @@
 </authorgroup>
  
 <copyright>
-	<year>1999</year><year>2000</year>
-	<holder>&Andreas.Zehender;</holder>
+    <year>1999</year><year>2000</year>
+    <holder>&Andreas.Zehender;</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
@@ -39,41 +39,41 @@
  
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
-	<para>This documentation describes the game of """&kappname;""" version &kappversion;</para>
+    <para>This documentation describes the game of """&kappname;""" version &kappversion;</para>
 </abstract>
  
 <!--List of relevan keywords-->
 <keywordset>
-	<keyword>KDE</keyword> <!-- do not change this! -->
-	<keyword>kdegames</keyword> <!-- do not change this! -->
-	<keyword>game</keyword> <!-- do not change this! -->
-	<keyword>kspaceduel</keyword><!--Application name goes here-->
+    <keyword>KDE</keyword> <!-- do not change this! -->
+    <keyword>kdegames</keyword> <!-- do not change this! -->
+    <keyword>game</keyword> <!-- do not change this! -->
+    <keyword>kspaceduel</keyword><!--Application name goes here-->
 <!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
-	<keyword>arcade</keyword>
-	<keyword>space</keyword>
-	<keyword>war</keyword>
+    <keyword>arcade</keyword>
+    <keyword>space</keyword>
+    <keyword>war</keyword>
 <!--Number of possible players. It can be: One, Two,..., Multiplayer-->
-	<keyword>two players</keyword>
+    <keyword>two players</keyword>
 <!--All other relevant keywords-->
-	<keyword>satellite</keyword>
-	<keyword>starwars</keyword>
-	<keyword>wars</keyword>
+    <keyword>satellite</keyword>
+    <keyword>starwars</keyword>
+    <keyword>wars</keyword>
 </keywordset>
 </bookinfo>
 <!--Content begins here: -->
 <chapter id="introduction"><title>Introduction</title> <!-- do not change this! -->
-	<note><title>Gametype:</title><para> Arcade</para></note><!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
-	<note><title>Number of possible players:</title><para>Two</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+    <note><title>Gametype:</title><para> Arcade</para></note><!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <note><title>Number of possible players:</title><para>Two</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
  <!--Short game description starts here. 3-4 sentences (paragraphs)-->
-	<para>The idea behind """&kappname;""" is simple, but addictive. Each of two possible players controls a satellite spaceship orbiting the sun. As the game progresses players have to eliminate opponent's spacecraft. As soon as the opponent's satellite is destroyed, the remaining player wins the round.</para>
+    <para>The idea behind """&kappname;""" is simple, but addictive. Each of two possible players controls a satellite spaceship orbiting the sun. As the game progresses players have to eliminate opponent's spacecraft. As soon as the opponent's satellite is destroyed, the remaining player wins the round.</para>
 </chapter>
  
 <chapter id="howto"><title>How to Play</title> <!-- do not change this! -->
 <!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
-	<note><title>Objective:</title><para>Destroy the opponent's satellite, while keeping the own one in tact.</para></note><!--Describe the objective of the game.-->
+    <note><title>Objective:</title><para>Destroy the opponent's satellite, while keeping the own one in tact.</para></note><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
-	<para>
-	"""&kappname;""" loads directly into the game mode; however, the action does not start until either player makes the first move.</para>
+    <para>
+    """&kappname;""" loads directly into the game mode; however, the action does not start until either player makes the first move.</para>
 <note><title>Note:</title><para>If the opponent's satellite is controlled by the built in artificial intelligence, game action does not start until the human player makes the first move.</para></note>
 <para>
 In """&kappname;""" you control the ship's rotation, acceleration, and weaponry. Your satellite is constantly drawn towards the sun by gravity. You have to adjust the rotation and acceleration of your ship to make it stay on course.</para>
@@ -83,94 +83,94 @@ In """&kappname;""" you control the ship's rotation, acceleration, and weaponry.
 </chapter>
  
 <chapter id="rules_and_tips"><title>Game Rules, Strategies and Tips</title> <!-- do not change this! -->
-	<sect1 id="screen">
-		<title>"""&kappname;""" Game Screen Overview.</title>
-		<screenshot>
-			<screeninfo>"""&kappname;""" game screen</screeninfo>
-			<mediaobject><imageobject><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
-			<textobject><phrase>"""&kappname;"""  game screen</phrase></textobject></mediaobject>
-		</screenshot>
-		<itemizedlist>
-			<listitem><para>The top of the playing area is occupied by the menubar and toolbar.</para></listitem>
-			<listitem><para>The central part of the """&kappname;""" screen is the playing area.</para></listitem>
-			<listitem><para>On the left and on the right had sides of the playing area there are the Red Player's and the Blue Player's information screens.</para></listitem>
-			<listitem><para>The top box on the information screen represents the <quote>Hit Points</quote> of the spacecraft.</para></listitem>
-			<listitem><para>The middle box on the information screen represents the battery power.</para></listitem>
-			<listitem><para>The bottom box on the information screen shows player's number of wins.</para></listitem>
-			<listitem><para>The bottom of the playing area is the status bar.</para></listitem>
-		</itemizedlist>
-	</sect1>
-	<sect1 id="keys">
-		<title>Default Shortcuts</title>
-		<para>The following table contains the default shortcuts for """&kappname;""".</para>
-		<informaltable frame="all">
-			<tgroup cols="3">
-			<colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
-			<thead><row><entry>Action</entry><entry>Red Player</entry><entry>Blue Player</entry></row></thead>
-			<tbody>
-				<row><entry>Rotate Left</entry><entry>S</entry><entry>Left Arrow</entry></row>
-				<row><entry>Rotate Right</entry><entry>F</entry><entry>Right Arrow</entry></row>
-				<row><entry>Accelerate</entry><entry>E</entry><entry>Up Arrow</entry></row>
-				<row><entry>Shot</entry><entry>D</entry><entry>Down Arrow</entry></row>
-				<row><entry>Mines</entry><entry>A</entry><entry>Insert</entry></row>
-			</tbody>
-			</tgroup>
-		</informaltable>
-		<note><title>Note:</title><para>To change these keys, please refer to the <link linkend="options-keys">Game Configuration</link> section.</para></note>
-	</sect1>
-	<sect1 id="rules">
-		<title>Rules</title>
-		<sect2 id="energy">
-			<title>About Energy Points.</title> 
-			<itemizedlist>
-				<listitem><para>Each player controls one ship.</para></listitem>
-				<listitem><para>The ships can rotate, accelerate, shoot and set mines.</para></listitem>
-				<listitem><para>Each ship has a limited amount of energy required for rotation, acceleration, shooting and setting mines.</para></listitem>
-				<listitem><para>Each ship has a limited amount of energy.</para></listitem>
-				<listitem><para>Ships absorb solar energy required for the ship's operation. The amount of energy the ship gets depends on the distance from and the direction to the sun.</para></listitem>
-			</itemizedlist>
-			<note><title>Note:</title><para>A ship gets more energy near the sun and less energy near the border. It gets the full amount of energy if the
+    <sect1 id="screen">
+        <title>"""&kappname;""" Game Screen Overview.</title>
+        <screenshot>
+            <screeninfo>"""&kappname;""" game screen</screeninfo>
+            <mediaobject><imageobject><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
+            <textobject><phrase>"""&kappname;"""  game screen</phrase></textobject></mediaobject>
+        </screenshot>
+        <itemizedlist>
+            <listitem><para>The top of the playing area is occupied by the menubar and toolbar.</para></listitem>
+            <listitem><para>The central part of the """&kappname;""" screen is the playing area.</para></listitem>
+            <listitem><para>On the left and on the right had sides of the playing area there are the Red Player's and the Blue Player's information screens.</para></listitem>
+            <listitem><para>The top box on the information screen represents the <quote>Hit Points</quote> of the spacecraft.</para></listitem>
+            <listitem><para>The middle box on the information screen represents the battery power.</para></listitem>
+            <listitem><para>The bottom box on the information screen shows player's number of wins.</para></listitem>
+            <listitem><para>The bottom of the playing area is the status bar.</para></listitem>
+        </itemizedlist>
+    </sect1>
+    <sect1 id="keys">
+        <title>Default Shortcuts</title>
+        <para>The following table contains the default shortcuts for """&kappname;""".</para>
+        <informaltable frame="all">
+            <tgroup cols="3">
+            <colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
+            <thead><row><entry>Action</entry><entry>Red Player</entry><entry>Blue Player</entry></row></thead>
+            <tbody>
+                <row><entry>Rotate Left</entry><entry>S</entry><entry>Left Arrow</entry></row>
+                <row><entry>Rotate Right</entry><entry>F</entry><entry>Right Arrow</entry></row>
+                <row><entry>Accelerate</entry><entry>E</entry><entry>Up Arrow</entry></row>
+                <row><entry>Shot</entry><entry>D</entry><entry>Down Arrow</entry></row>
+                <row><entry>Mines</entry><entry>A</entry><entry>Insert</entry></row>
+            </tbody>
+            </tgroup>
+        </informaltable>
+        <note><title>Note:</title><para>To change these keys, please refer to the <link linkend="options-keys">Game Configuration</link> section.</para></note>
+    </sect1>
+    <sect1 id="rules">
+        <title>Rules</title>
+        <sect2 id="energy">
+            <title>About Energy Points.</title> 
+            <itemizedlist>
+                <listitem><para>Each player controls one ship.</para></listitem>
+                <listitem><para>The ships can rotate, accelerate, shoot and set mines.</para></listitem>
+                <listitem><para>Each ship has a limited amount of energy required for rotation, acceleration, shooting and setting mines.</para></listitem>
+                <listitem><para>Each ship has a limited amount of energy.</para></listitem>
+                <listitem><para>Ships absorb solar energy required for the ship's operation. The amount of energy the ship gets depends on the distance from and the direction to the sun.</para></listitem>
+            </itemizedlist>
+            <note><title>Note:</title><para>A ship gets more energy near the sun and less energy near the border. It gets the full amount of energy if the
 sun shines directly on the solar panels and less or even no energy if the sun shines at an angle to the panels or at the other side of the panels.</para></note>
-		</sect2>
-		<sect2 id="bullets-and-mines">
-			<title>About Bullets and Mines.</title>
-			<itemizedlist>
-				<listitem><para>Bullets fly around the sun just like a ship does.</para></listitem>
-				<listitem><para>Mines have an amount of energy to stay at the same position. When the energy is spent, the mines collide with the sun and disintegrate.</para></listitem>
-				<listitem><para>The closer to the sun the mine is set, the more energy it needs to stay in place.</para></listitem>
-				<listitem><para>Mines can be destroyed with bullets.</para></listitem>
-				<listitem><para>By default each ship has 5 bullets and 3 mines.</para></listitem>
-			</itemizedlist>
-		</sect2>
-		<sect2 id="hit-points">
-			<title>About Hit Points</title>
-			<itemizedlist>
-				<listitem><para>Collision with own bullets, or enemy bullets or mines decreases the hit points.</para></listitem>
-				<listitem><para>If two ships collide then the weaker ship is destroyed and the hit points of the stronger ship are decreased by the amount of the hit points the weaker ship had.</para></listitem>
-				<listitem><para>If the satellite's amount of hit points goes to zero then satellite explodes.</para></listitem>
-				<listitem><para>If a satellite collides with the sun it is destroyed regardless of the amount of hit points remaining.</para></listitem>
-			</itemizedlist>
-		</sect2>
-		<sect2 id="powerups">
-			<title>Powerups</title>
-			<para>From time to time powerups appear on the play field.</para>
-			<para>There are four different powerups:</para>
-			<variablelist>
-				<varlistentry><term>Mine</term>
-				<listitem><para>The maximum number of mines is increased.</para></listitem>
-				</varlistentry>
-				<varlistentry><term>Bullet</term>
-				<listitem><para>The maximum number of bullets is increased.</para></listitem>
-				</varlistentry>
-				<varlistentry><term>Energy (yellow sphere)</term>
-				<listitem><para>Player's energy increases.</para></listitem>
-				</varlistentry>
-				<varlistentry><term>Shield (blue sphere)</term>
-				<listitem><para>Player's hit points increase.</para></listitem>
-				</varlistentry>
-			</variablelist>
-		</sect2>
-	</sect1>
+        </sect2>
+        <sect2 id="bullets-and-mines">
+            <title>About Bullets and Mines.</title>
+            <itemizedlist>
+                <listitem><para>Bullets fly around the sun just like a ship does.</para></listitem>
+                <listitem><para>Mines have an amount of energy to stay at the same position. When the energy is spent, the mines collide with the sun and disintegrate.</para></listitem>
+                <listitem><para>The closer to the sun the mine is set, the more energy it needs to stay in place.</para></listitem>
+                <listitem><para>Mines can be destroyed with bullets.</para></listitem>
+                <listitem><para>By default each ship has 5 bullets and 3 mines.</para></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="hit-points">
+            <title>About Hit Points</title>
+            <itemizedlist>
+                <listitem><para>Collision with own bullets, or enemy bullets or mines decreases the hit points.</para></listitem>
+                <listitem><para>If two ships collide then the weaker ship is destroyed and the hit points of the stronger ship are decreased by the amount of the hit points the weaker ship had.</para></listitem>
+                <listitem><para>If the satellite's amount of hit points goes to zero then satellite explodes.</para></listitem>
+                <listitem><para>If a satellite collides with the sun it is destroyed regardless of the amount of hit points remaining.</para></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="powerups">
+            <title>Powerups</title>
+            <para>From time to time powerups appear on the play field.</para>
+            <para>There are four different powerups:</para>
+            <variablelist>
+                <varlistentry><term>Mine</term>
+                <listitem><para>The maximum number of mines is increased.</para></listitem>
+                </varlistentry>
+                <varlistentry><term>Bullet</term>
+                <listitem><para>The maximum number of bullets is increased.</para></listitem>
+                </varlistentry>
+                <varlistentry><term>Energy (yellow sphere)</term>
+                <listitem><para>Player's energy increases.</para></listitem>
+                </varlistentry>
+                <varlistentry><term>Shield (blue sphere)</term>
+                <listitem><para>Player's hit points increase.</para></listitem>
+                </varlistentry>
+            </variablelist>
+        </sect2>
+    </sect1>
 </chapter>
   
 <chapter id="interface"><title>Interface Overview</title> <!-- do not change this! -->
@@ -359,164 +359,164 @@ Options</link> for further information.</para></listitem>
     <para>If you want to abandon the changes you made, and return to your previous options, simply click <guibutton>Cancel</guibutton>, and your changes will be lost.</para>
     <para>The settings are:</para>
       <sect2 id="general">
-	<title><guilabel>General</guilabel></title>
-	<variablelist>
-	  <varlistentry>
-	    <term><guilabel>Hit Points</guilabel></term>
-	    <listitem><para>These two sliders allow you to define the hitpoints for each of the two players; you might want to decrease the hitpoints for a player to give that player a handycap.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Refresh time</guilabel></term>
-	     <listitem><para>Time between two screen refreshes in milliseconds. All other settings are independent of the refresh time.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Red Player</guilabel></term>
-	    <listitem><para>Here you can define whether the red player gets controlled by the AI, and also choose the skill level of the AI for this player. Just experiment with the different skill level to find one which fits you.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Blue Player</guilabel></term>
-	    <listitem><para>This works the same as the options for the <guilabel>Red Player</guilabel> described above.</para></listitem>
-	  </varlistentry>
-	</variablelist>
+    <title><guilabel>General</guilabel></title>
+    <variablelist>
+      <varlistentry>
+        <term><guilabel>Hit Points</guilabel></term>
+        <listitem><para>These two sliders allow you to define the hitpoints for each of the two players; you might want to decrease the hitpoints for a player to give that player a handycap.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Refresh time</guilabel></term>
+         <listitem><para>Time between two screen refreshes in milliseconds. All other settings are independent of the refresh time.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Red Player</guilabel></term>
+        <listitem><para>Here you can define whether the red player gets controlled by the AI, and also choose the skill level of the AI for this player. Just experiment with the different skill level to find one which fits you.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Blue Player</guilabel></term>
+        <listitem><para>This works the same as the options for the <guilabel>Red Player</guilabel> described above.</para></listitem>
+      </varlistentry>
+    </variablelist>
       </sect2>
       <sect2 id="game">
-	<title><guilabel>Game</guilabel></title>
-	<variablelist>
-	  <varlistentry>
-	    <term><guilabel>Game speed</guilabel></term>
-	    <listitem><para>Controls the speed of the whole game.</para></listitem>
-	  </varlistentry>
-	</variablelist>
+    <title><guilabel>Game</guilabel></title>
+    <variablelist>
+      <varlistentry>
+        <term><guilabel>Game speed</guilabel></term>
+        <listitem><para>Controls the speed of the whole game.</para></listitem>
+      </varlistentry>
+    </variablelist>
       </sect2>
       <sect2 id="bullet">
-	<title><guilabel>Bullet</guilabel></title>
-	<variablelist>
-	  <varlistentry>
-	    <term><guilabel>Shot speed</guilabel></term>
-	    <listitem><para>The speed of bullets</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Energy need</guilabel></term>
-	    <listitem><para>The amount of energy needed for one shot.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Max number</guilabel></term>
-	    <listitem><para>The maximum number of bullets a player can have on the screen.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Damage</guilabel></term>
-	    <listitem><para>The number of hit points damage done when a bullet hits a ship.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Life time</guilabel></term>
-	    <listitem><para>The maximum life time of a bullet.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Reload time</guilabel></term>
-	    <listitem><para>The time a ship needs to reload a bullet.</para></listitem>
-	  </varlistentry>
-	</variablelist>
+    <title><guilabel>Bullet</guilabel></title>
+    <variablelist>
+      <varlistentry>
+        <term><guilabel>Shot speed</guilabel></term>
+        <listitem><para>The speed of bullets</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Energy need</guilabel></term>
+        <listitem><para>The amount of energy needed for one shot.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Max number</guilabel></term>
+        <listitem><para>The maximum number of bullets a player can have on the screen.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Damage</guilabel></term>
+        <listitem><para>The number of hit points damage done when a bullet hits a ship.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Life time</guilabel></term>
+        <listitem><para>The maximum life time of a bullet.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Reload time</guilabel></term>
+        <listitem><para>The time a ship needs to reload a bullet.</para></listitem>
+      </varlistentry>
+    </variablelist>
       </sect2>
       <sect2 id="mine">
-	<title><guilabel>Mine</guilabel></title>
-	<variablelist>
-	  <varlistentry>
-	    <term><guilabel>Mine fuel</guilabel></term>
-	    <listitem><para>The amount of fuel on a mine.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Energy need</guilabel></term>
-	    <listitem><para>The amount of energy needed for laying a mine.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Activate time</guilabel></term>
-	    <listitem><para>The time a mine is inactive.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Damage</guilabel></term>
-	    <listitem><para>The number of hit points of damage done when a ship hits a mine.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Max number</guilabel></term>
-	    <listitem><para>Maximum number of mines a player can have on the screen.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Reload time</guilabel></term>
-	    <listitem><para>The time a ship needs to reload a mine.</para></listitem>
-	  </varlistentry>
-	</variablelist>
+    <title><guilabel>Mine</guilabel></title>
+    <variablelist>
+      <varlistentry>
+        <term><guilabel>Mine fuel</guilabel></term>
+        <listitem><para>The amount of fuel on a mine.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Energy need</guilabel></term>
+        <listitem><para>The amount of energy needed for laying a mine.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Activate time</guilabel></term>
+        <listitem><para>The time a mine is inactive.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Damage</guilabel></term>
+        <listitem><para>The number of hit points of damage done when a ship hits a mine.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Max number</guilabel></term>
+        <listitem><para>Maximum number of mines a player can have on the screen.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Reload time</guilabel></term>
+        <listitem><para>The time a ship needs to reload a mine.</para></listitem>
+      </varlistentry>
+    </variablelist>
       </sect2>
       <sect2 id="ship">
-	<title><guilabel>Ship</guilabel></title>
-	<variablelist>
-	  <varlistentry>
-	    <term><guilabel>Acceleration</guilabel></term>
-	    <listitem><para>Acceleration of the ships</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Energy need</guilabel></term>
-	    <listitem><para>The energy needed to accelerate a ship.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Rotation speed</guilabel></term>
-	    <listitem><para>The speed at which a ship rotates.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Energy need</guilabel></term>
-	    <listitem><para>The energy needed to rotate a ship.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Crash damage</guilabel></term>
-	    <listitem><para>The number of hit points damage done when two ships collide.</para></listitem>
-	  </varlistentry>
-	</variablelist>
+    <title><guilabel>Ship</guilabel></title>
+    <variablelist>
+      <varlistentry>
+        <term><guilabel>Acceleration</guilabel></term>
+        <listitem><para>Acceleration of the ships</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Energy need</guilabel></term>
+        <listitem><para>The energy needed to accelerate a ship.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Rotation speed</guilabel></term>
+        <listitem><para>The speed at which a ship rotates.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Energy need</guilabel></term>
+        <listitem><para>The energy needed to rotate a ship.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Crash damage</guilabel></term>
+        <listitem><para>The number of hit points damage done when two ships collide.</para></listitem>
+      </varlistentry>
+    </variablelist>
       </sect2>
       <sect2 id="sun">
-	<title><guilabel>Sun</guilabel></title>
-	<variablelist>
-	  <varlistentry>
-	    <term><guilabel>Sun energy</guilabel></term>
-	    <listitem><para>The strength of the sun.  The higher the value, the quicker ships will be recharged.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Gravity</guilabel></term>
-	    <listitem><para>The strength of the gravitational pull of the sun.</para></listitem>
-	  </varlistentry>
-	</variablelist>
+    <title><guilabel>Sun</guilabel></title>
+    <variablelist>
+      <varlistentry>
+        <term><guilabel>Sun energy</guilabel></term>
+        <listitem><para>The strength of the sun.  The higher the value, the quicker ships will be recharged.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Gravity</guilabel></term>
+        <listitem><para>The strength of the gravitational pull of the sun.</para></listitem>
+      </varlistentry>
+    </variablelist>
       </sect2>
       <sect2 id="start">
-	<title><guilabel>Start</guilabel></title>
-	<variablelist>
-	  <varlistentry>
-	    <term><guilabel>Position X</guilabel> and <guilabel>Position Y</guilabel></term>
-	    <listitem><para>The ships position at the beginning of a new round. The ships start at opposite sides of the sun.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Velocity X</guilabel> and <guilabel>Velocity Y</guilabel></term>
-	    <listitem><para>Velocity at the beginning of a new round.</para></listitem>
-	  </varlistentry>
-	</variablelist>
+    <title><guilabel>Start</guilabel></title>
+    <variablelist>
+      <varlistentry>
+        <term><guilabel>Position X</guilabel> and <guilabel>Position Y</guilabel></term>
+        <listitem><para>The ships position at the beginning of a new round. The ships start at opposite sides of the sun.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Velocity X</guilabel> and <guilabel>Velocity Y</guilabel></term>
+        <listitem><para>Velocity at the beginning of a new round.</para></listitem>
+      </varlistentry>
+    </variablelist>
       </sect2>
       <sect2 id="powerup-options">
-	<title><guilabel>Powerups</guilabel></title>
-	<variablelist>
-	  <varlistentry>
-	    <term><guilabel>Appearance time</guilabel></term>
-	    <listitem><para>Maximal time between the appearance of two powerups.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Life time</guilabel></term>
-	    <listitem><para>Maximal life time of a powerup.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Energy amount</guilabel></term>
-	    <listitem><para>Amount of energy a player gets from an energy powerup.</para></listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term><guilabel>Shield amount</guilabel></term>
-	    <listitem><para>Amount of hit points a player gets from a shield powerup.</para></listitem>
-	  </varlistentry>
-	</variablelist>
+    <title><guilabel>Powerups</guilabel></title>
+    <variablelist>
+      <varlistentry>
+        <term><guilabel>Appearance time</guilabel></term>
+        <listitem><para>Maximal time between the appearance of two powerups.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Life time</guilabel></term>
+        <listitem><para>Maximal life time of a powerup.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Energy amount</guilabel></term>
+        <listitem><para>Amount of energy a player gets from an energy powerup.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><guilabel>Shield amount</guilabel></term>
+        <listitem><para>Amount of hit points a player gets from a shield powerup.</para></listitem>
+      </varlistentry>
+    </variablelist>
       </sect2>
     </sect1>
 </chapter>
@@ -530,7 +530,7 @@ Options</link> for further information.</para></listitem>
 <para>
 Program copyright 1999-2000 &Andreas.Zehender; <email>az@azweb.de</email></para>
 <para>Documentation copyright 2000 &Andreas.Zehender; <email>az@azweb.de</email></para>
-<para>Documentation updated for &kde; &kdeappversion; &Mike.McBride; &Mike.McBride.mail;</para>
+<para>Documentation updated for &kde; 2.0 &Mike.McBride; &Mike.McBride.mail;</para>
 
 <!-- !!!do not change ANYTHING after this line!!!! -->
 
