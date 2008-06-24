@@ -1,2 +1,2 @@
 #! /usr/bin/env bash
-$XGETTEXT *.cpp -o $podir/kspaceduel.pot
+$XGETTEXT *.cpp *.h -o $podir/kspaceduel.pot
