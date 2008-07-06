@@ -139,6 +139,7 @@ MyMainView::~MyMainView()
    explosions.clear();
    
    writeConfig();
+   delete svgrender;
 }
 
 void MyMainView::setActionCollection(KActionCollection *a)
