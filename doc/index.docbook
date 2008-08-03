@@ -11,7 +11,7 @@
  
 <book lang="&language;"> <!-- do not change this! -->
 <bookinfo>
-    <title>The """&kappname;""" Handbook</title> <!-- This is the title of the docbook. Live as is unless change is necessary.-->
+    <title>The &kappname; Handbook</title> <!-- This is the title of the docbook. Live as is unless change is necessary.-->
 <!-- List of immidiate authors begins here. -->
 <!--INPORTANT! - All other contributors: [to be determined] -->
 <authorgroup>
@@ -65,7 +65,7 @@
     <note><title>Gametype:</title><para> Arcade</para></note><!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
     <note><title>Number of possible players:</title><para>Two</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
  <!--Short game description starts here. 3-4 sentences (paragraphs)-->
-    <para>The idea behind """&kappname;""" is simple, but addictive. Each of two possible players controls a satellite spaceship orbiting the sun. As the game progresses players have to eliminate opponent's spacecraft. As soon as the opponent's satellite is destroyed, the remaining player wins the round.</para>
+    <para>The idea behind &kappname; is simple, but addictive. Each of two possible players controls a satellite spaceship orbiting the sun. As the game progresses players have to eliminate opponent's spacecraft. As soon as the opponent's satellite is destroyed, the remaining player wins the round.</para>
 </chapter>
  
 <chapter id="howto"><title>How to Play</title> <!-- do not change this! -->
