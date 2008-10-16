@@ -546,7 +546,7 @@ void Ai::shotScores()
                    //ship will hit a mine that will be hitten by the shot
             {
                found=true;
-                   //ship hits earlier then shot
+                   //ship hits earlier than shot
                if(h->hitTime<s->hit.hitTime)
                   s->score+=1000;
                else
