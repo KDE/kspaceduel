@@ -39,7 +39,7 @@
  
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
-    <para>This documentation describes the game of """&kappname;""" version &kappversion;</para>
+    <para>This documentation describes the game of &kappname; version &kappversion;</para>
 </abstract>
  
 <!--List of relevan keywords-->
@@ -73,10 +73,10 @@
     <note><title>Objective:</title><para>Destroy the opponent's satellite, while keeping the own one in tact.</para></note><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
     <para>
-    """&kappname;""" loads directly into the game mode; however, the action does not start until either player makes the first move.</para>
+    &kappname; loads directly into the game mode; however, the action does not start until either player makes the first move.</para>
 <note><title>Note:</title><para>If the opponent's satellite is controlled by the built in artificial intelligence, game action does not start until the human player makes the first move.</para></note>
 <para>
-In """&kappname;""" you control the ship's rotation, acceleration, and weaponry. Your satellite is constantly drawn towards the sun by gravity. You have to adjust the rotation and acceleration of your ship to make it stay on course.</para>
+In &kappname; you control the ship's rotation, acceleration, and weaponry. Your satellite is constantly drawn towards the sun by gravity. You have to adjust the rotation and acceleration of your ship to make it stay on course.</para>
 <note><title>Note:</title><para>Approaching the sun too close causes the satellite to explode.</para></note>
 <para>In the same time you have to monitor the opponent's movement and use your weapons consisting of bullets and mines, to destroy the enemy spacecraft. </para>
 <note><title>Note:</title><para> Your own weapons are as harmful to your satellite as they are to the enemy one.</para></note>
@@ -84,16 +84,16 @@ In """&kappname;""" you control the ship's rotation, acceleration, and weaponry.
  
 <chapter id="rules_and_tips"><title>Game Rules, Strategies and Tips</title> <!-- do not change this! -->
     <sect1 id="screen">
-        <title>"""&kappname;""" Game Screen Overview.</title>
+        <title>&kappname; Game Screen Overview.</title>
         <screenshot>
-            <screeninfo>"""&kappname;""" game screen</screeninfo>
+            <screeninfo>&kappname; game screen</screeninfo>
             <mediaobject><imageobject><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
-            <textobject><phrase>"""&kappname;"""  game screen</phrase></textobject></mediaobject>
+            <textobject><phrase>&kappname;  game screen</phrase></textobject></mediaobject>
         </screenshot>
         <itemizedlist>
             <listitem><para>The top of the playing area is occupied by the menubar and toolbar.</para></listitem>
-            <listitem><para>The central part of the """&kappname;""" screen is the playing area.</para></listitem>
-            <listitem><para>On the left and on the right had sides of the playing area there are the Red Player's and the Blue Player's information screens.</para></listitem>
+            <listitem><para>The central part of the &kappname; screen is the playing area.</para></listitem>
+            <listitem><para>On the left and on the right sides of the playing area there are the Red Player's and the Blue Player's information screens.</para></listitem>
             <listitem><para>The top box on the information screen represents the <quote>Hit Points</quote> of the spacecraft.</para></listitem>
             <listitem><para>The middle box on the information screen represents the battery power.</para></listitem>
             <listitem><para>The bottom box on the information screen shows player's number of wins.</para></listitem>
@@ -102,7 +102,7 @@ In """&kappname;""" you control the ship's rotation, acceleration, and weaponry.
     </sect1>
     <sect1 id="keys">
         <title>Default Shortcuts</title>
-        <para>The following table contains the default shortcuts for """&kappname;""".</para>
+        <para>The following table contains the default shortcuts for &kappname;.</para>
         <informaltable frame="all">
             <tgroup cols="3">
             <colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
@@ -187,7 +187,7 @@ sun shines directly on the solar panels and less or even no energy if the sun sh
 <shortcut><keycombo action="simul">
 &Ctrl;<keycap>N</keycap></keycombo></shortcut>
 <guimenu>Game</guimenu><guimenuitem>New</guimenuitem> </menuchoice></term>
-<listitem><para>Starts a new game of """&kappname;""".</para></listitem>
+<listitem><para>Starts a new game of &kappname;.</para></listitem>
 </varlistentry>
 
 <varlistentry id="game-menu-new">
@@ -211,7 +211,7 @@ sun shines directly on the solar panels and less or even no energy if the sun sh
 <keycap>Q</keycap></keycombo></shortcut>
 <guimenu>Game</guimenu><guimenuitem>Quit</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Quits</action> """&kappname;"""</para></listitem>
+<listitem><para><action>Quits</action> &kappname;</para></listitem>
 </varlistentry>
 </variablelist>
 
@@ -242,7 +242,7 @@ status bar will be hidden.</para></listitem>
 <guimenu>Settings</guimenu>
 <guimenuitem>Configure Shortcuts...</guimenuitem>
 </menuchoice></term>
-<listitem><para>Allows you to change the keyboard shortcuts for """&kappname;""",
+<listitem><para>Allows you to change the keyboard shortcuts for &kappname;,
 including the keys for steering the space ship, firing bullets &etc;.</para>
 </listitem>
 </varlistentry>
@@ -259,7 +259,7 @@ including the keys for steering the space ship, firing bullets &etc;.</para>
 <varlistentry id="settings-menu-settings">
 <term><menuchoice>
 <guimenu>Settings</guimenu>
-<guimenuitem>Configure """&kappname;"""...</guimenuitem>
+<guimenuitem>Configure &kappname;...</guimenuitem>
 </menuchoice></term>
 <listitem><para>Opens a configuration dialog which lets you define many
 settings of the game, refer to the chapter <link linkend="configuration">Game
@@ -293,19 +293,19 @@ Options</link> for further information.</para></listitem>
 </qandaentry>
 <qandaentry>
  <question><para>How do I pause the game? </para></question>
- <answer><para>To pause """&kappname;""" you can use <link linkend="game-menu-pause"><menuchoice><guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem></menuchoice></link> option on the menubar.</para></answer>
+ <answer><para>To pause &kappname; you can use <link linkend="game-menu-pause"><menuchoice><guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem></menuchoice></link> option on the menubar.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the way this game looks. Can I? </para></question>
- <answer><para>No. At this moment """&kappname;""" features only one theme.</para></answer>
+ <answer><para>No. At this moment &kappname; features only one theme.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I have made a mistake. Can I undo? </para></question>
- <answer><para>No. """&kappname;""" does not have an 'Undo' feature.</para></answer>
+ <answer><para>No. &kappname; does not have an 'Undo' feature.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>Can I use keyboard? </para></question>
- <answer><para>Yes. """&kappname;""" can only be controlled by keyboard.</para></answer>
+ <answer><para>Yes. &kappname; can only be controlled by keyboard.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>What are the control keys? </para></question>
@@ -313,15 +313,15 @@ Options</link> for further information.</para></listitem>
 </qandaentry>
 <qandaentry>
  <question><para>I cannot figure out what to do here! Are there hints? </para></question>
- <answer><para>No. """&kappname;""" does not have a 'Hint' feature. However, if you carefully read through the <link linkend="rules_and_tips">Game Rules, Strategies and Tips</link> section you shouldn't have this problem.</para></answer>
+ <answer><para>No. &kappname; does not have a 'Hint' feature. However, if you carefully read through the <link linkend="rules_and_tips">Game Rules, Strategies and Tips</link> section you shouldn't have this problem.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I have to quit the game now, but I am not finished yet. Can I save my progress?</para></question>
-  <answer><para>No. """&kappname;""" does not have a 'Save' feature.</para></answer>
+  <answer><para>No. &kappname; does not have a 'Save' feature.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the game configuration. Where do I go? </para></question>
- <answer><para>Use the <link linkend="settings-menu-settings">Settings->Configure """&kappname;"""...</link> option on the menubar to access game settings.</para></answer><!--IMPORTANT!: this link has to send user to 'Interface Overview' section. So please setup the link structure accordingly.-->
+ <answer><para>Use the <link linkend="settings-menu-settings">Settings->Configure &kappname;...</link> option on the menubar to access game settings.</para></answer><!--IMPORTANT!: this link has to send user to 'Interface Overview' section. So please setup the link structure accordingly.-->
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the toolbar layout. What do I do?</para></question>
@@ -336,7 +336,7 @@ Options</link> for further information.</para></listitem>
 <!--This section describes configuration &GUI;. If your game is configured using menubar exclusively, please remove this section.-->
   <sect1 id="options-keys">
     <title>Game Keys</title>
-     <para>"""&kappname;""" has a default set of keys to control the game.  For a list of default keys see the section entitled <link linkend="keys">Default Shortcuts</link>.</para>
+     <para>&kappname; has a default set of keys to control the game.  For a list of default keys see the section entitled <link linkend="keys">Default Shortcuts</link>.</para>
      <para>Keys can be configured by selecting <menuchoice> <guimenu>Settings</guimenu><guimenuitem>Configure Shortcuts...</guimenuitem> </menuchoice> from the menubar.</para> 
      <para>This will bring up a dialog box which lets you configure all hotkeys, including the keys used for steering the space ships, for firing bullets, and for laying mines.</para>
      <para>You can see that each player (Red and Blue), has 5 keystrokes corresponding to Rotate Left, Rotate Right, Accelerate, Shot, and Mines.</para>
@@ -347,8 +347,8 @@ Options</link> for further information.</para></listitem>
 
   <sect1 id="options-configurations">
     <title>Game Configuration</title>
-    <para>All game settings of """&kappname;""" are configurable.</para>
-    <para>If you want to change the game settings, simply select <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure """&kappname;"""...</guimenuitem></menuchoice> from the menubar.</para>
+    <para>All game settings of &kappname; are configurable.</para>
+    <para>If you want to change the game settings, simply select <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kappname;...</guimenuitem></menuchoice> from the menubar.</para>
     <para>This will bring up a dialog box with two pages, labelled <guilabel>General</guilabel> and <guilabel>Game</guilabel>. The first page is rather simple, the second one has seven tabs across the top.</para>
     <para>Settings are collected in different configurations. You can choose from several pre-defined configurations.</para>
     <para>If you choose the <guilabel>Custom</guilabel> configuration, you can define all settings for yourself.</para>
@@ -525,7 +525,7 @@ Options</link> for further information.</para></listitem>
 <!--This chapter is for credits and licenses.-->
  
 <para>
-"""&kappname;"""
+&kappname;
 </para>
 <para>
 Program copyright 1999-2000 &Andreas.Zehender; <email>az@azweb.de</email></para>
