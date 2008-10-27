@@ -87,13 +87,13 @@ void MyTopLevelWidget::wins(int pn,int w)
 
 void MyTopLevelWidget::setupActions()
 {
-   QAction* ac;
+   KAction* ac;
 
    // Game
    KStandardGameAction::gameNew(playfield, SLOT(newGame()), actionCollection());
    KStandardGameAction::quit(this, SLOT(close()), actionCollection());
    
-   QAction* newRoundAct = actionCollection()->addAction( "new_round" );
+   KAction* newRoundAct = actionCollection()->addAction( "new_round" );
    newRoundAct->setIcon( KIcon("bell") );
    newRoundAct->setText( i18n( "&New Round" ) );
    newRoundAct->setShortcut( Qt::CTRL + Qt::Key_R );
@@ -102,7 +102,7 @@ void MyTopLevelWidget::setupActions()
    MyMainView::pauseAction =
        KStandardGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
    MyMainView::pauseAction->setChecked( false );
-   QAction *gameStart = actionCollection()->addAction( "game_start" );
+   KAction *gameStart = actionCollection()->addAction( "game_start" );
    gameStart->setText( i18nc( "start game","Start" ) );
    connect(gameStart, SIGNAL(triggered(bool) ), playfield, SLOT( start( ) ));
    gameStart->setShortcut(GAME_START_SHORTCUT);
