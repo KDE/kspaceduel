@@ -1,6 +1,6 @@
 /*
     Copyright (C) 1998-2001 Andreas Zehender <az@azweb.de>
-    Copyright (C) 2006-2007 Dirk Rathlev <dirkrathlev@gmx.de>
+    Copyright (C) 2006-2008 Dirk Rathlev <dirkrathlev@gmx.de>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -107,8 +107,8 @@ void ShipSprite::calculateGravityAndEnergy(double gravity,double sunEnergy,
 
    if(!stopped)
    {
-      ex=x()-scene()->width()/2.0;
-      ey=y()-scene()->height()/2.0;
+      ex=x()+center().x()-scene()->width()/2.0;
+      ey=y()+center().y()-scene()->height()/2.0;
 
       abs_2=ex*ex+ey*ey;
       sq=sqrt(abs_2);
