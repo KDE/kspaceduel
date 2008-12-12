@@ -476,8 +476,8 @@ void MyMainView::newRound()
                            my+config.startPosY-(ship[0]->height()/2)));
    ship[0]->setRotation(0.0);
 
-   ship[1]->setPos(QPointF(mx-config.startPosX+(ship[1]->width()/2),
-                           my-config.startPosY+(ship[1]->height()/2)));
+   ship[1]->setPos(QPointF(mx-config.startPosX-(ship[1]->width()/2),
+                           my-config.startPosY-(ship[1]->height()/2)));
    ship[1]->setRotation(M_PI);
 
    ship[0]->setVelocity(config.startVelX,config.startVelY);
@@ -807,6 +807,7 @@ void MyMainView::moveExplosions()
    {
       ex = explosions[i];
       ex->forward(config.gamespeed);
+printf("%lf\n",config.gamespeed);
       if(ex->isOver())
       {
          explosions.removeAt(i);
@@ -886,7 +887,7 @@ void MyMainView::collisions()
          {
             if((sprite->type()!=S_EXPLOSION)
                && !((sprite->type()!=S_SUN)&&(ship[pl]->getHitPoints()==0)))
-               if(ship[pl]->collidesWithItem(sprite))
+               if(ship[pl]->collidesWithItem(sprite,Qt::IntersectsItemShape))
                   if(!hitlist.contains(sprite))
                      hitlist.append(sprite);
          }
