@@ -107,7 +107,7 @@ double ConfigSetup::EditVal[EditNum][3]=
  {0,1.0,0.2},{0,10,1.0},{0.1,4,1},
  {0,10,0.2},{0,100,50},
  {1000,30000,9000},{0,10000,2200},
- {-250,250,-130},{-180,180,-100},{-10,10,3},{-10,10,-1.7},
+ {-250,250,-180},{-180,180,-130},{-10,10,3},{-10,10,-1.7},
  {200,4000,800},{200,4000,400},{0,99,50},{0,99,30}};
 
 int ConfigSetup::EditDiv[EditNum]=
@@ -397,7 +397,7 @@ void ConfigSetup::sliderChanged(int val)
    int i,n,h;
    QString str;
    
-   for(i=0;(i<EditNum)&&(slider[i]!=sender());i++);
+   for(i=0;(i<EditNum) && (slider[i]!=sender());i++);
    if(i<EditNum)
    {
       if(EditDiv[i]==1)
