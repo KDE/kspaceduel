@@ -807,7 +807,6 @@ void MyMainView::moveExplosions()
    {
       ex = explosions[i];
       ex->forward(config.gamespeed);
-printf("%lf\n",config.gamespeed);
       if(ex->isOver())
       {
          explosions.removeAt(i);
