@@ -60,7 +60,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinBox_2" >
+         <widget class="KIntSpinBox" name="spinBox_2" >
           <property name="value" >
            <number>99</number>
           </property>
@@ -100,7 +100,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinBox_3" >
+         <widget class="KIntSpinBox" name="spinBox_3" >
           <property name="value" >
            <number>99</number>
           </property>
@@ -147,7 +147,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QSpinBox" name="spinBox" >
+       <widget class="KIntSpinBox" name="spinBox" >
         <property name="maximum" >
          <number>100</number>
         </property>
@@ -388,6 +388,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KIntSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>knuminput.h</header>
+  </customwidget>
+ </customwidgets>
   <resources/>
  <connections>
   <connection>
