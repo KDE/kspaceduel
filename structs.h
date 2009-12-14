@@ -62,6 +62,11 @@ const SConfig predefinedConfig[]={{1.0, 2200.0, 0.2, 1.0, 9000.0, 1.0,
 const char predefinedConfigName[predefinedConfigNum][15]=
 {I18N_NOOP("Default"),I18N_NOOP("Bullet"),I18N_NOOP("Chaos"),I18N_NOOP("Lack of Energy")}; 
 
+// This is because on Solaris, sun is defined (it's the vendor)
+#ifdef sun
+#undef sun
+#endif
+
 struct AiSprite
 {
    double x,y,dx,dy;
