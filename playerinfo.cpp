@@ -117,6 +117,16 @@ void PlayerInfo::setEnergy(int e)
 
 void PlayerInfo::setWins(int w)
 {
+   // if the LCD range overflows, adjust its range
+   if (wins.checkOverflow(w))
+   {
+      wins.setDigitCount(wins.digitCount()+1);
+   }
+   // if the LCD is set to 0 (start new game), also reset the range
+   if (w==0)
+   {
+      wins.setDigitCount(2);
+   }
    wins.display(w);
 }
 
