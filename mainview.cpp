@@ -36,7 +36,7 @@
 #include <ktoggleaction.h>
 #include <kconfiggroup.h>
 
-#include <KSvgRenderer>
+#include <QSvgRenderer>
 
 #include "ai.h"
 #include "options.h"
@@ -85,7 +85,7 @@ MyMainView::MyMainView(QWidget *parent)
       minePut[p]=false;
    }
 
-   svgrender = new KSvgRenderer(KStandardDirs::locate("appdata", MV_SVG_FILE));
+   svgrender = new QSvgRenderer(KStandardDirs::locate("appdata", MV_SVG_FILE));
    
    sun=new SunSprite(svgrender, MV_SUN);
    field.addItem(sun);
