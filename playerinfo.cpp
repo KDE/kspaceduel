@@ -25,12 +25,12 @@ QPixmap* PlayerInfo::pplayer[6];
 
 void PlayerInfo::loadPixmaps()
 {
-    pplayer[0] = new QPixmap(KIcon("battery-discharging-100").pixmap(32,32));
-    pplayer[1] = new QPixmap(KIcon("battery-discharging-080").pixmap(32,32));
-    pplayer[2] = new QPixmap(KIcon("battery-discharging-060").pixmap(32,32));
-    pplayer[3] = new QPixmap(KIcon("battery-discharging-040").pixmap(32,32));
-    pplayer[4] = new QPixmap(KIcon("battery-discharging-020").pixmap(32,32));
-    pplayer[5] = new QPixmap(KIcon("battery-discharging-000").pixmap(32,32));
+    pplayer[0] = new QPixmap(KIcon( QLatin1String( "battery-discharging-100" )).pixmap(32,32));
+    pplayer[1] = new QPixmap(KIcon( QLatin1String( "battery-discharging-080" )).pixmap(32,32));
+    pplayer[2] = new QPixmap(KIcon( QLatin1String( "battery-discharging-060" )).pixmap(32,32));
+    pplayer[3] = new QPixmap(KIcon( QLatin1String( "battery-discharging-040" )).pixmap(32,32));
+    pplayer[4] = new QPixmap(KIcon( QLatin1String( "battery-discharging-020" )).pixmap(32,32));
+    pplayer[5] = new QPixmap(KIcon( QLatin1String( "battery-discharging-000" )).pixmap(32,32));
 }
 
 PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
@@ -72,7 +72,7 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
    lplayer.setPixmap(*(pplayer[0]));
    currentPixmap=0;
    //lenergy.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/energy.png")));
-   lenergy.setPixmap(KIcon("battery").pixmap(32,32));;
+   lenergy.setPixmap(KIcon( QLatin1String( "battery" )).pixmap(32,32));;
    lwins.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/win.png")));
 
    hitpoints.setGeometry(9,45,26,26);
