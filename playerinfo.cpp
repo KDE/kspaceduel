@@ -41,9 +41,9 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
    setFixedWidth(45);
    QString str;
 //   int i;
-   
+
    QPalette palette;
-   
+
    lplayer.setFrameStyle(NoFrame);
    lplayer.setMargin(0);
    lplayer.setToolTip(i18n("Hit points"));
@@ -73,7 +73,7 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
    currentPixmap=0;
    //lenergy.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/energy.png")));
    lenergy.setPixmap(KIcon( QLatin1String( "battery" )).pixmap(32,32));;
-   lwins.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/win.png")));
+   lwins.setPixmap(QPixmap(KStandardDirs::locate("appdata", QLatin1String( "sprites/playerinfo/win.png" ))));
 
    hitpoints.setGeometry(9,45,26,26);
    energy.setGeometry(9,120,26,26);
@@ -98,7 +98,7 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
    energy.setPalette(palette);
    wins.setPalette(palette);
 }
-       
+
 void PlayerInfo::setHitpoints(int h)
 {
    int p = 5-((h+19)/20);

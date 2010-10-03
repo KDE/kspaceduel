@@ -92,7 +92,7 @@ void MyTopLevelWidget::setupActions()
    // Game
    KStandardGameAction::gameNew(playfield, SLOT(newGame()), actionCollection());
    KStandardGameAction::quit(this, SLOT(close()), actionCollection());
-   
+
    KAction* newRoundAct = actionCollection()->addAction( QLatin1String(  "new_round" ) );
    newRoundAct->setIcon( KIcon( QLatin1String( "bell" )) );
    newRoundAct->setText( i18n( "&New Round" ) );
@@ -164,8 +164,8 @@ void MyTopLevelWidget::setupActions()
 void MyTopLevelWidget::initStatusBar( )
 {
    statusBar( )->insertItem(i18n(" paused "),IDS_PAUSE);
-   statusBar( )->insertItem("   ",IDS_MAIN,1);
-   statusBar( )->insertItem("",42);
+   statusBar( )->insertItem(QLatin1String( "   " ),IDS_MAIN ,1);
+   statusBar( )->insertItem(QLatin1String( "" ),42);
 }
 
 void MyTopLevelWidget::start()

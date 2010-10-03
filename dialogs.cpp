@@ -147,19 +147,19 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    QGridLayout *stacklayout[TabNum];
    QWidget *configWidgets[TabNum];
    //QGroupBox *box;
-   
+
    int i;
-   
+
    resize(500,400);
    //setCaption(i18n("Game Setup"));
    //setHelp( "OptionsConfigurations" );
-   
-   
+
+
    //box=new QGroupBox(i18n("Config"),this);
    //setMainWidget( box );
    QVBoxLayout *boxlayout = new QVBoxLayout( this );
    boxlayout->setMargin(6);
-   
+
    tabs=new KTabWidget(this);
    for(i=0;i<TabNum;i++)
    {
@@ -167,7 +167,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
       stacklayout[i]=new QGridLayout(configWidgets[i]);
       stacklayout[i]->setMargin(10);
    }
-   
+
    for(i=0;i<EditNum;i++)
    {
       label[i]=new QLabel(i18n(LabelName[i]),configWidgets[Parent[i]]);
@@ -190,14 +190,14 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    boxlayout->addSpacing( 2 * 6 );
    boxlayout->addWidget(configCombo);
    boxlayout->addWidget(tabs);
-   
+
    for(i=0;i<EditNum;i++)
    {
       stacklayout[Parent[i]]->addWidget(label[i],Position[i],0);
       stacklayout[Parent[i]]->addWidget(slider[i],Position[i],1);
-      stacklayout[Parent[i]]->addWidget(value[i],Position[i],2);      
+      stacklayout[Parent[i]]->addWidget(value[i],Position[i],2);
    }
-   
+
    for(i=0;i<TabNum;i++)
       stacklayout[i]->activate();
 
@@ -250,11 +250,11 @@ void ConfigSetup::valueChanged(int ednum,double value)
          case EditShotSpeed:config.shotSpeed=value;break;
          case EditShotEnergyNeed:config.shotEnergyNeed=value;break;
          case EditBulletLifeTime:config.bulletLifeTime=value;break;
-         case EditBulletReloadTime:config.bulletReloadTime=value;break;   
+         case EditBulletReloadTime:config.bulletReloadTime=value;break;
          case EditMineFuel:config.mineFuel=value;break;
          case EditMineEnergyNeed:config.mineEnergyNeed=value;break;
          case EditMineActivateTime:config.mineActivateTime=value;break;
-         case EditMineReloadTime:config.mineReloadTime=value;break;   
+         case EditMineReloadTime:config.mineReloadTime=value;break;
          case EditGamespeed:config.gamespeed=value;break;
          case EditPosX:config.startPosX=value;break;
          case EditPosY:config.startPosY=value;break;
@@ -323,28 +323,28 @@ void ConfigSetup::displayConfig(SConfig cfg)
 {
    setValue(EditSunEnergy,cfg.sunEnergy);
    setValue(EditGravity,cfg.gravity);
-   
+
    setValue(EditShotSpeed,cfg.shotSpeed);
    setValue(EditShotEnergyNeed,cfg.shotEnergyNeed);
    setValue(EditMaxBullets,cfg.maxBullets);
    setValue(EditBulletDamage,cfg.bulletDamage);
    setValue(EditBulletLifeTime,cfg.bulletLifeTime);
    setValue(EditBulletReloadTime,cfg.bulletReloadTime);
-   
+
    setValue(EditMineFuel,cfg.mineFuel);
    setValue(EditMineEnergyNeed,cfg.mineEnergyNeed);
    setValue(EditMineActivateTime,cfg.mineActivateTime);
    setValue(EditMineDamage,cfg.mineDamage);
    setValue(EditMaxMines,cfg.maxMines);
    setValue(EditMineReloadTime,cfg.mineReloadTime);
-   
+
    setValue(EditGamespeed,cfg.gamespeed);
-   
+
    setValue(EditPosX,cfg.startPosX);
    setValue(EditPosY,cfg.startPosY);
    setValue(EditVelX,cfg.startVelX);
    setValue(EditVelY,cfg.startVelY);
-   
+
    setValue(EditAcc,cfg.acc);
    setValue(EditEnergyNeed,cfg.energyNeed);
    setValue(EditRotationSpeed,cfg.rotationSpeed);
@@ -370,7 +370,7 @@ void ConfigSetup::setValue(int ednum,double val)
    QString str;
    int hval=(int)(val*EditDiv[ednum]+0.5);
    int n,h;
-   
+
    if(EditDiv[ednum]==1)
       str.sprintf("%*i",LCDLen,hval);
    else
@@ -396,7 +396,7 @@ void ConfigSetup::sliderChanged(int val)
 {
    int i,n,h;
    QString str;
-   
+
    for(i=0;(i<EditNum) && (slider[i]!=sender());i++);
    if(i<EditNum)
    {
@@ -415,19 +415,19 @@ void ConfigSetup::sliderChanged(int val)
       else
          valueChanged(i,val);
    }
-      
+
 }
 
 SettingsDialog::SettingsDialog(SConfig *customConfig, QWidget *parent, const char *name)
-  : KConfigDialog( parent, name, Options::self())
+  : KConfigDialog( parent,QLatin1String(  name ), Options::self())
 {
   General *general = new General();
-  addPage(general, i18nc("general settings","General"), "games-config-options", i18n("General Settings"));
+  addPage(general, i18nc("general settings","General"), QLatin1String( "games-config-options" ), i18n("General Settings"));
 
   cs = new ConfigSetup(customConfig);
-  addPage(cs, i18nc("game settings","Game"), "games-config-custom", i18n("Game Settings"));
+  addPage(cs, i18nc("game settings","Game"),QLatin1String(  "games-config-custom" ), i18n("Game Settings"));
   connect(cs, SIGNAL(changed()), this, SLOT(updateButtons()));
-  setHelp(QString(),"kspaceduel");
+  setHelp(QString(),QLatin1String( "kspaceduel" ));
 //  resize(600,400);
 }
 
@@ -450,7 +450,7 @@ void SettingsDialog::updateSettings()
    cs->updateSettings();
    emit settingsUpdated();
 }
- 
+
 bool SettingsDialog::hasChanged()
 {
    return cs->hasChanged();
