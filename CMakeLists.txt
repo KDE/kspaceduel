@@ -31,7 +31,7 @@ install(FILES default_theme.svgz DESTINATION ${DATA_INSTALL_DIR}/kspaceduel/spri
 
 ########### install files ###############
 
-install( FILES kspaceduel.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS kspaceduel.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kspaceduel.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES kspaceduelui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kspaceduel )
 
