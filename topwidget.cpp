@@ -64,8 +64,8 @@ void MyTopLevelWidget::initGameWidgets( ){
    QObject::connect(playfield,SIGNAL(hitPoints(int,int)),
                     SLOT(hitPoints(int,int)));
    QObject::connect(playfield,SIGNAL(wins(int,int)),SLOT(wins(int,int)));
-   QObject::connect(playfield,SIGNAL(setStatusText(const QString &,int)),
-                    SLOT(setStatusText(const QString &,int)));
+   QObject::connect(playfield,SIGNAL(setStatusText(QString,int)),
+                    SLOT(setStatusText(QString,int)));
 
    setCentralWidget(w);
 }
@@ -97,14 +97,14 @@ void MyTopLevelWidget::setupActions()
    newRoundAct->setIcon( KIcon( QLatin1String( "bell" )) );
    newRoundAct->setText( i18n( "&New Round" ) );
    newRoundAct->setShortcut( Qt::CTRL + Qt::Key_R );
-   connect( newRoundAct, SIGNAL( triggered(bool) ), playfield, SLOT( newRound( ) ) );
+   connect( newRoundAct, SIGNAL(triggered(bool)), playfield, SLOT(newRound()) );
 
    MyMainView::pauseAction =
        KStandardGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
    MyMainView::pauseAction->setChecked( false );
    KAction *gameStart = actionCollection()->addAction( QLatin1String(  "game_start" ) );
    gameStart->setText( i18nc( "start game","Start" ) );
-   connect(gameStart, SIGNAL(triggered(bool) ), playfield, SLOT( start( ) ));
+   connect(gameStart, SIGNAL(triggered(bool)), playfield, SLOT(start()));
    gameStart->setShortcut(GAME_START_SHORTCUT);
    playfield->addAction(gameStart);
 
