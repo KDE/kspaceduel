@@ -1,8 +1,12 @@
 [Desktop Entry]
 Name=KSpaceDuel
+Name[uk]=Космічна дуель
+Name[x-test]=xxKSpaceDuelxx
 MimeType=
 Exec=kspaceduel -caption "%c"
 GenericName=Space Arcade Game
+GenericName[uk]=Космічна аркадна гра — дуель
+GenericName[x-test]=xxSpace Arcade Gamexx
 Icon=kspaceduel
 X-DocPath=kspaceduel/index.html
 Type=Application
