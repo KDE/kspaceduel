@@ -241,7 +241,7 @@ status bar will be hidden.</para></listitem>
 <guimenuitem>Configure Shortcuts...</guimenuitem>
 </menuchoice></term>
 <listitem><para>Allows you to change the keyboard shortcuts for &kappname;,
-including the keys for steering the space ship, firing bullets &etc;.</para>
+including the keys for steering the space ship, firing bullets &etc;</para>
 </listitem>
 </varlistentry>
 
