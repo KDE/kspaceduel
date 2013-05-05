@@ -94,7 +94,7 @@ void MyTopLevelWidget::setupActions()
    KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 
    KAction* newRoundAct = actionCollection()->addAction( QLatin1String(  "new_round" ) );
-   newRoundAct->setIcon( KIcon( QLatin1String( "bell" )) );
+   newRoundAct->setIcon( KIcon( QLatin1String( "preferences-desktop-notification-bell" )) );
    newRoundAct->setText( i18n( "&New Round" ) );
    newRoundAct->setShortcut( Qt::CTRL + Qt::Key_R );
    connect( newRoundAct, SIGNAL(triggered(bool)), playfield, SLOT(newRound()) );
