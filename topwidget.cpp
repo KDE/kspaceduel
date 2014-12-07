@@ -184,4 +184,4 @@ void MyTopLevelWidget::keySetup()
    KShortcutsDialog::configure( actionCollection( ), KShortcutsEditor::LetterShortcutsAllowed, this, true );
 }
 
-#include "topwidget.moc"
+

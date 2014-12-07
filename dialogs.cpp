@@ -277,7 +277,7 @@ void ConfigSetup::updateSettings()
    *customConfig=config;
 
    Options::setLastConfig(selectedConfig);
-   Options::self()->writeConfig();
+   Options::self()->save();
 }
 
 bool ConfigSetup::hasChanged()
@@ -461,4 +461,4 @@ bool SettingsDialog::isDefault()
    return cs->isDefault();
 }
 
-#include "dialogs.moc"
+

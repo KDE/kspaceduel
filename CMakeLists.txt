@@ -71,11 +71,11 @@ install(FILES default_theme.svgz DESTINATION ${DATA_INSTALL_DIR}/kspaceduel/spri
 
 ########### install files ###############
 
-install( PROGRAMS kspaceduel.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS org.kde.kspaceduel.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kspaceduel.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES kspaceduelui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kspaceduel )
 
-ecm_install_icons( ${ICON_INSTALL_DIR}   )
+ecm_install_icons( ICONS  hi128-apps-kspaceduel.png  hi16-apps-kspaceduel.png  hi22-apps-kspaceduel.png  hi32-apps-kspaceduel.png  hi48-apps-kspaceduel.png  hi64-apps-kspaceduel.png DESTINATION ${ICON_INSTALL_DIR}   )
 
 
 

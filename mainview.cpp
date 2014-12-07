@@ -40,6 +40,7 @@
 
 #include <KGlobal>
 #include <KShortcut>
+#include <QFontDatabase>
 #include "ai.h"
 #include "options.h"
 
@@ -178,7 +179,7 @@ bool MyMainView::readSprites()
 
 void MyMainView::readConfig()
 {
-   KConfigGroup game(KGlobal::config(), "Game");
+   KConfigGroup game(KSharedConfig::openConfig(), "Game");
    int i;
 
    customConfig.gamespeed=game.readEntry("gamespeed",
@@ -252,7 +253,7 @@ void MyMainView::readConfig()
 
 void MyMainView::writeConfig()
 {
-   KConfigGroup game(KGlobal::config(), "Game");
+   KConfigGroup game(KSharedConfig::openConfig(), "Game");
 
    game.writeEntry("gravity",customConfig.gravity);
    game.writeEntry("acceleration",customConfig.acc);
@@ -567,7 +568,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
 	    // FIXME
            // textSprite->setTextFlags(Qt::AlignCenter);
 	    textSprite->setBrush(QBrush(QColor(255,160,0)));
-            textSprite->setFont(QFont(KGlobalSettings::generalFont().family(),14));
+            textSprite->setFont(QFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont).family(),14));
             textSprite->show( );
             if(ship[0]->getHitPoints()==0)
             {
@@ -1089,4 +1090,4 @@ void MyMainView::focusOutEvent (QFocusEvent * /*event*/)
    setFocus(Qt::OtherFocusReason);
 }
 
-#include "mainview.moc"
+

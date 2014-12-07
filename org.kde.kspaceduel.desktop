@@ -134,3 +134,4 @@ Terminal=false
 X-KDE-StartupNotify=true
 X-DBUS-StartupType=Multi
 Categories=Qt;KDE;Game;ArcadeGame;
+X-DBUS-ServiceName=org.kde.kspaceduel
