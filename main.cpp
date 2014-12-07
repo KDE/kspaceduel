@@ -18,7 +18,7 @@
 
 #include <kapplication.h>
 #include <kcmdlineargs.h>
-#include <kaboutdata.h>
+#include <K4AboutData>
 #include <klocale.h>
 
 #include "version.h"
@@ -28,15 +28,14 @@ static const char description[] = I18N_NOOP("KDE Space Game");
 
 int main(int argc,char **argv)
 {
-   KAboutData aboutData( "kspaceduel", 0, ki18n("KSpaceDuel"), 
-      KSPACEDUEL_VERSION, ki18n(description), KAboutData::License_GPL, 
+   K4AboutData aboutData( "kspaceduel", 0, ki18n("KSpaceDuel"), 
+      KSPACEDUEL_VERSION, ki18n(description), K4AboutData::License_GPL, 
       ki18n("(c) 1998-2001, Andreas Zehender"), KLocalizedString(), "http://games.kde.org/kspaceduel" );
    aboutData.addAuthor(ki18n("Andreas Zehender"),ki18n("Original Program"), "az@azweb.de");
    aboutData.addAuthor(ki18n("Branan Riley"),ki18n("SVG Renderer"), "branan@gmail.com");
    KCmdLineArgs::init( argc, argv, &aboutData );
 
    KApplication myapplication;
-   KGlobal::locale()->insertCatalog( QLatin1String( "libkdegames" ));
 
    MyTopLevelWidget *top = new MyTopLevelWidget;
    top->show();

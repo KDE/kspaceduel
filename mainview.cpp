@@ -28,7 +28,7 @@
 #include <QResizeEvent>
 #include <QTimerEvent>
 
-#include <kaction.h>
+#include <QAction>
 #include <kactioncollection.h>
 #include <kglobalsettings.h>
 #include <klocale.h>
@@ -38,6 +38,8 @@
 
 #include <QSvgRenderer>
 
+#include <KGlobal>
+#include <KShortcut>
 #include "ai.h"
 #include "options.h"
 
@@ -560,7 +562,8 @@ void MyMainView::timerEvent(QTimerEvent *event)
                delete textSprite;
                textSprite=0;
             }
-            textSprite=new QGraphicsSimpleTextItem(0,&field);
+            textSprite=new QGraphicsSimpleTextItem(0);
+            field.addItem(textSprite);
 	    // FIXME
            // textSprite->setTextFlags(Qt::AlignCenter);
 	    textSprite->setBrush(QBrush(QColor(255,160,0)));

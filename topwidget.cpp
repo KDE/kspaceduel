@@ -87,13 +87,13 @@ void MyTopLevelWidget::wins(int pn,int w)
 
 void MyTopLevelWidget::setupActions()
 {
-   KAction* ac;
+   QAction * ac;
 
    // Game
    KStandardGameAction::gameNew(playfield, SLOT(newGame()), actionCollection());
    KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 
-   KAction* newRoundAct = actionCollection()->addAction( QLatin1String(  "new_round" ) );
+   QAction * newRoundAct = actionCollection()->addAction( QLatin1String(  "new_round" ) );
    newRoundAct->setIcon( KIcon( QLatin1String( "preferences-desktop-notification-bell" )) );
    newRoundAct->setText( i18n( "&New Round" ) );
    newRoundAct->setShortcut( Qt::CTRL + Qt::Key_R );
@@ -102,7 +102,7 @@ void MyTopLevelWidget::setupActions()
    MyMainView::pauseAction =
        KStandardGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
    MyMainView::pauseAction->setChecked( false );
-   KAction *gameStart = actionCollection()->addAction( QLatin1String(  "game_start" ) );
+   QAction *gameStart = actionCollection()->addAction( QLatin1String(  "game_start" ) );
    gameStart->setText( i18nc( "start game","Start" ) );
    connect(gameStart, SIGNAL(triggered(bool)), playfield, SLOT(start()));
    gameStart->setShortcut(GAME_START_SHORTCUT);
@@ -163,9 +163,9 @@ void MyTopLevelWidget::setupActions()
 
 void MyTopLevelWidget::initStatusBar( )
 {
-   statusBar( )->insertItem(i18n(" paused "),IDS_PAUSE);
-   statusBar( )->insertItem(QLatin1String( "   " ),IDS_MAIN ,1);
-   statusBar( )->insertItem(QLatin1String( "" ),42);
+   //QT5 statusBar( )->insertItem(i18n(" paused "),IDS_PAUSE);
+   //QT5 statusBar( )->insertItem(QLatin1String( "   " ),IDS_MAIN ,1);
+   //QT5 statusBar( )->insertItem(QLatin1String( "" ),42);
 }
 
 void MyTopLevelWidget::start()
@@ -175,7 +175,7 @@ void MyTopLevelWidget::start()
 
 void MyTopLevelWidget::setStatusText(const QString & str,int id)
 {
-   statusBar( )->changeItem(str,id);
+   //QT5 statusBar( )->changeItem(str,id);
 }
 
 void MyTopLevelWidget::keySetup()
