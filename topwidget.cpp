@@ -19,9 +19,9 @@
 #include "topwidget.h"
 
 
-#include <kicon.h>
+#include <QIcon>
 #include <kshortcutsdialog.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kstandardaction.h>
 #include <kstandardgameaction.h>
 #include <kstatusbar.h>
@@ -94,7 +94,7 @@ void MyTopLevelWidget::setupActions()
    KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 
    QAction * newRoundAct = actionCollection()->addAction( QLatin1String(  "new_round" ) );
-   newRoundAct->setIcon( KIcon( QLatin1String( "preferences-desktop-notification-bell" )) );
+   newRoundAct->setIcon( QIcon::fromTheme( QLatin1String( "preferences-desktop-notification-bell" )) );
    newRoundAct->setText( i18n( "&New Round" ) );
    newRoundAct->setShortcut( Qt::CTRL + Qt::Key_R );
    connect( newRoundAct, SIGNAL(triggered(bool)), playfield, SLOT(newRound()) );

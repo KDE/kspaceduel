@@ -22,7 +22,7 @@
 #include <QSlider>
 
 #include <kcombobox.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <ktabwidget.h>
 
 #include "options.h"

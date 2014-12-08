@@ -31,7 +31,7 @@
 #include <QAction>
 #include <kactioncollection.h>
 #include <kglobalsettings.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kstandarddirs.h>
 #include <ktoggleaction.h>
 #include <kconfiggroup.h>
