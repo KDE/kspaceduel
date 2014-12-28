@@ -24,7 +24,7 @@
 #include <KLocalizedString>
 #include <kstandardaction.h>
 #include <kstandardgameaction.h>
-#include <kstatusbar.h>
+#include <qstatusbar.h>
 #include <ktoggleaction.h>
 #include <kactioncollection.h>
 

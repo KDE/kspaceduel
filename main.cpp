@@ -17,9 +17,10 @@
 */
 
 #include <kapplication.h>
-#include <kcmdlineargs.h>
-#include <K4AboutData>
+
+#include <KAboutData>
 #include <KLocalizedString>
+#include <QCommandLineParser>
 
 #include "version.h"
 #include "topwidget.h"
@@ -28,18 +29,23 @@ static const char description[] = I18N_NOOP("KDE Space Game");
 
 int main(int argc,char **argv)
 {
-   K4AboutData aboutData( "kspaceduel", 0, ki18n("KSpaceDuel"), 
-      KSPACEDUEL_VERSION, ki18n(description), K4AboutData::License_GPL, 
-      ki18n("(c) 1998-2001, Andreas Zehender"), KLocalizedString(), "http://games.kde.org/kspaceduel" );
-   aboutData.addAuthor(ki18n("Andreas Zehender"),ki18n("Original Program"), "az@azweb.de");
-   aboutData.addAuthor(ki18n("Branan Riley"),ki18n("SVG Renderer"), "branan@gmail.com");
-   KCmdLineArgs::init( argc, argv, &aboutData );
-
-   KApplication myapplication;
+   KAboutData aboutData( "kspaceduel", i18n("KSpaceDuel"), 
+      KSPACEDUEL_VERSION, i18n(description), KAboutLicense::GPL, 
+      i18n("(c) 1998-2001, Andreas Zehender"),  "http://games.kde.org/kspaceduel" );
+   aboutData.addAuthor(i18n("Andreas Zehender"),i18n("Original Program"), "az@azweb.de");
+   aboutData.addAuthor(i18n("Branan Riley"),i18n("SVG Renderer"), "branan@gmail.com");
+    QApplication app(argc, argv);
+    QCommandLineParser parser;
+    KAboutData::setApplicationData(aboutData);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    aboutData.setupCommandLine(&parser);
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
 
    MyTopLevelWidget *top = new MyTopLevelWidget;
    top->show();
    top->start();
-   return myapplication.exec();
+   return app.exec();
 }
 

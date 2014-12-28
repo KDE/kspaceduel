@@ -22,7 +22,6 @@
 #include <QGraphicsScene>
 #include <QSvgRenderer>
 
-#include <kdebug.h>
 
 SimpleSprite::SimpleSprite(QSvgRenderer* svg, const QString& element)
       :QGraphicsSvgItem(0)
