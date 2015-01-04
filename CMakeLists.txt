@@ -79,5 +79,5 @@ ecm_install_icons( ICONS  hi128-apps-kspaceduel.png  hi16-apps-kspaceduel.png  h
 
 
 
-
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
