@@ -23,8 +23,6 @@
 
 #include <QGraphicsScene>
 
-#include <kdebug.h>
-
 #include "mathroutines.h"
 
 SunSprite::SunSprite(QSvgRenderer* svg, const QString& element)
