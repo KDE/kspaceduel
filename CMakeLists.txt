@@ -2,7 +2,7 @@ project(kspaceduel)
 cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
 set (QT_MIN_VERSION "5.3.0")
 
-find_package(ECM 1.3.0 REQUIRED CONFIG)
+find_package(ECM 1.7.0 REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Qml Quick QuickWidgets Svg Test)
@@ -29,6 +29,7 @@ find_package(Phonon4Qt5 CONFIG REQUIRED)
 include_directories(BEFORE ${PHONON_INCLUDES})
 
 include(FeatureSummary)
+include(ECMAddAppIcon)
 include(ECMInstallIcons)
 include(KDEInstallDirs)
 include(KDECompilerSettings)
@@ -60,22 +61,23 @@ ki18n_wrap_ui(kspaceduel_SRCS general.ui )
 
 kconfig_add_kcfg_files(kspaceduel_SRCS options.kcfgc )
 
-kde4_add_app_icon(kspaceduel_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-kspaceduel.png")
+file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-apps-kspaceduel.png")
+ecm_add_app_icon(kspaceduel_SRCS ICONS ${ICONS_SRCS})
 add_executable(kspaceduel ${kspaceduel_SRCS})
 
 target_link_libraries(kspaceduel   KF5KDEGames KF5::KDELibs4Support Qt5::Svg)
 
-install(TARGETS kspaceduel  ${INSTALL_TARGETS_DEFAULT_ARGS} )
-install(FILES default_theme.svgz DESTINATION ${DATA_INSTALL_DIR}/kspaceduel/sprites )
+install(TARGETS kspaceduel  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
+install(FILES default_theme.svgz DESTINATION ${KDE_INSTALL_DATADIR}/kspaceduel/sprites )
 
 
 ########### install files ###############
 
-install( PROGRAMS org.kde.kspaceduel.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
-install( FILES kspaceduel.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
-install( FILES kspaceduelui.rc  DESTINATION  ${XDG_APPS_INSTALL_DIR}/kspaceduel )
+install( PROGRAMS org.kde.kspaceduel.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
+install( FILES kspaceduel.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR} )
+install( FILES kspaceduelui.rc  DESTINATION  ${KDE_INSTALL_APPDIR}/kspaceduel )
 
-ecm_install_icons( ICONS  hi128-apps-kspaceduel.png  hi16-apps-kspaceduel.png  hi22-apps-kspaceduel.png  hi32-apps-kspaceduel.png  hi48-apps-kspaceduel.png  hi64-apps-kspaceduel.png DESTINATION ${ICON_INSTALL_DIR}   )
+ecm_install_icons( ICONS  hi128-apps-kspaceduel.png  hi16-apps-kspaceduel.png  hi22-apps-kspaceduel.png  hi32-apps-kspaceduel.png  hi48-apps-kspaceduel.png  hi64-apps-kspaceduel.png DESTINATION ${KDE_INSTALL_ICONDIR}   )
 
 
 

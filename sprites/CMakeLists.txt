@@ -3,7 +3,7 @@ add_subdirectory(playerinfo)
 
 ########### install files ###############
 
-install( FILES backgr.png  DESTINATION  ${DATA_INSTALL_DIR}/kspaceduel/sprites )
+install( FILES backgr.png  DESTINATION  ${KDE_INSTALL_DATADIR}/kspaceduel/sprites )
 
 
 
