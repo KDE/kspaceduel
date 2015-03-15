@@ -61,7 +61,7 @@ ki18n_wrap_ui(kspaceduel_SRCS general.ui )
 
 kconfig_add_kcfg_files(kspaceduel_SRCS options.kcfgc )
 
-file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-apps-kspaceduel.png")
+file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kspaceduel.png")
 ecm_add_app_icon(kspaceduel_SRCS ICONS ${ICONS_SRCS})
 add_executable(kspaceduel ${kspaceduel_SRCS})
 
@@ -77,7 +77,7 @@ install( PROGRAMS org.kde.kspaceduel.desktop  DESTINATION  ${KDE_INSTALL_APPDIR}
 install( FILES kspaceduel.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR} )
 install( FILES kspaceduelui.rc  DESTINATION  ${KDE_INSTALL_APPDIR}/kspaceduel )
 
-ecm_install_icons( ICONS  hi128-apps-kspaceduel.png  hi16-apps-kspaceduel.png  hi22-apps-kspaceduel.png  hi32-apps-kspaceduel.png  hi48-apps-kspaceduel.png  hi64-apps-kspaceduel.png DESTINATION ${KDE_INSTALL_ICONDIR}   )
+ecm_install_icons( ICONS  128-apps-kspaceduel.png  16-apps-kspaceduel.png  22-apps-kspaceduel.png  32-apps-kspaceduel.png  48-apps-kspaceduel.png  64-apps-kspaceduel.png DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor   )
 
 
 
