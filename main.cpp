@@ -29,12 +29,13 @@ static const char description[] = I18N_NOOP("KDE Space Game");
 
 int main(int argc,char **argv)
 {
+    QApplication app(argc, argv);
+
    KAboutData aboutData( "kspaceduel", i18n("KSpaceDuel"), 
       KSPACEDUEL_VERSION, i18n(description), KAboutLicense::GPL, 
       i18n("(c) 1998-2001, Andreas Zehender"),  "http://games.kde.org/kspaceduel" );
    aboutData.addAuthor(i18n("Andreas Zehender"),i18n("Original Program"), "az@azweb.de");
    aboutData.addAuthor(i18n("Branan Riley"),i18n("SVG Renderer"), "branan@gmail.com");
-    QApplication app(argc, argv);
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
