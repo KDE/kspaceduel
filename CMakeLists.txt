@@ -77,7 +77,7 @@ install(FILES default_theme.svgz DESTINATION ${KDE_INSTALL_DATADIR}/kspaceduel/s
 
 install( PROGRAMS org.kde.kspaceduel.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
 install( FILES kspaceduel.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR} )
-install( FILES kspaceduelui.rc  DESTINATION  ${KDE_INSTALL_APPDIR}/kspaceduel )
+install( FILES kspaceduelui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kspaceduel )
 
 ecm_install_icons( ICONS  128-apps-kspaceduel.png  16-apps-kspaceduel.png  22-apps-kspaceduel.png  32-apps-kspaceduel.png  48-apps-kspaceduel.png  64-apps-kspaceduel.png DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor   )
 
