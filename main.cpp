@@ -31,6 +31,8 @@ int main(int argc,char **argv)
 {
     QApplication app(argc, argv);
 
+    KLocalizedString::setApplicationDomain("kspaceduel");
+
    KAboutData aboutData( "kspaceduel", i18n("KSpaceDuel"), 
       KSPACEDUEL_VERSION, i18n(description), KAboutLicense::GPL, 
       i18n("(c) 1998-2001, Andreas Zehender"),  "http://games.kde.org/kspaceduel" );
