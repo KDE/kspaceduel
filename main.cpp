@@ -49,6 +49,9 @@ int main(int argc,char **argv)
    MyTopLevelWidget *top = new MyTopLevelWidget;
    top->show();
    top->start();
+
+   app.setWindowIcon(QIcon::fromTheme(QStringLiteral("kspaceduel")));
+
    return app.exec();
 }
 
