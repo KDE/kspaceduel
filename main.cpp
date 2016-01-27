@@ -19,6 +19,7 @@
 #include <kapplication.h>
 
 #include <KAboutData>
+#include <KCrash>
 #include <KLocalizedString>
 #include <QCommandLineParser>
 
@@ -33,25 +34,26 @@ int main(int argc,char **argv)
 
     KLocalizedString::setApplicationDomain("kspaceduel");
 
-   KAboutData aboutData( "kspaceduel", i18n("KSpaceDuel"), 
-      KSPACEDUEL_VERSION, i18n(description), KAboutLicense::GPL, 
-      i18n("(c) 1998-2001, Andreas Zehender"),  "http://games.kde.org/kspaceduel" );
-   aboutData.addAuthor(i18n("Andreas Zehender"),i18n("Original Program"), "az@azweb.de");
-   aboutData.addAuthor(i18n("Branan Riley"),i18n("SVG Renderer"), "branan@gmail.com");
+    KAboutData aboutData( "kspaceduel", i18n("KSpaceDuel"), 
+            KSPACEDUEL_VERSION, i18n(description), KAboutLicense::GPL, 
+            i18n("(c) 1998-2001, Andreas Zehender"),  "http://games.kde.org/kspaceduel" );
+    aboutData.addAuthor(i18n("Andreas Zehender"),i18n("Original Program"), "az@azweb.de");
+    aboutData.addAuthor(i18n("Branan Riley"),i18n("SVG Renderer"), "branan@gmail.com");
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
+    KCrash::initialize();
     parser.addVersionOption();
     parser.addHelpOption();
     aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-   MyTopLevelWidget *top = new MyTopLevelWidget;
-   top->show();
-   top->start();
+    MyTopLevelWidget *top = new MyTopLevelWidget;
+    top->show();
+    top->start();
 
-   app.setWindowIcon(QIcon::fromTheme(QStringLiteral("kspaceduel")));
+    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("kspaceduel")));
 
-   return app.exec();
+    return app.exec();
 }
 
