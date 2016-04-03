@@ -6,8 +6,9 @@ set (KF5_MIN_VERSION "5.3.0")
 find_package(ECM 1.7.0 REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Qml Quick QuickWidgets Svg Test)
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Svg)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+    Completion
     Config
     ConfigWidgets
     CoreAddons
@@ -15,21 +16,11 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     DBusAddons
     DocTools
     I18n
-    ItemModels
     KDELibs4Support
-    KIO
-    NewStuff
-    NotifyConfig
-    TextWidgets
-    WidgetsAddons
-    WindowSystem
     XmlGui
 )
 
 find_package(KF5KDEGames 4.9.0 REQUIRED)
-find_package(Phonon4Qt5 CONFIG REQUIRED)
-
-include_directories(BEFORE ${PHONON_INCLUDES})
 
 include(FeatureSummary)
 include(ECMAddAppIcon)
@@ -95,4 +86,3 @@ ecm_install_icons(ICONS
 )
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
-
