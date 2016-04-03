@@ -60,6 +60,7 @@ add_executable(kspaceduel ${kspaceduel_SRCS})
 target_link_libraries(kspaceduel
     Qt5::Svg
     KF5::Crash
+    KF5::DBusAddons
     KF5::KDELibs4Support
     KF5KDEGames
 )

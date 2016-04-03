@@ -20,6 +20,7 @@
 
 #include <KAboutData>
 #include <KCrash>
+#include <KDBusService>
 #include <KLocalizedString>
 #include <QCommandLineParser>
 
@@ -47,6 +48,7 @@ int main(int argc,char **argv)
     aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
+    KDBusService service;
 
     MyTopLevelWidget *top = new MyTopLevelWidget;
     top->show();
