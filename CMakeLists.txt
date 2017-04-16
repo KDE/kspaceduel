@@ -43,9 +43,10 @@ install(FILES default_theme.svgz DESTINATION ${DATA_INSTALL_DIR}/kspaceduel/spri
 
 ########### install files ###############
 
-install( PROGRAMS kspaceduel.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
+install( PROGRAMS org.kde.kspaceduel.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES kspaceduel.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES kspaceduelui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kspaceduel )
+install(FILES org.kde.kspaceduel.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/metainfo/)
 
 kde4_install_icons( ${ICON_INSTALL_DIR}   )
 
