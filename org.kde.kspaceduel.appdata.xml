@@ -4,12 +4,26 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KSpaceDuel</name>
+  <name xml:lang="ca">KSpaceDuel</name>
+  <name xml:lang="pt">Duelo Espacial</name>
+  <name xml:lang="sk">KSpaceDuel</name>
+  <name xml:lang="uk">Космічна дуель</name>
+  <name xml:lang="x-test">xxKSpaceDuelxx</name>
   <summary>Space Arcade Game</summary>
-    <description>
+  <summary xml:lang="ca">Joc arcade d'espai</summary>
+  <summary xml:lang="pt">Jogo Espacial de Arcada</summary>
+  <summary xml:lang="sk">Vesmírna arkádová hra</summary>
+  <summary xml:lang="uk">Космічна аркадна гра — дуель</summary>
+  <summary xml:lang="x-test">xxSpace Arcade Gamexx</summary>
+  <description>
     <p>
       In KSpaceDuel each of two possible players control a satellite spaceship orbiting the sun.
       As the game progresses players have to eliminate the opponent's spacecraft with bullets or mines.
     </p>
+    <p xml:lang="ca">Al KSpaceDuel cada un dels dos possibles jugadors controla un nau espacial satèl·lit que orbita el Sol. A mesura que el joc avança, els jugadors han d'eliminar les naus espacials del contrari amb bales o mines.</p>
+    <p xml:lang="pt">No KSpaceDuel, cada um dos dois possíveis jogadores controlam uma nave espacial que orbita em torno do Sol. À medida que o jogo evolui, os jogadores têm de eliminar a nave espacial do adversário com balas ou minas.</p>
+    <p xml:lang="uk">У «Космічній дуелі» кожен з двох можливих гравців керує космічним супутником, який обертається навколо сонця. Протягом гри гравці мають намагатися знищити супутник суперника кулями та мінами.</p>
+    <p xml:lang="x-test">xxIn KSpaceDuel each of two possible players control a satellite spaceship orbiting the sun. As the game progresses players have to eliminate the opponent's spacecraft with bullets or mines.xx</p>
   </description>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kspaceduel</url>
   <url type="help">https://docs.kde.org/?application=kspaceduel</url>
