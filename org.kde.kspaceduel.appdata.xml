@@ -5,7 +5,10 @@
   <project_license>GPL-2.0+</project_license>
   <name>KSpaceDuel</name>
   <name xml:lang="ca">KSpaceDuel</name>
+  <name xml:lang="ca-valencia">KSpaceDuel</name>
+  <name xml:lang="cs">KSpaceDuel</name>
   <name xml:lang="es">KSpaceDuel</name>
+  <name xml:lang="nl">KSpaceDuel</name>
   <name xml:lang="pt">Duelo Espacial</name>
   <name xml:lang="sk">KSpaceDuel</name>
   <name xml:lang="sv">Rymdduell</name>
@@ -13,7 +16,10 @@
   <name xml:lang="x-test">xxKSpaceDuelxx</name>
   <summary>Space Arcade Game</summary>
   <summary xml:lang="ca">Joc arcade d'espai</summary>
+  <summary xml:lang="ca-valencia">Joc arcade d'espai</summary>
+  <summary xml:lang="cs">Vesmírná arkádová hra</summary>
   <summary xml:lang="es">Juego recreativo espacial</summary>
+  <summary xml:lang="nl">Ruimte-arcadespel</summary>
   <summary xml:lang="pt">Jogo Espacial de Arcada</summary>
   <summary xml:lang="sk">Vesmírna arkádová hra</summary>
   <summary xml:lang="sv">Spelhallsspel</summary>
@@ -25,6 +31,8 @@
       As the game progresses players have to eliminate the opponent's spacecraft with bullets or mines.
     </p>
     <p xml:lang="ca">Al KSpaceDuel cada un dels dos possibles jugadors controla un nau espacial satèl·lit que orbita el Sol. A mesura que el joc avança, els jugadors han d'eliminar les naus espacials del contrari amb bales o mines.</p>
+    <p xml:lang="ca-valencia">Al KSpaceDuel cada un dels dos possibles jugadors controla un nau espacial satèl·lit que orbita el Sol. A mesura que el joc avança, els jugadors han d'eliminar les naus espacials del contrari amb bales o mines.</p>
+    <p xml:lang="nl">In KSpaceDuel besturen elk van de twee mogelijke spelers een satelliet ruimteschip dat om de zon draait. Als het spel voortgaat moeten spelers het ruimteschip van de tegenstander met kogels of mijnen vernietigen.</p>
     <p xml:lang="pt">No KSpaceDuel, cada um dos dois possíveis jogadores controlam uma nave espacial que orbita em torno do Sol. À medida que o jogo evolui, os jogadores têm de eliminar a nave espacial do adversário com balas ou minas.</p>
     <p xml:lang="sv">I Rymdduell styr var och en av två möjliga spelare ett rymdskepp som kretsar kring solen. Under spelets gång måste spelarna eliminera motståndarens rymdskepp med kulor eller minor.</p>
     <p xml:lang="uk">У «Космічній дуелі» кожен з двох можливих гравців керує космічним супутником, який обертається навколо сонця. Протягом гри гравці мають намагатися знищити супутник суперника кулями та мінами.</p>
