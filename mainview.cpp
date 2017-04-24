@@ -32,7 +32,7 @@
 #include <kactioncollection.h>
 #include <kglobalsettings.h>
 #include <KLocalizedString>
-#include <kstandarddirs.h>
+
 #include <ktoggleaction.h>
 #include <kconfiggroup.h>
 
@@ -41,6 +41,8 @@
 #include <KGlobal>
 #include <KShortcut>
 #include <QFontDatabase>
+#include <QStandardPaths>
+#include <KSharedConfig>
 #include "ai.h"
 #include "options.h"
 
@@ -68,7 +70,7 @@ MyMainView::MyMainView(QWidget *parent)
    int i,p;
    setMinimumSize(600,400);
    random.setSeed(0);
-   QPixmap backgr(KStandardDirs::locate("appdata",QLatin1String( MV_BACKGROUND) ));
+   QPixmap backgr(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String(MV_BACKGROUND)));
 
    field.setBackgroundBrush(QBrush(backgr));
    view.setCacheMode(QGraphicsView::CacheBackground);
@@ -88,7 +90,7 @@ MyMainView::MyMainView(QWidget *parent)
       minePut[p]=false;
    }
 
-   svgrender = new QSvgRenderer(KStandardDirs::locate("appdata",QLatin1String(  MV_SVG_FILE )));
+   svgrender = new QSvgRenderer(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String(MV_SVG_FILE)));
 
    sun=new SunSprite(svgrender,QLatin1String( MV_SUN ));
    field.addItem(sun);

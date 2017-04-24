@@ -19,7 +19,8 @@
 
 #include <QIcon>
 #include <KLocalizedString>
-#include <kstandarddirs.h>
+#include <QStandardPaths>
+
 
 QPixmap* PlayerInfo::pplayer[6];
 
@@ -66,14 +67,14 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
       str = QString::fromLatin1("sprites/playerinfo/ship%1%2.png")
         .arg(pnr+1)
         .arg(i);
-      pix[i]=new QPixmap(KStandardDirs::locate("appdata", str));
+      pix[i]=new QPixmap(QStandardPaths::locate(QStandardPaths::DataLocation, str));
    }*/
 
    lplayer.setPixmap(*(pplayer[0]));
    currentPixmap=0;
-   //lenergy.setPixmap(QPixmap(KStandardDirs::locate("appdata", "sprites/playerinfo/energy.png")));
+   //lenergy.setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::DataLocation, "sprites/playerinfo/energy.png")));
    lenergy.setPixmap(QIcon::fromTheme( QLatin1String( "battery" )).pixmap(32,32));;
-   lwins.setPixmap(QPixmap(KStandardDirs::locate("appdata", QLatin1String( "sprites/playerinfo/win.png" ))));
+   lwins.setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "sprites/playerinfo/win.png" ))));
 
    hitpoints.setGeometry(9,45,26,26);
    energy.setGeometry(9,120,26,26);
