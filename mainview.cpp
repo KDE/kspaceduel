@@ -39,7 +39,7 @@
 #include <QSvgRenderer>
 
 #include <KGlobal>
-#include <KShortcut>
+#include <QKeySequence>
 #include <QFontDatabase>
 #include <QStandardPaths>
 #include <KSharedConfig>
@@ -527,7 +527,7 @@ void MyMainView::newRound()
    //field.update();
 
    QString str = i18n("Press %1 to start",
-                  KShortcut(GAME_START_SHORTCUT).primary().toString(QKeySequence::NativeText));
+                  QKeySequence(GAME_START_SHORTCUT).toString(QKeySequence::NativeText));
    emit(setStatusText(str,IDS_MAIN));
    emit(setStatusText( QLatin1String( "" ), IDS_PAUSE ));
    stop( );
@@ -595,7 +595,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
             textSprite->setPos(QPointF((width()-textSprite->boundingRect().width()) / 2,height()/2-90));
 
             QString str = i18n("Press %1 for new round",
-                           KShortcut(GAME_START_SHORTCUT).primary().toString(QKeySequence::NativeText));
+                           QKeySequence(GAME_START_SHORTCUT).toString(QKeySequence::NativeText));
             emit(setStatusText(str,IDS_MAIN));
             stop( );
          }
