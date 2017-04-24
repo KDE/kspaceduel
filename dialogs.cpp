@@ -23,7 +23,7 @@
 
 #include <kcombobox.h>
 #include <KLocalizedString>
-#include <ktabwidget.h>
+#include <QTabWidget>
 
 #include "options.h"
 #include "ui_general.h"
@@ -160,7 +160,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    QVBoxLayout *boxlayout = new QVBoxLayout( this );
    boxlayout->setMargin(6);
 
-   tabs=new KTabWidget(this);
+   tabs=new QTabWidget(this);
    for(i=0;i<TabNum;i++)
    {
       configWidgets[i]=new QWidget(tabs);
