@@ -16,17 +16,16 @@
 */
 
 #include "dialogs.h"
+#include "options.h"
+#include "ui_general.h"
+
+#include <KComboBox>
+#include <KLocalizedString>
 
 #include <QGridLayout>
 #include <QLCDNumber>
 #include <QSlider>
-
-#include <kcombobox.h>
-#include <KLocalizedString>
 #include <QTabWidget>
-
-#include "options.h"
-#include "ui_general.h"
 
 class General : public QWidget, public Ui::General
 {

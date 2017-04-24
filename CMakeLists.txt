@@ -16,7 +16,6 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     DBusAddons
     DocTools
     I18n
-    KDELibs4Support
     XmlGui
 )
 
@@ -59,9 +58,10 @@ add_executable(kspaceduel ${kspaceduel_SRCS})
 
 target_link_libraries(kspaceduel
     Qt5::Svg
+    KF5::Completion
     KF5::Crash
     KF5::DBusAddons
-    KF5::KDELibs4Support
+    KF5::XmlGui
     KF5KDEGames
 )
 

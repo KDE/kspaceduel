@@ -22,6 +22,7 @@
 #include <math.h>
 
 #include <QGraphicsScene>
+#include <QTransform>
 
 #include "mathroutines.h"
 
@@ -61,9 +62,9 @@ void ShipSprite::setRotation(double r)
    if(rotation>=2*M_PI)
       rotation-=(int)(rotation/(2*M_PI))*2*M_PI;
 
-   translate(center().x(),center().y());
-   rotate(-(rotation-angle)*57.3);
-   translate(-center().x(),-center().y());
+   setTransform(QTransform::fromTranslate(center().x(),center().y()), true);
+   setTransform(QTransform().rotate(-(rotation-angle)*57.3), true);
+   setTransform(QTransform::fromTranslate(-center().x(),-center().y()), true);
    angle = rotation;
 }
 

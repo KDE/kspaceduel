@@ -18,33 +18,27 @@
 */
 
 #include "mainview.h"
+#include "ai.h"
+#include "options.h"
 
-#include <math.h>
+#include <KActionCollection>
+#include <KConfigGroup>
+#include <KLocalizedString>
+#include <KSharedConfig>
+#include <KToggleAction>
 
 #include <QAbstractEventDispatcher>
 #include <QBrush>
+#include <QFontDatabase>
 #include <QGraphicsSimpleTextItem>
 #include <QKeyEvent>
+#include <QKeySequence>
 #include <QResizeEvent>
+#include <QSvgRenderer>
+#include <QStandardPaths>
 #include <QTimerEvent>
 
-#include <QAction>
-#include <kactioncollection.h>
-#include <kglobalsettings.h>
-#include <KLocalizedString>
-
-#include <ktoggleaction.h>
-#include <kconfiggroup.h>
-
-#include <QSvgRenderer>
-
-#include <KGlobal>
-#include <QKeySequence>
-#include <QFontDatabase>
-#include <QStandardPaths>
-#include <KSharedConfig>
-#include "ai.h"
-#include "options.h"
+#include <math.h>
 
 KToggleAction *MyMainView::pauseAction = 0;
 
