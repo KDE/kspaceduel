@@ -20,8 +20,8 @@
 
 // #include <qnamespace.h>
 
-#define IDS_PAUSE 1
-#define IDS_MAIN 2
+#define IDS_PAUSE 0
+#define IDS_MAIN 1
 
 #define PlayerKeyLeft  0
 #define PlayerKeyRight 1

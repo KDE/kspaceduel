@@ -19,10 +19,11 @@
 #ifndef __MY_TOP_WIDGET_H
 #define __MY_TOP_WIDGET_H
 
-#include <kxmlguiwindow.h>
+#include <KXmlGuiWindow>
 
 class PlayerInfo;
 class MyMainView;
+class QLabel;
 
 class MyTopLevelWidget:public KXmlGuiWindow
 {
@@ -46,6 +47,8 @@ protected:
 private:
    PlayerInfo *playerinfo[2];
    MyMainView *playfield;
+
+   QLabel *m_statusBarLabel[3];
 };
 
 #endif

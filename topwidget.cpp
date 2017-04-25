@@ -18,20 +18,20 @@
 
 #include "topwidget.h"
 
-
+#include <QBoxLayout>
 #include <QIcon>
-#include <kshortcutsdialog.h>
+#include <QStatusBar>
+
+#include <KActionCollection>
 #include <KLocalizedString>
-#include <kstandardaction.h>
-#include <kstandardgameaction.h>
-#include <qstatusbar.h>
-#include <ktoggleaction.h>
-#include <kactioncollection.h>
+#include <KShortcutsDialog>
+#include <KStandardAction>
+#include <KStandardGameAction>
+#include <KToggleAction>
 
 #include "mainview.h"
 #include "playerinfo.h"
 
-#include <QBoxLayout>
 
 MyTopLevelWidget::MyTopLevelWidget()
 {
@@ -163,9 +163,16 @@ void MyTopLevelWidget::setupActions()
 
 void MyTopLevelWidget::initStatusBar( )
 {
-   //QT5 statusBar( )->insertItem(i18n(" paused "),IDS_PAUSE);
-   //QT5 statusBar( )->insertItem(QLatin1String( "   " ),IDS_MAIN ,1);
-   //QT5 statusBar( )->insertItem(QLatin1String( "" ),42);
+   for (auto &label : m_statusBarLabel)
+   {
+      label = new QLabel(this);
+      label->setAlignment(Qt::AlignCenter);
+      statusBar()->addWidget(label, 1);
+   }
+
+   m_statusBarLabel[IDS_PAUSE]->setText(i18n(" paused "));
+   m_statusBarLabel[IDS_MAIN]->setText(QLatin1String());
+   m_statusBarLabel[2]->setText(QLatin1String());
 }
 
 void MyTopLevelWidget::start()
@@ -175,7 +182,7 @@ void MyTopLevelWidget::start()
 
 void MyTopLevelWidget::setStatusText(const QString & str,int id)
 {
-   //QT5 statusBar( )->changeItem(str,id);
+   m_statusBarLabel[id]->setText(str);
 }
 
 void MyTopLevelWidget::keySetup()
@@ -183,5 +190,3 @@ void MyTopLevelWidget::keySetup()
    playfield->pause();
    KShortcutsDialog::configure( actionCollection( ), KShortcutsEditor::LetterShortcutsAllowed, this, true );
 }
-
-

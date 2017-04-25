@@ -25,7 +25,7 @@
 #include <QWidget>
 
 
-#include <krandomsequence.h>
+#include <KRandomSequence>
 class KToggleAction;
 class KActionCollection;
 class QGraphicsSimpleTextItem;
