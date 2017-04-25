@@ -105,7 +105,7 @@ void MyTopLevelWidget::setupActions()
    QAction *gameStart = actionCollection()->addAction( QLatin1String(  "game_start" ) );
    gameStart->setText( i18nc( "start game","Start" ) );
    connect(gameStart, SIGNAL(triggered(bool)), playfield, SLOT(start()));
-   gameStart->setShortcut(GAME_START_SHORTCUT);
+   gameStart->setShortcut(Qt::Key_Space);
    playfield->addAction(gameStart);
 
    KStandardAction::preferences(playfield, SLOT(gameSetup()), actionCollection());

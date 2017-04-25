@@ -73,8 +73,6 @@
 #define MAX_ENERGY 99.9
 #define MAX_VELOCITY 20
 
-#define GAME_START_SHORTCUT Qt::Key_Space
-
 #define ID_EXPLOSION	1351
 #define ID_MINE1	1352
 #define ID_MINE2	1353
