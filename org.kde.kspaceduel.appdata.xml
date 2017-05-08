@@ -11,6 +11,10 @@
   <name xml:lang="nl">KSpaceDuel</name>
   <name xml:lang="pt">Duelo Espacial</name>
   <name xml:lang="sk">KSpaceDuel</name>
+  <name xml:lang="sr">К‑свемирски-двобој</name>
+  <name xml:lang="sr-Latn">K‑svemirski-dvoboj</name>
+  <name xml:lang="sr-ijekavian">К‑свемирски-двобој</name>
+  <name xml:lang="sr-ijekavianlatin">K‑svemirski-dvoboj</name>
   <name xml:lang="sv">Rymdduell</name>
   <name xml:lang="uk">Космічна дуель</name>
   <name xml:lang="x-test">xxKSpaceDuelxx</name>
@@ -22,6 +26,10 @@
   <summary xml:lang="nl">Ruimte-arcadespel</summary>
   <summary xml:lang="pt">Jogo Espacial de Arcada</summary>
   <summary xml:lang="sk">Vesmírna arkádová hra</summary>
+  <summary xml:lang="sr">Свемирска аркадна игра</summary>
+  <summary xml:lang="sr-Latn">Svemirska arkadna igra</summary>
+  <summary xml:lang="sr-ijekavian">Свемирска аркадна игра</summary>
+  <summary xml:lang="sr-ijekavianlatin">Svemirska arkadna igra</summary>
   <summary xml:lang="sv">Spelhallsspel</summary>
   <summary xml:lang="uk">Космічна аркадна гра — дуель</summary>
   <summary xml:lang="x-test">xxSpace Arcade Gamexx</summary>
@@ -35,6 +43,10 @@
     <p xml:lang="es">En KSpaceDuel, cada uno de los dos posibles jugadores controla una nave espacial en órbita alrededor del Sol. A medida que el juego avanza, los jugadores deben eliminar la nave espacial del oponente con disparos o con minas.</p>
     <p xml:lang="nl">In KSpaceDuel besturen elk van de twee mogelijke spelers een satelliet ruimteschip dat om de zon draait. Als het spel voortgaat moeten spelers het ruimteschip van de tegenstander met kogels of mijnen vernietigen.</p>
     <p xml:lang="pt">No KSpaceDuel, cada um dos dois possíveis jogadores controlam uma nave espacial que orbita em torno do Sol. À medida que o jogo evolui, os jogadores têm de eliminar a nave espacial do adversário com balas ou minas.</p>
+    <p xml:lang="sr">У К‑свемирском-двобоју сваки од два могућа играча управља сателитским свемирским бродом у орбити сунца. Како партија одмиче, играчи покушавају да униште противнички свемирски брод мецима или минама.</p>
+    <p xml:lang="sr-Latn">U K‑svemirskom-dvoboju svaki od dva moguća igrača upravlja satelitskim svemirskim brodom u orbiti sunca. Kako partija odmiče, igrači pokušavaju da unište protivnički svemirski brod mecima ili minama.</p>
+    <p xml:lang="sr-ijekavian">У К‑свемирском-двобоју сваки од два могућа играча управља сателитским свемирским бродом у орбити сунца. Како партија одмиче, играчи покушавају да униште противнички свемирски брод мецима или минама.</p>
+    <p xml:lang="sr-ijekavianlatin">U K‑svemirskom-dvoboju svaki od dva moguća igrača upravlja satelitskim svemirskim brodom u orbiti sunca. Kako partija odmiče, igrači pokušavaju da unište protivnički svemirski brod mecima ili minama.</p>
     <p xml:lang="sv">I Rymdduell styr var och en av två möjliga spelare ett rymdskepp som kretsar kring solen. Under spelets gång måste spelarna eliminera motståndarens rymdskepp med kulor eller minor.</p>
     <p xml:lang="uk">У «Космічній дуелі» кожен з двох можливих гравців керує космічним супутником, який обертається навколо сонця. Протягом гри гравці мають намагатися знищити супутник суперника кулями та мінами.</p>
     <p xml:lang="x-test">xxIn KSpaceDuel each of two possible players control a satellite spaceship orbiting the sun. As the game progresses players have to eliminate the opponent's spacecraft with bullets or mines.xx</p>
