@@ -29,7 +29,7 @@ class SunSprite:public SimpleSprite
 {
 public:
    SunSprite(QSvgRenderer* svg, const QString& element);
-   virtual int type() const {return S_SUN;}
+   int type() const Q_DECL_OVERRIDE {return S_SUN;}
 };
 
 class PowerupSprite:public SimpleSprite
@@ -38,7 +38,7 @@ public:
    enum {PowerupMine=0, PowerupBullet, PowerupShield, PowerupEnergy,
          PowerupNum};
    PowerupSprite(QSvgRenderer* svg, const QString& element, int t, double lifetime);
-   virtual int type() const {return S_POWERUP;}
+   int type() const Q_DECL_OVERRIDE {return S_POWERUP;}
 
    double getLifetime() {return time;}
    void setLifetime(double t) {time=t;}
@@ -52,7 +52,7 @@ class ShipSprite:public MobileSprite
 {
 public:
    ShipSprite(QSvgRenderer* svg, const QString& element, int pn);
-   virtual int type() const {return S_SHIP;}
+   int type() const Q_DECL_OVERRIDE {return S_SHIP;}
    int getHitPoints() {return hitpoints;}
    void setHitPoints(int hp) {hitpoints=(hp<0?0:hp);}
    double getEnergy() {return energy;}
@@ -74,8 +74,8 @@ public:
    int getMinePowerups() {return minePowerups;}
    void setBulletPowerups(int b) {bulletPowerups=b;}
    int getBulletPowerups() {return bulletPowerups;}
-   virtual void forward(double mult);
-   virtual void forward(double mult,int fr);
+   void forward(double mult) Q_DECL_OVERRIDE;
+   void forward(double mult,int fr) Q_DECL_OVERRIDE;
    virtual void calculateGravityAndEnergy(double gravity,double sunEnergy,
                                           double mult);
 private:
@@ -89,9 +89,9 @@ class BulletSprite:public MobileSprite
 {
 public:
    BulletSprite(QSvgRenderer* svg, const QString& elem, int pn,double lifetime);
-   virtual int type() const {return S_BULLET;}
-   virtual void forward(double mult);
-   virtual void forward(double mult,int fr);
+   int type() const Q_DECL_OVERRIDE {return S_BULLET;}
+   void forward(double mult) Q_DECL_OVERRIDE;
+   void forward(double mult,int fr) Q_DECL_OVERRIDE;
    bool timeOut() {return time<=0;}
 private:
    double time;
@@ -101,15 +101,15 @@ class MineSprite:public AnimatedSprite
 {
 public:
    MineSprite(QSvgRenderer* svg, const QList<QString> &animation, const QList<QString> &exploanimation, int pn,double atime,double f);
-   virtual int type() const {return S_MINE;}
+   int type() const Q_DECL_OVERRIDE {return S_MINE;}
    bool isActive() {return active;}
    double getFuel() {return fuel;}
    void setFuel(double f) {fuel=(f<0.0?0.0:f);}
-   virtual void forward(double mult);
+   void forward(double mult) Q_DECL_OVERRIDE;
    void explode();
    bool explodes() {return expl;}
    bool over() {return (expl&&(explosiontime>(timeToGo-0.1)));}
-   virtual void calculateGravity(double gravity,double mult);
+   void calculateGravity(double gravity,double mult) Q_DECL_OVERRIDE;
 private:
    bool expl,active;
    double activateTime,fuel,timeToGo,explosiontime;
@@ -121,9 +121,9 @@ class ExplosionSprite:public AnimatedSprite
 {
 public:
    explicit ExplosionSprite(QSvgRenderer* svg, const QList<QString> &animation, MobileSprite *sp = 0);
-   virtual int type() const {return S_EXPLOSION;}
+   int type() const Q_DECL_OVERRIDE {return S_EXPLOSION;}
    bool isOver() {return over;}
-   virtual void forward(double mult);
+   void forward(double mult) Q_DECL_OVERRIDE;
 private:
    double timeToGo,time;
    bool over;
