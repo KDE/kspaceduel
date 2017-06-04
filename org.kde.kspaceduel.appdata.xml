@@ -10,6 +10,7 @@
   <name xml:lang="en-GB">KSpaceDuel</name>
   <name xml:lang="es">KSpaceDuel</name>
   <name xml:lang="nl">KSpaceDuel</name>
+  <name xml:lang="pl">KosmicznyPojedynek</name>
   <name xml:lang="pt">Duelo Espacial</name>
   <name xml:lang="sk">KSpaceDuel</name>
   <name xml:lang="sr">К‑свемирски-двобој</name>
@@ -27,6 +28,7 @@
   <summary xml:lang="en-GB">Space Arcade Game</summary>
   <summary xml:lang="es">Juego recreativo espacial</summary>
   <summary xml:lang="nl">Ruimte-arcadespel</summary>
+  <summary xml:lang="pl">Gra zręcznościowa w kosmosie</summary>
   <summary xml:lang="pt">Jogo Espacial de Arcada</summary>
   <summary xml:lang="sk">Vesmírna arkádová hra</summary>
   <summary xml:lang="sr">Свемирска аркадна игра</summary>
@@ -46,6 +48,7 @@
     <p xml:lang="en-GB">In KSpaceDuel each of two possible players control a satellite spaceship orbiting the sun. As the game progresses players have to eliminate the opponent's spacecraft with bullets or mines.</p>
     <p xml:lang="es">En KSpaceDuel, cada uno de los dos posibles jugadores controla una nave espacial en órbita alrededor del Sol. A medida que el juego avanza, los jugadores deben eliminar la nave espacial del oponente con disparos o con minas.</p>
     <p xml:lang="nl">In KSpaceDuel besturen elk van de twee mogelijke spelers een satelliet ruimteschip dat om de zon draait. Als het spel voortgaat moeten spelers het ruimteschip van de tegenstander met kogels of mijnen vernietigen.</p>
+    <p xml:lang="pl">W KosmicznymPojedynku każdy z dwóch graczy steruje orbitalnym statkiem kosmicznym krążącym wokół słońca. W trakcie gry, gracze muszą pozbyć się statku przeciwnika przy użyciu pocisków lub min.</p>
     <p xml:lang="pt">No KSpaceDuel, cada um dos dois possíveis jogadores controlam uma nave espacial que orbita em torno do Sol. À medida que o jogo evolui, os jogadores têm de eliminar a nave espacial do adversário com balas ou minas.</p>
     <p xml:lang="sr">У К‑свемирском-двобоју сваки од два могућа играча управља сателитским свемирским бродом у орбити сунца. Како партија одмиче, играчи покушавају да униште противнички свемирски брод мецима или минама.</p>
     <p xml:lang="sr-Latn">U K‑svemirskom-dvoboju svaki od dva moguća igrača upravlja satelitskim svemirskim brodom u orbiti sunca. Kako partija odmiče, igrači pokušavaju da unište protivnički svemirski brod mecima ili minama.</p>
