@@ -59,13 +59,10 @@ void MyTopLevelWidget::initGameWidgets( ){
    playfield->setFocusPolicy(Qt::StrongFocus);
    playfield->setFocus();
 
-   QObject::connect(playfield,SIGNAL(energy(int,int)),
-                    SLOT(energy(int,int)));
-   QObject::connect(playfield,SIGNAL(hitPoints(int,int)),
-                    SLOT(hitPoints(int,int)));
-   QObject::connect(playfield,SIGNAL(wins(int,int)),SLOT(wins(int,int)));
-   QObject::connect(playfield,SIGNAL(setStatusText(QString,int)),
-                    SLOT(setStatusText(QString,int)));
+   QObject::connect(playfield, &MyMainView::energy, this, &MyTopLevelWidget::energy);
+   QObject::connect(playfield, &MyMainView::hitPoints, this, &MyTopLevelWidget::hitPoints);
+   QObject::connect(playfield, &MyMainView::wins, this, &MyTopLevelWidget::wins);
+   QObject::connect(playfield, &MyMainView::setStatusText, this, &MyTopLevelWidget::setStatusText);
 
    setCentralWidget(w);
 }
@@ -97,14 +94,14 @@ void MyTopLevelWidget::setupActions()
    newRoundAct->setIcon( QIcon::fromTheme( QLatin1String( "preferences-desktop-notification-bell" )) );
    newRoundAct->setText( i18n( "&New Round" ) );
    actionCollection()->setDefaultShortcut(newRoundAct, Qt::CTRL + Qt::Key_R);
-   connect( newRoundAct, SIGNAL(triggered(bool)), playfield, SLOT(newRound()) );
+   connect( newRoundAct, &QAction::triggered, playfield, &MyMainView::newRound );
 
    MyMainView::pauseAction =
        KStandardGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
    MyMainView::pauseAction->setChecked( false );
    QAction *gameStart = actionCollection()->addAction( QLatin1String(  "game_start" ) );
    gameStart->setText( i18nc( "start game","Start" ) );
-   connect(gameStart, SIGNAL(triggered(bool)), playfield, SLOT(start()));
+   connect(gameStart, &QAction::triggered, playfield, &MyMainView::start);
    actionCollection()->setDefaultShortcut(gameStart, Qt::Key_Space);
    playfield->addAction(gameStart);
 

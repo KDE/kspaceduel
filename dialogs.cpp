@@ -174,14 +174,14 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
       slider[i]->setRange((int)(EditVal[i][0]*EditDiv[i]), (int)(EditVal[i][1]*EditDiv[i]));
       slider[i]->setPageStep((int)((EditVal[i][1]-EditVal[i][0])/10));
       slider[i]->setValue((int)(EditVal[i][2]*EditDiv[i]));
-      connect(slider[i],SIGNAL(valueChanged(int)),SLOT(sliderChanged(int)));
+      connect(slider[i],&QSlider::valueChanged, this, &ConfigSetup::sliderChanged);
       value[i]=new QLCDNumber(LCDLen,configWidgets[Parent[i]]);
       value[i]->setFrameStyle(QFrame::NoFrame);
    }
 
-   configCombo=new KComboBox(this);
+   configCombo=new QComboBox(this);
    configCombo->setEditable(false);
-   connect(configCombo,SIGNAL(activated(int)),SLOT(configSelected(int)));
+   connect(configCombo, static_cast<void(QComboBox::*)(int)>(&QComboBox::activated), this, &ConfigSetup::configSelected);
    for(i=0;i<predefinedConfigNum;i++)
       configCombo->addItem(i18n(predefinedConfigName[i]));
    configCombo->addItem(i18nc("custom values","Custom"));
@@ -425,7 +425,7 @@ SettingsDialog::SettingsDialog(SConfig *customConfig, QWidget *parent, const cha
 
   cs = new ConfigSetup(customConfig);
   addPage(cs, i18nc("game settings","Game"),QLatin1String(  "games-config-custom" ), i18n("Game Settings"));
-  connect(cs, SIGNAL(changed()), this, SLOT(updateButtons()));
+  connect(cs, &ConfigSetup::changed, this, &SettingsDialog::updateButtons);
   setHelp(QString(),QLatin1String( "kspaceduel" ));
 //  resize(600,400);
 }

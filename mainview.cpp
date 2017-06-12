@@ -1068,7 +1068,7 @@ void MyMainView::gameSetup()
     return;
 
   SettingsDialog *settings=new SettingsDialog(&customConfig,this,"settings");
-  connect(settings, SIGNAL(settingsUpdated()),this,SLOT(closeSettings()));
+  connect(settings, &SettingsDialog::settingsUpdated, this, &MyMainView::closeSettings);
   settings->show();
 }
 
