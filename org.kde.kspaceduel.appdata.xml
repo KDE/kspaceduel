@@ -11,6 +11,7 @@
   <name xml:lang="de">KSpaceDuel</name>
   <name xml:lang="en-GB">KSpaceDuel</name>
   <name xml:lang="es">KSpaceDuel</name>
+  <name xml:lang="fi">KSpaceDuel</name>
   <name xml:lang="fr">KSpaceDuel</name>
   <name xml:lang="gl">KSpaceDuel</name>
   <name xml:lang="it">KSpaceDuel</name>
@@ -37,6 +38,7 @@
   <summary xml:lang="de">Weltraum-Spiel</summary>
   <summary xml:lang="en-GB">Space Arcade Game</summary>
   <summary xml:lang="es">Juego recreativo espacial</summary>
+  <summary xml:lang="fi">Avaruusarkadipeli</summary>
   <summary xml:lang="fr">Jeu d'arcade dans l'espace</summary>
   <summary xml:lang="gl">Xogo arcade espacial</summary>
   <summary xml:lang="it">Gioco spaziale arcade</summary>
@@ -65,6 +67,7 @@
     <p xml:lang="de">In KSpaceDuel steuert jeder der maximal zwei Spieler ein Satellitenraumschiff auf einer Umlaufbahn um die Sonne. Im Spiel müssen die Spieler das gegnerische Raumschiff mit Kanonen oder Minen zerstören, um die Runde zu gewinnen.</p>
     <p xml:lang="en-GB">In KSpaceDuel each of two possible players control a satellite spaceship orbiting the sun. As the game progresses players have to eliminate the opponent's spacecraft with bullets or mines.</p>
     <p xml:lang="es">En KSpaceDuel, cada uno de los dos posibles jugadores controla una nave espacial en órbita alrededor del Sol. A medida que el juego avanza, los jugadores deben eliminar la nave espacial del oponente con disparos o con minas.</p>
+    <p xml:lang="fi">KSpaceDuelissa kukin kahdesta mahdollisesta pelaajasta ohjaa aurinkoa kiertävää avaruusalusta. Pelin edetessä pelaajan täytyy tuhota vastustajan alukset luodein tai miinoin.</p>
     <p xml:lang="fr">Dans KSpaceDuel chaque joueur contrôle un vaisseau spatial satellite en orbite autour du soleil. Au cours du jeu, les joueurs doivent éliminer le vaisseau spatial de leur adversaire en utilisant des balles ou des mines.</p>
     <p xml:lang="gl">en KSpaceDuel cada un dos dous xogadores posíbeis controla unha nave espacial satélite que orbita arredor do Sol. Durante unha partida, os xogadores teñen que eliminar a nave espacial do opoñente con balas ou minas.</p>
     <p xml:lang="it">In KSpaceDuel ciascun giocatore controlla una nave spaziale che orbita intorno al Sole. All'avanzare della partita, i giocatori devono eliminare la navicella dell'avversario con missili o mine.</p>
