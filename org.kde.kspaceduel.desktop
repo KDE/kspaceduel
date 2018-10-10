@@ -1,7 +1,6 @@
 [Desktop Entry]
 Name=KSpaceDuel
 Name[af]=K-ruimte-uitdaging
-Name[ast]=KSpaceDuel
 Name[be]=Касмічная дуэль
 Name[bn]=কে-স্পেসডুয়েল
 Name[br]=KSpaceDuel
@@ -67,7 +66,6 @@ Name[zh_CN]=KSpaceDuel
 Name[zh_TW]=KSpaceDuel 決戰星空
 Exec=kspaceduel -qwindowtitle %c
 GenericName=Space Arcade Game
-GenericName[ast]=Xuegu espacial d'arcade
 GenericName[be]=Касмічная аркадная гульня
 GenericName[bn]=মহাশূন্য নিয়ে একটি আর্কেড (Arcade) খেলা
 GenericName[bs]=Svemir arkadna igra
