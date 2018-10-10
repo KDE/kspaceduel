@@ -76,9 +76,9 @@ MyMainView::MyMainView(QWidget *parent)
    view.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
    view.setFrameStyle(QFrame::NoFrame);
 
-   for(p=0;p<2;p++)
+   for(p=0;p<2;++p)
    {
-      for(i=0;i<PlayerKeyNum;i++)
+      for(i=0;i<PlayerKeyNum;++i)
          playerKeyPressed[p][i]=false;
       bulletShot[p]=false;
       minePut[p]=false;
@@ -103,7 +103,7 @@ MyMainView::MyMainView(QWidget *parent)
 
    readSprites();
 
-   for(i=0;i<2;i++)
+   for(i=0;i<2;++i)
    {
       // ship[i]->setBoundsAction(QwRealMobileSprite::Wrap);
       ship[i]->hide();
@@ -243,7 +243,7 @@ void MyMainView::readConfig()
    else
       config=modifyConfig(customConfig);
 
-   for(i=0;i<2;i++)
+   for(i=0;i<2;++i)
       ai[i]=new Ai(i,ship,bullets,mines,&config);
 }
 
@@ -430,20 +430,20 @@ void MyMainView::resizeEvent(QResizeEvent *event)
    sun->setPos(QPointF(width()/2-1-(sun->width()/2),
                        height()/2-1-(sun->height()/2)));
 
-   for(i=0;i<2;i++)
+   for(i=0;i<2;++i)
    {
       // ship[i]->adoptSpritefieldBounds();
       ship[i]->moveBy(mx,my);
 
       listsize = mines[i]->size();
-      for (current=0; current<listsize; current++)
+      for (current=0; current<listsize; ++current)
       {
          // mine->adoptSpritefieldBounds();
          mines[i]->value(current)->moveBy(mx,my);
       }
 
       listsize = bullets[i]->size();
-      for (current=0; current<listsize; current++)
+      for (current=0; current<listsize; ++current)
       {
          // bullet->adoptSpritefieldBounds();
          bullets[i]->value(current)->moveBy(mx,my);
@@ -481,7 +481,7 @@ void MyMainView::newRound()
 
    ship[0]->setVelocity(config.startVelX,config.startVelY);
    ship[1]->setVelocity(-config.startVelX,-config.startVelY);
-   for(i=0;i<2;i++)
+   for(i=0;i<2;++i)
    {
       ship[i]->show();
       ship[i]->setEnergy(MAX_ENERGY);
@@ -507,7 +507,7 @@ void MyMainView::newRound()
    qDeleteAll(explosions);
    explosions.clear();
    gameEnd=-10.0;
-   for(i=0;i<PlayerKeyNum;i++)
+   for(i=0;i<PlayerKeyNum;++i)
    {
       playerKeyPressed[0][i]=false;
       playerKeyPressed[1][i]=false;
@@ -597,7 +597,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
 
       if( !stopped )
       {
-         for(i=0;i<2;i++)
+         for(i=0;i<2;++i)
             if(Options::playerIsAi(i)&&(ship[i]->getHitPoints()>0))
                ai[i]->think();
 
@@ -621,7 +621,7 @@ void MyMainView::moveShips()
    MineSprite *mine;
 
 
-   for(i=0;i<2;i++)
+   for(i=0;i<2;++i)
    {
       bool playerIsAi = Options::playerIsAi(i);
       olde=(int)ship[i]->getEnergy();
@@ -874,7 +874,7 @@ void MyMainView::collisions()
    int i;
    int listsize; // used for caching QtList::size()
 
-   for(pl=0;pl<2;pl++)
+   for(pl=0;pl<2;++pl)
    {
       if(!ship[pl]->isStopped())
       {
@@ -969,7 +969,7 @@ void MyMainView::collisions()
       }
 
       listsize = mines[pl]->size();
-      for (i=0; i<listsize; i++)
+      for (i=0; i<listsize; ++i)
       {
          mine = mines[pl]->value(i);
          if(!mine->explodes())
@@ -1041,7 +1041,7 @@ void MyMainView::collisions()
    }
 
 
-   for(pl=0;pl<2;pl++)
+   for(pl=0;pl<2;++pl)
    {
       hp=ship[pl]->getHitPoints();
       if(hp!=oldhp[pl])

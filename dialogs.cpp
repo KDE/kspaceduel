@@ -160,14 +160,14 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    boxlayout->setMargin(6);
 
    tabs=new QTabWidget(this);
-   for(i=0;i<TabNum;i++)
+   for(i=0;i<TabNum;++i)
    {
       configWidgets[i]=new QWidget(tabs);
       stacklayout[i]=new QGridLayout(configWidgets[i]);
       stacklayout[i]->setMargin(10);
    }
 
-   for(i=0;i<EditNum;i++)
+   for(i=0;i<EditNum;++i)
    {
       label[i]=new QLabel(i18n(LabelName[i]),configWidgets[Parent[i]]);
       slider[i]=new QSlider(Qt::Horizontal,configWidgets[Parent[i]]);
@@ -182,7 +182,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    configCombo=new QComboBox(this);
    configCombo->setEditable(false);
    connect(configCombo, static_cast<void(QComboBox::*)(int)>(&QComboBox::activated), this, &ConfigSetup::configSelected);
-   for(i=0;i<predefinedConfigNum;i++)
+   for(i=0;i<predefinedConfigNum;++i)
       configCombo->addItem(i18n(predefinedConfigName[i]));
    configCombo->addItem(i18nc("custom values","Custom"));
 
@@ -190,14 +190,14 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    boxlayout->addWidget(configCombo);
    boxlayout->addWidget(tabs);
 
-   for(i=0;i<EditNum;i++)
+   for(i=0;i<EditNum;++i)
    {
       stacklayout[Parent[i]]->addWidget(label[i],Position[i],0);
       stacklayout[Parent[i]]->addWidget(slider[i],Position[i],1);
       stacklayout[Parent[i]]->addWidget(value[i],Position[i],2);
    }
 
-   for(i=0;i<TabNum;i++)
+   for(i=0;i<TabNum;++i)
       stacklayout[i]->activate();
 
    tabs->addTab(configWidgets[0],i18nc("general game settings","General"));
@@ -375,7 +375,7 @@ void ConfigSetup::setValue(int ednum,double val)
    else
    {
       h=1;
-      for(n=0;h<EditDiv[ednum];n++)
+      for(n=0;h<EditDiv[ednum];++n)
          h*=10;
       str.sprintf("%*.*f",LCDLen,n,val);
    }
@@ -404,7 +404,7 @@ void ConfigSetup::sliderChanged(int val)
       else
       {
          h=1;
-         for(n=0;h<EditDiv[i];n++)
+         for(n=0;h<EditDiv[i];++n)
             h*=10;
          str.sprintf("%*.*f",LCDLen,n,(double)val/EditDiv[i]);
       }

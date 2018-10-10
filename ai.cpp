@@ -40,7 +40,7 @@ Ai::Ai(int pn,ShipSprite* s[2],QList<BulletSprite*>* b[2],
    opponentNumber=(pn+1)%2;
    cfg=c;
 
-   for(i=0;i<2;i++)
+   for(i=0;i<2;++i)
    {
       ship[i]=s[i];
       bullets[i]=b[i];
@@ -219,15 +219,15 @@ void Ai::calculateNextPositions()
    j=(int)(calcPositionNumber[Options::aiDifficulty(playerNumber)]/cfg->gamespeed);
 
    if(shipsNextPositions[0]->size() != j)
-      for(i=0;i<2;i++)
+      for(i=0;i<2;++i)
          shipsNextPositions[i]->resize(j);
 
-   for(i=0;i<2;i++)
+   for(i=0;i<2;++i)
       nextPositions(ship[i]->toAiSprite(),shipsNextPositions[i],
                     calcFrameIncrement[Options::aiDifficulty(playerNumber)]);
 
    if(cfg->maxMines > aiMines[0]->size())
-      for(i=0;i<2;i++)
+      for(i=0;i<2;++i)
          aiMines[i]->resize(cfg->maxMines);
 
    for(i=0;i<2;i++)
@@ -263,17 +263,17 @@ void Ai::tryShots()
    if(bullets[playerNumber]->count() <
       (cfg->maxBullets+ship[playerNumber]->getBulletPowerups()))
    {
-      for(f=0;f<=frameNum;f++)
+      for(f=0;f<=frameNum;++f)
       {
          if(f!=0)
-            for(i=0;i<frameIncrement;i++)
+            for(i=0;i<frameIncrement;++i)
                me=nextPosition(me,cfg->gamespeed);
          else
             me=nextPosition(me,cfg->gamespeed);
 
          if(!ship[playerNumber]->reloadsBullet(f*frameIncrement*cfg->gamespeed))
          {
-            for(i=0;i<2;i++)
+            for(i=0;i<2;++i)
             {
                if((f==0)&&(i==1))
                   continue;
@@ -325,7 +325,7 @@ Hit Ai::firstObject(AiSprite shot,int time,int frames)
    num=optime-basetime;
    if(num>0)
    {
-      for(t=0;(t<num)&&(!hitfound)&&(!shot.sun);t++)
+      for(t=0;(t<num)&&(!hitfound)&&(!shot.sun);++t)
       {
          if(t==0)
             shot=nextPosition(shot,cfg->gamespeed*rtime);
@@ -333,7 +333,7 @@ Hit Ai::firstObject(AiSprite shot,int time,int frames)
             shot=nextPosition(shot,cfg->gamespeed*frames);
 
              //distance to other objects
-         for(i=0;i<2;i++)
+         for(i=0;i<2;++i)
          {
             distx=(*(shipsNextPositions[i]))[basetime].x-shot.x;
             disty=(*(shipsNextPositions[i]))[basetime].y-shot.y;
@@ -364,7 +364,7 @@ Hit Ai::firstObject(AiSprite shot,int time,int frames)
             }
 
                 //mines
-            for(m=0;m<mineNumber[i];m++)
+            for(m=0;m<mineNumber[i];++m)
             {
                distx=(*(aiMines[i]))[m].x-shot.x;
                disty=(*(aiMines[i]))[m].y-shot.y;
@@ -445,10 +445,10 @@ void Ai::testForHits()
       objectsHitByShip.clear();
       qDeleteAll(minesHitByShot);
       minesHitByShot.clear();
-      for(i=0;i<2;i++)
+      for(i=0;i<2;++i)
       {
          listsize = bullets[i]->size();
-         for (j=0; j<listsize; j++)
+         for (j=0; j<listsize; ++j)
          {
             bullet=bullets[i]->value(j);
             shot=bullet->toAiSprite();
@@ -471,7 +471,7 @@ void Ai::testForHits()
       hit.distance=400;
 
       for(i=0;(i<shipsNextPositions[0]->size()) &&
-             !(*shipsNextPositions[playerNumber])[i].sun;i++)
+             !(*shipsNextPositions[playerNumber])[i].sun;++i)
       {
          if((borderTime<0) && (*shipsNextPositions[playerNumber])[i].border)
             borderTime=i*calcFrameIncrement[Options::aiDifficulty(playerNumber)];
@@ -483,8 +483,8 @@ void Ai::testForHits()
             sunTime=i*calcFrameIncrement[Options::aiDifficulty(playerNumber)];
 
          if(!hitfound)
-            for(p=0;p<2;p++)
-               for(m=0;m<mineNumber[p];m++)
+            for(p=0;p<2;++p)
+               for(m=0;m<mineNumber[p];++m)
                {
                   dx=(*shipsNextPositions[playerNumber])[i].x-(*aiMines[p])[m].x;
                   dy=(*shipsNextPositions[playerNumber])[i].y-(*aiMines[p])[m].y;
@@ -525,7 +525,7 @@ void Ai::shotScores()
    dist=dx*dx+dy*dy;
 
    listsize = myShots.size();
-   for (j=0; j<listsize; j++)
+   for (j=0; j<listsize; ++j)
    {
       s = myShots[j];
       fuel=(100-(ship[playerNumber]->getEnergy()-cfg->shotEnergyNeed));
@@ -538,7 +538,7 @@ void Ai::shotScores()
       if(s->hit.object==HMINE)
       {
          found=false;
-         for (i=0; i<objectsHitByShip.size() && !found; i++)
+         for (i=0; i<objectsHitByShip.size() && !found; ++i)
          {
             h=objectsHitByShip[i];
             if((h->object==HMINE)&&(h->playerNumber==s->hit.playerNumber)
@@ -553,7 +553,7 @@ void Ai::shotScores()
                {
                   foundmh=false;
                   listsize2 = minesHitByShot.size();
-                  for (k=0; k<listsize2 && !foundmh; k++)
+                  for (k=0; k<listsize2 && !foundmh; ++k)
                   {
                      mh = minesHitByShot[k];
                      if((mh->playerNumber==s->hit.playerNumber)
@@ -705,7 +705,7 @@ void Ai::chooseAction()
       int listsize; // used for caching QtList::size()
       bestShot=0;
       listsize = myShots.size();
-      for (i=0; i<listsize; i++)
+      for (i=0; i<listsize; ++i)
       {
          s=myShots[i];
          if(s->score<bestScore)
