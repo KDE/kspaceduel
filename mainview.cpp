@@ -984,7 +984,7 @@ void MyMainView::collisions()
                      if(!hitlist.contains(sprite))
                         hitlist.append(sprite);
             }
-            if(hitlist.count()>0)
+            if(!hitlist.isEmpty())
             {
                mine->explode();
 	       foreach (QGraphicsItem *item, hitlist)
