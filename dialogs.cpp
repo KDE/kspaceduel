@@ -426,7 +426,7 @@ SettingsDialog::SettingsDialog(SConfig *customConfig, QWidget *parent, const cha
   cs = new ConfigSetup(customConfig);
   addPage(cs, i18nc("game settings","Game"),QLatin1String(  "games-config-custom" ), i18n("Game Settings"));
   connect(cs, &ConfigSetup::changed, this, &SettingsDialog::updateButtons);
-  setHelp(QString(),QLatin1String( "kspaceduel" ));
+  setHelp(QLatin1String( "configuration" ), QLatin1String( "kspaceduel" ));
 //  resize(600,400);
 }
 
