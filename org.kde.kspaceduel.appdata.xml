@@ -13,6 +13,7 @@
   <name xml:lang="fi">KSpaceDuel</name>
   <name xml:lang="fr">KSpaceDuel</name>
   <name xml:lang="gl">KSpaceDuel</name>
+  <name xml:lang="id">KSpaceDuel</name>
   <name xml:lang="it">KSpaceDuel</name>
   <name xml:lang="nl">KSpaceDuel</name>
   <name xml:lang="pl">KosmicznyPojedynek</name>
@@ -40,6 +41,7 @@
   <summary xml:lang="fi">Avaruusarkadipeli</summary>
   <summary xml:lang="fr">Jeu d'arcade dans l'espace</summary>
   <summary xml:lang="gl">Xogo arcade espacial</summary>
+  <summary xml:lang="id">Permainan Arkade Ruang Angkasa</summary>
   <summary xml:lang="it">Gioco spaziale arcade</summary>
   <summary xml:lang="nl">Ruimte-arcadespel</summary>
   <summary xml:lang="pl">Gra zręcznościowa w kosmosie</summary>
@@ -70,6 +72,7 @@
     <p xml:lang="fi">KSpaceDuelissa kukin kahdesta mahdollisesta pelaajasta ohjaa aurinkoa kiertävää avaruusalusta. Pelin edetessä pelaajan täytyy tuhota vastustajan alukset luodein tai miinoin.</p>
     <p xml:lang="fr">Dans KSpaceDuel chaque joueur contrôle un vaisseau spatial satellite en orbite autour du soleil. Au cours du jeu, les joueurs doivent éliminer le vaisseau spatial de leur adversaire en utilisant des balles ou des mines.</p>
     <p xml:lang="gl">en KSpaceDuel cada un dos dous xogadores posíbeis controla unha nave espacial satélite que orbita arredor do Sol. Durante unha partida, os xogadores teñen que eliminar a nave espacial do opoñente con balas ou minas.</p>
+    <p xml:lang="id">Di KSpaceDuel masing-masing dari dua pemain yang mungkin mengendalikan pesawat-ruang-angkasa satelit yang mengorbit matahari. Ketika permainan berlangsung, pemain harus menyingkirkan pesawat ruang angkasa lawan dengan peluru atau ranjau.</p>
     <p xml:lang="it">In KSpaceDuel ciascun giocatore controlla una nave spaziale che orbita intorno al Sole. All'avanzare della partita, i giocatori devono eliminare la navicella dell'avversario con missili o mine.</p>
     <p xml:lang="nl">In KSpaceDuel besturen elk van de twee mogelijke spelers een satelliet ruimteschip dat om de zon draait. Als het spel voortgaat moeten spelers het ruimteschip van de tegenstander met kogels of mijnen vernietigen.</p>
     <p xml:lang="pl">W KosmicznymPojedynku każdy z dwóch graczy steruje orbitalnym statkiem kosmicznym krążącym wokół słońca. W trakcie gry, gracze muszą pozbyć się statku przeciwnika przy użyciu pocisków lub min.</p>
