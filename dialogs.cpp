@@ -318,7 +318,7 @@ void ConfigSetup::configSelected(int num)
    }
 }
 
-void ConfigSetup::displayConfig(SConfig cfg)
+void ConfigSetup::displayConfig(const SConfig &cfg)
 {
    setValue(EditSunEnergy,cfg.sunEnergy);
    setValue(EditGravity,cfg.gravity);

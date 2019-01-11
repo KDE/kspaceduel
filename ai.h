@@ -65,7 +65,7 @@ public:
    bool layMine(){return mine;}
 private:
    AiSprite nextPosition(AiSprite sp,double mult);
-   void nextPositions(AiSprite sp,QVector<AiSprite> *a,int frames);
+   void nextPositions(const AiSprite &sp,QVector<AiSprite> *a,int frames);
    Hit firstObject(AiSprite shot,int shotframes,int frames);
    void shotScores();
    void calculateNextPositions();

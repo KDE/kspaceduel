@@ -282,7 +282,7 @@ void MyMainView::writeConfig()
    game.writeEntry("powerupEnergyAmount",customConfig.powerupEnergyAmount);
 }
 
-SConfig MyMainView::modifyConfig(SConfig conf)
+SConfig MyMainView::modifyConfig(const SConfig &conf)
 {
    SConfig newConfig=conf;
    newConfig.gamespeed*=Options::refreshTime()/33.0;

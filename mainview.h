@@ -73,7 +73,7 @@ protected:
    void keyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
    void focusOutEvent (QFocusEvent * /*event*/) Q_DECL_OVERRIDE;
    bool readSprites();
-   SConfig modifyConfig(SConfig conf);
+   SConfig modifyConfig(const SConfig &conf);
    void moveShips();
    void moveBullets();
    void moveMines();

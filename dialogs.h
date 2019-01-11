@@ -50,7 +50,7 @@ protected slots:
 protected:   
    void valueChanged(int ednum,int val);
    void valueChanged(int ednum,double val);
-   void displayConfig(SConfig cfg);
+   void displayConfig(const SConfig &cfg);
    void setValue(int ednum,int val);
    void setValue(int ednum,double val);
    void setValue(int ednum,unsigned val);

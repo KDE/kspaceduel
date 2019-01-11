@@ -200,7 +200,7 @@ AiSprite Ai::nextPosition(AiSprite sp,double mult)
    return sp;
 }
 
-void Ai::nextPositions(AiSprite sp,QVector<AiSprite> *a,int frames)
+void Ai::nextPositions(const AiSprite &sp,QVector<AiSprite> *a,int frames)
 {
    int i,num;
    double fmult=cfg->gamespeed*frames;
