@@ -150,12 +150,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    int i;
 
    resize(500,400);
-   //setCaption(i18n("Game Setup"));
-   //setHelp( "OptionsConfigurations" );
 
-
-   //box=new QGroupBox(i18n("Config"),this);
-   //setMainWidget( box );
    QVBoxLayout *boxlayout = new QVBoxLayout( this );
    boxlayout->setMargin(6);
 
@@ -426,7 +421,7 @@ SettingsDialog::SettingsDialog(SConfig *customConfig, QWidget *parent, const cha
   cs = new ConfigSetup(customConfig);
   addPage(cs, i18nc("game settings","Game"),QLatin1String(  "games-config-custom" ), i18n("Game Settings"));
   connect(cs, &ConfigSetup::changed, this, &SettingsDialog::updateButtons);
-  setHelp(QLatin1String( "configuration" ), QLatin1String( "kspaceduel" ));
+  setHelp(QLatin1String( "options-configurations" ), QLatin1String( "kspaceduel" ));
 //  resize(600,400);
 }
 
