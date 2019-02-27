@@ -50,7 +50,7 @@ void MyTopLevelWidget::initGameWidgets( ){
    playfield=new MyMainView(w);
 
    QBoxLayout *toplayout=new QHBoxLayout(w);
-   toplayout->setMargin(0);
+   toplayout->setContentsMargins(0, 0, 0, 0);
    toplayout->addWidget(playerinfo[0]);
    toplayout->addWidget(playfield);
    toplayout->addWidget(playerinfo[1]);

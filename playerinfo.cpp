@@ -46,13 +46,13 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
    QPalette palette;
 
    lplayer.setFrameStyle(NoFrame);
-   lplayer.setMargin(0);
+   lplayer.setContentsMargins(0, 0, 0, 0);
    lplayer.setToolTip(i18n("Hit points"));
    lenergy.setFrameStyle(NoFrame);
-   lenergy.setMargin(0);
+   lenergy.setContentsMargins(0, 0, 0, 0);
    lenergy.setToolTip(i18n("Energy"));
    lwins.setFrameStyle(NoFrame);
-   lwins.setMargin(0);
+   lwins.setContentsMargins(0, 0, 0, 0);
    lwins.setToolTip(i18n("Wins"));
 
    lplayer.setGeometry(5,5,35,35);
