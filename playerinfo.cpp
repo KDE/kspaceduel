@@ -26,12 +26,12 @@ QPixmap* PlayerInfo::pplayer[6];
 
 void PlayerInfo::loadPixmaps()
 {
-    pplayer[0] = new QPixmap(QIcon::fromTheme( QLatin1String( "battery-discharging-100" )).pixmap(32,32));
-    pplayer[1] = new QPixmap(QIcon::fromTheme( QLatin1String( "battery-discharging-080" )).pixmap(32,32));
-    pplayer[2] = new QPixmap(QIcon::fromTheme( QLatin1String( "battery-discharging-060" )).pixmap(32,32));
-    pplayer[3] = new QPixmap(QIcon::fromTheme( QLatin1String( "battery-discharging-040" )).pixmap(32,32));
-    pplayer[4] = new QPixmap(QIcon::fromTheme( QLatin1String( "battery-discharging-020" )).pixmap(32,32));
-    pplayer[5] = new QPixmap(QIcon::fromTheme( QLatin1String( "battery-discharging-000" )).pixmap(32,32));
+    pplayer[0] = new QPixmap(QIcon::fromTheme( QStringLiteral( "battery-discharging-100" )).pixmap(32,32));
+    pplayer[1] = new QPixmap(QIcon::fromTheme( QStringLiteral( "battery-discharging-080" )).pixmap(32,32));
+    pplayer[2] = new QPixmap(QIcon::fromTheme( QStringLiteral( "battery-discharging-060" )).pixmap(32,32));
+    pplayer[3] = new QPixmap(QIcon::fromTheme( QStringLiteral( "battery-discharging-040" )).pixmap(32,32));
+    pplayer[4] = new QPixmap(QIcon::fromTheme( QStringLiteral( "battery-discharging-020" )).pixmap(32,32));
+    pplayer[5] = new QPixmap(QIcon::fromTheme( QStringLiteral( "battery-discharging-000" )).pixmap(32,32));
 }
 
 PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
@@ -73,8 +73,8 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
    lplayer.setPixmap(*(pplayer[0]));
    currentPixmap=0;
    //lenergy.setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::DataLocation, "sprites/playerinfo/energy.png")));
-   lenergy.setPixmap(QIcon::fromTheme( QLatin1String( "battery" )).pixmap(32,32));;
-   lwins.setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String( "sprites/playerinfo/win.png" ))));
+   lenergy.setPixmap(QIcon::fromTheme( QStringLiteral( "battery" )).pixmap(32,32));;
+   lwins.setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral( "sprites/playerinfo/win.png" ))));
 
    hitpoints.setGeometry(9,45,26,26);
    energy.setGeometry(9,120,26,26);

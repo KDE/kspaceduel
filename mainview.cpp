@@ -64,7 +64,7 @@ MyMainView::MyMainView(QWidget *parent)
    int i,p;
    setMinimumSize(600,400);
    random.setSeed(0);
-   QPixmap backgr(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String(MV_BACKGROUND)));
+   QPixmap backgr(QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral(MV_BACKGROUND)));
 
    field.setBackgroundBrush(QBrush(backgr));
    view.setCacheMode(QGraphicsView::CacheBackground);
@@ -84,20 +84,20 @@ MyMainView::MyMainView(QWidget *parent)
       minePut[p]=false;
    }
 
-   svgrender = new QSvgRenderer(QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1String(MV_SVG_FILE)));
+   svgrender = new QSvgRenderer(QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral(MV_SVG_FILE)));
 
-   sun=new SunSprite(svgrender,QLatin1String( MV_SUN ));
+   sun=new SunSprite(svgrender,QStringLiteral( MV_SUN ));
    field.addItem(sun);
    sun->setPos(QPointF(width()/2-1-(sun->width()/2),
                        height()/2-1-(sun->height()/2)));
 
-   powerupelements[0] = QLatin1String( MV_POWERMINE );
-   powerupelements[1] = QLatin1String( MV_POWERBULLET );
-   powerupelements[2] = QLatin1String( MV_POWERSHIELD );
-   powerupelements[3] = QLatin1String( MV_POWERENERGY );
+   powerupelements[0] = QStringLiteral( MV_POWERMINE );
+   powerupelements[1] = QStringLiteral( MV_POWERBULLET );
+   powerupelements[2] = QStringLiteral( MV_POWERSHIELD );
+   powerupelements[3] = QStringLiteral( MV_POWERENERGY );
 
-   ship[0]=new ShipSprite(svgrender, QLatin1String( MV_SHIP1 ), 0);
-   ship[1]=new ShipSprite(svgrender, QLatin1String( MV_SHIP2 ), 1);
+   ship[0]=new ShipSprite(svgrender, QStringLiteral( MV_SHIP1 ), 0);
+   ship[1]=new ShipSprite(svgrender, QStringLiteral( MV_SHIP2 ), 1);
    field.addItem(ship[0]);
    field.addItem(ship[1]);
 
@@ -300,29 +300,29 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
     // if-statement kept for historical reasons, maybe not needed anymore
     if ( ((gameEnd>0.0) || (gameEnd<=-2.0)) && (!waitForStart) )
     {
-      if(actionCollection->action(QLatin1String( "P1KeyLeft" ))->shortcuts().contains(ev->key()))
+      if(actionCollection->action(QStringLiteral( "P1KeyLeft" ))->shortcuts().contains(ev->key()))
             playerKeyPressed[0][PlayerKeyLeft]=true;
-      else if(actionCollection->action(QLatin1String( "P2KeyLeft" ))->shortcuts().contains(ev->key()))
+      else if(actionCollection->action(QStringLiteral( "P2KeyLeft" ))->shortcuts().contains(ev->key()))
             playerKeyPressed[1][PlayerKeyLeft]=true;
 
-      else if(actionCollection->action(QLatin1String( "P1KeyRight" ))->shortcuts().contains(ev->key()))
+      else if(actionCollection->action(QStringLiteral( "P1KeyRight" ))->shortcuts().contains(ev->key()))
             playerKeyPressed[0][PlayerKeyRight]=true;
-      else if(actionCollection->action(QLatin1String( "P2KeyRight" ))->shortcuts().contains(ev->key()))
+      else if(actionCollection->action(QStringLiteral( "P2KeyRight" ))->shortcuts().contains(ev->key()))
             playerKeyPressed[1][PlayerKeyRight]=true;
 
-      else if(actionCollection->action(QLatin1String( "P1KeyAcc" ))->shortcuts().contains(ev->key()))
+      else if(actionCollection->action(QStringLiteral( "P1KeyAcc" ))->shortcuts().contains(ev->key()))
             playerKeyPressed[0][PlayerKeyAcc]=true;
-      else if(actionCollection->action(QLatin1String( "P2KeyAcc" ))->shortcuts().contains(ev->key()))
+      else if(actionCollection->action(QStringLiteral( "P2KeyAcc" ))->shortcuts().contains(ev->key()))
             playerKeyPressed[1][PlayerKeyAcc]=true;
 
-      else if(actionCollection->action(QLatin1String( "P1Shot" ))->shortcuts().contains(ev->key()))
+      else if(actionCollection->action(QStringLiteral( "P1Shot" ))->shortcuts().contains(ev->key()))
             playerKeyPressed[0][PlayerKeyShot]=true;
-      else if(actionCollection->action(QLatin1String( "P2Shot" ))->shortcuts().contains(ev->key()))
+      else if(actionCollection->action(QStringLiteral( "P2Shot" ))->shortcuts().contains(ev->key()))
             playerKeyPressed[1][PlayerKeyShot]=true;
 
-      else if(actionCollection->action(QLatin1String( "P1Mine" ))->shortcuts().contains(ev->key()))
+      else if(actionCollection->action(QStringLiteral( "P1Mine" ))->shortcuts().contains(ev->key()))
             playerKeyPressed[0][PlayerKeyMine]=true;
-      else if(actionCollection->action(QLatin1String( "P2Mine" ))->shortcuts().contains(ev->key()))
+      else if(actionCollection->action(QStringLiteral( "P2Mine" ))->shortcuts().contains(ev->key()))
             playerKeyPressed[1][PlayerKeyMine]=true;
       else
         ev->ignore();
@@ -331,29 +331,29 @@ void MyMainView::keyPressEvent(QKeyEvent *ev)
 
 void MyMainView::keyReleaseEvent(QKeyEvent *ev)
 {
-   if(actionCollection->action(QLatin1String( "P1KeyLeft" ))->shortcuts().contains(ev->key()))
+   if(actionCollection->action(QStringLiteral( "P1KeyLeft" ))->shortcuts().contains(ev->key()))
       playerKeyPressed[0][PlayerKeyLeft]=false;
-   else if(actionCollection->action(QLatin1String( "P2KeyLeft" ))->shortcuts().contains(ev->key()))
+   else if(actionCollection->action(QStringLiteral( "P2KeyLeft" ))->shortcuts().contains(ev->key()))
       playerKeyPressed[1][PlayerKeyLeft]=false;
 
-   else if(actionCollection->action(QLatin1String( "P1KeyRight" ))->shortcuts().contains(ev->key()))
+   else if(actionCollection->action(QStringLiteral( "P1KeyRight" ))->shortcuts().contains(ev->key()))
       playerKeyPressed[0][PlayerKeyRight]=false;
-   else if(actionCollection->action(QLatin1String( "P2KeyRight" ))->shortcuts().contains(ev->key()))
+   else if(actionCollection->action(QStringLiteral( "P2KeyRight" ))->shortcuts().contains(ev->key()))
       playerKeyPressed[1][PlayerKeyRight]=false;
 
-   else if(actionCollection->action(QLatin1String( "P1KeyAcc" ))->shortcuts().contains(ev->key()))
+   else if(actionCollection->action(QStringLiteral( "P1KeyAcc" ))->shortcuts().contains(ev->key()))
       playerKeyPressed[0][PlayerKeyAcc]=false;
-   else if(actionCollection->action(QLatin1String( "P2KeyAcc" ))->shortcuts().contains(ev->key()))
+   else if(actionCollection->action(QStringLiteral( "P2KeyAcc" ))->shortcuts().contains(ev->key()))
       playerKeyPressed[1][PlayerKeyAcc]=false;
 
-   else if(actionCollection->action(QLatin1String( "P1Shot" ))->shortcuts().contains(ev->key()))
+   else if(actionCollection->action(QStringLiteral( "P1Shot" ))->shortcuts().contains(ev->key()))
       playerKeyPressed[0][PlayerKeyShot]=false;
-   else if(actionCollection->action(QLatin1String( "P2Shot" ))->shortcuts().contains(ev->key()))
+   else if(actionCollection->action(QStringLiteral( "P2Shot" ))->shortcuts().contains(ev->key()))
       playerKeyPressed[1][PlayerKeyShot]=false;
 
-   else if(actionCollection->action(QLatin1String( "P1Mine" ))->shortcuts().contains(ev->key()))
+   else if(actionCollection->action(QStringLiteral( "P1Mine" ))->shortcuts().contains(ev->key()))
       playerKeyPressed[0][PlayerKeyMine]=false;
-   else if(actionCollection->action(QLatin1String( "P2Mine" ))->shortcuts().contains(ev->key()))
+   else if(actionCollection->action(QStringLiteral( "P2Mine" ))->shortcuts().contains(ev->key()))
       playerKeyPressed[1][PlayerKeyMine]=false;
    else
       ev->ignore();
@@ -521,7 +521,7 @@ void MyMainView::newRound()
    //field.update();
 
    QString str = i18n("Press %1 to start",
-                  actionCollection->action("game_start")->shortcut().toString(QKeySequence::NativeText));
+                  actionCollection->action(QStringLiteral("game_start"))->shortcut().toString(QKeySequence::NativeText));
    emit(setStatusText(str,IDS_MAIN));
    emit(setStatusText( QLatin1String( "" ), IDS_PAUSE ));
    stop( );
@@ -589,7 +589,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
             textSprite->setPos(QPointF((width()-textSprite->boundingRect().width()) / 2,height()/2-90));
 
             QString str = i18n("Press %1 for new round",
-                          actionCollection->action("game_start")->shortcut().toString(QKeySequence::NativeText));
+                          actionCollection->action(QStringLiteral("game_start"))->shortcut().toString(QKeySequence::NativeText));
             emit(setStatusText(str,IDS_MAIN));
             stop( );
          }
@@ -689,10 +689,10 @@ void MyMainView::moveShips()
                   ship[i]->bullet(config.bulletReloadTime);
                   en-=config.shotEnergyNeed;
 		  if(i)
-		     bullet=new BulletSprite(svgrender, QLatin1String( MV_BULLET2 ), i,
+		     bullet=new BulletSprite(svgrender, QStringLiteral( MV_BULLET2 ), i,
 					     config.bulletLifeTime);
 		  else
-		     bullet=new BulletSprite(svgrender, QLatin1String( MV_BULLET1 ), i,
+		     bullet=new BulletSprite(svgrender, QStringLiteral( MV_BULLET1 ), i,
                                           config.bulletLifeTime);
 		  field.addItem(bullet);
 		  QPointF p;
@@ -1064,7 +1064,7 @@ void MyMainView::gameSetup()
   if(!waitForStart)
     pause();
 
-  if (KConfigDialog::showDialog( QLatin1String( "settings" )))
+  if (KConfigDialog::showDialog( QStringLiteral( "settings" )))
     return;
 
   SettingsDialog *settings=new SettingsDialog(&customConfig,this,"settings");

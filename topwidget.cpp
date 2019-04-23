@@ -90,8 +90,8 @@ void MyTopLevelWidget::setupActions()
    KStandardGameAction::gameNew(playfield, SLOT(newGame()), actionCollection());
    KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 
-   QAction * newRoundAct = actionCollection()->addAction( QLatin1String(  "new_round" ) );
-   newRoundAct->setIcon( QIcon::fromTheme( QLatin1String( "preferences-desktop-notification-bell" )) );
+   QAction * newRoundAct = actionCollection()->addAction( QStringLiteral(  "new_round" ) );
+   newRoundAct->setIcon( QIcon::fromTheme( QStringLiteral( "preferences-desktop-notification-bell" )) );
    newRoundAct->setText( i18n( "&New Round" ) );
    actionCollection()->setDefaultShortcut(newRoundAct, Qt::CTRL + Qt::Key_R);
    connect( newRoundAct, &QAction::triggered, playfield, &MyMainView::newRound );
@@ -99,7 +99,7 @@ void MyTopLevelWidget::setupActions()
    MyMainView::pauseAction =
        KStandardGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
    MyMainView::pauseAction->setChecked( false );
-   QAction *gameStart = actionCollection()->addAction( QLatin1String(  "game_start" ) );
+   QAction *gameStart = actionCollection()->addAction( QStringLiteral(  "game_start" ) );
    gameStart->setText( i18nc( "start game","Start" ) );
    connect(gameStart, &QAction::triggered, playfield, &MyMainView::start);
    actionCollection()->setDefaultShortcut(gameStart, Qt::Key_Space);
@@ -112,44 +112,44 @@ void MyTopLevelWidget::setupActions()
 #warning assuming this is not necessary anymore
 #endif
    // actionCollection()->setAutoConnectShortcuts(false);
-   ac = actionCollection()->addAction( QLatin1String( "P1KeyLeft" ));
+   ac = actionCollection()->addAction( QStringLiteral( "P1KeyLeft" ));
    ac->setText(i18n("Player 1 Rotate Left"));
    actionCollection()->setDefaultShortcut(ac, Qt::Key_S);
    ac->setEnabled( false );
-   ac = actionCollection()->addAction( QLatin1String( "P1KeyRight" ));
+   ac = actionCollection()->addAction( QStringLiteral( "P1KeyRight" ));
    ac->setText(i18n("Player 1 Rotate Right"));
    actionCollection()->setDefaultShortcut(ac, Qt::Key_F);
    ac->setEnabled( false );
-   ac = actionCollection()->addAction( QLatin1String( "P1KeyAcc" ));
+   ac = actionCollection()->addAction( QStringLiteral( "P1KeyAcc" ));
    ac->setText(i18n("Player 1 Accelerate"));
    actionCollection()->setDefaultShortcut(ac, Qt::Key_E);
    ac->setEnabled( false );
-   ac = actionCollection()->addAction( QLatin1String( "P1Shot" ));
+   ac = actionCollection()->addAction( QStringLiteral( "P1Shot" ));
    ac->setText(i18n("Player 1 Shot"));
    actionCollection()->setDefaultShortcut(ac, Qt::Key_D);
    ac->setEnabled( false );
-   ac = actionCollection()->addAction( QLatin1String( "P1Mine" ));
+   ac = actionCollection()->addAction( QStringLiteral( "P1Mine" ));
    ac->setText(i18n("Player 1 Mine"));
    actionCollection()->setDefaultShortcut(ac, Qt::Key_A);
    ac->setEnabled( false );
 
-   ac = actionCollection()->addAction( QLatin1String( "P2KeyLeft" ));
+   ac = actionCollection()->addAction( QStringLiteral( "P2KeyLeft" ));
    ac->setText(i18n("Player 2 Rotate Left"));
    actionCollection()->setDefaultShortcut(ac, Qt::Key_Left);
    ac->setEnabled( false );
-   ac = actionCollection()->addAction( QLatin1String( "P2KeyRight" ));
+   ac = actionCollection()->addAction( QStringLiteral( "P2KeyRight" ));
    ac->setText(i18n("Player 2 Rotate Right"));
    actionCollection()->setDefaultShortcut(ac, Qt::Key_Right);
    ac->setEnabled( false );
-   ac = actionCollection()->addAction( QLatin1String( "P2KeyAcc" ));
+   ac = actionCollection()->addAction( QStringLiteral( "P2KeyAcc" ));
    ac->setText(i18n("Player 2 Accelerate"));
    actionCollection()->setDefaultShortcut(ac, Qt::Key_Up);
    ac->setEnabled( false );
-   ac = actionCollection()->addAction( QLatin1String( "P2Shot" ));
+   ac = actionCollection()->addAction( QStringLiteral( "P2Shot" ));
    ac->setText(i18n("Player 2 Shot"));
    actionCollection()->setDefaultShortcut(ac, Qt::Key_Down);
    ac->setEnabled( false );
-   ac = actionCollection()->addAction( QLatin1String( "P2Mine" ));
+   ac = actionCollection()->addAction( QStringLiteral( "P2Mine" ));
    ac->setText(i18n("Player 2 Mine"));
    actionCollection()->setDefaultShortcut(ac, Qt::Key_Insert);
    ac->setEnabled( false );

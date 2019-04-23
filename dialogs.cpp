@@ -416,12 +416,12 @@ SettingsDialog::SettingsDialog(SConfig *customConfig, QWidget *parent, const cha
   : KConfigDialog( parent,QLatin1String(  name ), Options::self())
 {
   General *general = new General();
-  addPage(general, i18nc("general settings","General"), QLatin1String( "games-config-options" ), i18n("General Settings"));
+  addPage(general, i18nc("general settings","General"), QStringLiteral( "games-config-options" ), i18n("General Settings"));
 
   cs = new ConfigSetup(customConfig);
-  addPage(cs, i18nc("game settings","Game"),QLatin1String(  "games-config-custom" ), i18n("Game Settings"));
+  addPage(cs, i18nc("game settings","Game"),QStringLiteral(  "games-config-custom" ), i18n("Game Settings"));
   connect(cs, &ConfigSetup::changed, this, &SettingsDialog::updateButtons);
-  setHelp(QLatin1String( "options-configurations" ), QLatin1String( "kspaceduel" ));
+  setHelp(QStringLiteral( "options-configurations" ), QStringLiteral( "kspaceduel" ));
 //  resize(600,400);
 }
 
