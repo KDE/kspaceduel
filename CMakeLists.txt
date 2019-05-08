@@ -1,9 +1,9 @@
 project(kspaceduel)
 cmake_minimum_required (VERSION 3.5 FATAL_ERROR)
-set (QT_MIN_VERSION "5.3.0")
-set (KF5_MIN_VERSION "5.15")
+set (QT_MIN_VERSION "5.9.0")
+set (KF5_MIN_VERSION "5.46.0")
 
-find_package(ECM 1.7.0 REQUIRED CONFIG)
+find_package(ECM ${KF5_MIN_VERSION} REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Svg)
