@@ -152,7 +152,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    resize(500,400);
 
    QVBoxLayout *boxlayout = new QVBoxLayout( this );
-   boxlayout->setMargin(6);
+   boxlayout->setContentsMargins(6, 6, 6, 6);
 
    tabs=new QTabWidget(this);
    for(i=0;i<TabNum;++i)
