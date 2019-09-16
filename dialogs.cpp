@@ -159,7 +159,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    {
       configWidgets[i]=new QWidget(tabs);
       stacklayout[i]=new QGridLayout(configWidgets[i]);
-      stacklayout[i]->setMargin(10);
+      stacklayout[i]->setContentsMargins(10, 10, 10, 10);
    }
 
    for(i=0;i<EditNum;++i)
