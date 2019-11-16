@@ -230,9 +230,9 @@ void Ai::calculateNextPositions()
       for(i=0;i<2;++i)
          aiMines[i]->resize(cfg->maxMines);
 
-   for(i=0;i<2;i++)
+   for(i=0;i<2;++i)
    {
-      for (j=0; j<mines[i]->size(); j++)
+      for (j=0; j<mines[i]->size(); ++j)
       {
          (*(aiMines[i]))[j]=mines[i]->value(j)->toAiSprite();
       }

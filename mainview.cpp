@@ -453,7 +453,7 @@ void MyMainView::resizeEvent(QResizeEvent *event)
       textSprite->moveBy((int)mx,(int)my);
 
    listsize = powerups.size();
-   for (current=0; current<listsize; current++)
+   for (current=0; current<listsize; ++current)
    {
       powerups[current]->moveBy(mx,my);
    }
