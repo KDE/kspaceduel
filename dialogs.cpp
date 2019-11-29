@@ -353,8 +353,7 @@ void ConfigSetup::displayConfig(const SConfig &cfg)
 
 void ConfigSetup::setValue(int ednum,int val)
 {
-   QString str;
-   str.sprintf("%*i",LCDLen,val);
+   const QString str = QString::asprintf("%*i",LCDLen,val);
    value[ednum]->display(str);
    slider[ednum]->setValue(val);
 }
@@ -366,13 +365,13 @@ void ConfigSetup::setValue(int ednum,double val)
    int n,h;
 
    if(EditDiv[ednum]==1)
-      str.sprintf("%*i",LCDLen,hval);
+      str = QString::asprintf("%*i",LCDLen,hval);
    else
    {
       h=1;
       for(n=0;h<EditDiv[ednum];++n)
          h*=10;
-      str.sprintf("%*.*f",LCDLen,n,val);
+      str = QString::asprintf("%*.*f",LCDLen,n,val);
    }
    value[ednum]->display(str);
    slider[ednum]->setValue(hval);
@@ -380,8 +379,7 @@ void ConfigSetup::setValue(int ednum,double val)
 
 void ConfigSetup::setValue(int ednum,unsigned val)
 {
-   QString str;
-   str.sprintf("%*i",LCDLen,(int)val);
+   const QString str = QString::asprintf("%*i",LCDLen,(int)val);
    value[ednum]->display(str);
    slider[ednum]->setValue((int)val);
 }
@@ -395,13 +393,13 @@ void ConfigSetup::sliderChanged(int val)
    if(i<EditNum)
    {
       if(EditDiv[i]==1)
-         str.sprintf("%*i",LCDLen,val);
+         str = QString::asprintf("%*i",LCDLen,val);
       else
       {
          h=1;
          for(n=0;h<EditDiv[i];++n)
             h*=10;
-         str.sprintf("%*.*f",LCDLen,n,(double)val/EditDiv[i]);
+         str = QString::asprintf("%*.*f",LCDLen,n,(double)val/EditDiv[i]);
       }
       value[i]->display(str);
       if(VarType[i]==VarFloat)
