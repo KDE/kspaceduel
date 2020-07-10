@@ -23,7 +23,7 @@ class QTabWidget;
 class QSlider;
 class QLCDNumber;
 
-#include <kconfigdialog.h>
+#include <KConfigDialog>
 
 #include "defines.h"
 #include "structs.h"

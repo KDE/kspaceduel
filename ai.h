@@ -18,7 +18,7 @@
 #ifndef __KSD_AI_H
 #define __KSD_AI_H
 
-#include <krandomsequence.h>
+#include <KRandomSequence>
 
 #include "dialogs.h"
 #include "options.h"

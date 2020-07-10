@@ -18,7 +18,7 @@
 #ifndef __SP_STRUCTS_H
 #define __SP_STRUCTS_H
 
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 struct SConfig
 {
