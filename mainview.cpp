@@ -63,7 +63,7 @@ MyMainView::MyMainView(QWidget *parent)
 {
    int i,p;
    setMinimumSize(600,400);
-   random.setSeed(0);
+   random.seed(0);
    QPixmap backgr(QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral(MV_BACKGROUND)));
 
    field.setBackgroundBrush(QBrush(backgr));
@@ -464,7 +464,7 @@ void MyMainView::newRound()
    double mx,my;
    int i;
 
-   timeToNextPowerup=random.getDouble() * config.powerupRefreshTime;
+   timeToNextPowerup=random.bounded(config.powerupRefreshTime);
    qDeleteAll(powerups);
    powerups.clear();
 
@@ -841,15 +841,15 @@ void MyMainView::calculatePowerups()
    if(timeToNextPowerup<0)
    {
       int type,x,y;
-      timeToNextPowerup= random.getDouble() * config.powerupRefreshTime;
-      type= random.getLong(PowerupSprite::PowerupNum);
+      timeToNextPowerup= random.bounded(config.powerupRefreshTime);
+      type= random.bounded(PowerupSprite::PowerupNum);
       sp=new PowerupSprite(svgrender,powerupelements[type],type,
                            config.powerupLifeTime);
       field.addItem(sp);
       do
       {
-         x = random.getLong(width()-40)+20;
-         y = random.getLong(height()-40)+20;
+         x = random.bounded(width()-40)+20;
+         y = random.bounded(height()-40)+20;
       }
       while(((x-width()/2)*(x-width()/2)+(y-height()/2)*(y-height()/2))<(50*50));
       sp->setPos(QPointF(x,y));

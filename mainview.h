@@ -21,11 +21,11 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QList>
+#include <QRandomGenerator>
 #include <QTimerEvent>
 #include <QWidget>
 
 
-#include <KRandomSequence>
 class KToggleAction;
 class KActionCollection;
 class QGraphicsSimpleTextItem;
@@ -112,7 +112,7 @@ private:
    QList<ExplosionSprite*> explosions;
    QList<PowerupSprite*> powerups;
 
-   KRandomSequence random;
+   QRandomGenerator random;
 
 //Ai
    Ai *ai[2];

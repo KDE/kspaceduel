@@ -33,6 +33,7 @@ int Ai::calcNextShot[Options::EnumAiDifficulty::COUNT]       = {300,200,90,60};
 
 Ai::Ai(int pn,ShipSprite* s[2],QList<BulletSprite*>* b[2],
        QList<MineSprite*>* m[2],SConfig *c)
+ : random(QRandomGenerator::securelySeeded())
 {
    int i;
 
@@ -89,8 +90,8 @@ void Ai::newRound()
 
    calculateCollisions=(int)(calcCollisions[Options::aiDifficulty(playerNumber)]
                              /cfg->gamespeed);
-   waitShot=(int) rint( random.getDouble() *
-	          calcNextShot[Options::aiDifficulty(playerNumber)]
+   waitShot=(int) rint( random.bounded(1.0) *
+                 calcNextShot[Options::aiDifficulty(playerNumber)]
                   /cfg->gamespeed);
 
    qDeleteAll(myShots);
@@ -724,7 +725,7 @@ void Ai::chooseAction()
             shoot=true;
             score=bestScore;
             calculateCollisions = 0;
-            waitShot=(int) rint( random.getDouble() *
+            waitShot=(int) rint( random.bounded(1.0) *
 	                         calcNextShot[Options::aiDifficulty(playerNumber)]
                                  /cfg->gamespeed);
          }

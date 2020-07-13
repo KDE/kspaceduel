@@ -18,7 +18,7 @@
 #ifndef __KSD_AI_H
 #define __KSD_AI_H
 
-#include <KRandomSequence>
+#include <QRandomGenerator>
 
 #include "dialogs.h"
 #include "options.h"
@@ -76,7 +76,7 @@ private:
 
    SConfig *cfg;
 
-   KRandomSequence random;
+   QRandomGenerator random;
 
        //actions
    Rotation rotation;
