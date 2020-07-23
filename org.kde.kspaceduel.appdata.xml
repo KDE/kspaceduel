@@ -7,6 +7,7 @@
   <name xml:lang="ca">KSpaceDuel</name>
   <name xml:lang="ca-valencia">KSpaceDuel</name>
   <name xml:lang="cs">KSpaceDuel</name>
+  <name xml:lang="da">KSpaceDuel</name>
   <name xml:lang="de">KSpaceDuel</name>
   <name xml:lang="en-GB">KSpaceDuel</name>
   <name xml:lang="es">KSpaceDuel</name>
@@ -39,6 +40,7 @@
   <summary xml:lang="ca">Joc arcade d'espai</summary>
   <summary xml:lang="ca-valencia">Joc arcade d'espai</summary>
   <summary xml:lang="cs">Vesmírná arkádová hra</summary>
+  <summary xml:lang="da">Rum arkadespil</summary>
   <summary xml:lang="de">Weltraum-Spiel</summary>
   <summary xml:lang="en-GB">Space Arcade Game</summary>
   <summary xml:lang="es">Juego recreativo espacial</summary>
@@ -73,6 +75,7 @@
     </p>
     <p xml:lang="ca">Al KSpaceDuel cada un dels dos possibles jugadors controla una nau espacial satèl·lit que orbita el Sol. A mesura que el joc avança, els jugadors han d'eliminar les naus espacials del contrari amb bales o mines.</p>
     <p xml:lang="ca-valencia">Al KSpaceDuel cada un dels dos possibles jugadors controla una nau espacial satèl·lit que orbita el Sol. A mesura que el joc avança, els jugadors han d'eliminar les naus espacials del contrari amb bales o mines.</p>
+    <p xml:lang="da">I KSpaceDuel styrer hver af op til to spillere et satellitrumskib  som er i kredsløb om solen. Som spillet skrider frem skal spillerne eliminere  modstanderens rumskib med kugler eller miner.</p>
     <p xml:lang="de">In KSpaceDuel steuert jeder der maximal zwei Spieler ein Satellitenraumschiff auf einer Umlaufbahn um die Sonne. Im Spiel müssen die Spieler das gegnerische Raumschiff mit Kanonen oder Minen zerstören, um die Runde zu gewinnen.</p>
     <p xml:lang="en-GB">In KSpaceDuel each of two possible players control a satellite spaceship orbiting the sun. As the game progresses players have to eliminate the opponent's spacecraft with bullets or mines.</p>
     <p xml:lang="es">En KSpaceDuel, cada uno de los dos posibles jugadores controla una nave espacial en órbita alrededor del Sol. A medida que el juego avanza, los jugadores deben eliminar la nave espacial del oponente con disparos o con minas.</p>
