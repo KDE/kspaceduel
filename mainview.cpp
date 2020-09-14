@@ -63,7 +63,7 @@ MyMainView::MyMainView(QWidget *parent)
 {
    int i,p;
    setMinimumSize(600,400);
-   random.seed(0);
+   random.seed(QRandomGenerator::global()->generate());
    QPixmap backgr(QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral(MV_BACKGROUND)));
 
    field.setBackgroundBrush(QBrush(backgr));
