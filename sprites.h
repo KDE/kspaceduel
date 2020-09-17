@@ -105,6 +105,7 @@ public:
    bool isActive() {return active;}
    double getFuel() {return fuel;}
    void setFuel(double f) {fuel=(f<0.0?0.0:f);}
+   using AnimatedSprite::forward;
    void forward(double mult) override;
    void explode();
    bool explodes() {return expl;}
@@ -123,6 +124,7 @@ public:
    explicit ExplosionSprite(QSvgRenderer* svg, const QList<QString> &animation, MobileSprite *sp = nullptr);
    int type() const override {return S_EXPLOSION;}
    bool isOver() {return over;}
+   using AnimatedSprite::forward;
    void forward(double mult) override;
 private:
    double timeToGo,time;
