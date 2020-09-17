@@ -637,13 +637,13 @@ void MyMainView::moveShips()
                                          config.gamespeed);
 
 
-         if(!playerIsAi&&playerKeyPressed[i][PlayerKeyRight]
-            || playerIsAi&&ai[i]->rotateRight())
+         if ((!playerIsAi && playerKeyPressed[i][PlayerKeyRight]) ||
+             (playerIsAi && ai[i]->rotateRight()))
             ship[i]->rotateRight(config.rotationEnergyNeed,
                                  config.rotationSpeed);
 
-         if(!playerIsAi&&playerKeyPressed[i][PlayerKeyLeft]
-            || playerIsAi&&ai[i]->rotateLeft())
+         if (!(playerIsAi && playerKeyPressed[i][PlayerKeyLeft]) ||
+             (playerIsAi && ai[i]->rotateLeft()))
             ship[i]->rotateLeft(config.rotationEnergyNeed,
                                 config.rotationSpeed);
 
@@ -653,8 +653,8 @@ void MyMainView::moveShips()
          nf = 0;
          nx=cos(nr);
          ny=sin(nr);
-         if ( ((!playerIsAi && playerKeyPressed[i][PlayerKeyAcc])
-             || playerIsAi&&ai[i]->accelerate())
+         if (((!playerIsAi && playerKeyPressed[i][PlayerKeyAcc]) ||
+              (playerIsAi && ai[i]->accelerate()))
 	     && (en>config.energyNeed) )
          {
             en-=config.energyNeed;
@@ -678,8 +678,8 @@ void MyMainView::moveShips()
          ship[i]->forward(config.gamespeed);
 
              //Bullets and Mines
-         if(!playerIsAi&&playerKeyPressed[i][PlayerKeyShot]
-            ||playerIsAi&&ai[i]->shootBullet())
+         if ((!playerIsAi && playerKeyPressed[i][PlayerKeyShot]) ||
+             (playerIsAi && ai[i]->shootBullet()))
          {
             if((en>config.shotEnergyNeed) && (!ship[i]->reloadsBullet()))
             {
@@ -706,8 +706,8 @@ void MyMainView::moveShips()
                }
             }
          }
-         if(!Options::playerIsAi(i)&&playerKeyPressed[i][PlayerKeyMine]
-            || Options::playerIsAi(i)&&ai[i]->layMine())
+         if ((!Options::playerIsAi(i) && playerKeyPressed[i][PlayerKeyMine]) ||
+             (Options::playerIsAi(i) && ai[i]->layMine()))
          {
             if((en>config.mineEnergyNeed) && (!ship[i]->reloadsMine()))
             {
