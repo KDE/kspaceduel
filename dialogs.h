@@ -95,19 +95,19 @@ class SettingsDialog : public KConfigDialog
         Q_OBJECT
 public:
         explicit SettingsDialog(SConfig *customConfig, QWidget *parent = nullptr, const char *name = nullptr);
-        ~SettingsDialog();
+        ~SettingsDialog() override;
 
 signals:
         void settingsUpdated();
 
 private slots:
-        void updateWidgets() Q_DECL_OVERRIDE;
-        void updateWidgetsDefault() Q_DECL_OVERRIDE;
-        void updateSettings() Q_DECL_OVERRIDE;
+        void updateWidgets() override;
+        void updateWidgetsDefault() override;
+        void updateSettings() override;
                                         
 private:
-        bool hasChanged() Q_DECL_OVERRIDE;
-        bool isDefault() Q_DECL_OVERRIDE;
+        bool hasChanged() override;
+        bool isDefault() override;
 
 private:
         ConfigSetup* cs;

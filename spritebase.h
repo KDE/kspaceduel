@@ -79,10 +79,10 @@ public:
    { return frames.size(); }
    inline QString element(int frame) const
    { return frames.isEmpty() ? QString() : frames.at(frame % frames.size()); }
-   QPainterPath shape() const Q_DECL_OVERRIDE;
+   QPainterPath shape() const override;
    void setAnimation(const QList<QString> &animation);
 
-   void advance(int phase) Q_DECL_OVERRIDE;
+   void advance(int phase) override;
 
 private:
    int currentFrame;

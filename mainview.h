@@ -43,7 +43,7 @@ class MyMainView:public QWidget
    Q_OBJECT
 public:
    explicit MyMainView(QWidget *parent = nullptr);
-   ~MyMainView();
+   ~MyMainView() override;
 
    static KToggleAction *pauseAction;
    void setActionCollection(KActionCollection *a);
@@ -67,11 +67,11 @@ signals:
    void setStatusText(const QString & str,int id);
 
 protected:
-   void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
-   void timerEvent(QTimerEvent *event) Q_DECL_OVERRIDE;
-   void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
-   void keyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
-   void focusOutEvent (QFocusEvent * /*event*/) Q_DECL_OVERRIDE;
+   void resizeEvent(QResizeEvent *event) override;
+   void timerEvent(QTimerEvent *event) override;
+   void keyPressEvent(QKeyEvent *event) override;
+   void keyReleaseEvent(QKeyEvent *event) override;
+   void focusOutEvent (QFocusEvent * /*event*/) override;
    bool readSprites();
    SConfig modifyConfig(const SConfig &conf);
    void moveShips();
