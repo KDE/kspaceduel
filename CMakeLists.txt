@@ -41,7 +41,9 @@ include(ECMAddAppIcon)
 include(ECMInstallIcons)
 include(ECMSetupVersion)
 
-add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+add_definitions(
+    -DQT_USE_QSTRINGBUILDER
+)
 
 add_subdirectory(sprites)
 add_subdirectory(pics)
