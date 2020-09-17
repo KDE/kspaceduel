@@ -589,10 +589,9 @@ void Ai::chooseAction()
    int framesleft,framesright;
    bool rotateAndAccelerate=false;
    Hit *nextHit = nullptr;
-   int shotHitTime;
    int i;
 
-   shotHitTime=1000000;
+//   int shotHitTime=1000000;
    nextHit = nullptr;
 /*   for(h=objectsHitByShip.first();h;h=objectsHitByShip.next())
       if(h->object==HSHOT)

@@ -615,7 +615,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
 
 void MyMainView::moveShips()
 {
-   int i,nf,olde;
+   int i,olde;
    double nx,ny,en,nr;
    BulletSprite *bullet;
    MineSprite *mine;
@@ -650,7 +650,6 @@ void MyMainView::moveShips()
          en=ship[i]->getEnergy();
          nr=ship[i]->getRotation();
 
-         nf = 0;
          nx=cos(nr);
          ny=sin(nr);
          if (((!playerIsAi && playerKeyPressed[i][PlayerKeyAcc]) ||
@@ -860,7 +859,7 @@ void MyMainView::calculatePowerups()
 
 void MyMainView::collisions()
 {
-   int pl,hp,op,oldhp[2],ohp;
+   int pl,hp,oldhp[2],ohp;
    QList<QGraphicsItem *> unexact;
    BulletSprite *bullet;
    MineSprite *mine;
@@ -1041,7 +1040,6 @@ void MyMainView::collisions()
          Q_EMIT hitPoints(pl,hp);
       if((hp==0)&&(ship[pl]->getExplosion()<0))
       {
-         op=(pl+1)%2;
          ship[pl]->setExplosion((int)(EXPLOSION_TIME/config.gamespeed));
 	 expl = new ExplosionSprite(svgrender,animation[ID_EXPLOSION],ship[pl]);
 	 field.addItem(expl);
