@@ -24,7 +24,7 @@
 
 
 SimpleSprite::SimpleSprite(QSvgRenderer* svg, const QString& element)
-      :QGraphicsSvgItem(0)
+      :QGraphicsSvgItem(nullptr)
 {
    setSharedRenderer(svg);
    setElementId(element);

@@ -40,7 +40,7 @@
 
 #include <math.h>
 
-KToggleAction *MyMainView::pauseAction = 0;
+KToggleAction *MyMainView::pauseAction = nullptr;
 
 static struct
  {
@@ -53,7 +53,7 @@ static struct
      { ID_MINE1, "mine_red%1"},
      { ID_MINE2, "mine_blue%1"},
      { ID_MINEEXPLO, "mineex%1"},
-     { 0, 0}
+     { 0, nullptr}
  };
 
 MyMainView::MyMainView(QWidget *parent)
@@ -113,7 +113,7 @@ MyMainView::MyMainView(QWidget *parent)
    }
 
    waitForStart=false;
-   textSprite=0;
+   textSprite = nullptr;
    readConfig();
 }
 
@@ -516,7 +516,7 @@ void MyMainView::newRound()
    {
       textSprite->hide();
       delete textSprite;
-      textSprite=0;
+      textSprite = nullptr;
    }
    //field.update();
 
@@ -557,9 +557,9 @@ void MyMainView::timerEvent(QTimerEvent *event)
             {
                textSprite->hide();
                delete textSprite;
-               textSprite=0;
+               textSprite = nullptr;
             }
-            textSprite=new QGraphicsSimpleTextItem(0);
+            textSprite = new QGraphicsSimpleTextItem(nullptr);
             field.addItem(textSprite);
 	    // FIXME
            // textSprite->setTextFlags(Qt::AlignCenter);

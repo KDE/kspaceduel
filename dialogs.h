@@ -33,7 +33,7 @@ class ConfigSetup:public QWidget
 {
    Q_OBJECT
 public:
-   explicit ConfigSetup(SConfig *custom,QWidget *parent=0);
+   explicit ConfigSetup(SConfig *custom,QWidget *parent = nullptr);
 
    bool hasChanged();
    bool isDefault();
@@ -94,7 +94,7 @@ class SettingsDialog : public KConfigDialog
 {
         Q_OBJECT
 public:
-        explicit SettingsDialog(SConfig *customConfig, QWidget *parent=0, const char *name=0);
+        explicit SettingsDialog(SConfig *customConfig, QWidget *parent = nullptr, const char *name = nullptr);
         ~SettingsDialog();
 
 signals:

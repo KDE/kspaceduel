@@ -30,7 +30,7 @@
 class General : public QWidget, public Ui::General
 {
 public:
-    General(QWidget* parent=0)
+    General(QWidget* parent = nullptr)
         : QWidget(parent)
         {
             setupUi(this);

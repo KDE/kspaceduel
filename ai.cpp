@@ -583,17 +583,17 @@ void Ai::shotScores()
 void Ai::chooseAction()
 {
    double bestScore=1e10;
-   Shot *bestShot=NULL,*s;
+   Shot *bestShot = nullptr,*s;
    AiSprite actualpos;
    double posangle,movephi,phiright,phileft,torotate=0,velangle;
    int framesleft,framesright;
    bool rotateAndAccelerate=false;
-   Hit *nextHit=0;
+   Hit *nextHit = nullptr;
    int shotHitTime;
    int i;
 
    shotHitTime=1000000;
-   nextHit=0;
+   nextHit = nullptr;
 /*   for(h=objectsHitByShip.first();h;h=objectsHitByShip.next())
       if(h->object==HSHOT)
          if(h->hitTime<shotHitTime)
@@ -704,7 +704,7 @@ void Ai::chooseAction()
    else
    {
       int listsize; // used for caching QtList::size()
-      bestShot=0;
+      bestShot = nullptr;
       listsize = myShots.size();
       for (i=0; i<listsize; ++i)
       {

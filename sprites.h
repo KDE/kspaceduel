@@ -120,7 +120,7 @@ private:
 class ExplosionSprite:public AnimatedSprite
 {
 public:
-   explicit ExplosionSprite(QSvgRenderer* svg, const QList<QString> &animation, MobileSprite *sp = 0);
+   explicit ExplosionSprite(QSvgRenderer* svg, const QList<QString> &animation, MobileSprite *sp = nullptr);
    int type() const Q_DECL_OVERRIDE {return S_EXPLOSION;}
    bool isOver() {return over;}
    void forward(double mult) Q_DECL_OVERRIDE;

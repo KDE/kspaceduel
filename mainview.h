@@ -42,7 +42,7 @@ class MyMainView:public QWidget
 {
    Q_OBJECT
 public:
-   explicit MyMainView(QWidget *parent=0);
+   explicit MyMainView(QWidget *parent = nullptr);
    ~MyMainView();
 
    static KToggleAction *pauseAction;

@@ -27,7 +27,7 @@ class PlayerInfo:public QFrame
 {
    Q_OBJECT
 public:
-   explicit PlayerInfo(int pnr,QWidget *parent=0);
+   explicit PlayerInfo(int pnr,QWidget *parent = nullptr);
    static void loadPixmaps();
 public slots:
    void setHitpoints(int h);
