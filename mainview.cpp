@@ -683,7 +683,7 @@ void MyMainView::moveShips()
             if((en>config.shotEnergyNeed) && (!ship[i]->reloadsBullet()))
             {
                if(bullets[i]->count() <
-                  (config.maxBullets+ship[i]->getBulletPowerups()))
+                  (static_cast<int>(config.maxBullets) + ship[i]->getBulletPowerups()))
                {
                   ship[i]->bullet(config.bulletReloadTime);
                   en-=config.shotEnergyNeed;
@@ -711,7 +711,7 @@ void MyMainView::moveShips()
             if((en>config.mineEnergyNeed) && (!ship[i]->reloadsMine()))
             {
                if(mines[i]->count() <
-                  (config.maxMines+ship[i]->getMinePowerups()))
+                  (static_cast<int>(config.maxMines) + ship[i]->getMinePowerups()))
                {
                   ship[i]->mine(config.mineReloadTime);
                   en-=config.mineEnergyNeed;

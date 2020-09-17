@@ -227,7 +227,7 @@ void Ai::calculateNextPositions()
       nextPositions(ship[i]->toAiSprite(),shipsNextPositions[i],
                     calcFrameIncrement[Options::aiDifficulty(playerNumber)]);
 
-   if(cfg->maxMines > aiMines[0]->size())
+   if(cfg->maxMines > static_cast<uint>(aiMines[0]->size()))
       for(i=0;i<2;++i)
          aiMines[i]->resize(cfg->maxMines);
 
@@ -262,7 +262,7 @@ void Ai::tryShots()
 
        //if too much bullets are on the playfield, no shot is tried
    if(bullets[playerNumber]->count() <
-      (cfg->maxBullets+ship[playerNumber]->getBulletPowerups()))
+      (static_cast<int>(cfg->maxBullets) + ship[playerNumber]->getBulletPowerups()))
    {
       for(f=0;f<=frameNum;++f)
       {
