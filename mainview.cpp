@@ -367,7 +367,7 @@ void MyMainView::pause()
 
       waitForStart=true;
       QAbstractEventDispatcher::instance()->unregisterTimers(this);
-      emit setStatusText(i18n(" paused "), IDS_PAUSE);
+      Q_EMIT setStatusText(i18n(" paused "), IDS_PAUSE);
    }
 }
 
@@ -375,8 +375,8 @@ void MyMainView::resume()
 {
    waitForStart=false;
    timerID=startTimer(Options::refreshTime());
-   emit(setStatusText(QLatin1String( "" ),IDS_PAUSE));
-   emit(setStatusText(QLatin1String( "" ),IDS_MAIN));
+   Q_EMIT setStatusText(QLatin1String( "" ),IDS_PAUSE);
+   Q_EMIT setStatusText(QLatin1String( "" ),IDS_MAIN);
 }
 
 void MyMainView::start( )
@@ -389,8 +389,8 @@ void MyMainView::start( )
    {
       waitForStart = false;
       timerID=startTimer(Options::refreshTime());
-      emit(setStatusText(QLatin1String( "" ),IDS_PAUSE));
-      emit(setStatusText(QLatin1String( "" ),IDS_MAIN));
+      Q_EMIT setStatusText(QLatin1String( "" ),IDS_PAUSE);
+      Q_EMIT setStatusText(QLatin1String( "" ),IDS_MAIN);
       pauseAction->setEnabled( true );
       pauseAction->setChecked( false );
    }
@@ -488,8 +488,8 @@ void MyMainView::newRound()
       ship[i]->setHitPoints(Options::startHitPoints(i));
       ship[i]->stop(false);
       ship[i]->setExplosion(-1);
-      emit(energy(i,(int)ship[i]->getEnergy()));
-      emit(hitPoints(i,ship[i]->getHitPoints()));
+      Q_EMIT energy(i,(int)ship[i]->getEnergy());
+      Q_EMIT hitPoints(i,ship[i]->getHitPoints());
       bulletShot[i]=false;
       qDeleteAll(*bullets[i]);
       bullets[i]->clear();
@@ -522,8 +522,8 @@ void MyMainView::newRound()
 
    QString str = i18n("Press %1 to start",
                   actionCollection->action(QStringLiteral("game_start"))->shortcut().toString(QKeySequence::NativeText));
-   emit(setStatusText(str,IDS_MAIN));
-   emit(setStatusText( QLatin1String( "" ), IDS_PAUSE ));
+   Q_EMIT setStatusText(str,IDS_MAIN);
+   Q_EMIT setStatusText( QLatin1String( "" ), IDS_PAUSE );
    stop( );
 }
 
@@ -533,7 +533,7 @@ void MyMainView::newGame()
    for(i=0;i<2;i++)
    {
       ship[i]->setWins(0);
-      emit(wins(i,0));
+      Q_EMIT wins(i,0);
    }
    newRound();
 }
@@ -575,7 +575,7 @@ void MyMainView::timerEvent(QTimerEvent *event)
                   textSprite->setText(i18n("blue player won the round"));
                   w=ship[1]->getWins()+1;
                   ship[1]->setWins(w);
-                  emit(wins(1,w));
+                  Q_EMIT wins(1,w);
                }
             }
             else
@@ -583,14 +583,14 @@ void MyMainView::timerEvent(QTimerEvent *event)
                textSprite->setText(i18n("red player won the round"));
                w=ship[0]->getWins()+1;
                ship[0]->setWins(w);
-               emit(wins(0,w));
+               Q_EMIT wins(0,w);
             }
             // must do this after setting text, because length is unknown until now
             textSprite->setPos(QPointF((width()-textSprite->boundingRect().width()) / 2,height()/2-90));
 
             QString str = i18n("Press %1 for new round",
                           actionCollection->action(QStringLiteral("game_start"))->shortcut().toString(QKeySequence::NativeText));
-            emit(setStatusText(str,IDS_MAIN));
+            Q_EMIT setStatusText(str,IDS_MAIN);
             stop( );
          }
       }
@@ -736,7 +736,7 @@ void MyMainView::moveShips()
          }
          ship[i]->setEnergy(en);
          if(olde!=(int)en)
-            emit(energy(i,(int)en));
+            Q_EMIT energy(i,(int)en);
       }
    }
 }
@@ -910,7 +910,7 @@ void MyMainView::collisions()
                   if(ohp>0)
                   {
                      s->setHitPoints(ohp-hp-config.shipDamage);
-                     emit(hitPoints(s->getPlayerNumber(),s->getHitPoints()));
+                     Q_EMIT hitPoints(s->getPlayerNumber(),s->getHitPoints());
                      ndx[0]=((1-EPSILON)*ship[0]->xVelocity()+(1+EPSILON)*ship[1]->xVelocity())/2.0;
                      ndy[0]=((1-EPSILON)*ship[0]->yVelocity()+(1+EPSILON)*ship[1]->yVelocity())/2.0;
                      ndx[1]=((1-EPSILON)*ship[1]->xVelocity()+(1+EPSILON)*ship[0]->xVelocity())/2.0;
@@ -1038,7 +1038,7 @@ void MyMainView::collisions()
    {
       hp=ship[pl]->getHitPoints();
       if(hp!=oldhp[pl])
-         emit(hitPoints(pl,hp));
+         Q_EMIT hitPoints(pl,hp);
       if((hp==0)&&(ship[pl]->getExplosion()<0))
       {
          op=(pl+1)%2;

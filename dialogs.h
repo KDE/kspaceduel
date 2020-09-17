@@ -41,10 +41,10 @@ public:
    void updateWidgets();
    void updateWidgetsDefault();
 
-signals:
+Q_SIGNALS:
    void changed();
 
-protected slots:
+protected Q_SLOTS:
    void configSelected(int num);
    void sliderChanged(int val);
 protected:   
@@ -97,10 +97,10 @@ public:
         explicit SettingsDialog(SConfig *customConfig, QWidget *parent = nullptr, const char *name = nullptr);
         ~SettingsDialog() override;
 
-signals:
+Q_SIGNALS:
         void settingsUpdated();
 
-private slots:
+private Q_SLOTS:
         void updateWidgets() override;
         void updateWidgetsDefault() override;
         void updateSettings() override;

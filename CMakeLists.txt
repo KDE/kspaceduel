@@ -44,6 +44,7 @@ include(ECMSetupVersion)
 add_definitions(
     -DQT_USE_QSTRINGBUILDER
     -DQT_NO_FOREACH
+    -DQT_NO_KEYWORDS
 )
 
 add_subdirectory(sprites)

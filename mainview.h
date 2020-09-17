@@ -48,7 +48,7 @@ public:
    static KToggleAction *pauseAction;
    void setActionCollection(KActionCollection *a);
 
-public slots:
+public Q_SLOTS:
    void newRound();
    void newGame();
    void togglePause( );
@@ -60,7 +60,7 @@ public slots:
    void closeSettings();
    void readConfig();
    void writeConfig();
-signals:
+Q_SIGNALS:
    void hitPoints(int pn,int hp);
    void energy(int pn,int en);
    void wins(int pn,int w);

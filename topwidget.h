@@ -32,7 +32,7 @@ public:
    MyTopLevelWidget();
    void start();
 
-private slots:
+private Q_SLOTS:
    void setStatusText(const QString & text,int id);
    void keySetup();
    void energy(int pn,int en);

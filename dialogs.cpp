@@ -229,7 +229,7 @@ void ConfigSetup::valueChanged(int ednum,int value)
          case EditShipDamage:config.shipDamage=value;break;
          case EditPowerupShieldAmount:config.powerupShieldAmount=value;break;
       }
-      emit changed();
+      Q_EMIT changed();
    }
 }
 
@@ -262,7 +262,7 @@ void ConfigSetup::valueChanged(int ednum,double value)
          case EditPowerupLifeTime:config.powerupLifeTime=value;break;
          case EditPowerupEnergyAmount:config.powerupEnergyAmount=value;break;
       }
-      emit changed();
+      Q_EMIT changed();
    }
 }
 
@@ -309,7 +309,7 @@ void ConfigSetup::configSelected(int num)
          displayConfig(predefinedConfig[num]);
       else
          displayConfig(config);
-      emit changed();
+      Q_EMIT changed();
    }
 }
 
@@ -440,7 +440,7 @@ void SettingsDialog::updateWidgets()
 void SettingsDialog::updateSettings()
 {
    cs->updateSettings();
-   emit settingsUpdated();
+   Q_EMIT settingsUpdated();
 }
 
 bool SettingsDialog::hasChanged()

@@ -29,7 +29,7 @@ class PlayerInfo:public QFrame
 public:
    explicit PlayerInfo(int pnr,QWidget *parent = nullptr);
    static void loadPixmaps();
-public slots:
+public Q_SLOTS:
    void setHitpoints(int h);
    void setEnergy(int e);
    void setWins(int w);
