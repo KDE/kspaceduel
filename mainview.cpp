@@ -722,7 +722,6 @@ void MyMainView::moveShips()
 		     mine=new MineSprite(svgrender,animation[ID_MINE2],animation[ID_MINEEXPLO],i,
                                       config.mineActivateTime,config.mineFuel);
 		  field.addItem(mine);
-		  QPointF p;
 		  mine->setPos(ship[i]->mapToScene(ship[i]->center()));
                   // move mine to center
                   mine->moveBy(-mine->center().x(),-mine->center().y());
