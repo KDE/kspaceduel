@@ -62,6 +62,8 @@ MobileSprite::MobileSprite(QSvgRenderer* svg, const QString& element, int pn)
 
 void MobileSprite::forward(double mult, int fr)
 {
+   Q_UNUSED(fr);
+
    if(!stopped)
    {
       QGraphicsSvgItem::moveBy(xVelocity()*mult,yVelocity()*mult);
