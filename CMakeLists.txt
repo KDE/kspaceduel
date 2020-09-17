@@ -14,7 +14,7 @@ project(kspaceduel VERSION ${KSPACEDUEL_VERSION})
 project(kspaceduel)
 
 set (QT_MIN_VERSION "5.10.0")
-set (KF5_MIN_VERSION "5.46.0")
+set (KF5_MIN_VERSION "5.57.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -43,6 +43,7 @@ include(ECMSetupVersion)
 
 add_definitions(
     -DQT_USE_QSTRINGBUILDER
+    -DQT_NO_FOREACH
 )
 
 add_subdirectory(sprites)

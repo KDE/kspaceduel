@@ -862,7 +862,6 @@ void MyMainView::collisions()
 {
    int pl,hp,op,oldhp[2],ohp;
    QList<QGraphicsItem *> unexact;
-   QGraphicsItem *sprite;
    BulletSprite *bullet;
    MineSprite *mine;
    ExplosionSprite *expl;
@@ -882,8 +881,7 @@ void MyMainView::collisions()
 	 unexact = ship[pl]->collidingItems(Qt::IntersectsItemBoundingRect);
          oldhp[pl]=hp=ship[pl]->getHitPoints();
          hitlist.clear();
-	 foreach (sprite, unexact)
-         {
+	 for (QGraphicsItem *sprite : qAsConst(unexact)) {
             if((sprite->type()!=S_EXPLOSION)
                && !((sprite->type()!=S_SUN)&&(ship[pl]->getHitPoints()==0)))
                if(ship[pl]->collidesWithItem(sprite,Qt::IntersectsItemShape))
@@ -891,8 +889,7 @@ void MyMainView::collisions()
                      hitlist.append(sprite);
          }
 
-         foreach (sprite, hitlist)
-         {
+         for (QGraphicsItem *sprite : qAsConst(hitlist)) {
             switch(sprite->type())
             {
                case S_SUN:
@@ -977,8 +974,7 @@ void MyMainView::collisions()
             unexact.clear();
             unexact=mine->collidingItems(Qt::IntersectsItemBoundingRect);
             hitlist.clear();
-	    foreach (sprite, unexact)
-            {
+	    for (QGraphicsItem *sprite : qAsConst(unexact)) {
                if(sprite->type()==S_BULLET)
                   if(mine->collidesWithItem(sprite))
                      if(!hitlist.contains(sprite))
@@ -987,8 +983,7 @@ void MyMainView::collisions()
             if(!hitlist.isEmpty())
             {
                mine->explode();
-	       foreach (QGraphicsItem *item, hitlist)
-               {
+	       for (QGraphicsItem *item : qAsConst(hitlist)) {
                   // FIXME: why does it crash with qgraphicsitem_cast?
 		  bullet = static_cast<BulletSprite*>(item);// qgraphicsitem_cast<BulletSprite*>(item);
 //                   bullets[bullet->getPlayerNumber()]->removeRef(bullet);
@@ -1003,8 +998,7 @@ void MyMainView::collisions()
    hitlist.clear();
    unexact.clear();
    unexact=sun->collidingItems(Qt::IntersectsItemBoundingRect);
-   foreach (sprite, unexact)
-   {
+   for (QGraphicsItem *sprite : qAsConst(unexact)) {
       switch(sprite->type())
       {
          case S_BULLET:
@@ -1021,8 +1015,7 @@ void MyMainView::collisions()
       }
    }
 
-   foreach (sprite, hitlist)
-   {
+   for (QGraphicsItem *sprite : qAsConst(hitlist)) {
       switch(sprite->type())
       {
          case S_BULLET:
