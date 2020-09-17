@@ -105,4 +105,6 @@ ecm_install_icons(ICONS
     THEME hicolor
 )
 
+ki18n_install(po)
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
