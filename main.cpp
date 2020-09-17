@@ -24,7 +24,7 @@
 #include <QApplication>
 #include <QCommandLineParser>
 
-#include "version.h"
+#include "kspaceduel_version.h"
 #include "topwidget.h"
 
 static const char description[] = I18N_NOOP("KDE Space Game");
@@ -38,7 +38,8 @@ int main(int argc,char **argv)
     KLocalizedString::setApplicationDomain("kspaceduel");
 
     KAboutData aboutData( QStringLiteral("kspaceduel"), i18n("KSpaceDuel"), 
-            KSPACEDUEL_VERSION, i18n(description), KAboutLicense::GPL, 
+            QStringLiteral(KSPACEDUEL_VERSION_STRING),
+            i18n(description), KAboutLicense::GPL,
             i18n("(c) 1998-2001, Andreas Zehender"),  QStringLiteral("https://kde.org/applications/games/org.kde.kspaceduel") );
     aboutData.addAuthor(i18n("Andreas Zehender"),i18n("Original Program"), QStringLiteral("az@azweb.de"));
     aboutData.addAuthor(i18n("Branan Riley"),i18n("SVG Renderer"), QStringLiteral("branan@gmail.com"));
