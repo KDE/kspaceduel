@@ -103,6 +103,7 @@
     <p xml:lang="uk">У «Космічній дуелі» кожен з двох можливих гравців керує космічним супутником, який обертається навколо сонця. Протягом гри гравці мають намагатися знищити супутник суперника кулями та мінами.</p>
     <p xml:lang="x-test">xxIn KSpaceDuel each of two possible players control a satellite spaceship orbiting the sun. As the game progresses players have to eliminate the opponent's spacecraft with bullets or mines.xx</p>
   </description>
+  <url type="homepage">https://kde.org/applications/games/org.kde.kspaceduel</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kspaceduel</url>
   <url type="help">https://docs.kde.org/?application=kspaceduel</url>
   <url type="donation">https://www.kde.org/community/donations/?app=kspaceduel&amp;source=appdata</url>
