@@ -36,7 +36,6 @@
 #include <QResizeEvent>
 #include <QSvgRenderer>
 #include <QStandardPaths>
-#include <QTimerEvent>
 
 #include <math.h>
 

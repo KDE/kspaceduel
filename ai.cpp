@@ -22,7 +22,6 @@
 #include <QVector>
 
 #include "mathroutines.h"
-#include "options.h"
 #include "structs.h"
 
 int Ai::calcFrameIncrement[Options::EnumAiDifficulty::COUNT] = {15,8,6,2};
