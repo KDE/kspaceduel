@@ -63,7 +63,7 @@ MyMainView::MyMainView(QWidget *parent)
    int i,p;
    setMinimumSize(600,400);
    random.seed(QRandomGenerator::global()->generate());
-   QPixmap backgr(QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral(MV_BACKGROUND)));
+   QPixmap backgr(QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral(MV_BACKGROUND)));
 
    field.setBackgroundBrush(QBrush(backgr));
    view.setCacheMode(QGraphicsView::CacheBackground);
@@ -83,7 +83,7 @@ MyMainView::MyMainView(QWidget *parent)
       minePut[p]=false;
    }
 
-   svgrender = new QSvgRenderer(QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral(MV_SVG_FILE)));
+   svgrender = new QSvgRenderer(QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral(MV_SVG_FILE)));
 
    sun=new SunSprite(svgrender,QStringLiteral( MV_SUN ));
    field.addItem(sun);

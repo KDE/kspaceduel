@@ -67,14 +67,14 @@ PlayerInfo::PlayerInfo(int pnr,QWidget *parent)
       str = QString::fromLatin1("sprites/playerinfo/ship%1%2.png")
         .arg(pnr+1)
         .arg(i);
-      pix[i]=new QPixmap(QStandardPaths::locate(QStandardPaths::DataLocation, str));
+      pix[i]=new QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, str));
    }*/
 
    lplayer.setPixmap(*(pplayer[0]));
    currentPixmap=0;
-   //lenergy.setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::DataLocation, "sprites/playerinfo/energy.png")));
+   //lenergy.setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, "sprites/playerinfo/energy.png")));
    lenergy.setPixmap(QIcon::fromTheme( QStringLiteral( "battery" )).pixmap(32,32));;
-   lwins.setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral( "sprites/playerinfo/win.png" ))));
+   lwins.setPixmap(QPixmap(QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral( "sprites/playerinfo/win.png" ))));
 
    hitpoints.setGeometry(9,45,26,26);
    energy.setGeometry(9,120,26,26);
