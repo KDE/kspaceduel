@@ -24,6 +24,7 @@
   <name xml:lang="pl">KosmicznyPojedynek</name>
   <name xml:lang="pt">Duelo Espacial</name>
   <name xml:lang="pt-BR">KSpaceDuel</name>
+  <name xml:lang="ro">Duel spațial</name>
   <name xml:lang="ru">KSpaceDuel</name>
   <name xml:lang="sk">KSpaceDuel</name>
   <name xml:lang="sl">KSpaceDuel</name>
@@ -58,6 +59,7 @@
   <summary xml:lang="pl">Gra zręcznościowa w kosmosie</summary>
   <summary xml:lang="pt">Jogo Espacial de Arcada</summary>
   <summary xml:lang="pt-BR">Jogo de Arcade espacial</summary>
+  <summary xml:lang="ro">Joc de aventuri spațiale</summary>
   <summary xml:lang="ru">Космическая аркадная игра</summary>
   <summary xml:lang="sk">Vesmírna arkádová hra</summary>
   <summary xml:lang="sl">Vesoljska arkadna igra</summary>
@@ -94,6 +96,7 @@
     <p xml:lang="pl">W KosmicznymPojedynku każdy z dwóch graczy steruje orbitalnym statkiem kosmicznym krążącym wokół słońca. W trakcie gry, gracze muszą pozbyć się statku przeciwnika przy użyciu pocisków lub min.</p>
     <p xml:lang="pt">No KSpaceDuel, cada um dos dois possíveis jogadores controlam uma nave espacial que orbita em torno do Sol. À medida que o jogo evolui, os jogadores têm de eliminar a nave espacial do adversário com balas ou minas.</p>
     <p xml:lang="pt-BR">No KSpaceDuel, cada um dos dois possíveis jogadores controlam uma nave espacial que orbita em torno do Sol. À medida que o jogo evolui, os jogadores devem eliminar a nave espacial do adversário com balas ou minas.</p>
+    <p xml:lang="ro">În Duel Spațial, fiecare dintre cei doi posibili jucători controlează o navă spațială satelit ce orbitează Soarele. Pe măsură ce jocul progresează, jucătorii trebuie să elimine nava spațială a oponentului folosind gloanțe și mine.</p>
     <p xml:lang="ru">В KSpaceDuel каждый из двух возможных игроков управляет космическим кораблем-спутником, вращающимся вокруг Солнца. Цель игры состоит в уничтожении космического корабля противника пулями или минами.</p>
     <p xml:lang="sk">V hre KSpaceDuel dvaja hráči ovládajú vesmírnu loď obiehajúcu okolo Slnka. Hráči majú eliminovať protivníkovu kozmickú loď strelami alebo mínami.</p>
     <p xml:lang="sl">Vsak izmed dveh igralcev v KSpaceDuelu nadzira satelit, ki kroži okrog sonca. Cilj igre je, da nasprotnikovo ladjo uničite s kroglami ali minami.</p>
