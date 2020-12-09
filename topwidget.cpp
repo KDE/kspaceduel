@@ -93,7 +93,7 @@ void MyTopLevelWidget::setupActions()
    QAction * newRoundAct = actionCollection()->addAction( QStringLiteral(  "new_round" ) );
    newRoundAct->setIcon( QIcon::fromTheme( QStringLiteral( "preferences-desktop-notification-bell" )) );
    newRoundAct->setText( i18n( "&New Round" ) );
-   actionCollection()->setDefaultShortcut(newRoundAct, Qt::CTRL + Qt::Key_R);
+   actionCollection()->setDefaultShortcut(newRoundAct, Qt::CTRL | Qt::Key_R);
    connect( newRoundAct, &QAction::triggered, playfield, &MyMainView::newRound );
 
    MyMainView::pauseAction =
