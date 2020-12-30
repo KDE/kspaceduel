@@ -629,7 +629,7 @@ void MyMainView::moveShips()
             ship[i]->rotateRight(config.rotationEnergyNeed,
                                  config.rotationSpeed);
 
-         if (!(playerIsAi && playerKeyPressed[i][PlayerKeyLeft]) ||
+         if ((!playerIsAi && playerKeyPressed[i][PlayerKeyLeft]) ||
              (playerIsAi && ai[i]->rotateLeft()))
             ship[i]->rotateLeft(config.rotationEnergyNeed,
                                 config.rotationSpeed);
