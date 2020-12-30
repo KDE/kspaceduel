@@ -75,8 +75,8 @@ void MyTopLevelWidget::setupActions()
    QAction * ac;
 
    // Game
-   KStandardGameAction::gameNew(playfield, SLOT(newGame()), actionCollection());
-   KStandardGameAction::quit(this, SLOT(close()), actionCollection());
+   KStandardGameAction::gameNew(playfield, &MyMainView::newGame, actionCollection());
+   KStandardGameAction::quit(this, &MyTopLevelWidget::close, actionCollection());
 
    QAction * newRoundAct = actionCollection()->addAction( QStringLiteral(  "new_round" ) );
    newRoundAct->setIcon( QIcon::fromTheme( QStringLiteral( "preferences-desktop-notification-bell" )) );
@@ -85,7 +85,7 @@ void MyTopLevelWidget::setupActions()
    connect( newRoundAct, &QAction::triggered, playfield, &MyMainView::newRound );
 
    MyMainView::pauseAction =
-       KStandardGameAction::pause(playfield, SLOT(togglePause()), actionCollection());
+       KStandardGameAction::pause(playfield, &MyMainView::togglePause, actionCollection());
    MyMainView::pauseAction->setChecked( false );
    QAction *gameStart = actionCollection()->addAction( QStringLiteral(  "game_start" ) );
    gameStart->setText( i18nc( "start game","Start" ) );
@@ -93,7 +93,7 @@ void MyTopLevelWidget::setupActions()
    actionCollection()->setDefaultShortcut(gameStart, Qt::Key_Space);
    playfield->addAction(gameStart);
 
-   KStandardAction::preferences(playfield, SLOT(gameSetup()), actionCollection());
+   KStandardAction::preferences(playfield, &MyMainView::gameSetup, actionCollection());
 
    // Default keys
    ac = actionCollection()->addAction( QStringLiteral( "P1KeyLeft" ));
