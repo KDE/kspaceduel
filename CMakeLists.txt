@@ -83,6 +83,8 @@ ki18n_wrap_ui(kspaceduel_SRCS general.ui)
 
 kconfig_add_kcfg_files(kspaceduel_SRCS options.kcfgc)
 
+qt5_add_resources(kspaceduel_SRCS kspaceduel.qrc)
+
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kspaceduel.png")
 ecm_add_app_icon(kspaceduel_SRCS ICONS ${ICONS_SRCS})
 add_executable(kspaceduel ${kspaceduel_SRCS})
@@ -104,7 +106,6 @@ install(FILES default_theme.svgz DESTINATION ${KDE_INSTALL_DATADIR}/kspaceduel/s
 
 install(PROGRAMS org.kde.kspaceduel.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
 install(FILES kspaceduel.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR})
-install(FILES kspaceduelui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kspaceduel)
 install(FILES org.kde.kspaceduel.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ecm_install_icons(ICONS
