@@ -77,13 +77,12 @@ set(kspaceduel_SRCS
    sprites.cpp
    spritebase.cpp
    topwidget.cpp
+   kspaceduel.qrc
 )
 
 ki18n_wrap_ui(kspaceduel_SRCS general.ui)
 
 kconfig_add_kcfg_files(kspaceduel_SRCS options.kcfgc)
-
-qt5_add_resources(kspaceduel_SRCS kspaceduel.qrc)
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kspaceduel.png")
 ecm_add_app_icon(kspaceduel_SRCS ICONS ${ICONS_SRCS})
