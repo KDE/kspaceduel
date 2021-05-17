@@ -35,10 +35,11 @@ find_package(KF5KDEGames 7.3.0 REQUIRED)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
-include(FeatureSummary)
+
 include(ECMAddAppIcon)
 include(ECMInstallIcons)
 include(ECMSetupVersion)
+include(FeatureSummary)
 
 add_definitions(
     -DQT_USE_QSTRINGBUILDER
@@ -56,67 +57,11 @@ add_definitions(
     -DKF_DEPRECATED_WARNINGS_SINCE=0x060000
 )
 
+add_subdirectory(doc)
 add_subdirectory(sprites)
 add_subdirectory(pics)
-add_subdirectory(doc)
-
-########### next target ###############
-
-ecm_setup_version(${KSPACEDUEL_VERSION}
-    VARIABLE_PREFIX KSPACEDUEL
-    VERSION_HEADER kspaceduel_version.h
-)
-
-set(kspaceduel_SRCS
-   ai.cpp
-   dialogs.cpp
-   main.cpp
-   mainview.cpp
-   mathroutines.cpp
-   playerinfo.cpp
-   sprites.cpp
-   spritebase.cpp
-   topwidget.cpp
-   kspaceduel.qrc
-)
-
-ki18n_wrap_ui(kspaceduel_SRCS general.ui)
-
-kconfig_add_kcfg_files(kspaceduel_SRCS options.kcfgc)
-
-file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kspaceduel.png")
-ecm_add_app_icon(kspaceduel_SRCS ICONS ${ICONS_SRCS})
-add_executable(kspaceduel ${kspaceduel_SRCS})
-
-target_link_libraries(kspaceduel
-    Qt5::Svg
-    KF5::Completion
-    KF5::Crash
-    KF5::DBusAddons
-    KF5::XmlGui
-    KF5KDEGames
-)
-
-install(TARGETS kspaceduel  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES default_theme.svgz DESTINATION ${KDE_INSTALL_DATADIR}/kspaceduel/sprites)
-
-
-########### install files ###############
-
-install(PROGRAMS org.kde.kspaceduel.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
-install(FILES kspaceduel.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR})
-install(FILES org.kde.kspaceduel.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-
-ecm_install_icons(ICONS
-    128-apps-kspaceduel.png
-    16-apps-kspaceduel.png
-    22-apps-kspaceduel.png
-    32-apps-kspaceduel.png
-    48-apps-kspaceduel.png
-    64-apps-kspaceduel.png
-    DESTINATION ${KDE_INSTALL_ICONDIR}
-    THEME hicolor
-)
+add_subdirectory(icons)
+add_subdirectory(src)
 
 ki18n_install(po)
 kdoctools_install(po)
