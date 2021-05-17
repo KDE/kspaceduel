@@ -3,7 +3,9 @@ ecm_setup_version(${KSPACEDUEL_VERSION}
     VERSION_HEADER kspaceduel_version.h
 )
 
-set(kspaceduel_SRCS
+add_executable(kspaceduel)
+
+target_sources(kspaceduel PRIVATE
     ai.cpp
     dialogs.cpp
     main.cpp
@@ -17,13 +19,12 @@ set(kspaceduel_SRCS
     kspaceduel.qrc
 )
 
-ki18n_wrap_ui(kspaceduel_SRCS general.ui)
+ki18n_wrap_ui(kspaceduel general.ui)
 
-kconfig_add_kcfg_files(kspaceduel_SRCS options.kcfgc)
+kconfig_add_kcfg_files(kspaceduel options.kcfgc)
 
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/icons/*-apps-kspaceduel.png")
-ecm_add_app_icon(kspaceduel_SRCS ICONS ${ICONS_SRCS})
-add_executable(kspaceduel ${kspaceduel_SRCS})
+ecm_add_app_icon(kspaceduel ICONS ${ICONS_SRCS})
 
 target_link_libraries(kspaceduel
     KF5KDEGames
