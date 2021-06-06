@@ -32,7 +32,7 @@ target_link_libraries(kspaceduel
     KF5::Crash
     KF5::DBusAddons
     KF5::XmlGui
-    Qt5::Svg
+    Qt::Svg
 )
 
 install(TARGETS kspaceduel  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
