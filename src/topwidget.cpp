@@ -10,6 +10,7 @@
 #include <QIcon>
 #include <QStatusBar>
 
+#include <kxmlgui_version.h>
 #include <KActionCollection>
 #include <KLocalizedString>
 #include <KShortcutsDialog>
@@ -169,5 +170,10 @@ void MyTopLevelWidget::setStatusText(const QString & str,int id)
 void MyTopLevelWidget::keySetup()
 {
    playfield->pause();
+
+#if KXMLGUI_VERSION >= QT_VERSION_CHECK(5,84,0)
+   KShortcutsDialog::showDialog(actionCollection(), KShortcutsEditor::LetterShortcutsAllowed, this);
+#else
    KShortcutsDialog::configure( actionCollection( ), KShortcutsEditor::LetterShortcutsAllowed, this, true );
+#endif
 }
