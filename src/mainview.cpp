@@ -866,7 +866,7 @@ void MyMainView::collisions()
 	 unexact = ship[pl]->collidingItems(Qt::IntersectsItemBoundingRect);
          oldhp[pl]=hp=ship[pl]->getHitPoints();
          hitlist.clear();
-	 for (QGraphicsItem *sprite : qAsConst(unexact)) {
+	 for (QGraphicsItem *sprite : std::as_const(unexact)) {
             if((sprite->type()!=S_EXPLOSION)
                && !((sprite->type()!=S_SUN)&&(ship[pl]->getHitPoints()==0)))
                if(ship[pl]->collidesWithItem(sprite,Qt::IntersectsItemShape))
@@ -874,7 +874,7 @@ void MyMainView::collisions()
                      hitlist.append(sprite);
          }
 
-         for (QGraphicsItem *sprite : qAsConst(hitlist)) {
+         for (QGraphicsItem *sprite : std::as_const(hitlist)) {
             switch(sprite->type())
             {
                case S_SUN:
@@ -959,7 +959,7 @@ void MyMainView::collisions()
             unexact.clear();
             unexact=mine->collidingItems(Qt::IntersectsItemBoundingRect);
             hitlist.clear();
-	    for (QGraphicsItem *sprite : qAsConst(unexact)) {
+	    for (QGraphicsItem *sprite : std::as_const(unexact)) {
                if(sprite->type()==S_BULLET)
                   if(mine->collidesWithItem(sprite))
                      if(!hitlist.contains(sprite))
@@ -968,7 +968,7 @@ void MyMainView::collisions()
             if(!hitlist.isEmpty())
             {
                mine->explode();
-	       for (QGraphicsItem *item : qAsConst(hitlist)) {
+	       for (QGraphicsItem *item : std::as_const(hitlist)) {
                   // FIXME: why does it crash with qgraphicsitem_cast?
 		  bullet = static_cast<BulletSprite*>(item);// qgraphicsitem_cast<BulletSprite*>(item);
 //                   bullets[bullet->getPlayerNumber()]->removeRef(bullet);
@@ -983,7 +983,7 @@ void MyMainView::collisions()
    hitlist.clear();
    unexact.clear();
    unexact=sun->collidingItems(Qt::IntersectsItemBoundingRect);
-   for (QGraphicsItem *sprite : qAsConst(unexact)) {
+   for (QGraphicsItem *sprite : std::as_const(unexact)) {
       switch(sprite->type())
       {
          case S_BULLET:
@@ -1000,7 +1000,7 @@ void MyMainView::collisions()
       }
    }
 
-   for (QGraphicsItem *sprite : qAsConst(hitlist)) {
+   for (QGraphicsItem *sprite : std::as_const(hitlist)) {
       switch(sprite->type())
       {
          case S_BULLET:
