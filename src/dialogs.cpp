@@ -59,8 +59,11 @@ bool operator!=(const SConfig &s1, const SConfig &s2)
 (s1.powerupShieldAmount != s2.powerupShieldAmount);
 }
 
-
+#if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
 char ConfigSetup::LabelName[EditNum][25]=
+#else
+KLazyLocalizedString ConfigSetup::LabelName[EditNum] =
+#endif
 {
    I18N_NOOP("Game speed:"),	I18N_NOOP("Shot speed:"),
    I18N_NOOP("Energy need:"),	I18N_NOOP("Max number:"),
@@ -153,7 +156,11 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
 
    for(i=0;i<EditNum;++i)
    {
-      label[i]=new QLabel(i18n(LabelName[i]),configWidgets[Parent[i]]);
+#if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
+       label[i]=new QLabel(i18n(LabelName[i]),configWidgets[Parent[i]]);
+#else
+       label[i]=new QLabel(KLocalizedString(LabelName[i]).toString(),configWidgets[Parent[i]]);
+#endif
       slider[i]=new QSlider(Qt::Horizontal,configWidgets[Parent[i]]);
       slider[i]->setRange((int)(EditVal[i][0]*EditDiv[i]), (int)(EditVal[i][1]*EditDiv[i]));
       slider[i]->setPageStep((int)((EditVal[i][1]-EditVal[i][0])/10));
@@ -167,7 +174,11 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    configCombo->setEditable(false);
    connect(configCombo, static_cast<void(QComboBox::*)(int)>(&QComboBox::activated), this, &ConfigSetup::configSelected);
    for(i=0;i<predefinedConfigNum;++i)
-      configCombo->addItem(i18n(predefinedConfigName[i]));
+#if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
+       configCombo->addItem(i18n(predefinedConfigName[i]));
+#else
+       configCombo->addItem(KLocalizedString(predefinedConfigName[i]).toString());
+#endif
    configCombo->addItem(i18nc("custom values","Custom"));
 
    boxlayout->addSpacing( 2 * 6 );

@@ -8,7 +8,12 @@
 #define __SP_STRUCTS_H
 
 #include <KLocalizedString>
-
+#include <ki18n_version.h>
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+#include <KLazyLocalizedString>
+#undef I18N_NOOP
+#define I18N_NOOP kli18n
+#endif
 struct SConfig
 {
    double gamespeed,gravity,acc,energyNeed,sunEnergy,rotationSpeed,
@@ -48,7 +53,11 @@ const SConfig predefinedConfig[]={{1.0, 2200.0, 0.2, 1.0, 9000.0, 1.0,
                                    500.0,10.0,10.0,
                                    20, 50, 30, 5, 3,
                                    400.0, 800.0, 50, 30}};
+#if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
 const char predefinedConfigName[predefinedConfigNum][15]=
+#else
+const KLazyLocalizedString predefinedConfigName[predefinedConfigNum] =
+#endif
 {I18N_NOOP("Default"),I18N_NOOP("Bullet"),I18N_NOOP("Chaos"),I18N_NOOP("Lack of Energy")}; 
 
 // This is because on Solaris, sun is defined (it's the vendor)
