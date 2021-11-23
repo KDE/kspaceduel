@@ -7,14 +7,24 @@ add_executable(kspaceduel)
 
 target_sources(kspaceduel PRIVATE
     ai.cpp
+    ai.h
+    defines.h
     dialogs.cpp
+    dialogs.h
     main.cpp
     mainview.cpp
+    mainview.h
     mathroutines.cpp
+    mathroutines.h
     playerinfo.cpp
-    sprites.cpp
+    playerinfo.h
     spritebase.cpp
+    spritebase.h
+    sprites.cpp
+    sprites.h
+    structs.h
     topwidget.cpp
+    topwidget.h
 
     kspaceduel.qrc
 )
