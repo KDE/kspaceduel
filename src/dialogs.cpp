@@ -159,7 +159,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
 #if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
        label[i]=new QLabel(i18n(LabelName[i]),configWidgets[Parent[i]]);
 #else
-       label[i]=new QLabel(KLocalizedString(LabelName[i]).toString(),configWidgets[Parent[i]]);
+       label[i]=new QLabel(LabelName[i].toString(),configWidgets[Parent[i]]);
 #endif
       slider[i]=new QSlider(Qt::Horizontal,configWidgets[Parent[i]]);
       slider[i]->setRange((int)(EditVal[i][0]*EditDiv[i]), (int)(EditVal[i][1]*EditDiv[i]));
@@ -177,7 +177,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
 #if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
        configCombo->addItem(i18n(predefinedConfigName[i]));
 #else
-       configCombo->addItem(KLocalizedString(predefinedConfigName[i]).toString());
+       configCombo->addItem(predefinedConfigName[i].toString());
 #endif
    configCombo->addItem(i18nc("custom values","Custom"));
 
