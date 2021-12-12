@@ -59,26 +59,22 @@ bool operator!=(const SConfig &s1, const SConfig &s2)
 (s1.powerupShieldAmount != s2.powerupShieldAmount);
 }
 
-#if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
-char ConfigSetup::LabelName[EditNum][25]=
-#else
 KLazyLocalizedString ConfigSetup::LabelName[EditNum] =
-#endif
 {
-   I18N_NOOP("Game speed:"),	I18N_NOOP("Shot speed:"),
-   I18N_NOOP("Energy need:"),	I18N_NOOP("Max number:"),
-   I18N_NOOP("Damage:"),	I18N_NOOP("Life time:"),
-   I18N_NOOP("Reload time:"),	I18N_NOOP("Mine fuel:"),
-   I18N_NOOP("Energy need:"),	I18N_NOOP("Activate time:"),
-   I18N_NOOP("Damage:"),	I18N_NOOP("Max number:"),
-   I18N_NOOP("Reload time:"),	I18N_NOOP("Acceleration:"),
-   I18N_NOOP("Energy need:"),	I18N_NOOP("Rotation speed:"),
-   I18N_NOOP("Energy need:"),	I18N_NOOP("Crash damage:"),
-   I18N_NOOP("Sun energy:"),	I18N_NOOP("Gravity:"),
-   I18N_NOOP("Position X:"),	I18N_NOOP("Position Y:"),
-   I18N_NOOP("Velocity X:"),	I18N_NOOP("Velocity Y:"),
-   I18N_NOOP("Appearance time:"),I18N_NOOP("Life time:"),
-   I18N_NOOP("Energy amount:"),	I18N_NOOP("Shield amount:")
+   kli18n("Game speed:"),	kli18n("Shot speed:"),
+   kli18n("Energy need:"),	kli18n("Max number:"),
+   kli18n("Damage:"),	kli18n("Life time:"),
+   kli18n("Reload time:"),	kli18n("Mine fuel:"),
+   kli18n("Energy need:"),	kli18n("Activate time:"),
+   kli18n("Damage:"),	kli18n("Max number:"),
+   kli18n("Reload time:"),	kli18n("Acceleration:"),
+   kli18n("Energy need:"),	kli18n("Rotation speed:"),
+   kli18n("Energy need:"),	kli18n("Crash damage:"),
+   kli18n("Sun energy:"),	kli18n("Gravity:"),
+   kli18n("Position X:"),	kli18n("Position Y:"),
+   kli18n("Velocity X:"),	kli18n("Velocity Y:"),
+   kli18n("Appearance time:"),kli18n("Life time:"),
+   kli18n("Energy amount:"),	kli18n("Shield amount:")
 };
 
 enum ConfigSetup::Type ConfigSetup::VarType[EditNum]=

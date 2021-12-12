@@ -60,11 +60,7 @@ private:
          TabShip,TabSun,TabStart,TabPowerups,TabNum};
    enum Type {VarInt,VarFloat};
    
-#if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
-   static char LabelName[EditNum][25];
-#else
    static KLazyLocalizedString LabelName[EditNum];
-#endif
 
    static int Parent[EditNum];
    static int Position[EditNum];
