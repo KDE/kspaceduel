@@ -4,6 +4,7 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KSpaceDuel</name>
+  <name xml:lang="ar">لعبة مبارزة الفضاء</name>
   <name xml:lang="ca">KSpaceDuel</name>
   <name xml:lang="ca-valencia">KSpaceDuel</name>
   <name xml:lang="cs">KSpaceDuel</name>
@@ -42,6 +43,7 @@
   <name xml:lang="zh-CN">KSpaceDuel</name>
   <name xml:lang="zh-TW">KSpaceDuel</name>
   <summary>Space Arcade Game</summary>
+  <summary xml:lang="ar">لعبة ممرات الفضاء</summary>
   <summary xml:lang="ca">Joc arcade de l'espai</summary>
   <summary xml:lang="ca-valencia">Joc arcade de l'espai</summary>
   <summary xml:lang="cs">Vesmírná arkádová hra</summary>
@@ -83,6 +85,7 @@
       In KSpaceDuel each of two possible players control a satellite spaceship orbiting the sun.
       As the game progresses players have to eliminate the opponent's spacecraft with bullets or mines.
     </p>
+    <p xml:lang="ar">في مبارزة الفضاء ، يتحكم كل اثنين من اللاعبين المحتملين في مركبة فضائية تابعة للأقمار الصناعية تدور حول الشمس. مع تقدم اللعبة ، يتعين على اللاعبين القضاء على المركبة الفضائية للخصم بالرصاص أو الألغام.</p>
     <p xml:lang="ca">En el KSpaceDuel cada un dels dos possibles jugadors controla una nau espacial satèl·lit que orbita el Sol. A mesura que el joc avança, els jugadors han d'eliminar les naus espacials del contrari amb bales o mines.</p>
     <p xml:lang="ca-valencia">En el KSpaceDuel cada un dels dos possibles jugadors controla una nau espacial satèl·lit que orbita el Sol. A mesura que el joc avança, els jugadors han d'eliminar les naus espacials del contrari amb bales o mines.</p>
     <p xml:lang="da">I KSpaceDuel styrer hver af op til to spillere et satellitrumskib  som er i kredsløb om solen. Som spillet skrider frem skal spillerne eliminere  modstanderens rumskib med kugler eller miner.</p>
