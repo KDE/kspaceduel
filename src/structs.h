@@ -8,7 +8,6 @@
 #define __SP_STRUCTS_H
 
 #include <KLocalizedString>
-#include <ki18n_version.h>
 #include <KLazyLocalizedString>
 struct SConfig
 {

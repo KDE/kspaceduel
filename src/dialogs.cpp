@@ -152,11 +152,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
 
    for(i=0;i<EditNum;++i)
    {
-#if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
-       label[i]=new QLabel(i18n(LabelName[i]),configWidgets[Parent[i]]);
-#else
        label[i]=new QLabel(LabelName[i].toString(),configWidgets[Parent[i]]);
-#endif
       slider[i]=new QSlider(Qt::Horizontal,configWidgets[Parent[i]]);
       slider[i]->setRange((int)(EditVal[i][0]*EditDiv[i]), (int)(EditVal[i][1]*EditDiv[i]));
       slider[i]->setPageStep((int)((EditVal[i][1]-EditVal[i][0])/10));
@@ -170,11 +166,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    configCombo->setEditable(false);
    connect(configCombo, static_cast<void(QComboBox::*)(int)>(&QComboBox::activated), this, &ConfigSetup::configSelected);
    for(i=0;i<predefinedConfigNum;++i)
-#if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
-       configCombo->addItem(i18n(predefinedConfigName[i]));
-#else
        configCombo->addItem(predefinedConfigName[i].toString());
-#endif
    configCombo->addItem(i18nc("custom values","Custom"));
 
    boxlayout->addSpacing( 2 * 6 );

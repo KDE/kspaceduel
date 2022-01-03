@@ -42,8 +42,12 @@ target_link_libraries(kspaceduel
     KF5::Crash
     KF5::DBusAddons
     KF5::XmlGui
-    Qt::Svg
+    Qt${QT_MAJOR_VERSION}::Svg
 )
+
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(kspaceduel Qt6::SvgWidgets)
+endif()
 
 install(TARGETS kspaceduel  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES default_theme.svgz DESTINATION ${KDE_INSTALL_DATADIR}/kspaceduel/sprites)
