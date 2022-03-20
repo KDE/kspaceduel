@@ -38,6 +38,7 @@ ecm_add_app_icon(kspaceduel ICONS ${ICONS_SRCS})
 
 target_link_libraries(kspaceduel
     KF5KDEGames
+    KF5::CoreAddons
     KF5::Completion
     KF5::Crash
     KF5::DBusAddons
