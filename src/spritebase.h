@@ -10,7 +10,6 @@
 #include <QGraphicsSvgItem>
 
 //#include "defines.h"
-#include "spritebase.h"
 #include "structs.h"
 
 class SimpleSprite: public QGraphicsSvgItem
