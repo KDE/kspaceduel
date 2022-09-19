@@ -132,6 +132,7 @@
     </screenshot>
   </screenshots>
   <project_group>KDE</project_group>
+  <launchable type="desktop-id">org.kde.kspaceduel.desktop</launchable>
   <provides>
     <binary>kspaceduel</binary>
   </provides>
