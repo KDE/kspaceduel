@@ -31,7 +31,7 @@ int main(int argc,char **argv)
             KAboutLicense::GPL,
             i18n("(c) 1998-2001, Andreas Zehender"),
             QString(),
-            QStringLiteral("https://kde.org/applications/games/org.kde.kspaceduel") );
+            QStringLiteral("https://apps.kde.org/kspaceduel") );
     aboutData.addAuthor(i18n("Andreas Zehender"),i18n("Original Program"), QStringLiteral("az@azweb.de"));
     aboutData.addAuthor(i18n("Branan Riley"),i18n("SVG Renderer"), QStringLiteral("branan@gmail.com"));
     QCommandLineParser parser;
