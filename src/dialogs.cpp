@@ -8,7 +8,6 @@
 #include "options.h"
 #include "ui_general.h"
 
-#include <KComboBox>
 #include <KLocalizedString>
 
 #include <QGridLayout>

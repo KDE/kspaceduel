@@ -15,7 +15,6 @@
 #include <KShortcutsDialog>
 #include <KStandardAction>
 #include <KStandardGameAction>
-#include <KToggleAction>
 
 #include "mainview.h"
 #include "playerinfo.h"
