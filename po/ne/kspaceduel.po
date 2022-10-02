@@ -1,0 +1,438 @@
+# translation of kspaceduel.po to Nepali
+# Mahesh Subedi <submanesh@yahoo.com>, 2006.
+# Nabin Gautam <nabin@mpp.org.np>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kspaceduel\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2007-08-20 12:17+0545\n"
+"Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n !=1\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Mahesh Subedi"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "submanesh@gmail.com"
+
+#: dialogs.cpp:63
+msgid "Game speed:"
+msgstr "खेल गति:"
+
+#: dialogs.cpp:63
+msgid "Shot speed:"
+msgstr "शट गति:"
+
+#: dialogs.cpp:64 dialogs.cpp:67 dialogs.cpp:70 dialogs.cpp:71
+msgid "Energy need:"
+msgstr "आवश्यक शक्ति:"
+
+#: dialogs.cpp:64 dialogs.cpp:68
+msgid "Max number:"
+msgstr "अधिकतम नम्बर:"
+
+#: dialogs.cpp:65 dialogs.cpp:68
+msgid "Damage:"
+msgstr "क्षति:"
+
+#: dialogs.cpp:65 dialogs.cpp:75
+msgid "Life time:"
+msgstr "आयु:"
+
+#: dialogs.cpp:66 dialogs.cpp:69
+msgid "Reload time:"
+msgstr "रिलोड समय:"
+
+#: dialogs.cpp:66
+msgid "Mine fuel:"
+msgstr "बारुदको इन्धन:"
+
+#: dialogs.cpp:67
+msgid "Activate time:"
+msgstr "सक्रिय समय:"
+
+#: dialogs.cpp:69
+msgid "Acceleration:"
+msgstr "गतिवर्धन:"
+
+#: dialogs.cpp:70
+msgid "Rotation speed:"
+msgstr "परिक्रमण गति:"
+
+#: dialogs.cpp:71
+msgid "Crash damage:"
+msgstr "क्र्याश नष्ट:"
+
+#: dialogs.cpp:72
+msgid "Sun energy:"
+msgstr "सौर्य शक्ति:"
+
+#: dialogs.cpp:72
+msgid "Gravity:"
+msgstr "गुरुत्व:"
+
+#: dialogs.cpp:73
+msgid "Position X:"
+msgstr "स्थिति X:"
+
+#: dialogs.cpp:73
+msgid "Position Y:"
+msgstr "स्थिति Y:"
+
+#: dialogs.cpp:74
+msgid "Velocity X:"
+msgstr "वेग X:"
+
+#: dialogs.cpp:74
+msgid "Velocity Y:"
+msgstr "वेग Y:"
+
+#: dialogs.cpp:75
+msgid "Appearance time:"
+msgstr "देखिने समय:"
+
+#: dialogs.cpp:76
+msgid "Energy amount:"
+msgstr "शक्ति मात्रा:"
+
+#: dialogs.cpp:76
+msgid "Shield amount:"
+msgstr "रक्षा मात्रा:"
+
+#: dialogs.cpp:169
+#, fuzzy, kde-format
+#| msgid "Custom"
+msgctxt "custom values"
+msgid "Custom"
+msgstr "अनुकूलन"
+
+#: dialogs.cpp:185
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "general game settings"
+msgid "General"
+msgstr "साधारण"
+
+#: dialogs.cpp:186 structs.h:52
+#, kde-format
+msgid "Bullet"
+msgstr "गोली"
+
+#: dialogs.cpp:187
+#, kde-format
+msgctxt "Name"
+msgid "Mine"
+msgstr "बारुद"
+
+#: dialogs.cpp:188
+#, kde-format
+msgid "Ship"
+msgstr "जहाज"
+
+#: dialogs.cpp:189
+#, fuzzy, kde-format
+#| msgid "Sun"
+msgctxt "the star, Sol"
+msgid "Sun"
+msgstr "सुर्य"
+
+#: dialogs.cpp:190
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "initial position and velocities of players"
+msgid "Start"
+msgstr "सुरु गर्नुहोस्"
+
+#: dialogs.cpp:191
+#, kde-format
+msgid "Powerups"
+msgstr "शक्ति बढाउँछ"
+
+#: dialogs.cpp:404
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "general settings"
+msgid "General"
+msgstr "साधारण"
+
+#: dialogs.cpp:404
+#, kde-format
+msgid "General Settings"
+msgstr "साधारण सेटिङ"
+
+#: dialogs.cpp:407
+#, fuzzy, kde-format
+#| msgid "Game"
+msgctxt "game settings"
+msgid "Game"
+msgstr "खेल"
+
+#: dialogs.cpp:407
+#, kde-format
+msgid "Game Settings"
+msgstr "खेल सेटिङ"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: general.ui:22
+#, kde-format
+msgid "Hit Points"
+msgstr "लागेको अङ्क"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: general.ui:42
+#, kde-format
+msgid "Red player:"
+msgstr "रातो खेलाडी:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: general.ui:82
+#, kde-format
+msgid "Blue player:"
+msgstr "निलो खेलाडी:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
+#: general.ui:117
+#, kde-format
+msgid "Graphics"
+msgstr "ग्राफिक्स"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#: general.ui:129
+#, kde-format
+msgid "Refresh time:"
+msgstr "ताजा पार्ने समय:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: general.ui:176
+#, kde-format
+msgid "Red Player"
+msgstr "रातो खेलाडी"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player0IsAi)
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player1IsAi)
+#: general.ui:196 general.ui:299
+#, kde-format
+msgid "Player is AI"
+msgstr "खेलाडी AI हो"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: general.ui:229 general.ui:332
+#, kde-format
+msgid "Difficulty:"
+msgstr "कठिन:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:243 general.ui:346
+#, kde-format
+msgid "Trainee"
+msgstr "प्रशिक्षार्थी"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:248 general.ui:351
+#, kde-format
+msgid "Normal"
+msgstr "सामान्य"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:253 general.ui:356
+#, kde-format
+msgid "Hard"
+msgstr "कठिन"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:258 general.ui:361
+#, kde-format
+msgid "Insane"
+msgstr "पागल"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: general.ui:279
+#, kde-format
+msgid "Blue Player"
+msgstr "निलो खेलाडी"
+
+#. i18n: ectx: Menu (game)
+#: kspaceduelui.rc:10
+#, kde-format
+msgid "&Game"
+msgstr "खेल"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kspaceduelui.rc:15
+#, kde-format
+msgid "Main Toolbar"
+msgstr "मुख्य उपकरणपट्टी"
+
+#: main.cpp:28
+#, kde-format
+msgid "KSpaceDuel"
+msgstr "केडीई स्पेस ड्युल"
+
+#: main.cpp:30
+#, fuzzy, kde-format
+#| msgid "KDE Space Game"
+msgid "Space Arcade Game"
+msgstr "केडीई स्पेस खेल"
+
+#: main.cpp:32
+#, kde-format
+msgid "(c) 1998-2001, Andreas Zehender"
+msgstr "(c) 1998-2001, एन्डरेज जेहेन्डर"
+
+#: main.cpp:35
+#, kde-format
+msgid "Andreas Zehender"
+msgstr "एन्डरेज जेहेन्डर"
+
+#: main.cpp:35
+#, kde-format
+msgid "Original Program"
+msgstr "मौलिक कार्यक्रम"
+
+#: main.cpp:36
+#, kde-format
+msgid "Branan Riley"
+msgstr "ब्रानान रिले"
+
+#: main.cpp:36
+#, kde-format
+msgid "SVG Renderer"
+msgstr "SVG प्रदायक"
+
+#: mainview.cpp:357 topwidget.cpp:153
+#, kde-format
+msgid " paused "
+msgstr " पज गरिएको "
+
+#: mainview.cpp:510
+#, kde-format
+msgid "Press %1 to start"
+msgstr "सुरु गर्न %1 थिच्नुहोस्"
+
+#: mainview.cpp:559
+#, kde-format
+msgid "draw round"
+msgstr "राउन्ड झिक्नुहोस्"
+
+#: mainview.cpp:562
+#, kde-format
+msgid "blue player won the round"
+msgstr "निलो खेलाडीले राउन्ड जित्यो"
+
+#: mainview.cpp:570
+#, kde-format
+msgid "red player won the round"
+msgstr "रातो खेलाडीले राउन्ड जित्यो"
+
+#: mainview.cpp:578
+#, kde-format
+msgid "Press %1 for new round"
+msgstr "नयाँ राउन्डका लागि %1 थिच्नुहोस्"
+
+#: playerinfo.cpp:39 playerinfo.cpp:72
+#, kde-format
+msgid "Hit points"
+msgstr "लागेको अङ्क"
+
+#: playerinfo.cpp:42 playerinfo.cpp:75
+#, kde-format
+msgid "Energy"
+msgstr "शक्ति"
+
+#: playerinfo.cpp:45 playerinfo.cpp:78
+#, kde-format
+msgid "Wins"
+msgstr "विजय"
+
+#: structs.h:52
+msgid "Default"
+msgstr "पूर्वनिर्धारित"
+
+#: structs.h:52
+msgid "Chaos"
+msgstr "अस्तव्यस्त"
+
+#: structs.h:52
+#, fuzzy
+#| msgid "Lack of energy"
+msgid "Lack of Energy"
+msgstr "शक्तिको कमि"
+
+#: topwidget.cpp:82
+#, kde-format
+msgid "&New Round"
+msgstr "नयाँ राउन्ड"
+
+#: topwidget.cpp:90
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "start game"
+msgid "Start"
+msgstr "सुरु गर्नुहोस्"
+
+#: topwidget.cpp:99
+#, kde-format
+msgid "Player 1 Rotate Left"
+msgstr "खेलाडी १ ले बायाँ घुमाउँछ"
+
+#: topwidget.cpp:103
+#, kde-format
+msgid "Player 1 Rotate Right"
+msgstr "खेलाडी १ ले दायाँ घुमाउँछ"
+
+#: topwidget.cpp:107
+#, kde-format
+msgid "Player 1 Accelerate"
+msgstr "खेलाडी १ गतिवर्धन"
+
+#: topwidget.cpp:111
+#, kde-format
+msgid "Player 1 Shot"
+msgstr "खेलाडी १ शट"
+
+#: topwidget.cpp:115
+#, kde-format
+msgid "Player 1 Mine"
+msgstr "खेलाडी १ बारुद"
+
+#: topwidget.cpp:120
+#, kde-format
+msgid "Player 2 Rotate Left"
+msgstr "खेलाडी २ ले बायाँ घुमाउँछ"
+
+#: topwidget.cpp:124
+#, kde-format
+msgid "Player 2 Rotate Right"
+msgstr "खेलाडी २ ले दायाँ घुमाउँछ"
+
+#: topwidget.cpp:128
+#, kde-format
+msgid "Player 2 Accelerate"
+msgstr "खेलाडी २ गतिबर्धन"
+
+#: topwidget.cpp:132
+#, kde-format
+msgid "Player 2 Shot"
+msgstr "खेलाडी २ शट"
+
+#: topwidget.cpp:136
+#, kde-format
+msgid "Player 2 Mine"
+msgstr "खेलाडी २ बारुद"

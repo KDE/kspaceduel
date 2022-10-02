@@ -1,0 +1,428 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2022-09-20 01:56\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf5-trunk/messages/kspaceduel/kspaceduel.pot\n"
+"X-Crowdin-File-ID: 5696\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "KDE 中国"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-china@kde.org"
+
+#: dialogs.cpp:63
+msgid "Game speed:"
+msgstr "游戏速度："
+
+#: dialogs.cpp:63
+msgid "Shot speed:"
+msgstr "射击速度："
+
+#: dialogs.cpp:64 dialogs.cpp:67 dialogs.cpp:70 dialogs.cpp:71
+msgid "Energy need:"
+msgstr "能量需求："
+
+#: dialogs.cpp:64 dialogs.cpp:68
+msgid "Max number:"
+msgstr "最多个数："
+
+#: dialogs.cpp:65 dialogs.cpp:68
+msgid "Damage:"
+msgstr "损伤："
+
+#: dialogs.cpp:65 dialogs.cpp:75
+msgid "Life time:"
+msgstr "生命时间："
+
+#: dialogs.cpp:66 dialogs.cpp:69
+msgid "Reload time:"
+msgstr "重新装填时间："
+
+#: dialogs.cpp:66
+msgid "Mine fuel:"
+msgstr "地雷能量："
+
+#: dialogs.cpp:67
+msgid "Activate time:"
+msgstr "激活时间："
+
+#: dialogs.cpp:69
+msgid "Acceleration:"
+msgstr "加速："
+
+#: dialogs.cpp:70
+msgid "Rotation speed:"
+msgstr "旋转速度："
+
+#: dialogs.cpp:71
+msgid "Crash damage:"
+msgstr "坠毁损伤："
+
+#: dialogs.cpp:72
+msgid "Sun energy:"
+msgstr "太阳能："
+
+#: dialogs.cpp:72
+msgid "Gravity:"
+msgstr "重力："
+
+#: dialogs.cpp:73
+msgid "Position X:"
+msgstr "位置 X："
+
+#: dialogs.cpp:73
+msgid "Position Y:"
+msgstr "位置 Y："
+
+#: dialogs.cpp:74
+msgid "Velocity X:"
+msgstr "速度 X："
+
+#: dialogs.cpp:74
+msgid "Velocity Y:"
+msgstr "速度 Y："
+
+#: dialogs.cpp:75
+msgid "Appearance time:"
+msgstr "显示时间："
+
+#: dialogs.cpp:76
+msgid "Energy amount:"
+msgstr "能量额度："
+
+#: dialogs.cpp:76
+msgid "Shield amount:"
+msgstr "盾额度："
+
+#: dialogs.cpp:169
+#, kde-format
+msgctxt "custom values"
+msgid "Custom"
+msgstr "定制"
+
+#: dialogs.cpp:185
+#, kde-format
+msgctxt "general game settings"
+msgid "General"
+msgstr "常规"
+
+#: dialogs.cpp:186 structs.h:52
+#, kde-format
+msgid "Bullet"
+msgstr "子弹"
+
+#: dialogs.cpp:187
+#, kde-format
+msgctxt "Name"
+msgid "Mine"
+msgstr "地雷"
+
+#: dialogs.cpp:188
+#, kde-format
+msgid "Ship"
+msgstr "飞船"
+
+#: dialogs.cpp:189
+#, kde-format
+msgctxt "the star, Sol"
+msgid "Sun"
+msgstr "太阳"
+
+#: dialogs.cpp:190
+#, kde-format
+msgctxt "initial position and velocities of players"
+msgid "Start"
+msgstr "起始位置"
+
+#: dialogs.cpp:191
+#, kde-format
+msgid "Powerups"
+msgstr "能力强化"
+
+#: dialogs.cpp:404
+#, kde-format
+msgctxt "general settings"
+msgid "General"
+msgstr "常规"
+
+#: dialogs.cpp:404
+#, kde-format
+msgid "General Settings"
+msgstr "常规设置"
+
+#: dialogs.cpp:407
+#, kde-format
+msgctxt "game settings"
+msgid "Game"
+msgstr "游戏"
+
+#: dialogs.cpp:407
+#, kde-format
+msgid "Game Settings"
+msgstr "游戏设置"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: general.ui:22
+#, kde-format
+msgid "Hit Points"
+msgstr "命中点数"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: general.ui:42
+#, kde-format
+msgid "Red player:"
+msgstr "红方玩家："
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: general.ui:82
+#, kde-format
+msgid "Blue player:"
+msgstr "蓝方玩家："
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
+#: general.ui:117
+#, kde-format
+msgid "Graphics"
+msgstr "图形"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#: general.ui:129
+#, kde-format
+msgid "Refresh time:"
+msgstr "刷新时间："
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: general.ui:176
+#, kde-format
+msgid "Red Player"
+msgstr "红方玩家"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player0IsAi)
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player1IsAi)
+#: general.ui:196 general.ui:299
+#, kde-format
+msgid "Player is AI"
+msgstr "玩家是电脑"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: general.ui:229 general.ui:332
+#, kde-format
+msgid "Difficulty:"
+msgstr "难度："
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:243 general.ui:346
+#, kde-format
+msgid "Trainee"
+msgstr "学员"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:248 general.ui:351
+#, kde-format
+msgid "Normal"
+msgstr "普通"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:253 general.ui:356
+#, kde-format
+msgid "Hard"
+msgstr "难"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:258 general.ui:361
+#, kde-format
+msgid "Insane"
+msgstr "疯狂"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: general.ui:279
+#, kde-format
+msgid "Blue Player"
+msgstr "蓝方玩家"
+
+#. i18n: ectx: Menu (game)
+#: kspaceduelui.rc:10
+#, kde-format
+msgid "&Game"
+msgstr "游戏(&G)"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kspaceduelui.rc:15
+#, kde-format
+msgid "Main Toolbar"
+msgstr "主工具栏"
+
+#: main.cpp:28
+#, kde-format
+msgid "KSpaceDuel"
+msgstr "KSpaceDuel"
+
+#: main.cpp:30
+#, kde-format
+msgid "Space Arcade Game"
+msgstr "太空街机游戏"
+
+#: main.cpp:32
+#, kde-format
+msgid "(c) 1998-2001, Andreas Zehender"
+msgstr "(c) 1998-2001, Andreas Zehender"
+
+#: main.cpp:35
+#, kde-format
+msgid "Andreas Zehender"
+msgstr "Andreas Zehender"
+
+#: main.cpp:35
+#, kde-format
+msgid "Original Program"
+msgstr "原始程序"
+
+#: main.cpp:36
+#, kde-format
+msgid "Branan Riley"
+msgstr "Branan Riley"
+
+#: main.cpp:36
+#, kde-format
+msgid "SVG Renderer"
+msgstr "SVG 渲染师"
+
+#: mainview.cpp:357 topwidget.cpp:153
+#, kde-format
+msgid " paused "
+msgstr " 已暂停 "
+
+#: mainview.cpp:510
+#, kde-format
+msgid "Press %1 to start"
+msgstr "按 %1 开始"
+
+#: mainview.cpp:559
+#, kde-format
+msgid "draw round"
+msgstr "平局"
+
+#: mainview.cpp:562
+#, kde-format
+msgid "blue player won the round"
+msgstr "蓝方玩家赢了这一回合"
+
+#: mainview.cpp:570
+#, kde-format
+msgid "red player won the round"
+msgstr "红方玩家赢了这一回合"
+
+#: mainview.cpp:578
+#, kde-format
+msgid "Press %1 for new round"
+msgstr "按 %1 开始新回合"
+
+#: playerinfo.cpp:39 playerinfo.cpp:72
+#, kde-format
+msgid "Hit points"
+msgstr "命中点数"
+
+#: playerinfo.cpp:42 playerinfo.cpp:75
+#, kde-format
+msgid "Energy"
+msgstr "能量点数"
+
+#: playerinfo.cpp:45 playerinfo.cpp:78
+#, kde-format
+msgid "Wins"
+msgstr "胜利次数"
+
+#: structs.h:52
+msgid "Default"
+msgstr "默认"
+
+#: structs.h:52
+msgid "Chaos"
+msgstr "混沌"
+
+#: structs.h:52
+msgid "Lack of Energy"
+msgstr "缺少能量"
+
+#: topwidget.cpp:82
+#, kde-format
+msgid "&New Round"
+msgstr "新回合(&N)"
+
+#: topwidget.cpp:90
+#, kde-format
+msgctxt "start game"
+msgid "Start"
+msgstr "开始"
+
+#: topwidget.cpp:99
+#, kde-format
+msgid "Player 1 Rotate Left"
+msgstr "玩家一向左转"
+
+#: topwidget.cpp:103
+#, kde-format
+msgid "Player 1 Rotate Right"
+msgstr "玩家一向右转"
+
+#: topwidget.cpp:107
+#, kde-format
+msgid "Player 1 Accelerate"
+msgstr "玩家一加速"
+
+#: topwidget.cpp:111
+#, kde-format
+msgid "Player 1 Shot"
+msgstr "玩家一开枪"
+
+#: topwidget.cpp:115
+#, kde-format
+msgid "Player 1 Mine"
+msgstr "玩家一布雷"
+
+#: topwidget.cpp:120
+#, kde-format
+msgid "Player 2 Rotate Left"
+msgstr "玩家二向左转"
+
+#: topwidget.cpp:124
+#, kde-format
+msgid "Player 2 Rotate Right"
+msgstr "玩家二向右转"
+
+#: topwidget.cpp:128
+#, kde-format
+msgid "Player 2 Accelerate"
+msgstr "玩家二加速"
+
+#: topwidget.cpp:132
+#, kde-format
+msgid "Player 2 Shot"
+msgstr "玩家二开枪"
+
+#: topwidget.cpp:136
+#, kde-format
+msgid "Player 2 Mine"
+msgstr "玩家二布雷"

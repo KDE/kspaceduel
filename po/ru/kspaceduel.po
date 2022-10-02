@@ -1,0 +1,441 @@
+# KDE3 - kspaceduel.pot Russian translation.
+# Copyright (C) 2000, KDE Russian translation Team.
+#
+# Gregory Mokhin <mok@kde.ru>, 2000.
+# Artem Sereda <overmind88@gmail.com>, 2008.
+# Evgeniy Ivanov <powerfox@kde.ru>, 2008.
+# Alexander Potashev <aspotashev@gmail.com>, 2017.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kspaceduel\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2020-11-08 22:12+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Григорий Мохин"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "mok@kde.ru"
+
+#: dialogs.cpp:63
+msgid "Game speed:"
+msgstr "Скорость игры:"
+
+#: dialogs.cpp:63
+msgid "Shot speed:"
+msgstr "Скорость стрельбы:"
+
+#: dialogs.cpp:64 dialogs.cpp:67 dialogs.cpp:70 dialogs.cpp:71
+msgid "Energy need:"
+msgstr "Энергопотребление:"
+
+#: dialogs.cpp:64 dialogs.cpp:68
+msgid "Max number:"
+msgstr "Максимальное число:"
+
+#: dialogs.cpp:65 dialogs.cpp:68
+msgid "Damage:"
+msgstr "Повреждение:"
+
+#: dialogs.cpp:65 dialogs.cpp:75
+msgid "Life time:"
+msgstr "Время жизни:"
+
+#: dialogs.cpp:66 dialogs.cpp:69
+msgid "Reload time:"
+msgstr "Время перезарядки:"
+
+#: dialogs.cpp:66
+msgid "Mine fuel:"
+msgstr "Топливо мины:"
+
+#: dialogs.cpp:67
+msgid "Activate time:"
+msgstr "Время активации:"
+
+#: dialogs.cpp:69
+msgid "Acceleration:"
+msgstr "Ускорение:"
+
+#: dialogs.cpp:70
+msgid "Rotation speed:"
+msgstr "Скорость вращения:"
+
+#: dialogs.cpp:71
+msgid "Crash damage:"
+msgstr "Ущерб при аварии:"
+
+#: dialogs.cpp:72
+msgid "Sun energy:"
+msgstr "Солнечная энергия:"
+
+#: dialogs.cpp:72
+msgid "Gravity:"
+msgstr "Гравитация:"
+
+#: dialogs.cpp:73
+msgid "Position X:"
+msgstr "X-координата:"
+
+#: dialogs.cpp:73
+msgid "Position Y:"
+msgstr "Y-координата:"
+
+#: dialogs.cpp:74
+msgid "Velocity X:"
+msgstr "Скорость по X:"
+
+#: dialogs.cpp:74
+msgid "Velocity Y:"
+msgstr "Скорость по Y:"
+
+#: dialogs.cpp:75
+msgid "Appearance time:"
+msgstr "Время появления:"
+
+#: dialogs.cpp:76
+msgid "Energy amount:"
+msgstr "Количество энергии:"
+
+#: dialogs.cpp:76
+msgid "Shield amount:"
+msgstr "Защита:"
+
+#: dialogs.cpp:169
+#, kde-format
+msgctxt "custom values"
+msgid "Custom"
+msgstr "Пользовательские"
+
+#: dialogs.cpp:185
+#, kde-format
+msgctxt "general game settings"
+msgid "General"
+msgstr "Общие"
+
+#: dialogs.cpp:186 structs.h:52
+#, kde-format
+msgid "Bullet"
+msgstr "Снаряды"
+
+#: dialogs.cpp:187
+#, kde-format
+msgctxt "Name"
+msgid "Mine"
+msgstr "Мины"
+
+#: dialogs.cpp:188
+#, kde-format
+msgid "Ship"
+msgstr "Корабль"
+
+#: dialogs.cpp:189
+#, kde-format
+msgctxt "the star, Sol"
+msgid "Sun"
+msgstr "Солнце"
+
+#: dialogs.cpp:190
+#, kde-format
+msgctxt "initial position and velocities of players"
+msgid "Start"
+msgstr "Начать"
+
+#: dialogs.cpp:191
+#, kde-format
+msgid "Powerups"
+msgstr "Заправки"
+
+#: dialogs.cpp:404
+#, kde-format
+msgctxt "general settings"
+msgid "General"
+msgstr "Общие"
+
+#: dialogs.cpp:404
+#, kde-format
+msgid "General Settings"
+msgstr "Общие настройки"
+
+#: dialogs.cpp:407
+#, kde-format
+msgctxt "game settings"
+msgid "Game"
+msgstr "Игра"
+
+#: dialogs.cpp:407
+#, kde-format
+msgid "Game Settings"
+msgstr "Настройки игры"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: general.ui:22
+#, kde-format
+msgid "Hit Points"
+msgstr "Здоровье"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: general.ui:42
+#, kde-format
+msgid "Red player:"
+msgstr "Красный игрок:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: general.ui:82
+#, kde-format
+msgid "Blue player:"
+msgstr "Синий игрок:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
+#: general.ui:117
+#, kde-format
+msgid "Graphics"
+msgstr "Графика"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#: general.ui:129
+#, kde-format
+msgid "Refresh time:"
+msgstr "Время обновления:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: general.ui:176
+#, kde-format
+msgid "Red Player"
+msgstr "Красный игрок"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player0IsAi)
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player1IsAi)
+#: general.ui:196 general.ui:299
+#, kde-format
+msgid "Player is AI"
+msgstr "Игрок управляется компьютером"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: general.ui:229 general.ui:332
+#, kde-format
+msgid "Difficulty:"
+msgstr "Трудность:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:243 general.ui:346
+#, kde-format
+msgid "Trainee"
+msgstr "Лёгкая"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:248 general.ui:351
+#, kde-format
+msgid "Normal"
+msgstr "Обычная"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:253 general.ui:356
+#, kde-format
+msgid "Hard"
+msgstr "Сложная"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:258 general.ui:361
+#, kde-format
+msgid "Insane"
+msgstr "Запредельная"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: general.ui:279
+#, kde-format
+msgid "Blue Player"
+msgstr "Синий игрок"
+
+#. i18n: ectx: Menu (game)
+#: kspaceduelui.rc:10
+#, kde-format
+msgid "&Game"
+msgstr "&Игра"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kspaceduelui.rc:15
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Основная панель инструментов"
+
+#: main.cpp:28
+#, kde-format
+msgid "KSpaceDuel"
+msgstr "Космическая дуэль"
+
+#: main.cpp:30
+#, kde-format
+msgid "Space Arcade Game"
+msgstr "Космическая аркадная игра"
+
+#: main.cpp:32
+#, kde-format
+msgid "(c) 1998-2001, Andreas Zehender"
+msgstr "© Andreas Zehender, 1998-2001"
+
+#: main.cpp:35
+#, kde-format
+msgid "Andreas Zehender"
+msgstr "Andreas Zehender"
+
+#: main.cpp:35
+#, kde-format
+msgid "Original Program"
+msgstr "Оригинальная программа"
+
+#: main.cpp:36
+#, kde-format
+msgid "Branan Riley"
+msgstr "Branan Riley"
+
+#: main.cpp:36
+#, kde-format
+msgid "SVG Renderer"
+msgstr "SVG визуализация"
+
+#: mainview.cpp:357 topwidget.cpp:153
+#, kde-format
+msgid " paused "
+msgstr " пауза"
+
+#: mainview.cpp:510
+#, kde-format
+msgid "Press %1 to start"
+msgstr "Нажмите %1 для начала"
+
+#: mainview.cpp:559
+#, kde-format
+msgid "draw round"
+msgstr "Ничья"
+
+#: mainview.cpp:562
+#, kde-format
+msgid "blue player won the round"
+msgstr "Победил синий игрок"
+
+#: mainview.cpp:570
+#, kde-format
+msgid "red player won the round"
+msgstr "Победил красный игрок"
+
+#: mainview.cpp:578
+#, kde-format
+msgid "Press %1 for new round"
+msgstr "Нажмите %1 для начала нового раунда"
+
+#: playerinfo.cpp:39 playerinfo.cpp:72
+#, kde-format
+msgid "Hit points"
+msgstr "Здоровье"
+
+#: playerinfo.cpp:42 playerinfo.cpp:75
+#, kde-format
+msgid "Energy"
+msgstr "Энергия"
+
+#: playerinfo.cpp:45 playerinfo.cpp:78
+#, kde-format
+msgid "Wins"
+msgstr "Победы"
+
+#: structs.h:52
+msgid "Default"
+msgstr "По умолчанию"
+
+#: structs.h:52
+msgid "Chaos"
+msgstr "Хаос"
+
+#: structs.h:52
+msgid "Lack of Energy"
+msgstr "Недостаток энергии"
+
+#: topwidget.cpp:82
+#, kde-format
+msgid "&New Round"
+msgstr "Н&овый раунд"
+
+#: topwidget.cpp:90
+#, kde-format
+msgctxt "start game"
+msgid "Start"
+msgstr "Начать"
+
+#: topwidget.cpp:99
+#, kde-format
+msgid "Player 1 Rotate Left"
+msgstr "Поворот налево игрока 1"
+
+#: topwidget.cpp:103
+#, kde-format
+msgid "Player 1 Rotate Right"
+msgstr "Поворот направо игрока 1"
+
+#: topwidget.cpp:107
+#, kde-format
+msgid "Player 1 Accelerate"
+msgstr "Ускорение игрока 1"
+
+#: topwidget.cpp:111
+#, kde-format
+msgid "Player 1 Shot"
+msgstr "Выстрел игрока 1"
+
+#: topwidget.cpp:115
+#, kde-format
+msgid "Player 1 Mine"
+msgstr "Поставить мину игроком 1"
+
+#: topwidget.cpp:120
+#, kde-format
+msgid "Player 2 Rotate Left"
+msgstr "Поворот налево игрока 2"
+
+#: topwidget.cpp:124
+#, kde-format
+msgid "Player 2 Rotate Right"
+msgstr "Поворот направо игрока 2"
+
+#: topwidget.cpp:128
+#, kde-format
+msgid "Player 2 Accelerate"
+msgstr "Ускорение игрока 2"
+
+#: topwidget.cpp:132
+#, kde-format
+msgid "Player 2 Shot"
+msgstr "Выстрел игрока 2"
+
+#: topwidget.cpp:136
+#, kde-format
+msgid "Player 2 Mine"
+msgstr "Поставить мину игроком 2"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgid "&Restart"
+#~ msgstr "Старт"

@@ -1,0 +1,447 @@
+# Cyfieithiad o kspaceduel.po i Cymraeg
+# Penbwrdd yn Gymraeg.
+# Copyright (C) 2003, 2005 Free Software Foundation, Inc.
+# www.kyfieithu.co.uk<kyfieithu@dotmon.com>, www.gyfieithu.co.uk<kyfieithu@dotmon.com>, 2003.
+# Kevin Donnelly <kevin@dotmon.com>, 2005.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kspaceduel\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2005-01-28 09:27+0000\n"
+"Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
+"Language-Team: Cymraeg\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+"\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kyfieithu: Thierry Vignaud, jr, KD"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ",,kyfieithu@dotmon.com"
+
+#: dialogs.cpp:63
+msgid "Game speed:"
+msgstr "Cyflymder y gêm:"
+
+#: dialogs.cpp:63
+msgid "Shot speed:"
+msgstr "Cyflymder y saethiad:"
+
+#: dialogs.cpp:64 dialogs.cpp:67 dialogs.cpp:70 dialogs.cpp:71
+msgid "Energy need:"
+msgstr "Angen egni:"
+
+#: dialogs.cpp:64 dialogs.cpp:68
+msgid "Max number:"
+msgstr "Rhif uchafswm:"
+
+#: dialogs.cpp:65 dialogs.cpp:68
+msgid "Damage:"
+msgstr "Difrod:"
+
+#: dialogs.cpp:65 dialogs.cpp:75
+msgid "Life time:"
+msgstr "Amser byw:"
+
+#: dialogs.cpp:66 dialogs.cpp:69
+msgid "Reload time:"
+msgstr "Amser ail-lwytho:"
+
+#: dialogs.cpp:66
+msgid "Mine fuel:"
+msgstr "Tanwydd ffrwydryn:"
+
+#: dialogs.cpp:67
+msgid "Activate time:"
+msgstr "Amser gweithredoli:"
+
+#: dialogs.cpp:69
+msgid "Acceleration:"
+msgstr "Cyflymiad:"
+
+#: dialogs.cpp:70
+msgid "Rotation speed:"
+msgstr "Cyflymder y cylchdro:"
+
+#: dialogs.cpp:71
+msgid "Crash damage:"
+msgstr "Difrod chwalu:"
+
+#: dialogs.cpp:72
+msgid "Sun energy:"
+msgstr "Egni yr haul:"
+
+#: dialogs.cpp:72
+msgid "Gravity:"
+msgstr "Disgyrchiant:"
+
+#: dialogs.cpp:73
+msgid "Position X:"
+msgstr "Lleoliad X:"
+
+#: dialogs.cpp:73
+msgid "Position Y:"
+msgstr "Lleoliad Y:"
+
+#: dialogs.cpp:74
+msgid "Velocity X:"
+msgstr "Cyflymder X:"
+
+#: dialogs.cpp:74
+msgid "Velocity Y:"
+msgstr "Cylymder Y:"
+
+#: dialogs.cpp:75
+msgid "Appearance time:"
+msgstr "Amser ymddangosiad:"
+
+#: dialogs.cpp:76
+msgid "Energy amount:"
+msgstr "Maint egni:"
+
+#: dialogs.cpp:76
+msgid "Shield amount:"
+msgstr "Maint tarian:"
+
+#: dialogs.cpp:169
+#, fuzzy, kde-format
+#| msgid "Custom"
+msgctxt "custom values"
+msgid "Custom"
+msgstr "Addasiedig"
+
+#: dialogs.cpp:185
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "general game settings"
+msgid "General"
+msgstr "Cyffredinol"
+
+#: dialogs.cpp:186 structs.h:52
+#, kde-format
+msgid "Bullet"
+msgstr "Bwled"
+
+#: dialogs.cpp:187
+#, kde-format
+msgctxt "Name"
+msgid "Mine"
+msgstr "Ffrwydryn"
+
+#: dialogs.cpp:188
+#, kde-format
+msgid "Ship"
+msgstr "Llong"
+
+#: dialogs.cpp:189
+#, fuzzy, kde-format
+#| msgid "Sun"
+msgctxt "the star, Sol"
+msgid "Sun"
+msgstr "Haul"
+
+#: dialogs.cpp:190
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "initial position and velocities of players"
+msgid "Start"
+msgstr "Dechrau"
+
+#: dialogs.cpp:191
+#, kde-format
+msgid "Powerups"
+msgstr "Egniwyr"
+
+#: dialogs.cpp:404
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "general settings"
+msgid "General"
+msgstr "Cyffredinol"
+
+#: dialogs.cpp:404
+#, kde-format
+msgid "General Settings"
+msgstr "Gosodiadau Cyffredinol"
+
+#: dialogs.cpp:407
+#, fuzzy, kde-format
+#| msgid "Game"
+msgctxt "game settings"
+msgid "Game"
+msgstr "Gêm"
+
+#: dialogs.cpp:407
+#, kde-format
+msgid "Game Settings"
+msgstr "Gosodiadau'r Gêm"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: general.ui:22
+#, kde-format
+msgid "Hit Points"
+msgstr "Pwyntiau taro"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: general.ui:42
+#, kde-format
+msgid "Red player:"
+msgstr "Chwaraewr coch:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: general.ui:82
+#, kde-format
+msgid "Blue player:"
+msgstr "Chwaraewr glas:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
+#: general.ui:117
+#, kde-format
+msgid "Graphics"
+msgstr "Graffeg"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#: general.ui:129
+#, kde-format
+msgid "Refresh time:"
+msgstr "Amser Cyfredoli:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: general.ui:176
+#, kde-format
+msgid "Red Player"
+msgstr "Chwaraewr Coch"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player0IsAi)
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player1IsAi)
+#: general.ui:196 general.ui:299
+#, kde-format
+msgid "Player is AI"
+msgstr "Mae'r chwaraewr yn DA (AI)"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: general.ui:229 general.ui:332
+#, kde-format
+msgid "Difficulty:"
+msgstr "Anhawster:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:243 general.ui:346
+#, kde-format
+msgid "Trainee"
+msgstr "Hyforddai"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:248 general.ui:351
+#, kde-format
+msgid "Normal"
+msgstr "Arferol"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:253 general.ui:356
+#, kde-format
+msgid "Hard"
+msgstr "Anodd"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:258 general.ui:361
+#, kde-format
+msgid "Insane"
+msgstr "Gwallgof"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: general.ui:279
+#, kde-format
+msgid "Blue Player"
+msgstr "Chwaraewr Glas"
+
+#. i18n: ectx: Menu (game)
+#: kspaceduelui.rc:10
+#, fuzzy, kde-format
+msgid "&Game"
+msgstr "Gêm"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kspaceduelui.rc:15
+#, kde-format
+msgid "Main Toolbar"
+msgstr ""
+
+#: main.cpp:28
+#, kde-format
+msgid "KSpaceDuel"
+msgstr "KOrnestGofod"
+
+#: main.cpp:30
+#, fuzzy, kde-format
+#| msgid "KDE Space Game"
+msgid "Space Arcade Game"
+msgstr "Gêm Gofod KDE"
+
+#: main.cpp:32
+#, kde-format
+msgid "(c) 1998-2001, Andreas Zehender"
+msgstr ""
+
+#: main.cpp:35
+#, kde-format
+msgid "Andreas Zehender"
+msgstr ""
+
+#: main.cpp:35
+#, kde-format
+msgid "Original Program"
+msgstr ""
+
+#: main.cpp:36
+#, kde-format
+msgid "Branan Riley"
+msgstr ""
+
+#: main.cpp:36
+#, kde-format
+msgid "SVG Renderer"
+msgstr ""
+
+#: mainview.cpp:357 topwidget.cpp:153
+#, kde-format
+msgid " paused "
+msgstr "wedi'i seibio"
+
+#: mainview.cpp:510
+#, kde-format
+msgid "Press %1 to start"
+msgstr "Gwasgwch %1 i ddechrau"
+
+#: mainview.cpp:559
+#, kde-format
+msgid "draw round"
+msgstr "rownd cyfartal"
+
+#: mainview.cpp:562
+#, kde-format
+msgid "blue player won the round"
+msgstr "chwaraewr glas enillodd y rownd"
+
+#: mainview.cpp:570
+#, kde-format
+msgid "red player won the round"
+msgstr "chwaraewr coch enillodd y rownd"
+
+#: mainview.cpp:578
+#, kde-format
+msgid "Press %1 for new round"
+msgstr "Gwasgwch %1 am rownd newydd"
+
+#: playerinfo.cpp:39 playerinfo.cpp:72
+#, kde-format
+msgid "Hit points"
+msgstr "Pwyntiau taro"
+
+#: playerinfo.cpp:42 playerinfo.cpp:75
+#, kde-format
+msgid "Energy"
+msgstr "Egni"
+
+#: playerinfo.cpp:45 playerinfo.cpp:78
+#, kde-format
+msgid "Wins"
+msgstr "Ennill"
+
+#: structs.h:52
+msgid "Default"
+msgstr ""
+
+#: structs.h:52
+msgid "Chaos"
+msgstr "Anhrefn"
+
+#: structs.h:52
+#, fuzzy
+#| msgid "Lack of energy"
+msgid "Lack of Energy"
+msgstr "Diffyg egni"
+
+#: topwidget.cpp:82
+#, kde-format
+msgid "&New Round"
+msgstr "&Rownd Newydd"
+
+#: topwidget.cpp:90
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "start game"
+msgid "Start"
+msgstr "Dechrau"
+
+#: topwidget.cpp:99
+#, kde-format
+msgid "Player 1 Rotate Left"
+msgstr "Chwaraewr 1, Cylchdroi i'r Chwith"
+
+#: topwidget.cpp:103
+#, kde-format
+msgid "Player 1 Rotate Right"
+msgstr "Chwaraewr 1, Cylchdroi i'r Dde"
+
+#: topwidget.cpp:107
+#, kde-format
+msgid "Player 1 Accelerate"
+msgstr "Chwaraewr 1, Cyflymu"
+
+#: topwidget.cpp:111
+#, kde-format
+msgid "Player 1 Shot"
+msgstr "Chwaraewr 1, Saethu"
+
+#: topwidget.cpp:115
+#, kde-format
+msgid "Player 1 Mine"
+msgstr "Chwaraewr 1, Ffrwydryn"
+
+#: topwidget.cpp:120
+#, kde-format
+msgid "Player 2 Rotate Left"
+msgstr "Chwaraewr 2, Cylchdroi i'r Chwith"
+
+#: topwidget.cpp:124
+#, kde-format
+msgid "Player 2 Rotate Right"
+msgstr "Chwaraewr 2, Cylchdroi i'r Dde"
+
+#: topwidget.cpp:128
+#, kde-format
+msgid "Player 2 Accelerate"
+msgstr "Chwaraewr 2, Cyflymu"
+
+#: topwidget.cpp:132
+#, kde-format
+msgid "Player 2 Shot"
+msgstr "Chwaraewr 2, Saethu"
+
+#: topwidget.cpp:136
+#, kde-format
+msgid "Player 2 Mine"
+msgstr "Chwaraewr 2, Ffrwydryn"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgid "&Restart"
+#~ msgstr "Dechrau"

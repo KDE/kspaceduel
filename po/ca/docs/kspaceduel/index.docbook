@@ -1,0 +1,1181 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Catalan  "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="kspaceduel" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+    <title
+>El manual del &kspaceduel;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+    <author
+><firstname
+>Andreas</firstname
+> <surname
+>Zehender</surname
+> <affiliation
+><address
+><email
+>az@azweb.de</email
+></address
+></affiliation>
+    </author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+&traductor.Antoni.Bella; 
+</authorgroup>
+
+<copyright>
+    <year
+>1999</year
+><year
+>2000</year>
+    <holder
+>&Andreas.Zehender;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>23 d'agost de 2021</date
+><!-- Date of (re)writing, or update.-->
+<releaseinfo
+>2.1 (KDE Gear 21.08)</releaseinfo
+><!-- Application version number. Use the variable definitions within header to change this value.-->
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+    <para
+>Aquesta documentació descriu el joc &kspaceduel; versió 2.1</para>
+</abstract>
+
+<!--List of relevan keywords-->
+<keywordset>
+    <keyword
+>KDE</keyword
+> <!-- do not change this! -->
+    <keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+    <keyword
+>joc</keyword
+> <!-- do not change this! -->
+    <keyword
+>KSpaceDuel</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <keyword
+>arcade</keyword>
+    <keyword
+>espai</keyword>
+    <keyword
+>guerra</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+    <keyword
+>dos jugadors</keyword>
+<!--All other relevant keywords-->
+    <keyword
+>satèl·lit</keyword>
+    <keyword
+>starwars</keyword>
+    <keyword
+>guerres</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Introducció</title
+> <!-- do not change this! -->
+    <note
+><title
+>Tipus de joc:</title
+><para
+>Arcade</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <note
+><title
+>Nombre de possibles jugadors:</title
+><para
+>Dos</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ <!--Short game description starts here. 3-4 sentences (paragraphs)-->
+    <para
+>La idea darrere del &kspaceduel; és senzilla, però addictiva. Cadascun dels dos jugadors possibles controla una nau espacial satèl·lit que orbita el sol. A mesura que progressa la partida, els jugadors han d'eliminar la nau espacial de l'oponent. Tan aviat com es destrueixi la nau de l'oponent, el jugador restant guanyarà el combat.</para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Com jugar</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+    <note
+><title
+>Objectiu:</title
+><para
+>Destruir el satèl·lit de l'oponent, mantenint el propi intacte.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+    <para
+>El &kspaceduel; es carrega directament en el mode de joc. No obstant això, l'acció no començarà fins que qualsevol dels jugadors faci el primer moviment.</para>
+<note
+><para
+>Si el satèl·lit de l'oponent està controlat per la intel·ligència artificial incorporada, l'acció del joc no començarà fins que el jugador humà faci el primer moviment.</para
+></note>
+<para
+>En el &kspaceduel; controleu el gir, l'acceleració i l'armament de la nau. El vostre satèl·lit es dibuixa constantment cap al sol per la gravetat. Haureu d'ajustar el gir i l'acceleració de la nau perquè romangui en curs.</para>
+<note
+><para
+>Acostar-se massa a prop del sol farà que el satèl·lit exploti.</para
+></note>
+<para
+>Al mateix temps, haureu de seguir el moviment de l'oponent i emprar les armes que consisteixen en bales i mines, per a destruir la nau espacial enemiga.</para>
+<note
+><para
+>Les vostres pròpies armes són tan nocives per al vostre satèl·lit com per a l'enemic.</para
+></note>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Les regles del joc, estratègies i consells</title
+> <!-- do not change this! -->
+    <sect1 id="screen">
+        <title
+>Resum de la pantalla de joc del &kspaceduel;.</title>
+        <screenshot>
+            <screeninfo
+>Pantalla de joc del &kspaceduel;</screeninfo>
+            <mediaobject
+><imageobject
+><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Pantalla de joc del &kspaceduel;</phrase
+></textobject
+></mediaobject>
+        </screenshot>
+        <itemizedlist>
+            <listitem
+><para
+>La part superior de l'àrea de joc està ocupada per la barra de menús i la barra d'eines.</para
+></listitem>
+            <listitem
+><para
+>La part central de la pantalla del &kspaceduel; és l'àrea de joc.</para
+></listitem>
+            <listitem
+><para
+>En els costats esquerre i dret de l'àrea de joc, hi ha les pantalles d'informació del jugador roig i del jugador blau.</para
+></listitem>
+            <listitem
+><para
+>El quadre a la part superior de la pantalla d'informació representa els <quote
+>Punts de vida</quote
+> de la nau espacial.</para
+></listitem>
+            <listitem
+><para
+>El quadre a la part intermèdia de la pantalla d'informació representa l'energia de la bateria.</para
+></listitem>
+            <listitem
+><para
+>El quadre a la part inferior de la pantalla d'informació mostra el nombre de victòries del jugador.</para
+></listitem>
+            <listitem
+><para
+>La part inferior de l'àrea de joc és la barra d'estat.</para
+></listitem>
+        </itemizedlist>
+    </sect1>
+    <sect1 id="keys">
+        <title
+>Dreceres predeterminades</title>
+        <para
+>La taula següent mostra les dreceres de teclat predeterminades del &kspaceduel;.</para>
+        <informaltable frame="all">
+            <tgroup cols="3">
+            <colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
+            <thead
+><row
+><entry
+>Acció</entry
+><entry
+>Jugador roig</entry
+><entry
+>Jugador blau</entry
+></row
+></thead>
+            <tbody>
+                <row
+><entry
+>Gira a l'esquerra</entry
+><entry
+><keycap
+>S</keycap
+></entry
+><entry
+>&Left;</entry
+></row>
+                <row
+><entry
+>Gira a la dreta</entry
+><entry
+><keycap
+>F</keycap
+></entry
+><entry
+>&Right;</entry
+></row>
+                <row
+><entry
+>Accelera</entry
+><entry
+><keycap
+>E</keycap
+></entry
+><entry
+>&Up;</entry
+></row>
+                <row
+><entry
+>Dispara</entry
+><entry
+><keycap
+>D</keycap
+></entry
+><entry
+>&Down;</entry
+></row>
+                <row
+><entry
+>Mines</entry
+><entry
+><keycap
+>A</keycap
+></entry
+><entry
+>&Ins;</entry
+></row>
+            </tbody>
+            </tgroup>
+        </informaltable>
+        <note
+><para
+>Per a canviar aquestes tecles, vegeu la secció <link linkend="options-keys"
+>Configuració del joc</link
+>.</para
+></note>
+    </sect1>
+    <sect1 id="rules">
+        <title
+>Regles</title>
+        <sect2 id="energy">
+            <title
+>Quant als punts d'energia</title>
+            <itemizedlist>
+                <listitem
+><para
+>Cada jugador controla una nau.</para
+></listitem>
+                <listitem
+><para
+>Les naus poden girar, accelerar, disparar i posar mines.</para
+></listitem>
+                <listitem
+><para
+>Cada nau té una quantitat limitada d'energia requerida per al gir, accelerar, disparar i posar mines.</para
+></listitem>
+                <listitem
+><para
+>Cada nau disposa d'una quantitat limitada d'energia.</para
+></listitem>
+                <listitem
+><para
+>Les naus absorbeixen l'energia solar requerida per a l'operació de la nau. La quantitat d'energia que obté dependrà de la distància i la direcció del sol.</para
+></listitem>
+            </itemizedlist>
+            <note
+><para
+>Una nau rebrà més energia a prop del sol i menys energia a prop de la vora. Obtindrà la quantitat total d'energia si el sol brilla directament sobre els panells solars, i menys o fins i tot cap energia si el sol brilla en angle sobre o a l'altre costat dels panells.</para
+></note>
+        </sect2>
+        <sect2 id="bullets-and-mines">
+            <title
+>Quant a les bales i mines</title>
+            <itemizedlist>
+                <listitem
+><para
+>Les bales volen al voltant del sol com ho fa una nau.</para
+></listitem>
+                <listitem
+><para
+>Les mines tenen una quantitat d'energia per a romandre en la mateixa posició. Quan s'esgota aquesta energia, les mines xocaran amb el sol i es desintegraran.</para
+></listitem>
+                <listitem
+><para
+>Com més a prop del sol es posi la mina, més energia necessitarà per a romandre en el seu lloc.</para
+></listitem>
+                <listitem
+><para
+>Les mines es poden destruir amb les bales.</para
+></listitem>
+                <listitem
+><para
+>De manera predeterminada, cada nau té 5 bales i 3 mines.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="hit-points">
+            <title
+>Quant als punts de vida</title>
+            <itemizedlist>
+                <listitem
+><para
+>La col·lisió amb les bales pròpies, o les bales o mines enemigues farà disminuir els punts de vida.</para
+></listitem>
+                <listitem
+><para
+>Si xoquen dues naus, llavors la nau més feble serà destruïda i els punts de vida de la nau més forta disminuiran per la quantitat dels punts de vida que tenia la nau més feble.</para
+></listitem>
+                <listitem
+><para
+>Si la quantitat de punts de vida de la nau arriba a zero, aquesta explotarà.</para
+></listitem>
+                <listitem
+><para
+>Si una nau xoca amb el sol, serà destruïda, independentment de la quantitat de punts de vida que li restin.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="powerups">
+          <title
+>Millores</title>
+
+          <para
+>De tant en tant apareixeran millores en el camp de joc.</para>
+          <para
+>Hi ha quatre millores diferents:</para>
+
+          <variablelist>
+            <varlistentry
+><term
+></term
+><listitem>
+              <variablelist>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="mine.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Mina</guiicon
+></term>
+                  <listitem
+><para
+>Fa incrementar el nombre màxim de mines.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="bullet.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Bala</guiicon
+></term>
+                  <listitem
+><para
+>Fa incrementar el nombre màxim de bales.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="energy.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Energia</guiicon
+> (esfera groga o verda)</term>
+                  <listitem
+><para
+>Fa augmentar l'energia del jugador.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="shield.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Escut</guiicon
+> (esfera vermella o blava)</term>
+                  <listitem
+><para
+>Fa augmentar els punts de vida del jugador.</para
+></listitem>
+                </varlistentry>
+              </variablelist>
+            </listitem
+></varlistentry>
+          </variablelist>
+        </sect2>
+    </sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>Elements de menú</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Nova</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Comença una partida nova</action
+> del &kspaceduel;.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-menu-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Combat nou</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Comença un combat nou</action
+> en el nivell actual.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry  id="game-menu-pause">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>P</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Pausa</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Posa en pausa i reprèn la partida.</action
+></para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Surt</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Surt</action
+> del &kspaceduel;.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="settings-menu-settings">
+    <term
+><menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guimenuitem
+>Configura el &kspaceduel;...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Obre un diàleg de configuració</action
+> que permet definir moltes opcions de configuració del joc. Per a obtenir més informació, vegeu el capítol <link linkend="configuration"
+>Configuració del joc</link
+>.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+<para
+>De manera addicional, el &kspaceduel; té la configuració comuna al &kde; i els elements dels menús <guimenu
+>Arranjament</guimenu
+> i <guimenu
+>Ajuda</guimenu
+>. Per a obtenir més informació, llegiu les seccions sobre <ulink url="help:/fundamentals/menus.html#menus-settings"
+>El menú Arranjament</ulink
+> i <ulink url="help:/fundamentals/menus.html#menus-help"
+>El menú Ajuda</ulink
+> en els Fonaments del &kde;. </para>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Preguntes més freqüents</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Vull canviar l'aparença d'aquest joc. Puc fer-ho? </para
+></question>
+ <answer
+><para
+>No. En aquest moment, el &kspaceduel; presenta un sol tema.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>He comès un error. Puc desfer-lo? </para
+></question>
+ <answer
+><para
+>No. El &kspaceduel; no té una característica <quote
+>Desfés</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>No sé què fer aquí! Hi ha cap consell? </para
+></question>
+ <answer
+><para
+>No. El &kspaceduel; no té una característica de <quote
+>Consell</quote
+>. No obstant això, si llegiu acuradament a través de <link linkend="rules_and_tips"
+>Les regles del joc, estratègies i consells</link
+>, no hauríeu de tenir aquest problema.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>He de sortir del joc ara, però encara no he acabat. Puc desar el meu progrés?</para
+></question>
+ <answer
+><para
+>No. El &kspaceduel; no té una característica <quote
+>Desa</quote
+>.</para
+></answer>
+</qandaentry>
+<!--Please add more Q&As if needed-->
+
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Configuració del joc</title
+> <!-- do not change this! -->
+<!--This section describes configuration &GUI;. If your game is configured using menubar exclusively, please remove this section.-->
+  <sect1 id="options-keys">
+    <title
+>Tecles de joc</title>
+     <para
+>El &kspaceduel; té un conjunt predeterminat de tecles per a controlar el joc. Per a obtenir una llista de les tecles predeterminades, vegeu la secció <link linkend="keys"
+>Dreceres predeterminades</link
+>.</para>
+     <para
+>Aquestes tecles es poden canviar seleccionant l'element de menú <menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guimenuitem
+>Configura les dreceres de teclat...</guimenuitem
+></menuchoice
+>.</para>
+     <para
+>Això obrirà un diàleg que us permetrà configurar totes les dreceres, incloses les tecles utilitzades per a dirigir les naus espacials, per a disparar les bales i per a col·locar les mines.</para>
+     <para
+>Veureu que cada jugador (Roig i Blau), té 5 pulsacions corresponents a Girar a l'esquerra, Girar a la dreta, Accelerar, Disparar i Mines.</para>
+     <para
+>En acabar de configurar les vostres tecles, haureu de fer clic a <guibutton
+>D'acord</guibutton
+> per a aplicar els canvis.</para>
+     <para
+>Si voleu restaurar les tecles predeterminades, senzillament feu clic al botó <guibutton
+>Per omissió</guibutton
+>. Per a fer aquests canvis permanents, premeu <guibutton
+>D'acord</guibutton
+>.</para>
+     <para
+>Si voleu abandonar els canvis que heu realitzat i tornar a les tecles prèviament seleccionades, senzillament feu clic a <guibutton
+>Cancel·la</guibutton
+> i els canvis es perdran.</para>
+  </sect1>
+
+  <sect1 id="options-configurations">
+    <title
+>Configuració del joc</title>
+    <para
+>Totes les opcions de configuració del joc del &kspaceduel; són configurables.</para>
+    <para
+>Si voleu canviar les opcions de configuració del joc, només heu de seleccionar l'element de menú <menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guimenuitem
+>Configura el &kspaceduel;...</guimenuitem
+></menuchoice
+>.</para>
+    <para
+>Això mostrarà un diàleg amb dues pàgines, etiquetades com a <guilabel
+>General</guilabel
+> i <guilabel
+>Joc</guilabel
+>. La primera pàgina és força senzilla, la segona té set pestanyes a la part superior.</para>
+    <para
+>Les opcions de configuració s'agrupen en configuracions diferents. Podeu escollir entre diverses configuracions predefinides.</para>
+    <para
+>Si trieu la configuració <guilabel
+>A mida</guilabel
+>, podreu definir totes les opcions de configuració.</para>
+    <note
+><para
+>Si no heu seleccionat <guilabel
+>A mida</guilabel
+>, no podreu realitzar cap canvi en aquestes opcions.</para
+></note>
+    <tip
+><para
+>Si heu trobat una configuració interessant, envieu-la per correu a l'autor del joc. Es podria implementar en una versió futura (envieu la part <literal
+>[Game]</literal
+> que hi ha en el fitxer <filename
+>~/.config/kspaceduelrc</filename
+>).</para
+></tip>
+    <para
+>En acabar d'alterar les opcions, haureu de fer clic a <guibutton
+>D'acord</guibutton
+> per a aplicar els canvis.</para>
+    <para
+>Si voleu restaurar el valor predeterminat, senzillament feu clic al botó <guibutton
+>Per omissió</guibutton
+>. Per a fer aquests canvis permanents, premeu <guibutton
+>D'acord</guibutton
+>.</para>
+    <para
+>Si voleu abandonar els canvis que heu realitzat i tornar a les opcions anteriors, senzillament feu clic a <guibutton
+>Cancel·la</guibutton
+> i els canvis es perdran.</para>
+
+    <para
+>Les opcions de configuració són:</para>
+
+    <sect2 id="general">
+    <title
+>La pàgina General</title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Punts de vida</guilabel
+></term>
+        <listitem
+><para
+>Aquesta secció conté dos controls lliscants que permeten definir els punts de vida per a cadascun dels jugadors. Possiblement voldreu fer disminuir els punts de vida a un jugador per a donar-li un desavantatge.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Temps d'actualització:</guilabel
+></term>
+         <listitem
+><para
+>Temps entre dos actualitzacions de pantalla en mil·lisegons. Totes les altres opcions de configuració són independents del temps d'actualització.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Jugador roig</guilabel
+></term>
+        <listitem
+><para
+>En aquesta secció podreu definir si el jugador vermell és controlat per la IA, i també triar el nivell d'habilitat d'aquesta. Senzillament, experimenteu amb els diferents nivells d'habilitat fins a trobar-ne un que s'ajusti.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Jugador blau</guilabel
+></term>
+        <listitem
+><para
+>Funciona igual que les opcions per a la secció <guilabel
+>Jugador roig</guilabel
+> descrita abans.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+
+    <sect2 id="game">
+    <title
+>La pàgina Joc</title>
+
+    <para
+>Aquí podeu seleccionar un conjunt de configuració personalitzada des d'una llista desplegable. Llavors utilitzeu les pestanyes per a personalitzar-la una mica més.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term
+>Pestanya <guilabel
+>General</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Velocitat del joc:</guilabel
+></term>
+              <listitem
+><para
+>Controla la velocitat de tot el joc.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="bullet">
+        <term
+>Pestanya <guilabel
+>Bala</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Velocitat de tir:</guilabel
+></term>
+              <listitem
+><para
+>La velocitat de les bales.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Energia necessària:</guilabel
+></term>
+              <listitem
+><para
+>La quantitat d'energia necessària per a un tret.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Nombre màxim:</guilabel
+></term>
+              <listitem
+><para
+>El nombre màxim de bales que un jugador pot tenir a la pantalla.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Dany:</guilabel
+></term>
+              <listitem
+><para
+>El nombre de punts de vida malmesos quan una bala colpeja una nau.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Temps de vida:</guilabel
+></term>
+              <listitem
+><para
+>El temps de vida màxim d'una bala.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Temps de recàrrega:</guilabel
+></term>
+              <listitem
+><para
+>El temps que necessita una nau per a recarregar una bala.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="mine">
+        <term
+>Pestanya <guilabel
+>Mina</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Benzina a les mines:</guilabel
+></term>
+              <listitem
+><para
+>La quantitat de combustible en una mina.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Energia necessària:</guilabel
+></term>
+              <listitem
+><para
+>La quantitat d'energia necessària per a posar una mina.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Temps d'activació:</guilabel
+></term>
+              <listitem
+><para
+>El temps que una mina estarà inactiva.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Dany:</guilabel
+></term>
+              <listitem
+><para
+>El nombre de punts de vida malmesos quan una nau colpeja una mina.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Nombre màxim:</guilabel
+></term>
+              <listitem
+><para
+>El nombre màxim de mines que un jugador pot tenir a la pantalla.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Temps de recàrrega:</guilabel
+></term>
+              <listitem
+><para
+>El temps que necessita una nau per a recarregar una mina.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ship">
+        <term
+>Pestanya <guilabel
+>Nau</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Acceleració:</guilabel
+></term>
+              <listitem
+><para
+>L'acceleració de les naus.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Energia necessària:</guilabel
+></term>
+              <listitem
+><para
+>L'energia necessària per a fer accelerar una nau.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Velocitat de gir:</guilabel
+></term>
+              <listitem
+><para
+>La velocitat a la qual gira una nau.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Energia necessària:</guilabel
+></term>
+              <listitem
+><para
+>L'energia necessària per a fer firar una nau.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Dany en xocar:</guilabel
+></term>
+              <listitem
+><para
+>El nombre de punts de vida malmesos quan xoquen dues naus.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="sun">
+        <term
+>Pestanya <guilabel
+>Sol</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Energia solar:</guilabel
+></term>
+              <listitem
+><para
+>La força del sol. Com més gran sigui aquest valor, més ràpid recarregaran les naus.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Gravetat:</guilabel
+></term>
+              <listitem
+><para
+>La força de tira gravitacional del sol.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="start">
+        <term
+>Pestanya <guilabel
+>Inici</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Posició X:</guilabel
+> i <guilabel
+>Posició Y:</guilabel
+></term>
+              <listitem
+><para
+>La posició de les naus al començament d'un combat nou. Les naus començaran en costats oposats del sol.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Velocitat X:</guilabel
+> i <guilabel
+>Velocitat Y:</guilabel
+></term>
+              <listitem
+><para
+>La velocitat al començament d'un combat nou.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="powerup-options">
+        <term
+>Pestanya <guilabel
+>Millores</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Temps d'aparició:</guilabel
+></term>
+              <listitem
+><para
+>Temps màxim entre l'aparició de dues millores.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Temps de vida:</guilabel
+></term>
+              <listitem
+><para
+>Temps màxim de vida d'una millora.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Quantitat d'energia:</guilabel
+></term>
+              <listitem
+><para
+>Quantitat d'energia que obtindrà un jugador d'una millora d'energia.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Quantitat d'escut:</guilabel
+></term>
+              <listitem
+><para
+>Quantitat de punts de vida que obtindrà un jugador d'una millora d'escut.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+  </sect1>
+</chapter>
+
+<chapter id="credits"
+><title
+>Crèdits i llicència</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>&kspaceduel; </para>
+<para
+>Copyright del programa 1999-2000 &Andreas.Zehender; &Andreas.Zehender.mail;</para>
+<para
+>Copyright de la documentació 2000 &Andreas.Zehender; &Andreas.Zehender.mail;</para>
+<para
+>Documentació actualitzada per al &kde; 4.11 per en &Mike.McBride; &Mike.McBride.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+
+<para
+>Traductor de la documentació: &credits.Antoni.Bella;</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

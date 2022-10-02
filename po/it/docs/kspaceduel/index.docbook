@@ -1,0 +1,1237 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="kspaceduel" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+    <title
+>Manuale di &kspaceduel;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+    <author
+><firstname
+>Andreas</firstname
+> <surname
+>Zehender</surname
+> <affiliation
+><address
+><email
+>az@azweb.de</email
+></address
+></affiliation>
+    </author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+<othercredit role="translator"
+> <firstname
+>Valter</firstname
+><surname
+>Mura</surname
+> <affiliation
+><address
+><email
+>valtermura@gmail.com</email
+> </address
+></affiliation
+><contrib
+> Traduzione della documentazione e dell'interfaccia grafica</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Marco</firstname
+><surname
+>Poletti</surname
+> <affiliation
+><address
+><email
+>poletti.marco@gmail.com</email
+> </address
+></affiliation
+><contrib
+> Traduzione della documentazione</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Andrea</firstname
+><surname
+>Celli</surname
+><affiliation
+><address
+> <email
+>andrea.celli@libero.it</email
+></address
+></affiliation
+><contrib
+> Traduzione dell'interfaccia grafica</contrib
+></othercredit
+> <othercredit role="translator"
+> <firstname
+>Francesco</firstname
+><surname
+>Bresciani</surname
+> <affiliation
+><address
+><email
+>fbresciani@users.sourceforge.net</email
+> </address
+></affiliation
+><contrib
+> Traduzione della documentazione e dell'interfaccia grafica</contrib
+></othercredit
+>  
+</authorgroup>
+
+<copyright>
+    <year
+>1999</year
+><year
+>2000</year>
+    <holder
+>&Andreas.Zehender;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-08-23</date
+><!-- Date of (re)writing, or update.-->
+<releaseinfo
+>2.1 (KDE Gear 21.08)</releaseinfo
+><!-- Application version number. Use the variable definitions within header to change this value.-->
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+    <para
+>Questa documentazione riguarda il gioco &kspaceduel;, versione 2.1</para>
+</abstract>
+
+<!--List of relevan keywords-->
+<keywordset>
+    <keyword
+>KDE</keyword
+> <!-- do not change this! -->
+    <keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+    <keyword
+>gioco</keyword
+> <!-- do not change this! -->
+    <keyword
+>KSpaceDuel</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <keyword
+>arcade</keyword>
+    <keyword
+>spazio</keyword>
+    <keyword
+>guerra</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+    <keyword
+>a due giocatori</keyword>
+<!--All other relevant keywords-->
+    <keyword
+>satellite</keyword>
+    <keyword
+>guerre stellari</keyword>
+    <keyword
+>guerre</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Introduzione</title
+> <!-- do not change this! -->
+    <note
+><title
+>Tipo del gioco:</title
+><para
+>Arcade</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <note
+><title
+>Numero massimo di giocatori:</title
+><para
+>Due</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ <!--Short game description starts here. 3-4 sentences (paragraphs)-->
+    <para
+>L'idea alla base di &kspaceduel; è semplice, ma coinvolgente. Ognuno dei due giocatori controlla una nave spaziale che orbita attorno al sole. Durante il gioco, i giocatori devono distruggere la nave dell'avversario. Appena questo avviene, il giocatore sopravvissuto vince.</para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Come giocare</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+    <note
+><title
+>Obbiettivo:</title
+><para
+>Distruggere la nave nemica, mantenendo intatta la propria.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+    <para
+>&kspaceduel; viene avviato direttamente in modalità di gioco; comunque, il gioco comincia solo quando uno dei due giocatori fa la prima mossa.</para>
+<note
+><para
+>Se la nave avversaria è controllata dall'intelligenza artificiale, il gioco inizia quando il giocatore umano fa la prima mossa.</para
+></note>
+<para
+>In &kspaceduel; si controllano la rotazione, l'accelerazione e le armi della nave. La nave è costantemente attirata verso il sole dalla forza di gravità. Per mantenerla distante, bisogna regolare la rotazione e l'accelerazione in modo appropriato.</para>
+<note
+><para
+>Se ci si avvicina troppo al sole, la nave esploderà.</para
+></note>
+<para
+>Allo stesso tempo bisogna controllare i movimenti dell'avversario e usare le armi (proiettili e mine) per distruggere la nave nemica.</para>
+<note
+><para
+>Le tue armi provocano gli stessi danni, sia alla tua nave sia a quella nemica.</para
+></note>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Regole del gioco, strategie e suggerimenti</title
+> <!-- do not change this! -->
+    <sect1 id="screen">
+        <title
+>Spiegazione della schermata di gioco di &kspaceduel;.</title>
+        <screenshot>
+            <screeninfo
+>Schermata di gioco di &kspaceduel;</screeninfo>
+            <mediaobject
+><imageobject
+><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Schermata di gioco di &kspaceduel;</phrase
+></textobject
+></mediaobject>
+        </screenshot>
+        <itemizedlist>
+            <listitem
+><para
+>La zona superiore dell'area di gioco è occupata dalla barra dei menu e dalla barra degli strumenti.</para
+></listitem>
+            <listitem
+><para
+>La parte centrale della schermata di &kspaceduel; è l'area di gioco.</para
+></listitem>
+            <listitem
+><para
+>Alla sinistra e alla destra dell'area di gioco si trovano le informazioni sul giocatore rosso e sul giocatore blu.</para
+></listitem>
+            <listitem
+><para
+>Il riquadro superiore nella zona delle informazioni rappresenta l'<quote
+>integrità dello scafo</quote
+>.</para
+></listitem>
+            <listitem
+><para
+>Il riquadro centrale nella zona delle informazioni rappresenta l'energia delle batterie.</para
+></listitem>
+            <listitem
+><para
+>Il riquadro inferiore nella regione delle informazioni mostra il numero di vittorie.</para
+></listitem>
+            <listitem
+><para
+>La parte inferiore dell'area di gioco è la barra di stato.</para
+></listitem>
+        </itemizedlist>
+    </sect1>
+    <sect1 id="keys">
+        <title
+>Scorciatoie predefinite</title>
+        <para
+>La tabella seguente mostra le scorciatoie predefinite per &kspaceduel;.</para>
+        <informaltable frame="all">
+            <tgroup cols="3">
+            <colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
+            <thead
+><row
+><entry
+>Azione</entry
+><entry
+>Giocatore rosso</entry
+><entry
+>Giocatore blu</entry
+></row
+></thead>
+            <tbody>
+                <row
+><entry
+>Ruota a sinistra</entry
+><entry
+><keycap
+>S</keycap
+></entry
+><entry
+>Freccia &Left;</entry
+></row>
+                <row
+><entry
+>Ruota a destra</entry
+><entry
+><keycap
+>F</keycap
+></entry
+><entry
+>Freccia &Right;</entry
+></row>
+                <row
+><entry
+>Accelera</entry
+><entry
+><keycap
+>E</keycap
+></entry
+><entry
+>Freccia &Up;</entry
+></row>
+                <row
+><entry
+>Sparo</entry
+><entry
+><keycap
+>D</keycap
+></entry
+><entry
+>Freccia &Down;</entry
+></row>
+                <row
+><entry
+>Mine</entry
+><entry
+><keycap
+>A</keycap
+></entry
+><entry
+>&Ins;</entry
+></row>
+            </tbody>
+            </tgroup>
+        </informaltable>
+        <note
+><para
+>Per sapere come cambiare questi tasti, vedere la sezione <link linkend="options-keys"
+>Configurazione del gioco</link
+>.</para
+></note>
+    </sect1>
+    <sect1 id="rules">
+        <title
+>Regole</title>
+        <sect2 id="energy">
+            <title
+>Integrità scafo</title>
+            <itemizedlist>
+                <listitem
+><para
+>Ogni giocatore controlla una nave.</para
+></listitem>
+                <listitem
+><para
+>Le navi possono ruotare, accelerare, sparare e rilasciare mine.</para
+></listitem>
+                <listitem
+><para
+>Ogni nave ha a disposizione una quantità limitata di energia, che serve per ruotare, accelerare, sparare e rilasciare mine.</para
+></listitem>
+                <listitem
+><para
+>Ogni nave ha a disposizione una quantità limitata di energia.</para
+></listitem>
+                <listitem
+><para
+>La nave assorbe l'energia solare necessaria al suo funzionamento. La quantità di energia ricevuta dipende dalla distanza dal sole e dall'orientamento.</para
+></listitem>
+            </itemizedlist>
+            <note
+><para
+>Una nave riceve più energia in prossimità del sole e meno energia vicino ai bordi del campo di gioco. Riceve la quantità massima di energia se i raggi solari colpiscono direttamente i pannelli, mentre la quantità di energia è minore o addirittura nulla se il sole colpisce il pannello con un certo angolo o di lato.</para
+></note>
+        </sect2>
+        <sect2 id="bullets-and-mines">
+            <title
+>Proiettili e mine</title>
+            <itemizedlist>
+                <listitem
+><para
+>I proiettili si muovono intorno al sole come una nave.</para
+></listitem>
+                <listitem
+><para
+>Le mine hanno a disposizione una certa quantità di energia per mantenere la propria posizione. Quando l'energia è terminata, la mina precipita nel sole.</para
+></listitem>
+                <listitem
+><para
+>Più una mina viene rilasciata vicino al sole, più energia avrà bisogno per mantenere quella posizione.</para
+></listitem>
+                <listitem
+><para
+>Le mine possono essere distrutte con i proiettili.</para
+></listitem>
+                <listitem
+><para
+>Come impostazione predefinita una nave ha 5 proiettili e 3 mine.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="hit-points">
+            <title
+>Integrità scafo</title>
+            <itemizedlist>
+                <listitem
+><para
+>Se si entra in contatto con i propri proiettili oppure con i proiettili o le mine dell'avversario, l'integrità dello scafo diminuisce.</para
+></listitem>
+                <listitem
+><para
+>Se due navi si scontrano, la nave più debole viene distrutta e l'integrità dello scafo della nave più forte diminuisce di una quantità pari all'integrità dello scafo avversario.</para
+></listitem>
+                <listitem
+><para
+>Quando l'integrità dello scafo diventa zero, la nave esplode.</para
+></listitem>
+                <listitem
+><para
+>Se una nave si scontra con il sole viene distrutta, indipendentemente dall'integrità dello scafo.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="powerups">
+          <title
+>Bonus</title>
+
+          <para
+>Di tanto in tanto dei bonus appaiono sul campo di gioco.</para>
+          <para
+>Ci sono quattro bonus differenti:</para>
+
+          <variablelist>
+            <varlistentry
+><term
+></term
+><listitem>
+              <variablelist>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="mine.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Mina</guiicon
+></term>
+                  <listitem
+><para
+>Aumenta il numero massimo di mine.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="bullet.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Proiettile</guiicon
+></term>
+                  <listitem
+><para
+>Aumenta il numero massimo di proiettili.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="energy.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Energia</guiicon
+> (sfera gialla o verde)</term>
+                  <listitem
+><para
+>Aumenta l'energia del giocatore.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="shield.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Scudo</guiicon
+> (sfera blu o rossa)</term>
+                  <listitem
+><para
+>Aumenta l'integrità dello scafo del giocatore.</para
+></listitem>
+                </varlistentry>
+              </variablelist>
+            </listitem
+></varlistentry>
+          </variablelist>
+        </sect2>
+    </sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>Voci dei menu</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Nuova</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Inizia una nuova partita</action
+> a &kspaceduel;.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-menu-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+> &Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Nuovo round</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Inizia un nuovo round</action
+>, al livello attuale.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry  id="game-menu-pause">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Pausa</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Mette in pausa o riprende la partita.</action
+></para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Esci</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Esce</action
+> da &kspaceduel;.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="settings-menu-settings">
+    <term
+><menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Configura &kspaceduel;...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Apre una finestra di configurazione</action
+> che permette di modificare numerose impostazioni del gioco, vedere il capitolo <link linkend="configuration"
+>Configurazione del gioco</link
+> per ulteriori informazioni.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+<para
+>Inoltre &kspaceduel; ha le voci dei menu <guimenu
+>Impostazioni</guimenu
+> e <guimenu
+>Aiuto</guimenu
+> comuni di &kde;; per maggiori informazioni, consulta i capitoli <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu Impostazioni</ulink
+> e <ulink url="help:/fundamentals/menus.html#menus-help"
+>menu Aiuto</ulink
+> dei «Fondamentali di &kde;». </para>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Domande frequenti</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Vorrei modificare l'aspetto del gioco. È possibile? </para
+></question>
+ <answer
+><para
+>No. Al momento &kspaceduel; ha solo un tema.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Mi sono sbagliato, posso annullare l'azione? </para
+></question>
+ <answer
+><para
+>No. &kspaceduel; non ha la funzione per annullare le azioni.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Non so cosa fare qui! Ci sono dei suggerimenti? </para
+></question>
+ <answer
+><para
+>No. &kspaceduel; non ha una funzione <quote
+>Suggerimenti</quote
+>. Comunque, se si legge attentamente la sezione <link linkend="rules_and_tips"
+>Regole del gioco, strategie e suggerimenti </link
+> non si dovrebbero avere problemi.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Devo uscire dal gioco, ma non ho ancora finito la partita. Posso salvare i miei progressi?</para
+></question>
+ <answer
+><para
+>No. &kspaceduel; non ha una funzione <quote
+>Salva</quote
+>.</para
+></answer>
+</qandaentry>
+<!--Please add more Q&As if needed-->
+
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Configurazione del gioco</title
+> <!-- do not change this! -->
+<!--This section describes configuration &GUI;. If your game is configured using menubar exclusively, please remove this section.-->
+  <sect1 id="options-keys">
+    <title
+>Tasti dei giocatori</title>
+     <para
+>&kspaceduel; ha un'insieme di tasti predefiniti per controllare il gioco. Vedere la sezione <link linkend="keys"
+>Scorciatoie predefinite</link
+> per una lista dei tasti predefiniti.</para>
+     <para
+>I tasti possono essere modificati scegliendo l'elemento del menu <menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Configura le scorciatoie...</guimenuitem
+></menuchoice
+>.</para>
+     <para
+>Verrà mostrata una finestra di dialogo che permette di impostare tutte le scorciatoie, comprese quelle per manovrare le astronavi, sparare proiettili e depositare mine.</para>
+     <para
+>Ogni giocatore (rosso e blu) ha a disposizione cinque tasti che corrispondono alla Rotazione a sinistra, Rotazione a destra, Accelerazione, Sparo e Mina.</para>
+     <para
+>Quando si è finito di configurare i tasti fare clic sul pulsante <guibutton
+>OK</guibutton
+> per applicare le modifiche.</para>
+     <para
+>Se si vogliono ripristinare i tasti predefiniti fare semplicemente clic sul pulsante <guibutton
+>Valori predefiniti</guibutton
+>. Per rendere queste modifiche permanenti premere il pulsante <guibutton
+>OK</guibutton
+>.</para>
+     <para
+>Se si vogliono abbandonare le modifiche fatte e tornare alla configurazione di tasti precedente, fare semplicemente clic sul pulsante <guibutton
+>Annulla</guibutton
+> e le modifiche verranno annullate.</para>
+  </sect1>
+
+  <sect1 id="options-configurations">
+    <title
+>Configurazione del gioco</title>
+    <para
+>Tutte le impostazioni del gioco di &kspaceduel; sono configurabili.</para>
+    <para
+>Se si vogliono cambiare le impostazioni di gioco scegliere l'elemento del menu <menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Configura &kspaceduel;...</guimenuitem
+></menuchoice
+>.</para>
+    <para
+>Mostra una finestra di dialogo con due pagine, <guilabel
+>Generale</guilabel
+> e <guilabel
+>Gioco</guilabel
+>. La prima pagina è semplice, mentre la seconda presenta numerose linguette nella parte alta.</para>
+    <para
+>Le impostazioni sono raggruppare in differenti configurazioni. Si può scegliere tra diverse configurazioni predefinite.</para>
+    <para
+>Se si sceglie la configurazione <guilabel
+>Personalizzato</guilabel
+>, si possono modificare tutte le impostazioni.</para>
+    <note
+><para
+>Altrimenti, non si sarà in grado di modificare le impostazioni.</para
+></note>
+    <tip
+><para
+>Se si è creata una configurazione interessante, è bene inviare una e-mail all'autore del gioco, che potrebbe aggiungerla in una versione futura (invia la sezione [Game] del file <filename
+>~/.config/kspaceduelrc</filename
+>).</para
+></tip>
+    <para
+>Quando si è finito di modificare le impostazioni, fare clic su <guibutton
+>OK</guibutton
+> per salvare le modifiche.</para>
+    <para
+>Se si vuole ripristinare la configurazione predefinita, fare semplicemente clic sul pulsante <guibutton
+>Valori predefiniti</guibutton
+>. Per rendere permanenti le modifiche premere <guibutton
+>OK</guibutton
+>.</para>
+    <para
+>Se si vogliono abbandonare le modifiche fatte e ritornare alle opzioni precedenti, fare semplicemente clic su <guibutton
+>Annulla</guibutton
+> e le modifiche verranno annullate.</para>
+
+    <para
+>Le impostazioni sono:</para>
+
+    <sect2 id="general">
+    <title
+>La pagina Generale</title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Integrità scafo</guilabel
+></term>
+        <listitem
+><para
+>Questa sezione contiene due cursori che permettono di definire l'integrità dello scafo per ciascuno dei due giocatori; potresti voler diminuire l'integrità dello scafo di un giocatore per dare a quel giocatore un handicap.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Tempo di aggiornamento:</guilabel
+></term>
+         <listitem
+><para
+>Il tempo tra due aggiornamenti successivi dello schermo in millisecondi. Tutte le altre impostazioni non dipendono dalla frequenza di aggiornamento.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Giocatore rosso</guilabel
+></term>
+        <listitem
+><para
+>In questa sezione puoi impostare se il giocatore rosso è controllato dalla IA e scegliere il livello di abilità della IA per questo giocatore. Prova con i vari livelli fino a quando non trovi quello che fa per te.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Giocatore blu</guilabel
+></term>
+        <listitem
+><para
+>Le opzioni sono le stesse di quelle descritte prima nella sezione per il <guilabel
+>Giocatore rosso</guilabel
+>.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+
+    <sect2 id="game">
+    <title
+>La pagina Gioco</title>
+
+    <para
+>Qui puoi selezionare una impostazione personalizzata da un elenco a tendina, quindi utilizzare le schede per personalizzare ulteriormente le impostazioni.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term
+>Scheda <guilabel
+>Generale</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Velocità del gioco:</guilabel
+></term>
+              <listitem
+><para
+>Controlla la velocità dell'intero gioco.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="bullet">
+        <term
+>Scheda <guilabel
+>Proiettile</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Velocità di sparo:</guilabel
+></term>
+              <listitem
+><para
+>La velocità dei proiettili.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Fabbisogno di energia:</guilabel
+></term>
+              <listitem
+><para
+>La quantità di energia necessaria per ogni colpo.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Numero massimo:</guilabel
+></term>
+              <listitem
+><para
+>Il numero massimo di proiettili che un giocatore può avere sullo schermo.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Danneggiamento:</guilabel
+></term>
+              <listitem
+><para
+>La quantità di danni allo scafo causata dalla collisione di un proiettile con la nave.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Tempo di vita:</guilabel
+></term>
+              <listitem
+><para
+>Il tempo di vita massimo dei proiettili.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Tempo di ricarica:</guilabel
+></term>
+              <listitem
+><para
+>Il tempo necessario alla nave per ricaricare un proiettile.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="mine">
+        <term
+>Scheda <guilabel
+>Mina</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Carburante mine:</guilabel
+></term>
+              <listitem
+><para
+>La quantità di carburante a disposizione di ogni mina.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Fabbisogno di energia:</guilabel
+></term>
+              <listitem
+><para
+>La quantità di energia necessaria per rilasciare ogni mina.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Tempo di innesco:</guilabel
+></term>
+              <listitem
+><para
+>Il tempo durante il quale le mine rimangono inattive.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Danneggiamento:</guilabel
+></term>
+              <listitem
+><para
+>La quantità di danni allo scafo ricevuti dalla nave quando colpisce una mina.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Numero massimo:</guilabel
+></term>
+              <listitem
+><para
+>Il numero massimo di mine che un giocatore può avere sullo schermo.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Tempo di ricarica:</guilabel
+></term>
+              <listitem
+><para
+>Il tempo necessario alla nave per ricaricare una mina.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ship">
+        <term
+>Scheda <guilabel
+>Nave</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Accelerazione:</guilabel
+></term>
+              <listitem
+><para
+>Accelerazione delle navi.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Fabbisogno di energia:</guilabel
+></term>
+              <listitem
+><para
+>L'energia necessaria per accelerare la nave.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Velocità di rotazione:</guilabel
+></term>
+              <listitem
+><para
+>La velocità di rotazione della nave.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Fabbisogno di energia:</guilabel
+></term>
+              <listitem
+><para
+>L'energia necessaria per ruotare la nave.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Danneggiamento per urto:</guilabel
+></term>
+              <listitem
+><para
+>La quantità di danni allo scafo ricevuta quando due navi si scontrano.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="sun">
+        <term
+>Scheda <guilabel
+>Sole</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Energia solare:</guilabel
+></term>
+              <listitem
+><para
+>La forza del sole. Maggiore è il valore, più velocemente le navi verranno ricaricate.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Gravità:</guilabel
+></term>
+              <listitem
+><para
+>L'intensità dell'attrazione gravitazionale del sole.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="start">
+        <term
+>Scheda <guilabel
+>Avvio</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Posizione X:</guilabel
+> e <guilabel
+>Posizione Y:</guilabel
+></term>
+              <listitem
+><para
+>La posizione delle navi all'inizio di una nuova partita. Le navi si trovano in posizioni opposte rispetto al sole.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Velocità X:</guilabel
+> e <guilabel
+>Velocità Y:</guilabel
+></term>
+              <listitem
+><para
+>La velocità all'inizio di un nuovo round.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="powerup-options">
+        <term
+>Scheda <guilabel
+>Bonus</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Tempo di comparsa:</guilabel
+></term>
+              <listitem
+><para
+>Tempo massimo tra la comparsa di due bonus.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Tempo di vita:</guilabel
+></term>
+              <listitem
+><para
+>Tempo di vita massimo di un bonus.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Quantità di energia:</guilabel
+></term>
+              <listitem
+><para
+>La quantità di energia che un giocatore ottiene da un bonus energetico.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Quantità di scudo:</guilabel
+></term>
+              <listitem
+><para
+>La quantità di danni allo scafo riparati da un bonus scudo.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+  </sect1>
+</chapter>
+
+<chapter id="credits"
+><title
+>Riconoscimenti e licenza</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>&kspaceduel; </para>
+<para
+>Copyright programma 1999-2000 &Andreas.Zehender; &Andreas.Zehender.mail;</para>
+<para
+>Copyright documentazione 2000 &Andreas.Zehender; &Andreas.Zehender.mail;</para>
+<para
+>Documentazione aggiornata per &kde; 4.11 by &Mike.McBride; &Mike.McBride.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+
+<para
+>Francesco Bresciani <email
+>fbresciani@users.sourceforge.net</email
+> </para
+> <para
+>Marco Poletti <email
+>poletti.marco@gmail.com</email
+> </para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

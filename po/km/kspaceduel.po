@@ -1,0 +1,443 @@
+# translation of kspaceduel.po to Khmer
+# Auk Piseth <piseth_dv@khmeros.info>, 2006, 2007, 2008.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2007, 2008.
+# Morn Met, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kspaceduel\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2009-10-23 21:22+0700\n"
+"Last-Translator: Morn Met\n"
+"Language-Team: Khmer <kde-i18n-doc@kde.org>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
+"X-Language: km_KH\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info"
+
+#: dialogs.cpp:63
+msgid "Game speed:"
+msgstr "ល្បឿន​ល្បែង ៖"
+
+#: dialogs.cpp:63
+msgid "Shot speed:"
+msgstr "ល្បឿន​បាញ់ ៖"
+
+#: dialogs.cpp:64 dialogs.cpp:67 dialogs.cpp:70 dialogs.cpp:71
+msgid "Energy need:"
+msgstr "តម្រូវការ​ថាមពល ៖"
+
+#: dialogs.cpp:64 dialogs.cpp:68
+msgid "Max number:"
+msgstr "ចំនួន​អតិ. ៖"
+
+#: dialogs.cpp:65 dialogs.cpp:68
+msgid "Damage:"
+msgstr "ខូច​ខាត ៖"
+
+#: dialogs.cpp:65 dialogs.cpp:75
+msgid "Life time:"
+msgstr "រយៈពេល​រស់រាន ៖"
+
+#: dialogs.cpp:66 dialogs.cpp:69
+msgid "Reload time:"
+msgstr "រយៈពេល​ផ្ទុក​ឡើង​វិញ ៖"
+
+#: dialogs.cpp:66
+msgid "Mine fuel:"
+msgstr "សាំង​មីន ៖"
+
+#: dialogs.cpp:67
+msgid "Activate time:"
+msgstr "រយៈពេល​ធ្វើ​ឲ្យ​សកម្ម ៖"
+
+#: dialogs.cpp:69
+msgid "Acceleration:"
+msgstr "បង្កើន​ល្បឿន ៖"
+
+#: dialogs.cpp:70
+msgid "Rotation speed:"
+msgstr "ល្បឿន​បង្វិល ៖"
+
+#: dialogs.cpp:71
+msgid "Crash damage:"
+msgstr "ខូចខាត​ពេល​ប៉ះទង្គិច ៖"
+
+#: dialogs.cpp:72
+msgid "Sun energy:"
+msgstr "ថាម​ពល​ព្រះ​អាទិត្យ ៖"
+
+#: dialogs.cpp:72
+msgid "Gravity:"
+msgstr "ទំនាញ ៖"
+
+#: dialogs.cpp:73
+msgid "Position X:"
+msgstr "ទីតាំង X ៖"
+
+#: dialogs.cpp:73
+msgid "Position Y:"
+msgstr "ទីតាំង Y ៖"
+
+#: dialogs.cpp:74
+msgid "Velocity X:"
+msgstr "ល្បឿន X ៖"
+
+#: dialogs.cpp:74
+msgid "Velocity Y:"
+msgstr "ល្បឿន Y ៖"
+
+#: dialogs.cpp:75
+msgid "Appearance time:"
+msgstr "រយៈពេល​បង្ហាញ ៖"
+
+#: dialogs.cpp:76
+msgid "Energy amount:"
+msgstr "ចំនួន​ថាមពល ៖"
+
+#: dialogs.cpp:76
+msgid "Shield amount:"
+msgstr "ចំនួន​ខែល ៖"
+
+#: dialogs.cpp:169
+#, kde-format
+msgctxt "custom values"
+msgid "Custom"
+msgstr "ផ្ទាល់ខ្លួន"
+
+#: dialogs.cpp:185
+#, kde-format
+msgctxt "general game settings"
+msgid "General"
+msgstr "ទូទៅ"
+
+#: dialogs.cpp:186 structs.h:52
+#, kde-format
+msgid "Bullet"
+msgstr "គ្រាប់"
+
+#: dialogs.cpp:187
+#, kde-format
+msgctxt "Name"
+msgid "Mine"
+msgstr "មីន"
+
+#: dialogs.cpp:188
+#, kde-format
+msgid "Ship"
+msgstr "នាវា"
+
+#: dialogs.cpp:189
+#, kde-format
+msgctxt "the star, Sol"
+msgid "Sun"
+msgstr "ព្រះ​អាទិត្យ"
+
+#: dialogs.cpp:190
+#, kde-format
+msgctxt "initial position and velocities of players"
+msgid "Start"
+msgstr "ចាប់​ផ្តើម"
+
+#: dialogs.cpp:191
+#, kde-format
+msgid "Powerups"
+msgstr "ដំឡើង​ថាមពល"
+
+#: dialogs.cpp:404
+#, kde-format
+msgctxt "general settings"
+msgid "General"
+msgstr "ទូទៅ"
+
+#: dialogs.cpp:404
+#, kde-format
+msgid "General Settings"
+msgstr "ការ​កំណត់​ទូទៅ"
+
+#: dialogs.cpp:407
+#, kde-format
+msgctxt "game settings"
+msgid "Game"
+msgstr "ល្បែង"
+
+#: dialogs.cpp:407
+#, kde-format
+msgid "Game Settings"
+msgstr "ការ​កំណត់​ល្បែង"
+
+#  i18n: file general.ui line 30
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: general.ui:22
+#, kde-format
+msgid "Hit Points"
+msgstr "ពិន្ទុ​បាញ់​ត្រូវ"
+
+#  i18n: file general.ui line 63
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: general.ui:42
+#, kde-format
+msgid "Red player:"
+msgstr "អ្នក​លេង​ពណ៌​ក្រហម ៖"
+
+#  i18n: file general.ui line 71
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: general.ui:82
+#, kde-format
+msgid "Blue player:"
+msgstr "អ្នក​លេង​ពណ៌​ខៀវ ៖"
+
+#  i18n: file general.ui line 103
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
+#: general.ui:117
+#, kde-format
+msgid "Graphics"
+msgstr "ក្រាហ្វិក"
+
+#  i18n: file general.ui line 114
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#: general.ui:129
+#, kde-format
+msgid "Refresh time:"
+msgstr "រយៈពេល​ធ្វើ​ឲ្យ​ស្រស់ ៖"
+
+#  i18n: file general.ui line 169
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: general.ui:176
+#, kde-format
+msgid "Red Player"
+msgstr "អ្នក​លេង​ពណ៌​ក្រហម"
+
+#  i18n: file general.ui line 180
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player0IsAi)
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player1IsAi)
+#: general.ui:196 general.ui:299
+#, kde-format
+msgid "Player is AI"
+msgstr "អ្នក​លេង​ជា​  AI"
+
+#  i18n: file general.ui line 191
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: general.ui:229 general.ui:332
+#, kde-format
+msgid "Difficulty:"
+msgstr "ភាព​លំបាក ៖"
+
+#  i18n: file general.ui line 197
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:243 general.ui:346
+#, kde-format
+msgid "Trainee"
+msgstr "អ្នក​រៀន"
+
+#  i18n: file general.ui line 202
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:248 general.ui:351
+#, kde-format
+msgid "Normal"
+msgstr "ធម្មតា"
+
+#  i18n: file general.ui line 207
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:253 general.ui:356
+#, kde-format
+msgid "Hard"
+msgstr "ពិបាក"
+
+#  i18n: file general.ui line 212
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:258 general.ui:361
+#, kde-format
+msgid "Insane"
+msgstr "ឆ្កួត"
+
+#  i18n: file general.ui line 232
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: general.ui:279
+#, kde-format
+msgid "Blue Player"
+msgstr "អ្នក​លេង​ពណ៌​ខៀវ"
+
+#. i18n: ectx: Menu (game)
+#: kspaceduelui.rc:10
+#, kde-format
+msgid "&Game"
+msgstr "ល្បែង"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kspaceduelui.rc:15
+#, kde-format
+msgid "Main Toolbar"
+msgstr "របារ​ឧបករណ៍​មេ"
+
+#: main.cpp:28
+#, kde-format
+msgid "KSpaceDuel"
+msgstr "KSpaceDuel"
+
+#: main.cpp:30
+#, fuzzy, kde-format
+#| msgid "KDE Space Game"
+msgid "Space Arcade Game"
+msgstr "ល្បែង​លំហ​របស់ KDE"
+
+#: main.cpp:32
+#, kde-format
+msgid "(c) 1998-2001, Andreas Zehender"
+msgstr "រក្សាសិទ្ធិ​ឆ្នាំ ១៩៩៨-២០០១ ដោយ Andreas Zehender"
+
+#: main.cpp:35
+#, kde-format
+msgid "Andreas Zehender"
+msgstr "Andreas Zehender"
+
+#: main.cpp:35
+#, kde-format
+msgid "Original Program"
+msgstr "កម្មវិធី​ដើម"
+
+#: main.cpp:36
+#, kde-format
+msgid "Branan Riley"
+msgstr "Branan Riley"
+
+#: main.cpp:36
+#, kde-format
+msgid "SVG Renderer"
+msgstr "កម្មវិធី​បង្ហាញ SVG"
+
+#: mainview.cpp:357 topwidget.cpp:153
+#, kde-format
+msgid " paused "
+msgstr " បាន​ផ្អាក "
+
+#: mainview.cpp:510
+#, kde-format
+msgid "Press %1 to start"
+msgstr "ចុច %1 ដើម្បី​ចាប់​ផ្តើម"
+
+#: mainview.cpp:559
+#, kde-format
+msgid "draw round"
+msgstr "ជុំ​ស្មើ​គ្នា"
+
+#: mainview.cpp:562
+#, kde-format
+msgid "blue player won the round"
+msgstr "អ្នក​លេង​ពណ៌​ខៀវ​បាន​ឈ្នះ​ជុំ​នេះ"
+
+#: mainview.cpp:570
+#, kde-format
+msgid "red player won the round"
+msgstr "អ្នក​លេង​ពណ៌​ក្រហម​បាន​ឈ្នះ​ជុំ​នេះ"
+
+#: mainview.cpp:578
+#, kde-format
+msgid "Press %1 for new round"
+msgstr "ចុច %1 ដើម្បី​ចាប់ផ្ដើម​ជុំ​ថ្មី"
+
+#: playerinfo.cpp:39 playerinfo.cpp:72
+#, kde-format
+msgid "Hit points"
+msgstr "ពិន្ទុ​បាញ់​ត្រូវ"
+
+#: playerinfo.cpp:42 playerinfo.cpp:75
+#, kde-format
+msgid "Energy"
+msgstr "ថាមពល"
+
+#: playerinfo.cpp:45 playerinfo.cpp:78
+#, kde-format
+msgid "Wins"
+msgstr "ឈ្នះ"
+
+#: structs.h:52
+msgid "Default"
+msgstr "លំនាំដើម"
+
+#: structs.h:52
+msgid "Chaos"
+msgstr "ចលាចល"
+
+#: structs.h:52
+msgid "Lack of Energy"
+msgstr "ខ្វះ​ថាមពល"
+
+#: topwidget.cpp:82
+#, kde-format
+msgid "&New Round"
+msgstr "ជុំ​ថ្មី"
+
+#: topwidget.cpp:90
+#, kde-format
+msgctxt "start game"
+msgid "Start"
+msgstr "ចាប់​ផ្តើម"
+
+#: topwidget.cpp:99
+#, kde-format
+msgid "Player 1 Rotate Left"
+msgstr "អ្នក​លេង ១ បង្វិល​ទៅ​ឆ្វេង"
+
+#: topwidget.cpp:103
+#, kde-format
+msgid "Player 1 Rotate Right"
+msgstr "អ្នក​លេង ១ បង្វិល​ទៅ​ស្ដាំ"
+
+#: topwidget.cpp:107
+#, kde-format
+msgid "Player 1 Accelerate"
+msgstr "អ្នក​លេង ១ បង្កើន​ល្បឿន"
+
+#: topwidget.cpp:111
+#, kde-format
+msgid "Player 1 Shot"
+msgstr "អ្នក​លេង ១ បាញ់"
+
+#: topwidget.cpp:115
+#, kde-format
+msgid "Player 1 Mine"
+msgstr "អ្នក​លេង ១ ដាក់​មីន"
+
+#: topwidget.cpp:120
+#, kde-format
+msgid "Player 2 Rotate Left"
+msgstr "អ្នក​លេង ២ បង្វិល​ទៅ​ឆ្វេង"
+
+#: topwidget.cpp:124
+#, kde-format
+msgid "Player 2 Rotate Right"
+msgstr "អ្នក​លេង ២ បង្វិល​ទៅ​ស្ដាំ"
+
+#: topwidget.cpp:128
+#, kde-format
+msgid "Player 2 Accelerate"
+msgstr "អ្នក​លេង ២ បង្កើន​ល្បឿន"
+
+#: topwidget.cpp:132
+#, kde-format
+msgid "Player 2 Shot"
+msgstr "អ្នក​លេង ២ បាញ់"
+
+#: topwidget.cpp:136
+#, kde-format
+msgid "Player 2 Mine"
+msgstr "អ្នក​លេង ២ ដាក់​មីន"

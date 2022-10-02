@@ -1,0 +1,470 @@
+# Translation of kspaceduel.po into Serbian.
+# Strahinja Radic <rstraxy@sezampro.yu>, 2000.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2003, 2009, 2010.
+# Bojan Bozovic <bole89@infosky.net>, 2003.
+# Slobodan Simic <slsimic@gmail.com>, 2009.
+# Dalibor Djuric <dalibor.djuric@mozilla-srbija.org>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kspaceduel\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-05-12 03:24+0200\n"
+"PO-Revision-Date: 2010-10-05 22:02+0200\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavianlatin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Strahinja Radić,Miloš Puzović,Časlav Ilić,Slobodan Simić"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"rstraxy@sezampro.yu,m.puzovic@etoncollege.org.uk,chaslav@sezampro.yu,"
+"slsimic@gmail.com"
+
+#: dialogs.cpp:76
+#, kde-format
+msgid "Game speed:"
+msgstr "Brzina igre:"
+
+#: dialogs.cpp:76
+#, kde-format
+msgid "Shot speed:"
+msgstr "Brzina pucanja:"
+
+#: dialogs.cpp:77 dialogs.cpp:80 dialogs.cpp:83 dialogs.cpp:84
+#, kde-format
+msgid "Energy need:"
+msgstr "Utrošak energije:"
+
+#: dialogs.cpp:77 dialogs.cpp:81
+#, kde-format
+msgid "Max number:"
+msgstr "Najveći broj:"
+
+#: dialogs.cpp:78 dialogs.cpp:81
+#, kde-format
+msgid "Damage:"
+msgstr "Oštećenje:"
+
+#: dialogs.cpp:78 dialogs.cpp:88
+#, kde-format
+msgid "Life time:"
+msgstr "Vrijeme života:"
+
+#: dialogs.cpp:79 dialogs.cpp:82
+#, kde-format
+msgid "Reload time:"
+msgstr "Vrijeme popune:"
+
+#: dialogs.cpp:79
+#, kde-format
+msgid "Mine fuel:"
+msgstr "Gorivo za mine:"
+
+#: dialogs.cpp:80
+#, kde-format
+msgid "Activate time:"
+msgstr "Vrijeme aktiviranja:"
+
+#: dialogs.cpp:82
+#, kde-format
+msgid "Acceleration:"
+msgstr "Ubrzanje:"
+
+#: dialogs.cpp:83
+#, kde-format
+msgid "Rotation speed:"
+msgstr "Brzina rotacije:"
+
+#: dialogs.cpp:84
+#, kde-format
+msgid "Crash damage:"
+msgstr "Šteta pri sudaru:"
+
+#: dialogs.cpp:85
+#, kde-format
+msgid "Sun energy:"
+msgstr "Energija sunca:"
+
+#: dialogs.cpp:85
+#, kde-format
+msgid "Gravity:"
+msgstr "Gravitacija:"
+
+#: dialogs.cpp:86
+#, kde-format
+msgid "Position X:"
+msgstr "Položaj X:"
+
+#: dialogs.cpp:86
+#, kde-format
+msgid "Position Y:"
+msgstr "Položaj Y:"
+
+#: dialogs.cpp:87
+#, kde-format
+msgid "Velocity X:"
+msgstr "Brzina X:"
+
+#: dialogs.cpp:87
+#, kde-format
+msgid "Velocity Y:"
+msgstr "Brzina Y:"
+
+#: dialogs.cpp:88
+#, kde-format
+msgid "Appearance time:"
+msgstr "Vrijeme pojavljivanja:"
+
+#: dialogs.cpp:89
+#, kde-format
+msgid "Energy amount:"
+msgstr "Količina energije:"
+
+#: dialogs.cpp:89
+#, kde-format
+msgid "Shield amount:"
+msgstr "Jačina štita:"
+
+#: dialogs.cpp:182
+#, kde-format
+msgctxt "custom values"
+msgid "Custom"
+msgstr "Posebno"
+
+#: dialogs.cpp:198
+#, kde-format
+msgctxt "general game settings"
+msgid "General"
+msgstr "Opšte"
+
+# >! Contexts.
+# >> @title:tab
+# >> @item Game configuration
+#: dialogs.cpp:199 structs.h:63
+#, kde-format
+msgid "Bullet"
+msgstr "Metak"
+
+# >> @title:tab
+#: dialogs.cpp:200
+#, kde-format
+msgctxt "Name"
+msgid "Mine"
+msgstr "Mina"
+
+#: dialogs.cpp:201
+#, kde-format
+msgid "Ship"
+msgstr "Brod"
+
+#: dialogs.cpp:202
+#, kde-format
+msgctxt "the star, Sol"
+msgid "Sun"
+msgstr "Sunce"
+
+#: dialogs.cpp:203
+#, kde-format
+msgctxt "initial position and velocities of players"
+msgid "Start"
+msgstr "Početak"
+
+#: dialogs.cpp:204
+#, kde-format
+msgid "Powerups"
+msgstr "Pojačanja"
+
+#: dialogs.cpp:417
+#, kde-format
+msgctxt "general settings"
+msgid "General"
+msgstr "Opšte"
+
+#: dialogs.cpp:417
+#, kde-format
+msgid "General Settings"
+msgstr "Opšte postavke"
+
+#: dialogs.cpp:420
+#, kde-format
+msgctxt "game settings"
+msgid "Game"
+msgstr "Igra"
+
+#: dialogs.cpp:420
+#, kde-format
+msgid "Game Settings"
+msgstr "Postavke igre"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: general.ui:22
+#, kde-format
+msgid "Hit Points"
+msgstr "Udarpoeni"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: general.ui:42
+#, kde-format
+msgid "Red player:"
+msgstr "Crveni igrač:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: general.ui:82
+#, kde-format
+msgid "Blue player:"
+msgstr "Plavi igrač:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
+#: general.ui:117
+#, kde-format
+msgid "Graphics"
+msgstr "Grafika"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#: general.ui:129
+#, kde-format
+msgid "Refresh time:"
+msgstr "Period osvježavanja:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: general.ui:176
+#, kde-format
+msgid "Red Player"
+msgstr "Crveni igrač"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player0IsAi)
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player1IsAi)
+#: general.ui:196 general.ui:299
+#, kde-format
+msgid "Player is AI"
+msgstr "Igrač je VI"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: general.ui:229 general.ui:332
+#, kde-format
+msgid "Difficulty:"
+msgstr "Težina:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:243 general.ui:346
+#, kde-format
+msgid "Trainee"
+msgstr "obuka"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:248 general.ui:351
+#, kde-format
+msgid "Normal"
+msgstr "normalno"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:253 general.ui:356
+#, kde-format
+msgid "Hard"
+msgstr "teško"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:258 general.ui:361
+#, kde-format
+msgid "Insane"
+msgstr "suludo"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: general.ui:279
+#, kde-format
+msgid "Blue Player"
+msgstr "Plavi igrač"
+
+#. i18n: ectx: Menu (game)
+#: kspaceduelui.rc:10
+#, kde-format
+msgid "&Game"
+msgstr "I&gra"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kspaceduelui.rc:15
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Glavna traka"
+
+# skip-rule: t-space
+#: main.cpp:30
+#, kde-format
+msgid "KDE Space Game"
+msgstr "Svemirska igra za KDE"
+
+#: main.cpp:40
+#, kde-format
+msgid "KSpaceDuel"
+msgstr "K‑svemirski-dvoboj"
+
+#: main.cpp:42
+#, kde-format
+msgid "(c) 1998-2001, Andreas Zehender"
+msgstr "© 1998–2001, Andreas Ceender"
+
+#: main.cpp:43
+#, kde-format
+msgid "Andreas Zehender"
+msgstr "Andreas Ceender"
+
+#: main.cpp:43
+#, kde-format
+msgid "Original Program"
+msgstr "Prvobitni program"
+
+#: main.cpp:44
+#, kde-format
+msgid "Branan Riley"
+msgstr "Branan Rajli"
+
+#: main.cpp:44
+#, kde-format
+msgid "SVG Renderer"
+msgstr "Renderer SVG‑a"
+
+#: mainview.cpp:370 topwidget.cpp:170
+#, kde-format
+msgid " paused "
+msgstr " pauzirano "
+
+#: mainview.cpp:523
+#, kde-format
+msgid "Press %1 to start"
+msgstr "Pritisnite %1 za početak"
+
+#: mainview.cpp:572
+#, kde-format
+msgid "draw round"
+msgstr "neriješeno"
+
+#: mainview.cpp:575
+#, kde-format
+msgid "blue player won the round"
+msgstr "plavi igrač je dobio rundu"
+
+#: mainview.cpp:583
+#, kde-format
+msgid "red player won the round"
+msgstr "crveni igrač je dobio rundu"
+
+#: mainview.cpp:591
+#, kde-format
+msgid "Press %1 for new round"
+msgstr "Pritisnite %1 za novu rundu"
+
+# >> @info:tooltip
+#: playerinfo.cpp:50 playerinfo.cpp:83
+#, kde-format
+msgid "Hit points"
+msgstr "Udarpoeni"
+
+# >> @info:tooltip
+#: playerinfo.cpp:53 playerinfo.cpp:86
+#, kde-format
+msgid "Energy"
+msgstr "Energija"
+
+# >> @info:tooltip
+#: playerinfo.cpp:56 playerinfo.cpp:89
+#, kde-format
+msgid "Wins"
+msgstr "Pobjede"
+
+# >> @item Game configuration
+#: structs.h:63
+#, kde-format
+msgid "Default"
+msgstr "Podrazumijevano"
+
+# >> @item Game configuration
+#: structs.h:63
+#, kde-format
+msgid "Chaos"
+msgstr "Haos"
+
+# >> @item Game configuration
+#: structs.h:63
+#, kde-format
+msgid "Lack of Energy"
+msgstr "Nedostatak energije"
+
+#: topwidget.cpp:95
+#, kde-format
+msgid "&New Round"
+msgstr "&Nova runda"
+
+#: topwidget.cpp:103
+#, kde-format
+msgctxt "start game"
+msgid "Start"
+msgstr "Početak"
+
+#: topwidget.cpp:116
+#, kde-format
+msgid "Player 1 Rotate Left"
+msgstr "Igrač 1 okreće ulijevo"
+
+#: topwidget.cpp:120
+#, kde-format
+msgid "Player 1 Rotate Right"
+msgstr "Igrač 1 okreće udesno"
+
+#: topwidget.cpp:124
+#, kde-format
+msgid "Player 1 Accelerate"
+msgstr "Igrač 1 ubrzava"
+
+#: topwidget.cpp:128
+#, kde-format
+msgid "Player 1 Shot"
+msgstr "Igrač 1 puca"
+
+#: topwidget.cpp:132
+#, kde-format
+msgid "Player 1 Mine"
+msgstr "Igrač 1 minira"
+
+#: topwidget.cpp:137
+#, kde-format
+msgid "Player 2 Rotate Left"
+msgstr "Igrač 2 okreće ulijevo"
+
+#: topwidget.cpp:141
+#, kde-format
+msgid "Player 2 Rotate Right"
+msgstr "Igrač 2 okreće udesno"
+
+#: topwidget.cpp:145
+#, kde-format
+msgid "Player 2 Accelerate"
+msgstr "Igrač 2 ubrzava"
+
+#: topwidget.cpp:149
+#, kde-format
+msgid "Player 2 Shot"
+msgstr "Igrač 2 puca"
+
+#: topwidget.cpp:153
+#, kde-format
+msgid "Player 2 Mine"
+msgstr "Igrač 2 minira"

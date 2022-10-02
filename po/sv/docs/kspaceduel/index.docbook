@@ -1,0 +1,1191 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="kspaceduel" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+    <title
+>Handbok Rymdduell</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+    <author
+><firstname
+>Andreas</firstname
+> <surname
+>Zehender</surname
+> <affiliation
+><address
+><email
+>az@azweb.de</email
+></address
+></affiliation>
+    </author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+    <year
+>1999</year
+><year
+>2000</year>
+    <holder
+>&Andreas.Zehender;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-08-23</date
+><!-- Date of (re)writing, or update.-->
+<releaseinfo
+>2.1 (KDE Gear 21.08)</releaseinfo
+><!-- Application version number. Use the variable definitions within header to change this value.-->
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+    <para
+>Denna dokumentation beskriver spelet Rymdduell, version 2.1</para>
+</abstract>
+
+<!--List of relevan keywords-->
+<keywordset>
+    <keyword
+>KDE</keyword
+> <!-- do not change this! -->
+    <keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+    <keyword
+>spel</keyword
+> <!-- do not change this! -->
+    <keyword
+>Rymdduell</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <keyword
+>spelhall</keyword>
+    <keyword
+>rymd</keyword>
+    <keyword
+>krig</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+    <keyword
+>två spelare</keyword>
+<!--All other relevant keywords-->
+    <keyword
+>satellit</keyword>
+    <keyword
+>stjärnornas krig</keyword>
+    <keyword
+>krig</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Inledning</title
+> <!-- do not change this! -->
+    <note
+><title
+>Speltyp:</title
+><para
+>Spelhall</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <note
+><title
+>Antal möjliga spelare:</title
+><para
+>Två</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ <!--Short game description starts here. 3-4 sentences (paragraphs)-->
+    <para
+>Idén bakom Rymdduell är enkel, men vanebildande. Var och en av två möjliga spelare styr en satellit, rymdskepp, som går i en bana runt solen. Allteftersom spelet fortlöper måste spelaren eliminera motståndarens rymdskepp. Så snart motståndarens satellit har blivit förstörd, har den återstående spelaren vunnit omgången.</para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Hur man spelar</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+    <note
+><title
+>Syfte:</title
+><para
+>Förstör motståndarens satellit, medan den egna förblir oskadat.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+    <para
+>Rymdduell laddas direkt i spelläge, men spelet startar inte förrän endera spelaren gör den första förflyttningen.</para>
+<note
+><para
+>Om motståndarens satellit styrs av den inbyggda artificiella intelligensen, startar inte spelet förrän den mänskliga spelaren gör den första förflyttningen.</para
+></note>
+<para
+>I Rymdduell styr du skeppets rotation, acceleration och vapen. Satelliten dras hela tiden mot solen av gravitationen. Du måste justera rotationen och accelerationen hos skeppet för att få det att hålla rätt kurs.</para>
+<note
+><para
+>Att närma sig för nära solen gör att satelliten exploderar.</para
+></note>
+<para
+>Samtidigt måste du bevaka motståndarens rörelser och använda dina vapen, som består av kulor och minor, för att förstöra fiendens rymdfarkost.</para>
+<note
+><para
+>Dina egna vapen är lika skadliga för din satellit som de är för motståndarens.</para
+></note>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Spelets regler, strategi och tips</title
+> <!-- do not change this! -->
+    <sect1 id="screen">
+        <title
+>Översikt av Rymdduellens spelskärm.</title>
+        <screenshot>
+            <screeninfo
+>Rymdduellens spelskärm</screeninfo>
+            <mediaobject
+><imageobject
+><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Rymdduellens spelskärm</phrase
+></textobject
+></mediaobject>
+        </screenshot>
+        <itemizedlist>
+            <listitem
+><para
+>Den övre delen av spelfältet upptas av menyraden och verktygsraden.</para
+></listitem>
+            <listitem
+><para
+>Den centrala delen av Rymdduellens skärm är spelområdet.</para
+></listitem>
+            <listitem
+><para
+>Till vänster och höger om spelområdet finns den röda och blå spelarens informationsskärmar.</para
+></listitem>
+            <listitem
+><para
+>Den översta rutan av informationsskärmen representerar <quote
+>träffpoängen</quote
+> för farkosten.</para
+></listitem>
+            <listitem
+><para
+>Rutan i mitten av informationsskärmen representerar batterikraften.</para
+></listitem>
+            <listitem
+><para
+>Den nedersta rutan av informationsskärmen visar antalet vinster.</para
+></listitem>
+            <listitem
+><para
+>Längst ner på spelfältet finns statusraden.</para
+></listitem>
+        </itemizedlist>
+    </sect1>
+    <sect1 id="keys">
+        <title
+>Förvalda genvägar</title>
+        <para
+>Följande tabell innehåller de förvalda genvägarna i Rymdduell.</para>
+        <informaltable frame="all">
+            <tgroup cols="3">
+            <colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
+            <thead
+><row
+><entry
+>Åtgärd</entry
+><entry
+>Röd spelare</entry
+><entry
+>Blå spelare</entry
+></row
+></thead>
+            <tbody>
+                <row
+><entry
+>Rotera åt vänster</entry
+><entry
+><keycap
+>S</keycap
+></entry
+><entry
+>Vänsterpil</entry
+></row>
+                <row
+><entry
+>Rotera åt höger</entry
+><entry
+><keycap
+>F</keycap
+></entry
+><entry
+>Högerpil</entry
+></row>
+                <row
+><entry
+>Accelerera</entry
+><entry
+><keycap
+>E</keycap
+></entry
+><entry
+>Uppåtpil</entry
+></row>
+                <row
+><entry
+>Skjut</entry
+><entry
+><keycap
+>D</keycap
+></entry
+><entry
+>Nedåtpil</entry
+></row>
+                <row
+><entry
+>Minor</entry
+><entry
+><keycap
+>A</keycap
+></entry
+><entry
+><keycap
+>Insert</keycap
+></entry
+></row>
+            </tbody>
+            </tgroup>
+        </informaltable>
+        <note
+><para
+>För att ändra tangenterna, se avsnittet <link linkend="options-keys"
+>Spelanpassning</link
+>.</para
+></note>
+    </sect1>
+    <sect1 id="rules">
+        <title
+>Regler</title>
+        <sect2 id="energy">
+            <title
+>Om energipoäng</title>
+            <itemizedlist>
+                <listitem
+><para
+>Varje spelare styr ett skepp.</para
+></listitem>
+                <listitem
+><para
+>Skeppen kan rotera, accelerera, skjuta och lägga ut minor.</para
+></listitem>
+                <listitem
+><para
+>Varje skepp har en viss mängd energi som krävs för att rotera, accelerera, skjuta och lägga ut minor.</para
+></listitem>
+                <listitem
+><para
+>Varje skepp har en begränsad mängd energi.</para
+></listitem>
+                <listitem
+><para
+>Skepp absorberar solenergi som krävs för skeppets funktion. Mängden energi skeppet tar emot beror på avståndet från solen och riktningen mot solen.</para
+></listitem>
+            </itemizedlist>
+            <note
+><para
+>Ett skepp tar emot mer energi nära solen och mindre energi nära kanten. Det tar emot all energi om solen skiner direkt på solpanelerna och mindre, eller till och med ingen, energi om solen skiner på panelerna med en vinkel eller från andra sidan panelerna.</para
+></note>
+        </sect2>
+        <sect2 id="bullets-and-mines">
+            <title
+>Om kulor och minor</title>
+            <itemizedlist>
+                <listitem
+><para
+>Kulor flyger runt solen precis som ett skepp.</para
+></listitem>
+                <listitem
+><para
+>Minor har en energimängd för att förbli på samma plats. När energin tar slut, kolliderar minan med solen och förintas.</para
+></listitem>
+                <listitem
+><para
+>Ju närmare solen minan placeras, desto mer energi behöver den för att hålla sig på plats.</para
+></listitem>
+                <listitem
+><para
+>Minor kan förstöras med kulor.</para
+></listitem>
+                <listitem
+><para
+>Normalt har ett skepp fem kulor och tre minor.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="hit-points">
+            <title
+>Om träffpoäng</title>
+            <itemizedlist>
+                <listitem
+><para
+>Kollisioner med egna eller andras kulor eller minor minskar träffpoängen.</para
+></listitem>
+                <listitem
+><para
+>Om två skepp kolliderar, förstörs det svagare skeppet och träffpoängen för det starkare skeppet minskas med träffpoängen det svagare skeppet hade.</para
+></listitem>
+                <listitem
+><para
+>Om skeppets antal träffpoäng når noll, exploderar skeppet.</para
+></listitem>
+                <listitem
+><para
+>Om ett skepp kolliderar med solen förstörs den oberoende av hur många träffpoäng som återstår.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="powerups">
+          <title
+>Uppgraderingar</title>
+
+          <para
+>Då och då visas uppgraderingar på spelfältet.</para>
+          <para
+>Det finns fyra olika uppgraderingar:</para>
+
+          <variablelist>
+            <varlistentry
+><term
+></term
+><listitem>
+              <variablelist>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="mine.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Minor</guiicon
+></term>
+                  <listitem
+><para
+>Det maximala antalet minor ökas.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="bullet.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Kulor</guiicon
+></term>
+                  <listitem
+><para
+>Det maximala antalet kulor ökas.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="energy.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Energi</guiicon
+> (gult eller grönt klot)</term>
+                  <listitem
+><para
+>Spelarens energi ökas.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="shield.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Sköld</guiicon
+> (rött eller blått klot)</term>
+                  <listitem
+><para
+>Spelarens träffpoäng ökas.</para
+></listitem>
+                </varlistentry>
+              </variablelist>
+            </listitem
+></varlistentry>
+          </variablelist>
+        </sect2>
+    </sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>Menyalternativ</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Ny</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Startar ett nytt</action
+> Rymdduellspel.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-menu-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Ny omgång</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Startar en ny omgång</action
+> på nuvarande nivå.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry  id="game-menu-pause">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>P</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Paus</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Pausar och fortsätter spelet.</action
+></para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Avsluta</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Avslutar</action
+> Rymdduell.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="settings-menu-settings">
+    <term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa Rymdduell...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Visar en inställningsdialogruta</action
+> som låter dig definiera många av spelets inställningar. Se kapitlet <link linkend="configuration"
+>Spelanpassning</link
+> för ytterligare information.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+<para
+>Dessutom har Rymdduell de vanliga menyalternativen <guimenu
+>Inställningar</guimenu
+> och <guimenu
+>Hjälp</guimenu
+> i &kde;. För mer information, läs avsnitten  <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menyn Inställningar</ulink
+> och <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menyn Hjälp</ulink
+> i &kde;:s Grunder. </para>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Vanliga frågor</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Jag vill ändra hur spelet ser ut. Kan man göra det? </para
+></question>
+ <answer
+><para
+>Nej, För närvarande innehåller Rymdduell bara ett tema.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Jag gjorde ett misstag. Kan man ångra sig? </para
+></question>
+ <answer
+><para
+>Nej, Rymdduell har inte någon funktion för att ångra sig.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Jag kan inte räkna ut vad man ska göra här. Finns det några tips? </para
+></question>
+ <answer
+><para
+>Nej, Rymdduell har ingen tipsfunktion. Om du dock noggrant läser igenom avsnittet <link linkend="rules_and_tips"
+>Spelets regler, strategi och tips</link
+> bör du inte få detta problem.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Jag måste avsluta spelet nu, men jag är inte klar än. Kan man spara det man har gjort?</para
+></question>
+ <answer
+><para
+>Nej, Rymdduell har ingen funktion för att spara.</para
+></answer>
+</qandaentry>
+<!--Please add more Q&As if needed-->
+
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Spelanpassning</title
+> <!-- do not change this! -->
+<!--This section describes configuration &GUI;. If your game is configured using menubar exclusively, please remove this section.-->
+  <sect1 id="options-keys">
+    <title
+>Speltangenter</title>
+     <para
+>Rymdduell har förvalda tangenter för att styra spelet. Se avsnittet som heter <link linkend="keys"
+>Förvalda genvägar</link
+> för ett lista på förvalda tangenter.</para>
+     <para
+>Tangenterna kan ställas in genom att välja menyalternativet <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa genvägar...</guimenuitem
+></menuchoice
+>.</para>
+     <para
+>Det visar en dialogruta som låter dig anpassa alla snabbtangenter, inklusive tangenterna som används för att styra rymdskeppen, för att avlossa kulor och för att lägga minor.</para>
+     <para
+>Du kan se att varje spelare (röd och blå) har fem tangenter som motsvarar rotera åt vänster, rotera åt höger, accelerera, skott och minor.</para>
+     <para
+>När du är klar med att anpassa tangenterna, ska du trycka på <guibutton
+>Ok</guibutton
+> för att verkställa ändringarna.</para>
+     <para
+>Om du vill återställa de förvalda tangenterna, tryck på knappen <guibutton
+>Förval</guibutton
+> en gång. För att göra de här ändringarna permanenta, tryck på <guibutton
+>Ok</guibutton
+>.</para>
+     <para
+>Om du vill överge ändringarna som du har gjort, och återgå till de tidigare valda tangenterna, klicka bara helt enkelt på <guibutton
+>Avbryt</guibutton
+>, och ändringarna försvinner.</para>
+  </sect1>
+
+  <sect1 id="options-configurations">
+    <title
+>Spelanpassning</title>
+    <para
+>Alla spelinställningar i Rymdduell är anpassningsbara.</para>
+    <para
+>Om du vill ändra spelinställningarna, välj helt enkelt menyalternativet <menuchoice
+><guimenu
+>Inställningar</guimenu
+><guimenuitem
+>Anpassa Rymdduell...</guimenuitem
+> </menuchoice
+>.</para>
+    <para
+>Det visar en dialogruta med två sidor, som heter <guilabel
+>Allmänt</guilabel
+> och <guilabel
+>Spel</guilabel
+>. Den första sidan är ganska enkel, medan den andra har sju flikar längs överkanten.</para>
+    <para
+>Inställningarna är samlade i olika kategorier. Du kan välja mellan flera olika fördefinierade inställningar.</para>
+    <para
+>Om du väljer inställningen <guilabel
+>Eget</guilabel
+>, kan du ange alla inställningar själv.</para>
+    <note
+><para
+>Om du inte har valt <guilabel
+>Eget</guilabel
+>, kommer du inte kunna ändra de här alternativen.</para
+></note>
+    <tip
+><para
+>Om du har hittat en intressant inställning, posta den till spelets upphovsman. Den kan implementeras i en framtida version (skicka delen [Game] i filen <filename
+>~/.config/kspaceduelrc</filename
+>).</para
+></tip>
+    <para
+>När du är klar med att ändra alternativen, ska du klicka på <guibutton
+>Ok</guibutton
+> för att verkställa ändringarna.</para>
+    <para
+>Om du vill återställa förvalda värden, tryck helt enkelt på knappen <guibutton
+>Förval</guibutton
+> en gång. För att göra de här ändringarna permanenta, tryck på <guibutton
+>Ok</guibutton
+>.</para>
+    <para
+>Om du vill överge ändringarna som du har gjort, och återgå till de tidigare alternativen, klicka bara helt enkelt på <guibutton
+>Avbryt</guibutton
+>, och ändringarna försvinner.</para>
+
+    <para
+>Inställningarna är:</para>
+
+    <sect2 id="general">
+    <title
+>Sidan Allmänt</title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Träffpoäng</guilabel
+></term>
+        <listitem
+><para
+>Den här gruppen innehåller två skjutreglage låter dig definiera träffpoäng för var och en av de två spelarna. Du kanske vill minska träffpoäng för en spelare för att ge spelaren ett handikapp.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Återuppritningstid:</guilabel
+></term>
+         <listitem
+><para
+>Tid mellan två återuppritningar av skärmen i millisekunder. Alla andra inställningar är oberoende av återuppritningstiden.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Röd spelare</guilabel
+></term>
+        <listitem
+><para
+>I den här gruppen kan du definiera om den röda spelaren hanteras av AI, och dessutom välja skicklighetsnivå för den här spelarens AI. Experimentera med de olika svårighetsgraderna för att hitta en som passar dig.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Blå spelare</guilabel
+></term>
+        <listitem
+><para
+>Det fungerar på samma sätt som alternativen i gruppen <guilabel
+>Röd spelare</guilabel
+> som beskrivs ovan.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+
+    <sect2 id="game">
+    <title
+>Spelsidan</title>
+
+    <para
+>Här kan du ange en egen inställning vald från en kombinationslista. Använd sedan flikarna för att anpassa inställningarna lite till.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term
+>Fliken <guilabel
+>Allmänt</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Spelhastighet:</guilabel
+></term>
+              <listitem
+><para
+>Styr hela spelets hastighet.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="bullet">
+        <term
+>Fliken <guilabel
+>Kula</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Skotthastighet:</guilabel
+></term>
+              <listitem
+><para
+>Kulornas hastighet.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Energibehov:</guilabel
+></term>
+              <listitem
+><para
+>Mängden energi som behövs för ett skott.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Maximalt antal:</guilabel
+></term>
+              <listitem
+><para
+>Maximala antalet kulor en spelare kan ha på skärmen.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Skador:</guilabel
+></term>
+              <listitem
+><para
+>Antalet träffpunkter skada som görs när en kula träffar ett skepp.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Livslängd:</guilabel
+></term>
+              <listitem
+><para
+>Maximala livslängden för en kula.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Omladdningstid:</guilabel
+></term>
+              <listitem
+><para
+>Tiden ett skepp behöver för att ladda om en kula.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="mine">
+        <term
+>Fliken <guilabel
+>Mina</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Minbränsle:</guilabel
+></term>
+              <listitem
+><para
+>Mängden bränsle i en mina.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Energibehov:</guilabel
+></term>
+              <listitem
+><para
+>Mängden bränsle som behövs för att lägga ut en mina.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Aktiveringstid:</guilabel
+></term>
+              <listitem
+><para
+>Tiden en mina är inaktiv.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Skador:</guilabel
+></term>
+              <listitem
+><para
+>Antalet träffpunkters skada som görs när ett skepp träffar en mina.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Maximalt antal:</guilabel
+></term>
+              <listitem
+><para
+>Maximala antalet minor en spelare kan ha på skärmen.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Omladdningstid:</guilabel
+></term>
+              <listitem
+><para
+>Tiden ett skepp behöver för att ladda om en mina.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ship">
+        <term
+>Fliken <guilabel
+>Skepp</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Acceleration:</guilabel
+></term>
+              <listitem
+><para
+>Skeppens acceleration.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Energibehov:</guilabel
+></term>
+              <listitem
+><para
+>Energin som behövs för att accelerera ett skepp.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Rotationshastighet:</guilabel
+></term>
+              <listitem
+><para
+>Hastigheten som ett skepp roterar med.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Energibehov:</guilabel
+></term>
+              <listitem
+><para
+>Energin som behövs för att rotera ett skepp.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Kraschskador:</guilabel
+></term>
+              <listitem
+><para
+>Antalet träffpunkter skada som görs när två skepp kolliderar.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="sun">
+        <term
+>Fliken <guilabel
+>Sol</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Solenergi:</guilabel
+></term>
+              <listitem
+><para
+>Solstyrkan. Ju högre värdet är, desto snabbare laddas skeppen upp.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Gravitation:</guilabel
+></term>
+              <listitem
+><para
+>Styrkan av solens gravitation.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="start">
+        <term
+>Fliken <guilabel
+>Start</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Position X:</guilabel
+> och <guilabel
+>Position Y:</guilabel
+></term>
+              <listitem
+><para
+>Skeppens position när en ny omgång börjar. Skeppen startar på motsatt sida solen.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Hastighet X:</guilabel
+> och <guilabel
+>Hastighet Y:</guilabel
+></term>
+              <listitem
+><para
+>Hastigheten i början av en ny omgång.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="powerup-options">
+        <term
+>Fliken <guilabel
+>Uppgraderingar</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Uppenbarelsetid:</guilabel
+></term>
+              <listitem
+><para
+>Maximal tid mellan två uppgraderingar visas.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Livslängd:</guilabel
+></term>
+              <listitem
+><para
+>Maximal livstid för en uppgradering.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Mängd energi:</guilabel
+></term>
+              <listitem
+><para
+>Mängden energi som en spelare får från en energiuppgradering.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Mängd sköld:</guilabel
+></term>
+              <listitem
+><para
+>Mängden träffpoäng som en spelare får från en skölduppgradering.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+  </sect1>
+</chapter>
+
+<chapter id="credits"
+><title
+>Tack till och licens</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>Rymdduell </para>
+<para
+>Program copyright 1999-2000 &Andreas.Zehender; &Andreas.Zehender.mail;</para>
+<para
+>Dokumentation copyright 2000 &Andreas.Zehender; &Andreas.Zehender.mail;</para>
+<para
+>Dokumentation uppdaterad för &kde; 4.11 &Mike.McBride; &Mike.McBride.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

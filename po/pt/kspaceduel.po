@@ -1,0 +1,424 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kspaceduel\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2008-06-28 01:26+0100\n"
+"Last-Translator: José Nuno Pires <zepires@gmail.com>\n"
+"Language-Team: pt <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra:   Riley Andreas Zehender Branan\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "José Nuno Pires,Pedro Morais"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "zepires@gmail.com,morais@kde.org"
+
+#: dialogs.cpp:63
+msgid "Game speed:"
+msgstr "Velocidade do jogo:"
+
+#: dialogs.cpp:63
+msgid "Shot speed:"
+msgstr "Velocidade dos tiros:"
+
+#: dialogs.cpp:64 dialogs.cpp:67 dialogs.cpp:70 dialogs.cpp:71
+msgid "Energy need:"
+msgstr "Energia necessária:"
+
+#: dialogs.cpp:64 dialogs.cpp:68
+msgid "Max number:"
+msgstr "Número máximo:"
+
+#: dialogs.cpp:65 dialogs.cpp:68
+msgid "Damage:"
+msgstr "Danos:"
+
+#: dialogs.cpp:65 dialogs.cpp:75
+msgid "Life time:"
+msgstr "Tempo de vida:"
+
+#: dialogs.cpp:66 dialogs.cpp:69
+msgid "Reload time:"
+msgstr "Tempo de recarga:"
+
+#: dialogs.cpp:66
+msgid "Mine fuel:"
+msgstr "Combustível:"
+
+#: dialogs.cpp:67
+msgid "Activate time:"
+msgstr "Tempo de activação:"
+
+#: dialogs.cpp:69
+msgid "Acceleration:"
+msgstr "Aceleração:"
+
+#: dialogs.cpp:70
+msgid "Rotation speed:"
+msgstr "Velocidade de rotação:"
+
+#: dialogs.cpp:71
+msgid "Crash damage:"
+msgstr "Danos de colisão:"
+
+#: dialogs.cpp:72
+msgid "Sun energy:"
+msgstr "Energia do sol:"
+
+#: dialogs.cpp:72
+msgid "Gravity:"
+msgstr "Gravidade:"
+
+#: dialogs.cpp:73
+msgid "Position X:"
+msgstr "Posição X:"
+
+#: dialogs.cpp:73
+msgid "Position Y:"
+msgstr "Posição Y:"
+
+#: dialogs.cpp:74
+msgid "Velocity X:"
+msgstr "Velocidade X:"
+
+#: dialogs.cpp:74
+msgid "Velocity Y:"
+msgstr "Velocidade Y:"
+
+#: dialogs.cpp:75
+msgid "Appearance time:"
+msgstr "Tempo entre aparições:"
+
+#: dialogs.cpp:76
+msgid "Energy amount:"
+msgstr "Quantidade de energia:"
+
+#: dialogs.cpp:76
+msgid "Shield amount:"
+msgstr "Quantidade de escudos:"
+
+#: dialogs.cpp:169
+#, kde-format
+msgctxt "custom values"
+msgid "Custom"
+msgstr "Personalizados"
+
+#: dialogs.cpp:185
+#, kde-format
+msgctxt "general game settings"
+msgid "General"
+msgstr "Geral"
+
+#: dialogs.cpp:186 structs.h:52
+#, kde-format
+msgid "Bullet"
+msgstr "Bala"
+
+#: dialogs.cpp:187
+#, kde-format
+msgctxt "Name"
+msgid "Mine"
+msgstr "Mina"
+
+#: dialogs.cpp:188
+#, kde-format
+msgid "Ship"
+msgstr "Nave"
+
+#: dialogs.cpp:189
+#, kde-format
+msgctxt "the star, Sol"
+msgid "Sun"
+msgstr "Sol"
+
+#: dialogs.cpp:190
+#, kde-format
+msgctxt "initial position and velocities of players"
+msgid "Start"
+msgstr "Iniciar"
+
+#: dialogs.cpp:191
+#, kde-format
+msgid "Powerups"
+msgstr "Bónus"
+
+#: dialogs.cpp:404
+#, kde-format
+msgctxt "general settings"
+msgid "General"
+msgstr "Geral"
+
+#: dialogs.cpp:404
+#, kde-format
+msgid "General Settings"
+msgstr "Configuração Geral"
+
+#: dialogs.cpp:407
+#, kde-format
+msgctxt "game settings"
+msgid "Game"
+msgstr "Jogo"
+
+#: dialogs.cpp:407
+#, kde-format
+msgid "Game Settings"
+msgstr "Configuração do Jogo"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: general.ui:22
+#, kde-format
+msgid "Hit Points"
+msgstr "Pontos de Vida"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: general.ui:42
+#, kde-format
+msgid "Red player:"
+msgstr "Jogador vermelho:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: general.ui:82
+#, kde-format
+msgid "Blue player:"
+msgstr "Jogador azul:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
+#: general.ui:117
+#, kde-format
+msgid "Graphics"
+msgstr "Gráficos"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#: general.ui:129
+#, kde-format
+msgid "Refresh time:"
+msgstr "Tempo de actualização:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: general.ui:176
+#, kde-format
+msgid "Red Player"
+msgstr "Jogador Vermelho"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player0IsAi)
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player1IsAi)
+#: general.ui:196 general.ui:299
+#, kde-format
+msgid "Player is AI"
+msgstr "O jogador é IA"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: general.ui:229 general.ui:332
+#, kde-format
+msgid "Difficulty:"
+msgstr "Dificuldade:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:243 general.ui:346
+#, kde-format
+msgid "Trainee"
+msgstr "Aprendiz"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:248 general.ui:351
+#, kde-format
+msgid "Normal"
+msgstr "Normal"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:253 general.ui:356
+#, kde-format
+msgid "Hard"
+msgstr "Difícil"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:258 general.ui:361
+#, kde-format
+msgid "Insane"
+msgstr "Louco"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: general.ui:279
+#, kde-format
+msgid "Blue Player"
+msgstr "Jogador Azul"
+
+#. i18n: ectx: Menu (game)
+#: kspaceduelui.rc:10
+#, kde-format
+msgid "&Game"
+msgstr "Jo&go"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kspaceduelui.rc:15
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Barra Principal"
+
+#: main.cpp:28
+#, kde-format
+msgid "KSpaceDuel"
+msgstr "Duelo Espacial"
+
+#: main.cpp:30
+#, kde-format
+msgid "Space Arcade Game"
+msgstr "Jogo Espacial de Arcada"
+
+#: main.cpp:32
+#, kde-format
+msgid "(c) 1998-2001, Andreas Zehender"
+msgstr "(c) 1998-2001, Andreas Zehender"
+
+#: main.cpp:35
+#, kde-format
+msgid "Andreas Zehender"
+msgstr "Andreas Zehender"
+
+#: main.cpp:35
+#, kde-format
+msgid "Original Program"
+msgstr "Programa Original"
+
+#: main.cpp:36
+#, kde-format
+msgid "Branan Riley"
+msgstr "Branan Riley"
+
+#: main.cpp:36
+#, kde-format
+msgid "SVG Renderer"
+msgstr "Representação em SVG"
+
+#: mainview.cpp:357 topwidget.cpp:153
+#, kde-format
+msgid " paused "
+msgstr " em pausa "
+
+#: mainview.cpp:510
+#, kde-format
+msgid "Press %1 to start"
+msgstr "Carregue em %1 para começar"
+
+#: mainview.cpp:559
+#, kde-format
+msgid "draw round"
+msgstr "empate"
+
+#: mainview.cpp:562
+#, kde-format
+msgid "blue player won the round"
+msgstr "o jogador azul ganhou a jogada"
+
+#: mainview.cpp:570
+#, kde-format
+msgid "red player won the round"
+msgstr "o jogador vermelho ganhou a jogada"
+
+#: mainview.cpp:578
+#, kde-format
+msgid "Press %1 for new round"
+msgstr "Carregue em %1 para uma nova jogada"
+
+#: playerinfo.cpp:39 playerinfo.cpp:72
+#, kde-format
+msgid "Hit points"
+msgstr "Pontos de Vida"
+
+#: playerinfo.cpp:42 playerinfo.cpp:75
+#, kde-format
+msgid "Energy"
+msgstr "Energia"
+
+#: playerinfo.cpp:45 playerinfo.cpp:78
+#, kde-format
+msgid "Wins"
+msgstr "Vitórias"
+
+#: structs.h:52
+msgid "Default"
+msgstr "Predefinição"
+
+#: structs.h:52
+msgid "Chaos"
+msgstr "Caos"
+
+#: structs.h:52
+msgid "Lack of Energy"
+msgstr "Falta de Energia"
+
+#: topwidget.cpp:82
+#, kde-format
+msgid "&New Round"
+msgstr "&Nova Jogada"
+
+#: topwidget.cpp:90
+#, kde-format
+msgctxt "start game"
+msgid "Start"
+msgstr "Iniciar"
+
+#: topwidget.cpp:99
+#, kde-format
+msgid "Player 1 Rotate Left"
+msgstr "Jogador 1 Rodar para a Esquerda"
+
+#: topwidget.cpp:103
+#, kde-format
+msgid "Player 1 Rotate Right"
+msgstr "Jogador 1 Rodar para a Direita"
+
+#: topwidget.cpp:107
+#, kde-format
+msgid "Player 1 Accelerate"
+msgstr "Jogador 1 Acelerar"
+
+#: topwidget.cpp:111
+#, kde-format
+msgid "Player 1 Shot"
+msgstr "Jogador 1 Disparar"
+
+#: topwidget.cpp:115
+#, kde-format
+msgid "Player 1 Mine"
+msgstr "Jogador 1 Minar"
+
+#: topwidget.cpp:120
+#, kde-format
+msgid "Player 2 Rotate Left"
+msgstr "Jogador 2 Rodar para a Esquerda"
+
+#: topwidget.cpp:124
+#, kde-format
+msgid "Player 2 Rotate Right"
+msgstr "Jogador 2 Rodar para a Direita"
+
+#: topwidget.cpp:128
+#, kde-format
+msgid "Player 2 Accelerate"
+msgstr "Jogador 2 Acelerar"
+
+#: topwidget.cpp:132
+#, kde-format
+msgid "Player 2 Shot"
+msgstr "Jogador 2 Disparar"
+
+#: topwidget.cpp:136
+#, kde-format
+msgid "Player 2 Mine"
+msgstr "Jogador 2 Minar"

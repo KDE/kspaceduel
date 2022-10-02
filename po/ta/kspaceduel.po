@@ -1,0 +1,443 @@
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kspaceduel\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2004-08-11 09:29--800\n"
+"Last-Translator: I. Felix <ifelix25@yahoo.co.in>\n"
+"Language-Team: KDE <kde-i18n-doc@kde.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "மொழிப்பெயர்ப்பாளரின் பெயர்"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ifelix25@yahoo.co.in"
+
+#: dialogs.cpp:63
+msgid "Game speed:"
+msgstr "விளையாட்டின் வேகம்"
+
+#: dialogs.cpp:63
+msgid "Shot speed:"
+msgstr "விளையாட்டு வேகம்"
+
+#: dialogs.cpp:64 dialogs.cpp:67 dialogs.cpp:70 dialogs.cpp:71
+msgid "Energy need:"
+msgstr "சக்தி தேவை"
+
+#: dialogs.cpp:64 dialogs.cpp:68
+msgid "Max number:"
+msgstr "அதிகபட்ச எண்"
+
+#: dialogs.cpp:65 dialogs.cpp:68
+msgid "Damage:"
+msgstr "சேதம்"
+
+#: dialogs.cpp:65 dialogs.cpp:75
+msgid "Life time:"
+msgstr "வாழ் நாள்"
+
+#: dialogs.cpp:66 dialogs.cpp:69
+msgid "Reload time:"
+msgstr "நேரத்தை மறுபடி ஏற்று"
+
+#: dialogs.cpp:66
+msgid "Mine fuel:"
+msgstr "கன்னிவெடி எரிபொருள்"
+
+#: dialogs.cpp:67
+msgid "Activate time:"
+msgstr "செயல்படுத்தும் காலம்"
+
+#: dialogs.cpp:69
+msgid "Acceleration:"
+msgstr "திசை முடக்கம்"
+
+#: dialogs.cpp:70
+msgid "Rotation speed:"
+msgstr "சுழற்றும் வேகம்"
+
+#: dialogs.cpp:71
+msgid "Crash damage:"
+msgstr "மோதலால் உண்டான பாதிப்பு"
+
+#: dialogs.cpp:72
+msgid "Sun energy:"
+msgstr "சூரியனின் சக்தி"
+
+#: dialogs.cpp:72
+msgid "Gravity:"
+msgstr "புவி ஈர்ப்பு"
+
+#: dialogs.cpp:73
+msgid "Position X:"
+msgstr "நிலை x"
+
+#: dialogs.cpp:73
+msgid "Position Y:"
+msgstr "நிலை y"
+
+#: dialogs.cpp:74
+msgid "Velocity X:"
+msgstr "திசை வேகம் X"
+
+#: dialogs.cpp:74
+msgid "Velocity Y:"
+msgstr "திசை வேகம் Y"
+
+#: dialogs.cpp:75
+msgid "Appearance time:"
+msgstr "அமைப்பின் நேரம்"
+
+#: dialogs.cpp:76
+msgid "Energy amount:"
+msgstr "சக்தியின் அளவு"
+
+#: dialogs.cpp:76
+msgid "Shield amount:"
+msgstr "கேடய அளவு"
+
+#: dialogs.cpp:169
+#, fuzzy, kde-format
+#| msgid "Custom"
+msgctxt "custom values"
+msgid "Custom"
+msgstr "தனிபயன்"
+
+#: dialogs.cpp:185
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "general game settings"
+msgid "General"
+msgstr "பொது"
+
+#: dialogs.cpp:186 structs.h:52
+#, kde-format
+msgid "Bullet"
+msgstr "குண்டு"
+
+#: dialogs.cpp:187
+#, kde-format
+msgctxt "Name"
+msgid "Mine"
+msgstr ""
+"பெயர்\n"
+"என்னுடைய"
+
+#: dialogs.cpp:188
+#, kde-format
+msgid "Ship"
+msgstr "கப்பல்"
+
+#: dialogs.cpp:189
+#, fuzzy, kde-format
+#| msgid "Sun"
+msgctxt "the star, Sol"
+msgid "Sun"
+msgstr "சூரியன்"
+
+#: dialogs.cpp:190
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "initial position and velocities of players"
+msgid "Start"
+msgstr "துவங்கு"
+
+#: dialogs.cpp:191
+#, kde-format
+msgid "Powerups"
+msgstr "சக்தி கூடுதல்"
+
+#: dialogs.cpp:404
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "general settings"
+msgid "General"
+msgstr "பொது"
+
+#: dialogs.cpp:404
+#, kde-format
+msgid "General Settings"
+msgstr "பொது அமைப்புகள்"
+
+#: dialogs.cpp:407
+#, fuzzy, kde-format
+#| msgid "Game"
+msgctxt "game settings"
+msgid "Game"
+msgstr "விளையாட்டு"
+
+#: dialogs.cpp:407
+#, kde-format
+msgid "Game Settings"
+msgstr "விளையாட்டின் அமைப்பு"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: general.ui:22
+#, kde-format
+msgid "Hit Points"
+msgstr "அடித்த புள்ளிகள்"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: general.ui:42
+#, kde-format
+msgid "Red player:"
+msgstr "சிவப்பு நிற விளையாட்டாளர்"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: general.ui:82
+#, kde-format
+msgid "Blue player:"
+msgstr "சிவப்பு நிற விளையாட்டாளர்"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
+#: general.ui:117
+#, kde-format
+msgid "Graphics"
+msgstr "வரைகலை"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#: general.ui:129
+#, kde-format
+msgid "Refresh time:"
+msgstr "புதுப்பிக்கும் நேரம்"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: general.ui:176
+#, kde-format
+msgid "Red Player"
+msgstr "சிவப்பு நிற விளையாட்டாளர்"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player0IsAi)
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player1IsAi)
+#: general.ui:196 general.ui:299
+#, kde-format
+msgid "Player is AI"
+msgstr "விளையாடுபவர் AI"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: general.ui:229 general.ui:332
+#, kde-format
+msgid "Difficulty:"
+msgstr "கடினம்"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:243 general.ui:346
+#, kde-format
+msgid "Trainee"
+msgstr "பயிற்சியாளர்"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:248 general.ui:351
+#, kde-format
+msgid "Normal"
+msgstr "சாதாரண"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:253 general.ui:356
+#, kde-format
+msgid "Hard"
+msgstr "கடினம்"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:258 general.ui:361
+#, kde-format
+msgid "Insane"
+msgstr "மனநிலை தவறிய"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: general.ui:279
+#, kde-format
+msgid "Blue Player"
+msgstr "சிவப்பு நிற விளையாட்டாளர்"
+
+#. i18n: ectx: Menu (game)
+#: kspaceduelui.rc:10
+#, fuzzy, kde-format
+msgid "&Game"
+msgstr "விளையாட்டு"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kspaceduelui.rc:15
+#, kde-format
+msgid "Main Toolbar"
+msgstr ""
+
+#: main.cpp:28
+#, kde-format
+msgid "KSpaceDuel"
+msgstr "K விண்வெளி தடம்"
+
+#: main.cpp:30
+#, fuzzy, kde-format
+#| msgid "KDE Space Game"
+msgid "Space Arcade Game"
+msgstr "KDE "
+
+#: main.cpp:32
+#, kde-format
+msgid "(c) 1998-2001, Andreas Zehender"
+msgstr ""
+
+#: main.cpp:35
+#, kde-format
+msgid "Andreas Zehender"
+msgstr ""
+
+#: main.cpp:35
+#, kde-format
+msgid "Original Program"
+msgstr ""
+
+#: main.cpp:36
+#, kde-format
+msgid "Branan Riley"
+msgstr ""
+
+#: main.cpp:36
+#, kde-format
+msgid "SVG Renderer"
+msgstr ""
+
+#: mainview.cpp:357 topwidget.cpp:153
+#, kde-format
+msgid " paused "
+msgstr "இடைநிறுத்தப்பட்டுள்ளது"
+
+#: mainview.cpp:510
+#, kde-format
+msgid "Press %1 to start"
+msgstr "துவங்குவதற்கு%1யை அழுத்து"
+
+#: mainview.cpp:559
+#, kde-format
+msgid "draw round"
+msgstr "சுற்றுக்கு செல்"
+
+#: mainview.cpp:562
+#, kde-format
+msgid "blue player won the round"
+msgstr "நீல விளையாட்டாளர் சுற்றை வென்றார்"
+
+#: mainview.cpp:570
+#, kde-format
+msgid "red player won the round"
+msgstr "சிவப்பு விளையாட்டாளார் சுற்றை வென்றார்"
+
+#: mainview.cpp:578
+#, kde-format
+msgid "Press %1 for new round"
+msgstr "புதிய சுற்றுக்குச் செல்ல %1யை அழுத்து "
+
+#: playerinfo.cpp:39 playerinfo.cpp:72
+#, kde-format
+msgid "Hit points"
+msgstr "அடித்த புள்ளிகள்"
+
+#: playerinfo.cpp:42 playerinfo.cpp:75
+#, kde-format
+msgid "Energy"
+msgstr "சக்தி"
+
+#: playerinfo.cpp:45 playerinfo.cpp:78
+#, kde-format
+msgid "Wins"
+msgstr "வெற்றி"
+
+#: structs.h:52
+msgid "Default"
+msgstr ""
+
+#: structs.h:52
+msgid "Chaos"
+msgstr "குழப்பமான"
+
+#: structs.h:52
+#, fuzzy
+#| msgid "Lack of energy"
+msgid "Lack of Energy"
+msgstr "குறைவான சக்தி"
+
+#: topwidget.cpp:82
+#, kde-format
+msgid "&New Round"
+msgstr "&புது சுற்று"
+
+#: topwidget.cpp:90
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "start game"
+msgid "Start"
+msgstr "துவங்கு"
+
+#: topwidget.cpp:99
+#, kde-format
+msgid "Player 1 Rotate Left"
+msgstr "முதல் ஆட்டக்காரரை இடப்பக்கம் சுழற்று\" "
+
+#: topwidget.cpp:103
+#, kde-format
+msgid "Player 1 Rotate Right"
+msgstr "முதல் ஆட்டக்காரரை வலப்பக்கம் சுழற்று\" "
+
+#: topwidget.cpp:107
+#, kde-format
+msgid "Player 1 Accelerate"
+msgstr "முதலாவது விளையாட்டாளரின் வேகத்தைக் கூட்டு"
+
+#: topwidget.cpp:111
+#, kde-format
+msgid "Player 1 Shot"
+msgstr "முதல் ஆட்டக்காரரின் விளையாட்டு"
+
+#: topwidget.cpp:115
+#, kde-format
+msgid "Player 1 Mine"
+msgstr "முதலாவது விளையாட்டாளரின் கன்னி வெடி"
+
+#: topwidget.cpp:120
+#, kde-format
+msgid "Player 2 Rotate Left"
+msgstr "இரண்டாவது விளையாட்டாளரை இடப்பக்கம் சுழற்று"
+
+#: topwidget.cpp:124
+#, kde-format
+msgid "Player 2 Rotate Right"
+msgstr "இரண்டாவது விளையாட்டாளரை வலப்பக்கம் சுழற்று"
+
+#: topwidget.cpp:128
+#, kde-format
+msgid "Player 2 Accelerate"
+msgstr "இரண்டாவது விளையாட்டாளரின் வேகத்தைக் கூட்டு"
+
+#: topwidget.cpp:132
+#, kde-format
+msgid "Player 2 Shot"
+msgstr "இரண்டாவது ஆட்டக்காரரின் விளையாட்டு"
+
+#: topwidget.cpp:136
+#, kde-format
+msgid "Player 2 Mine"
+msgstr "இரண்டாவது விளையாட்டாளரின் கன்னி வெடி"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgid "&Restart"
+#~ msgstr "துவங்கு"

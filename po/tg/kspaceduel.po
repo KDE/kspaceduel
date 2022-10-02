@@ -1,0 +1,448 @@
+# translation of kspaceduel.po to Tajik
+# Copyright (C) 2004, 1980, 2005 Free Software Foundation, Inc.
+# 2004, infoDev, a World Bank organization
+# 2004, Khujand Computer Technologies, Inc.
+# Youth Opportunities NGO, 2005.
+# Roger V Kovacs, <rkovacs@khujand.org>, 2004.
+# Victor Ibragimov <youth_opportunities@tajikngo.org>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: kspaceduel\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"PO-Revision-Date: 2005-10-20 13:47+0500\n"
+"Last-Translator: Victor Ibragimov <youth_opportunities@tajikngo.org>\n"
+"Language-Team: Tajik\n"
+"Language: tg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Suhrob Madalievich"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "amriko@mail.ru"
+
+#: dialogs.cpp:63
+msgid "Game speed:"
+msgstr "Бозиро тезиш:"
+
+#: dialogs.cpp:63
+msgid "Shot speed:"
+msgstr "Парондана тезиш:"
+
+#: dialogs.cpp:64 dialogs.cpp:67 dialogs.cpp:70 dialogs.cpp:71
+msgid "Energy need:"
+msgstr "Даркорий қувват:"
+
+#: dialogs.cpp:64 dialogs.cpp:68
+msgid "Max number:"
+msgstr "Рақами махсемали:"
+
+#: dialogs.cpp:65 dialogs.cpp:68
+msgid "Damage:"
+msgstr "Щикастаги:"
+
+#: dialogs.cpp:65 dialogs.cpp:75
+msgid "Life time:"
+msgstr "Ҷони нав:"
+
+#: dialogs.cpp:66 dialogs.cpp:69
+msgid "Reload time:"
+msgstr "Вахтро аз нав кунед:"
+
+#: dialogs.cpp:66
+msgid "Mine fuel:"
+msgstr "Ман топлива:"
+
+#: dialogs.cpp:67
+msgid "Activate time:"
+msgstr "Вақти тез:"
+
+#: dialogs.cpp:69
+msgid "Acceleration:"
+msgstr "Тезтар:"
+
+#: dialogs.cpp:70
+msgid "Rotation speed:"
+msgstr "Тезий давр:"
+
+#: dialogs.cpp:71
+msgid "Crash damage:"
+msgstr "Ҷои щикастаги фалоқат:"
+
+#: dialogs.cpp:72
+msgid "Sun energy:"
+msgstr "Қуввати офтоб:"
+
+#: dialogs.cpp:72
+msgid "Gravity:"
+msgstr "Ҷиддан:"
+
+#: dialogs.cpp:73
+msgid "Position X:"
+msgstr "Ҷои X:"
+
+#: dialogs.cpp:73
+msgid "Position Y:"
+msgstr "Ҷои Y:"
+
+#: dialogs.cpp:74
+msgid "Velocity X:"
+msgstr "Тезй X:"
+
+#: dialogs.cpp:74
+msgid "Velocity Y:"
+msgstr "Тезй Y:"
+
+#: dialogs.cpp:75
+msgid "Appearance time:"
+msgstr "Вахти омадан:"
+
+#: dialogs.cpp:76
+msgid "Energy amount:"
+msgstr "Миқдори қувват:"
+
+#: dialogs.cpp:76
+msgid "Shield amount:"
+msgstr "Миқдори Ҷиҳози:"
+
+#: dialogs.cpp:169
+#, fuzzy, kde-format
+#| msgid "Custom"
+msgctxt "custom values"
+msgid "Custom"
+msgstr "Анъана"
+
+#: dialogs.cpp:185
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "general game settings"
+msgid "General"
+msgstr "Генерал"
+
+#: dialogs.cpp:186 structs.h:52
+#, kde-format
+msgid "Bullet"
+msgstr "Тир"
+
+#: dialogs.cpp:187
+#, kde-format
+msgctxt "Name"
+msgid "Mine"
+msgstr ""
+"-:Номи\n"
+" Ман"
+
+#: dialogs.cpp:188
+#, kde-format
+msgid "Ship"
+msgstr "Кишти"
+
+#: dialogs.cpp:189
+#, fuzzy, kde-format
+#| msgid "Sun"
+msgctxt "the star, Sol"
+msgid "Sun"
+msgstr "Офтоб"
+
+#: dialogs.cpp:190
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "initial position and velocities of players"
+msgid "Start"
+msgstr "Аввал"
+
+#: dialogs.cpp:191
+#, kde-format
+msgid "Powerups"
+msgstr "Салобат"
+
+#: dialogs.cpp:404
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "general settings"
+msgid "General"
+msgstr "Генерал"
+
+#: dialogs.cpp:404
+#, kde-format
+msgid "General Settings"
+msgstr " Монанди мирзоб"
+
+#: dialogs.cpp:407
+#, fuzzy, kde-format
+#| msgid "Game"
+msgctxt "game settings"
+msgid "Game"
+msgstr "Бози"
+
+#: dialogs.cpp:407
+#, kde-format
+msgid "Game Settings"
+msgstr "Мирзоби бози"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: general.ui:22
+#, kde-format
+msgid "Hit Points"
+msgstr "Миқдори расидан"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: general.ui:42
+#, kde-format
+msgid "Red player:"
+msgstr "Бозингари сурх:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: general.ui:82
+#, kde-format
+msgid "Blue player:"
+msgstr "Бозингари қабут:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
+#: general.ui:117
+#, kde-format
+msgid "Graphics"
+msgstr "Графика"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#: general.ui:129
+#, kde-format
+msgid "Refresh time:"
+msgstr "Вахт аз нав:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: general.ui:176
+#, kde-format
+msgid "Red Player"
+msgstr "Бозингари сурх"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player0IsAi)
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player1IsAi)
+#: general.ui:196 general.ui:299
+#, kde-format
+msgid "Player is AI"
+msgstr "Бозингари компютери"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: general.ui:229 general.ui:332
+#, kde-format
+msgid "Difficulty:"
+msgstr "Душворй:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:243 general.ui:346
+#, kde-format
+msgid "Trainee"
+msgstr "Стажер"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:248 general.ui:351
+#, kde-format
+msgid "Normal"
+msgstr "Нормалй"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:253 general.ui:356
+#, kde-format
+msgid "Hard"
+msgstr "Қиинд"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
+#: general.ui:258 general.ui:361
+#, kde-format
+msgid "Insane"
+msgstr "Деона"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: general.ui:279
+#, kde-format
+msgid "Blue Player"
+msgstr "Бозингари қабут"
+
+#. i18n: ectx: Menu (game)
+#: kspaceduelui.rc:10
+#, fuzzy, kde-format
+msgid "&Game"
+msgstr "Бози"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: kspaceduelui.rc:15
+#, kde-format
+msgid "Main Toolbar"
+msgstr ""
+
+#: main.cpp:28
+#, kde-format
+msgid "KSpaceDuel"
+msgstr "Ҷанхои кайҳони"
+
+#: main.cpp:30
+#, fuzzy, kde-format
+#| msgid "KDE Space Game"
+msgid "Space Arcade Game"
+msgstr "KDE Бозии Кайҳони"
+
+#: main.cpp:32
+#, kde-format
+msgid "(c) 1998-2001, Andreas Zehender"
+msgstr ""
+
+#: main.cpp:35
+#, kde-format
+msgid "Andreas Zehender"
+msgstr ""
+
+#: main.cpp:35
+#, kde-format
+msgid "Original Program"
+msgstr ""
+
+#: main.cpp:36
+#, kde-format
+msgid "Branan Riley"
+msgstr ""
+
+#: main.cpp:36
+#, kde-format
+msgid "SVG Renderer"
+msgstr ""
+
+#: mainview.cpp:357 topwidget.cpp:153
+#, kde-format
+msgid " paused "
+msgstr "Фосила"
+
+#: mainview.cpp:510
+#, kde-format
+msgid "Press %1 to start"
+msgstr "Ҷиқет %1 барои пайри нав"
+
+#: mainview.cpp:559
+#, kde-format
+msgid "draw round"
+msgstr "Гирди дуранг"
+
+#: mainview.cpp:562
+#, kde-format
+msgid "blue player won the round"
+msgstr "Бозингари қабут пайро бурид"
+
+#: mainview.cpp:570
+#, kde-format
+msgid "red player won the round"
+msgstr "Бозингари сурх пайро бурид"
+
+#: mainview.cpp:578
+#, kde-format
+msgid "Press %1 for new round"
+msgstr "Ҷиқет %1 ба пайри нав"
+
+#: playerinfo.cpp:39 playerinfo.cpp:72
+#, kde-format
+msgid "Hit points"
+msgstr "Миқдори расидан"
+
+#: playerinfo.cpp:42 playerinfo.cpp:75
+#, kde-format
+msgid "Energy"
+msgstr "Қувват"
+
+#: playerinfo.cpp:45 playerinfo.cpp:78
+#, kde-format
+msgid "Wins"
+msgstr "Ғалаба"
+
+#: structs.h:52
+msgid "Default"
+msgstr ""
+
+#: structs.h:52
+msgid "Chaos"
+msgstr "Миф"
+
+#: structs.h:52
+#, fuzzy
+#| msgid "Lack of energy"
+msgid "Lack of Energy"
+msgstr "Намерасад қувват"
+
+#: topwidget.cpp:82
+#, kde-format
+msgid "&New Round"
+msgstr "&Пайри нав"
+
+#: topwidget.cpp:90
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "start game"
+msgid "Start"
+msgstr "Аввал"
+
+#: topwidget.cpp:99
+#, kde-format
+msgid "Player 1 Rotate Left"
+msgstr "Бозингари 1 давр ба тарафи ҷап"
+
+#: topwidget.cpp:103
+#, kde-format
+msgid "Player 1 Rotate Right"
+msgstr "Бозингари 1 давр ба тарафи рост"
+
+#: topwidget.cpp:107
+#, kde-format
+msgid "Player 1 Accelerate"
+msgstr "Бозингари 1 тестар"
+
+#: topwidget.cpp:111
+#, kde-format
+msgid "Player 1 Shot"
+msgstr "бозингари 1 парон"
+
+#: topwidget.cpp:115
+#, kde-format
+msgid "Player 1 Mine"
+msgstr "Бозингари 1 аз ман"
+
+#: topwidget.cpp:120
+#, kde-format
+msgid "Player 2 Rotate Left"
+msgstr "Бозингари 2 давр ба тарафи ҷап"
+
+#: topwidget.cpp:124
+#, kde-format
+msgid "Player 2 Rotate Right"
+msgstr "Бозингари 2 давр ба тарафи рост"
+
+#: topwidget.cpp:128
+#, kde-format
+msgid "Player 2 Accelerate"
+msgstr "Бозингари 2 тестар"
+
+#: topwidget.cpp:132
+#, kde-format
+msgid "Player 2 Shot"
+msgstr "бозингари 2 парон"
+
+#: topwidget.cpp:136
+#, kde-format
+msgid "Player 2 Mine"
+msgstr "Бозингари 2 аз ман"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgid "&Restart"
+#~ msgstr "Аввал"

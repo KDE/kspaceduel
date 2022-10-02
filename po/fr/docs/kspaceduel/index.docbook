@@ -1,0 +1,1117 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&kspaceduel;">
+  <!ENTITY kappversion "2.0"
+><!--Applicaion version. Use this variable everywhere it's needed.-->
+  <!ENTITY package "kdegames"
+>  <!-- do not change this! -->
+  <!ENTITY % French "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+ 
+<book id="kspaceduel" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+    <title
+>Manuel de &kappname;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+    <author
+><firstname
+>Andreas</firstname
+> <surname
+>Zehender</surname
+> <affiliation
+><address
+><email
+>az@azweb.de</email
+></address
+></affiliation>
+    </author>
+<author
+><firstname
+>Eugene</firstname
+> <surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+&traducteurEricBischoff; &traducteurGerardDelafond; &traducteurStanislasZeller; 
+</authorgroup>
+ 
+<copyright>
+    <year
+>1999</year
+><year
+>2000</year>
+    <holder
+>&Andreas.Zehender;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>05-05-2013</date
+><!-- Date of (re)writing, or update.-->
+<releaseinfo
+>&kappversion; (&kde; 4.11)</releaseinfo
+><!-- Application version number. Use the variable definitions within header to change this value.-->
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+    <para
+>Cette documentation décrit le jeu &kappname; version &kappversion;</para>
+</abstract>
+ 
+<!--List of relevan keywords-->
+<keywordset>
+    <keyword
+>KDE</keyword
+> <!-- do not change this! -->
+    <keyword
+>jeux kde</keyword
+> <!-- do not change this! -->
+    <keyword
+>jeu</keyword
+> <!-- do not change this! -->
+    <keyword
+>KSpaceDuel</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <keyword
+>arcade</keyword>
+    <keyword
+>espace</keyword>
+    <keyword
+>guerre</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+    <keyword
+>deux joueurs</keyword>
+<!--All other relevant keywords-->
+    <keyword
+>satellite</keyword>
+    <keyword
+>guerre des étoiles</keyword>
+    <keyword
+>guerres</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Introduction</title
+> <!-- do not change this! -->
+    <note
+><title
+>Type de jeu : </title
+><para
+>Arcade</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <note
+><title
+>Nombre possible de joueurs : </title
+><para
+>Deux</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ <!--Short game description starts here. 3-4 sentences (paragraphs)-->
+    <para
+>L'idée derrière &kappname; est simple, mais prenante. Chacun des deux joueurs possibles contrôle un vaisseau satellite en orbite autour du soleil. Pendant la progression du jeu, les joueurs doivent éliminer l'appareil de l'adversaire. Dès que le satellite de l'adversaire est détruit, le joueur restant remporte la manche.</para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Comment jouer</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+    <note
+><title
+>Objectif : </title
+><para
+>Détruire le satellite de l'adversaire, en gardant le sien intact.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+    <para
+>&kappname; se charge directement dans le mode jeu. Cependant, l'action ne démarre que si le joueur réalise un premier déplacement.</para>
+<note
+><title
+>Remarque : </title
+><para
+>Si le satellite de l'adversaire est contrôlé par l'ordinateur, l'action du jeu ne démarre que si le joueur humain réalise le premier déplacement.</para
+></note>
+<para
+>Dans &kappname;, vous contrôlez la rotation du vaisseau, l'accélération et les tirs. Votre satellite est constamment attiré par la gravité du soleil. Vous devez ajuster la rotation et l'accélération de votre vaisseau pour qu'il reste en course.</para>
+<note
+><title
+>Remarque : </title
+><para
+>Se rapprocher trop près du soleil cause une explosion du satellite.</para
+></note>
+<para
+>Dans le même temps, vous devez observer les déplacements de l'adversaire et utiliser vos armes, consistants en balles et mines, pour détruire le satellite ennemi. </para>
+<note
+><title
+>Remarque : </title
+><para
+>Vos propres armes sont aussi néfastes pour votre satellite qu'elles le sont pour l'adversaire.</para
+></note>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Règles du jeu, stratégies et astuces</title
+> <!-- do not change this! -->
+    <sect1 id="screen">
+        <title
+>Vue d'ensemble de l'écran de jeu de &kappname;</title>
+        <screenshot>
+            <screeninfo
+>Écran de jeu de &kappname;</screeninfo>
+            <mediaobject
+><imageobject
+><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Écran de jeu de &kappname;</phrase
+></textobject
+></mediaobject>
+        </screenshot>
+        <itemizedlist>
+            <listitem
+><para
+>Le haut de la zone de jeu est occupée par la barre de menu et la barre d'outils.</para
+></listitem>
+            <listitem
+><para
+>La partie centrale de l'écran de &kappname; est la zone de jeu.</para
+></listitem>
+            <listitem
+><para
+>À gauche et à droite se situent des écrans d'informations sur le joueur rouge et le joueur bleu.</para
+></listitem>
+            <listitem
+><para
+>La boîte du haut sur l'écran d'information représente les <quote
+>Points de vie</quote
+> du vaisseau.</para
+></listitem>
+            <listitem
+><para
+>La boîte du milieu sur l'écran d'information représente l'énergie de la batterie.</para
+></listitem>
+            <listitem
+><para
+>La boîte du bas sur l'écran d'information affiche le nombre de manches gagné par le joueur.</para
+></listitem>
+            <listitem
+><para
+>Le bas de la zone de jeu est la barre d'état.</para
+></listitem>
+        </itemizedlist>
+    </sect1>
+    <sect1 id="keys">
+        <title
+>Raccourcis par défaut</title>
+        <para
+>Les tableaux suivants affichent les raccourcis clavier par défaut pour &kappname;.</para>
+        <informaltable frame="all">
+            <tgroup cols="3">
+            <colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
+            <thead
+><row
+><entry
+>Action</entry
+><entry
+>Joueur rouge</entry
+><entry
+>Joueur bleu</entry
+></row
+></thead>
+            <tbody>
+                <row
+><entry
+>Tourner à gauche</entry
+><entry
+>S</entry
+><entry
+>Flèche gauche</entry
+></row>
+                <row
+><entry
+>Tourner à droite</entry
+><entry
+>F</entry
+><entry
+>Flèche droite</entry
+></row>
+                <row
+><entry
+>Accélérer</entry
+><entry
+>E</entry
+><entry
+>Flèche haut</entry
+></row>
+                <row
+><entry
+>Tirer</entry
+><entry
+>D</entry
+><entry
+>Flèche bas</entry
+></row>
+                <row
+><entry
+>Mines</entry
+><entry
+>A</entry
+><entry
+>Inser</entry
+></row>
+            </tbody>
+            </tgroup>
+        </informaltable>
+        <note
+><title
+>Remarque : </title
+><para
+>Pour modifier ces touches, se référer à la section intitulée <link linkend="options-keys"
+>Configuration du jeu</link
+>.</para
+></note>
+    </sect1>
+    <sect1 id="rules">
+        <title
+>Règles</title>
+        <sect2 id="energy">
+            <title
+>À propos des points de vie</title
+> 
+            <itemizedlist>
+                <listitem
+><para
+>Chaque joueur contrôle un vaisseau.</para
+></listitem>
+                <listitem
+><para
+>Les vaisseaux peuvent tourner, accélérer, tirer et déposer des mines.</para
+></listitem>
+                <listitem
+><para
+>Chaque vaisseau dispose d'une certaine quantité d'énergie pour tourner, accélérer, tirer et poser des mines.</para
+></listitem>
+                <listitem
+><para
+>Chaque vaisseau a une quantité limitée d'énergie.</para
+></listitem>
+                <listitem
+><para
+>Les vaisseaux absorbent l'énergie solaire requise pour les opérations d'usage. La quantité d'énergie du vaisseau dépend de la distance et de la direction du soleil.</para
+></listitem>
+            </itemizedlist>
+            <note
+><title
+>Remarque : </title
+><para
+>Un vaisseau obtient plus d'énergie au voisinage du soleil et moins aux frontières du jeu. Il reçoit une quantité d'énergie maximale si le soleil brille directement sur les panneaux et moins ou même pas du tout d'énergie si le soleil brille transversalement ou perpendiculairement par rapport au panneau.</para
+></note>
+        </sect2>
+        <sect2 id="bullets-and-mines">
+            <title
+>À propos des balles et mines</title>
+            <itemizedlist>
+                <listitem
+><para
+>Les balles sont en orbite autour du soleil comme un vaisseau.</para
+></listitem>
+                <listitem
+><para
+>Les mines disposent d'énergie pour rester en place au même endroit. Quand cette énergie est dépensée, la mine tombe dans le soleil et se désintègre.</para
+></listitem>
+                <listitem
+><para
+>Plus la mine est proche du soleil, plus d'énergie est nécessaire pour la maintenir en place.</para
+></listitem>
+                <listitem
+><para
+>Les mines peuvent être détruites par les balles.</para
+></listitem>
+                <listitem
+><para
+>Par défaut, un vaisseau peut placer au maximum 5 balles et 3 mines à l'écran.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="hit-points">
+            <title
+>À propos des points de vie</title>
+            <itemizedlist>
+                <listitem
+><para
+>Une collision avec simplement des balles ou des balles ennemis ou des mines diminue le nombre de points.</para
+></listitem>
+                <listitem
+><para
+>Si deux vaisseaux entrent en collision, le vaisseau le plus faible est détruit et les points de vie du plus fort sont diminués des points de vie du plus faible ainsi que d'une valeur fixe (dégâts de crash).</para
+></listitem>
+                <listitem
+><para
+>Si le nombre de points du satellite descend à zéro, celui ci explose.</para
+></listitem>
+                <listitem
+><para
+>Si un satellite rentre en collision avec le soleil, il est détruit sans tenir compte du nombre de points restant.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="powerups">
+            <title
+>Bonus</title>
+            <para
+>De temps en temps, des bonus apparaissent sur le terrain de jeu.</para>
+            <para
+>Il y a quatre bonus différents :</para>
+            <variablelist>
+                <varlistentry
+><term
+>Mine</term>
+                <listitem
+><para
+>Le nombre maximal de mines est augmenté.</para
+></listitem>
+                </varlistentry>
+                <varlistentry
+><term
+>Balle</term>
+                <listitem
+><para
+>Le nombre maximal de balles est augmenté.</para
+></listitem>
+                </varlistentry>
+                <varlistentry
+><term
+>Énergie (sphère jaune)</term>
+                <listitem
+><para
+>L'énergie du joueur augmente.</para
+></listitem>
+                </varlistentry>
+                <varlistentry
+><term
+>Bouclier (sphère bleue)</term>
+                <listitem
+><para
+>Le joueur augmente ses points de vie.</para
+></listitem>
+                </varlistentry>
+            </variablelist>
+        </sect2>
+    </sect1>
+</chapter>
+  
+<chapter id="interface"
+><title
+>Éléments de menu</title>
+ 
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+> &Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Jeu</guimenu
+><guimenuitem
+>Nouveau</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Commence une nouvelle partie de &kappname;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-menu-new">
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+> &Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Jeu</guimenu
+><guimenuitem
+>Nouvelle manche</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Commence une nouvelle manche au niveau actuel.</para
+></listitem>
+</varlistentry>
+
+<varlistentry  id="game-menu-pause">
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>P</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Jeu</guimenu
+><guimenuitem
+>Pause</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Suspend et reprend une partie.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl; <keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Jeu</guimenu
+><guimenuitem
+>Quitter</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Quitte</action
+> &kappname;.</para
+></listitem>
+</varlistentry>
+<varlistentry id="settings-menu-settings">
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer &kappname;...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Ouvre une boîte de dialogue de configuration qui vous permet de définir beaucoup de réglages du jeu. Reportez-vous au chapitre <link linkend="configuration"
+>Options du jeu</link
+> pour des informations supplémentaires.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>De plus, &kspaceduel; possède des éléments communs de menu &kde; <guimenu
+>Configuration</guimenu
+> et <guimenu
+>Aide</guimenu
+>. Pour plus d'informations, veuillez consulter les sections <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu de configuration</ulink
+> et <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu d'aide</ulink
+> des fondamentaux de &kde;. </para>
+
+</chapter>
+  
+<chapter id="faq"
+><title
+>Foire aux questions</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Je veux modifier la façon dont le jeu s'affiche. Est-ce possible ? </para
+></question>
+ <answer
+><para
+>Non. &kappname; n'a pour le moment qu'un seul thème disponible.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>J'ai commis une erreur. Puis-je l'annuler ? </para
+></question>
+ <answer
+><para
+>Non, &kappname; n'implante pas actuellement de fonctionnalité <quote
+>d'annulation</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Je ne comprend pas quoi faire ! Y a t-il une astuce ? </para
+></question>
+ <answer
+><para
+>Non. &kappname; n'inclut pas de fonctionnalité de <quote
+>conseil</quote
+>. Cependant, si vous lisez attentivement la section <link linkend="rules_and_tips"
+>Règles du jeu, stratégies et astuces</link
+>, vous n'aurez pas ce problème.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Je veux quitter le jeu maintenant, mais ma partie n'est pas terminée. Puis je l'enregistrer ?</para
+></question>
+ <answer
+><para
+>Non. &kappname; n'inclut pas de fonctionnalité <quote
+>d'enregistrement</quote
+>.</para
+></answer>
+</qandaentry>
+<!--Please add more Q&As if needed-->
+ 
+</qandaset>
+</chapter>
+ 
+<chapter id="configuration"
+><title
+>Configuration du jeu</title
+> <!-- do not change this! -->
+<!--This section describes configuration &GUI;. If your game is configured using menubar exclusively, please remove this section.-->
+  <sect1 id="options-keys">
+    <title
+>Touches du jeu</title>
+     <para
+>&kappname; possède un lot de touches par défaut pour contrôler le jeu. Voir la liste des touches par défaut à la section intitulée <link linkend="keys"
+>Raccourcis par défaut </link
+>.</para>
+     <para
+>Les touches peuvent être configurées en sélectionnant <menuchoice
+> <guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer les raccourcis clavier...</guimenuitem
+> </menuchoice
+> depuis la barre de menu.</para
+> 
+     <para
+>Ceci ouvre une boîte de dialogue qui vous permet de configurer toutes les touches, y compris celles utilisées pour diriger le vaisseau, tirer des balles ou déposer des mines.</para>
+     <para
+>Vous pouvez voir que chaque joueur (rouge et bleu) a 5 touches, correspondants à : tourner vers la gauche, tourner vers la droite, accélérer, tirer et mines.</para>
+     <para
+>Quand vous avez fini de configurer vos touches, il faut cliquer sur <guibutton
+>Ok </guibutton
+> pour appliquer vos modifications.</para>
+     <para
+>Si vous voulez revenir aux touches par défaut, cliquez simplement sur le bouton <guibutton
+>Réglages par défaut</guibutton
+>. Pour rendre ces modifications permanentes, cliquez sur <guibutton
+>Ok</guibutton
+>.</para
+> 
+     <para
+>Si vous voulez annuler les modifications que vous avez faits et retourner aux touches précédemment sélectionnées, cliquez simplement sur <guibutton
+>Annuler</guibutton
+>, et vos modifications seront perdues.</para>
+  </sect1>
+
+  <sect1 id="options-configurations">
+    <title
+>Configuration du jeu</title>
+    <para
+>Tous les réglages de jeu de &kappname; sont configurables.</para>
+    <para
+>Si vous voulez modifier les réglages de jeu, sélectionnez simplement <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer &kappname;...</guimenuitem
+> </menuchoice
+> dans la barre de menu.</para>
+    <para
+>Ceci ouvre une boîte de dialogue de deux pages, libellées <guilabel
+>Général</guilabel
+> et <guilabel
+>Jeu</guilabel
+>. La première page est plutôt simple, la seconde a sept onglets en haut.</para>
+    <para
+>Les réglages sont réunis en différentes configurations. Vous pouvez choisir parmi plusieurs configurations prédéfinies.</para>
+    <para
+>Si vous choisissez <guilabel
+>Personnalisé</guilabel
+>, vous pouvez définir tous les réglages vous-même.</para>
+    <note
+><para
+>Si vous n'avez pas sélectionné <guilabel
+>Personnalisé</guilabel
+>, vous ne pourrez pas faire de modifications à ces options.</para
+></note>
+    <tip
+><para
+>Si vous avez trouvé une configuration intéressante, envoyez-la par courrier électronique à l'auteur du jeu. Elle pourra être intégrée à une version future (envoyez la partie [Game] du fichier <filename
+>~/.kde/share/config/kspaceduelrc </filename
+>).</para
+></tip>
+    <para
+>Quand vous avez fini de modifier les options, vous devrez cliquer sur <guibutton
+>Ok</guibutton
+> pour appliquer vos modifications.</para>
+    <para
+>Si vous voulez revenir aux réglages par défaut, cliquez simplement sur le bouton <guibutton
+>Réglages par défaut</guibutton
+>. Pour rendre ces modifications permanentes, cliquez sur le bouton <guibutton
+>Ok</guibutton
+>.</para
+> 
+    <para
+>Si vous voulez annuler les modifications que vous avez faits et retourner aux touches précédemment sélectionnées, cliquez simplement sur <guibutton
+>Annuler</guibutton
+>, et vos modifications seront perdues.</para>
+    <para
+>Les réglages sont :</para>
+      <sect2 id="general">
+    <title
+><guilabel
+>Général</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Points de vie</guilabel
+></term>
+        <listitem
+><para
+>Il y a deux curseurs qui vous permettent de définir les points de vie pour chacun des deux joueurs ; vous pouvez diminuer les points de vie pour un joueur pour lui donner un handicap.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Délai de rafraîchissement</guilabel
+></term>
+         <listitem
+><para
+>Délai entre deux rafraîchissement en millisecondes. Tous les autres réglages sont indépendants du délai de rafraîchissement.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Joueur rouge</guilabel
+></term>
+        <listitem
+><para
+>vous pouvez définir ici si le joueur rouge est contrôlé par l'IA et aussi choisir le niveau d'habileté de l'IA pour ce joueur. Essayez simplement avec les différents niveaux pour trouver celui qui vous convient.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Joueur bleu</guilabel
+></term>
+        <listitem
+><para
+>Ceci fonctionne pareil que les options pour le <guilabel
+>Joueur rouge</guilabel
+> décrits ci-dessus.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="game">
+    <title
+><guilabel
+>Jeu</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Rapidité du jeu</guilabel
+></term>
+        <listitem
+><para
+>Contrôle la vitesse de l'ensemble du jeu.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="bullet">
+    <title
+><guilabel
+>Balle</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Vitesse de tir</guilabel
+></term>
+        <listitem
+><para
+>La vitesse des balles</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Besoin d'énergie</guilabel
+></term>
+        <listitem
+><para
+>La quantité d'énergie nécessaire à un tir.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Nombre maximum</guilabel
+></term>
+        <listitem
+><para
+>Le nombre maximum de balles qu'un joueur peut avoir à l'écran.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Dégâts</guilabel
+></term>
+        <listitem
+><para
+>Le nombre de points marqués lorsqu'une balle atteint un vaisseau.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Durée de vie</guilabel
+></term>
+        <listitem
+><para
+>La durée maximale de vie d'une balle.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Délai de recharge</guilabel
+></term>
+        <listitem
+><para
+>Le temps dont un vaisseau a besoin pour recharger une balle.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="mine">
+    <title
+><guilabel
+>Mine</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Essence par mine</guilabel
+></term>
+        <listitem
+><para
+>La quantité d'essence sur une mine.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Besoin d'énergie</guilabel
+></term>
+        <listitem
+><para
+>La quantité d'énergie nécessaire pour déposer une mine.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Temps d'activation</guilabel
+></term>
+        <listitem
+><para
+>Le temps qu'une mine est inactive.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Dégâts</guilabel
+></term>
+        <listitem
+><para
+>Le nombre de points de dommages occasionnés quand un vaisseau heurte une mine.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Nombre maximum</guilabel
+></term>
+        <listitem
+><para
+>Le nombre maximal de mines qu'un joueur peut avoir à l'écran.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Délai de recharge</guilabel
+></term>
+        <listitem
+><para
+>Le temps dont un vaisseau a besoin pour recharger une mine.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="ship">
+    <title
+><guilabel
+>Vaisseau</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Accélération</guilabel
+></term>
+        <listitem
+><para
+>L'accélération des vaisseaux</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Besoin d'énergie</guilabel
+></term>
+        <listitem
+><para
+>L'énergie nécessaire pour accélérer un vaisseau.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Vitesse de rotation</guilabel
+></term>
+        <listitem
+><para
+>La vitesse à laquelle un vaisseau tourne.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Besoin d'énergie</guilabel
+></term>
+        <listitem
+><para
+>L'énergie nécessaire pour faire tourner un vaisseau.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Dégâts de collision</guilabel
+></term>
+        <listitem
+><para
+>Le nombre de points de dégâts obtenus lors d'une collision.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="sun">
+    <title
+><guilabel
+>soleil</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Énergie solaire</guilabel
+></term>
+        <listitem
+><para
+>L'énergie du soleil. Plus la valeur est haute, plus vite les vaisseaux se rechargeront.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Force de gravité</guilabel
+></term>
+        <listitem
+><para
+>La force d'attraction gravitationnelle du soleil.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="start">
+    <title
+><guilabel
+>Démarrage</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Position X</guilabel
+> et <guilabel
+>Position Y</guilabel
+></term>
+        <listitem
+><para
+>La position des vaisseaux au début d'une manche. Les vaisseaux démarrent à des emplacements opposés du soleil.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Vitesse X</guilabel
+> et <guilabel
+>Vitesse Y</guilabel
+></term>
+        <listitem
+><para
+>La vitesse au début d'un round.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="powerup-options">
+    <title
+><guilabel
+>Bonus</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Délai d'apparition</guilabel
+></term>
+        <listitem
+><para
+>Durée maximale entre l'apparition de bonus.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Durée de vie</guilabel
+></term>
+        <listitem
+><para
+>Durée de vie maximale d'un bonus.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Quantité d'énergie</guilabel
+></term>
+        <listitem
+><para
+>Quantité d'énergie qu'un joueur obtient d'un bonus d'énergie.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Quantité de bouclier</guilabel
+></term>
+        <listitem
+><para
+>Quantité de points de vie qu'un joueur obtient d'un bonus de protection.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+    </sect1>
+</chapter>
+ 
+<chapter id="credits"
+><title
+>Remerciements et licence</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para
+>&kappname; </para>
+<para
+>Copyright du programme 1999-2000 &Andreas.Zehender; <email
+>az@azweb.de</email
+></para>
+<para
+>Copyright de la documentation 2000 &Andreas.Zehender; <email
+>az@azweb.de</email
+></para>
+<para
+>Documentation mise à jour pour &kde; &kappversion; &Mike.McBride; &Mike.McBride.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+
+<para
+>Traduction française par &EricBischoff;, &GerardDelafond; et &StanislasZeller;.</para
+> &underFDL; &underGPL; </chapter>
+  
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

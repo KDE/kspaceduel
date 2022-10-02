@@ -1,0 +1,1146 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&kspaceduel;">
+  <!ENTITY kappversion "2.0"
+><!--Applicaion version. Use this variable everywhere it's needed.-->
+  <!ENTITY package "kdegames"
+>  <!-- do not change this! -->
+  <!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+ 
+<book id="kspaceduel" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+    <title
+>&kappname;i käsiraamat</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+    <author
+><firstname
+>Andreas</firstname
+> <surname
+>Zehender</surname
+> <affiliation
+><address
+><email
+>az@azweb.de</email
+></address
+></affiliation>
+    </author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+> <surname
+>Laane</surname
+> <affiliation
+><address
+><email
+>bald@smail.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+ 
+<copyright>
+    <year
+>1999</year
+><year
+>2000</year>
+    <holder
+>&Andreas.Zehender;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2013-05-05</date
+><!-- Date of (re)writing, or update.-->
+<releaseinfo
+>&kappversion; (&kde; 4.11)</releaseinfo
+><!-- Application version number. Use the variable definitions within header to change this value.-->
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+    <para
+>See käsiraamat kirjeldab mängu &kappname; versiooni &kappversion;.</para>
+</abstract>
+ 
+<!--List of relevan keywords-->
+<keywordset>
+    <keyword
+>KDE</keyword
+> <!-- do not change this! -->
+    <keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+    <keyword
+>mäng</keyword
+> <!-- do not change this! -->
+    <keyword
+>kspaceduel</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <keyword
+>arkaadmäng</keyword>
+    <keyword
+>kosmos</keyword>
+    <keyword
+>sõda</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+    <keyword
+>kaks mängijat</keyword>
+<!--All other relevant keywords-->
+    <keyword
+>satelliit</keyword>
+    <keyword
+>tähesõjad</keyword>
+    <keyword
+>sõjad</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Sissejuhatus</title
+> <!-- do not change this! -->
+    <note
+><title
+>Mängu tüüp:</title
+><para
+>arkaadmäng</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <note
+><title
+>Mängijate arv:</title
+><para
+>Kaks</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ <!--Short game description starts here. 3-4 sentences (paragraphs)-->
+    <para
+>&kappname;i idee on lihtne, aga köitev: mõlemad mängijad juhivad satelliidina ümber päikese tiirlevat kosmoselaeva. Eesmärk on kõrvaldada lõpuks vastase kosmoselaev. Ühes sellega on ellujäänud mängija ka võitja.</para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Kuidas mängida</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+    <note
+><title
+>Eesmärk:</title
+><para
+>hävitada vastase satelliit ja kaitsta enda oma hävitamise eest.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+    <para
+>&kappname; alustab otse mängimisrežiimis, kuid tegutsemine algab alles siis, kui üks mängija sooritab esimese käigu.</para>
+<note
+><title
+>Märkus:</title
+><para
+>Kui vastase satelliiti juhib tehisaju, algab mäng alles siis, kui esimese käigu on teinud inimmängija.</para
+></note>
+<para
+>&kappname; võimaldab juhtida laeva pöörlemist, kiirendust ja relvastust. Gravitatsioon tõmbab satelliiti pidevalt päikese poole. Kursil püsimiseks tuleb kohandada pöörlemist ja kiirendust.</para>
+<note
+><title
+>Märkus:</title
+><para
+>Päikesel liiga lähedale sattudes satelliit plahvatab.</para
+></note>
+<para
+>Samal ajal tuleb silm peal hoida vastase liikumisel ning kasutada tema hävitamiseks relvi ehk kuule ja miine. </para>
+<note
+><title
+>Märkus:</title
+><para
+>Relvad võivad ühtmoodi kahjustada nii sinu vastast kui sind ennast.</para
+></note>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Mängureeglid, strateegia ja nõuanded</title
+> <!-- do not change this! -->
+    <sect1 id="screen">
+        <title
+>&kappname;i mänguvälja ülevaade</title>
+        <screenshot>
+            <screeninfo
+>&kappname;i mänguväli</screeninfo>
+            <mediaobject
+><imageobject
+><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>&kappname;i mänguväli</phrase
+></textobject
+></mediaobject>
+        </screenshot>
+        <itemizedlist>
+            <listitem
+><para
+>Mänguvälja kohal asuvad menüü- ja tööriistariba.</para
+></listitem>
+            <listitem
+><para
+>&kappname;i akna keskse osa moodustab mänguväli.</para
+></listitem>
+            <listitem
+><para
+>Paremal ja vasakul serval asuvad punase ja sinise mängija olekut näitavad kastikesed.</para
+></listitem>
+            <listitem
+><para
+>Ülemises kastikeses on kirjas raketi <quote
+>löögipunktid</quote
+>.</para
+></listitem>
+            <listitem
+><para
+>Keskmises kastikeses on kirjas järelejäänud energia kogus.</para
+></listitem>
+            <listitem
+><para
+>Alumises kastikeses on kirjas, mitu võitu on mängija saavutanud.</para
+></listitem>
+            <listitem
+><para
+>Mänguvälja all asub olekuriba.</para
+></listitem>
+        </itemizedlist>
+    </sect1>
+    <sect1 id="keys">
+        <title
+>Vaikimisi kiirklahvid</title>
+        <para
+>Järgnev tabel näitab &kappname;i vaikimisi kiirklahve.</para>
+        <informaltable frame="all">
+            <tgroup cols="3">
+            <colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
+            <thead
+><row
+><entry
+>Toiming</entry
+><entry
+>Punane mängija</entry
+><entry
+>Sinine mängija</entry
+></row
+></thead>
+            <tbody>
+                <row
+><entry
+>Pööramine vasakule</entry
+><entry
+>S</entry
+><entry
+>Nool vasakule</entry
+></row>
+                <row
+><entry
+>Pööramine paremale</entry
+><entry
+>F</entry
+><entry
+>Nool paremale</entry
+></row>
+                <row
+><entry
+>Kiirendamine</entry
+><entry
+>E</entry
+><entry
+>Nool üles</entry
+></row>
+                <row
+><entry
+>Tulistamine</entry
+><entry
+>D</entry
+><entry
+>Nool alla</entry
+></row>
+                <row
+><entry
+>Mineerimine</entry
+><entry
+>A</entry
+><entry
+>Insert</entry
+></row>
+            </tbody>
+            </tgroup>
+        </informaltable>
+        <note
+><title
+>Märkus:</title
+><para
+>Nende klahvide muutmise kohta vaata osa <link linkend="options-keys"
+>Mängu seadistamine</link
+>.</para
+></note>
+    </sect1>
+    <sect1 id="rules">
+        <title
+>Reeglid</title>
+        <sect2 id="energy">
+            <title
+>Energiapunktid</title
+> 
+            <itemizedlist>
+                <listitem
+><para
+>Mõlemad mängijad juhivad üht raketti.</para
+></listitem>
+                <listitem
+><para
+>Raketid võivad pöörelda, liikumist kiirendada, tulistada ja miine asetada.</para
+></listitem>
+                <listitem
+><para
+>Raketil on teatud kogus energiat, mida tarvitatakse pöörlemiseks, kiirendamiseks, tulistamiseks ja miinide asetamiseks.</para
+></listitem>
+                <listitem
+><para
+>Raketil on teatud kogus energiat.</para
+></listitem>
+                <listitem
+><para
+>Rakett saab energiat oma päikesepaneelidelt. Saadava energia kogus sõltub sellest, kui kaugel on rakett päikesest ja milline on selle asend päikese suhtes</para
+></listitem>
+            </itemizedlist>
+            <note
+><title
+>Märkus:</title
+><para
+>Päikesele lähemal saab energiat rohkem, kaugemal vähem. Täiskoguse energiat saab siis, kui päike paistab otse paneelidele ning vähem või üldse mitte, kui päike paistab paneelidele nurga all või küljelt.</para
+></note>
+        </sect2>
+        <sect2 id="bullets-and-mines">
+            <title
+>Kuulid ja miinid</title>
+            <itemizedlist>
+                <listitem
+><para
+>Kuulid lendavad ümber päikese nagu rakettki.</para
+></listitem>
+                <listitem
+><para
+>Miinid vajavad teatud kogust energiat oma positsioonil püsimiseks. Kui see otsa saab, langeb miin päikesesse.</para
+></listitem>
+                <listitem
+><para
+>Päikeselähedased miinid vajavad rohkem energiat kui eemalasuvad miinid.</para
+></listitem>
+                <listitem
+><para
+>Miine saab kuulidega hävitada.</para
+></listitem>
+                <listitem
+><para
+>Vaikimisi on mõlemal raketil viis kuuli ja kolm miini.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="hit-points">
+            <title
+>Löögipunktid</title>
+            <itemizedlist>
+                <listitem
+><para
+>Kokkupõrge oma või vastase kuulide või miinidega kahandab raketi löögipunkte.</para
+></listitem>
+                <listitem
+><para
+>Kui kaks raketti kokku põrkavad, hävib nõrgem ning tugevama löögipunktid vähenevad nõrgema laeva punktide võrra.</para
+></listitem>
+                <listitem
+><para
+>Päikesesse langedes rakett hävib.</para
+></listitem>
+                <listitem
+><para
+>Päikesega kokku põrgates satelliit hävib sõltumata sellest, kui palju on tal löögipunkte.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="powerups">
+            <title
+>Jõuallikad</title>
+            <para
+>Aegajalt ilmuvad mänguväljale jõuallikad.</para>
+            <para
+>Neid on nelja tüüpi:</para>
+            <variablelist>
+                <varlistentry
+><term
+>Miin</term>
+                <listitem
+><para
+>Miinide maksimaalne arv suureneb.</para
+></listitem>
+                </varlistentry>
+                <varlistentry
+><term
+>Kuul</term>
+                <listitem
+><para
+>Kuulide maksimaalne arv suureneb.</para
+></listitem>
+                </varlistentry>
+                <varlistentry
+><term
+>Energia (kollane kera)</term>
+                <listitem
+><para
+>Mängija energia suureneb.</para
+></listitem>
+                </varlistentry>
+                <varlistentry
+><term
+>Kilp (sinine kera)</term>
+                <listitem
+><para
+>Mängija saab löögipunkte.</para
+></listitem>
+                </varlistentry>
+            </variablelist>
+        </sect2>
+    </sect1>
+</chapter>
+  
+<chapter id="interface"
+><title
+>Menüükirjed</title>
+ 
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+> &Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Mäng</guimenu
+><guimenuitem
+>Uus</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Käivitab &kappname;i uue mängu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-menu-new">
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+> &Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Mäng</guimenu
+><guimenuitem
+>Uus voor</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Käivitab käesoleval tasemel uue vooru.</para
+></listitem>
+</varlistentry>
+
+<varlistentry  id="game-menu-pause">
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>P</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Mäng</guimenu
+><guimenuitem
+>Paus</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Peatab mängu ja taaskäivitab selle.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Mäng</guimenu
+><guimenuitem
+>Välju</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Lõpetab</action
+> &kappname;i töö.</para
+></listitem>
+</varlistentry>
+<varlistentry id="settings-menu-settings">
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>&kappname;i seadistamine...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Avab seadistustedialoogi, kus saab määrata paljusid mängu puudutavaid võimalusi. Vt. lähemalt osa <link linkend="configuration"
+>Mängu seadistamine</link
+>.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Lisaks on &kspaceduel;il tavapärased &kde; <guimenu
+>seadistuste</guimenu
+> ja <guimenu
+>abi</guimenu
+>menüü elemendid, mille kohta leiab rohkem teavet &kde; põhialuste käsiraamatu osadest <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Menüü Seadistused</ulink
+> ja <ulink url="help:/fundamentals/ui.html#menus-help"
+>Menüü Abi</ulink
+>. </para>
+
+</chapter>
+  
+<chapter id="faq"
+><title
+>Korduma kippuvad küsimused</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Ma soovin muuta mängu välimust. On see võimalik? </para
+></question>
+ <answer
+><para
+>Ei, praegu pakub &kappname; ainult üht teemat.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Tegin vea. Kas selle saab tagasi võtta? </para
+></question>
+ <answer
+><para
+>Ei, &kappname; ei paku <quote
+>tagasivõtmise</quote
+> võimalust.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ma ei saa aru, mida ma peaksin tegema! Kas mingeid vihjeid ei ole? </para
+></question>
+ <answer
+><para
+>Ei, &kappname; ei paku <quote
+>vihjeid</quote
+>. Aga kui loed hoolikalt osa <link linkend="rules_and_tips"
+>Mängureeglid, strateegia ja nõuanded</link
+>, pole neid vajagi.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ma pean mängust väljuma, aga mäng ei ole veel läbi. Kas ma saan oma seisu salvestada?</para
+></question>
+ <answer
+><para
+>Ei, &kappname; ei paku <quote
+>salvestamise</quote
+> võimalust.</para
+></answer>
+</qandaentry>
+<!--Please add more Q&As if needed-->
+ 
+</qandaset>
+</chapter>
+ 
+<chapter id="configuration"
+><title
+>Mängu seadistamine</title
+> <!-- do not change this! -->
+<!--This section describes configuration &GUI;. If your game is configured using menubar exclusively, please remove this section.-->
+  <sect1 id="options-keys">
+    <title
+>Klahvid</title>
+     <para
+>&kappname; kasutab mängimiseks teatud vaikeklahve. Nende nimekirja näeb osas <link linkend="keys"
+>Vaikimisi kiirklahvid</link
+>.</para>
+     <para
+>Klahve saab seadistada menüükäsuga <menuchoice
+> <guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Kiirklahvide seadistamine...</guimenuitem
+> </menuchoice
+></para
+> 
+     <para
+>See avab dialoogi, kus saab seadistada kõiki kiirklahve, sealhulgas neid, mida kasutatakse raketi juhtimiseks, tulistamiseks ja mineerimiseks.</para>
+     <para
+>Siin näed, et mõlemal mängijal (sinisel ja punasel) on määratud viis kiirklahvi vastavalt tegevustele 'pööre vasakule', 'pööre paremale', 'kiirendus', 'tulistamine' ja 'mineerimine'.</para>
+     <para
+>Kui oled klahvide seadistamise lõpetanud, tuleb muutuste rakendamiseks vajutada nupule <guibutton
+>OK</guibutton
+>.</para>
+     <para
+>Kui soovid taastada vaikeklahvid, vajuta lihtsalt nupule <guibutton
+>Vaikeväärtused</guibutton
+>. Muutuste rakendamiseks vajuta <guibutton
+>OK</guibutton
+>.</para
+> 
+     <para
+>Kui soovid tehtud muutustest loobuda ja naasta varem valitud klahvide juurde, klõpsa <guibutton
+>Loobu</guibutton
+> ja tehtud muutusi ei arvestatagi.</para>
+  </sect1>
+
+  <sect1 id="options-configurations">
+    <title
+>Mängu seadistamine</title>
+    <para
+>Kõik &kappname;i mänguseadistused on muudetavad.</para>
+    <para
+>Kui soovid mänguseadistusi muuta, vali menüükäsk <menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>&kappname;i seadistamine...</guimenuitem
+> </menuchoice
+>.</para>
+    <para
+>See avab dialoogi, millel on kaks kaarti: <guilabel
+>Üldine</guilabel
+> ja <guilabel
+>Mäng</guilabel
+>. Esimene on üsna lihtne, teine aga jaguneb omakorda seitsmeks kaardiks.</para>
+    <para
+>Seadistused on koondatud erinevatesse konfiguratsioonidesse. Valida saab mitme eelnevalt määratud konfiguratsiooni seast.</para>
+    <para
+>Kui valid <guilabel
+>Kohandatud</guilabel
+>, saad kõik seadistused oma tahtmist mööda määrata.</para>
+    <note
+><para
+>Kui jätad <guilabel
+>Kohandatud</guilabel
+> valimata, ei saa sa neid seadistusi muuta.</para
+></note>
+    <tip
+><para
+>Kui oled leidnud huvitava konfiguratsiooni, võiksid selle saata ka rakenduse autorile, et see oleks võimalik järgmise versiooniga juba kaasa panna (saata tuleb faili <filename
+>~/.kde/share/config/kspaceduelrc</filename
+> osa [Game]).</para
+></tip>
+    <para
+>Kui oled seadistuste muutmise lõpetanud, vajuta nende rakendamiseks nupule <guibutton
+>OK</guibutton
+>.</para>
+    <para
+>Kui soovid taastada vaikeväärtusi, klõpsa nuppu <guibutton
+>Vaikeväärtused</guibutton
+>. Muutuste rakendamiseks vajuta <guibutton
+>OK</guibutton
+>.</para
+> 
+    <para
+>Kui soovid tehtud muutustest loobuda ja naasta varem valitsenud seadistuste juurde, vajuta <guibutton
+>Loobu</guibutton
+>.</para>
+    <para
+>Seadistused on järgmised:</para>
+      <sect2 id="general">
+    <title
+><guilabel
+>Üldine</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Löögipunktid</guilabel
+></term>
+        <listitem
+><para
+>Nende kahe liuguriga saab määrata mõlema mängija löögipunktid, sealjuures on ühele neist edumaa andmiseks võimalik vastava mängija löögipunkte kahandada.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Värskendusaeg</guilabel
+></term>
+         <listitem
+><para
+>Aeg ekraani kahe värskendamise vahel (millisekundites). Kõik muud seadistused on värskendusajast sõltumatud.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Punane mängija</guilabel
+></term>
+        <listitem
+><para
+>Siin saab määrata, kas punast mängijat kontrollib AI, samuti valida selle mängija AI taseme. Eksperimenteeri tasemetega, kuni leiad endale sobiva.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Sinine mängija</guilabel
+></term>
+        <listitem
+><para
+>Siin käib kõik samamoodi, nagu äsjakirjeldatud <guilabel
+>punase mängija</guilabel
+> juures.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="game">
+    <title
+><guilabel
+>Mäng</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Mängu kiirus</guilabel
+></term>
+        <listitem
+><para
+>Kogu mängu kiirus.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="bullet">
+    <title
+><guilabel
+>Kuul</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Lasu kiirus</guilabel
+></term>
+        <listitem
+><para
+>Kuulide kiirus</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Energiavajadus</guilabel
+></term>
+        <listitem
+><para
+>Üheks lasuks vajalik energiakogus.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Maks. hulk</guilabel
+></term>
+        <listitem
+><para
+>Maksimaalne kuulide arv, mis mängija kohta võib ekraanil olla.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Vigastusi</guilabel
+></term>
+        <listitem
+><para
+>Kui palju löögipunkte läheb kaotsi kuulitabamuse saamisel.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Eluiga</guilabel
+></term>
+        <listitem
+><para
+>Kuuli maksimaalne eluiga.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Taaslaadimise aeg</guilabel
+></term>
+        <listitem
+><para
+>Aeg, mida rakett vajab kuuli taaslaadimiseks.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="mine">
+    <title
+><guilabel
+>Miin</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Miini kütus</guilabel
+></term>
+        <listitem
+><para
+>Miini kütusekogus.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Energiavajadus</guilabel
+></term>
+        <listitem
+><para
+>Miini asetamiseks vajalik energiakogus.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Aktiveerimisaeg</guilabel
+></term>
+        <listitem
+><para
+>Aeg, mille kestel miin ei ole aktiivne.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Vigastusi</guilabel
+></term>
+        <listitem
+><para
+>Kui palju löögipunkte läheb kaotsi miinitabamuse saamisel.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Maks. hulk</guilabel
+></term>
+        <listitem
+><para
+>Maksimaalne miinide arv, mis mängija kohta võib ekraanil olla.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Taaslaadimise aeg</guilabel
+></term>
+        <listitem
+><para
+>Aeg, mis kulub raketil miini taaslaadimiseks.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="ship">
+    <title
+><guilabel
+>Laev</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Kiirendus</guilabel
+></term>
+        <listitem
+><para
+>Raketi kiirendus</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Energiavajadus</guilabel
+></term>
+        <listitem
+><para
+>Raketi kiirendamiseks vajalik energiakogus.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Pöörlemiskiirus</guilabel
+></term>
+        <listitem
+><para
+>Kiirus, millega rakett pöörleb.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Energiavajadus</guilabel
+></term>
+        <listitem
+><para
+>Raketi pöörlemiseks vajalik energiakogus.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Kokkupõrke tagajärjed</guilabel
+></term>
+        <listitem
+><para
+>Kui palju löögipunkte läheb kaotsi kahe raketi kokkupõrkel.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="sun">
+    <title
+><guilabel
+>Päike</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Päikeseenergia</guilabel
+></term>
+        <listitem
+><para
+>Päikese tugevus. Mida suurem väärtus, seda kiiremini raketid energiat laadivad.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Gravitatsioon</guilabel
+></term>
+        <listitem
+><para
+>Päikese külgetõmbejõu tugevus.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="start">
+    <title
+><guilabel
+>Start</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Positsioon X</guilabel
+> ja <guilabel
+>Positsioon Y</guilabel
+></term>
+        <listitem
+><para
+>Rakettide asukoht uue vooru algul. Raketid alustavad päikese vastaskülgedel.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Kiirus X</guilabel
+> ja <guilabel
+>Kiirus Y</guilabel
+></term>
+        <listitem
+><para
+>Kiirus uue vooru algul.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+      <sect2 id="powerup-options">
+    <title
+><guilabel
+>Jõuallikad</guilabel
+></title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Ilmumise aeg</guilabel
+></term>
+        <listitem
+><para
+>Maksimaalne kahe jõuallika ilmumise vahele jääv aeg.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Eluiga</guilabel
+></term>
+        <listitem
+><para
+>Jõuallikate maksimaalne eluiga.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Energia</guilabel
+></term>
+        <listitem
+><para
+>Energiakogus, mida mängija saab jõuallikast.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Kilbi olukord</guilabel
+></term>
+        <listitem
+><para
+>Kui palju löögipunkte saab mängija kilbist.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+      </sect2>
+    </sect1>
+</chapter>
+ 
+<chapter id="credits"
+><title
+>Autorid ja litsents</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para
+>&kappname; </para>
+<para
+>Rakenduse autoriõigus 1999-2000: &Andreas.Zehender; <email
+>az@azweb.de</email
+></para>
+<para
+>Dokumentatsiooni autoriõigus 2000: &Andreas.Zehender; <email
+>az@azweb.de</email
+></para>
+<para
+>Dokumentatsiooni uuendas &kde; &kappversion; tarbeks: &Mike.McBride; &Mike.McBride.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+
+<para
+>Tõlge eesti keelde: Marek Laane <email
+>bald@smail.ee</email
+></para
+>  &underFDL; &underGPL; </chapter>
+  
+<appendix id="installation">
+<title
+>Paigaldamine</title>
+ 
+&install.intro.documentation;
+ 
+ 
+<sect1 id="Compilation">
+<title
+>Kompileerimine ja paigaldamine</title>
+&install.compile.documentation; </sect1>
+</appendix>
+ 
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

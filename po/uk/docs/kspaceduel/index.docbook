@@ -1,0 +1,1187 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Ukrainian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="kspaceduel" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+    <title
+>Підручник з &kspaceduel;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+    <author
+><firstname
+>Andreas</firstname
+> <surname
+>Zehender</surname
+> <affiliation
+><address
+><email
+>az@azweb.de</email
+></address
+></affiliation>
+    </author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+    <year
+>1999</year
+><year
+>2000</year>
+    <holder
+>&Andreas.Zehender;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>23 серпня 2021 року</date
+><!-- Date of (re)writing, or update.-->
+<releaseinfo
+>2.1 (KDE Gear 21.08)</releaseinfo
+><!-- Application version number. Use the variable definitions within header to change this value.-->
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+    <para
+>У цій документації описано гру &kspaceduel; версії 2.1</para>
+</abstract>
+
+<!--List of relevan keywords-->
+<keywordset>
+    <keyword
+>KDE</keyword
+> <!-- do not change this! -->
+    <keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+    <keyword
+>гра</keyword
+> <!-- do not change this! -->
+    <keyword
+>KSpaceDuel</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <keyword
+>аркада</keyword>
+    <keyword
+>космос</keyword>
+    <keyword
+>війна</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+    <keyword
+>два гравці</keyword>
+<!--All other relevant keywords-->
+    <keyword
+>супутник</keyword>
+    <keyword
+>зоряні війни</keyword>
+    <keyword
+>війни</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Вступ</title
+> <!-- do not change this! -->
+    <note
+><title
+>Тип гри:</title
+><para
+>Аркади</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <note
+><title
+>Можлива кількість гравців:</title
+><para
+>Два</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ <!--Short game description starts here. 3-4 sentences (paragraphs)-->
+    <para
+>Ідея, що лежить в основі &kspaceduel;, проста, але захоплива. Кожен з двох можливих гравців керує космічним супутником, який обертається навколо сонця. Протягом гри гравці мають намагатися знищити супутник суперника. Після знищення супутника суперника гравець стає переможцем раунду гри.</para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Як грати</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+    <note
+><title
+>Мета:</title
+><para
+>Знищити супутник суперника, залишивши свій супутник неушкодженим.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+    <para
+>Після завантаження &kspaceduel; переходить у режим гри, але сама гра не розпочинається, доки хтось з гравців не зробить першого ходу.</para>
+<note
+><para
+>Якщо супутником суперника керує вбудований комп’ютерний гравець, гра не розпочнеться, доки гравець-людина не зробить першого ходу.</para
+></note>
+<para
+>У &kspaceduel; ви можете керувати обертанням супутника, прискоренням та озброєнням супутника. Ваш супутник постійно знаходиться під дією сили тяжіння сонця. Вам слід налаштувати швидкість обертання і прискорення вашого супутника так, щоб він залишався на заданому курсі.</para>
+<note
+><para
+>Якщо супутник занадто наблизиться до сонця, він вибухне.</para
+></note>
+<para
+>Одночасно з керуванням курсом вашого супутника, ви маєте стежити за рухом супутника суперника і використовувати озброєння вашого супутника, яке складається з куль і мін, для того, щоб знищити супутник суперника.</para>
+<note
+><para
+>Кулі та міни, випущені з вашого супутника, можуть зашкодити не лише супутнику суперника, але й вашому супутнику.</para
+></note>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Правила гри, стратегія та поради</title
+> <!-- do not change this! -->
+    <sect1 id="screen">
+        <title
+>Огляд вікна гри &kspaceduel;.</title>
+        <screenshot>
+            <screeninfo
+>Вікно гри &kspaceduel;</screeninfo>
+            <mediaobject
+><imageobject
+><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Вікно гри &kspaceduel;</phrase
+></textobject
+></mediaobject>
+        </screenshot>
+        <itemizedlist>
+            <listitem
+><para
+>У верхній частині вікна гри розташовано панель меню і панель інструментів.</para
+></listitem>
+            <listitem
+><para
+>У центральній частині вікна &kspaceduel; ви зможете побачити ігрове поле.</para
+></listitem>
+            <listitem
+><para
+>Ліворуч і праворуч від поля гри розташовано інформаційні панелі червоного та синього гравців.</para
+></listitem>
+            <listitem
+><para
+>У верхній частині інформаційної панелі буде показано <quote
+>Міць гравця</quote
+> (кількість очок захисту).</para
+></listitem>
+            <listitem
+><para
+>На середній панелі показано відомості щодо заряду батарей.</para
+></listitem>
+            <listitem
+><para
+>На нижній панелі наведено відомості про кількість виграшів відповідного гравця.</para
+></listitem>
+            <listitem
+><para
+>У нижній частині ігрової області розташовано смужку стану.</para
+></listitem>
+        </itemizedlist>
+    </sect1>
+    <sect1 id="keys">
+        <title
+>Типові клавіатурні скорочення</title>
+        <para
+>За наведеною нижче таблицею ви можете ознайомитися з типовими клавіатурними скороченнями у &kspaceduel;.</para>
+        <informaltable frame="all">
+            <tgroup cols="3">
+            <colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
+            <thead
+><row
+><entry
+>Дія</entry
+><entry
+>Червоний гравець</entry
+><entry
+>Синій гравець</entry
+></row
+></thead>
+            <tbody>
+                <row
+><entry
+>Обернути ліворуч</entry
+><entry
+><keycap
+>S</keycap
+></entry
+><entry
+>стрілка ліворуч</entry
+></row>
+                <row
+><entry
+>Обернути праворуч</entry
+><entry
+><keycap
+>F</keycap
+></entry
+><entry
+>стрілка праворуч</entry
+></row>
+                <row
+><entry
+>Прискоритися</entry
+><entry
+><keycap
+>E</keycap
+></entry
+><entry
+>стрілка вгору</entry
+></row>
+                <row
+><entry
+>Виконати постріл</entry
+><entry
+><keycap
+>D</keycap
+></entry
+><entry
+>стрілка вниз</entry
+></row>
+                <row
+><entry
+>Міни</entry
+><entry
+><keycap
+>A</keycap
+></entry
+><entry
+>&Ins;</entry
+></row>
+            </tbody>
+            </tgroup>
+        </informaltable>
+        <note
+><para
+>Щоб дізнатися про те, як змінити ці клавіатурні скорочення, будь ласка, ознайомтеся з розділом <link linkend="options-keys"
+>Налаштування гри</link
+>.</para
+></note>
+    </sect1>
+    <sect1 id="rules">
+        <title
+>Правила</title>
+        <sect2 id="energy">
+            <title
+>Про очки енергії</title>
+            <itemizedlist>
+                <listitem
+><para
+>Кожен з гравців керує одним супутником.</para
+></listitem>
+                <listitem
+><para
+>Супутники можуть обертатися, прискорюватися, виконувати постріли і встановлювати міни.</para
+></listitem>
+                <listitem
+><para
+>Кожен з супутників має обмежений запас енергії, яка потрібна для обертання, прискорення, виконання пострілів і встановлення мін.</para
+></listitem>
+                <listitem
+><para
+>Кожен з супутників має обмежений запас енергії.</para
+></listitem>
+                <listitem
+><para
+>Супутники збирають сонячну енергію, потрібну для їх функціонування. Кількість енергії, яку може отримати супутник за одиницю часу, залежить від  відстані до сонця та спрямованості супутника.</para
+></listitem>
+            </itemizedlist>
+            <note
+><para
+>Супутник отримує більше енергії поблизу сонця і менше енергії далі від нього. Якщо сонячні батареї буде спрямовано так, що сонце світитиме на них під прямим кутом, супутник отримає більшу кількість енергії за одиницю часу, ніж якщо сонце світить на батареї під гострим кутом або взагалі світить на них з протилежного боку.</para
+></note>
+        </sect2>
+        <sect2 id="bullets-and-mines">
+            <title
+>Про кулі і міни</title>
+            <itemizedlist>
+                <listitem
+><para
+>Кулі підлягають тим самим законам обертання навколо сонця, що і супутники.</para
+></listitem>
+                <listitem
+><para
+>Міни заряджаються певною кількістю енергії, яка надає їм змогу зберігати позицію. Після вичерпання енергії, міни падають на сонце і вибухають там.</para
+></listitem>
+                <listitem
+><para
+>Чим ближче до сонця встановлено міну, тим більше енергії знадобиться цій міні для збереження позиції.</para
+></listitem>
+                <listitem
+><para
+>Міни можна знищити кулями.</para
+></listitem>
+                <listitem
+><para
+>Типово, кожен з супутників обладнано 5 кулями і 3 мінами.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="hit-points">
+            <title
+>Про очки захисту</title>
+            <itemizedlist>
+                <listitem
+><para
+>Зіткнення з власними кулями або кулями суперника, а також зіткнення з мінами зменшує кількість очок захисту.</para
+></listitem>
+                <listitem
+><para
+>Якщо рух супутників призведе до зіткнення, буде знищено супутник з меншою кількістю очок захисту, а кількість очок захисту сильнішого супутника буде зменшено на кількість очок захисту, які мав супутник зі слабшим захистом.</para
+></listitem>
+                <listitem
+><para
+>Якщо кількість очок захисту корабля зменшується до нуля, корабель вибухає.</para
+></listitem>
+                <listitem
+><para
+>Якщо корабель зіткнеться з Сонцем, його буде знищено, незалежно від кількості очок захисту, які мав цей супутник.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="powerups">
+          <title
+>Бонуси</title>
+
+          <para
+>Час від часу на ігровому полі з’являються бонусні елементи.</para>
+          <para
+>Існує чотири типи бонусних елементів:</para>
+
+          <variablelist>
+            <varlistentry
+><term
+></term
+><listitem>
+              <variablelist>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="mine.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Міна</guiicon
+></term>
+                  <listitem
+><para
+>Збільшення максимальної кількості мін.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="bullet.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Постріли</guiicon
+></term>
+                  <listitem
+><para
+>Збільшення максимальної кількості куль.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="energy.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Енергія</guiicon
+> (жовта або зелена сфера)</term>
+                  <listitem
+><para
+>Збільшення кількості очок енергії гравця.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="shield.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Щит</guiicon
+> (червона або синя сфера)</term>
+                  <listitem
+><para
+>Збільшення кількості очок захисту гравця.</para
+></listitem>
+                </varlistentry>
+              </variablelist>
+            </listitem
+></varlistentry>
+          </variablelist>
+        </sect2>
+    </sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>Пункти меню</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Створити</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Починає нову гру</action
+> у &kspaceduel;.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-menu-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+> &Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Гра</guimenu
+><guimenuitem
+>Новий двобій</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Починає новий раунд</action
+> на поточному рівні.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry  id="game-menu-pause">
+    <term
+><menuchoice
+><shortcut
+><keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Пауза</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Призупиняє та поновлює гру.</action
+></para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Вийти</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Завершує роботу</action
+> &kspaceduel;</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="settings-menu-settings">
+    <term
+><menuchoice
+><guimenu
+>Параметри</guimenu
+> <guimenuitem
+>Налаштувати &kspaceduel;...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Відкриває діалогове вікно налаштовування</action
+>, за допомогою якого ви можете визначити багато параметрів гри. Щоб дізнатися більше, зверніться до глави <link linkend="configuration"
+>Параметри гри</link
+>.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+<para
+>Крім того, у &kspaceduel; передбачено типові для &kde; пункти меню <guimenu
+>Параметри</guimenu
+> і <guimenu
+>Довідка</guimenu
+>. Щоб дізнатися більше, ознайомтеся з розділами щодо <ulink url="help:/fundamentals/menus.html#menus-settings"
+>меню «Параметри»</ulink
+> та <ulink url="help:/fundamentals/menus.html#menus-help"
+>меню «Довідка»</ulink
+> підручника з основ роботи у &kde;. </para>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Часті запитання</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Я хочу змінити вигляд цієї гри. Як це зробити? </para
+></question>
+ <answer
+><para
+>Ні. У цій версії &kspaceduel; існує лише одна тема.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Я помилився (помилилася)? Можна це виправити? </para
+></question>
+ <answer
+><para
+>Ні. У &kspaceduel; немає функції «Вернути».</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Не можу з’ясувати, що слід робити! Чи є у грі підказки? </para
+></question>
+ <answer
+><para
+>Ні. У &kspaceduel; немає функції «Підказка». Але, якщо ви ретельно вивчили розділ <link linkend="rules_and_tips"
+>Правила гри, стратегія і підказки</link
+>, ви вже знаєте, що робити, і без підказок.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Я змушений (змушена) перервати гру, але гру ще не завершено. Чи можу я зберегти поточний стан?</para
+></question>
+ <answer
+><para
+>Ні. У &kspaceduel; немає функції «Зберегти».</para
+></answer>
+</qandaentry>
+<!--Please add more Q&As if needed-->
+
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Налаштування гри</title
+> <!-- do not change this! -->
+<!--This section describes configuration &GUI;. If your game is configured using menubar exclusively, please remove this section.-->
+  <sect1 id="options-keys">
+    <title
+>Клавіші гри</title>
+     <para
+>У &kspaceduel; є типовий набір клавіш для керування грою. Щоб ознайомитися з списком типових клавіш, зверніться до розділу <link linkend="keys"
+>Типові клавіатурні скорочення</link
+>.</para>
+     <para
+>Налаштувати прив’язку клавіш до дій можна за допомогою пункту меню <menuchoice
+> <guimenu
+>Параметри</guimenu
+><guimenuitem
+>Налаштувати скорочення...</guimenuitem
+> </menuchoice
+>.</para>
+     <para
+>Якщо скористатися цим пунктом меню, програма відкриє діалогове вікно, за допомогою якого ви зможете налаштувати всі клавіатурні скорочення, зокрема ті, які керують рухом супутника, виконанням пострілів та встановленням мін.</para>
+     <para
+>Для кожного з гравців (червоного і синього) існує 5 клавіатурних скорочень, які відповідають повороту ліворуч, повороту праворуч, прискоренню, пострілу і встановленню міни.</para>
+     <para
+>Після встановлення нових клавіатурних скорочень вам слід натиснути кнопку <guibutton
+>Гаразд</guibutton
+>, щоб застосувати зміни.</para>
+     <para
+>Якщо ви бажаєте відновити типові клавіатурні скорочення, просто один раз натисніть кнопку <guibutton
+>Типові</guibutton
+>. Щоб внесені вами зміни набули чинності, натисніть кнопку <guibutton
+>Гаразд</guibutton
+>.</para>
+     <para
+>Якщо ви бажаєте скасувати виконані вами зміни і повернутися до попередньо визначених клавіатурних скорочень, просто натисніть кнопку <guibutton
+>Скасувати</guibutton
+>, — виконані вами зміни буде відкинуто.</para>
+  </sect1>
+
+  <sect1 id="options-configurations">
+    <title
+>Налаштування гри</title>
+    <para
+>Всі параметри гри у &kspaceduel; можна налаштувати.</para>
+    <para
+>Якщо ви бажаєте змінити параметри гри, просто скористайтесь пунктом меню <menuchoice
+><guimenu
+>Параметри</guimenu
+><guimenuitem
+>Налаштувати &kspaceduel;...</guimenuitem
+></menuchoice
+>.</para>
+    <para
+>Після вибору цього пункту меню буде відкрито діалогове вікно з двома сторінками, позначеними <guilabel
+>Загальне</guilabel
+> і <guilabel
+>Гра</guilabel
+>. Структура першої сторінки достатньо проста, другу ж сторінку поділено на сім вкладок, розташованих у її верхній частині.</para>
+    <para
+>Параметри зібрано у декілька різних наборів налаштувань. Ви можете обрати один з декількох попередньо визначених наборів.</para>
+    <para
+>Якщо ви оберете <guilabel
+>Нетипові</guilabel
+> налаштування, ви зможете самостійно обрати всі параметри.</para>
+    <note
+><para
+>Якщо ви не скористаєтеся набором налаштувань <guilabel
+>Нетипові</guilabel
+>, ви не зможете вносити будь-які зміни до цих параметрів.</para
+></note>
+    <tip
+><para
+>Якщо вам вдасться створити цікавий набір налаштувань, надішліть його електронною поштою авторові гри. Цей набір налаштувань може бути реалізовано у наступних версіях гри (надішліть частину [Game] з файла <filename
+>~/.config/kspaceduelrc</filename
+>).</para
+></tip>
+    <para
+>Після встановлення бажаних параметрів вам слід натиснути кнопку <guibutton
+>Гаразд</guibutton
+>, щоб внесені зміни набули чинності.</para>
+    <para
+>Якщо ви бажаєте відновити типові значення, просто один раз натисніть кнопку <guibutton
+>Типові</guibutton
+>. Щоб внесені зміни набули чинності, натисніть кнопку <guibutton
+>Гаразд</guibutton
+>.</para>
+    <para
+>Якщо ви бажаєте скасувати всі внесені зміни і повернути попередні значення параметрів, просто натисніть кнопку <guibutton
+>Скасувати</guibutton
+>, — всі внесені зміни буде відкинуто.</para>
+
+    <para
+>Серед параметрів можна знайти:</para>
+
+    <sect2 id="general">
+    <title
+>Сторінка «Загальне»</title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Міць гравця</guilabel
+></term>
+        <listitem
+><para
+>У цьому розділі містяться два повзунки, за допомогою яких ви можете встановити кількість очок захисту для обох гравців. Ви можете зменшити кількість очок захисту для одного з гравців, щоб надати іншому гравцеві перевагу.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Час оновлення:</guilabel
+></term>
+         <listitem
+><para
+>Час між двома послідовними оновленнями зображення. Всі інші параметри не залежать від часу оновлення.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Червоний гравець</guilabel
+></term>
+        <listitem
+><para
+>У цьому розділі ви можете вказати, чи буде керувати червоним гравцем комп’ютер, а також обрати рівень навичок комп’ютерного гравця. Спробуйте встановити різні налаштування, щоб обрати рівень навичок, який здаватиметься вам відповідним до ваших вимог.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Синій гравець</guilabel
+></term>
+        <listitem
+><para
+>Ця панель працює подібно до панелі <guilabel
+>Червоний гравець</guilabel
+>, описаної вище.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+
+    <sect2 id="game">
+    <title
+>Сторінка «Гра»</title>
+
+    <para
+>Тут ви можете вибрати нетиповий набір параметрів зі спадного списку. Додаткове налаштовування можна виконати за допомогою вкладок.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term
+>Вкладка <guilabel
+>Загальне</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Швидкість гри:</guilabel
+></term>
+              <listitem
+><para
+>Визначає швидкість, з якою змінюватимуться події у грі.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="bullet">
+        <term
+>Вкладка <guilabel
+>Постріли</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Швидкість пострілів:</guilabel
+></term>
+              <listitem
+><para
+>Швидкість куль.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Енергетична вартість:</guilabel
+></term>
+              <listitem
+><para
+>Кількість одиниць енергії, потрібна для виконання одного пострілу.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Максимальна кількість куль:</guilabel
+></term>
+              <listitem
+><para
+>Максимальна кількість куль, які може мати гравець.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Пошкодження:</guilabel
+></term>
+              <listitem
+><para
+>Кількість одиниць захисту, які втратить супутник у разі влучення у нього кулі.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Час існування:</guilabel
+></term>
+              <listitem
+><para
+>Максимальна тривалість існування кулі.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Час перезавантаження:</guilabel
+></term>
+              <listitem
+><para
+>Час, потрібний супутникові, для заряджання нової кулі.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="mine">
+        <term
+>Вкладка <guilabel
+>Міна</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Паливо міни:</guilabel
+></term>
+              <listitem
+><para
+>Кількість палива у міні.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Енергетична вартість:</guilabel
+></term>
+              <listitem
+><para
+>Кількість одиниць енергії, потрібних для встановлення однієї міни.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Час активізування:</guilabel
+></term>
+              <listitem
+><para
+>Час, протягом якого міна залишається пасивною.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Пошкодження:</guilabel
+></term>
+              <listitem
+><para
+>Кількість одиниць захисту, які втрачає корабель у разі зіткнення з міною.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Максимальна кількість куль:</guilabel
+></term>
+              <listitem
+><para
+>Максимальна кількість мін, які може мати гравець.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Час перезавантаження:</guilabel
+></term>
+              <listitem
+><para
+>Час, який потрібен супутникові для перезаряджання міни.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ship">
+        <term
+>Вкладка <guilabel
+>Корабель</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Прискорення:</guilabel
+></term>
+              <listitem
+><para
+>Прискорення супутників.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Енергетична вартість:</guilabel
+></term>
+              <listitem
+><para
+>Кількість енергії, потрібна для прискорення супутника.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Швидкість обертання:</guilabel
+></term>
+              <listitem
+><para
+>Швидкість, з якою обертатиметься супутник.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Енергетична вартість:</guilabel
+></term>
+              <listitem
+><para
+>Кількість енергії, потрібна для повороту супутника.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Пошкодження при аварії:</guilabel
+></term>
+              <listitem
+><para
+>Кількість одиниць захисту, які втрачають супутники під час зіткнення.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="sun">
+        <term
+>Вкладка <guilabel
+>Сонце</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Сонячна енергія:</guilabel
+></term>
+              <listitem
+><para
+>Потужність випромінювання сонця. Чим вищим буде значення, тим швидше будуть заряджатися енергією супутники.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Гравітація:</guilabel
+></term>
+              <listitem
+><para
+>Сила тяжіння до сонця.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="start">
+        <term
+>Вкладка <guilabel
+>Початок</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>X координата</guilabel
+> і <guilabel
+>Y координата</guilabel
+></term>
+              <listitem
+><para
+>Розташування супутників на початку нового раунду. На початку раунду супутники буде розташовано з протилежних боків від сонця.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Швидкість за X</guilabel
+> і <guilabel
+>Швидкість за Y</guilabel
+></term>
+              <listitem
+><para
+>Швидкість на початку нового раунду.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="powerup-options">
+        <term
+>Вкладка <guilabel
+>Бонуси</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Час між появами:</guilabel
+></term>
+              <listitem
+><para
+>Максимальна кількість часу між появами двох послідовних бонусних елементів.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Час існування:</guilabel
+></term>
+              <listitem
+><para
+>Максимальна тривалість існування бонусного елемента.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Додає до енергії:</guilabel
+></term>
+              <listitem
+><para
+>Кількість одиниць енергії, які гравець отримуватиме з бонусного елемента енергії.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Додає до щита:</guilabel
+></term>
+              <listitem
+><para
+>Кількість очок захисту, які гравець отримуватиме з бонусного елемента щита.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+  </sect1>
+</chapter>
+
+<chapter id="credits"
+><title
+>Подяки і ліцензія</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>&kspaceduel; </para>
+<para
+>Авторські права на програму належать &Andreas.Zehender; &Andreas.Zehender.mail;, 1999-2000</para>
+<para
+>Авторські права на документацію до програми належать &Andreas.Zehender; &Andreas.Zehender.mail;, 2000</para>
+<para
+>Автором оновлення документації для &kde; 4.11 є &Mike.McBride; &Mike.McBride.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+
+<para
+>Переклад українською: Юрій Чорноіван <email
+>yurchor@ukr.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

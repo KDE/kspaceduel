@@ -1,0 +1,1177 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Dutch "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="kspaceduel" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+    <title
+>Het handboek van &kspaceduel;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+    <author
+><firstname
+>Andreas</firstname
+> <surname
+>Zehender</surname
+> <affiliation
+><address
+><email
+>az@azweb.de</email
+></address
+></affiliation>
+    </author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+&Niels.Reedijk;&Rinse.Devries; 
+</authorgroup>
+
+<copyright>
+    <year
+>1999</year
+><year
+>2000</year>
+    <holder
+>&Andreas.Zehender;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-08-23</date
+><!-- Date of (re)writing, or update.-->
+<releaseinfo
+>2.1 (KDE Gear 21.08)</releaseinfo
+><!-- Application version number. Use the variable definitions within header to change this value.-->
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+    <para
+>Deze documentatie beschrijft het spel van &kspaceduel; versie 2.1</para>
+</abstract>
+
+<!--List of relevan keywords-->
+<keywordset>
+    <keyword
+>KDE</keyword
+> <!-- do not change this! -->
+    <keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+    <keyword
+>spel</keyword
+> <!-- do not change this! -->
+    <keyword
+>KSpaceDuel</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <keyword
+>arcade</keyword>
+    <keyword
+>ruimte</keyword>
+    <keyword
+>gevecht</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+    <keyword
+>twee spelers</keyword>
+<!--All other relevant keywords-->
+    <keyword
+>satelliet</keyword>
+    <keyword
+>starwars</keyword>
+    <keyword
+>gevechten</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Inleiding</title
+> <!-- do not change this! -->
+    <note
+><title
+>Speltype:</title
+><para
+>Arcade</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <note
+><title
+>Aantal mogelijke spelers:</title
+><para
+>Twee</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ <!--Short game description starts here. 3-4 sentences (paragraphs)-->
+    <para
+>Het idee achter &kspaceduel; is eenvoudig, maar verslavend. Ieder van twee mogelijke spelers bestuurt een satellietruimteschip die om de zon draait. Bij de voortgang van het spel moeten spelers het ruimteschip van de tegenstander vernietigen. Zodra de satelliet van de tegenstander is vernietigd, wint de overblijvende speler de ronde.</para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Hoe te spelen</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+    <note
+><title
+>Doel:</title
+><para
+>Vernietig de satelliet van de tegenstander en houdt de eigen satelliet intact.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+    <para
+>&kspaceduel; laadt direct in de spelmodus; de actie start echter niet voordat een speler de eerste zet doet.</para>
+<note
+><para
+>Als de satelliet van de tegenstander bestuurd wordt door de ingebouwde kunstmatige intelligentie, dan start de spelactie niet eerder dan wanneer de menselijke speler de eerste zet doet.</para
+></note>
+<para
+>In &kspaceduel; bestuurt u de rotatie, versnelling en wapens van het ruimteschip. Uw satelliet wordt door de zwaartekracht constant naar de zon getrokken. U moet de rotatie en versnelling van uw ruimteschip aanpassen om het op koers te houden.</para>
+<note
+><para
+>Te dicht bij de zon komen laat de satelliet exploderen.</para
+></note>
+<para
+>U moet tegelijkertijd de bewegingen van uw tegenstander in het oog houden en uw wapens, bestaande uit kogels en mijnen, gebruiken om het ruimteschip van uw vijand te vernietigen.</para>
+<note
+><para
+>Uw eigen wapens zijn net zo gevaarlijk voor uw satelliet als ze zijn voor de vijand.</para
+></note>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Spelregels, strategieën en tips</title
+> <!-- do not change this! -->
+    <sect1 id="screen">
+        <title
+>Overzicht van speelveld van &kspaceduel;.</title>
+        <screenshot>
+            <screeninfo
+>Speelveld van &kspaceduel;</screeninfo>
+            <mediaobject
+><imageobject
+><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Speelveld van &kspaceduel;</phrase
+></textobject
+></mediaobject>
+        </screenshot>
+        <itemizedlist>
+            <listitem
+><para
+>De bovenzijde van het speelgebied wordt ingenomen door de menubalk en de werkbalk.</para
+></listitem>
+            <listitem
+><para
+>Het centrale gedeelte van het scherm van &kspaceduel; is het speelveld.</para
+></listitem>
+            <listitem
+><para
+>Links en rechts van het spelveld bevinden zich de informatieschermen van de rode en blauwe speler.</para
+></listitem>
+            <listitem
+><para
+>Het bovenste vak van het informatiescherm representeert het <quote
+>puntentotaal</quote
+> van het ruimteschip.</para
+></listitem>
+            <listitem
+><para
+>Het middelste vak van het informatiescherm representeert de batterijkracht.</para
+></listitem>
+            <listitem
+><para
+>Het onderste vak van het informatiescherm toont het aantal gewonnen spellen van de speler.</para
+></listitem>
+            <listitem
+><para
+>Onderlangs het speelgebied loopt de statusbalk.</para
+></listitem>
+        </itemizedlist>
+    </sect1>
+    <sect1 id="keys">
+        <title
+>Standaard sneltoetsen</title>
+        <para
+>De volgende tabel bevat de standaard sneltoetsen van &kspaceduel;.</para>
+        <informaltable frame="all">
+            <tgroup cols="3">
+            <colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
+            <thead
+><row
+><entry
+>Actie</entry
+><entry
+>Rode speler</entry
+><entry
+>Blauwe speler</entry
+></row
+></thead>
+            <tbody>
+                <row
+><entry
+>Linksom draaien</entry
+><entry
+><keycap
+>S</keycap
+></entry
+><entry
+>Pijl &Left;</entry
+></row>
+                <row
+><entry
+>Rechtsom draaien</entry
+><entry
+><keycap
+>F</keycap
+></entry
+><entry
+>Pijl &Right;</entry
+></row>
+                <row
+><entry
+>Versnellen</entry
+><entry
+><keycap
+>E</keycap
+></entry
+><entry
+>Pijl &Up;</entry
+></row>
+                <row
+><entry
+>Schieten</entry
+><entry
+><keycap
+>D</keycap
+></entry
+><entry
+>Pijl &Down;</entry
+></row>
+                <row
+><entry
+>Mijnen</entry
+><entry
+><keycap
+>A</keycap
+></entry
+><entry
+>&Ins;</entry
+></row>
+            </tbody>
+            </tgroup>
+        </informaltable>
+        <note
+><para
+>Om deze toetsen te wijzigen, zie de sectie genaamd <link linkend="options-keys"
+>Spelinstellingen</link
+>.</para
+></note>
+    </sect1>
+    <sect1 id="rules">
+        <title
+>Regels</title>
+        <sect2 id="energy">
+            <title
+>Over energiepunten</title>
+            <itemizedlist>
+                <listitem
+><para
+>Elke speler bestuurt één schip.</para
+></listitem>
+                <listitem
+><para
+>De schepen kunnen draaien, accelereren, schieten en mijnen leggen.</para
+></listitem>
+                <listitem
+><para
+>Elk schip heeft een beperkte hoeveelheid energie voor rotatie, versnelling, schieten en mijnen leggen.</para
+></listitem>
+                <listitem
+><para
+>Elk schip heeft een beperkte hoeveelheid energie.</para
+></listitem>
+                <listitem
+><para
+>Schepen absorberen zonne-energie vereist voor de werking van het schip. De  hoeveelheid energie die het schip krijgt hangt af van de afstand tot en richting naar de zon.</para
+></listitem>
+            </itemizedlist>
+            <note
+><para
+>Een schip krijgt meer energie in de buurt van de zon en minder energie in de buurt van de rand. Het krijgt de volle energielading als de zon direct op de zonnepanelen schijnt en minder of geen energie als de zon vanuit een hoek op de panelen schijnt of aan de andere zijde van de panelen.</para
+></note>
+        </sect2>
+        <sect2 id="bullets-and-mines">
+            <title
+>Over kogels en mijnen</title>
+            <itemizedlist>
+                <listitem
+><para
+>Kogels vliegen rond de zon net als een schip.</para
+></listitem>
+                <listitem
+><para
+>Mijnen hebben een hoeveelheid energie die ze op dezelfde positie houdt. Als de energie op is valt de mijn in de zon en vervallen.</para
+></listitem>
+                <listitem
+><para
+>Hoe dichter de mijn zich bij de zon bevindt, des te meer energie deze nodig heeft om op zijn plaats te blijven.</para
+></listitem>
+                <listitem
+><para
+>Mijnen kunnen met kogels worden vernietigd.</para
+></listitem>
+                <listitem
+><para
+>Standaard heeft een schip 5 kogels en 3 mijnen.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="hit-points">
+            <title
+>Over trefferpunten</title>
+            <itemizedlist>
+                <listitem
+><para
+>Botsingen met eigen kogels of die van de vijand of mijnen vermindert de trefferpunten.</para
+></listitem>
+                <listitem
+><para
+>Als twee schepen tegen elkaar botsen zal het zwakkere schip worden vernietigd en worden de trefferpunten van het sterkere schip verminderd met de hoeveelheid trefferpunten van het zwakkere schip.</para
+></listitem>
+                <listitem
+><para
+>Als het het aantal trefferpunten van het ruimteschip nul wordt dan explodeert deze.</para
+></listitem>
+                <listitem
+><para
+>Als een ruimteschip met de zon botst dan wordt deze vernietigd ongeacht het aantal overblijvende trefferpunten.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="powerups">
+          <title
+>Bijtanken</title>
+
+          <para
+>Van tijd tot tijd verschijnt bijtanken op het speelveld.</para>
+          <para
+>Er zijn vier verschillende bijtanken:</para>
+
+          <variablelist>
+            <varlistentry
+><term
+></term
+><listitem>
+              <variablelist>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="mine.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Mijn</guiicon
+></term>
+                  <listitem
+><para
+>Het maximum aantal mijnen wordt verhoogd.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="bullet.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Kogel</guiicon
+></term>
+                  <listitem
+><para
+>Het maximum aantal kogels wordt verhoogd.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="energy.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Energie</guiicon
+> (geel of groen bolletje)</term>
+                  <listitem
+><para
+>De energie van de speler wordt verhoogd.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="shield.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Schild</guiicon
+> (rood of blauw bolletje)</term>
+                  <listitem
+><para
+>De speler krijgt trefferpunten.</para
+></listitem>
+                </varlistentry>
+              </variablelist>
+            </listitem
+></varlistentry>
+          </variablelist>
+        </sect2>
+    </sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>Menu-items</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Nieuw</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Start een nieuw spel</action
+> met &kspaceduel;.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-menu-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Nieuwe ronde</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Start een nieuwe ronde</action
+> op het huidige niveau.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry  id="game-menu-pause">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>P</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Pauze</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Zet het spel stil.</action
+></para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Afsluiten</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Beëindigt</action
+> &kspaceduel;</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="settings-menu-settings">
+    <term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>&kspaceduel; configureren...</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Opent een configuratiedialoog</action
+> waarin u de spelinstellingen kunt aanpassen. Zie hoofdstuk <link linkend="configuration"
+>Spelconfiguratie</link
+> voor meer informatie.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+<para
+>Bovendien heeft &kspaceduel; de gezamenlijke menu-items van &kde; <guimenu
+>Instellingen</guimenu
+> en <guimenu
+>Help</guimenu
+>, voor meer informatie lees de secties over de <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu Instellingen</ulink
+> en <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu Help</ulink
+> van &kde;-fundamentals. </para>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Veel voorkomende vragen</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Ik wil het uiterlijk van dit spel wijzigen. Kan dat? </para
+></question>
+ <answer
+><para
+>Nee. Op dit moment heeft &kspaceduel; slechts een thema.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ik heb een fout begaan. Kan ik deze ongedaan maken? </para
+></question>
+ <answer
+><para
+>Nee. &kspaceduel; heeft geen <quote
+>Ongedaan maken</quote
+> mogelijkheid.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ik kom er niet achter wat hier te doen! Zijn er tips? </para
+></question>
+ <answer
+><para
+>Nee. &kspaceduel; heeft geen <quote
+>Tip</quote
+> mogelijkheid. Als u echter aandachtig door de sectie <link linkend="rules_and_tips"
+>Spelregels, strategieën en tips</link
+> leest dan zou dit geen probleem mogen zijn.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ik moet het spel nu beëindigen, maar ik ben nog niet klaar. Kan ik mijn spel opslaan?</para
+></question>
+ <answer
+><para
+>Nee. &kspaceduel; heeft geen <quote
+>Opslaan</quote
+> mogelijkheid.</para
+></answer>
+</qandaentry>
+<!--Please add more Q&As if needed-->
+
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Spelconfiguratie</title
+> <!-- do not change this! -->
+<!--This section describes configuration &GUI;. If your game is configured using menubar exclusively, please remove this section.-->
+  <sect1 id="options-keys">
+    <title
+>Spelertoetsen</title>
+     <para
+>&kspaceduel; heeft een standaardset toetsen waarmee u het spel kunt bedienen. Voor een lijst met standaardtoetsen kunt u terecht in de sectie <link linkend="keys"
+>Standaard sneltoetsen</link
+>.</para>
+     <para
+>Toetsen kunnen ingesteld worden door het menu-item <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Sneltoetsen configureren...</guimenuitem
+></menuchoice
+> te selecteren.</para>
+     <para
+>Dit opent een dialoog waarin u alle sneltoetsen, incl. de toetsen die gebruikt worden om de ruimteschepen te bedienen, kogels af te vuren en mijnen te leggen.</para>
+     <para
+>U ziet dat elke speler (rood en blauw) 5 toetsen heeft voor het draaien naar links en naar rechts, versnellen, schieten en mijnen leggen.</para>
+     <para
+>Als u de toetsen naar wens hebt ingesteld, dan klikt u op <guibutton
+>OK</guibutton
+> om de wijzigingen door te voeren.</para>
+     <para
+>Om de standaardtoetsen te herstellen klikt u op de knop <guibutton
+>Standaard</guibutton
+>. Om de wijzigingen te bekrachtigen klikt u op de knop <guibutton
+>OK</guibutton
+>.</para>
+     <para
+>Als u de wijzigingen die u hebt gemaakt niet wilt gebruiken, klik dan op de knop <guibutton
+>Annuleren</guibutton
+>. Uw wijzigingen worden dan genegeerd.</para>
+  </sect1>
+
+  <sect1 id="options-configurations">
+    <title
+>Spelconfiguratie</title>
+    <para
+>Alle instellingen van &kspaceduel; zijn te configureren.</para>
+    <para
+>Als u de spelinstellingen wilt wijzigen, selecteer het menu-item <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>&kspaceduel; configureren...</guimenuitem
+></menuchoice
+>.</para>
+    <para
+>Dit opent een dialoog met twee secties, genaamd <guilabel
+>Algemeen</guilabel
+> en <guilabel
+>Spel</guilabel
+>. De eerste sectie is vrij eenvoudig, de tweede bevat 7 tabbladen.</para>
+    <para
+>De instellingen zijn verzameld in verschillende configuraties.U kunt kiezen uit meerdere vooringestelde configuraties.</para>
+    <para
+>Als u de configuratie <guilabel
+>Aangepast</guilabel
+> kiest, dan kunt u alle instellingen zelf bepalen.</para>
+    <note
+><para
+>Als u <guilabel
+>Aangepast</guilabel
+> niet hebt geselecteerd, dan kunt u geen wijzigingen aanbrengen in de spelconfiguratie.</para
+></note>
+    <tip
+><para
+>Als u zelf een interessante configuratie hebt gevonden, stuur deze dan naar de auteur van het spel. Hij kan deze dan opnemen in een toekomstige versie van het programma. Stuur het gedeelte [Spel] uit het bestand <filename
+>~/.config/share/config/kspaceduelrc</filename
+> op.</para
+></tip>
+    <para
+>Als u klaar bent met het wijzigen van de instellingen, klik dan op de knop <guibutton
+>OK</guibutton
+> om uw wijzigingen te bekrachtigen.</para>
+    <para
+>Als u de standaard instelling wilt herstellen, klik dan op de knop <guibutton
+>Standaard</guibutton
+>. Om deze wijziging te bekrachtigen klikt u op de knop <guibutton
+>OK</guibutton
+>.</para>
+    <para
+>Als u uw wijzigingen niet wilt gebruiken en terug wilt naar de vorige configuratie, klik dan op de knop <guibutton
+>Annuleren</guibutton
+>. Al uw wijzigingen zullen dan verloren gaan.</para>
+
+    <para
+>De instellingen zijn:</para>
+
+    <sect2 id="general">
+    <title
+>De pagina Algemeen</title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Trefferpunten</guilabel
+></term>
+        <listitem
+><para
+>Deze sectie bevat twee schuifregelaars waarmee u de trefferpunten van elk van de twee spelers kunt definiëren;uU kunt het aantal trefferpunten van een speler verlagen om die speler een handicap te geven.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Verversingstijd:</guilabel
+></term>
+         <listitem
+><para
+>De tijd tussen twee schermververgingen in milliseconden. Alle andere instellingen zijn onafhankelijk van de verversingstijd.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Rode speler</guilabel
+></term>
+        <listitem
+><para
+>In deze sectie kunt u bepalen of de rode speler wordt bedient door de computer en kunt u de moeilijkheidsgraad van deze computerspeler instellen. Experimenteer met de verschillende niveaus om er een te vinden die bij u past.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Blauwe speler</guilabel
+></term>
+        <listitem
+><para
+>Dit werkt hetzelfde als de opties voor de sectie van de <guilabel
+>Rode speler</guilabel
+>, zoals hierboven is beschreven.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+
+    <sect2 id="game">
+    <title
+>De pagina Spel</title>
+
+    <para
+>Hier kunt u een aangepaste instelling instellen uit een afrollijst. Gebruik daarna de tabbladen om de instellingen wat meer aan te passen.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term
+>Tabblad <guilabel
+>Algemeen</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Speelsnelheid:</guilabel
+></term>
+              <listitem
+><para
+>Bepaalt de snelheid van het hele spel.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="bullet">
+        <term
+>Tabblad <guilabel
+>Kogel</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Schietsnelheid:</guilabel
+></term>
+              <listitem
+><para
+>De snelheid van de kogels.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Energiebehoefte:</guilabel
+></term>
+              <listitem
+><para
+>De hoeveelheid energie die per schot wordt verbruikt.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Max. aantal:</guilabel
+></term>
+              <listitem
+><para
+>Het maximum aantal kogels die per speler op het scherm aanwezig kunnen zijn.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Schade:</guilabel
+></term>
+              <listitem
+><para
+>Het aantal trefferpunten voor de toegebrachte schade als een kogel een schip raakt.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Levensduur:</guilabel
+></term>
+              <listitem
+><para
+>De maximale levensduur van een kogel.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Herlaadtijd:</guilabel
+></term>
+              <listitem
+><para
+>De tijd die het schip nodig heeft om een kogel te herladen.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="mine">
+        <term
+>Tabblad <guilabel
+>Mijn</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Mijnbrandstof:</guilabel
+></term>
+              <listitem
+><para
+>De hoeveelheid brandstof voor een mijn.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Energiebehoefte:</guilabel
+></term>
+              <listitem
+><para
+>De hoeveelheid energie benodigd om een mijn te leggen.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Activeringstijd:</guilabel
+></term>
+              <listitem
+><para
+>De tijd dat een mijn inactief is.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Schade:</guilabel
+></term>
+              <listitem
+><para
+>Het aantal trefferpunten dat verloren gaat als een schip een mijn raakt.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Max. aantal:</guilabel
+></term>
+              <listitem
+><para
+>Het maximum aantal mijnen dat een speler op het scherm kan plaatsen.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Herlaadtijd:</guilabel
+></term>
+              <listitem
+><para
+>De tijd dat een schip nodig heeft om een mijn te herladen.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ship">
+        <term
+>Tabblad <guilabel
+>Ruimteschip</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Versnelling:</guilabel
+></term>
+              <listitem
+><para
+>Acceleratie van de ruimteschepen.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Energiebehoefte:</guilabel
+></term>
+              <listitem
+><para
+>De energie die een schip nodig heeft om te accelereren.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Rotatiesnelheid:</guilabel
+></term>
+              <listitem
+><para
+>De snelheid waarmee een schip draait.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Energiebehoefte:</guilabel
+></term>
+              <listitem
+><para
+>De energie die nodig is om een schip te draaien.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Schade bij botsing:</guilabel
+></term>
+              <listitem
+><para
+>Het aantal punten dat verloren gaat als twee schepen tegen elkaar botsen.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="sun">
+        <term
+>Tabblad <guilabel
+>Zon</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Zonne-energie:</guilabel
+></term>
+              <listitem
+><para
+>De sterkte van de zon. Hoe hoger de waarde, hoe sneller schepen worden opgeladen.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Zwaartekracht:</guilabel
+></term>
+              <listitem
+><para
+>De sterkte van de aantrekkingskracht van de zon.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="start">
+        <term
+>Tabblad <guilabel
+>Start</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Positie X:</guilabel
+> en <guilabel
+>Positie Y:</guilabel
+></term>
+              <listitem
+><para
+>De positie van de schepen aan het begin van een nieuwe ronde. De schepen beginnen elk aan een kant van de zon.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Snelheid X:</guilabel
+> en <guilabel
+>Snelheid Y:</guilabel
+></term>
+              <listitem
+><para
+>De snelheid aan het begin van een nieuwe ronde.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="powerup-options">
+        <term
+>Tabblad <guilabel
+>Bijtanken</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Verschijningstijd:</guilabel
+></term>
+              <listitem
+><para
+>De maximum tijd tussen het verschijnen van twee bijtanken.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Levensduur:</guilabel
+></term>
+              <listitem
+><para
+>De maximale levensduur van een opwaardering.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Energieomvang:</guilabel
+></term>
+              <listitem
+><para
+>De hoeveelheid energie die een speler ontvangt van een energie-opwaardering.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Schildomvang:</guilabel
+></term>
+              <listitem
+><para
+>De hoeveelheid punten die een speler ontvangt van een schildopwaardering.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+  </sect1>
+</chapter>
+
+<chapter id="credits"
+><title
+>Dankbetuigingen en licentie</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>&kspaceduel; </para>
+<para
+>Programma copyright 1999-2000 &Andreas.Zehender; &Andreas.Zehender.mail;</para>
+<para
+>Documentatie copyright 2000 &Andreas.Zehender; &Andreas.Zehender.mail;</para>
+<para
+>Documentatie bijgewerkt voor &kde; 4.11 door &Mike.McBride; &Mike.McBride.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+
+&meld.fouten;&vertaling.niels;&vertaling.rinse; &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
