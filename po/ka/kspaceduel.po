@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-26 00:42+0000\n"
-"PO-Revision-Date: 2022-09-30 06:06+0200\n"
+"PO-Revision-Date: 2022-11-23 07:06+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -155,7 +155,7 @@ msgstr "გაშვება"
 #: dialogs.cpp:191
 #, kde-format
 msgid "Powerups"
-msgstr ""
+msgstr "ძალის მოსამატებლები"
 
 #: dialogs.cpp:404
 #, kde-format
@@ -234,7 +234,7 @@ msgstr "სირთულე:"
 #: general.ui:243 general.ui:346
 #, kde-format
 msgid "Trainee"
-msgstr ""
+msgstr "მოსწავლე"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
@@ -323,7 +323,7 @@ msgstr "დასაწყებად დააწექით %1-ს"
 #: mainview.cpp:559
 #, kde-format
 msgid "draw round"
-msgstr ""
+msgstr "მრგვალის დახატვა"
 
 #: mainview.cpp:562
 #, kde-format
