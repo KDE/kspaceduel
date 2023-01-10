@@ -1,32 +1,33 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kspaceduel.po 1634614 2022-09-26 01:37:36Z scripty $
+# $Id: kspaceduel.po 1641828 2023-01-09 21:15:54Z mkkdr $
 #
+# Mincho Kondarev <mkondarev@yahoo.de>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-26 00:42+0000\n"
-"PO-Revision-Date: 2004-09-30 20:31+0300\n"
-"Last-Translator: Radostin Radnev <radnev@yahoo.com>\n"
+"PO-Revision-Date: 2022-12-20 23:23+0100\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: Lokalize 22.12.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Минчо Кондарев"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "mkondarev@yahoo.de"
 
 #: dialogs.cpp:63
 msgid "Game speed:"
@@ -113,13 +114,13 @@ msgid "Shield amount:"
 msgstr "Защита:"
 
 #: dialogs.cpp:169
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "custom values"
 msgid "Custom"
 msgstr "Собствен"
 
 #: dialogs.cpp:185
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "general game settings"
 msgid "General"
 msgstr "Общи"
@@ -133,7 +134,7 @@ msgstr "Куршуми"
 #, kde-format
 msgctxt "Name"
 msgid "Mine"
-msgstr ""
+msgstr "Мина"
 
 #: dialogs.cpp:188
 #, kde-format
@@ -141,16 +142,16 @@ msgid "Ship"
 msgstr "Кораб"
 
 #: dialogs.cpp:189
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "the star, Sol"
 msgid "Sun"
 msgstr "Слънце"
 
 #: dialogs.cpp:190
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "initial position and velocities of players"
 msgid "Start"
-msgstr "Позиция"
+msgstr "Начало"
 
 #: dialogs.cpp:191
 #, kde-format
@@ -158,7 +159,7 @@ msgid "Powerups"
 msgstr "Амуниции"
 
 #: dialogs.cpp:404
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "general settings"
 msgid "General"
 msgstr "Общи"
@@ -169,7 +170,7 @@ msgid "General Settings"
 msgstr "Общи настройки"
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "game settings"
 msgid "Game"
 msgstr "Игра"
@@ -265,15 +266,15 @@ msgstr "Син играч"
 
 #. i18n: ectx: Menu (game)
 #: kspaceduelui.rc:10
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Game"
-msgstr "Игра"
+msgstr "&Игра"
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: kspaceduelui.rc:15
 #, kde-format
 msgid "Main Toolbar"
-msgstr ""
+msgstr "Главна лента с инструменти"
 
 #: main.cpp:28
 #, kde-format
@@ -281,34 +282,34 @@ msgid "KSpaceDuel"
 msgstr "KSpaceDuel"
 
 #: main.cpp:30
-#, fuzzy, kde-format
+#, kde-format
 msgid "Space Arcade Game"
 msgstr "Космически дуел"
 
 #: main.cpp:32
 #, kde-format
 msgid "(c) 1998-2001, Andreas Zehender"
-msgstr ""
+msgstr "(c) 1998-2001, Andreas Zehender"
 
 #: main.cpp:35
 #, kde-format
 msgid "Andreas Zehender"
-msgstr ""
+msgstr "Andreas Zehender"
 
 #: main.cpp:35
 #, kde-format
 msgid "Original Program"
-msgstr ""
+msgstr "Оригинална програма"
 
 #: main.cpp:36
 #, kde-format
 msgid "Branan Riley"
-msgstr ""
+msgstr "Branan Riley"
 
 #: main.cpp:36
 #, kde-format
 msgid "SVG Renderer"
-msgstr ""
+msgstr "SVG Рендерер"
 
 #: mainview.cpp:357 topwidget.cpp:153
 #, kde-format
@@ -357,14 +358,13 @@ msgstr "Победи"
 
 #: structs.h:52
 msgid "Default"
-msgstr ""
+msgstr "По подразбиране"
 
 #: structs.h:52
 msgid "Chaos"
 msgstr "Хаос"
 
 #: structs.h:52
-#, fuzzy
 msgid "Lack of Energy"
 msgstr "Липса на енергия"
 
@@ -374,10 +374,10 @@ msgid "&New Round"
 msgstr "&Нов рунд"
 
 #: topwidget.cpp:90
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "start game"
 msgid "Start"
-msgstr "Позиция"
+msgstr "Начало"
 
 #: topwidget.cpp:99
 #, kde-format
