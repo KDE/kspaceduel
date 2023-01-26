@@ -38,11 +38,11 @@ ecm_add_app_icon(kspaceduel ICONS ${ICONS_SRCS})
 
 target_link_libraries(kspaceduel
     KF5KDEGames
-    KF5::CoreAddons
-    KF5::Completion
-    KF5::Crash
-    KF5::DBusAddons
-    KF5::XmlGui
+    KF${KF_MAJOR_VERSION}::CoreAddons
+    KF${KF_MAJOR_VERSION}::Completion
+    KF${KF_MAJOR_VERSION}::Crash
+    KF${KF_MAJOR_VERSION}::DBusAddons
+    KF${KF_MAJOR_VERSION}::XmlGui
     Qt${QT_MAJOR_VERSION}::Svg
 )
 
