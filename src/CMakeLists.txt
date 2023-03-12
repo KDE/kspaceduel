@@ -36,8 +36,13 @@ kconfig_add_kcfg_files(kspaceduel options.kcfgc)
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/icons/*-apps-kspaceduel.png")
 ecm_add_app_icon(kspaceduel ICONS ${ICONS_SRCS})
 
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(kspaceduel KDEGames6)
+else()
+    target_link_libraries(kspaceduel KF5KDEGames)
+endif()
+
 target_link_libraries(kspaceduel
-    KF5KDEGames
     KF${KF_MAJOR_VERSION}::CoreAddons
     KF${KF_MAJOR_VERSION}::Completion
     KF${KF_MAJOR_VERSION}::Crash
