@@ -39,7 +39,7 @@
   <name xml:lang="sr-ijekavian">К‑свемирски-двобој</name>
   <name xml:lang="sr-ijekavianlatin">K‑svemirski-dvoboj</name>
   <name xml:lang="sv">Rymdduell</name>
-  <name xml:lang="tr">KSpaceDuel</name>
+  <name xml:lang="tr">K Uzay Düeli</name>
   <name xml:lang="uk">Космічна дуель</name>
   <name xml:lang="x-test">xxKSpaceDuelxx</name>
   <name xml:lang="zh-CN">KSpaceDuel</name>
@@ -123,7 +123,7 @@
     <p xml:lang="sr-ijekavian">У К‑свемирском-двобоју сваки од два могућа играча управља сателитским свемирским бродом у орбити сунца. Како партија одмиче, играчи покушавају да униште противнички свемирски брод мецима или минама.</p>
     <p xml:lang="sr-ijekavianlatin">U K‑svemirskom-dvoboju svaki od dva moguća igrača upravlja satelitskim svemirskim brodom u orbiti sunca. Kako partija odmiče, igrači pokušavaju da unište protivnički svemirski brod mecima ili minama.</p>
     <p xml:lang="sv">I Rymdduell styr var och en av två möjliga spelare ett rymdskepp som kretsar kring solen. Under spelets gång måste spelarna eliminera motståndarens rymdskepp med kulor eller minor.</p>
-    <p xml:lang="tr">KSpaceDuel'de olası iki oyuncu güneş etrafında dönen bir uydu uzay gemisini denetler. Oyun ilerledikçe oyuncular, mermi veya mayın ile rakibin uzay aracını yenmek için savaşırlar.</p>
+    <p xml:lang="tr">K Uzay Düeli'nde olası iki oyuncunun her biri, güneşin yörüngesinde dönen bir uydu uzay gemisini denetler. Oyun ilerledikçe oyuncular, rakibin uzay gemisini mermi veya mayınlarla ortadan kaldırmak zorundadır.</p>
     <p xml:lang="uk">У «Космічній дуелі» кожен з двох можливих гравців керує космічним супутником, який обертається навколо сонця. Протягом гри гравці мають намагатися знищити супутник суперника кулями та мінами.</p>
     <p xml:lang="x-test">xxIn KSpaceDuel each of two possible players control a satellite spaceship orbiting the sun. As the game progresses players have to eliminate the opponent's spacecraft with bullets or mines.xx</p>
     <p xml:lang="zh-CN">在 KSpaceDuel 中，每两名玩家控制太阳轨道上的卫星飞船。随着游戏的推进，玩家必须使用子弹或地雷消灭对手的太空飞船。</p>
