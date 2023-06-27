@@ -141,7 +141,7 @@
 >El &kspaceduel; es carrega directament en el mode de joc. No obstant això, l'acció no començarà fins que qualsevol dels jugadors faci el primer moviment.</para>
 <note
 ><para
->Si el satèl·lit de l'oponent està controlat per la intel·ligència artificial incorporada, l'acció del joc no començarà fins que el jugador humà faci el primer moviment.</para
+>Si el satèl·lit de l'oponent està controlat per la intel·ligència artificial integrada, l'acció del joc no començarà fins que el jugador humà faci el primer moviment.</para
 ></note>
 <para
 >En el &kspaceduel; controleu el gir, l'acceleració i l'armament de la nau. El vostre satèl·lit es dibuixa constantment cap al sol per la gravetat. Haureu d'ajustar el gir i l'acceleració de la nau perquè romangui en curs.</para>
