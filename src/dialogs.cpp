@@ -440,4 +440,4 @@ bool SettingsDialog::isDefault()
    return cs->isDefault();
 }
 
-
+#include "moc_dialogs.cpp"

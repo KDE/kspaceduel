@@ -1063,4 +1063,4 @@ void MyMainView::focusOutEvent (QFocusEvent * /*event*/)
    setFocus(Qt::OtherFocusReason);
 }
 
-
+#include "moc_mainview.cpp"

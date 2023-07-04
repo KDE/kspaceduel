@@ -171,3 +171,5 @@ void MyTopLevelWidget::keySetup()
 
    KShortcutsDialog::showDialog(actionCollection(), KShortcutsEditor::LetterShortcutsAllowed, this);
 }
+
+#include "moc_topwidget.cpp"
