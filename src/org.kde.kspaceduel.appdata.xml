@@ -13,7 +13,6 @@
   <name xml:lang="de">KSpaceDuel</name>
   <name xml:lang="el">KSpaceDuel</name>
   <name xml:lang="en-GB">KSpaceDuel</name>
-  <name xml:lang="eo">KSpaceDuel</name>
   <name xml:lang="es">KSpaceDuel</name>
   <name xml:lang="et">KSpaceDuel</name>
   <name xml:lang="eu">KSpaceDuel</name>
@@ -40,7 +39,7 @@
   <name xml:lang="sr-ijekavian">К‑свемирски-двобој</name>
   <name xml:lang="sr-ijekavianlatin">K‑svemirski-dvoboj</name>
   <name xml:lang="sv">Rymdduell</name>
-  <name xml:lang="tr">K Uzay Düeli</name>
+  <name xml:lang="tr">KSpaceDuel</name>
   <name xml:lang="uk">Космічна дуель</name>
   <name xml:lang="x-test">xxKSpaceDuelxx</name>
   <name xml:lang="zh-CN">KSpaceDuel</name>
@@ -55,7 +54,6 @@
   <summary xml:lang="de">Weltraum-Spiel</summary>
   <summary xml:lang="el">Διαστημικό παιχνίδι arcade</summary>
   <summary xml:lang="en-GB">Space Arcade Game</summary>
-  <summary xml:lang="eo">Kosma arkadoludo</summary>
   <summary xml:lang="es">Juego recreativo espacial</summary>
   <summary xml:lang="et">Arkaadmäng kosmoses</summary>
   <summary xml:lang="eu">Espazioko arkupeko jokoa</summary>
@@ -99,7 +97,6 @@
     <p xml:lang="de">In KSpaceDuel steuert jeder der maximal zwei Spieler ein Satellitenraumschiff auf einer Umlaufbahn um die Sonne. Im Spiel müssen die Spieler das gegnerische Raumschiff mit Kanonen oder Minen zerstören, um die Runde zu gewinnen.</p>
     <p xml:lang="el">Στο KSpaceDuel κάθε παίκτης ελέγχει ένα διατημόπλοιο σε τροχιά γύρω από τον ήλιο. Καθώς το παιχνίδι εξελίσσεται οι παίκτες πρέπει να εξαλείψουν το σκάφος του αντιπάλου με σφαίρες ή νάρκες.</p>
     <p xml:lang="en-GB">In KSpaceDuel each of two possible players control a satellite spaceship orbiting the sun. As the game progresses players have to eliminate the opponent's spacecraft with bullets or mines.</p>
-    <p xml:lang="eo">En KSpaceDuel ĉiu el du eblaj ludantoj kontrolas satelitan kosmoŝipon orbitan ĉirkaŭ la suno. Dum la ludo progresas ludantoj devas forigi la kosmoŝipon de la kontraŭulo per kugloj aŭ minoj.</p>
     <p xml:lang="es">En KSpaceDuel, cada uno de los dos posibles jugadores controla una nave espacial en órbita alrededor del Sol. A medida que el juego avanza, los jugadores deben eliminar la nave espacial del oponente con disparos o con minas.</p>
     <p xml:lang="et">KSpaceDuel annab kahe mängija käsutusse ümber päikese tiirlevad kosmoselaevad. Mängu siht on hävitada vastase kosmoselaev mürskude või miinidega.</p>
     <p xml:lang="eu">KSpaceDuel-en, izan daitezkeen bi jokalarietako bakoitzak eguzkia orbitatzen duen espazio-ontzi satelite bat kontrolatzen du. Jokoa aurrera doan heinean, jokalariek aurkariaren espazio-ontzia deuseztatu behar dute.</p>
@@ -126,7 +123,7 @@
     <p xml:lang="sr-ijekavian">У К‑свемирском-двобоју сваки од два могућа играча управља сателитским свемирским бродом у орбити сунца. Како партија одмиче, играчи покушавају да униште противнички свемирски брод мецима или минама.</p>
     <p xml:lang="sr-ijekavianlatin">U K‑svemirskom-dvoboju svaki od dva moguća igrača upravlja satelitskim svemirskim brodom u orbiti sunca. Kako partija odmiče, igrači pokušavaju da unište protivnički svemirski brod mecima ili minama.</p>
     <p xml:lang="sv">I Rymdduell styr var och en av två möjliga spelare ett rymdskepp som kretsar kring solen. Under spelets gång måste spelarna eliminera motståndarens rymdskepp med kulor eller minor.</p>
-    <p xml:lang="tr">K Uzay Düeli'nde olası iki oyuncunun her biri, güneşin yörüngesinde dönen bir uydu uzay gemisini denetler. Oyun ilerledikçe oyuncular, rakibin uzay gemisini mermi veya mayınlarla ortadan kaldırmak zorundadır.</p>
+    <p xml:lang="tr">KSpaceDuel'de olası iki oyuncu güneş etrafında dönen bir uydu uzay gemisini denetler. Oyun ilerledikçe oyuncular, mermi veya mayın ile rakibin uzay aracını yenmek için savaşırlar.</p>
     <p xml:lang="uk">У «Космічній дуелі» кожен з двох можливих гравців керує космічним супутником, який обертається навколо сонця. Протягом гри гравці мають намагатися знищити супутник суперника кулями та мінами.</p>
     <p xml:lang="x-test">xxIn KSpaceDuel each of two possible players control a satellite spaceship orbiting the sun. As the game progresses players have to eliminate the opponent's spacecraft with bullets or mines.xx</p>
     <p xml:lang="zh-CN">在 KSpaceDuel 中，每两名玩家控制太阳轨道上的卫星飞船。随着游戏的推进，玩家必须使用子弹或地雷消灭对手的太空飞船。</p>
