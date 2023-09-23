@@ -36,24 +36,16 @@ kconfig_add_kcfg_files(kspaceduel options.kcfgc)
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/icons/*-apps-kspaceduel.png")
 ecm_add_app_icon(kspaceduel ICONS ${ICONS_SRCS})
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(kspaceduel KDEGames6)
-else()
-    target_link_libraries(kspaceduel KF5KDEGames)
-endif()
-
 target_link_libraries(kspaceduel
-    KF${KF_MAJOR_VERSION}::CoreAddons
-    KF${KF_MAJOR_VERSION}::Completion
-    KF${KF_MAJOR_VERSION}::Crash
-    KF${KF_MAJOR_VERSION}::DBusAddons
-    KF${KF_MAJOR_VERSION}::XmlGui
-    Qt${QT_MAJOR_VERSION}::Svg
+    KDEGames6
+    KF6::CoreAddons
+    KF6::Completion
+    KF6::Crash
+    KF6::DBusAddons
+    KF6::XmlGui
+    Qt6::Svg
+    Qt6::SvgWidgets
 )
-
-if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(kspaceduel Qt6::SvgWidgets)
-endif()
 
 install(TARGETS kspaceduel  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES default_theme.svgz DESTINATION ${KDE_INSTALL_DATADIR}/kspaceduel/sprites)

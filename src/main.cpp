@@ -17,10 +17,6 @@
 
 int main(int argc,char **argv)
 {
-    // Fixes blurry icons with fractional scaling
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-#endif
     QApplication app(argc, argv);
 
     KLocalizedString::setApplicationDomain("kspaceduel");
@@ -50,4 +46,3 @@ int main(int argc,char **argv)
 
     return app.exec();
 }
-
