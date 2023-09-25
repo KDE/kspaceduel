@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-05-12 03:24+0200\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2010-10-05 22:02+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -34,118 +34,97 @@ msgstr ""
 "rstraxy@sezampro.yu,m.puzovic@etoncollege.org.uk,chaslav@sezampro.yu,"
 "slsimic@gmail.com"
 
-#: dialogs.cpp:76
-#, kde-format
+#: dialogs.cpp:63
 msgid "Game speed:"
 msgstr "Brzina igre:"
 
-#: dialogs.cpp:76
-#, kde-format
+#: dialogs.cpp:63
 msgid "Shot speed:"
 msgstr "Brzina pucanja:"
 
-#: dialogs.cpp:77 dialogs.cpp:80 dialogs.cpp:83 dialogs.cpp:84
-#, kde-format
+#: dialogs.cpp:64 dialogs.cpp:67 dialogs.cpp:70 dialogs.cpp:71
 msgid "Energy need:"
 msgstr "Utrošak energije:"
 
-#: dialogs.cpp:77 dialogs.cpp:81
-#, kde-format
+#: dialogs.cpp:64 dialogs.cpp:68
 msgid "Max number:"
 msgstr "Najveći broj:"
 
-#: dialogs.cpp:78 dialogs.cpp:81
-#, kde-format
+#: dialogs.cpp:65 dialogs.cpp:68
 msgid "Damage:"
 msgstr "Oštećenje:"
 
-#: dialogs.cpp:78 dialogs.cpp:88
-#, kde-format
+#: dialogs.cpp:65 dialogs.cpp:75
 msgid "Life time:"
 msgstr "Vreme života:"
 
-#: dialogs.cpp:79 dialogs.cpp:82
-#, kde-format
+#: dialogs.cpp:66 dialogs.cpp:69
 msgid "Reload time:"
 msgstr "Vreme popune:"
 
-#: dialogs.cpp:79
-#, kde-format
+#: dialogs.cpp:66
 msgid "Mine fuel:"
 msgstr "Gorivo za mine:"
 
-#: dialogs.cpp:80
-#, kde-format
+#: dialogs.cpp:67
 msgid "Activate time:"
 msgstr "Vreme aktiviranja:"
 
-#: dialogs.cpp:82
-#, kde-format
+#: dialogs.cpp:69
 msgid "Acceleration:"
 msgstr "Ubrzanje:"
 
-#: dialogs.cpp:83
-#, kde-format
+#: dialogs.cpp:70
 msgid "Rotation speed:"
 msgstr "Brzina rotacije:"
 
-#: dialogs.cpp:84
-#, kde-format
+#: dialogs.cpp:71
 msgid "Crash damage:"
 msgstr "Šteta pri sudaru:"
 
-#: dialogs.cpp:85
-#, kde-format
+#: dialogs.cpp:72
 msgid "Sun energy:"
 msgstr "Energija sunca:"
 
-#: dialogs.cpp:85
-#, kde-format
+#: dialogs.cpp:72
 msgid "Gravity:"
 msgstr "Gravitacija:"
 
-#: dialogs.cpp:86
-#, kde-format
+#: dialogs.cpp:73
 msgid "Position X:"
 msgstr "Položaj X:"
 
-#: dialogs.cpp:86
-#, kde-format
+#: dialogs.cpp:73
 msgid "Position Y:"
 msgstr "Položaj Y:"
 
-#: dialogs.cpp:87
-#, kde-format
+#: dialogs.cpp:74
 msgid "Velocity X:"
 msgstr "Brzina X:"
 
-#: dialogs.cpp:87
-#, kde-format
+#: dialogs.cpp:74
 msgid "Velocity Y:"
 msgstr "Brzina Y:"
 
-#: dialogs.cpp:88
-#, kde-format
+#: dialogs.cpp:75
 msgid "Appearance time:"
 msgstr "Vreme pojavljivanja:"
 
-#: dialogs.cpp:89
-#, kde-format
+#: dialogs.cpp:76
 msgid "Energy amount:"
 msgstr "Količina energije:"
 
-#: dialogs.cpp:89
-#, kde-format
+#: dialogs.cpp:76
 msgid "Shield amount:"
 msgstr "Jačina štita:"
 
-#: dialogs.cpp:182
+#: dialogs.cpp:169
 #, kde-format
 msgctxt "custom values"
 msgid "Custom"
 msgstr "Posebno"
 
-#: dialogs.cpp:198
+#: dialogs.cpp:185
 #, kde-format
 msgctxt "general game settings"
 msgid "General"
@@ -154,58 +133,58 @@ msgstr "Opšte"
 # >! Contexts.
 # >> @title:tab
 # >> @item Game configuration
-#: dialogs.cpp:199 structs.h:63
+#: dialogs.cpp:186 structs.h:52
 #, kde-format
 msgid "Bullet"
 msgstr "Metak"
 
 # >> @title:tab
-#: dialogs.cpp:200
+#: dialogs.cpp:187
 #, kde-format
 msgctxt "Name"
 msgid "Mine"
 msgstr "Mina"
 
-#: dialogs.cpp:201
+#: dialogs.cpp:188
 #, kde-format
 msgid "Ship"
 msgstr "Brod"
 
-#: dialogs.cpp:202
+#: dialogs.cpp:189
 #, kde-format
 msgctxt "the star, Sol"
 msgid "Sun"
 msgstr "Sunce"
 
-#: dialogs.cpp:203
+#: dialogs.cpp:190
 #, kde-format
 msgctxt "initial position and velocities of players"
 msgid "Start"
 msgstr "Početak"
 
-#: dialogs.cpp:204
+#: dialogs.cpp:191
 #, kde-format
 msgid "Powerups"
 msgstr "Pojačanja"
 
-#: dialogs.cpp:417
+#: dialogs.cpp:404
 #, kde-format
 msgctxt "general settings"
 msgid "General"
 msgstr "Opšte"
 
-#: dialogs.cpp:417
+#: dialogs.cpp:404
 #, kde-format
 msgid "General Settings"
 msgstr "Opšte postavke"
 
-#: dialogs.cpp:420
+#: dialogs.cpp:407
 #, kde-format
 msgctxt "game settings"
 msgid "Game"
 msgstr "Igra"
 
-#: dialogs.cpp:420
+#: dialogs.cpp:407
 #, kde-format
 msgid "Game Settings"
 msgstr "Postavke igre"
@@ -306,165 +285,163 @@ msgstr "I&gra"
 msgid "Main Toolbar"
 msgstr "Glavna traka"
 
-# skip-rule: t-space
-#: main.cpp:30
-#, kde-format
-msgid "KDE Space Game"
-msgstr "Svemirska igra za KDE"
-
-#: main.cpp:40
+#: main.cpp:24
 #, kde-format
 msgid "KSpaceDuel"
 msgstr "K‑svemirski-dvoboj"
 
-#: main.cpp:42
+# skip-rule: t-space
+#: main.cpp:26
+#, fuzzy, kde-format
+#| msgid "KDE Space Game"
+msgid "Space Arcade Game"
+msgstr "Svemirska igra za KDE"
+
+#: main.cpp:28
 #, kde-format
 msgid "(c) 1998-2001, Andreas Zehender"
 msgstr "© 1998–2001, Andreas Ceender"
 
-#: main.cpp:43
+#: main.cpp:31
 #, kde-format
 msgid "Andreas Zehender"
 msgstr "Andreas Ceender"
 
-#: main.cpp:43
+#: main.cpp:31
 #, kde-format
 msgid "Original Program"
 msgstr "Prvobitni program"
 
-#: main.cpp:44
+#: main.cpp:32
 #, kde-format
 msgid "Branan Riley"
 msgstr "Branan Rajli"
 
-#: main.cpp:44
+#: main.cpp:32
 #, kde-format
 msgid "SVG Renderer"
 msgstr "Renderer SVG‑a"
 
-#: mainview.cpp:370 topwidget.cpp:170
+#: mainview.cpp:357 topwidget.cpp:153
 #, kde-format
 msgid " paused "
 msgstr " pauzirano "
 
-#: mainview.cpp:523
+#: mainview.cpp:510
 #, kde-format
 msgid "Press %1 to start"
 msgstr "Pritisnite %1 za početak"
 
-#: mainview.cpp:572
+#: mainview.cpp:559
 #, kde-format
 msgid "draw round"
 msgstr "nerešeno"
 
-#: mainview.cpp:575
+#: mainview.cpp:562
 #, kde-format
 msgid "blue player won the round"
 msgstr "plavi igrač je dobio rundu"
 
-#: mainview.cpp:583
+#: mainview.cpp:570
 #, kde-format
 msgid "red player won the round"
 msgstr "crveni igrač je dobio rundu"
 
-#: mainview.cpp:591
+#: mainview.cpp:578
 #, kde-format
 msgid "Press %1 for new round"
 msgstr "Pritisnite %1 za novu rundu"
 
 # >> @info:tooltip
-#: playerinfo.cpp:50 playerinfo.cpp:83
+#: playerinfo.cpp:39 playerinfo.cpp:72
 #, kde-format
 msgid "Hit points"
 msgstr "Udarpoeni"
 
 # >> @info:tooltip
-#: playerinfo.cpp:53 playerinfo.cpp:86
+#: playerinfo.cpp:42 playerinfo.cpp:75
 #, kde-format
 msgid "Energy"
 msgstr "Energija"
 
 # >> @info:tooltip
-#: playerinfo.cpp:56 playerinfo.cpp:89
+#: playerinfo.cpp:45 playerinfo.cpp:78
 #, kde-format
 msgid "Wins"
 msgstr "Pobede"
 
 # >> @item Game configuration
-#: structs.h:63
-#, kde-format
+#: structs.h:52
 msgid "Default"
 msgstr "Podrazumevano"
 
 # >> @item Game configuration
-#: structs.h:63
-#, kde-format
+#: structs.h:52
 msgid "Chaos"
 msgstr "Haos"
 
 # >> @item Game configuration
-#: structs.h:63
-#, kde-format
+#: structs.h:52
 msgid "Lack of Energy"
 msgstr "Nedostatak energije"
 
-#: topwidget.cpp:95
+#: topwidget.cpp:82
 #, kde-format
 msgid "&New Round"
 msgstr "&Nova runda"
 
-#: topwidget.cpp:103
+#: topwidget.cpp:90
 #, kde-format
 msgctxt "start game"
 msgid "Start"
 msgstr "Početak"
 
-#: topwidget.cpp:116
+#: topwidget.cpp:99
 #, kde-format
 msgid "Player 1 Rotate Left"
 msgstr "Igrač 1 okreće ulevo"
 
-#: topwidget.cpp:120
+#: topwidget.cpp:103
 #, kde-format
 msgid "Player 1 Rotate Right"
 msgstr "Igrač 1 okreće udesno"
 
-#: topwidget.cpp:124
+#: topwidget.cpp:107
 #, kde-format
 msgid "Player 1 Accelerate"
 msgstr "Igrač 1 ubrzava"
 
-#: topwidget.cpp:128
+#: topwidget.cpp:111
 #, kde-format
 msgid "Player 1 Shot"
 msgstr "Igrač 1 puca"
 
-#: topwidget.cpp:132
+#: topwidget.cpp:115
 #, kde-format
 msgid "Player 1 Mine"
 msgstr "Igrač 1 minira"
 
-#: topwidget.cpp:137
+#: topwidget.cpp:120
 #, kde-format
 msgid "Player 2 Rotate Left"
 msgstr "Igrač 2 okreće ulevo"
 
-#: topwidget.cpp:141
+#: topwidget.cpp:124
 #, kde-format
 msgid "Player 2 Rotate Right"
 msgstr "Igrač 2 okreće udesno"
 
-#: topwidget.cpp:145
+#: topwidget.cpp:128
 #, kde-format
 msgid "Player 2 Accelerate"
 msgstr "Igrač 2 ubrzava"
 
-#: topwidget.cpp:149
+#: topwidget.cpp:132
 #, kde-format
 msgid "Player 2 Shot"
 msgstr "Igrač 2 puca"
 
-#: topwidget.cpp:153
+#: topwidget.cpp:136
 #, kde-format
 msgid "Player 2 Mine"
 msgstr "Igrač 2 minira"

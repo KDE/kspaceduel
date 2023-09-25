@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel 0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2006-08-25 03:38+0100\n"
 "Last-Translator: Renato Pavicic <renato@translator-shop.org>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -282,38 +282,38 @@ msgstr "Igra"
 msgid "Main Toolbar"
 msgstr ""
 
-#: main.cpp:28
+#: main.cpp:24
 #, kde-format
 msgid "KSpaceDuel"
 msgstr "KSvemirski dvoboj"
 
-#: main.cpp:30
+#: main.cpp:26
 #, fuzzy, kde-format
 #| msgid "KDE Space Game"
 msgid "Space Arcade Game"
 msgstr "KDE igra u Svemiru"
 
-#: main.cpp:32
+#: main.cpp:28
 #, kde-format
 msgid "(c) 1998-2001, Andreas Zehender"
 msgstr ""
 
-#: main.cpp:35
+#: main.cpp:31
 #, kde-format
 msgid "Andreas Zehender"
 msgstr ""
 
-#: main.cpp:35
+#: main.cpp:31
 #, kde-format
 msgid "Original Program"
 msgstr ""
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "Branan Riley"
 msgstr ""
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "SVG Renderer"
 msgstr ""

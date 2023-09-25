@@ -2,7 +2,7 @@
 # Translation of kspaceduel.po to Slovenian
 # -*- mode:po; coding:iso-latin-2; -*- Slovenian msg. catalog for Kspaceduel.
 # Copyright (C) 2001, 2003, 2004, 2007 Free Software Foundation, Inc.
-# $Id: kspaceduel.po 1634614 2022-09-26 01:37:36Z scripty $
+# $Id: kspaceduel.po 1660889 2023-09-25 02:02:18Z scripty $
 # $Source$
 #
 # Roman Maurer <roman.maurer@hermes.si>, 2000.
@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2020-09-19 21:18+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -287,37 +287,37 @@ msgstr "I&gra"
 msgid "Main Toolbar"
 msgstr "Glavna orodna vrstica"
 
-#: main.cpp:28
+#: main.cpp:24
 #, kde-format
 msgid "KSpaceDuel"
 msgstr "KSpaceDuel"
 
-#: main.cpp:30
+#: main.cpp:26
 #, kde-format
 msgid "Space Arcade Game"
 msgstr "Vesoljska arkadna igra"
 
-#: main.cpp:32
+#: main.cpp:28
 #, kde-format
 msgid "(c) 1998-2001, Andreas Zehender"
 msgstr "© 1998-2001, Andreas Zehender"
 
-#: main.cpp:35
+#: main.cpp:31
 #, kde-format
 msgid "Andreas Zehender"
 msgstr "Andreas Zehender"
 
-#: main.cpp:35
+#: main.cpp:31
 #, kde-format
 msgid "Original Program"
 msgstr "Izvorni program"
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "Branan Riley"
 msgstr "Branan Riley"
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "SVG Renderer"
 msgstr "Izrisovalnik vektorske grafike SVG"

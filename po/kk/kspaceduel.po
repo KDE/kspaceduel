@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2012-04-07 04:05+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -274,38 +274,38 @@ msgstr "&Ойын"
 msgid "Main Toolbar"
 msgstr "Негізгі құралдар"
 
-#: main.cpp:28
+#: main.cpp:24
 #, kde-format
 msgid "KSpaceDuel"
 msgstr "KSpaceDuel"
 
-#: main.cpp:30
+#: main.cpp:26
 #, fuzzy, kde-format
 #| msgid "KDE Space Game"
 msgid "Space Arcade Game"
 msgstr "KDE-нің ғарыштағы соғыс ойны"
 
-#: main.cpp:32
+#: main.cpp:28
 #, kde-format
 msgid "(c) 1998-2001, Andreas Zehender"
 msgstr "(c) 1998-2001, Andreas Zehender"
 
-#: main.cpp:35
+#: main.cpp:31
 #, kde-format
 msgid "Andreas Zehender"
 msgstr "Andreas Zehender"
 
-#: main.cpp:35
+#: main.cpp:31
 #, kde-format
 msgid "Original Program"
 msgstr "Бастапқы бағдарлама"
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "Branan Riley"
 msgstr "Branan Riley"
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "SVG Renderer"
 msgstr "SVG кескіндегіші"

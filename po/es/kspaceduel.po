@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:42+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2020-09-20 12:12+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -283,37 +283,37 @@ msgstr "&Partida"
 msgid "Main Toolbar"
 msgstr "Barra de herramientas principal"
 
-#: main.cpp:28
+#: main.cpp:24
 #, kde-format
 msgid "KSpaceDuel"
 msgstr "KSpaceDuel"
 
-#: main.cpp:30
+#: main.cpp:26
 #, kde-format
 msgid "Space Arcade Game"
 msgstr "Juego recreativo espacial"
 
-#: main.cpp:32
+#: main.cpp:28
 #, kde-format
 msgid "(c) 1998-2001, Andreas Zehender"
 msgstr "(c) 1998-2001, Andreas Zehender"
 
-#: main.cpp:35
+#: main.cpp:31
 #, kde-format
 msgid "Andreas Zehender"
 msgstr "Andreas Zehender"
 
-#: main.cpp:35
+#: main.cpp:31
 #, kde-format
 msgid "Original Program"
 msgstr "Programa original"
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "Branan Riley"
 msgstr "Branan Riley"
 
-#: main.cpp:36
+#: main.cpp:32
 #, kde-format
 msgid "SVG Renderer"
 msgstr "Representación SVG"
