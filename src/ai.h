@@ -54,7 +54,7 @@ public:
    bool layMine(){return mine;}
 private:
    AiSprite nextPosition(AiSprite sp,double mult);
-   void nextPositions(const AiSprite &sp,QVector<AiSprite> *a,int frames);
+   void nextPositions(const AiSprite &sp,QList<AiSprite> *a,int frames);
    Hit firstObject(AiSprite shot,int shotframes,int frames);
    void shotScores();
    void calculateNextPositions();
@@ -80,8 +80,8 @@ private:
    ShipSprite *ship[2];
    QList<BulletSprite*> *bullets[2];
    QList<MineSprite*> *mines[2];
-   QVector<AiSprite> *shipsNextPositions[2];
-   QVector<AiSprite> *aiMines[2];
+   QList<AiSprite> *shipsNextPositions[2];
+   QList<AiSprite> *aiMines[2];
    int mineNumber[2];
        //possible Hits
    QList<Shot*> myShots;

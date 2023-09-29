@@ -8,7 +8,7 @@
 
 #include <math.h>
 
-#include <QVector>
+#include <QList>
 
 #include "mathroutines.h"
 #include "structs.h"
@@ -34,9 +34,9 @@ Ai::Ai(int pn,ShipSprite* s[2],QList<BulletSprite*>* b[2],
       ship[i]=s[i];
       bullets[i]=b[i];
       mines[i]=m[i];
-      shipsNextPositions[i]=new QVector<AiSprite>
+      shipsNextPositions[i]=new QList<AiSprite>
          ((int)(calcPositionNumber[Options::aiDifficulty(playerNumber)]/cfg->gamespeed));
-      aiMines[i]=new QVector<AiSprite>(cfg->maxMines);
+      aiMines[i]=new QList<AiSprite>(cfg->maxMines);
       mineNumber[i]=0;
    }
 }
@@ -189,7 +189,7 @@ AiSprite Ai::nextPosition(AiSprite sp,double mult)
    return sp;
 }
 
-void Ai::nextPositions(const AiSprite &sp,QVector<AiSprite> *a,int frames)
+void Ai::nextPositions(const AiSprite &sp,QList<AiSprite> *a,int frames)
 {
    int i,num;
    double fmult=cfg->gamespeed*frames;
