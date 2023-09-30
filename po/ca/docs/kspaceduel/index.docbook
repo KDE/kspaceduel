@@ -758,7 +758,7 @@
 ></term>
          <listitem
 ><para
->Temps entre dos actualitzacions de pantalla en mil·lisegons. Totes les altres opcions de configuració són independents del temps d'actualització.</para
+>Temps entre dues actualitzacions de pantalla en mil·lisegons. Totes les altres opcions de configuració són independents del temps d'actualització.</para
 ></listitem>
       </varlistentry>
       <varlistentry>
