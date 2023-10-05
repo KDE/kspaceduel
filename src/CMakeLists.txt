@@ -42,6 +42,7 @@ target_link_libraries(kspaceduel
     KF6::Completion
     KF6::Crash
     KF6::DBusAddons
+    KF6::I18n
     KF6::XmlGui
     Qt6::Svg
     Qt6::SvgWidgets
