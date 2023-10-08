@@ -30,12 +30,16 @@ int main(int argc,char **argv)
             QStringLiteral("https://apps.kde.org/kspaceduel") );
     aboutData.addAuthor(i18n("Andreas Zehender"),i18n("Original Program"), QStringLiteral("az@azweb.de"));
     aboutData.addAuthor(i18n("Branan Riley"),i18n("SVG Renderer"), QStringLiteral("branan@gmail.com"));
-    QCommandLineParser parser;
+
     KAboutData::setApplicationData(aboutData);
+
     KCrash::initialize();
+
+    QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
+
     KDBusService service;
 
     MyTopLevelWidget *top = new MyTopLevelWidget;
