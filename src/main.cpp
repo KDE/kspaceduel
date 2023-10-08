@@ -32,6 +32,7 @@ int main(int argc,char **argv)
     aboutData.addAuthor(i18n("Branan Riley"),i18n("SVG Renderer"), QStringLiteral("branan@gmail.com"));
 
     KAboutData::setApplicationData(aboutData);
+    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("kspaceduel")));
 
     KCrash::initialize();
 
@@ -45,8 +46,6 @@ int main(int argc,char **argv)
     MyTopLevelWidget *top = new MyTopLevelWidget;
     top->show();
     top->start();
-
-    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("kspaceduel")));
 
     return app.exec();
 }
