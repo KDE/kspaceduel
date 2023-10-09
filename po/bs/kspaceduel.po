@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdegames\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2023-10-09 01:45+0000\n"
 "PO-Revision-Date: 2013-10-18 20:28+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <lokal@lugbih.org>\n"
@@ -181,85 +181,85 @@ msgid "Game Settings"
 msgstr "Postava igre"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
-#: general.ui:22
+#: general.ui:16
 #, kde-format
 msgid "Hit Points"
 msgstr "Poeni pogodaka"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: general.ui:42
+#: general.ui:27
 #, kde-format
 msgid "Red player:"
 msgstr "Crveni igrač:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
-#: general.ui:82
+#: general.ui:64
 #, kde-format
 msgid "Blue player:"
 msgstr "Plavi igrač:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
-#: general.ui:117
+#: general.ui:99
 #, kde-format
 msgid "Graphics"
 msgstr "Grafika"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
-#: general.ui:129
+#: general.ui:105
 #, kde-format
 msgid "Refresh time:"
 msgstr "Vrijeme osvježavanja:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
-#: general.ui:176
+#: general.ui:149
 #, kde-format
 msgid "Red Player"
 msgstr "Crveni igrač"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player0IsAi)
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player1IsAi)
-#: general.ui:196 general.ui:299
+#: general.ui:160 general.ui:251
 #, kde-format
 msgid "Player is AI"
 msgstr "Igrač je vještačka inteligencija"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: general.ui:229 general.ui:332
+#: general.ui:190 general.ui:281
 #, kde-format
 msgid "Difficulty:"
 msgstr "Težina:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
-#: general.ui:243 general.ui:346
+#: general.ui:204 general.ui:295
 #, kde-format
 msgid "Trainee"
 msgstr "Učenik"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
-#: general.ui:248 general.ui:351
+#: general.ui:209 general.ui:300
 #, kde-format
 msgid "Normal"
 msgstr "Normalno"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
-#: general.ui:253 general.ui:356
+#: general.ui:214 general.ui:305
 #, kde-format
 msgid "Hard"
 msgstr "Teško"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
-#: general.ui:258 general.ui:361
+#: general.ui:219 general.ui:310
 #, kde-format
 msgid "Insane"
 msgstr "Ludo"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
-#: general.ui:279
+#: general.ui:240
 #, kde-format
 msgid "Blue Player"
 msgstr "Plavi igrač"

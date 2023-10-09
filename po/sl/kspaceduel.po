@@ -2,7 +2,7 @@
 # Translation of kspaceduel.po to Slovenian
 # -*- mode:po; coding:iso-latin-2; -*- Slovenian msg. catalog for Kspaceduel.
 # Copyright (C) 2001, 2003, 2004, 2007 Free Software Foundation, Inc.
-# $Id: kspaceduel.po 1660889 2023-09-25 02:02:18Z scripty $
+# $Id: kspaceduel.po 1661987 2023-10-09 02:08:15Z scripty $
 # $Source$
 #
 # Roman Maurer <roman.maurer@hermes.si>, 2000.
@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2023-10-09 01:45+0000\n"
 "PO-Revision-Date: 2020-09-19 21:18+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -192,85 +192,85 @@ msgid "Game Settings"
 msgstr "Nastavitve igre"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
-#: general.ui:22
+#: general.ui:16
 #, kde-format
 msgid "Hit Points"
 msgstr "Življenjske točke"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: general.ui:42
+#: general.ui:27
 #, kde-format
 msgid "Red player:"
 msgstr "Rdeči igralec:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
-#: general.ui:82
+#: general.ui:64
 #, kde-format
 msgid "Blue player:"
 msgstr "Modri igralec:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
-#: general.ui:117
+#: general.ui:99
 #, kde-format
 msgid "Graphics"
 msgstr "Grafika"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
-#: general.ui:129
+#: general.ui:105
 #, kde-format
 msgid "Refresh time:"
 msgstr "Čas osveževanja:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
-#: general.ui:176
+#: general.ui:149
 #, kde-format
 msgid "Red Player"
 msgstr "Rdeči igralec"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player0IsAi)
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player1IsAi)
-#: general.ui:196 general.ui:299
+#: general.ui:160 general.ui:251
 #, kde-format
 msgid "Player is AI"
 msgstr "Igralec je UI"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: general.ui:229 general.ui:332
+#: general.ui:190 general.ui:281
 #, kde-format
 msgid "Difficulty:"
 msgstr "Težavnost:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
-#: general.ui:243 general.ui:346
+#: general.ui:204 general.ui:295
 #, kde-format
 msgid "Trainee"
 msgstr "Vajenec"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
-#: general.ui:248 general.ui:351
+#: general.ui:209 general.ui:300
 #, kde-format
 msgid "Normal"
 msgstr "Običajno"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
-#: general.ui:253 general.ui:356
+#: general.ui:214 general.ui:305
 #, kde-format
 msgid "Hard"
 msgstr "Težko"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
-#: general.ui:258 general.ui:361
+#: general.ui:219 general.ui:310
 #, kde-format
 msgid "Insane"
 msgstr "Noro"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
-#: general.ui:279
+#: general.ui:240
 #, kde-format
 msgid "Blue Player"
 msgstr "Modri igralec"

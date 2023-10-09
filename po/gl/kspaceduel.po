@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2023-10-09 01:45+0000\n"
 "PO-Revision-Date: 2023-04-23 06:55+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -183,85 +183,85 @@ msgid "Game Settings"
 msgstr "Configuración do xogo"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
-#: general.ui:22
+#: general.ui:16
 #, kde-format
 msgid "Hit Points"
 msgstr "Puntos de vida"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: general.ui:42
+#: general.ui:27
 #, kde-format
 msgid "Red player:"
 msgstr "Xogador vermello:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
-#: general.ui:82
+#: general.ui:64
 #, kde-format
 msgid "Blue player:"
 msgstr "Xogador azul:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
-#: general.ui:117
+#: general.ui:99
 #, kde-format
 msgid "Graphics"
 msgstr "Gráficos"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
-#: general.ui:129
+#: general.ui:105
 #, kde-format
 msgid "Refresh time:"
 msgstr "Tempo de refresco:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
-#: general.ui:176
+#: general.ui:149
 #, kde-format
 msgid "Red Player"
 msgstr "Xogador vermello"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player0IsAi)
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player1IsAi)
-#: general.ui:196 general.ui:299
+#: general.ui:160 general.ui:251
 #, kde-format
 msgid "Player is AI"
 msgstr "Intelixencia artificial"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: general.ui:229 general.ui:332
+#: general.ui:190 general.ui:281
 #, kde-format
 msgid "Difficulty:"
 msgstr "Dificultade:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
-#: general.ui:243 general.ui:346
+#: general.ui:204 general.ui:295
 #, kde-format
 msgid "Trainee"
 msgstr "Adestramento"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
-#: general.ui:248 general.ui:351
+#: general.ui:209 general.ui:300
 #, kde-format
 msgid "Normal"
 msgstr "Normal"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
-#: general.ui:253 general.ui:356
+#: general.ui:214 general.ui:305
 #, kde-format
 msgid "Hard"
 msgstr "Difícil"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
-#: general.ui:258 general.ui:361
+#: general.ui:219 general.ui:310
 #, kde-format
 msgid "Insane"
 msgstr "Tolo"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
-#: general.ui:279
+#: general.ui:240
 #, kde-format
 msgid "Blue Player"
 msgstr "Xogador azul"
