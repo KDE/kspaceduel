@@ -265,7 +265,7 @@
     </sect1>
     <sect1 id="keys">
         <title
->Accesos rápidos predeterminados</title>
+>Atajos de teclado predeterminados</title>
         <para
 >Las siguientes tablas muestran los atajos de teclado predeterminados para &kspaceduel;.</para>
         <informaltable frame="all">
@@ -705,11 +705,11 @@
 ><guimenu
 >Preferencias</guimenu
 > <guimenuitem
->Configurar accesos rápidos...</guimenuitem
+>Configurar los atajos de teclado...</guimenuitem
 ></menuchoice
 >.</para>
      <para
->Esto hará que aparezca un cuadro de diálogo que le permitirá configurar los accesos rápidos, incluyendo aquellas utilizadas para dirigir las naves a través del espacio, para disparar balas y para dejar minas.</para>
+>Esto hará que se muestre un diálogo que le permitirá configurar los atajos de teclado, incluidos los que se usan para dirigir las naves a través del espacio, para disparar balas y para dejar minas.</para>
      <para
 >Como puede ver cada jugador (rojo y azul) tiene 5 pulsaciones de tecla correspondientes a girar a la izquierda, girar a la derecha, acelerar, disparar y minas.</para>
      <para
