@@ -14,7 +14,7 @@
 #include <KLocalizedString>
 #include <KShortcutsDialog>
 #include <KStandardAction>
-#include <KStandardGameAction>
+#include <KGameStandardAction>
 
 #include "mainview.h"
 #include "playerinfo.h"
@@ -74,8 +74,8 @@ void MyTopLevelWidget::setupActions()
    QAction * ac;
 
    // Game
-   KStandardGameAction::gameNew(playfield, &MyMainView::newGame, actionCollection());
-   KStandardGameAction::quit(this, &MyTopLevelWidget::close, actionCollection());
+   KGameStandardAction::gameNew(playfield, &MyMainView::newGame, actionCollection());
+   KGameStandardAction::quit(this, &MyTopLevelWidget::close, actionCollection());
 
    QAction * newRoundAct = actionCollection()->addAction( QStringLiteral(  "new_round" ) );
    newRoundAct->setIcon( QIcon::fromTheme( QStringLiteral( "preferences-desktop-notification-bell" )) );
@@ -84,7 +84,7 @@ void MyTopLevelWidget::setupActions()
    connect( newRoundAct, &QAction::triggered, playfield, &MyMainView::newRound );
 
    MyMainView::pauseAction =
-       KStandardGameAction::pause(playfield, &MyMainView::togglePause, actionCollection());
+       KGameStandardAction::pause(playfield, &MyMainView::togglePause, actionCollection());
    MyMainView::pauseAction->setChecked( false );
    QAction *gameStart = actionCollection()->addAction( QStringLiteral(  "game_start" ) );
    gameStart->setText( i18nc( "start game","Start" ) );
