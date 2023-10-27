@@ -191,9 +191,7 @@
 ></listitem>
             <listitem
 ><para
->El quadre a la part superior de la pantalla d'informació representa els <quote
->Punts de vida</quote
-> de la nau espacial.</para
+>El quadre a la part superior de la pantalla d'informació representa els «Punts de vida» de la nau espacial.</para
 ></listitem>
             <listitem
 ><para
@@ -604,9 +602,7 @@
 ></question>
  <answer
 ><para
->No. El &kspaceduel; no té una característica <quote
->Desfés</quote
->.</para
+>No. El &kspaceduel; no té una característica «Desfés».</para
 ></answer>
 </qandaentry>
 <qandaentry>
@@ -616,9 +612,7 @@
 ></question>
  <answer
 ><para
->No. El &kspaceduel; no té una característica de <quote
->Consell</quote
->. No obstant això, si llegiu acuradament a través de <link linkend="rules_and_tips"
+>No. El &kspaceduel; no té una característica de «Consell». No obstant això, si llegiu acuradament a través de <link linkend="rules_and_tips"
 >Les regles del joc, estratègies i consells</link
 >, no hauríeu de tenir aquest problema.</para
 ></answer>
@@ -630,9 +624,7 @@
 ></question>
  <answer
 ><para
->No. El &kspaceduel; no té una característica <quote
->Desa</quote
->.</para
+>No. El &kspaceduel; no té una característica «Desa».</para
 ></answer>
 </qandaentry>
 <!--Please add more Q&As if needed-->
