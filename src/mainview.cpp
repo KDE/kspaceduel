@@ -162,7 +162,7 @@ bool MyMainView::readSprites()
 
 void MyMainView::readConfig()
 {
-   KConfigGroup game(KSharedConfig::openConfig(), "Game");
+   KConfigGroup game(KSharedConfig::openConfig(), QStringLiteral("Game"));
    int i;
 
    customConfig.gamespeed=game.readEntry("gamespeed",
@@ -236,7 +236,7 @@ void MyMainView::readConfig()
 
 void MyMainView::writeConfig()
 {
-   KConfigGroup game(KSharedConfig::openConfig(), "Game");
+   KConfigGroup game(KSharedConfig::openConfig(), QStringLiteral("Game"));
 
    game.writeEntry("gravity",customConfig.gravity);
    game.writeEntry("acceleration",customConfig.acc);
