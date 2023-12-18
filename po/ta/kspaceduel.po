@@ -1,19 +1,20 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# SPDX-FileCopyrightText: 2023 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:45+0000\n"
-"PO-Revision-Date: 2004-08-11 09:29--800\n"
-"Last-Translator: I. Felix <ifelix25@yahoo.co.in>\n"
-"Language-Team: KDE <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-12-17 16:43+0530\n"
+"Last-Translator: Kishore G <kishore96@gmail.com>\n"
+"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -161,11 +162,10 @@ msgid "Powerups"
 msgstr "சக்தி கூடுதல்"
 
 #: dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "general settings"
 msgid "General"
-msgstr "பொது"
+msgstr "பொதுவானவை"
 
 #: dialogs.cpp:404
 #, kde-format
