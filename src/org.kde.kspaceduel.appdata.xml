@@ -21,6 +21,7 @@
   <name xml:lang="fi">KSpaceDuel</name>
   <name xml:lang="fr">KSpaceDuel</name>
   <name xml:lang="gl">KSpaceDuel</name>
+  <name xml:lang="he">KSpaceDuel</name>
   <name xml:lang="hi">के-स्पेसड्यूएल</name>
   <name xml:lang="hu">KSpaceDuel</name>
   <name xml:lang="ia">KSpaceDuel</name>
@@ -64,6 +65,7 @@
   <summary xml:lang="fi">Avaruusarkadipeli</summary>
   <summary xml:lang="fr">Jeu d'arcade dans l'espace</summary>
   <summary xml:lang="gl">Xogo arcade espacial</summary>
+  <summary xml:lang="he">משחק הרפתקה בחלל</summary>
   <summary xml:lang="hi">स्पेस आर्केड खेल</summary>
   <summary xml:lang="hu">Kétszemélyes űrhajós játék</summary>
   <summary xml:lang="id">Permainan Arkade Ruang Angkasa</summary>
@@ -108,6 +110,7 @@
     <p xml:lang="fi">KSpaceDuelissa kukin kahdesta mahdollisesta pelaajasta ohjaa aurinkoa kiertävää avaruusalusta. Pelin edetessä pelaajan täytyy tuhota vastustajan alukset luodein tai miinoin.</p>
     <p xml:lang="fr">Dans KSpaceDuel chaque joueur contrôle un vaisseau spatial satellite en orbite autour du soleil. Au cours du jeu, les joueurs doivent éliminer le vaisseau spatial de leur adversaire en utilisant des balles ou des mines.</p>
     <p xml:lang="gl">En KSpaceDuel cada un dos dous xogadores posíbeis controla unha nave espacial satélite que orbita arredor do Sol. Durante unha partida, os xogadores teñen que eliminar a nave espacial do opoñente con balas ou minas.</p>
+    <p xml:lang="he">ב־KSpaceDuel כל אחד מבין שני השחקנים האפשריים שולט בחללית שמקיפה את השמש. עם התקדמות המשחק, על השחקנים לחסל את כלי הטיס של האויב באמצעות ירי או מוקשים.</p>
     <p xml:lang="hi">के-स्पेसड्यूएल में दो संभावित खिलाड़ियों में से प्रत्येक सूर्य की परिक्रमा करने वाले उपग्रह अंतरिक्ष यान को नियंत्रित करता है। जैसे-जैसे खेल आगे बढ़ता है खिलाड़ियों को प्रतिद्वंद्वी के अंतरिक्ष यान को गोलियों या खानों के बम से खत्म करना होता है।</p>
     <p xml:lang="hu">A KSpaceDuelben mindkét játékos egy, a nap körül keringő műholdat irányít. A játék során a feleknek lövedékekkel és aknákkal kell megsemmisíteniük az ellenfél űrjárművét.</p>
     <p xml:lang="id">Di KSpaceDuel masing-masing dari dua pemain yang mungkin mengendalikan pesawat-ruang-angkasa satelit yang mengorbit matahari. Ketika permainan berlangsung, pemain harus menyingkirkan pesawat ruang angkasa lawan dengan peluru atau ranjau.</p>
