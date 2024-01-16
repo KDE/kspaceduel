@@ -19,7 +19,7 @@ int main(int argc,char **argv)
 {
     QApplication app(argc, argv);
 
-    KLocalizedString::setApplicationDomain("kspaceduel");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kspaceduel"));
 
     KAboutData aboutData( QStringLiteral("kspaceduel"), i18n("KSpaceDuel"), 
             QStringLiteral(KSPACEDUEL_VERSION_STRING),
