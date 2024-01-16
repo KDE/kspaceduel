@@ -138,6 +138,4 @@ Icon=kspaceduel
 X-DocPath=kspaceduel/index.html
 Type=Application
 X-KDE-StartupNotify=true
-X-DBUS-StartupType=Multi
 Categories=Qt;KDE;Game;ArcadeGame;
-X-DBUS-ServiceName=org.kde.kspaceduel
