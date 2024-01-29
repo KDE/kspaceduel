@@ -47,7 +47,7 @@
   <name xml:lang="uk">Космічна дуель</name>
   <name xml:lang="x-test">xxKSpaceDuelxx</name>
   <name xml:lang="zh-CN">KSpaceDuel</name>
-  <name xml:lang="zh-TW">KSpaceDuel</name>
+  <name xml:lang="zh-TW">KSpaceDuel 決戰星空</name>
   <summary>Space Arcade Game</summary>
   <summary xml:lang="ar">لعبة ممرات الفضاء</summary>
   <summary xml:lang="bg">Космически дуел</summary>
@@ -90,6 +90,7 @@
   <summary xml:lang="uk">Космічна аркадна гра — дуель</summary>
   <summary xml:lang="x-test">xxSpace Arcade Gamexx</summary>
   <summary xml:lang="zh-CN">空间型街机游戏</summary>
+  <summary xml:lang="zh-TW">街機太空遊戲</summary>
   <description>
     <p>
       In KSpaceDuel each of two possible players control a satellite spaceship orbiting the sun.
@@ -135,6 +136,7 @@
     <p xml:lang="uk">У «Космічній дуелі» кожен з двох можливих гравців керує космічним супутником, який обертається навколо сонця. Протягом гри гравці мають намагатися знищити супутник суперника кулями та мінами.</p>
     <p xml:lang="x-test">xxIn KSpaceDuel each of two possible players control a satellite spaceship orbiting the sun. As the game progresses players have to eliminate the opponent's spacecraft with bullets or mines.xx</p>
     <p xml:lang="zh-CN">在 KSpaceDuel 中，每两名玩家控制太阳轨道上的卫星飞船。随着游戏的推进，玩家必须使用子弹或地雷消灭对手的太空飞船。</p>
+    <p xml:lang="zh-TW">在《KSpaceDuel 決戰星空》，兩個玩家各控制一個環繞太陽軌道的衛星宇宙船。隨著遊戲進行，玩家必須用子彈或空雷消滅對手的宇宙船。</p>
   </description>
   <url type="homepage">https://apps.kde.org/kspaceduel</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kspaceduel</url>
