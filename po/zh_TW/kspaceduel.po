@@ -4,20 +4,20 @@
 # Hydonsingore Sie <hydonsingore@mail.educities.edu.tw>, 2003.
 # Franklin Weng <franklin at goodhorse dot idv dot tw>, 2007.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2008.
+# SPDX-FileCopyrightText: 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:45+0000\n"
-"PO-Revision-Date: 2008-06-26 11:14+0800\n"
-"Last-Translator: Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv "
-"dot tw>\n"
-"Language-Team: Chinese Traditional <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2024-01-28 19:23+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 24.01.95\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -257,7 +257,7 @@ msgstr "困難"
 #: general.ui:219 general.ui:310
 #, kde-format
 msgid "Insane"
-msgstr "起嘯"
+msgstr "起痟"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
 #: general.ui:240
@@ -283,10 +283,9 @@ msgid "KSpaceDuel"
 msgstr "決戰星空"
 
 #: main.cpp:26
-#, fuzzy, kde-format
-#| msgid "KDE Space Game"
+#, kde-format
 msgid "Space Arcade Game"
-msgstr "KDE太空遊戲"
+msgstr "街機太空遊戲"
 
 #: main.cpp:28
 #, kde-format
@@ -373,7 +372,7 @@ msgstr "缺少能量"
 #: topwidget.cpp:82
 #, kde-format
 msgid "&New Round"
-msgstr "新比賽 (&N)"
+msgstr "新比賽(&N)"
 
 #: topwidget.cpp:90
 #, kde-format
@@ -384,49 +383,49 @@ msgstr "開始"
 #: topwidget.cpp:99
 #, kde-format
 msgid "Player 1 Rotate Left"
-msgstr "向左旋轉"
+msgstr "玩家 1 向左旋轉"
 
 #: topwidget.cpp:103
 #, kde-format
 msgid "Player 1 Rotate Right"
-msgstr "向右旋轉"
+msgstr "玩家 1 向右旋轉"
 
 #: topwidget.cpp:107
 #, kde-format
 msgid "Player 1 Accelerate"
-msgstr "加速"
+msgstr "玩家 1 加速"
 
 #: topwidget.cpp:111
 #, kde-format
 msgid "Player 1 Shot"
-msgstr "射擊"
+msgstr "玩家 1 射擊"
 
 #: topwidget.cpp:115
 #, kde-format
 msgid "Player 1 Mine"
-msgstr "佈雷"
+msgstr "玩家 1 佈雷"
 
 #: topwidget.cpp:120
 #, kde-format
 msgid "Player 2 Rotate Left"
-msgstr "向左旋轉"
+msgstr "玩家 2 向左旋轉"
 
 #: topwidget.cpp:124
 #, kde-format
 msgid "Player 2 Rotate Right"
-msgstr "向右旋轉"
+msgstr "玩家 2 向右旋轉"
 
 #: topwidget.cpp:128
 #, kde-format
 msgid "Player 2 Accelerate"
-msgstr "加速"
+msgstr "玩家 2 加速"
 
 #: topwidget.cpp:132
 #, kde-format
 msgid "Player 2 Shot"
-msgstr "射擊"
+msgstr "玩家 2 射擊"
 
 #: topwidget.cpp:136
 #, kde-format
 msgid "Player 2 Mine"
-msgstr "佈雷"
+msgstr "玩家 2 佈雷"
