@@ -2,31 +2,32 @@
 # Copyright (C) 2008 Free Software Foundation, Inc.
 #
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:45+0000\n"
-"PO-Revision-Date: 2008-12-27 18:50+0200\n"
-"Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
-"Language-Team: Lavtian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-04-05 07:58+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Viesturs Zariņš"
+msgstr "Viesturs Zariņš, Toms Trasūns"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "viesturs.zarins@mii.lu.lv"
+msgstr "viesturs.zarins@mii.lu.lv, toms.trasuns@posteo.net"
 
 #: dialogs.cpp:63
 msgid "Game speed:"
@@ -38,7 +39,7 @@ msgstr "Šāviena ātrums:"
 
 #: dialogs.cpp:64 dialogs.cpp:67 dialogs.cpp:70 dialogs.cpp:71
 msgid "Energy need:"
-msgstr "Enerģinas vajadzības:"
+msgstr "Enerģijas vajadzība:"
 
 #: dialogs.cpp:64 dialogs.cpp:68
 msgid "Max number:"
@@ -207,20 +208,20 @@ msgstr "Grafika"
 #: general.ui:105
 #, kde-format
 msgid "Refresh time:"
-msgstr "Atsvaidzes laiks:"
+msgstr "Pārlādēšanās laiks:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: general.ui:149
 #, kde-format
 msgid "Red Player"
-msgstr "Sarkanais Spēlētājs"
+msgstr "Sarkanais spēlētājs"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player0IsAi)
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Player1IsAi)
 #: general.ui:160 general.ui:251
 #, kde-format
 msgid "Player is AI"
-msgstr "Spēlētājs ir AI"
+msgstr "Spēlētājs ir MI"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
@@ -281,15 +282,14 @@ msgid "KSpaceDuel"
 msgstr "KSpaceDuel"
 
 #: main.cpp:26
-#, fuzzy, kde-format
-#| msgid "KDE Space Game"
+#, kde-format
 msgid "Space Arcade Game"
-msgstr "KDE kosmiskā spēle"
+msgstr "Kosmiskā arkādas spēle"
 
 #: main.cpp:28
 #, kde-format
 msgid "(c) 1998-2001, Andreas Zehender"
-msgstr "(c) 1998-2001, Andreas Zehender"
+msgstr "(c) 1998—2001, Andreas Zehender"
 
 #: main.cpp:31
 #, kde-format
@@ -319,7 +319,7 @@ msgstr " pauzēts "
 #: mainview.cpp:510
 #, kde-format
 msgid "Press %1 to start"
-msgstr "Nospiediet  %1, lai sāktu"
+msgstr "Nospiediet „%1“, lai sāktu"
 
 #: mainview.cpp:559
 #, kde-format
@@ -329,17 +329,17 @@ msgstr "neizšķirts"
 #: mainview.cpp:562
 #, kde-format
 msgid "blue player won the round"
-msgstr "zilais spēlētājs uzvarēja"
+msgstr "raundā uzvarēja zilais spēlētājs"
 
 #: mainview.cpp:570
 #, kde-format
 msgid "red player won the round"
-msgstr "sarkanais spēlētājs uzvarēja"
+msgstr "raundā uzvarēja sarkanais spēlētājs"
 
 #: mainview.cpp:578
 #, kde-format
 msgid "Press %1 for new round"
-msgstr "Nospiediet %1, lai sāktu jaunu spēli"
+msgstr "Nospiediet „%1“, lai sāktu jaunu spēli"
 
 #: playerinfo.cpp:39 playerinfo.cpp:72
 #, kde-format
@@ -382,49 +382,49 @@ msgstr "Sākt"
 #: topwidget.cpp:99
 #, kde-format
 msgid "Player 1 Rotate Left"
-msgstr "Pirmais spēlētājs griezt pa kreisi"
+msgstr "Pirmajam spēlētājam pagriezt pa kreisi"
 
 #: topwidget.cpp:103
 #, kde-format
 msgid "Player 1 Rotate Right"
-msgstr "Pirmais spēlētājs griezt pa labi"
+msgstr "Pirmajam spēlētājam pagriezt pa labi"
 
 #: topwidget.cpp:107
 #, kde-format
 msgid "Player 1 Accelerate"
-msgstr "Pirmais spēlētājs uzņemt ātrumu"
+msgstr "Pirmajam spēlētājam uzņemt ātrumu"
 
 #: topwidget.cpp:111
 #, kde-format
 msgid "Player 1 Shot"
-msgstr "Pirmais spēlētājs šaut"
+msgstr "Pirmajam spēlētājam šaut"
 
 #: topwidget.cpp:115
 #, kde-format
 msgid "Player 1 Mine"
-msgstr "Pirmais spēlētājs likt mīnu"
+msgstr "Pirmajam spēlētājam likt mīnu"
 
 #: topwidget.cpp:120
 #, kde-format
 msgid "Player 2 Rotate Left"
-msgstr "Otrais spēlētājs griezt pa kreisi"
+msgstr "Otrajam spēlētājam pagriezt pa kreisi"
 
 #: topwidget.cpp:124
 #, kde-format
 msgid "Player 2 Rotate Right"
-msgstr "Otrais spēlētājs griezt pa labi"
+msgstr "Otrajam spēlētājam pagriezt pa labi"
 
 #: topwidget.cpp:128
 #, kde-format
 msgid "Player 2 Accelerate"
-msgstr "Otrais spēlētājs uzņemt ātrumu"
+msgstr "Otrajam spēlētājam uzņemt ātrumu"
 
 #: topwidget.cpp:132
 #, kde-format
 msgid "Player 2 Shot"
-msgstr "Otrais spēlētājs šaut"
+msgstr "Otrajam spēlētājam šaut"
 
 #: topwidget.cpp:136
 #, kde-format
 msgid "Player 2 Mine"
-msgstr "Otrais spēlētājs likt mīnu"
+msgstr "Otrajam spēlētājam likt mīnu"
