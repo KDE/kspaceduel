@@ -79,7 +79,7 @@ void MyTopLevelWidget::setupActions()
 
    QAction * newRoundAct = actionCollection()->addAction( QStringLiteral(  "new_round" ) );
    newRoundAct->setIcon( QIcon::fromTheme( QStringLiteral( "preferences-desktop-notification-bell" )) );
-   newRoundAct->setText( i18n( "&New Round" ) );
+   newRoundAct->setText( i18nc("@action", "&New Round" ) );
    KActionCollection::setDefaultShortcut(newRoundAct, Qt::CTRL | Qt::Key_R);
    connect( newRoundAct, &QAction::triggered, playfield, &MyMainView::newRound );
 
@@ -87,7 +87,7 @@ void MyTopLevelWidget::setupActions()
        KGameStandardAction::pause(playfield, &MyMainView::togglePause, actionCollection());
    MyMainView::pauseAction->setChecked( false );
    QAction *gameStart = actionCollection()->addAction( QStringLiteral(  "game_start" ) );
-   gameStart->setText( i18nc( "start game","Start" ) );
+   gameStart->setText( i18nc("@action start game","Start" ) );
    connect(gameStart, &QAction::triggered, playfield, &MyMainView::start);
    KActionCollection::setDefaultShortcut(gameStart, Qt::Key_Space);
    playfield->addAction(gameStart);
@@ -96,44 +96,44 @@ void MyTopLevelWidget::setupActions()
 
    // Default keys
    ac = actionCollection()->addAction( QStringLiteral( "P1KeyLeft" ));
-   ac->setText(i18n("Player 1 Rotate Left"));
+   ac->setText(i18nc("@action", "Player 1 Rotate Left"));
    KActionCollection::setDefaultShortcut(ac, Qt::Key_S);
    ac->setEnabled( false );
    ac = actionCollection()->addAction( QStringLiteral( "P1KeyRight" ));
-   ac->setText(i18n("Player 1 Rotate Right"));
+   ac->setText(i18nc("@action", "Player 1 Rotate Right"));
    KActionCollection::setDefaultShortcut(ac, Qt::Key_F);
    ac->setEnabled( false );
    ac = actionCollection()->addAction( QStringLiteral( "P1KeyAcc" ));
-   ac->setText(i18n("Player 1 Accelerate"));
+   ac->setText(i18nc("@action", "Player 1 Accelerate"));
    KActionCollection::setDefaultShortcut(ac, Qt::Key_E);
    ac->setEnabled( false );
    ac = actionCollection()->addAction( QStringLiteral( "P1Shot" ));
-   ac->setText(i18n("Player 1 Shot"));
+   ac->setText(i18nc("@action", "Player 1 Shot"));
    KActionCollection::setDefaultShortcut(ac, Qt::Key_D);
    ac->setEnabled( false );
    ac = actionCollection()->addAction( QStringLiteral( "P1Mine" ));
-   ac->setText(i18n("Player 1 Mine"));
+   ac->setText(i18nc("@action", "Player 1 Mine"));
    KActionCollection::setDefaultShortcut(ac, Qt::Key_A);
    ac->setEnabled( false );
 
    ac = actionCollection()->addAction( QStringLiteral( "P2KeyLeft" ));
-   ac->setText(i18n("Player 2 Rotate Left"));
+   ac->setText(i18nc("@action", "Player 2 Rotate Left"));
    KActionCollection::setDefaultShortcut(ac, Qt::Key_Left);
    ac->setEnabled( false );
    ac = actionCollection()->addAction( QStringLiteral( "P2KeyRight" ));
-   ac->setText(i18n("Player 2 Rotate Right"));
+   ac->setText(i18nc("@action", "Player 2 Rotate Right"));
    KActionCollection::setDefaultShortcut(ac, Qt::Key_Right);
    ac->setEnabled( false );
    ac = actionCollection()->addAction( QStringLiteral( "P2KeyAcc" ));
-   ac->setText(i18n("Player 2 Accelerate"));
+   ac->setText(i18nc("@action", "Player 2 Accelerate"));
    KActionCollection::setDefaultShortcut(ac, Qt::Key_Up);
    ac->setEnabled( false );
    ac = actionCollection()->addAction( QStringLiteral( "P2Shot" ));
-   ac->setText(i18n("Player 2 Shot"));
+   ac->setText(i18nc("@action", "Player 2 Shot"));
    KActionCollection::setDefaultShortcut(ac, Qt::Key_Down);
    ac->setEnabled( false );
    ac = actionCollection()->addAction( QStringLiteral( "P2Mine" ));
-   ac->setText(i18n("Player 2 Mine"));
+   ac->setText(i18nc("@action", "Player 2 Mine"));
    KActionCollection::setDefaultShortcut(ac, Qt::Key_Insert);
    ac->setEnabled( false );
 

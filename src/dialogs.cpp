@@ -166,7 +166,7 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    connect(configCombo, static_cast<void(QComboBox::*)(int)>(&QComboBox::activated), this, &ConfigSetup::configSelected);
    for(i=0;i<predefinedConfigNum;++i)
        configCombo->addItem(predefinedConfigName[i].toString());
-   configCombo->addItem(i18nc("custom values","Custom"));
+   configCombo->addItem(i18nc("@item custom values","Custom"));
 
    boxlayout->addSpacing( 2 * 6 );
    boxlayout->addWidget(configCombo);
@@ -182,13 +182,13 @@ ConfigSetup::ConfigSetup(SConfig *custom,QWidget *parent)
    for(i=0;i<TabNum;++i)
       stacklayout[i]->activate();
 
-   tabs->addTab(configWidgets[0],i18nc("general game settings","General"));
-   tabs->addTab(configWidgets[1],i18n("Bullet"));
-   tabs->addTab(configWidgets[2],i18nc("Name","Mine"));
-   tabs->addTab(configWidgets[3],i18n("Ship"));
-   tabs->addTab(configWidgets[4],i18nc("the star, Sol","Sun"));
+   tabs->addTab(configWidgets[0],i18nc("@title:tab general settings","General"));
+   tabs->addTab(configWidgets[1],i18nc("@title:tab", "Bullet"));
+   tabs->addTab(configWidgets[2],i18nc("@title:tab Name","Mine"));
+   tabs->addTab(configWidgets[3],i18nc("@title:tab", "Ship"));
+   tabs->addTab(configWidgets[4],i18nc("@title:tab the star, Sol","Sun"));
    tabs->addTab(configWidgets[5],i18nc("initial position and velocities of players","Start"));
-   tabs->addTab(configWidgets[6],i18n("Powerups"));
+   tabs->addTab(configWidgets[6],i18nc("@title:tab", "Powerups"));
 
    customConfig=custom;
 
@@ -401,10 +401,10 @@ SettingsDialog::SettingsDialog(SConfig *customConfig, QWidget *parent, const cha
   : KConfigDialog( parent,QLatin1String(  name ), Options::self())
 {
   General *general = new General();
-  addPage(general, i18nc("general settings","General"), QStringLiteral( "games-config-options" ), i18n("General Settings"));
+  addPage(general, i18nc("@title:tab general settings","General"), QStringLiteral( "games-config-options" ), i18nc("@title", "General Settings"));
 
   cs = new ConfigSetup(customConfig);
-  addPage(cs, i18nc("game settings","Game"),QStringLiteral(  "games-config-custom" ), i18n("Game Settings"));
+  addPage(cs, i18nc("@title:tab game settings","Game"),QStringLiteral(  "games-config-custom" ), i18nc("@title", "Game Settings"));
   connect(cs, &ConfigSetup::changed, this, &SettingsDialog::updateButtons);
   setHelp(QStringLiteral( "options-configurations" ), QStringLiteral( "kspaceduel" ));
 //  resize(600,400);
