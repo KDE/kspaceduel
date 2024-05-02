@@ -205,7 +205,7 @@ In &kspaceduel; you control the ship's rotation, acceleration, and weaponry. You
   </varlistentry>
 
   <varlistentry id="settings-menu-settings">
-    <term><menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &kspaceduel;...</guimenuitem></menuchoice></term>
+    <term><menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &kspaceduel;…</guimenuitem></menuchoice></term>
     <listitem><para><action>Opens a configuration dialog</action> which lets you define many settings of the game, refer to the chapter <link linkend="configuration">Game Configuration</link> for further information.</para></listitem>
   </varlistentry>
 </variablelist>
@@ -250,7 +250,7 @@ of the &kde; Fundamentals.
   <sect1 id="options-keys">
     <title>Game Keys</title>
      <para>&kspaceduel; has a default set of keys to control the game.  For a list of default keys see the section entitled <link linkend="keys">Default Shortcuts</link>.</para>
-     <para>Keys can be configured by selecting the <menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure Shortcuts...</guimenuitem></menuchoice> menu item.</para>
+     <para>Keys can be configured by selecting the <menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure Shortcuts…</guimenuitem></menuchoice> menu item.</para>
      <para>This will bring up a dialog box which lets you configure all hotkeys, including the keys used for steering the space ships, for firing bullets, and for laying mines.</para>
      <para>You can see that each player (Red and Blue), has 5 keystrokes corresponding to Rotate Left, Rotate Right, Accelerate, Shot, and Mines.</para>
      <para>When you are finished configuring your keys, you should click on <guibutton>OK</guibutton> to apply your changes.</para>
@@ -261,7 +261,7 @@ of the &kde; Fundamentals.
   <sect1 id="options-configurations">
     <title>Game Configuration</title>
     <para>All game settings of &kspaceduel; are configurable.</para>
-    <para>If you want to change the game settings, simply select the <menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &kspaceduel;...</guimenuitem></menuchoice> menu item.</para>
+    <para>If you want to change the game settings, simply select the <menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &kspaceduel;…</guimenuitem></menuchoice> menu item.</para>
     <para>This will bring up a dialog box with two pages, labelled <guilabel>General</guilabel> and <guilabel>Game</guilabel>. The first page is rather simple, the second one has seven tabs across the top.</para>
     <para>Settings are collected in different configurations. You can choose from several pre-defined configurations.</para>
     <para>If you choose the <guilabel>Custom</guilabel> configuration, you can define all settings for yourself.</para>
