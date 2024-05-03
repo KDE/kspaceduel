@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel 0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2006-08-25 03:38+0100\n"
 "Last-Translator: Renato Pavicic <renato@translator-shop.org>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -116,37 +116,43 @@ msgstr "Jačina štita:"
 #: dialogs.cpp:169
 #, fuzzy, kde-format
 #| msgid "Custom"
-msgctxt "custom values"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr "Prilagođeno"
 
-#: dialogs.cpp:185
+#: dialogs.cpp:185 dialogs.cpp:404
 #, fuzzy, kde-format
 #| msgid "General"
-msgctxt "general game settings"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "Opće"
 
-#: dialogs.cpp:186 structs.h:52
-#, kde-format
+#: dialogs.cpp:186
+#, fuzzy, kde-format
+#| msgid "Bullet"
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "Metak"
 
 #: dialogs.cpp:187
-#, kde-format
-msgctxt "Name"
+#, fuzzy, kde-format
+#| msgctxt "Name"
+#| msgid "Mine"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "Mina"
 
 #: dialogs.cpp:188
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ship"
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr "Brod"
 
 #: dialogs.cpp:189
 #, fuzzy, kde-format
 #| msgid "Sun"
-msgctxt "the star, Sol"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "Sunce"
 
@@ -158,31 +164,30 @@ msgid "Start"
 msgstr "Započni"
 
 #: dialogs.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Powerups"
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "Pojačanja"
 
 #: dialogs.cpp:404
 #, fuzzy, kde-format
-#| msgid "General"
-msgctxt "general settings"
-msgid "General"
-msgstr "Opće"
-
-#: dialogs.cpp:404
-#, kde-format
+#| msgid "General Settings"
+msgctxt "@title"
 msgid "General Settings"
 msgstr "Opće postavke"
 
 #: dialogs.cpp:407
 #, fuzzy, kde-format
 #| msgid "Game"
-msgctxt "game settings"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "Igra"
 
 #: dialogs.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Game Settings"
+msgctxt "@title"
 msgid "Game Settings"
 msgstr "Postavke igre"
 
@@ -368,6 +373,10 @@ msgid "Default"
 msgstr ""
 
 #: structs.h:52
+msgid "Bullet"
+msgstr "Metak"
+
+#: structs.h:52
 msgid "Chaos"
 msgstr "Kaos"
 
@@ -378,66 +387,100 @@ msgid "Lack of Energy"
 msgstr "Nedostatak energije"
 
 #: topwidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&New Round"
+msgctxt "@action"
 msgid "&New Round"
 msgstr "Novi &krug"
 
 #: topwidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Start"
-msgctxt "start game"
+msgctxt "@action start game"
 msgid "Start"
 msgstr "Započni"
 
 #: topwidget.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Left"
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr "Igrač 1 – Okret ulijevo"
 
 #: topwidget.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Right"
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr "Igrač 1 – Okret udesno"
 
 #: topwidget.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Accelerate"
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr "Igrač 1 – Ubrzavanje"
 
 #: topwidget.cpp:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Shot"
+msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "Igrač 1 – Pucanje"
 
 #: topwidget.cpp:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Mine"
+msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "Igrač 1 – Mina"
 
 #: topwidget.cpp:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Left"
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr "Igrač 2 – Okret ulijevo"
 
 #: topwidget.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Right"
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr "Igrač 2 – Okret udesno"
 
 #: topwidget.cpp:128
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Accelerate"
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr "Igrač 2 – Ubrzavanje"
 
 #: topwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Shot"
+msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "Igrač 2 – Pucanje"
 
 #: topwidget.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Mine"
+msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "Igrač 2 – Mina"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "general settings"
+#~ msgid "General"
+#~ msgstr "Opće"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgctxt "start game"
+#~ msgid "Start"
+#~ msgstr "Započni"
 
 #, fuzzy
 #~| msgid "Start"

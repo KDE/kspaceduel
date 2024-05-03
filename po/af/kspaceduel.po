@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2002-11-07 11:32+0200\n"
 "Last-Translator: WEB-Translator <http://kde.af.org.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -113,37 +113,43 @@ msgstr "Skuld hoeveelheid:"
 #: dialogs.cpp:169
 #, fuzzy, kde-format
 #| msgid "Custom"
-msgctxt "custom values"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr "Pasmaak"
 
-#: dialogs.cpp:185
+#: dialogs.cpp:185 dialogs.cpp:404
 #, fuzzy, kde-format
 #| msgid "General"
-msgctxt "general game settings"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "Algemeen"
 
-#: dialogs.cpp:186 structs.h:52
-#, kde-format
+#: dialogs.cpp:186
+#, fuzzy, kde-format
+#| msgid "Bullet"
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "Petroon"
 
 #: dialogs.cpp:187
-#, kde-format
-msgctxt "Name"
+#, fuzzy, kde-format
+#| msgctxt "Name"
+#| msgid "Mine"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "Myne"
 
 #: dialogs.cpp:188
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ship"
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr "Skip"
 
 #: dialogs.cpp:189
 #, fuzzy, kde-format
 #| msgid "Sun"
-msgctxt "the star, Sol"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "Sun"
 
@@ -155,30 +161,27 @@ msgid "Start"
 msgstr "Begin"
 
 #: dialogs.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Powerups"
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "Kragvermeerderaars"
 
 #: dialogs.cpp:404
 #, fuzzy, kde-format
-#| msgid "General"
-msgctxt "general settings"
-msgid "General"
-msgstr "Algemeen"
-
-#: dialogs.cpp:404
-#, fuzzy, kde-format
+msgctxt "@title"
 msgid "General Settings"
 msgstr "Algemeen"
 
 #: dialogs.cpp:407
 #, fuzzy, kde-format
-msgctxt "game settings"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "Speletjie..."
 
 #: dialogs.cpp:407
 #, fuzzy, kde-format
+msgctxt "@title"
 msgid "Game Settings"
 msgstr "Speletjie Opstelling"
 
@@ -364,6 +367,10 @@ msgid "Default"
 msgstr ""
 
 #: structs.h:52
+msgid "Bullet"
+msgstr "Petroon"
+
+#: structs.h:52
 msgid "Chaos"
 msgstr "Chaos"
 
@@ -374,66 +381,90 @@ msgid "Lack of Energy"
 msgstr "Tekort van energie"
 
 #: topwidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&New Round"
+msgctxt "@action"
 msgid "&New Round"
 msgstr "Nuwe Rondte"
 
 #: topwidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Start"
-msgctxt "start game"
+msgctxt "@action start game"
 msgid "Start"
 msgstr "Begin"
 
 #: topwidget.cpp:99
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr "Roteer Links"
 
 #: topwidget.cpp:103
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr "Roteer Regterkant"
 
 #: topwidget.cpp:107
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr "Versnel"
 
 #: topwidget.cpp:111
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "Speler is Kunsmatige inteligensie"
 
 #: topwidget.cpp:115
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "Speler is Kunsmatige inteligensie"
 
 #: topwidget.cpp:120
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr "Roteer Links"
 
 #: topwidget.cpp:124
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr "Roteer Regterkant"
 
 #: topwidget.cpp:128
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr "Versnel"
 
 #: topwidget.cpp:132
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "Speler is Kunsmatige inteligensie"
 
 #: topwidget.cpp:136
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "Speler is Kunsmatige inteligensie"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "general settings"
+#~ msgid "General"
+#~ msgstr "Algemeen"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgctxt "start game"
+#~ msgid "Start"
+#~ msgstr "Begin"
 
 #, fuzzy
 #~| msgid "Start"

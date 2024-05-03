@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2020-11-17 19:33+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -113,36 +113,48 @@ msgid "Shield amount:"
 msgstr "Beskyttelsesmængde:"
 
 #: dialogs.cpp:169
-#, kde-format
-msgctxt "custom values"
+#, fuzzy, kde-format
+#| msgctxt "custom values"
+#| msgid "Custom"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr "Brugertilpasset"
 
-#: dialogs.cpp:185
-#, kde-format
-msgctxt "general game settings"
+#: dialogs.cpp:185 dialogs.cpp:404
+#, fuzzy, kde-format
+#| msgctxt "general game settings"
+#| msgid "General"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "Generelt"
 
-#: dialogs.cpp:186 structs.h:52
-#, kde-format
+#: dialogs.cpp:186
+#, fuzzy, kde-format
+#| msgid "Bullet"
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "Kugle"
 
 #: dialogs.cpp:187
-#, kde-format
-msgctxt "Name"
+#, fuzzy, kde-format
+#| msgctxt "Name"
+#| msgid "Mine"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "Mine"
 
 #: dialogs.cpp:188
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ship"
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr "Afsend"
 
 #: dialogs.cpp:189
-#, kde-format
-msgctxt "the star, Sol"
+#, fuzzy, kde-format
+#| msgctxt "the star, Sol"
+#| msgid "Sun"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "Sol"
 
@@ -153,29 +165,31 @@ msgid "Start"
 msgstr "Start"
 
 #: dialogs.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Powerups"
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "Startop"
 
 #: dialogs.cpp:404
-#, kde-format
-msgctxt "general settings"
-msgid "General"
-msgstr "Generelt"
-
-#: dialogs.cpp:404
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "General Settings"
+msgctxt "@title"
 msgid "General Settings"
 msgstr "Generelle indstillinger"
 
 #: dialogs.cpp:407
-#, kde-format
-msgctxt "game settings"
+#, fuzzy, kde-format
+#| msgctxt "game settings"
+#| msgid "Game"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "Spil"
 
 #: dialogs.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Game Settings"
+msgctxt "@title"
 msgid "Game Settings"
 msgstr "Spilindstillinger"
 
@@ -360,6 +374,10 @@ msgid "Default"
 msgstr "Standard"
 
 #: structs.h:52
+msgid "Bullet"
+msgstr "Kugle"
+
+#: structs.h:52
 msgid "Chaos"
 msgstr "Kaos"
 
@@ -368,62 +386,94 @@ msgid "Lack of Energy"
 msgstr "Mangel på energi"
 
 #: topwidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&New Round"
+msgctxt "@action"
 msgid "&New Round"
 msgstr "&Ny runde"
 
 #: topwidget.cpp:90
-#, kde-format
-msgctxt "start game"
+#, fuzzy, kde-format
+#| msgctxt "initial position and velocities of players"
+#| msgid "Start"
+msgctxt "@action start game"
 msgid "Start"
 msgstr "Start"
 
 #: topwidget.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Left"
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr "Spiller 1 rotér til venstre"
 
 #: topwidget.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Right"
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr "Spiller 1 rotér til højre"
 
 #: topwidget.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Accelerate"
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr "Spiller 1 accelerér"
 
 #: topwidget.cpp:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Shot"
+msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "Spiller 1 skud"
 
 #: topwidget.cpp:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Mine"
+msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "Spiller 1 mine"
 
 #: topwidget.cpp:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Left"
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr "Spiller 2 rotér til venstre"
 
 #: topwidget.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Right"
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr "Spiller 2 rotér til højre"
 
 #: topwidget.cpp:128
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Accelerate"
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr "Spiller 2 accelerér"
 
 #: topwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Shot"
+msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "Spiller 2 skud"
 
 #: topwidget.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Mine"
+msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "Spiller 2 mine"
+
+#~ msgctxt "general settings"
+#~ msgid "General"
+#~ msgstr "Generelt"
+
+#~ msgctxt "start game"
+#~ msgid "Start"
+#~ msgstr "Start"

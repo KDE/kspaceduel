@@ -1,4 +1,4 @@
-# Version: $Revision: 1661987 $
+# Version: $Revision: 1679118 $
 # translation of kspaceduel.po to Polish
 # translation of kspaceduel.po to
 # Copyright (C) 2002, 2003, 2007, 2008 Free Software Foundation, Inc.
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2020-12-25 09:01+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -119,36 +119,48 @@ msgid "Shield amount:"
 msgstr "Siła osłony:"
 
 #: dialogs.cpp:169
-#, kde-format
-msgctxt "custom values"
+#, fuzzy, kde-format
+#| msgctxt "custom values"
+#| msgid "Custom"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr "Inny"
 
-#: dialogs.cpp:185
-#, kde-format
-msgctxt "general game settings"
+#: dialogs.cpp:185 dialogs.cpp:404
+#, fuzzy, kde-format
+#| msgctxt "general game settings"
+#| msgid "General"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "Ogólne"
 
-#: dialogs.cpp:186 structs.h:52
-#, kde-format
+#: dialogs.cpp:186
+#, fuzzy, kde-format
+#| msgid "Bullet"
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "Pocisk"
 
 #: dialogs.cpp:187
-#, kde-format
-msgctxt "Name"
+#, fuzzy, kde-format
+#| msgctxt "Name"
+#| msgid "Mine"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "Mina"
 
 #: dialogs.cpp:188
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ship"
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr "Statek"
 
 #: dialogs.cpp:189
-#, kde-format
-msgctxt "the star, Sol"
+#, fuzzy, kde-format
+#| msgctxt "the star, Sol"
+#| msgid "Sun"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "Słońce"
 
@@ -159,29 +171,31 @@ msgid "Start"
 msgstr "Start"
 
 #: dialogs.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Powerups"
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "Ulepszenia"
 
 #: dialogs.cpp:404
-#, kde-format
-msgctxt "general settings"
-msgid "General"
-msgstr "Ogólne"
-
-#: dialogs.cpp:404
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "General Settings"
+msgctxt "@title"
 msgid "General Settings"
 msgstr "Ustawienia ogólne"
 
 #: dialogs.cpp:407
-#, kde-format
-msgctxt "game settings"
+#, fuzzy, kde-format
+#| msgctxt "game settings"
+#| msgid "Game"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "Gra"
 
 #: dialogs.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Game Settings"
+msgctxt "@title"
 msgid "Game Settings"
 msgstr "Ustawienia gry"
 
@@ -366,6 +380,10 @@ msgid "Default"
 msgstr "Domyślne"
 
 #: structs.h:52
+msgid "Bullet"
+msgstr "Pocisk"
+
+#: structs.h:52
 msgid "Chaos"
 msgstr "Chaos"
 
@@ -374,62 +392,94 @@ msgid "Lack of Energy"
 msgstr "Brak energii"
 
 #: topwidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&New Round"
+msgctxt "@action"
 msgid "&New Round"
 msgstr "&Nowa runda"
 
 #: topwidget.cpp:90
-#, kde-format
-msgctxt "start game"
+#, fuzzy, kde-format
+#| msgctxt "initial position and velocities of players"
+#| msgid "Start"
+msgctxt "@action start game"
 msgid "Start"
-msgstr "Rozpocznij"
+msgstr "Start"
 
 #: topwidget.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Left"
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr "Gracz 1 - obrót w lewo"
 
 #: topwidget.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Right"
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr "Gracz 1 - obrót w prawo"
 
 #: topwidget.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Accelerate"
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr "Gracz 1 - przyspieszenie"
 
 #: topwidget.cpp:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Shot"
+msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "Gracz 1 - strzał"
 
 #: topwidget.cpp:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Mine"
+msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "Gracz 1 - mina"
 
 #: topwidget.cpp:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Left"
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr "Gracz 2 - obrót w lewo"
 
 #: topwidget.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Right"
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr "Gracz 2 - obrót w prawo"
 
 #: topwidget.cpp:128
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Accelerate"
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr "Gracz 2 - przyspieszenie"
 
 #: topwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Shot"
+msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "Gracz 2 - strzał"
 
 #: topwidget.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Mine"
+msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "Gracz 2 - mina"
+
+#~ msgctxt "general settings"
+#~ msgid "General"
+#~ msgstr "Ogólne"
+
+#~ msgctxt "start game"
+#~ msgid "Start"
+#~ msgstr "Rozpocznij"

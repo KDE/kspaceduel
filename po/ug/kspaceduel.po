@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -112,36 +112,46 @@ msgid "Shield amount:"
 msgstr ""
 
 #: dialogs.cpp:169
-#, kde-format
-msgctxt "custom values"
+#, fuzzy, kde-format
+#| msgctxt "custom values"
+#| msgid "Custom"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr "ئىختىيارى"
 
-#: dialogs.cpp:185
-#, kde-format
-msgctxt "general game settings"
+#: dialogs.cpp:185 dialogs.cpp:404
+#, fuzzy, kde-format
+#| msgctxt "general game settings"
+#| msgid "General"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "ئادەتتىكى"
 
-#: dialogs.cpp:186 structs.h:52
-#, kde-format
+#: dialogs.cpp:186
+#, fuzzy, kde-format
+#| msgid "Bullet"
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "تۈر بەلگىسى"
 
 #: dialogs.cpp:187
 #, kde-format
-msgctxt "Name"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr ""
 
 #: dialogs.cpp:188
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ship"
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr "كېمە"
 
 #: dialogs.cpp:189
-#, kde-format
-msgctxt "the star, Sol"
+#, fuzzy, kde-format
+#| msgctxt "the star, Sol"
+#| msgid "Sun"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "ي"
 
@@ -153,28 +163,29 @@ msgstr "باشلاش"
 
 #: dialogs.cpp:191
 #, kde-format
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr ""
 
 #: dialogs.cpp:404
-#, kde-format
-msgctxt "general settings"
-msgid "General"
-msgstr "ئادەتتىكى"
-
-#: dialogs.cpp:404
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "General Settings"
+msgctxt "@title"
 msgid "General Settings"
 msgstr "ئادەتتىكى تەڭشەك"
 
 #: dialogs.cpp:407
-#, kde-format
-msgctxt "game settings"
+#, fuzzy, kde-format
+#| msgctxt "game settings"
+#| msgid "Game"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "ئويۇن"
 
 #: dialogs.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Game Settings"
+msgctxt "@title"
 msgid "Game Settings"
 msgstr "ئويۇن تەڭشىكى"
 
@@ -359,6 +370,10 @@ msgid "Default"
 msgstr "كۆڭۈلدىكى"
 
 #: structs.h:52
+msgid "Bullet"
+msgstr "تۈر بەلگىسى"
+
+#: structs.h:52
 msgid "Chaos"
 msgstr "مالىمانچىلىق"
 
@@ -368,61 +383,82 @@ msgstr ""
 
 #: topwidget.cpp:82
 #, kde-format
+msgctxt "@action"
 msgid "&New Round"
 msgstr ""
 
 #: topwidget.cpp:90
-#, kde-format
-msgctxt "start game"
+#, fuzzy, kde-format
+#| msgctxt "initial position and velocities of players"
+#| msgid "Start"
+msgctxt "@action start game"
 msgid "Start"
 msgstr "باشلاش"
 
 #: topwidget.cpp:99
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr ""
 
 #: topwidget.cpp:103
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr ""
 
 #: topwidget.cpp:107
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr ""
 
 #: topwidget.cpp:111
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr ""
 
 #: topwidget.cpp:115
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr ""
 
 #: topwidget.cpp:120
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr ""
 
 #: topwidget.cpp:124
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr ""
 
 #: topwidget.cpp:128
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr ""
 
 #: topwidget.cpp:132
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr ""
 
 #: topwidget.cpp:136
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr ""
+
+#~ msgctxt "general settings"
+#~ msgid "General"
+#~ msgstr "ئادەتتىكى"
+
+#~ msgctxt "start game"
+#~ msgid "Start"
+#~ msgstr "باشلاش"

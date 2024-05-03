@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2012-04-07 04:05+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -112,36 +112,48 @@ msgid "Shield amount:"
 msgstr "Қорғаныс шамасы:"
 
 #: dialogs.cpp:169
-#, kde-format
-msgctxt "custom values"
+#, fuzzy, kde-format
+#| msgctxt "custom values"
+#| msgid "Custom"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr "Өзгеше"
 
-#: dialogs.cpp:185
-#, kde-format
-msgctxt "general game settings"
+#: dialogs.cpp:185 dialogs.cpp:404
+#, fuzzy, kde-format
+#| msgctxt "general game settings"
+#| msgid "General"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "Жалпы"
 
-#: dialogs.cpp:186 structs.h:52
-#, kde-format
+#: dialogs.cpp:186
+#, fuzzy, kde-format
+#| msgid "Bullet"
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "Оқ"
 
 #: dialogs.cpp:187
-#, kde-format
-msgctxt "Name"
+#, fuzzy, kde-format
+#| msgctxt "Name"
+#| msgid "Mine"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "Мина"
 
 #: dialogs.cpp:188
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ship"
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr "Кеме"
 
 #: dialogs.cpp:189
-#, kde-format
-msgctxt "the star, Sol"
+#, fuzzy, kde-format
+#| msgctxt "the star, Sol"
+#| msgid "Sun"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "Күн"
 
@@ -152,29 +164,31 @@ msgid "Start"
 msgstr "Бастау"
 
 #: dialogs.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Powerups"
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "Көректендірулер:"
 
 #: dialogs.cpp:404
-#, kde-format
-msgctxt "general settings"
-msgid "General"
-msgstr "Жалпы"
-
-#: dialogs.cpp:404
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "General Settings"
+msgctxt "@title"
 msgid "General Settings"
 msgstr "Жалпы баптаулары"
 
 #: dialogs.cpp:407
-#, kde-format
-msgctxt "game settings"
+#, fuzzy, kde-format
+#| msgctxt "game settings"
+#| msgid "Game"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "Ойын"
 
 #: dialogs.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Game Settings"
+msgctxt "@title"
 msgid "Game Settings"
 msgstr "Ойын баптаулары"
 
@@ -360,6 +374,10 @@ msgid "Default"
 msgstr "Әдетті"
 
 #: structs.h:52
+msgid "Bullet"
+msgstr "Оқ"
+
+#: structs.h:52
 msgid "Chaos"
 msgstr "Бейберекет"
 
@@ -368,62 +386,94 @@ msgid "Lack of Energy"
 msgstr "Энергия тапшылығы"
 
 #: topwidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&New Round"
+msgctxt "@action"
 msgid "&New Round"
 msgstr "&Жаңа раунд"
 
 #: topwidget.cpp:90
-#, kde-format
-msgctxt "start game"
+#, fuzzy, kde-format
+#| msgctxt "initial position and velocities of players"
+#| msgid "Start"
+msgctxt "@action start game"
 msgid "Start"
 msgstr "Бастау"
 
 #: topwidget.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Left"
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr "1-ойыншы: солға бұрылу"
 
 #: topwidget.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Right"
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr "1-ойыншын: оңға бұрылу"
 
 #: topwidget.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Accelerate"
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr "1 ойыншын: үдеу"
 
 #: topwidget.cpp:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Shot"
+msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "1-ойыншы: ату"
 
 #: topwidget.cpp:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Mine"
+msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "1-ойыншы: мина қою"
 
 #: topwidget.cpp:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Left"
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr "2-ойыншы: солға бұрылу"
 
 #: topwidget.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Right"
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr "2-ойыншын: оңға бұрылу"
 
 #: topwidget.cpp:128
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Accelerate"
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr "2 ойыншын: үдеу"
 
 #: topwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Shot"
+msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "2-ойыншы: ату"
 
 #: topwidget.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Mine"
+msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "2-ойыншы: мина қою"
+
+#~ msgctxt "general settings"
+#~ msgid "General"
+#~ msgstr "Жалпы"
+
+#~ msgctxt "start game"
+#~ msgid "Start"
+#~ msgstr "Бастау"

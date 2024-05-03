@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2024-01-28 19:23+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -115,36 +115,48 @@ msgid "Shield amount:"
 msgstr "護盾數量:"
 
 #: dialogs.cpp:169
-#, kde-format
-msgctxt "custom values"
+#, fuzzy, kde-format
+#| msgctxt "custom values"
+#| msgid "Custom"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr "自訂"
 
-#: dialogs.cpp:185
-#, kde-format
-msgctxt "general game settings"
+#: dialogs.cpp:185 dialogs.cpp:404
+#, fuzzy, kde-format
+#| msgctxt "general game settings"
+#| msgid "General"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "一般"
 
-#: dialogs.cpp:186 structs.h:52
-#, kde-format
+#: dialogs.cpp:186
+#, fuzzy, kde-format
+#| msgid "Bullet"
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "子彈"
 
 #: dialogs.cpp:187
-#, kde-format
-msgctxt "Name"
+#, fuzzy, kde-format
+#| msgctxt "Name"
+#| msgid "Mine"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "空雷"
 
 #: dialogs.cpp:188
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ship"
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr "船艦"
 
 #: dialogs.cpp:189
-#, kde-format
-msgctxt "the star, Sol"
+#, fuzzy, kde-format
+#| msgctxt "the star, Sol"
+#| msgid "Sun"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "太陽"
 
@@ -155,29 +167,31 @@ msgid "Start"
 msgstr "開始"
 
 #: dialogs.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Powerups"
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "增強"
 
 #: dialogs.cpp:404
-#, kde-format
-msgctxt "general settings"
-msgid "General"
-msgstr "一般"
-
-#: dialogs.cpp:404
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "General Settings"
+msgctxt "@title"
 msgid "General Settings"
 msgstr "一般設定"
 
 #: dialogs.cpp:407
-#, kde-format
-msgctxt "game settings"
+#, fuzzy, kde-format
+#| msgctxt "game settings"
+#| msgid "Game"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "遊戲"
 
 #: dialogs.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Game Settings"
+msgctxt "@title"
 msgid "Game Settings"
 msgstr "遊戲設定"
 
@@ -362,6 +376,10 @@ msgid "Default"
 msgstr "預設"
 
 #: structs.h:52
+msgid "Bullet"
+msgstr "子彈"
+
+#: structs.h:52
 msgid "Chaos"
 msgstr "混亂"
 
@@ -370,62 +388,94 @@ msgid "Lack of Energy"
 msgstr "缺少能量"
 
 #: topwidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&New Round"
+msgctxt "@action"
 msgid "&New Round"
 msgstr "新比賽(&N)"
 
 #: topwidget.cpp:90
-#, kde-format
-msgctxt "start game"
+#, fuzzy, kde-format
+#| msgctxt "initial position and velocities of players"
+#| msgid "Start"
+msgctxt "@action start game"
 msgid "Start"
 msgstr "開始"
 
 #: topwidget.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Left"
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr "玩家 1 向左旋轉"
 
 #: topwidget.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Right"
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr "玩家 1 向右旋轉"
 
 #: topwidget.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Accelerate"
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr "玩家 1 加速"
 
 #: topwidget.cpp:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Shot"
+msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "玩家 1 射擊"
 
 #: topwidget.cpp:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Mine"
+msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "玩家 1 佈雷"
 
 #: topwidget.cpp:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Left"
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr "玩家 2 向左旋轉"
 
 #: topwidget.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Right"
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr "玩家 2 向右旋轉"
 
 #: topwidget.cpp:128
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Accelerate"
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr "玩家 2 加速"
 
 #: topwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Shot"
+msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "玩家 2 射擊"
 
 #: topwidget.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Mine"
+msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "玩家 2 佈雷"
+
+#~ msgctxt "general settings"
+#~ msgid "General"
+#~ msgstr "一般"
+
+#~ msgctxt "start game"
+#~ msgid "Start"
+#~ msgstr "開始"

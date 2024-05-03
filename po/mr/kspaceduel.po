@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2013-03-13 12:57+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -112,36 +112,48 @@ msgid "Shield amount:"
 msgstr ""
 
 #: dialogs.cpp:169
-#, kde-format
-msgctxt "custom values"
+#, fuzzy, kde-format
+#| msgctxt "custom values"
+#| msgid "Custom"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr "ऐच्छिक"
 
-#: dialogs.cpp:185
-#, kde-format
-msgctxt "general game settings"
+#: dialogs.cpp:185 dialogs.cpp:404
+#, fuzzy, kde-format
+#| msgctxt "general game settings"
+#| msgid "General"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "सामान्य"
 
-#: dialogs.cpp:186 structs.h:52
-#, kde-format
+#: dialogs.cpp:186
+#, fuzzy, kde-format
+#| msgid "Bullet"
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "गोळी"
 
 #: dialogs.cpp:187
-#, kde-format
-msgctxt "Name"
+#, fuzzy, kde-format
+#| msgctxt "Name"
+#| msgid "Mine"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "खाण"
 
 #: dialogs.cpp:188
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ship"
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr "जहाज"
 
 #: dialogs.cpp:189
-#, kde-format
-msgctxt "the star, Sol"
+#, fuzzy, kde-format
+#| msgctxt "the star, Sol"
+#| msgid "Sun"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "रवि"
 
@@ -152,31 +164,33 @@ msgid "Start"
 msgstr "सुरु करा"
 
 #: dialogs.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Powerups"
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "पावरअप्स"
 
 #: dialogs.cpp:404
-#, kde-format
-msgctxt "general settings"
-msgid "General"
-msgstr "सामान्य"
-
-#: dialogs.cpp:404
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "General Settings"
+msgctxt "@title"
 msgid "General Settings"
 msgstr "सामान्य संयोजना"
 
 #: dialogs.cpp:407
-#, kde-format
-msgctxt "game settings"
+#, fuzzy, kde-format
+#| msgctxt "game settings"
+#| msgid "Game"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "खेळ"
 
 #: dialogs.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "General Settings"
+msgctxt "@title"
 msgid "Game Settings"
-msgstr ""
+msgstr "सामान्य संयोजना"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
 #: general.ui:16
@@ -359,6 +373,10 @@ msgid "Default"
 msgstr "मूलभूत"
 
 #: structs.h:52
+msgid "Bullet"
+msgstr "गोळी"
+
+#: structs.h:52
 msgid "Chaos"
 msgstr ""
 
@@ -368,61 +386,82 @@ msgstr ""
 
 #: topwidget.cpp:82
 #, kde-format
+msgctxt "@action"
 msgid "&New Round"
 msgstr ""
 
 #: topwidget.cpp:90
-#, kde-format
-msgctxt "start game"
+#, fuzzy, kde-format
+#| msgctxt "initial position and velocities of players"
+#| msgid "Start"
+msgctxt "@action start game"
 msgid "Start"
 msgstr "सुरु करा"
 
 #: topwidget.cpp:99
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr ""
 
 #: topwidget.cpp:103
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr ""
 
 #: topwidget.cpp:107
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr ""
 
 #: topwidget.cpp:111
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr ""
 
 #: topwidget.cpp:115
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr ""
 
 #: topwidget.cpp:120
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr ""
 
 #: topwidget.cpp:124
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr ""
 
 #: topwidget.cpp:128
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr ""
 
 #: topwidget.cpp:132
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr ""
 
 #: topwidget.cpp:136
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr ""
+
+#~ msgctxt "general settings"
+#~ msgid "General"
+#~ msgstr "सामान्य"
+
+#~ msgctxt "start game"
+#~ msgid "Start"
+#~ msgstr "सुरु करा"

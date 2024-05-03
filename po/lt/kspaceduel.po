@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2011-08-09 23:30+0300\n"
 "Last-Translator: Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -113,36 +113,48 @@ msgid "Shield amount:"
 msgstr ""
 
 #: dialogs.cpp:169
-#, kde-format
-msgctxt "custom values"
+#, fuzzy, kde-format
+#| msgctxt "custom values"
+#| msgid "Custom"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr "Pasirinktas"
 
-#: dialogs.cpp:185
-#, kde-format
-msgctxt "general game settings"
+#: dialogs.cpp:185 dialogs.cpp:404
+#, fuzzy, kde-format
+#| msgctxt "general game settings"
+#| msgid "General"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "Bendri"
 
-#: dialogs.cpp:186 structs.h:52
-#, kde-format
+#: dialogs.cpp:186
+#, fuzzy, kde-format
+#| msgid "Bullet"
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "Kulka"
 
 #: dialogs.cpp:187
-#, kde-format
-msgctxt "Name"
+#, fuzzy, kde-format
+#| msgctxt "Name"
+#| msgid "Mine"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "Mina"
 
 #: dialogs.cpp:188
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ship"
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr "Laivas"
 
 #: dialogs.cpp:189
-#, kde-format
-msgctxt "the star, Sol"
+#, fuzzy, kde-format
+#| msgctxt "the star, Sol"
+#| msgid "Sun"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "Saulė"
 
@@ -154,28 +166,29 @@ msgstr "Pradėti"
 
 #: dialogs.cpp:191
 #, kde-format
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr ""
 
 #: dialogs.cpp:404
-#, kde-format
-msgctxt "general settings"
-msgid "General"
-msgstr "Bendi"
-
-#: dialogs.cpp:404
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "General Settings"
+msgctxt "@title"
 msgid "General Settings"
 msgstr "Bendrosios nuostatos"
 
 #: dialogs.cpp:407
-#, kde-format
-msgctxt "game settings"
+#, fuzzy, kde-format
+#| msgctxt "game settings"
+#| msgid "Game"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "Žaidimas"
 
 #: dialogs.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Game Settings"
+msgctxt "@title"
 msgid "Game Settings"
 msgstr "Žaidimo nuostatos"
 
@@ -361,6 +374,10 @@ msgid "Default"
 msgstr "Numatytas"
 
 #: structs.h:52
+msgid "Bullet"
+msgstr "Kulka"
+
+#: structs.h:52
 msgid "Chaos"
 msgstr "Chaosas"
 
@@ -369,62 +386,88 @@ msgid "Lack of Energy"
 msgstr "Energijos trūkumas"
 
 #: topwidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&New Round"
+msgctxt "@action"
 msgid "&New Round"
 msgstr "&Naujas raundas"
 
 #: topwidget.cpp:90
-#, kde-format
-msgctxt "start game"
+#, fuzzy, kde-format
+#| msgctxt "initial position and velocities of players"
+#| msgid "Start"
+msgctxt "@action start game"
 msgid "Start"
 msgstr "Pradėti"
 
 #: topwidget.cpp:99
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr ""
 
 #: topwidget.cpp:103
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr ""
 
 #: topwidget.cpp:107
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr ""
 
 #: topwidget.cpp:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player is AI"
+msgctxt "@action"
 msgid "Player 1 Shot"
-msgstr ""
+msgstr "Žaidėjas yra DI"
 
 #: topwidget.cpp:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player is AI"
+msgctxt "@action"
 msgid "Player 1 Mine"
-msgstr ""
+msgstr "Žaidėjas yra DI"
 
 #: topwidget.cpp:120
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr ""
 
 #: topwidget.cpp:124
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr ""
 
 #: topwidget.cpp:128
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr ""
 
 #: topwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player is AI"
+msgctxt "@action"
 msgid "Player 2 Shot"
-msgstr ""
+msgstr "Žaidėjas yra DI"
 
 #: topwidget.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player is AI"
+msgctxt "@action"
 msgid "Player 2 Mine"
-msgstr ""
+msgstr "Žaidėjas yra DI"
+
+#~ msgctxt "general settings"
+#~ msgid "General"
+#~ msgstr "Bendi"
+
+#~ msgctxt "start game"
+#~ msgid "Start"
+#~ msgstr "Pradėti"

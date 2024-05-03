@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2023-12-17 16:43+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -113,39 +113,45 @@ msgstr "கேடய அளவு"
 #: dialogs.cpp:169
 #, fuzzy, kde-format
 #| msgid "Custom"
-msgctxt "custom values"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr "தனிபயன்"
 
-#: dialogs.cpp:185
+#: dialogs.cpp:185 dialogs.cpp:404
 #, fuzzy, kde-format
 #| msgid "General"
-msgctxt "general game settings"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "பொது"
 
-#: dialogs.cpp:186 structs.h:52
-#, kde-format
+#: dialogs.cpp:186
+#, fuzzy, kde-format
+#| msgid "Bullet"
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "குண்டு"
 
 #: dialogs.cpp:187
-#, kde-format
-msgctxt "Name"
+#, fuzzy, kde-format
+#| msgctxt "Name"
+#| msgid "Mine"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr ""
 "பெயர்\n"
 "என்னுடைய"
 
 #: dialogs.cpp:188
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ship"
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr "கப்பல்"
 
 #: dialogs.cpp:189
 #, fuzzy, kde-format
 #| msgid "Sun"
-msgctxt "the star, Sol"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "சூரியன்"
 
@@ -157,30 +163,30 @@ msgid "Start"
 msgstr "துவங்கு"
 
 #: dialogs.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Powerups"
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "சக்தி கூடுதல்"
 
 #: dialogs.cpp:404
-#, kde-format
-msgctxt "general settings"
-msgid "General"
-msgstr "பொதுவானவை"
-
-#: dialogs.cpp:404
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "General Settings"
+msgctxt "@title"
 msgid "General Settings"
 msgstr "பொது அமைப்புகள்"
 
 #: dialogs.cpp:407
 #, fuzzy, kde-format
 #| msgid "Game"
-msgctxt "game settings"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "விளையாட்டு"
 
 #: dialogs.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Game Settings"
+msgctxt "@title"
 msgid "Game Settings"
 msgstr "விளையாட்டின் அமைப்பு"
 
@@ -366,6 +372,10 @@ msgid "Default"
 msgstr ""
 
 #: structs.h:52
+msgid "Bullet"
+msgstr "குண்டு"
+
+#: structs.h:52
 msgid "Chaos"
 msgstr "குழப்பமான"
 
@@ -376,66 +386,98 @@ msgid "Lack of Energy"
 msgstr "குறைவான சக்தி"
 
 #: topwidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&New Round"
+msgctxt "@action"
 msgid "&New Round"
 msgstr "&புது சுற்று"
 
 #: topwidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Start"
-msgctxt "start game"
+msgctxt "@action start game"
 msgid "Start"
 msgstr "துவங்கு"
 
 #: topwidget.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Left"
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr "முதல் ஆட்டக்காரரை இடப்பக்கம் சுழற்று\" "
 
 #: topwidget.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Right"
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr "முதல் ஆட்டக்காரரை வலப்பக்கம் சுழற்று\" "
 
 #: topwidget.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Accelerate"
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr "முதலாவது விளையாட்டாளரின் வேகத்தைக் கூட்டு"
 
 #: topwidget.cpp:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Shot"
+msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "முதல் ஆட்டக்காரரின் விளையாட்டு"
 
 #: topwidget.cpp:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Mine"
+msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "முதலாவது விளையாட்டாளரின் கன்னி வெடி"
 
 #: topwidget.cpp:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Left"
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr "இரண்டாவது விளையாட்டாளரை இடப்பக்கம் சுழற்று"
 
 #: topwidget.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Right"
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr "இரண்டாவது விளையாட்டாளரை வலப்பக்கம் சுழற்று"
 
 #: topwidget.cpp:128
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Accelerate"
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr "இரண்டாவது விளையாட்டாளரின் வேகத்தைக் கூட்டு"
 
 #: topwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Shot"
+msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "இரண்டாவது ஆட்டக்காரரின் விளையாட்டு"
 
 #: topwidget.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Mine"
+msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "இரண்டாவது விளையாட்டாளரின் கன்னி வெடி"
+
+#~ msgctxt "general settings"
+#~ msgid "General"
+#~ msgstr "பொதுவானவை"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgctxt "start game"
+#~ msgid "Start"
+#~ msgstr "துவங்கு"
 
 #, fuzzy
 #~| msgid "Start"

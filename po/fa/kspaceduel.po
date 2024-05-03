@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2007-07-07 16:04+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -114,35 +114,44 @@ msgstr "مقدار محافظ:"
 
 #: dialogs.cpp:169
 #, fuzzy, kde-format
-msgctxt "custom values"
+#| msgid "Custom"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr "سفارشی"
 
-#: dialogs.cpp:185
+#: dialogs.cpp:185 dialogs.cpp:404
 #, fuzzy, kde-format
-msgctxt "general game settings"
+#| msgid "General"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "عمومی"
 
-#: dialogs.cpp:186 structs.h:52
-#, kde-format
+#: dialogs.cpp:186
+#, fuzzy, kde-format
+#| msgid "Bullet"
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "گلوله"
 
 #: dialogs.cpp:187
-#, kde-format
-msgctxt "Name"
+#, fuzzy, kde-format
+#| msgctxt "Name"
+#| msgid "Mine"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "مین"
 
 #: dialogs.cpp:188
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ship"
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr "سفینه فضایی"
 
 #: dialogs.cpp:189
 #, fuzzy, kde-format
-msgctxt "the star, Sol"
+#| msgid "Sun"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "خورشید"
 
@@ -154,28 +163,28 @@ msgstr "آغاز"
 
 #: dialogs.cpp:191
 #, kde-format
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr ""
 
 #: dialogs.cpp:404
 #, fuzzy, kde-format
-msgctxt "general settings"
-msgid "General"
-msgstr "عمومی"
-
-#: dialogs.cpp:404
-#, kde-format
+#| msgid "General Settings"
+msgctxt "@title"
 msgid "General Settings"
 msgstr "تنظیمات عمومی"
 
 #: dialogs.cpp:407
 #, fuzzy, kde-format
-msgctxt "game settings"
+#| msgid "Game"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "بازی"
 
 #: dialogs.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Game Settings"
+msgctxt "@title"
 msgid "Game Settings"
 msgstr "تنظیمات بازی"
 
@@ -361,6 +370,10 @@ msgid "Default"
 msgstr "پیش‌فرض"
 
 #: structs.h:52
+msgid "Bullet"
+msgstr "گلوله"
+
+#: structs.h:52
 msgid "Chaos"
 msgstr "هرج و مرج"
 
@@ -371,77 +384,115 @@ msgid "Lack of Energy"
 msgstr "فقدان انرژی"
 
 #: topwidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&New Round"
+msgctxt "@action"
 msgid "&New Round"
 msgstr "دور &جدید‌"
 
 #: topwidget.cpp:90
 #, fuzzy, kde-format
-msgctxt "start game"
+#| msgid "Start"
+msgctxt "@action start game"
 msgid "Start"
 msgstr "آغاز"
 
 #: topwidget.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Left"
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr "چرخش بازیکن ۱ به چپ"
 
 #: topwidget.cpp:103
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Rotate Right"
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr "چرخش بازیکن ۱ به راست"
 
 #: topwidget.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Accelerate"
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr "سرعت گرفتن بازیکن ۱"
 
 #: topwidget.cpp:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Shot"
+msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "شلیک بازیکن ۱"
 
 #: topwidget.cpp:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 1 Mine"
+msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "مین بازیکن ۱"
 
 #: topwidget.cpp:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Left"
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr "چرخش بازیکن ۲ به چپ"
 
 #: topwidget.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Rotate Right"
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr "چرخش بازیکن ۲ به راست"
 
 #: topwidget.cpp:128
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Accelerate"
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr "سرعت گرفتن بازیکن ۲"
 
 #: topwidget.cpp:132
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Shot"
+msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "شلیک بازیکن ۲"
 
 #: topwidget.cpp:136
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Player 2 Mine"
+msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "مین بازیکن ۲"
 
+#, fuzzy
+#~ msgctxt "custom values"
 #~ msgid "Custom"
 #~ msgstr "سفارشی"
 
+#, fuzzy
+#~ msgctxt "general game settings"
 #~ msgid "General"
 #~ msgstr "عمومی"
 
+#, fuzzy
+#~ msgctxt "the star, Sol"
 #~ msgid "Sun"
 #~ msgstr "خورشید"
 
-#~ msgid "Start"
-#~ msgstr "آغاز"
+#, fuzzy
+#~ msgctxt "general settings"
+#~ msgid "General"
+#~ msgstr "عمومی"
 
+#, fuzzy
+#~ msgctxt "game settings"
 #~ msgid "Game"
 #~ msgstr "بازی"
+
+#, fuzzy
+#~ msgctxt "start game"
+#~ msgid "Start"
+#~ msgstr "آغاز"

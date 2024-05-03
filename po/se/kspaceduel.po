@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <i18n-sme@lister.ping.uio."
 "no>\n"
@@ -115,35 +115,37 @@ msgstr ""
 
 #: dialogs.cpp:169
 #, kde-format
-msgctxt "custom values"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr ""
 
-#: dialogs.cpp:185
+#: dialogs.cpp:185 dialogs.cpp:404
 #, kde-format
-msgctxt "general game settings"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr ""
 
-#: dialogs.cpp:186 structs.h:52
+#: dialogs.cpp:186
 #, kde-format
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr ""
 
 #: dialogs.cpp:187
 #, kde-format
-msgctxt "Name"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr ""
 
 #: dialogs.cpp:188
 #, kde-format
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr ""
 
 #: dialogs.cpp:189
 #, kde-format
-msgctxt "the star, Sol"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr ""
 
@@ -155,28 +157,25 @@ msgstr ""
 
 #: dialogs.cpp:191
 #, kde-format
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr ""
 
 #: dialogs.cpp:404
 #, kde-format
-msgctxt "general settings"
-msgid "General"
-msgstr ""
-
-#: dialogs.cpp:404
-#, kde-format
+msgctxt "@title"
 msgid "General Settings"
 msgstr ""
 
 #: dialogs.cpp:407
 #, kde-format
-msgctxt "game settings"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr ""
 
 #: dialogs.cpp:407
 #, kde-format
+msgctxt "@title"
 msgid "Game Settings"
 msgstr ""
 
@@ -361,6 +360,10 @@ msgid "Default"
 msgstr ""
 
 #: structs.h:52
+msgid "Bullet"
+msgstr ""
+
+#: structs.h:52
 msgid "Chaos"
 msgstr ""
 
@@ -370,61 +373,72 @@ msgstr ""
 
 #: topwidget.cpp:82
 #, kde-format
+msgctxt "@action"
 msgid "&New Round"
 msgstr ""
 
 #: topwidget.cpp:90
 #, kde-format
-msgctxt "start game"
+msgctxt "@action start game"
 msgid "Start"
 msgstr ""
 
 #: topwidget.cpp:99
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr ""
 
 #: topwidget.cpp:103
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr ""
 
 #: topwidget.cpp:107
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr ""
 
 #: topwidget.cpp:111
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr ""
 
 #: topwidget.cpp:115
 #, kde-format
+msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr ""
 
 #: topwidget.cpp:120
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr ""
 
 #: topwidget.cpp:124
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr ""
 
 #: topwidget.cpp:128
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr ""
 
 #: topwidget.cpp:132
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr ""
 
 #: topwidget.cpp:136
 #, kde-format
+msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr ""

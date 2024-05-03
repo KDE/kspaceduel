@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2002-09-03 11:10+0200\n"
 "Last-Translator: Thelma Lungcuzo <thelma@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -116,37 +116,43 @@ msgstr "Izinga Lokukhusela:"
 #: dialogs.cpp:169
 #, fuzzy, kde-format
 #| msgid "Custom"
-msgctxt "custom values"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr "Isiko"
 
-#: dialogs.cpp:185
+#: dialogs.cpp:185 dialogs.cpp:404
 #, fuzzy, kde-format
 #| msgid "General"
-msgctxt "general game settings"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "Ngokubanzi"
 
-#: dialogs.cpp:186 structs.h:52
-#, kde-format
+#: dialogs.cpp:186
+#, fuzzy, kde-format
+#| msgid "Bullet"
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "Imbumbulu"
 
 #: dialogs.cpp:187
-#, kde-format
-msgctxt "Name"
+#, fuzzy, kde-format
+#| msgctxt "Name"
+#| msgid "Mine"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "Okwam"
 
 #: dialogs.cpp:188
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ship"
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr "Ingqanawe"
 
 #: dialogs.cpp:189
 #, fuzzy, kde-format
 #| msgid "Sun"
-msgctxt "the star, Sol"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "Ilanga"
 
@@ -158,30 +164,27 @@ msgid "Start"
 msgstr "Qala"
 
 #: dialogs.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Powerups"
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "Amandla"
 
 #: dialogs.cpp:404
 #, fuzzy, kde-format
-#| msgid "General"
-msgctxt "general settings"
-msgid "General"
-msgstr "Ngokubanzi"
-
-#: dialogs.cpp:404
-#, fuzzy, kde-format
+msgctxt "@title"
 msgid "General Settings"
 msgstr "Ngokubanzi"
 
 #: dialogs.cpp:407
 #, fuzzy, kde-format
-msgctxt "game settings"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "&GUmdlalo"
 
 #: dialogs.cpp:407
 #, fuzzy, kde-format
+msgctxt "@title"
 msgid "Game Settings"
 msgstr "Ucwangiso Lomdlalo"
 
@@ -367,6 +370,10 @@ msgid "Default"
 msgstr ""
 
 #: structs.h:52
+msgid "Bullet"
+msgstr "Imbumbulu"
+
+#: structs.h:52
 msgid "Chaos"
 msgstr "Chaos"
 
@@ -377,66 +384,90 @@ msgid "Lack of Energy"
 msgstr "ungabina mandla"
 
 #: topwidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&New Round"
+msgctxt "@action"
 msgid "&New Round"
 msgstr "Umjikelo &N Omtsha"
 
 #: topwidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Start"
-msgctxt "start game"
+msgctxt "@action start game"
 msgid "Start"
 msgstr "Qala"
 
 #: topwidget.cpp:99
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr "Jikelezisa Ekhohlo"
 
 #: topwidget.cpp:103
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr "Jikelezisa Ekunene"
 
 #: topwidget.cpp:107
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr "Nyusa izinga"
 
 #: topwidget.cpp:111
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "Umdlali u Al"
 
 #: topwidget.cpp:115
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "Umdlali u Al"
 
 #: topwidget.cpp:120
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr "Jikelezisa Ekhohlo"
 
 #: topwidget.cpp:124
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr "Jikelezisa Ekunene"
 
 #: topwidget.cpp:128
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr "Nyusa izinga"
 
 #: topwidget.cpp:132
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "Umdlali u Al"
 
 #: topwidget.cpp:136
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "Umdlali u Al"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "general settings"
+#~ msgid "General"
+#~ msgstr "Ngokubanzi"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgctxt "start game"
+#~ msgid "Start"
+#~ msgstr "Qala"
 
 #, fuzzy
 #~| msgid "Start"

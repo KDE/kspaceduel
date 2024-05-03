@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:45+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2007-06-25 11:11+0300\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -116,37 +116,41 @@ msgstr "Абарона:"
 #: dialogs.cpp:169
 #, fuzzy, kde-format
 #| msgid "Custom"
-msgctxt "custom values"
+msgctxt "@item custom values"
 msgid "Custom"
 msgstr "Асаблівы"
 
-#: dialogs.cpp:185
+#: dialogs.cpp:185 dialogs.cpp:404
 #, fuzzy, kde-format
 #| msgid "General"
-msgctxt "general game settings"
+msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "Агульныя"
 
-#: dialogs.cpp:186 structs.h:52
-#, kde-format
+#: dialogs.cpp:186
+#, fuzzy, kde-format
+#| msgid "Bullet"
+msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "Снарады"
 
 #: dialogs.cpp:187
 #, kde-format
-msgctxt "Name"
+msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr ""
 
 #: dialogs.cpp:188
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ship"
+msgctxt "@title:tab"
 msgid "Ship"
 msgstr "Карабль"
 
 #: dialogs.cpp:189
 #, fuzzy, kde-format
 #| msgid "Sun"
-msgctxt "the star, Sol"
+msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "Сонца"
 
@@ -158,31 +162,30 @@ msgid "Start"
 msgstr "Запусціць"
 
 #: dialogs.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Powerups"
+msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "Запраўкі"
 
 #: dialogs.cpp:404
 #, fuzzy, kde-format
-#| msgid "General"
-msgctxt "general settings"
-msgid "General"
-msgstr "Агульныя"
-
-#: dialogs.cpp:404
-#, kde-format
+#| msgid "General Settings"
+msgctxt "@title"
 msgid "General Settings"
 msgstr "Агульныя настаўленні"
 
 #: dialogs.cpp:407
 #, fuzzy, kde-format
 #| msgid "Game"
-msgctxt "game settings"
+msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "Гульня"
 
 #: dialogs.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Game Settings"
+msgctxt "@title"
 msgid "Game Settings"
 msgstr "Настаўленні гульні"
 
@@ -368,6 +371,10 @@ msgid "Default"
 msgstr "Прадвызначаны"
 
 #: structs.h:52
+msgid "Bullet"
+msgstr "Снарады"
+
+#: structs.h:52
 msgid "Chaos"
 msgstr "Хаос"
 
@@ -379,65 +386,88 @@ msgstr "Недахоп энергіі"
 
 #: topwidget.cpp:82
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "&New Round"
 msgstr "Новы раўнд"
 
 #: topwidget.cpp:90
 #, fuzzy, kde-format
 #| msgid "Start"
-msgctxt "start game"
+msgctxt "@action start game"
 msgid "Start"
 msgstr "Запусціць"
 
 #: topwidget.cpp:99
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr "Паварот налева гульца 1"
 
 #: topwidget.cpp:103
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr "Паварот направа гульца 1"
 
 #: topwidget.cpp:107
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr "Паскарэнне гульца 1"
 
 #: topwidget.cpp:111
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "Стрэл гульца 1"
 
 #: topwidget.cpp:115
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "Паставіць міну гульцом 1"
 
 #: topwidget.cpp:120
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr "Паварот налева гульца 2"
 
 #: topwidget.cpp:124
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr "Паварот направа гульца 2"
 
 #: topwidget.cpp:128
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr "Паскарэнне гульца 2"
 
 #: topwidget.cpp:132
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "Стрэл гульца 2"
 
 #: topwidget.cpp:136
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "Паставіць міну гульцом 2"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "general settings"
+#~ msgid "General"
+#~ msgstr "Агульныя"
+
+#, fuzzy
+#~| msgid "Start"
+#~ msgctxt "start game"
+#~ msgid "Start"
+#~ msgstr "Запусціць"
 
 #, fuzzy
 #~ msgid "&Restart"
