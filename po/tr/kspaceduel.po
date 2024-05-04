@@ -5,13 +5,13 @@
 # Görkem Çetin <gorkem@kde.org>, 2002.
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002-2003.
 # obsoleteman <tulliana@gmail.com>, 2008.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2023-06-11 22:17+0300\n"
+"PO-Revision-Date: 2024-05-04 01:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -45,7 +45,7 @@ msgstr "Enerji gereksinimi:"
 
 #: dialogs.cpp:64 dialogs.cpp:68
 msgid "Max number:"
-msgstr "Azami sayı:"
+msgstr "En yüksek sayı:"
 
 #: dialogs.cpp:65 dialogs.cpp:68
 msgid "Damage:"
@@ -116,47 +116,37 @@ msgid "Shield amount:"
 msgstr "Kalkan miktarı:"
 
 #: dialogs.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "custom values"
-#| msgid "Custom"
+#, kde-format
 msgctxt "@item custom values"
 msgid "Custom"
 msgstr "Özel"
 
 #: dialogs.cpp:185 dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgctxt "general game settings"
-#| msgid "General"
+#, kde-format
 msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "Genel"
 
 #: dialogs.cpp:186
-#, fuzzy, kde-format
-#| msgid "Bullet"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "Mermi"
 
 #: dialogs.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "Name"
-#| msgid "Mine"
+#, kde-format
 msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "Mayın"
 
 #: dialogs.cpp:188
-#, fuzzy, kde-format
-#| msgid "Ship"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Ship"
 msgstr "Gemi"
 
 #: dialogs.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "the star, Sol"
-#| msgid "Sun"
+#, kde-format
 msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "Güneş"
@@ -168,30 +158,25 @@ msgid "Start"
 msgstr "Başlat"
 
 #: dialogs.cpp:191
-#, fuzzy, kde-format
-#| msgid "Powerups"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "Ateşleme"
 
 #: dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgid "General Settings"
+#, kde-format
 msgctxt "@title"
 msgid "General Settings"
 msgstr "Genel Ayarlar"
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgctxt "game settings"
-#| msgid "Game"
+#, kde-format
 msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "Oyun"
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgid "Game Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Game Settings"
 msgstr "Oyun Ayarları"
@@ -244,21 +229,21 @@ msgstr "Oyuncu Yapay Zeka"
 #: general.ui:190 general.ui:281
 #, kde-format
 msgid "Difficulty:"
-msgstr "Zorluk :"
+msgstr "Zorluk:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
 #: general.ui:204 general.ui:295
 #, kde-format
 msgid "Trainee"
-msgstr "Aday"
+msgstr "Stajer"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
 #: general.ui:209 general.ui:300
 #, kde-format
 msgid "Normal"
-msgstr "normal"
+msgstr "Normal"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
@@ -305,7 +290,7 @@ msgstr "Uzay Oyunu"
 #: main.cpp:28
 #, kde-format
 msgid "(c) 1998-2001, Andreas Zehender"
-msgstr "(c) 1998-2001, Andreas Zehender"
+msgstr "(c) 1998–2001, Andreas Zehender"
 
 #: main.cpp:31
 #, kde-format
@@ -335,27 +320,27 @@ msgstr " duraklatma "
 #: mainview.cpp:510
 #, kde-format
 msgid "Press %1 to start"
-msgstr "Başlamak için %1 basın"
+msgstr "Başlamak için %1 düğmesine basın"
 
 #: mainview.cpp:559
 #, kde-format
 msgid "draw round"
-msgstr "yeniden turla"
+msgstr "raund berabere"
 
 #: mainview.cpp:562
 #, kde-format
 msgid "blue player won the round"
-msgstr "mavi oyuncu turu kazandı"
+msgstr "mavi oyuncu raundu kazandı"
 
 #: mainview.cpp:570
 #, kde-format
 msgid "red player won the round"
-msgstr "kırmızı oyuncu turu kazandı"
+msgstr "kırmızı oyuncu raundu kazandı"
 
 #: mainview.cpp:578
 #, kde-format
 msgid "Press %1 for new round"
-msgstr "Yeni tur için %1 basın"
+msgstr "Yeni raund için %1 düğmesine basın"
 
 #: playerinfo.cpp:39 playerinfo.cpp:72
 #, kde-format
@@ -389,86 +374,73 @@ msgid "Lack of Energy"
 msgstr "Enerji Darlığı"
 
 #: topwidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "&New Round"
+#, kde-format
 msgctxt "@action"
 msgid "&New Round"
-msgstr "&Yeni Tur"
+msgstr "&Yeni Raund"
 
 #: topwidget.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "initial position and velocities of players"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action start game"
 msgid "Start"
 msgstr "Başlat"
 
 #: topwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Left"
-msgstr "1. Oyuncu Sola Çevirme"
+msgstr "1. Oyuncu Sola Çevir"
 
 #: topwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Right"
-msgstr "1. Oyuncu Sağa Çevirme"
+msgstr "1. Oyuncu Sağa Çevir"
 
 #: topwidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Player 1 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Accelerate"
-msgstr "1. Oyuncu Hızlandırma"
+msgstr "1. Oyuncu İvmelendir"
 
 #: topwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Player 1 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "1. Oyuncu Ateş"
 
 #: topwidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Player 1 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "1. Oyuncu Mayın"
 
 #: topwidget.cpp:120
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Left"
-msgstr "2. Oyuncu Sola Çevirme"
+msgstr "2. Oyuncu Sola Çevir"
 
 #: topwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Right"
-msgstr "2. Oyuncu Sağa Çevirme"
+msgstr "2. Oyuncu Sağa Çevir"
 
 #: topwidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Player 2 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Accelerate"
-msgstr "2. Oyuncu Hızlandırma"
+msgstr "2. Oyuncu İvmelendir"
 
 #: topwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Player 2 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "2. Oyuncu Ateş"
 
 #: topwidget.cpp:136
-#, fuzzy, kde-format
-#| msgid "Player 2 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "2. Oyuncu Mayın"
