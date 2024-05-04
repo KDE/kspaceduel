@@ -362,8 +362,8 @@ void MyMainView::resume()
 {
    waitForStart=false;
    timerID=startTimer(Options::refreshTime());
-   Q_EMIT setStatusText(QLatin1String( "" ),IDS_PAUSE);
-   Q_EMIT setStatusText(QLatin1String( "" ),IDS_MAIN);
+   Q_EMIT setStatusText(QString(), IDS_PAUSE);
+   Q_EMIT setStatusText(QString(), IDS_MAIN);
 }
 
 void MyMainView::start( )
@@ -376,8 +376,8 @@ void MyMainView::start( )
    {
       waitForStart = false;
       timerID=startTimer(Options::refreshTime());
-      Q_EMIT setStatusText(QLatin1String( "" ),IDS_PAUSE);
-      Q_EMIT setStatusText(QLatin1String( "" ),IDS_MAIN);
+      Q_EMIT setStatusText(QString(), IDS_PAUSE);
+      Q_EMIT setStatusText(QString(), IDS_MAIN);
       pauseAction->setEnabled( true );
       pauseAction->setChecked( false );
    }
@@ -510,7 +510,7 @@ void MyMainView::newRound()
    QString str = i18n("Press %1 to start",
                   actionCollection->action(QStringLiteral("game_start"))->shortcut().toString(QKeySequence::NativeText));
    Q_EMIT setStatusText(str,IDS_MAIN);
-   Q_EMIT setStatusText( QLatin1String( "" ), IDS_PAUSE );
+   Q_EMIT setStatusText( QString(), IDS_PAUSE );
    stop( );
 }
 
