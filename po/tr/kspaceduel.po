@@ -5,13 +5,13 @@
 # Görkem Çetin <gorkem@kde.org>, 2002.
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002-2003.
 # obsoleteman <tulliana@gmail.com>, 2008.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:45+0000\n"
-"PO-Revision-Date: 2023-06-11 22:17+0300\n"
+"PO-Revision-Date: 2024-05-04 01:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -45,7 +45,7 @@ msgstr "Enerji gereksinimi:"
 
 #: dialogs.cpp:64 dialogs.cpp:68
 msgid "Max number:"
-msgstr "Azami sayı:"
+msgstr "En yüksek sayı:"
 
 #: dialogs.cpp:65 dialogs.cpp:68
 msgid "Damage:"
@@ -230,21 +230,21 @@ msgstr "Oyuncu Yapay Zeka"
 #: general.ui:190 general.ui:281
 #, kde-format
 msgid "Difficulty:"
-msgstr "Zorluk :"
+msgstr "Zorluk:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
 #: general.ui:204 general.ui:295
 #, kde-format
 msgid "Trainee"
-msgstr "Aday"
+msgstr "Stajer"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
 #: general.ui:209 general.ui:300
 #, kde-format
 msgid "Normal"
-msgstr "normal"
+msgstr "Normal"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
@@ -291,7 +291,7 @@ msgstr "Uzay Oyunu"
 #: main.cpp:28
 #, kde-format
 msgid "(c) 1998-2001, Andreas Zehender"
-msgstr "(c) 1998-2001, Andreas Zehender"
+msgstr "(c) 1998–2001, Andreas Zehender"
 
 #: main.cpp:31
 #, kde-format
@@ -321,27 +321,27 @@ msgstr " duraklatma "
 #: mainview.cpp:510
 #, kde-format
 msgid "Press %1 to start"
-msgstr "Başlamak için %1 basın"
+msgstr "Başlamak için %1 düğmesine basın"
 
 #: mainview.cpp:559
 #, kde-format
 msgid "draw round"
-msgstr "yeniden turla"
+msgstr "raund berabere"
 
 #: mainview.cpp:562
 #, kde-format
 msgid "blue player won the round"
-msgstr "mavi oyuncu turu kazandı"
+msgstr "mavi oyuncu raundu kazandı"
 
 #: mainview.cpp:570
 #, kde-format
 msgid "red player won the round"
-msgstr "kırmızı oyuncu turu kazandı"
+msgstr "kırmızı oyuncu raundu kazandı"
 
 #: mainview.cpp:578
 #, kde-format
 msgid "Press %1 for new round"
-msgstr "Yeni tur için %1 basın"
+msgstr "Yeni raund için %1 düğmesine basın"
 
 #: playerinfo.cpp:39 playerinfo.cpp:72
 #, kde-format
