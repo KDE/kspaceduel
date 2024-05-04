@@ -397,8 +397,8 @@ void ConfigSetup::sliderChanged(int val)
 
 }
 
-SettingsDialog::SettingsDialog(SConfig *customConfig, QWidget *parent, const char *name)
-  : KConfigDialog( parent,QLatin1String(  name ), Options::self())
+SettingsDialog::SettingsDialog(SConfig *customConfig, QWidget *parent, const QString &name)
+  : KConfigDialog( parent, name, Options::self())
 {
   General *general = new General();
   addPage(general, i18nc("@title:tab general settings","General"), QStringLiteral( "games-config-options" ), i18nc("@title", "General Settings"));

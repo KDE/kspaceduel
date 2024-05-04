@@ -151,8 +151,8 @@ void MyTopLevelWidget::initStatusBar( )
    }
 
    m_statusBarLabel[IDS_PAUSE]->setText(i18n(" paused "));
-   m_statusBarLabel[IDS_MAIN]->setText(QLatin1String());
-   m_statusBarLabel[2]->setText(QLatin1String());
+   m_statusBarLabel[IDS_MAIN]->setText(QString());
+   m_statusBarLabel[2]->setText(QString());
 }
 
 void MyTopLevelWidget::start()

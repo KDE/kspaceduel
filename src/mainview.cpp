@@ -1044,7 +1044,7 @@ void MyMainView::gameSetup()
   if (KConfigDialog::showDialog( QStringLiteral( "settings" )))
     return;
 
-  SettingsDialog *settings=new SettingsDialog(&customConfig,this,"settings");
+  auto *settings = new SettingsDialog(&customConfig, this, QStringLiteral("settings"));
   connect(settings, &SettingsDialog::settingsUpdated, this, &MyMainView::closeSettings);
   settings->show();
 }

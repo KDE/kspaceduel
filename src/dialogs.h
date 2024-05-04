@@ -84,7 +84,7 @@ class SettingsDialog : public KConfigDialog
 {
         Q_OBJECT
 public:
-        explicit SettingsDialog(SConfig *customConfig, QWidget *parent = nullptr, const char *name = nullptr);
+        explicit SettingsDialog(SConfig *customConfig, QWidget *parent = nullptr, const QString &name = QString());
         ~SettingsDialog() override;
 
 Q_SIGNALS:
