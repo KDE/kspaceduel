@@ -112,50 +112,40 @@ msgid "Shield amount:"
 msgstr "Síla štítů:"
 
 #: dialogs.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "custom values"
-#| msgid "Custom"
+#, kde-format
 msgctxt "@item custom values"
 msgid "Custom"
-msgstr "Vlastní"
+msgstr ""
 
 #: dialogs.cpp:185 dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgctxt "general game settings"
-#| msgid "General"
+#, kde-format
 msgctxt "@title:tab general settings"
 msgid "General"
-msgstr "Obecné"
+msgstr "Všeobecné"
 
 #: dialogs.cpp:186
-#, fuzzy, kde-format
-#| msgid "Bullet"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Bullet"
-msgstr "Kulka"
+msgstr ""
 
 #: dialogs.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "Name"
-#| msgid "Mine"
+#, kde-format
 msgctxt "@title:tab Name"
 msgid "Mine"
-msgstr "Mina"
+msgstr ""
 
 #: dialogs.cpp:188
-#, fuzzy, kde-format
-#| msgid "Ship"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Ship"
-msgstr "Loď"
+msgstr ""
 
 #: dialogs.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "the star, Sol"
-#| msgid "Sun"
+#, kde-format
 msgctxt "@title:tab the star, Sol"
 msgid "Sun"
-msgstr "Slunce"
+msgstr ""
 
 #: dialogs.cpp:190
 #, kde-format
@@ -164,33 +154,28 @@ msgid "Start"
 msgstr "Start"
 
 #: dialogs.cpp:191
-#, fuzzy, kde-format
-#| msgid "Powerups"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Powerups"
-msgstr "Vylepšení"
+msgstr ""
 
 #: dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgid "General Settings"
+#, kde-format
 msgctxt "@title"
 msgid "General Settings"
-msgstr "Obecné nastavení"
+msgstr ""
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgctxt "game settings"
-#| msgid "Game"
+#, kde-format
 msgctxt "@title:tab game settings"
 msgid "Game"
-msgstr "Hra"
+msgstr ""
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgid "Game Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Game Settings"
-msgstr "Nastavení hry"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
 #: general.ui:16
@@ -385,94 +370,73 @@ msgid "Lack of Energy"
 msgstr "Nedostatek energie"
 
 #: topwidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "&New Round"
+#, kde-format
 msgctxt "@action"
 msgid "&New Round"
-msgstr "&Nové kolo"
+msgstr ""
 
 #: topwidget.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "initial position and velocities of players"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action start game"
 msgid "Start"
-msgstr "Start"
+msgstr ""
 
 #: topwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Left"
-msgstr "Rotovat vlevo (hráč 1)"
+msgstr ""
 
 #: topwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Right"
-msgstr "Rotovat vpravo (hráč 1)"
+msgstr ""
 
 #: topwidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Player 1 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Accelerate"
-msgstr "Zrychlení (hráč 1)"
+msgstr ""
 
 #: topwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Player 1 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Shot"
-msgstr "Střelba (hráč 1)"
+msgstr ""
 
 #: topwidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Player 1 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Mine"
-msgstr "Mina (hráč 1)"
+msgstr ""
 
 #: topwidget.cpp:120
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Left"
-msgstr "Rotovat vlevo (hráč 2)"
+msgstr ""
 
 #: topwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Right"
-msgstr "Rotovat vpravo (hráč 2)"
+msgstr ""
 
 #: topwidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Player 2 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Accelerate"
-msgstr "Zrychlení (hráč 2)"
+msgstr ""
 
 #: topwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Player 2 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Shot"
-msgstr "Střelba (hráč 2)"
+msgstr ""
 
 #: topwidget.cpp:136
-#, fuzzy, kde-format
-#| msgid "Player 2 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Mine"
-msgstr "Mina (hráč 2)"
-
-#~ msgctxt "general settings"
-#~ msgid "General"
-#~ msgstr "Obecné"
-
-#~ msgctxt "start game"
-#~ msgid "Start"
-#~ msgstr "Spustit"
+msgstr ""

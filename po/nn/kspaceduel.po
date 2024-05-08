@@ -470,11 +470,3 @@ msgstr "Spelar 2 skyt"
 msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "Spelar 2 mine"
-
-#~ msgctxt "general settings"
-#~ msgid "General"
-#~ msgstr "Generelt"
-
-#~ msgctxt "start game"
-#~ msgid "Start"
-#~ msgstr "Start"

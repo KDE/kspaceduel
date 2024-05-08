@@ -480,13 +480,3 @@ msgstr "Spiller 2 skudd"
 msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "Spiller 2 mine"
-
-# unreviewed-context
-#~ msgctxt "general settings"
-#~ msgid "General"
-#~ msgstr "Generell"
-
-# unreviewed-context
-#~ msgctxt "start game"
-#~ msgid "Start"
-#~ msgstr "Start"
