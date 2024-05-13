@@ -8,7 +8,7 @@
 # Cedric Pasteur <cedric.pasteur@free.fr>, 2003.
 # Angot Julien <angot.julien@gmail.com>, 2007, 2008.
 # Martin Bednar <serafean@gmail.com>, 2012.
-# Xavier Besnard <xavier.besnard@kde.org>, 2012, 2020, 2021.
+# SPDX-FileCopyrightText: 2012, 2020, 2021, 2024 Xavier Besnard <xavier.besnard@kde.org>
 # First-Translator : 2000-02-06
 # Update : 2000-02-06
 #
@@ -17,9 +17,9 @@ msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2021-01-13 12:27+0100\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2024-05-12 15:12+0200\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -125,47 +125,37 @@ msgid "Shield amount:"
 msgstr "Quantité de bouclier :"
 
 #: dialogs.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "custom values"
-#| msgid "Custom"
+#, kde-format
 msgctxt "@item custom values"
 msgid "Custom"
-msgstr "Personnalisées"
+msgstr "Personnalisé"
 
 #: dialogs.cpp:185 dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgctxt "general game settings"
-#| msgid "General"
+#, kde-format
 msgctxt "@title:tab general settings"
 msgid "General"
-msgstr "Générale"
+msgstr "Général"
 
 #: dialogs.cpp:186
-#, fuzzy, kde-format
-#| msgid "Bullet"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "Balle"
 
 #: dialogs.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "Name"
-#| msgid "Mine"
+#, kde-format
 msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "Mine"
 
 #: dialogs.cpp:188
-#, fuzzy, kde-format
-#| msgid "Ship"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Ship"
 msgstr "Vaisseau"
 
 #: dialogs.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "the star, Sol"
-#| msgid "Sun"
+#, kde-format
 msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "Soleil"
@@ -177,30 +167,25 @@ msgid "Start"
 msgstr "Début"
 
 #: dialogs.cpp:191
-#, fuzzy, kde-format
-#| msgid "Powerups"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "Bonus"
 
 #: dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgid "General Settings"
+#, kde-format
 msgctxt "@title"
 msgid "General Settings"
 msgstr "Configuration générale"
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgctxt "game settings"
-#| msgid "Game"
+#, kde-format
 msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "Jeu"
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgid "Game Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Game Settings"
 msgstr "Configuration du jeu"
@@ -398,89 +383,76 @@ msgid "Lack of Energy"
 msgstr "Manque d'énergie"
 
 #: topwidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "&New Round"
+#, kde-format
 msgctxt "@action"
 msgid "&New Round"
 msgstr "&Nouvelle manche"
 
 #: topwidget.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "initial position and velocities of players"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action start game"
 msgid "Start"
 msgstr "Début"
 
 #: topwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Left"
-msgstr "Le joueur 1 tourne vers la gauche"
+msgstr "Rotation à gauche du joueur 1"
 
 #: topwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Right"
-msgstr "Le joueur 1 tourne vers la droite"
+msgstr "Rotation à droite du joueur 1"
 
 #: topwidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Player 1 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Accelerate"
-msgstr "Le joueur 1 accélère"
+msgstr "Accélération du joueur 1"
 
 #: topwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Player 1 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Shot"
-msgstr "Le joueur 1 tire"
+msgstr "Tir du joueur 1"
 
 #: topwidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Player 1 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Mine"
-msgstr "Le joueur 1 pose une mine"
+msgstr "Mine du joueur 1"
 
 #: topwidget.cpp:120
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Left"
-msgstr "Le joueur 2 tourne vers la gauche"
+msgstr "Rotation à gauche du joueur 2"
 
 #: topwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Right"
-msgstr "Le joueur 2 tourne vers la droite"
+msgstr "Rotation à droite du joueur 2"
 
 #: topwidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Player 2 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Accelerate"
-msgstr "Le joueur 2 accélère"
+msgstr "Accélération du joueur 2"
 
 #: topwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Player 2 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Shot"
-msgstr "Le joueur 2 tire"
+msgstr "Tir du joueur 2"
 
 #: topwidget.cpp:136
-#, fuzzy, kde-format
-#| msgid "Player 2 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Mine"
-msgstr "Le joueur 2 pose une mine"
+msgstr "Mine du joueur 2"
 
 #~ msgctxt "general settings"
 #~ msgid "General"
