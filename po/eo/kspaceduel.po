@@ -2,15 +2,15 @@
 # Copyright (C) 2007 Free Software Foundation, Inc.
 # Wolfram Diestel <wolfram@steloj.de>, 2002.
 # Pierre-Marie Pédrot <pedrotpmx@wanadoo.fr>, 2007.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 01:45+0000\n"
-"PO-Revision-Date: 2023-01-06 22:00+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-05-04 07:47+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "Wolfram Diestel, Oliver Kellogg"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "wolfram@steloj.de, okellogg@users.sourceforge.net"
+msgstr "wolfram@steloj.de, olivermkellogg@gmail.com"
 
 #: dialogs.cpp:63
 msgid "Game speed:"
@@ -123,7 +123,7 @@ msgstr "Propra"
 #, kde-format
 msgctxt "general game settings"
 msgid "General"
-msgstr "Ĝenerale"
+msgstr "Ĝenerala"
 
 #: dialogs.cpp:186 structs.h:52
 #, kde-format
@@ -156,18 +156,18 @@ msgstr "Komenco"
 #: dialogs.cpp:191
 #, kde-format
 msgid "Powerups"
-msgstr "Reŝargoj"
+msgstr "Reŝarĝoj"
 
 #: dialogs.cpp:404
 #, kde-format
 msgctxt "general settings"
 msgid "General"
-msgstr "Ĝenerale"
+msgstr "Ĝenerala"
 
 #: dialogs.cpp:404
 #, kde-format
 msgid "General Settings"
-msgstr "Ĝenerala agordo"
+msgstr "Ĝenerala Agordo"
 
 #: dialogs.cpp:407
 #, kde-format
@@ -178,7 +178,7 @@ msgstr "Ludo"
 #: dialogs.cpp:407
 #, kde-format
 msgid "Game Settings"
-msgstr "Luda agordo"
+msgstr "Luda Agordo"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
 #: general.ui:16
@@ -371,7 +371,7 @@ msgstr "Manko de Energio"
 #: topwidget.cpp:82
 #, kde-format
 msgid "&New Round"
-msgstr "&Nova vico"
+msgstr "&Nova Vico"
 
 #: topwidget.cpp:90
 #, kde-format
