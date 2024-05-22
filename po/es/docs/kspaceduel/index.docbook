@@ -95,6 +95,20 @@
 > <contrib
 >Traductora</contrib
 ></othercredit
+> <othercredit role="translator"
+><firstname
+>Eloy</firstname
+> <surname
+>Cuadra</surname
+> <affiliation
+><address
+><email
+>ecuadra@eloihr.net</email
+></address
+></affiliation
+> <contrib
+>Corrección de la traducción</contrib
+></othercredit
 > 
 </authorgroup>
 
@@ -177,7 +191,7 @@
 ><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
  <!--Short game description starts here. 3-4 sentences (paragraphs)-->
     <para
->La idea de &kspaceduel; es sencilla, pero adictiva. Cada uno de los dos posibles jugadores controla un satélite orbitando alrededor del sol. A media que el juego avanza los jugadores deben eliminar el satélite del oponente. Tan pronto como se destruye el satélite del contrario, el jugador que queda gana la partida.</para>
+>La idea de &kspaceduel; es sencilla, aunque adictiva. Cada uno de los dos posibles jugadores controla un satélite que orbita alrededor del sol. A media que el juego avanza, los jugadores deben eliminar el satélite del oponente. En cuanto se destruya el satélite del contrario, el jugador que queda gana la partida.</para>
 </chapter>
 
 <chapter id="howto"
@@ -189,27 +203,27 @@
 ><title
 >Objetivo:</title
 ><para
->Destruir los satélites del oponente mientras mantiene los suyos intactos.</para
+>Destruir el satélite del oponente mientras mantienes el tuyo intacto.</para
 ></note
 ><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
     <para
->&kspaceduel; carga directamente en el modo de juego. No obstante la acción no se inicia hasta que un jugador realiza el primer movimiento.</para>
+>&kspaceduel; carga directamente en el modo de juego. No obstante, la acción no se inicia hasta que un jugador realiza el primer movimiento.</para>
 <note
 ><para
 >Si la inteligencia artificial controla el satélite del oponente, la acción del juego no se inicia hasta que el jugador humano no haga el primer movimiento.</para
 ></note>
 <para
->En &kspaceduel; controla la rotación, aceleración y armamento. Su satélite está en constante rotación alrededor del sol por la gravedad. Tiene que ajustar la rotación y aceleración de su satélite para que permanezca en su ruta.</para>
+>En &kspaceduel; controlas la rotación, la aceleración y el armamento. Tu satélite está en constante rotación alrededor del sol por efecto de la gravedad. Tienes que ajustar la rotación y la aceleración de tu satélite para que permanezca en su ruta.</para>
 <note
 ><para
->Aproximarse demasiado cerca del sol provoca que el satélite explote.</para
+>Si te aproximas demasiado cerca del sol, tu satélite explotará.</para
 ></note>
 <para
->A la vez tiene que prestar atención a los movimientos de su oponente y utilizar sus armas, consistente en bolas y minas, para destruir al satélite enemigo.</para>
+>Al mismo tiempo, tienes que prestar atención a los movimientos de tu oponente y usar tus armas, que consisten en bolas y minas, para destruir al satélite enemigo.</para>
 <note
 ><para
->Sus propias armas pueden dañar su satélite de la misma forma que las del enemigo.</para
+>Tus propias armas pueden dañar tu satélite de la misma forma que las del enemigo.</para
 ></note>
 </chapter>
 
@@ -247,15 +261,15 @@
 ></listitem>
             <listitem
 ><para
->El cuadro superior de las estadísticas de los jugadores representa los «puntos por aciertos» de la nave.</para
+>El cuadro superior de estadísticas de los jugadores representa los «puntos por aciertos» de la nave.</para
 ></listitem>
             <listitem
 ><para
->El cuadro central de las estadísticas de los jugadores representa la potencia de la batería.</para
+>El cuadro central de estadísticas de los jugadores representa la potencia de la batería.</para
 ></listitem>
             <listitem
 ><para
->El cuadro inferior de las estadísticas de los jugadores representa el número de victorias.</para
+>El cuadro inferior de estadísticas de los jugadores representa el número de victorias.</para
 ></listitem>
             <listitem
 ><para
@@ -267,7 +281,7 @@
         <title
 >Atajos de teclado predeterminados</title>
         <para
->Las siguientes tablas muestran los atajos de teclado predeterminados para &kspaceduel;.</para>
+>Las siguientes tablas muestran los atajos de teclado predeterminados de &kspaceduel;.</para>
         <informaltable frame="all">
             <tgroup cols="3">
             <colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
@@ -337,7 +351,7 @@
         </informaltable>
         <note
 ><para
->Para cambiar estas teclas, consulte la sección titulada <link linkend="options-keys"
+>Para cambiar estas teclas, consulta la sección <link linkend="options-keys"
 >Configuración del juego</link
 >.</para
 ></note>
@@ -355,11 +369,11 @@
 ></listitem>
                 <listitem
 ><para
->La nave puede girar, acelerar, disparar y dejar minas.</para
+>Las naves pueden girar, acelerar, disparar y soltar minas.</para
 ></listitem>
                 <listitem
 ><para
->Cada nave tiene una cantidad de energía que se necesita para la rotación, aceleración, disparo y sembrado de minas.</para
+>Cada nave tiene una cantidad limitada de energía, que se necesita para rotar, acelerar, disparar y sembrar minas.</para
 ></listitem>
                 <listitem
 ><para
@@ -372,7 +386,7 @@
             </itemizedlist>
             <note
 ><para
->Una nave obtiene más energía cerca del sol y pierde energía cerca del borde. Obtiene la máxima cantidad de energía si el sol brilla directamente en los paneles y una cantidad inferior e incluso puede perderla si el sol brilla en ángulo con la cara del panel.</para
+>Una nave obtiene más energía cerca del sol y pierde energía cerca del borde. Obtiene la máxima cantidad de energía si el sol brilla directamente en los paneles solares, y una cantidad inferior (e incluso puede perderla) si el sol brilla en ángulo con los paneles o en la otra cara de los mismos.</para
 ></note>
         </sect2>
         <sect2 id="bullets-and-mines">
@@ -385,11 +399,11 @@
 ></listitem>
                 <listitem
 ><para
->Las minas tienen una cantidad de energía para permanecer en la misma posición. Cuando la energía se gasta, la mina cae al sol.</para
+>Las minas tienen una cantidad de energía para permanecer en la misma posición. Cuando la energía se gasta, la mina colisiona con el sol y se desintegra.</para
 ></listitem>
                 <listitem
 ><para
->Las minas más cercanas al sol necesitan más energía que aquellas más alejadas.</para
+>Las minas más cercanas al sol necesitan más energía que las más alejadas.</para
 ></listitem>
                 <listitem
 ><para
@@ -397,7 +411,7 @@
 ></listitem>
                 <listitem
 ><para
->De forma predeterminada una nave tiene 5 balas y 3 minas.</para
+>De forma predeterminada, cada nave tiene 5 balas y 3 minas.</para
 ></listitem>
             </itemizedlist>
         </sect2>
@@ -407,7 +421,7 @@
             <itemizedlist>
                 <listitem
 ><para
->Las colisiones con sus propias balas, con balas del enemigo o con minas reduce los puntos por aciertos de una nave.</para
+>Las colisiones con tus propias balas, con balas del enemigo o con minas reducen los puntos por aciertos de una nave.</para
 ></listitem>
                 <listitem
 ><para
@@ -425,12 +439,12 @@
         </sect2>
         <sect2 id="powerups">
           <title
->Incrementos de potencia</title>
+>Aumentos de potencia</title>
 
           <para
->De vez en cuando en el campo de juego aparecen incrementos de potencia.</para>
+>De vez en cuando en el campo de juego aparecen aumentos de potencia.</para>
           <para
->Existen cuatro incrementos de potencia diferentes:</para>
+>Existen cuatro aumentos de potencia diferentes:</para>
 
           <variablelist>
             <varlistentry
@@ -491,7 +505,7 @@
 > (esfera roja o azul)</term>
                   <listitem
 ><para
->Aumentan los puntos por aciertos de los jugadores.</para
+>Aumentan los puntos por aciertos del jugador.</para
 ></listitem>
                 </varlistentry>
               </variablelist>
@@ -504,7 +518,7 @@
 
 <chapter id="interface"
 ><title
->Opciones de menú</title>
+>Opciones del menú</title>
 
 <variablelist>
   <varlistentry>
@@ -525,8 +539,8 @@
     <listitem
 ><para
 ><action
->Inicia una nueva partida</action
-> de «&kspaceduel;».</para
+>Empieza una nueva partida</action
+> de &kspaceduel;.</para
 ></listitem>
   </varlistentry>
 
@@ -571,7 +585,7 @@
     <listitem
 ><para
 ><action
->Para y vuelve a iniciar el juego.</action
+>Detiene y reanuda el juego.</action
 ></para
 ></listitem>
   </varlistentry>
@@ -603,7 +617,7 @@
     <term
 ><menuchoice
 ><guimenu
-> Preferencias</guimenu
+>Preferencias</guimenu
 > <guimenuitem
 >Configurar &kspaceduel;...</guimenuitem
 ></menuchoice
@@ -612,7 +626,7 @@
 ><para
 ><action
 >Abre un diálogo de configuración</action
-> que le permitirá definir algunas preferencias del juego, consulte el capítulo <link linkend="configuration"
+> que permitirá definir algunas preferencias del juego. Consulta el capítulo <link linkend="configuration"
 >Configuración del juego</link
 > para obtener más información.</para
 ></listitem>
@@ -620,15 +634,15 @@
 </variablelist>
 
 <para
->Además &kspaceduel; tiene las opciones de menú <guimenu
+>Además, &kspaceduel; tiene las opciones de los menús <guimenu
 >Preferencias</guimenu
 > y <guimenu
 >Ayuda</guimenu
-> comunes de &kde;. Para obtener más información, consulte las secciones sobre el <ulink url="help:/fundamentals/menus.html#menus-settings"
+> comunes de &kde;. Para obtener más información, consulta las secciones sobre el <ulink url="help:/fundamentals/menus.html#menus-settings"
 >Menú «Preferencias»</ulink
-> y <ulink url="help:/fundamentals/menus.html#menus-help"
+> y el <ulink url="help:/fundamentals/menus.html#menus-help"
 >Menú «Ayuda» </ulink
-> de «Aspectos básicos de &kde;». </para>
+> de los «Aspectos básicos de &kde;». </para>
 
 </chapter>
 
@@ -644,17 +658,17 @@
 <qandaentry>
  <question
 ><para
->Deseo cambiar el aspecto del juego ¿puedo? </para
+>Quiero cambiar el aspecto del juego. ¿Puedo hacerlo? </para
 ></question>
  <answer
 ><para
->No. En este momento &kspaceduel; solo dispone de un tema.</para
+>No. En la actualidad, &kspaceduel; solo dispone de un tema.</para
 ></answer>
 </qandaentry>
 <qandaentry>
  <question
 ><para
->He cometido un error ¿puedo deshacerlo? </para
+>He cometido un error. ¿Puedo deshacerlo? </para
 ></question>
  <answer
 ><para
@@ -664,19 +678,19 @@
 <qandaentry>
  <question
 ><para
->No imagino qué es lo que puedo hacer ¿hay pistas? </para
+>No sé por dónde puedo seguir. ¿Hay pistas? </para
 ></question>
  <answer
 ><para
->No. &kspaceduel; no tiene la funcionalidad «Pistas». No obstante, si lee con cuidado la sección <link linkend="rules_and_tips"
+>No. &kspaceduel; no tiene la funcionalidad «Pistas». No obstante, si lees con cuidado la sección <link linkend="rules_and_tips"
 >Reglas del juego, estrategias y consejos</link
-> no debería tener este problema.</para
+>, no deberías tener este problema.</para
 ></answer>
 </qandaentry>
 <qandaentry>
  <question
 ><para
->Debo salir del juego, pero todavía no he terminado ¿puedo guardar mi progreso?</para
+>Debo abandonar la partida, pero todavía no he terminado. ¿Puedo guardar el estado actual?</para
 ></question>
  <answer
 ><para
@@ -697,8 +711,8 @@
     <title
 >Teclas del juego</title>
      <para
->&kspaceduel; tiene configuradas de forma predeterminada un conjunto de teclas para controlar el juego. Para obtener una lista de las teclas predeterminadas consulte la sección <link linkend="keys"
-> Atajos de teclado predeterminados</link
+>&kspaceduel; tiene configuradas de forma predeterminada un conjunto de teclas para controlar el juego. Para obtener una lista de las teclas predeterminadas, consulta la sección <link linkend="keys"
+>Atajos de teclado predeterminados</link
 >.</para>
      <para
 >Las teclas se pueden configurar con la opción del menú <menuchoice
@@ -709,79 +723,79 @@
 ></menuchoice
 >.</para>
      <para
->Esto hará que se muestre un diálogo que le permitirá configurar los atajos de teclado, incluidos los que se usan para dirigir las naves a través del espacio, para disparar balas y para dejar minas.</para>
+>Esto hará que se muestre un diálogo que permitirá configurar los atajos de teclado, incluidos los que se usan para dirigir las naves a través del espacio, para disparar balas y para soltar minas.</para>
      <para
->Como puede ver cada jugador (rojo y azul) tiene 5 pulsaciones de tecla correspondientes a girar a la izquierda, girar a la derecha, acelerar, disparar y minas.</para>
+>Como puedes ver, cada jugador (rojo y azul) tiene 5 teclas que sirven para girar a la izquierda, girar a la derecha, acelerar, disparar y soltar minas.</para>
      <para
->Cuando haya finalizado de configurar sus teclas, pulse el botón <guibutton
+>Cuando hayas terminado de configurar las teclas, pulsa el botón <guibutton
 >Aceptar</guibutton
 > para aplicar los cambios.</para>
      <para
->Si quiere restaurar las teclas predeterminadas, simplemente pulse en el botón <guibutton
->Predeterminado</guibutton
->. Para hacer estos cambios permanentes, pulse <guibutton
+>Si quieres restaurar las teclas predeterminadas, pulsa el botón <guibutton
+>Predeterminadas</guibutton
+>. Para hacer estos cambios permanentes, pulsa <guibutton
 >Aceptar</guibutton
 >.</para>
      <para
->Si quiere abandonar los cambios hechos, y volver a los seleccionados anteriormente, pulse <guibutton
+>Si quieres abandonar los cambios que has hecho y volver a las teclas anteriores, pulsa <guibutton
 >Cancelar</guibutton
-> y los cambios se perderán.</para>
+> para que los cambios se pierdan.</para>
   </sect1>
 
   <sect1 id="options-configurations">
     <title
 >Configuración del juego</title>
     <para
->Todas las preferencias de &kspaceduel; son configurables.</para>
+>Todos los ajustes de juego de &kspaceduel; se pueden configurar.</para>
     <para
->Si quiere cambiar la configuración del juego, use la opción del menú <menuchoice
+>Si quieres cambiar la configuración del juego, usa la opción del menú <menuchoice
 ><guimenu
 >Preferencias</guimenu
 > <guimenuitem
->Configurar &kspaceduel;»...</guimenuitem
+>Configurar &kspaceduel;...</guimenuitem
 ></menuchoice
 >.</para>
     <para
->Esto mostrará un cuadro de diálogo con dos páginas, etiquedas <guilabel
+>Esto mostrará un diálogo con dos páginas, con los nombres <guilabel
 >General</guilabel
 > y <guilabel
 >Juego</guilabel
 >. La primera página es bastante sencilla; la segunda tiene siete etiquetas en la parte superior.</para>
     <para
->Las configuraciones están reunidas en diferentes grupos. Podrá seleccionar algunas configuraciones predefinidas.</para>
+>Los ajustes se agrupan en diferentes configuraciones. Podrás seleccionar algunas configuraciones predefinidas.</para>
     <para
->Si selecciona la configuración <guilabel
+>Si seleccionas la configuración <guilabel
 >personalizada</guilabel
->, puede definir todas las configuraciones por sí mismo.</para>
+>, puedes definir todos los ajustes por ti mismo.</para>
     <note
 ><para
->Si no ha seleccionado <guilabel
+>Si no has seleccionado <guilabel
 >Personalizar</guilabel
->, no podrá hacer ningún cambio en estas opciones.</para
+>, no podrás hacer ningún cambio en estas opciones.</para
 ></note>
     <tip
 ><para
->Si ha encontrado una configuración interesante, mande un correo al autor del juego. Puede ser implementada en una futura versión (envíe la parte [Game] en el archivo <filename
+>Si has encontrado una configuración interesante, envía un mensaje de correo al autor del juego. Es posible que se implemente en una futura versión (envía la parte [Game] del archivo <filename
 >~/.config/kspaceduelrc</filename
 >).</para
 ></tip>
     <para
->Cuando haya terminado de cambiar las opciones, pulse en el botón <guibutton
+>Cuando hayas terminado de cambiar las opciones, pulsa el botón <guibutton
 >Aceptar</guibutton
 > para aplicar los cambios.</para>
     <para
->Si quiere restaurar las opciones predeterminadas, pulse el botón <guibutton
+>Si quieres restaurar las opciones predeterminadas, pulsa el botón <guibutton
 >Predeterminado</guibutton
->. Para hacer estos cambios permanentes pulse <guibutton
+>. Para hacer estos cambios permanentes, pulsa <guibutton
 >Aceptar</guibutton
 >.</para>
     <para
->Si quiere abandonar los cambios hechos, y volver a las opciones anteriores, pulse <guibutton
+>Si quieres abandonar los cambios hechos y volver a las opciones anteriores, pulsa <guibutton
 >Cancelar</guibutton
-> y perderá los cambios.</para>
+> y perderás los cambios.</para>
 
     <para
->Las opciones son:</para>
+>Lis ajustes son:</para>
 
     <sect2 id="general">
     <title
@@ -794,7 +808,7 @@
 ></term>
         <listitem
 ><para
->Esta sección contiene dos controles deslizantes le permitirán definir los puntos por aciertos para cada uno de los dos jugadores, puede disminuir los puntos de los aciertos para uno de los jugadores, dando al otro ventaja.</para
+>Esta sección contiene dos controles deslizantes permiten definir los puntos por aciertos para cada uno de los dos jugadores. Puedes disminuir los puntos de los aciertos para uno de los jugadores, dando al otro ventaja.</para
 ></listitem>
       </varlistentry>
       <varlistentry>
@@ -804,7 +818,7 @@
 ></term>
          <listitem
 ><para
->Es el tiempo de refresco entre dos pantallas en milisegundos. Todas las otras configuraciones son independientes del tiempo de refresco.</para
+>Es el tiempo de refresco entre dos pantallas en milisegundos. Los demás ajustes son independientes del tiempo de refresco.</para
 ></listitem>
       </varlistentry>
       <varlistentry>
@@ -814,7 +828,7 @@
 ></term>
         <listitem
 ><para
->En esta sección puede definir si el jugador rojo va a ser controlado a través de IA, así como seleccionar el nivel de IA para este jugador. Puede experimentar con diferentes niveles para encontrar una que le guste.</para
+>En esta sección puedes definir si el jugador rojo va a ser controlado por una IA, así como seleccionar el nivel de IA para dicho jugador. Puedes experimentar con diferentes niveles para encontrar una que te guste.</para
 ></listitem>
       </varlistentry>
       <varlistentry>
@@ -837,7 +851,7 @@
 >La página Juego</title>
 
     <para
->Aquí puede seleccionar un conjunto de ajustes personalizado en una lista desplegable. Posteriormente podrá usar las pestañas para personalizar estos ajustes un poco más.</para>
+>Aquí puedes seleccionar un conjunto de ajustes personalizado en una lista desplegable. Posteriormente podrás usar las pestañas para personalizar estos ajustes un poco más.</para>
 
     <variablelist>
       <varlistentry>
@@ -850,7 +864,7 @@
             <varlistentry>
               <term
 ><guilabel
->Velocidad del juego:</guilabel
+>Velocidad de juego:</guilabel
 ></term>
               <listitem
 ><para
@@ -956,7 +970,7 @@
 ></term>
               <listitem
 ><para
->Cantidad de energía necesaria para dejar una mina.</para
+>Cantidad de energía necesaria para soltar una mina.</para
 ></listitem>
             </varlistentry>
             <varlistentry>
@@ -966,7 +980,7 @@
 ></term>
               <listitem
 ><para
->Tiempo en que una mina está inactiva.</para
+>Tiempo que una mina está inactiva.</para
 ></listitem>
             </varlistentry>
             <varlistentry>
@@ -976,7 +990,7 @@
 ></term>
               <listitem
 ><para
->El número de puntos de acierto de daño que se producen al estallar una mina.</para
+>El número de puntos de acierto de daño que se obtienen cuando una nave choca con una mina.</para
 ></listitem>
             </varlistentry>
             <varlistentry>
@@ -1037,7 +1051,7 @@
 ></term>
               <listitem
 ><para
->Velocidad a la que rotarán las naves.</para
+>Velocidad con la que rota una nave.</para
 ></listitem>
             </varlistentry>
             <varlistentry>
@@ -1053,7 +1067,7 @@
             <varlistentry>
               <term
 ><guilabel
->Daños del impacto:</guilabel
+>Daños de impacto:</guilabel
 ></term>
               <listitem
 ><para
@@ -1078,7 +1092,7 @@
 ></term>
               <listitem
 ><para
->Es la fuerza del sol. Mientras más alto sea su valor, más rápidamente se recargarán las naves.</para
+>Es la fuerza del sol. Cuanto más alto sea su valor, más rápidamente se recargarán las naves.</para
 ></listitem>
             </varlistentry>
             <varlistentry>
@@ -1088,7 +1102,7 @@
 ></term>
               <listitem
 ><para
->Es la fuerza de la gravedad que empuja hacia el sol.</para
+>Es la fuerza del tirón gravitatorio del sol.</para
 ></listitem>
             </varlistentry>
           </variablelist>
@@ -1133,7 +1147,7 @@
       <varlistentry id="powerup-options">
         <term
 >La pestaña <guilabel
->Incrementos de potencia</guilabel
+>Aumentos de potencia</guilabel
 ></term>
         <listitem>
           <variablelist>
@@ -1144,7 +1158,7 @@
 ></term>
               <listitem
 ><para
->Tiempo máximo transcurrido entre la aparición de dos incrementos de potencia.</para
+>Tiempo máximo transcurrido entre la aparición de dos aumentos de potencia.</para
 ></listitem>
             </varlistentry>
             <varlistentry>
@@ -1154,7 +1168,7 @@
 ></term>
               <listitem
 ><para
->Tiempo máximo de vida de un incremento de potencia.</para
+>Tiempo máximo de vida de un aumento de potencia.</para
 ></listitem>
             </varlistentry>
             <varlistentry>
@@ -1164,7 +1178,7 @@
 ></term>
               <listitem
 ><para
->Cantidad de energía que conseguirá un jugador con un incremento de potencia de energía.</para
+>Cantidad de energía que conseguirá un jugador con un aumento de potencia de energía.</para
 ></listitem>
             </varlistentry>
             <varlistentry>
@@ -1174,7 +1188,7 @@
 ></term>
               <listitem
 ><para
->Cantidad de puntos de acierto que un jugador consigue con un incremento de potencia del escudo.</para
+>Cantidad de puntos de acierto que un jugador consigue con un aumento de potencia del escudo.</para
 ></listitem>
             </varlistentry>
           </variablelist>
@@ -1203,14 +1217,18 @@
 <!-- !!!do not change ANYTHING after this line!!!! -->
 
 <para
->Traducido por Rocío Gallego <email
+>Documentación traducida por Rocío Gallego <email
 >traducciones@rociogallego.com</email
 >, Rafael Osuna <email
 >rosuna@wol.es</email
 > , Santiago Fernández <email
 >santi@kde-es.org</email
-> y Kira J. Fernańdez <email
+> y Kira J. Fernández <email
 >kirajfdez@gmail.com</email
+>.</para
+><para
+>Corregida por Eloy Cuadra <email
+>ecuadra@eloihr.net</email
 >.</para
 > &underFDL; &underGPL; </chapter>
 
