@@ -1,7 +1,7 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kspaceduel.po 1679402 2024-05-07 01:10:25Z scripty $
+# $Id: kspaceduel.po 1681222 2024-05-30 19:06:17Z mkkdr $
 #
 # SPDX-FileCopyrightText: 2022, 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
@@ -442,11 +442,3 @@ msgstr "Играч 2 стрелба"
 msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "Играч 2 миниране"
-
-#~ msgctxt "general settings"
-#~ msgid "General"
-#~ msgstr "Общи"
-
-#~ msgctxt "start game"
-#~ msgid "Start"
-#~ msgstr "Начало"

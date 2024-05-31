@@ -1,12 +1,12 @@
-# Version: $Revision: 1681059 $
+# Version: $Revision: 1681191 $
 # translation of kspaceduel.po to Polish
 # translation of kspaceduel.po to
 # Copyright (C) 2002, 2003, 2007, 2008 Free Software Foundation, Inc.
-#
 # Bartosz Kosiorek<Gang65@poczta.onet.pl>, 2002.
 # Michał Rudolf <mrudolf@kdewebdev.org>, 2002.
 # Michal Rudolf <mrudolf@kdewebdev.org>, 2002, 2003, 2007, 2008.
 # Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2014, 2020.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"

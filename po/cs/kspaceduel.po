@@ -1,21 +1,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2017.
+# SPDX-FileCopyrightText: 2024 Vit Pelcak <vpelcak@suse.cz>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2017-09-12 11:45+0100\n"
-"Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
+"PO-Revision-Date: 2024-05-30 10:40+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -115,7 +116,7 @@ msgstr "Síla štítů:"
 #, kde-format
 msgctxt "@item custom values"
 msgid "Custom"
-msgstr ""
+msgstr "Vlastní"
 
 #: dialogs.cpp:185 dialogs.cpp:404
 #, kde-format
@@ -127,25 +128,25 @@ msgstr "Všeobecné"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Bullet"
-msgstr ""
+msgstr "Kulka"
 
 #: dialogs.cpp:187
 #, kde-format
 msgctxt "@title:tab Name"
 msgid "Mine"
-msgstr ""
+msgstr "Mina"
 
 #: dialogs.cpp:188
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ship"
-msgstr ""
+msgstr "Loď"
 
 #: dialogs.cpp:189
 #, kde-format
 msgctxt "@title:tab the star, Sol"
 msgid "Sun"
-msgstr ""
+msgstr "Slunce"
 
 #: dialogs.cpp:190
 #, kde-format
@@ -157,25 +158,25 @@ msgstr "Start"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Powerups"
-msgstr ""
+msgstr "Vylepšení"
 
 #: dialogs.cpp:404
 #, kde-format
 msgctxt "@title"
 msgid "General Settings"
-msgstr ""
+msgstr "Obecné nastavení"
 
 #: dialogs.cpp:407
 #, kde-format
 msgctxt "@title:tab game settings"
 msgid "Game"
-msgstr ""
+msgstr "Hra"
 
 #: dialogs.cpp:407
 #, kde-format
 msgctxt "@title"
 msgid "Game Settings"
-msgstr ""
+msgstr "Nastavení hry"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
 #: general.ui:16
@@ -373,70 +374,70 @@ msgstr "Nedostatek energie"
 #, kde-format
 msgctxt "@action"
 msgid "&New Round"
-msgstr ""
+msgstr "&Nové kolo"
 
 #: topwidget.cpp:90
 #, kde-format
 msgctxt "@action start game"
 msgid "Start"
-msgstr ""
+msgstr "Spustit"
 
 #: topwidget.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Left"
-msgstr ""
+msgstr "Rotovat vlevo (hráč 1)"
 
 #: topwidget.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Right"
-msgstr ""
+msgstr "Rotovat vpravo (hráč 1)"
 
 #: topwidget.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Player 1 Accelerate"
-msgstr ""
+msgstr "Zrychlení (hráč 1)"
 
 #: topwidget.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Player 1 Shot"
-msgstr ""
+msgstr "Střelba (hráč 1)"
 
 #: topwidget.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Player 1 Mine"
-msgstr ""
+msgstr "Mina (hráč 1)"
 
 #: topwidget.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Left"
-msgstr ""
+msgstr "Rotovat vlevo (hráč 2)"
 
 #: topwidget.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Right"
-msgstr ""
+msgstr "Rotovat vpravo (hráč 2)"
 
 #: topwidget.cpp:128
 #, kde-format
 msgctxt "@action"
 msgid "Player 2 Accelerate"
-msgstr ""
+msgstr "Zrychlení (hráč 2)"
 
 #: topwidget.cpp:132
 #, kde-format
 msgctxt "@action"
 msgid "Player 2 Shot"
-msgstr ""
+msgstr "Střelba (hráč 2)"
 
 #: topwidget.cpp:136
 #, kde-format
 msgctxt "@action"
 msgid "Player 2 Mine"
-msgstr ""
+msgstr "Mina (hráč 2)"
