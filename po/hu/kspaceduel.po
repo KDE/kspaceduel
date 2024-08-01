@@ -1,21 +1,21 @@
 # Copyright (C) 2021 Free Software Foundation, Inc.
 #
 # Tamas Szanto <tszanto@interware.hu>, 1999.
-# Kristof Kiszel <kiszel.kristof@gmail.com>, 2021.
+# SPDX-FileCopyrightText: 2021, 2024 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2021-09-30 13:34+0200\n"
-"Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
+"PO-Revision-Date: 2024-07-31 22:17+0200\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.03.80\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -25,7 +25,7 @@ msgstr "Kiszel Kristóf,Szántó Tamás"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kiszel.kristof@gmail.com,tszanto@interware.hu"
+msgstr "ulysses@fsf.hu,tszanto@interware.hu"
 
 #: dialogs.cpp:63
 msgid "Game speed:"
@@ -112,47 +112,37 @@ msgid "Shield amount:"
 msgstr "A pajzs értéke:"
 
 #: dialogs.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "custom values"
-#| msgid "Custom"
+#, kde-format
 msgctxt "@item custom values"
 msgid "Custom"
-msgstr "Egyedi"
+msgstr "Egyéni"
 
 #: dialogs.cpp:185 dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgctxt "general game settings"
-#| msgid "General"
+#, kde-format
 msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "Általános"
 
 #: dialogs.cpp:186
-#, fuzzy, kde-format
-#| msgid "Bullet"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "Lövés"
 
 #: dialogs.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "Name"
-#| msgid "Mine"
+#, kde-format
 msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "Akna"
 
 #: dialogs.cpp:188
-#, fuzzy, kde-format
-#| msgid "Ship"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Ship"
 msgstr "Űrhajó"
 
 #: dialogs.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "the star, Sol"
-#| msgid "Sun"
+#, kde-format
 msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "Nap"
@@ -164,33 +154,28 @@ msgid "Start"
 msgstr "Kezdés"
 
 #: dialogs.cpp:191
-#, fuzzy, kde-format
-#| msgid "Powerups"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "Energia-utántöltők"
 
 #: dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgid "General Settings"
+#, kde-format
 msgctxt "@title"
 msgid "General Settings"
 msgstr "Általános beállítások"
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgctxt "game settings"
-#| msgid "Game"
+#, kde-format
 msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "Játék"
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgid "Game Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Game Settings"
-msgstr "A játék beállításai"
+msgstr "Játékbeállítások"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
 #: general.ui:16
@@ -385,86 +370,73 @@ msgid "Lack of Energy"
 msgstr "Energiahiány"
 
 #: topwidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "&New Round"
+#, kde-format
 msgctxt "@action"
 msgid "&New Round"
 msgstr "Új &forduló"
 
 #: topwidget.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "initial position and velocities of players"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action start game"
 msgid "Start"
 msgstr "Kezdés"
 
 #: topwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr "1. játékos- balra forgás"
 
 #: topwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr "1. játékos - jobbra forgás"
 
 #: topwidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Player 1 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr "1. játékos - gyorsítás"
 
 #: topwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Player 1 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "1. játékos - lövés"
 
 #: topwidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Player 1 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "1. játékos - akna"
 
 #: topwidget.cpp:120
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr "2. játékos - balra forgás"
 
 #: topwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr "2. játékos - jobbra forgás"
 
 #: topwidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Player 2 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr "2. játékos - gyorsítás"
 
 #: topwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Player 2 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "2. játékos - lövés"
 
 #: topwidget.cpp:136
-#, fuzzy, kde-format
-#| msgid "Player 2 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "2. játékos - akna"
