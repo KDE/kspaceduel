@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2024-04-05 07:58+0300\n"
+"PO-Revision-Date: 2024-09-09 14:57+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -114,47 +114,37 @@ msgid "Shield amount:"
 msgstr "Vairoga daudzums:"
 
 #: dialogs.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "custom values"
-#| msgid "Custom"
+#, kde-format
 msgctxt "@item custom values"
 msgid "Custom"
 msgstr "Pielāgots"
 
 #: dialogs.cpp:185 dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgctxt "general game settings"
-#| msgid "General"
+#, kde-format
 msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "Pamata"
 
 #: dialogs.cpp:186
-#, fuzzy, kde-format
-#| msgid "Bullet"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Bullet"
 msgstr "Lode"
 
 #: dialogs.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "Name"
-#| msgid "Mine"
+#, kde-format
 msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "Mīna"
 
 #: dialogs.cpp:188
-#, fuzzy, kde-format
-#| msgid "Ship"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Ship"
 msgstr "Kuģis"
 
 #: dialogs.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "the star, Sol"
-#| msgid "Sun"
+#, kde-format
 msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "Saule"
@@ -166,30 +156,25 @@ msgid "Start"
 msgstr "Sākums"
 
 #: dialogs.cpp:191
-#, fuzzy, kde-format
-#| msgid "Powerups"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Powerups"
 msgstr "Uzlabojumi"
 
 #: dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgid "General Settings"
+#, kde-format
 msgctxt "@title"
 msgid "General Settings"
 msgstr "Pamata iestatījumi"
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgctxt "game settings"
-#| msgid "Game"
+#, kde-format
 msgctxt "@title:tab game settings"
 msgid "Game"
 msgstr "Spēle"
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgid "Game Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Game Settings"
 msgstr "Spēles iestatījumi"
@@ -387,86 +372,73 @@ msgid "Lack of Energy"
 msgstr "Enerģijas trūkums"
 
 #: topwidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "&New Round"
+#, kde-format
 msgctxt "@action"
 msgid "&New Round"
 msgstr "&Jauna spēle"
 
 #: topwidget.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "initial position and velocities of players"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action start game"
 msgid "Start"
 msgstr "Sākums"
 
 #: topwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Left"
-msgstr "Pirmajam spēlētājam pagriezt pa kreisi"
+msgstr "Pirmajam spēlētājam pagriezties pa kreisi"
 
 #: topwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Right"
-msgstr "Pirmajam spēlētājam pagriezt pa labi"
+msgstr "Pirmajam spēlētājam pagriezties pa labi"
 
 #: topwidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Player 1 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr "Pirmajam spēlētājam uzņemt ātrumu"
 
 #: topwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Player 1 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "Pirmajam spēlētājam šaut"
 
 #: topwidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Player 1 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "Pirmajam spēlētājam likt mīnu"
 
 #: topwidget.cpp:120
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Left"
-msgstr "Otrajam spēlētājam pagriezt pa kreisi"
+msgstr "Otrajam spēlētājam pagriezties pa kreisi"
 
 #: topwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Right"
-msgstr "Otrajam spēlētājam pagriezt pa labi"
+msgstr "Otrajam spēlētājam pagriezties pa labi"
 
 #: topwidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Player 2 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr "Otrajam spēlētājam uzņemt ātrumu"
 
 #: topwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Player 2 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "Otrajam spēlētājam šaut"
 
 #: topwidget.cpp:136
-#, fuzzy, kde-format
-#| msgid "Player 2 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "Otrajam spēlētājam likt mīnu"
