@@ -1,16 +1,16 @@
 # translation of kspaceduel.po to Finnish
 # KDE Finnish translation sprint participants:
+# SPDX-FileCopyrightText: 2011, 2018, 2020, 2024 Tommi Nieminen <translator@legisign.org>
 # Teemu Rytilahti <teemu.rytilahti@d5k.net>, 2003.
 # Kim Enkovaara <kim.enkovaara@iki.fi>, 2003.
 # Teemu Rytilahti <teemu.rytilahti@kde-fi.org>, 2003, 2008.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2010, 2014.
-# Tommi Nieminen <translator@legisign.org>, 2011, 2018, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2020-12-27 17:43+0200\n"
+"PO-Revision-Date: 2024-10-28 21:27+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -18,13 +18,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-POT-Import-Date: 2012-12-01 22:24:06+0000\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Kim Enkovaara,Teemu Rytilahti,Tommi Nieminen"
+msgstr "Kim Enkovaara, Teemu Rytilahti, Tommi Nieminen"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -117,47 +116,37 @@ msgid "Shield amount:"
 msgstr "Suojien määrä:"
 
 #: dialogs.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "custom values"
-#| msgid "Custom"
+#, kde-format
 msgctxt "@item custom values"
 msgid "Custom"
-msgstr "Oma"
+msgstr "Mukautettu"
 
 #: dialogs.cpp:185 dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgctxt "general game settings"
-#| msgid "General"
+#, kde-format
 msgctxt "@title:tab general settings"
 msgid "General"
 msgstr "Perusasetukset"
 
 #: dialogs.cpp:186
-#, fuzzy, kde-format
-#| msgid "Bullet"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Bullet"
-msgstr "Panoksia"
+msgstr "Panos"
 
 #: dialogs.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "Name"
-#| msgid "Mine"
+#, kde-format
 msgctxt "@title:tab Name"
 msgid "Mine"
 msgstr "Miina"
 
 #: dialogs.cpp:188
-#, fuzzy, kde-format
-#| msgid "Ship"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Ship"
 msgstr "Alus"
 
 #: dialogs.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "the star, Sol"
-#| msgid "Sun"
+#, kde-format
 msgctxt "@title:tab the star, Sol"
 msgid "Sun"
 msgstr "Aurinko"
@@ -176,23 +165,19 @@ msgid "Powerups"
 msgstr "Lataus"
 
 #: dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgid "General Settings"
+#, kde-format
 msgctxt "@title"
 msgid "General Settings"
 msgstr "Perusasetukset"
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgctxt "game settings"
-#| msgid "Game"
+#, kde-format
 msgctxt "@title:tab game settings"
 msgid "Game"
-msgstr "Peliasetukset"
+msgstr "Peli"
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgid "Game Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Game Settings"
 msgstr "Peliasetukset"
@@ -392,86 +377,73 @@ msgid "Lack of Energy"
 msgstr "Energian puute"
 
 #: topwidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "&New Round"
+#, kde-format
 msgctxt "@action"
 msgid "&New Round"
-msgstr "&Uusi kierros"
+msgstr "Uusi &kierros"
 
 #: topwidget.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "initial position and velocities of players"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action start game"
 msgid "Start"
-msgstr "Aloitusasetukset"
+msgstr "Aloita"
 
 #: topwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Left"
 msgstr "Pelaaja 1 - Käännä vasemmalle"
 
 #: topwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Right"
 msgstr "Pelaaja 1 - Käännä oikealle"
 
 #: topwidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Player 1 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Accelerate"
 msgstr "Pelaaja 1 - Kiihdytä"
 
 #: topwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Player 1 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Shot"
 msgstr "Pelaaja 1 - Ammu"
 
 #: topwidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Player 1 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Mine"
 msgstr "Pelaaja 1 - Miina"
 
 #: topwidget.cpp:120
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Left"
 msgstr "Pelaaja 2 - Käännä vasemmalle"
 
 #: topwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Right"
 msgstr "Pelaaja 2 - Käännä oikealle"
 
 #: topwidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Player 2 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Accelerate"
 msgstr "Pelaaja 2 - Kiihdytä"
 
 #: topwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Player 2 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Shot"
 msgstr "Pelaaja 2 - Ammu"
 
 #: topwidget.cpp:136
-#, fuzzy, kde-format
-#| msgid "Player 2 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "Pelaaja 2 - Miina"
