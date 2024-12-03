@@ -29,6 +29,17 @@ target_sources(kspaceduel PRIVATE
     kspaceduel.qrc
 )
 
+if(APPLE)
+    set_target_properties(kspaceduel PROPERTIES
+	    MACOSX_BUNDLE_DISPLAY_NAME "KSpaceduel"
+        MACOSX_BUNDLE_BUNDLE_NAME "KSpaceduel"
+       MACOSX_BUNDLE_LONG_VERSION_STRING "KSpaceduel ${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_SHORT_VERSION_STRING "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}"
+        MACOSX_BUNDLE_BUNDLE_VERSION "${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_GUI_IDENTIFIER "org.kde.kspaceduel"
+        MACOSX_BUNDLE_COPYRIGHT "2024 The KSpaceduel Developers")
+endif()
+
 ki18n_wrap_ui(kspaceduel general.ui)
 
 kconfig_add_kcfg_files(kspaceduel options.kcfgc)
