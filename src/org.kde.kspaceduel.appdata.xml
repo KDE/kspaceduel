@@ -40,6 +40,7 @@
   <name xml:lang="pt-BR">KSpaceDuel</name>
   <name xml:lang="ro">Duel spațial</name>
   <name xml:lang="ru">KSpaceDuel</name>
+  <name xml:lang="sa">केस्पेसद्वन्द्वयुद्ध</name>
   <name xml:lang="sk">KSpaceDuel</name>
   <name xml:lang="sl">KSpaceDuel</name>
   <name xml:lang="sr">К‑свемирски-двобој</name>
@@ -84,6 +85,7 @@
   <summary xml:lang="pt-BR">Jogo de Arcade espacial</summary>
   <summary xml:lang="ro">Joc de aventuri spațiale</summary>
   <summary xml:lang="ru">Космическая аркадная игра</summary>
+  <summary xml:lang="sa">अंतरिक्ष आर्केड गेम</summary>
   <summary xml:lang="sk">Vesmírna arkádová hra</summary>
   <summary xml:lang="sl">Vesoljska arkadna igra</summary>
   <summary xml:lang="sr">Свемирска аркадна игра</summary>
@@ -131,6 +133,7 @@
     <p xml:lang="pt-BR">No KSpaceDuel, cada um dos dois possíveis jogadores controlam uma nave espacial que orbita em torno do Sol. À medida que o jogo evolui, os jogadores devem eliminar a nave espacial do adversário com balas ou minas.</p>
     <p xml:lang="ro">În Duel Spațial, fiecare dintre cei doi posibili jucători controlează o navă spațială satelit ce orbitează Soarele. Pe măsură ce jocul progresează, jucătorii trebuie să elimine nava spațială a oponentului folosind gloanțe și mine.</p>
     <p xml:lang="ru">В KSpaceDuel каждый из двух возможных игроков управляет космическим кораблем-спутником, вращающимся вокруг Солнца. Цель игры состоит в уничтожении космического корабля противника пулями или минами.</p>
+    <p xml:lang="sa">KSpaceDuel इत्यस्मिन् द्वयोः सम्भाव्यक्रीडकयोः प्रत्येकं सूर्यस्य परिक्रमणं कुर्वन्तं उपग्रहं अन्तरिक्षयानं नियन्त्रयति । यथा यथा क्रीडा प्रगच्छति तथा तथा क्रीडकाः प्रतिद्वन्द्वस्य अन्तरिक्षयानं गोलिकाभिः वा खानिभिः वा निर्मूलयितुं अर्हन्ति ।</p>
     <p xml:lang="sk">V hre KSpaceDuel dvaja hráči ovládajú vesmírnu loď obiehajúcu okolo Slnka. Hráči majú eliminovať protivníkovu kozmickú loď strelami alebo mínami.</p>
     <p xml:lang="sl">Vsak izmed dveh igralcev v KSpaceDuelu nadzira satelit, ki kroži okrog sonca. Cilj igre je, da nasprotnikovo ladjo uničite s kroglami ali minami.</p>
     <p xml:lang="sr">У К‑свемирском-двобоју сваки од два могућа играча управља сателитским свемирским бродом у орбити сунца. Како партија одмиче, играчи покушавају да униште противнички свемирски брод мецима или минама.</p>
