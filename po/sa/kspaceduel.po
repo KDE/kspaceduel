@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the kspaceduel package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2024-12-13 19:09+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 21:52+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -29,19 +31,19 @@ msgstr "भवतः ईमेलपत्राणि"
 
 #: dialogs.cpp:63
 msgid "Game speed:"
-msgstr "क्रीडायाः गतिः : १."
+msgstr "क्रीडायाः गतिः :"
 
 #: dialogs.cpp:63
 msgid "Shot speed:"
-msgstr "शॉट् वेगः : १."
+msgstr "शॉट् वेगः :"
 
 #: dialogs.cpp:64 dialogs.cpp:67 dialogs.cpp:70 dialogs.cpp:71
 msgid "Energy need:"
-msgstr "ऊर्जा आवश्यकता : १."
+msgstr "ऊर्जा आवश्यकता :"
 
 #: dialogs.cpp:64 dialogs.cpp:68
 msgid "Max number:"
-msgstr "अधिकतम संख्या : १."
+msgstr "अधिकतम संख्या :"
 
 #: dialogs.cpp:65 dialogs.cpp:68
 msgid "Damage:"
@@ -49,43 +51,43 @@ msgstr "क्षति:"
 
 #: dialogs.cpp:65 dialogs.cpp:75
 msgid "Life time:"
-msgstr "जीवनकालः १."
+msgstr "जीवनकालः"
 
 #: dialogs.cpp:66 dialogs.cpp:69
 msgid "Reload time:"
-msgstr "पुनः लोडीकरणसमयः : १."
+msgstr "पुनः लोडीकरणसमयः :"
 
 #: dialogs.cpp:66
 msgid "Mine fuel:"
-msgstr "खानि इन्धनम् : १."
+msgstr "खानि इन्धनम् :"
 
 #: dialogs.cpp:67
 msgid "Activate time:"
-msgstr "समयं सक्रियं कुर्वन्तु : १."
+msgstr "समयं सक्रियं कुर्वन्तु :"
 
 #: dialogs.cpp:69
 msgid "Acceleration:"
-msgstr "त्वरणम् : १."
+msgstr "त्वरणम् :"
 
 #: dialogs.cpp:70
 msgid "Rotation speed:"
-msgstr "घूर्णनवेगः : १."
+msgstr "घूर्णनवेगः :"
 
 #: dialogs.cpp:71
 msgid "Crash damage:"
-msgstr "दुर्घटनाक्षतिः : १."
+msgstr "दुर्घटनाक्षतिः :"
 
 #: dialogs.cpp:72
 msgid "Sun energy:"
-msgstr "सूर्य ऊर्जा : १."
+msgstr "सूर्य ऊर्जा :"
 
 #: dialogs.cpp:72
 msgid "Gravity:"
-msgstr "गुरुत्वाकर्षणम् : १."
+msgstr "गुरुत्वाकर्षणम् :"
 
 #: dialogs.cpp:73
 msgid "Position X:"
-msgstr "दशम् स्थानम् : १."
+msgstr "दशम् स्थानम् :"
 
 #: dialogs.cpp:73
 msgid "Position Y:"
@@ -93,7 +95,7 @@ msgstr "स्थितिः Y: ."
 
 #: dialogs.cpp:74
 msgid "Velocity X:"
-msgstr "वेगः X : १."
+msgstr "वेगः X :"
 
 #: dialogs.cpp:74
 msgid "Velocity Y:"
@@ -101,15 +103,15 @@ msgstr "वेगः Y: ."
 
 #: dialogs.cpp:75
 msgid "Appearance time:"
-msgstr "प्रादुर्भावसमयः : १."
+msgstr "प्रादुर्भावसमयः :"
 
 #: dialogs.cpp:76
 msgid "Energy amount:"
-msgstr "ऊर्जायाः राशिः : १."
+msgstr "ऊर्जायाः राशिः :"
 
 #: dialogs.cpp:76
 msgid "Shield amount:"
-msgstr "कवचराशिः : १."
+msgstr "कवचराशिः :"
 
 #: dialogs.cpp:169
 #, kde-format
@@ -187,13 +189,13 @@ msgstr "हिट पॉइंट्स"
 #: general.ui:27
 #, kde-format
 msgid "Red player:"
-msgstr "लालः खिलाडी : १."
+msgstr "लालः खिलाडी :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #: general.ui:64
 #, kde-format
 msgid "Blue player:"
-msgstr "नीलवर्णीयः खिलाडी : १."
+msgstr "नीलवर्णीयः खिलाडी :"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox4)
 #: general.ui:99
@@ -205,7 +207,7 @@ msgstr "ग्राफिक्स"
 #: general.ui:105
 #, kde-format
 msgid "Refresh time:"
-msgstr "ताजगीसमयः : १."
+msgstr "ताजगीसमयः :"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: general.ui:149
@@ -225,7 +227,7 @@ msgstr "खिलाडी एआइ अस्ति"
 #: general.ui:190 general.ui:281
 #, kde-format
 msgid "Difficulty:"
-msgstr "कठिनता : १."
+msgstr "कठिनता :"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty0)
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_AiDifficulty1)
