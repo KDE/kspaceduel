@@ -16,14 +16,14 @@ msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2024-08-10 22:53+0300\n"
+"PO-Revision-Date: 2025-01-24 09:19+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.0\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -215,7 +215,7 @@ msgstr "גרפיקה"
 #: general.ui:105
 #, kde-format
 msgid "Refresh time:"
-msgstr "זמן רענון:"
+msgstr "זמן ריענון:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: general.ui:149
