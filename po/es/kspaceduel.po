@@ -1,18 +1,17 @@
-# translation of kspaceduel.po to Español
-# Lucas Garcia <tanke@escomposlinux.org>, 2003.
-# Miguel Revilla Rodríguez <yo@miguelrevilla.com>, 2003.
-# Santiago Fernandez Sancho <santi@kde-es.org>, 2004.
-# Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008.
-# Huever, 2009.
-# Kira J. Fernandez <kirajfdez@gmail.com>, 2010.
+# Spanish translations for kspaceduel.po package.
+#
+# SPDX-FileCopyrightText: 2003 Lucas Garcia <tanke@escomposlinux.org>
+# SPDX-FileCopyrightText: 2003 Miguel Revilla Rodríguez <yo@miguelrevilla.com>
+# SPDX-FileCopyrightText: 2004, 2007, 2008 Santiago Fernández Sancho <santi@kde-es.org>
+# SPDX-FileCopyrightText: 2010 Kira J. Fernandez <kirajfdez@gmail.com>
 # SPDX-FileCopyrightText: 2020, 2024 Eloy Cuadra <ecuadra@eloihr.net>
-# Sofía Priego <spriego@darksylvania.net>, %Y.
+# SPDX-FileCopyrightText: 2024, 2025 Sofía Priego <spriego@darksylvania.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2024-05-05 21:34+0100\n"
+"PO-Revision-Date: 2025-04-20 11:22+0100\n"
 "Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -450,11 +449,3 @@ msgstr "Jugador 2 dispara"
 msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "Jugador 2 mina"
-
-#~ msgctxt "general settings"
-#~ msgid "General"
-#~ msgstr "General"
-
-#~ msgctxt "start game"
-#~ msgid "Start"
-#~ msgstr "Comenzar"
