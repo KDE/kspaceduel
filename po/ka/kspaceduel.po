@@ -356,7 +356,7 @@ msgstr "მოგებები"
 
 #: structs.h:52
 msgid "Default"
-msgstr "ნაგულისხმები"
+msgstr "ნაგულისხმევი"
 
 #: structs.h:52
 msgid "Bullet"
