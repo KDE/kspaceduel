@@ -1,14 +1,14 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kspaceduel.po 1681222 2024-05-30 19:06:17Z mkkdr $
+# $Id: kspaceduel.po 1723009 2025-11-17 12:32:57Z scripty $
 #
 # SPDX-FileCopyrightText: 2022, 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-03 00:37+0000\n"
+"POT-Creation-Date: 2025-11-17 11:50+0000\n"
 "PO-Revision-Date: 2024-05-06 10:38+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"

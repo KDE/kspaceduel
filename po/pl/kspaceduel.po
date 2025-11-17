@@ -1,4 +1,4 @@
-# Version: $Revision: 1709616 $
+# Version: $Revision: 1723076 $
 # translation of kspaceduel.po to Polish
 # translation of kspaceduel.po to
 # Copyright (C) 2002, 2003, 2007, 2008 Free Software Foundation, Inc.
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-03 00:37+0000\n"
+"POT-Creation-Date: 2025-11-17 11:50+0000\n"
 "PO-Revision-Date: 2024-06-01 08:37+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
