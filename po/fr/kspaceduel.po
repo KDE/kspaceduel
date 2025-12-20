@@ -8,7 +8,7 @@
 # Cedric Pasteur <cedric.pasteur@free.fr>, 2003.
 # Angot Julien <angot.julien@gmail.com>, 2007, 2008.
 # Martin Bednar <serafean@gmail.com>, 2012.
-# SPDX-FileCopyrightText: 2012, 2020, 2021, 2024 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2012, 2020, 2021, 2024, 2025 Xavier Besnard <xavier.besnard@kde.org>
 # First-Translator : 2000-02-06
 # Update : 2000-02-06
 #
@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kspaceduel\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:39+0000\n"
-"PO-Revision-Date: 2024-05-12 15:12+0200\n"
+"PO-Revision-Date: 2025-12-18 10:05+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -28,7 +28,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,7 +38,7 @@ msgstr "Laurent Rathle, Gérard Delafond, Julien Angot"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "lrathle@teaser.fr,gerard@delafond.org,angot.julien@gmail.com"
+msgstr "lrathle@teaser.fr, gerard@delafond.org, angot.julien@gmail.com"
 
 #: dialogs.cpp:63
 msgid "Game speed:"
