@@ -112,50 +112,40 @@ msgid "Shield amount:"
 msgstr "Méid cosanta:"
 
 #: dialogs.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "custom values"
-#| msgid "Custom"
+#, kde-format
 msgctxt "@item custom values"
 msgid "Custom"
-msgstr "Saincheaptha"
+msgstr ""
 
 #: dialogs.cpp:185 dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgctxt "general game settings"
-#| msgid "General"
+#, kde-format
 msgctxt "@title:tab general settings"
 msgid "General"
-msgstr "Ginearálta"
+msgstr ""
 
 #: dialogs.cpp:186
-#, fuzzy, kde-format
-#| msgid "Bullet"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Bullet"
-msgstr "Urchar"
+msgstr ""
 
 #: dialogs.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "Name"
-#| msgid "Mine"
+#, kde-format
 msgctxt "@title:tab Name"
 msgid "Mine"
-msgstr "Mianach"
+msgstr ""
 
 #: dialogs.cpp:188
-#, fuzzy, kde-format
-#| msgid "Ship"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Ship"
-msgstr "Long"
+msgstr ""
 
 #: dialogs.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "the star, Sol"
-#| msgid "Sun"
+#, kde-format
 msgctxt "@title:tab the star, Sol"
 msgid "Sun"
-msgstr "Grian"
+msgstr ""
 
 #: dialogs.cpp:190
 #, kde-format
@@ -164,33 +154,28 @@ msgid "Start"
 msgstr "Tosú"
 
 #: dialogs.cpp:191
-#, fuzzy, kde-format
-#| msgid "Powerups"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Powerups"
-msgstr "Treisiúcháin"
+msgstr ""
 
 #: dialogs.cpp:404
-#, fuzzy, kde-format
-#| msgid "General Settings"
+#, kde-format
 msgctxt "@title"
 msgid "General Settings"
-msgstr "Socruithe Ginearálta"
+msgstr ""
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgctxt "game settings"
-#| msgid "Game"
+#, kde-format
 msgctxt "@title:tab game settings"
 msgid "Game"
-msgstr "Cluiche"
+msgstr ""
 
 #: dialogs.cpp:407
-#, fuzzy, kde-format
-#| msgid "Game Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Game Settings"
-msgstr "Socruithe an Chluiche"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
 #: general.ui:16
@@ -294,10 +279,9 @@ msgid "KSpaceDuel"
 msgstr "KSpaceDuel"
 
 #: main.cpp:26
-#, fuzzy, kde-format
-#| msgid "KDE Space Game"
+#, kde-format
 msgid "Space Arcade Game"
-msgstr "Cluiche Spás KDE"
+msgstr ""
 
 #: main.cpp:28
 #, kde-format
@@ -386,94 +370,73 @@ msgid "Lack of Energy"
 msgstr "Easpa Fuinnimh"
 
 #: topwidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "&New Round"
+#, kde-format
 msgctxt "@action"
 msgid "&New Round"
-msgstr "Dreas &Nua"
+msgstr ""
 
 #: topwidget.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "initial position and velocities of players"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action start game"
 msgid "Start"
-msgstr "Tosú"
+msgstr ""
 
 #: topwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Left"
-msgstr "Imreoir 1: Rothlaigh go Tuathalach"
+msgstr ""
 
 #: topwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Player 1 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Rotate Right"
-msgstr "Imreoir 1: Rothlaigh go Deisealach"
+msgstr ""
 
 #: topwidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Player 1 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Accelerate"
-msgstr "Imreoir 1: Luasghéaraigh"
+msgstr ""
 
 #: topwidget.cpp:111
-#, fuzzy, kde-format
-#| msgid "Player 1 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Shot"
-msgstr "Imreoir 1: Urchar"
+msgstr ""
 
 #: topwidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Player 1 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 1 Mine"
-msgstr "Imreoir 1: Mianach"
+msgstr ""
 
 #: topwidget.cpp:120
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Left"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Left"
-msgstr "Imreoir 2: Rothlaigh go Tuathalach"
+msgstr ""
 
 #: topwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Player 2 Rotate Right"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Rotate Right"
-msgstr "Imreoir 2: Rothlaigh go Deisealach"
+msgstr ""
 
 #: topwidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Player 2 Accelerate"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Accelerate"
-msgstr "Imreoir 2: Luasghéaraigh"
+msgstr ""
 
 #: topwidget.cpp:132
-#, fuzzy, kde-format
-#| msgid "Player 2 Shot"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Shot"
-msgstr "Imreoir 2: Urchar"
+msgstr ""
 
 #: topwidget.cpp:136
-#, fuzzy, kde-format
-#| msgid "Player 2 Mine"
+#, kde-format
 msgctxt "@action"
 msgid "Player 2 Mine"
-msgstr "Imreoir 2: Mianach"
-
-#~ msgctxt "general settings"
-#~ msgid "General"
-#~ msgstr "Ginearálta"
-
-#~ msgctxt "start game"
-#~ msgid "Start"
-#~ msgstr "Tosaigh"
+msgstr ""
