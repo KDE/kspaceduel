@@ -445,11 +445,3 @@ msgstr "Jugador 2 dispara"
 msgctxt "@action"
 msgid "Player 2 Mine"
 msgstr "Jugador 2 posa una mina"
-
-#~ msgctxt "general settings"
-#~ msgid "General"
-#~ msgstr "General"
-
-#~ msgctxt "start game"
-#~ msgid "Start"
-#~ msgstr "Inici"
