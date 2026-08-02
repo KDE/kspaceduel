@@ -1,5 +1,6 @@
 # Translation of kspaceduel to Norwegian Nynorsk
 #
+# Karl Ove Hufthammer <karl@huftis.org>, 2008, 2020, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: kspaceduel\n"
