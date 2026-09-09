@@ -218,7 +218,7 @@ msgstr "Affichage"
 #: general.ui:105
 #, kde-format
 msgid "Refresh time:"
-msgstr "Délai de rafraîchissement :"
+msgstr "Délai de rafraichissement :"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: general.ui:149
