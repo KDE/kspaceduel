@@ -1,31 +1,44 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY kappname "&kspaceduel;">
-  <!ENTITY package "kdegames">
   <!ENTITY % Russian "INCLUDE"
 > <!-- change language only here -->
-  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
 ]>
 
-<book lang="&language;">
+<book id="kspaceduel" lang="&language;"
+> <!-- do not change this! -->
 <bookinfo>
-<title
->Руководство &kspaceduel;</title>
- 
+    <title
+>Руководство пользователя &kspaceduel;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
 <authorgroup>
-<author
+    <author
 ><firstname
->Andreas </firstname
+>Andreas</firstname
 > <surname
 >Zehender</surname
 > <affiliation
-> <address
+><address
 ><email
 >az@azweb.de</email
-></address>
-</affiliation>
+></address
+></affiliation>
+    </author>
+<author
+><firstname
+>Евгений</firstname
+> <surname
+>Трунев</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
 </author>
-</authorgroup>
 <othercredit role="translator"
 ><firstname
 >Денис</firstname
@@ -41,1046 +54,184 @@
 >Перевод на русский</contrib
 ></othercredit
 > 
- 
+</authorgroup>
+
 <copyright>
-<year
+    <year
 >1999</year
 ><year
 >2000</year>
-<holder
->Andreas Zehender</holder>
+    <holder
+>&Andreas.Zehender;</holder>
 </copyright>
 
 <legalnotice
 >&FDLNotice;</legalnotice>
- 
-<date
->2003-09-17</date>
-<releaseinfo
->1.1</releaseinfo>
 
+<date
+>23 августа 2021 г.</date
+><!-- Date of (re)writing, or update.-->
+<releaseinfo
+>2.1 (KDE Gear 21.08)</releaseinfo
+><!-- Application version number. Use the variable definitions within header to change this value.-->
+
+<!--Short description of this document. Do not change unless necessary!-->
 <abstract>
-<para
->&kspaceduel; - аркадная космическая игра </para>
-<para
->Два корабля летают вокруг солнца и стараются подбить друг друга.</para>
+    <para
+>В этой документации описывается игра &kspaceduel; версии 2.1</para>
 </abstract>
 
-
+<!--List of relevan keywords-->
 <keywordset>
-<keyword
->Космическая дуэль</keyword>
-<keyword
->KDE</keyword>
-<keyword
->игра</keyword>
-<keyword
->корабли</keyword>
-<keyword
->стрельба</keyword>
+    <keyword
+>KDE</keyword
+> <!-- do not change this! -->
+    <keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+    <keyword
+>игра</keyword
+> <!-- do not change this! -->
+    <keyword
+>KSpaceDuel</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <keyword
+>аркада</keyword>
+    <keyword
+>космос</keyword>
+    <keyword
+>война</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+    <keyword
+>два игрока</keyword>
+<!--All other relevant keywords-->
+    <keyword
+>спутник</keyword>
+    <keyword
+>звёздные войны</keyword>
+    <keyword
+>войны</keyword>
 </keywordset>
-
 </bookinfo>
-
-<chapter id="introduction">
-<title
->Введение</title>
-
-<para
->&kspaceduel; - аркадная космическая игра для двух игроков.</para
-> 
-
-<para
->Каждый игрок управляет кораблем, который летает вокруг солнца и пытается подбить другой корабль. Вы можете играть в &kspaceduel; с другим человеком, против компьютера или заставить компьютер управлять обоими кораблями.</para>
-
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Введение</title
+> <!-- do not change this! -->
+    <note
+><title
+>Тип игры:</title
+><para
+>Аркада</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <note
+><title
+>Количество игроков:</title
+><para
+>Два</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ <!--Short game description starts here. 3-4 sentences (paragraphs)-->
+    <para
+>Идея &kspaceduel; проста, но увлекательна. Каждый из двух игроков управляет кораблём-спутником, обращающимся вокруг солнца. По ходу игры игрокам приходится уничтожать корабль противника. Как только спутник противника уничтожен, оставшийся игрок выигрывает раунд.</para>
 </chapter>
 
-<chapter id="the-game">
-<title
->Игра</title>
-<para
->Принцип игры прост (но вызывает привыкание). Вы должны уничтожить вашего противника до того, как он уничтожит вас.</para>
-<para
->Будьте осторожны, не врезайтесь в солнце.</para>
-<sect1 id="rules-of-the-game">
-<title
->Правила игры</title>
-<sect2 id="ship-movement">
-<title
->Движение корабля</title>
-<para
->Каждый игрок управляет одним кораблем. </para>
-<para
->Корабль может поворачиваться, ускоряться, стрелять и закладывать мины.</para>
-</sect2>
-
-<sect2 id="energy">
-<title
->Энергия</title
-> 
-
-<para
->У каждого корабля есть определенное количество энергии (конкретные значения указаны в параметрах игры). </para
-> 
-
-<para
->Кораблю требуется энергия для поворотов, ускорения, стрельбы и закладывания мин. Корабль получает ее при помощи своих солнечных батарей. Количество энергии, которую корабль получает, зависит от расстояния и направления, в котором находится солнце. Корабль получает больше энергии вблизи солнца и меньше около границы. Он получает полное количество энергии, если солнце светит прямо на батареи, часть энергии, если оно светит под углом и, совсем не получает ее, если солнце светит на торец батареи.</para>
-
-<para
->Если у корабля закончилась энергия, он теряет управление и не может стрелять. </para>
-
-</sect2>
-
-<sect2 id="hit-points">
-<title
->Здоровье</title>
-
-<para
->Столкновение со своими или чужими снарядами и минами уменьшает здоровье корабля. Если столкнутся два корабля, то более слабый корабль будет уничтожен, и здоровье более сильного уменьшится на значение здоровья слабого корабля, плюс некоторое значение (Ущерб при аварии). Корабль уничтожается, когда он влетает в солнце.</para>
-
-</sect2>
-
-<sect2 id="bullets-and-mines">
-<title
->Снаряды и мины </title>
-
-<para
->Снаряды летают вокруг солнца как корабли. </para>
-
-<para
->У мин есть некоторое количество энергии, чтобы оставаться на одном месте. Когда энергия заканчивается, мина падает на солнце. Минам, расположенным около солнца, требуется больше энергии, чем расположенным вдали от него. </para>
-
-<para
->Мины могут быть уничтожены снарядами. </para>
-
-<para
->По умолчанию корабль может иметь 5 снарядов и 3 мины на экране. </para>
-
-</sect2>
-
-<sect2 id="powerups">
-<title
->Заправки</title>
-
-<para
->Время от времени на поле боя появляются заправки.</para>
-
-<para
->Существует четыре типа заправок:</para>
-
-<variablelist>
-<varlistentry>
-<term
->Мина</term>
-<listitem
+<chapter id="howto"
+><title
+>Правила игры</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+    <note
+><title
+>Цель:</title
 ><para
->Игрок может иметь больше мин.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
->Снаряд</term>
-<listitem
-><para
->Игрок может иметь больше снарядов.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
->Энергия (желтая сфера)</term>
-<listitem
-><para
->Игрок получает дополнительную энергию.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
->Защита (синяя сфера)</term>
-<listitem
-><para
->Игрок получает здоровье</para
-></listitem>
-</varlistentry>
-</variablelist>
-
-</sect2>
-
-<sect2 id="screen">
-<title
->Вид &kspaceduel;</title>
-
-<screenshot>
-<screeninfo
->Основной экран &kspaceduel;</screeninfo>
-<mediaobject>
-<imageobject
-><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
-<textobject
-><phrase
->Основной экран &kspaceduel;</phrase
-></textobject>
-</mediaobject>
-</screenshot
->   
-
-<para
->Вы можете видеть, что центральная часть окна &kspaceduel; - поле игры. Слева и справа показывается статистика красного и синего игроков. </para>
-<para
->Верхний прямоугольник на статистике игроков показывает <quote
->Здоровье</quote
-> корабля.</para>
-<para
->Средний прямоугольник показывает заряд батареи.</para>
-<para
->Нижний прямоугольник показывает количество побед.</para>
-<para
->Верхнюю часть игрового поля занимает меню и панель инструментов.</para>
-<para
->Нижняя часть игровой области - строка состояния.</para>
-
-</sect2>
-</sect1>
-
-<sect1 id="options">
-<title
->Настройки игры</title>
-
-<para
->В игре &kspaceduel; есть множество настроек, которые вы можете менять для увеличения удовольствия, получаемого от игры.</para>
-
-<para
->Они разделены на две вкладки:</para>
-
-<itemizedlist>
-<listitem
-><para
-><link linkend="options-keys"
->Клавиши игрока</link
-></para
-></listitem>
-<listitem
-><para
-><link linkend="options-configurations"
->Настройки игры</link
-></para
-></listitem>
-</itemizedlist>
-
-<sect2 id="options-keys">
-<title
->Клавиши</title>
-
-<para
->В игре &kspaceduel; есть стандартный набор клавиш для управления игрой. Для вывода списка стандартных клавиш смотрите раздел <link linkend="keys"
->Список стандартных клавиш</link
->.</para>
-
-<para
->Клавиши могут быть настроены: </para>
-
-<para
->Через меню <menuchoice
-> <guimenu
->Настройка</guimenu
-><guimenuitem
->Клавиши...</guimenuitem
-> </menuchoice
->.</para>
-
-<para
->Будет вызван стандартный диалог для настройки клавиш, в том числе и для действий, специфичных для программы.</para>
-
-<para
->Вы можете видеть, что у каждого игрока (красного и синего) есть 5 клавиш, соответствующих повороту налево, направо, ускорению, выстрелу и минированию.</para>
-
-<para
->Закончив настройку клавиш, нажмите кнопку <guibutton
->OK</guibutton
->, чтобы сохранить ваши изменения.</para>
-
-<para
->Если вы хотите восстановить стандартные настройки клавиш, нажмите кнопку <guibutton
->По умолчанию</guibutton
->. Чтобы сделать эти изменения постоянными, нажмите <guibutton
->OK</guibutton
->.</para
-> 
-
-<para
->Если вы хотите сбросить изменения и вернуться к предыдущей настройке клавиш, нажмите <guibutton
->Отмена</guibutton
->, и ваши изменения пропадут.</para>
-</sect2>
-
-<sect2 id="options-configurations">
-<title
->Настройки игры</title>
-
-<para
->Все параметры игры &kspaceduel; можно настраивать.</para>
-
-<para
->Если вы хотите изменить настройки игры, выберите <menuchoice
-><guimenu
->Настройка</guimenu
-><guimenuitem
->Настроить программу...</guimenuitem
-> </menuchoice
-> из меню.</para>
-
-<para
->Будет показан диалог с двумя вкладками, <guilabel
->Общие</guilabel
-> и <guilabel
->Игра</guilabel
->. Первая из низ очень проста, вторая же делится на вкладки.</para>
-
-<para
->Настройки собраны в различные конфигурации. Вы можете выбрать одну из нескольких предустановленных конфигураций.</para>
-
-<para
->Если вы выберете <guilabel
->Пользовательскую</guilabel
-> конфигурацию, вы сможете задать все настройки самостоятельно.</para
-> 
-
+>Уничтожьте спутник противника, сохранив собственный невредимым.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+    <para
+>&kspaceduel; загружается непосредственно в игровой режим, однако игра не начинается до тех пор, пока один из игроков не сделает первый ход.</para>
 <note
 ><para
->Если вы не выбрали <guilabel
->Пользовательскую</guilabel
-> конфигурацию, вы не сможете изменять эти настройки.</para
+>Если спутником противника управляет компьютер, игра не начинается, пока человек не сделает первый ход.</para
 ></note>
-
-<tip
-><para
->Если вы обнаружили интересную конфигурацию, напишите письмо автору игры. Она может быть включена в будущие версии (отправьте секцию [Game] из файла <filename
->~/.kde/share/config/kspaceduelrc</filename
->).</para
-></tip
-> 
-
 <para
->Закончив настройку, нажмите кнопку <guibutton
->OK</guibutton
->, чтобы сохранить изменения.</para
-> 
-
+>В &kspaceduel; игрок управляет поворотом, ускорением и оружием корабля. Спутник постоянно притягивается к солнцу, и чтобы удерживать корабль на курсе, приходится регулировать его поворот и ускорение.</para>
+<note
+><para
+>При слишком близком приближении к солнцу спутник взрывается.</para
+></note>
 <para
->Если вы хотите восстановить стандартные значения, нажмите кнопку <guibutton
->По умолчанию</guibutton
->. Чтобы сохранить изменения, нажмите <guibutton
->OK</guibutton
->.</para
-> 
-
-<para
->Если вы хотите сбросить изменения и вернуться к предыдущей настройке, нажмите <guibutton
->Отмена</guibutton
->, и ваши изменения пропадут.</para>
-
-<para
->Настройки бывают:</para>
-
-<sect3 id="general">
-<title
-><guilabel
->Общие</guilabel
-></title>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->Здоровье</guilabel
-></term>
-<listitem
+>В то же время необходимо следить за перемещением противника и использовать своё оружие — снаряды и мины — для уничтожения вражеского космического корабля.</para>
+<note
 ><para
->Эти два ползунка задают здоровье игроков, и вы можете их двигать, чтобы дать кому-либо из них преимущество.</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guilabel
->Время обновления</guilabel
-></term>
-<listitem
-><para
->Время между двумя обновлениями экрана в миллисекундах. Все остальные настройки не зависят от времени обновления.</para
-></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guilabel
->Красный игрок</guilabel
-></term>
-<listitem
-><para
->Здесь задаётся, будет ли компьютер играть за красного игрока, а также его уровень мастерства. Попробуйте сами изменять этот уровень.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guilabel
->Синий игрок</guilabel
-></term>
-<listitem
-><para
->То же, как и для <guilabel
->Красного игрока</guilabel
->.</para
-></listitem>
-</varlistentry>
-</variablelist>
-
-</sect3>
-
-<sect3 id="game">
-<title
-><guilabel
->Игра</guilabel
-></title>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->Скорость игры</guilabel
-></term>
-<listitem
-><para
->Изменяет скорость игры в целом.</para
-></listitem>
-</varlistentry>
-</variablelist>
-
-</sect3>
-
-<sect3 id="bullet">
-<title
-><guilabel
->Снаряд</guilabel
-></title>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->Скорость стрельбы</guilabel
-></term>
-<listitem
-><para
->Скорость снарядов</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Энергопотребление</guilabel
-></term>
-<listitem
-><para
->Количество энергии, необходимой для выстрела.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Максимальное количество</guilabel
-></term>
-<listitem
-><para
->Максимальное количество снарядов игрока, которые могут находится в пределах одного экрана.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Повреждение</guilabel
-></term>
-<listitem
-><para
->Ущерб, наносимый кораблю снарядом.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Время жизни</guilabel
-></term>
-<listitem
-><para
->Максимальное время жизни снаряда.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Время перезаряжания</guilabel
-></term>
-<listitem
-><para
->Время, нужное кораблю для перезарядки снаряда.</para
-></listitem>
-</varlistentry>
-</variablelist>
-
-</sect3>
-<sect3 id="mine">
-<title
->Мина</title>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->Топливо мины</guilabel
-></term>
-<listitem
-><para
->Количество топлива в мине.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Энергопотребление</guilabel
-></term>
-<listitem
-><para
->Количество энергии, необходимой для закладывания мины.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Время активации.</guilabel
-></term>
-<listitem
-><para
->Время неактивности мины.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Повреждение</guilabel
-></term>
-<listitem
-><para
->Ущерб, наносимый кораблю при столкновении с миной.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Максимальное количество</guilabel
-></term>
-<listitem
-><para
->Максимальное количество мин игрока, которые могут находится на экране. </para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Время перезаряжания</guilabel
-></term>
-<listitem
-><para
->Время, необходимое для перезарядки мины.</para
-></listitem>
-</varlistentry>
-</variablelist>
-
-</sect3>
-
-<sect3 id="ship">
-<title
-><guilabel
->Корабль</guilabel
-></title>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->Ускорение</guilabel
-></term>
-<listitem
-><para
->Ускорение кораблей</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Энергопотребление</guilabel
-></term>
-<listitem
-><para
->Энергия, необходимая для ускорения корабля.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Скорость вращения</guilabel
-></term>
-<listitem
-><para
->Скорость, с которой корабль вращяется.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Энергопотребление</guilabel
-></term>
-<listitem
-><para
->Энергия, необходимая для поворота корабля.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Ущерб при аварии</guilabel
-></term>
-<listitem
-><para
->Ущерб, наносимый при столкновении двух кораблей.</para
-></listitem>
-</varlistentry>
-</variablelist>
-
-</sect3>
-
-<sect3 id="sun">
-<title
-><guilabel
->Солнце</guilabel
-></title>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->Солнечная энергия</guilabel
-></term>
-<listitem
-><para
->Энергия солнечного излучения. Чем выше значение, тем быстрее корабль будет перезаряжен.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Гравитация</guilabel
-></term>
-<listitem
-><para
->Сила гравитационного притяжения солнца. </para
-></listitem>
-</varlistentry>
-</variablelist>
-
-</sect3>
-
-<sect3 id="start">
-<title
-><guilabel
->Старт</guilabel
-></title>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->X-координата</guilabel
-> и <guilabel
->Y-координата</guilabel
-></term>
-<listitem
-><para
->Позиция кораблей в начале игры. Корабли начинают на противоположных сторонах солнца.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Скорость по X</guilabel
-> и <guilabel
->Скорость по Y</guilabel
-></term>
-<listitem
-><para
->Скорость в начале игры.</para
-></listitem>
-</varlistentry>
-</variablelist>
-
-</sect3>
-
-<sect3 id="powerup-options">
-<title
-><guilabel
->Заправки</guilabel
-></title>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->Время появления</guilabel
-></term>
-<listitem
-><para
->Максимальное время между появлением двух заправок.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Время жизни</guilabel
-></term>
-<listitem
-><para
->Максимальное время жизни заправки.</para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Количество энергии</guilabel
-></term>
-<listitem
-><para
->Количество энергии, получаемой от энергетической заправки. </para
-></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><guilabel
->Защита</guilabel
-></term>
-<listitem
-><para
->Количество здоровья, получаемой от защитной заправки.</para
-></listitem>
-</varlistentry>
-</variablelist>
-
-</sect3>
-</sect2>
-</sect1>
+>Собственное оружие так же опасно для вашего спутника, как и для спутника противника.</para
+></note>
 </chapter>
 
-<chapter id="command">
-<title
->Команды/сочетания клавиш</title>
-
-<para
->В следующем разделе вкратце описан каждый пункт меню.</para>
-
-<sect1 id="game-menu">
-<title
->Меню <guimenu
->Игра</guimenu
-></title>
-
-<para
->Меню <guimenu
->Игра</guimenu
-> используется для запуска и приостановки игры.</para>
-
-<variablelist>
-<varlistentry>
-<term
-><menuchoice
-><shortcut
-><keycombo action="simul"
-> &Ctrl;<keycap
->N</keycap
-></keycombo
-></shortcut
-> <guimenu
->Игра</guimenu
-><guimenuitem
->Новый раунд</guimenuitem
-> </menuchoice
-></term>
-<listitem
+<chapter id="rules_and_tips"
+><title
+>Правила игры, стратегия и советы</title
+> <!-- do not change this! -->
+    <sect1 id="screen">
+        <title
+>Обзор игрового экрана &kspaceduel;.</title>
+        <screenshot>
+            <screeninfo
+>Игровой экран &kspaceduel;</screeninfo>
+            <mediaobject
+><imageobject
+><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Игровой экран &kspaceduel;</phrase
+></textobject
+></mediaobject>
+        </screenshot>
+        <itemizedlist>
+            <listitem
 ><para
->Запуск новой игры &kspaceduel;</para
+>Верхнюю часть игрового поля занимает меню и панель инструментов.</para
 ></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-><shortcut
-><keycombo action="simul"
-> &Ctrl;<keycap
->N</keycap
-></keycombo
-></shortcut
-> <guimenu
->Игра</guimenu
-><guimenuitem
->Новый раунд</guimenuitem
-> </menuchoice
-></term>
-<listitem
+            <listitem
 ><para
->Запуск нового раунда на том же уровне.</para
+>Центральную часть экрана &kspaceduel; занимает игровое поле.</para
 ></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->P</keycap
-></keycombo
-></shortcut
-> <guimenu
->Игра</guimenu
-><guimenuitem
->Пауза</guimenuitem
-> </menuchoice
-></term>
-<listitem
+            <listitem
 ><para
->Приостановка и возобновление игры.</para
+>Слева и справа от игрового поля расположены информационные экраны красного и синего игроков.</para
 ></listitem>
-</varlistentry>
-<varlistentry>
-<term
-><menuchoice
-><shortcut
-> <keycombo action="simul"
->&Ctrl; <keycap
->Q</keycap
-></keycombo
-></shortcut
-> <guimenu
->Игра</guimenu
-><guimenuitem
->Выход</guimenuitem
-> </menuchoice
-></term>
-<listitem
+            <listitem
 ><para
-><action
->Выход</action
-> из &kspaceduel;</para
+>Верхний прямоугольник на экране информации показывает <quote
+>Здоровье</quote
+> корабля.</para
 ></listitem>
-</varlistentry>
-</variablelist>
-
-</sect1>
-
-<sect1 id="settings-menu">
-<title
->Меню <guimenu
->Настройки</guimenu
-></title>
-
-<variablelist>
-<varlistentry>
-<term
-><menuchoice
-><guimenu
->Настройки</guimenu
-><guimenuitem
->Панель инструментов</guimenuitem
-> </menuchoice
-></term>
-<listitem
+            <listitem
 ><para
->Когда этот пункт выбран, панель инструментов будет видна. В противном случае - панель будет спрятана.</para
+>Средний прямоугольник на информационном экране показывает заряд батареи.</para
 ></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-><guimenu
->Настройки</guimenu
-><guimenuitem
->Строка состояния</guimenuitem
-> </menuchoice
-></term>
-<listitem
+            <listitem
 ><para
->Когда этот пункт выбран, строка состояния внизу экрана, показывающая текстовую информацию, будет видна. Иначе - строка будет спрятана.</para
+>Нижний прямоугольник на информационном экране показывает количество побед игрока.</para
 ></listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-><guimenu
->Настройка</guimenu
-> <guimenuitem
->Клавиши...</guimenuitem
-> </menuchoice
-></term>
-<listitem
+            <listitem
 ><para
->Позволяет изменять сочетания клавиш для игры &kspaceduel;</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><menuchoice
-><guimenu
->Настройка</guimenu
-> <guimenuitem
->Настроить программу...</guimenuitem
-> </menuchoice
-></term>
-<listitem
-><para
->Открывает диалог настройки программы, см. <link linkend="options"
->Параметры игры</link
->.</para
+>Нижняя часть игровой области - строка состояния.</para
 ></listitem>
-</varlistentry>
-</variablelist>
-
-</sect1>
-
-<sect1 id="help-menu">
-<title
->Меню <guimenu
->Помощь</guimenu
-></title>
-&help.menu.documentation; </sect1>
-
-<sect1 id="keys">
-<title
->Раскладка клавиатуры по умолчанию</title>
-
-<para
->В таблице показана стандартная раскладка сочетаний клавиш.</para>
-
-<para
-><emphasis
->Меню</emphasis
-></para>
-
-<informaltable frame="all">
-<tgroup cols="2">
-<thead
-><row
-><entry
->Комбинации клавиш</entry
-><entry
->Действие</entry
-></row
-></thead>
-<tbody>
-<row
-><entry
-><keycombo action="simul"
->&Ctrl;<keycap
->Q</keycap
-></keycombo
-></entry
-><entry
->Выход из &kspaceduel;</entry
-></row>
-<row
-><entry
-><keycombo action="simul"
->&Ctrl;<keycap
->N</keycap
-></keycombo
-></entry
-><entry
->Новая игра</entry
-></row>
-<row
-><entry
-><keycombo action="simul"
->&Ctrl;<keycap
->N</keycap
-></keycombo
-></entry
-><entry
->Новый раунд</entry
-></row>
-<row
-><entry
-><keycombo action="simul"
-><keycap
->P</keycap
-></keycombo
-></entry
-><entry
->Пауза</entry
-></row>
-<row
-><entry
-><keycombo action="simul"
-><keycap
->F1</keycap
-></keycombo
-></entry
-><entry
->Помощь</entry
-></row>
-<row
-><entry
-><keycombo action="simul"
->&Shift;<keycap
->F1</keycap
-></keycombo
-></entry
-><entry
->Контекстная подсказка</entry
-></row>
-<row
-><entry
-><keycombo action="simul"
-><keycap
->Пробел</keycap
-></keycombo
-></entry
-><entry
->Запуск игры</entry
-></row>
-</tbody>
-</tgroup>
-</informaltable>
-
-<para
->Комбинация клавиш для пунктов меню может быть изменена через меню <menuchoice
-> <guimenu
->Настройки</guimenu
-> <guimenuitem
->Клавишные комбинации</guimenuitem
-> </menuchoice
-></para>
-
-<para
-><emphasis
->Игра</emphasis
-></para>
-
-<informaltable frame="all">
-<tgroup cols="3">
-<colspec colname="c1"/>
-<colspec colname="c2"/>
-<colspec colname="c3"/>
-<thead
+        </itemizedlist>
+    </sect1>
+    <sect1 id="keys">
+        <title
+>Комбинации клавиш по умолчанию</title>
+        <para
+>В следующей таблице показаны стандартные комбинации клавиш для &kspaceduel;.</para>
+        <informaltable frame="all">
+            <tgroup cols="3">
+            <colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
+            <thead
 ><row
 ><entry
 >Действие</entry
@@ -1090,107 +241,951 @@
 >Синий игрок</entry
 ></row
 ></thead>
-<tbody>
-<row
+            <tbody>
+                <row
 ><entry
 >Поворот налево</entry
 ><entry
->S</entry
+><keycap
+>S</keycap
+></entry
 ><entry
 >Стрелка влево</entry
 ></row>
-<row
+                <row
 ><entry
 >Поворот направо</entry
 ><entry
->F</entry
+><keycap
+>F</keycap
+></entry
 ><entry
 >Стрелка вправо</entry
 ></row>
-<row
+                <row
 ><entry
 >Ускорение</entry
 ><entry
->E</entry
+><keycap
+>E</keycap
+></entry
 ><entry
 >Стрелка вверх</entry
 ></row>
-<row
+                <row
 ><entry
 >Выстрел</entry
 ><entry
->D</entry
+><keycap
+>D</keycap
+></entry
 ><entry
 >Стрелка вниз</entry
 ></row>
-<row
+                <row
 ><entry
 >Мины</entry
 ><entry
->A</entry
+><keycap
+>A</keycap
+></entry
 ><entry
->Вставить</entry
+>&Ins;</entry
 ></row>
-</tbody>
-</tgroup>
-</informaltable>
+            </tbody>
+            </tgroup>
+        </informaltable>
+        <note
+><para
+>Эти клавиши можно изменить, см. раздел <link linkend="options-keys"
+>Настройка игры</link
+>.</para
+></note>
+    </sect1>
+    <sect1 id="rules">
+        <title
+>Правила</title>
+        <sect2 id="energy">
+            <title
+>Энергия</title>
+            <itemizedlist>
+                <listitem
+><para
+>Каждый игрок управляет одним кораблем.</para
+></listitem>
+                <listitem
+><para
+>Корабль может поворачиваться, ускоряться, стрелять и закладывать мины.</para
+></listitem>
+                <listitem
+><para
+>У каждого корабля есть ограниченное количество энергии, необходимое для поворота, ускорения, стрельбы и закладывания мин.</para
+></listitem>
+                <listitem
+><para
+>У каждого корабля ограниченный запас энергии.</para
+></listitem>
+                <listitem
+><para
+>Корабли получают необходимую для работы энергию от солнца. Её количество зависит от расстояния до солнца и направления на него.</para
+></listitem>
+            </itemizedlist>
+            <note
+><para
+>Корабль получает больше энергии вблизи солнца и меньше около границы. Он получает полное количество энергии, если солнце светит прямо на солнечные батареи, и меньше или даже совсем не получает её, если солнце светит под углом к батареям или с обратной стороны батарей.</para
+></note>
+        </sect2>
+        <sect2 id="bullets-and-mines">
+            <title
+>Снаряды и мины</title>
+            <itemizedlist>
+                <listitem
+><para
+>Снаряды летают вокруг солнца так же, как корабль.</para
+></listitem>
+                <listitem
+><para
+>У мин есть некоторое количество энергии, чтобы оставаться на одном месте. Когда энергия заканчивается, мины сталкиваются с солнцем и разрушаются.</para
+></listitem>
+                <listitem
+><para
+>Чем ближе к солнцу установлена мина, тем больше энергии ей нужно, чтобы оставаться на месте.</para
+></listitem>
+                <listitem
+><para
+>Мины могут быть уничтожены снарядами.</para
+></listitem>
+                <listitem
+><para
+>По умолчанию каждый корабль имеет 5 снарядов и 3 мины.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="hit-points">
+            <title
+>Здоровье</title>
+            <itemizedlist>
+                <listitem
+><para
+>Столкновение с собственными снарядами, снарядами или минами противника уменьшает здоровье корабля.</para
+></listitem>
+                <listitem
+><para
+>Если столкнутся два корабля, то более слабый корабль будет уничтожен, и здоровье более сильного уменьшится на значение здоровья слабого корабля.</para
+></listitem>
+                <listitem
+><para
+>Когда здоровье корабля падает до нуля, корабль взрывается.</para
+></listitem>
+                <listitem
+><para
+>Если корабль влетает в солнце, он уничтожается независимо от оставшегося количества здоровья.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="powerups">
+          <title
+>Заправки</title>
 
-<para
->Для изменения этих клавиш, смотрите раздел <link linkend="options-keys"
->Клавиши игрока</link
->.</para>
+          <para
+>Время от времени на поле боя появляются заправки.</para>
+          <para
+>Существует четыре типа заправок:</para>
 
-</sect1>
+          <variablelist>
+            <varlistentry
+><term
+></term
+><listitem>
+              <variablelist>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="mine.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Мины</guiicon
+></term>
+                  <listitem
+><para
+>Максимальное количество мин увеличено.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="bullet.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Снаряды</guiicon
+></term>
+                  <listitem
+><para
+>Максимальное количество снарядов увеличено.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="energy.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Энергия</guiicon
+> (жёлтая или зелёная сфера)</term>
+                  <listitem
+><para
+>Энергия игрока увеличивается.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="shield.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>Защита</guiicon
+> (красная или синяя сфера)</term>
+                  <listitem
+><para
+>Здоровье игрока увеличивается.</para
+></listitem>
+                </varlistentry>
+              </variablelist>
+            </listitem
+></varlistentry>
+          </variablelist>
+        </sect2>
+    </sect1>
 </chapter>
 
-<chapter id="credits">
-<title
->Авторские права и лицензирование</title>
- 
+<chapter id="interface"
+><title
+>Пункты меню</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Начать игру</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Начинает новую игру</action
+> &kspaceduel;.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-menu-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Новый раунд</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Начинает новый раунд</action
+> на том же уровне.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry  id="game-menu-pause">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>P</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Пауза</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Приостановка и возобновление игры.</action
+></para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Выход</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Выход</action
+> из &kspaceduel;.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="settings-menu-settings">
+    <term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Настроить &kspaceduel;…</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>Открывает диалог настройки</action
+>, в котором задаются многие параметры игры; подробнее — в главе <link linkend="configuration"
+>Настройка игры</link
+>.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+<para
+>Кроме того, в &kspaceduel; есть стандартные для &kde; меню <guimenu
+>Настройка</guimenu
+> и <guimenu
+>Справка</guimenu
+>, описанные в разделах <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Меню «Настройка»</ulink
+> и <ulink url="help:/fundamentals/menus.html#menus-help"
+>Меню «Справка»</ulink
+> руководства «Основы &kde;». </para>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Вопросы и ответы</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Я хочу изменить оформление игры. Это возможно? </para
+></question>
+ <answer
+><para
+>Нет. Сейчас в &kspaceduel; есть только одна тема оформления.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Я сделал ошибку. Можно ли её отменить? </para
+></question>
+ <answer
+><para
+>Нет. В &kspaceduel; отсутствует функция <quote
+>Отмена</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Непонятно, что делать! Есть ли подсказки? </para
+></question>
+ <answer
+><para
+>Нет. В &kspaceduel; нет подсказок. Но если внимательно прочитать раздел <link linkend="rules_and_tips"
+>Правила игры, стратегия и советы</link
+>, такой проблемы не возникнет.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Мне нужно выйти из игры, но я ещё не закончил. Можно ли сохранить игру?</para
+></question>
+ <answer
+><para
+>Нет. В &kspaceduel; нельзя сохранить игру.</para
+></answer>
+</qandaentry>
+<!--Please add more Q&As if needed-->
+
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Настройки игры</title
+> <!-- do not change this! -->
+<!--This section describes configuration &GUI;. If your game is configured using menubar exclusively, please remove this section.-->
+  <sect1 id="options-keys">
+    <title
+>Клавиши управления</title>
+     <para
+>В &kspaceduel; есть стандартный набор клавиш для управления игрой. Он приведён в разделе <link linkend="keys"
+>Комбинации клавиш по умолчанию</link
+>.</para>
+     <para
+>Клавиши настраиваются через меню <menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Настроить комбинации клавиш…</guimenuitem
+></menuchoice
+>.</para>
+     <para
+>Будет вызван стандартный диалог для настройки клавиш, в том числе и для действий, специфичных для программы.</para>
+     <para
+>У каждого игрока (красного и синего) есть 5 клавиш: поворот налево, поворот направо, ускорение, выстрел и мина.</para>
+     <para
+>Закончив настройку клавиш, нажмите кнопку <guibutton
+>OK</guibutton
+>, чтобы сохранить ваши изменения.</para>
+     <para
+>Чтобы восстановить клавиши по умолчанию, нажмите кнопку <guibutton
+>По умолчанию</guibutton
+>. Чтобы сохранить изменения, нажмите <guibutton
+>ОК</guibutton
+>.</para>
+     <para
+>Если вы хотите сбросить изменения и вернуться к предыдущей настройке клавиш, нажмите <guibutton
+>Отмена</guibutton
+>, и ваши изменения пропадут.</para>
+  </sect1>
+
+  <sect1 id="options-configurations">
+    <title
+>Настройки игры</title>
+    <para
+>Все параметры игры &kspaceduel; можно настраивать.</para>
+    <para
+>Чтобы изменить параметры игры, выберите пункт меню <menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Настроить &kspaceduel;…</guimenuitem
+></menuchoice
+>.</para>
+    <para
+>Будет показан диалог с двумя вкладками, <guilabel
+>Общие</guilabel
+> и <guilabel
+>Игра</guilabel
+>. Первая из низ очень проста, вторая же делится на вкладки.</para>
+    <para
+>Настройки собраны в различные конфигурации. Вы можете выбрать одну из нескольких предустановленных конфигураций.</para>
+    <para
+>Если вы выберете <guilabel
+>Пользовательскую</guilabel
+> конфигурацию, вы сможете задать все настройки самостоятельно.</para>
+    <note
+><para
+>Если вы не выбрали <guilabel
+>Пользовательскую</guilabel
+> конфигурацию, вы не сможете изменять эти настройки.</para
+></note>
+    <tip
+><para
+>Если вы обнаружили интересную конфигурацию, напишите письмо автору игры. Она может быть включена в будущие версии (отправьте раздел [Game] из файла <filename
+>~/.config/kspaceduelrc</filename
+>).</para
+></tip>
+    <para
+>Закончив настройку, нажмите кнопку <guibutton
+>OK</guibutton
+>, чтобы сохранить изменения.</para>
+    <para
+>Если вы хотите восстановить стандартные значения, нажмите кнопку <guibutton
+>По умолчанию</guibutton
+>. Чтобы сохранить изменения, нажмите кнопку <guibutton
+>ОК</guibutton
+>.</para>
+    <para
+>Если вы хотите сбросить изменения и вернуться к предыдущей настройке, нажмите <guibutton
+>Отмена</guibutton
+>, и ваши изменения пропадут.</para>
+
+    <para
+>Настройки бывают:</para>
+
+    <sect2 id="general">
+    <title
+>Страница «Основное»</title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>Здоровье</guilabel
+></term>
+        <listitem
+><para
+>В этом разделе два ползунка задают здоровье каждого из игроков: уменьшив здоровье одного из них, можно дать фору другому.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Время обновления:</guilabel
+></term>
+         <listitem
+><para
+>Время между двумя обновлениями экрана в миллисекундах. Все остальные настройки не зависят от времени обновления.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Красный игрок</guilabel
+></term>
+        <listitem
+><para
+>Здесь задаётся, будет ли за красного игрока играть компьютер, и уровень его мастерства. Попробуйте разные уровни и выберите подходящий.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>Синий игрок</guilabel
+></term>
+        <listitem
+><para
+>Параметры этого раздела работают так же, как описанные выше параметры раздела <guilabel
+>Красный игрок</guilabel
+>.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+
+    <sect2 id="game">
+    <title
+>Страница «Игра»</title>
+
+    <para
+>Здесь можно выбрать готовый набор параметров из раскрывающегося списка, а затем подстроить параметры на вкладках.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term
+>Вкладка <guilabel
+>Основное</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Скорость игры:</guilabel
+></term>
+              <listitem
+><para
+>Изменяет скорость игры в целом.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="bullet">
+        <term
+>Вкладка <guilabel
+>Снаряды</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Скорость стрельбы:</guilabel
+></term>
+              <listitem
+><para
+>Скорость снарядов.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Энергопотребление:</guilabel
+></term>
+              <listitem
+><para
+>Количество энергии, необходимой для выстрела.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Максимальное число:</guilabel
+></term>
+              <listitem
+><para
+>Максимальное количество снарядов игрока, которые могут находится в пределах одного экрана.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Повреждение:</guilabel
+></term>
+              <listitem
+><para
+>Ущерб, наносимый кораблю снарядом.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Время жизни:</guilabel
+></term>
+              <listitem
+><para
+>Максимальное время жизни снаряда.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Время перезарядки:</guilabel
+></term>
+              <listitem
+><para
+>Время, нужное кораблю для перезарядки снаряда.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="mine">
+        <term
+>Вкладка <guilabel
+>Мины</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Топливо мины:</guilabel
+></term>
+              <listitem
+><para
+>Количество топлива в мине.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Энергопотребление:</guilabel
+></term>
+              <listitem
+><para
+>Количество энергии, необходимой для закладывания мины.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Время активации:</guilabel
+></term>
+              <listitem
+><para
+>Время неактивности мины.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Повреждение:</guilabel
+></term>
+              <listitem
+><para
+>Ущерб, наносимый кораблю при столкновении с миной.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Максимальное число:</guilabel
+></term>
+              <listitem
+><para
+>Максимальное количество мин игрока, которые могут находиться на экране.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Время перезарядки:</guilabel
+></term>
+              <listitem
+><para
+>Время, необходимое для перезарядки мины.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ship">
+        <term
+>Вкладка <guilabel
+>Корабль</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Ускорение:</guilabel
+></term>
+              <listitem
+><para
+>Ускорение кораблей.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Энергопотребление:</guilabel
+></term>
+              <listitem
+><para
+>Энергия, необходимая для ускорения корабля.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Скорость вращения:</guilabel
+></term>
+              <listitem
+><para
+>Скорость, с которой корабль вращается.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Энергопотребление:</guilabel
+></term>
+              <listitem
+><para
+>Энергия, необходимая для поворота корабля.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Ущерб при аварии:</guilabel
+></term>
+              <listitem
+><para
+>Ущерб, наносимый при столкновении двух кораблей.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="sun">
+        <term
+>Вкладка <guilabel
+>Солнце</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Солнечная энергия:</guilabel
+></term>
+              <listitem
+><para
+>Энергия солнечного излучения. Чем выше значение, тем быстрее корабль будет перезаряжен.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Гравитация:</guilabel
+></term>
+              <listitem
+><para
+>Сила гравитационного притяжения солнца.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="start">
+        <term
+>Вкладка <guilabel
+>Начало</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>X-координата:</guilabel
+> и <guilabel
+>Y-координата:</guilabel
+></term>
+              <listitem
+><para
+>Позиция кораблей в начале игры. Корабли начинают на противоположных сторонах солнца.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Скорость по X:</guilabel
+> и <guilabel
+>Скорость по Y:</guilabel
+></term>
+              <listitem
+><para
+>Скорость в начале игры.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="powerup-options">
+        <term
+>Вкладка <guilabel
+>Заправки</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>Время появления:</guilabel
+></term>
+              <listitem
+><para
+>Максимальное время между появлением двух заправок.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Время жизни:</guilabel
+></term>
+              <listitem
+><para
+>Максимальное время жизни заправки.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Энергия:</guilabel
+></term>
+              <listitem
+><para
+>Количество энергии, получаемой от энергетической заправки.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>Защита:</guilabel
+></term>
+              <listitem
+><para
+>Количество здоровья, получаемой от защитной заправки.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+  </sect1>
+</chapter>
+
+<chapter id="credits"
+><title
+>Авторские права и лицензия</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
 <para
 >&kspaceduel; </para>
 <para
->Программа - copyright 1999-2000 Andreas Zehender <email
->az@azweb.de</email
-></para>
+>© &Andreas.Zehender; &Andreas.Zehender.mail;, 1999–2000 (программа)</para>
 <para
->Документация - copyright 2000 Andreas Zehender <email
->az@azweb.de</email
-></para>
+>© &Andreas.Zehender; &Andreas.Zehender.mail;, 2000 (документация)</para>
 <para
->Обновление документации для &kde; 2.0 - Mike McBride <email
->mpmcbride7@yahoo.com</email
-></para>
+>Документация обновлена для &kde; 4.11: &Mike.McBride; &Mike.McBride.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+
 <para
 >Перевод на русский: Денис Елданди<email
 >den_yel@newmail.ru</email
 ></para
-> 
-&underFDL; &underGPL; </chapter
->                  
+> &underFDL; &underGPL; </chapter>
 
-<appendix id="installation">
-<title
->Установка</title>
- 
-<sect1 id="getting-kspaceduel">
-<title
->Где взять &kspaceduel;</title>
-&install.intro.documentation; </sect1>
-
-<sect1 id="compilation">
-<title
->Сборка и установка</title>
-&install.compile.documentation; </sect1
->         
-</appendix>
-
+&documentation.index;
 </book>
 <!--
 Local Variables:
 mode: sgml
-sgml-omittag: nil
-sgml-shorttag: t
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
 End:
 -->
-
