@@ -160,7 +160,7 @@ msgstr "Солнце"
 #, kde-format
 msgctxt "initial position and velocities of players"
 msgid "Start"
-msgstr "Начать"
+msgstr "Начало"
 
 #: dialogs.cpp:191
 #, kde-format
