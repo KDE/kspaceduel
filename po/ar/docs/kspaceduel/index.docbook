@@ -1,0 +1,1195 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Arabic "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="kspaceduel" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+    <title
+>دليل لعبة مبارزة الفضاء</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+    <author
+><firstname
+>Andreas</firstname
+> <surname
+>Zehender</surname
+> <affiliation
+><address
+><email
+>az@azweb.de</email
+></address
+></affiliation>
+    </author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+    <year
+>1999</year
+><year
+>2000</year>
+    <holder
+>&Andreas.Zehender;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-08-23</date
+><!-- Date of (re)writing, or update.-->
+<releaseinfo
+>2.1 (ترس كيدي 21.08)</releaseinfo
+><!-- Application version number. Use the variable definitions within header to change this value.-->
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+    <para
+>تصف هذه الوثائق لعبة مبارزة الفضاء الإصدار 2.1</para>
+</abstract>
+
+<!--List of relevan keywords-->
+<keywordset>
+    <keyword
+>كيدي</keyword
+> <!-- do not change this! -->
+    <keyword
+>ألعاب كيدي</keyword
+> <!-- do not change this! -->
+    <keyword
+>لعبة</keyword
+> <!-- do not change this! -->
+    <keyword
+>لعبة مبارزة الفضاء</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <keyword
+>أركيد</keyword>
+    <keyword
+>الفضاء</keyword>
+    <keyword
+>حرب</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+    <keyword
+>لاعبان</keyword>
+<!--All other relevant keywords-->
+    <keyword
+>قمر صناعي</keyword>
+    <keyword
+>حرب النجوم</keyword>
+    <keyword
+>حروب</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>مقدمة</title
+> <!-- do not change this! -->
+    <note
+><title
+>نوع اللعبة:</title
+><para
+>أركيد</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+    <note
+><title
+>عدد اللاعبين الممكنين:</title
+><para
+>اثنان</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ <!--Short game description starts here. 3-4 sentences (paragraphs)-->
+    <para
+>الفكرة وراء لعبة مبارزة الفضاء بسيطة لكنها مسببة للإدمان. يتحكم كل لاعب من اللاعبين الممكنين بسفينة فضائية تدور حول الشمس. مع تقدم اللعبة، يتعين على اللاعبين القضاء على سفينة الخصم. وبمجرد تدمير قمر الخصم، يفوز اللاعب المتبقي بالجولة.</para>
+</chapter>
+
+<chapter id="howto"
+><title
+>كيف تلعب</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+    <note
+><title
+>الهدف:</title
+><para
+>دمّر قمر الخصم مع الحفاظ على قمرك سليمًا.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+    <para
+>تحمل لعبة مبارزة الفضاء مباشرة إلى وضع اللعبة؛ لكن، الحركة لا تبدأ حتى يقوم أي من اللاعبين بالحركة الأولى.</para>
+<note
+><para
+>إذا كان قمر الخصم يُتحكم فيه بواسطة الذكاء الاصطناعي المدمج، فلن تبدأ أحداث اللعبة حتى يقوم اللاعب البشري بالحركة الأولى.</para
+></note>
+<para
+>في مبارزة الفضاء أنت تتحكم بدوران السفينة، تسارعها، وأسلحتها. قمرك ينجذب باستمرار نحو الشمس بفعل الجاذبية. عليك ضبط دوران سفينتك وتسارعها لجعلها تبقى في مسارها.</para>
+<note
+><para
+>الاقتراب الشديد من الشمس يؤدي إلى انفجار القمر الصناعي.</para
+></note>
+<para
+>في نفس الوقت عليك مراقبة حركة الخصم واستخدام أسلحتك التي تتكون من الرصاص والألغام، لتدمير سفينة العدو.</para>
+<note
+><para
+>أسلحتك الخاصة ضارة بقمرك بقدر ضررها على قمر العدو.</para
+></note>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>قواعد اللعبة واستراتيجياتها وتلميحاتها</title
+> <!-- do not change this! -->
+    <sect1 id="screen">
+        <title
+>نظرة عامة على شاشة لعبة مبارزة الفضاء.</title>
+        <screenshot>
+            <screeninfo
+>شاشة لعبة مبارزة الفضاء</screeninfo>
+            <mediaobject
+><imageobject
+><imagedata fileref="kspaceduel3.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>شاشة لعبة مبارزة الفضاء</phrase
+></textobject
+></mediaobject>
+        </screenshot>
+        <itemizedlist>
+            <listitem
+><para
+>يشغل شريط القائمة وشريط الأدوات الجزء العلوي من منطقة اللعب.</para
+></listitem>
+            <listitem
+><para
+>الجزء المركزي من شاشة لعبة مبارزة الفضاء هو منطقة اللعب.</para
+></listitem>
+            <listitem
+><para
+>على الجانبين الأيسر والأيمن من منطقة اللعب، توجد شاشات معلومات اللاعب الأحمر واللاعب الأزرق.</para
+></listitem>
+            <listitem
+><para
+>يمثل الصندوق العلوي في شاشة المعلومات <quote
+>نقاط الضرب</quote
+> للسفينة الفضائية.</para
+></listitem>
+            <listitem
+><para
+>يمثل الصندوق الأوسط في شاشة المعلومات طاقة البطارية.</para
+></listitem>
+            <listitem
+><para
+>يُظهر الصندوق السفلي في شاشة المعلومات عدد انتصارات اللاعب.</para
+></listitem>
+            <listitem
+><para
+>الجزء السفلي من منطقة اللعب هو شريط الحالة.</para
+></listitem>
+        </itemizedlist>
+    </sect1>
+    <sect1 id="keys">
+        <title
+>الاختصارات مبدئية</title>
+        <para
+>يحتوي الجدول التالي على الاختصارات المبدئية للعبة مبارزة الفضاء.</para>
+        <informaltable frame="all">
+            <tgroup cols="3">
+            <colspec colname="c1"/><colspec colname="c2"/><colspec colname="c3"/>
+            <thead
+><row
+><entry
+>الإجراء</entry
+><entry
+>اللاعب الأحمر</entry
+><entry
+>اللاعب الأزرق</entry
+></row
+></thead>
+            <tbody>
+                <row
+><entry
+>دوّر لليسار</entry
+><entry
+><keycap
+>S</keycap
+></entry
+><entry
+>&Left; سهم لليسار</entry
+></row>
+                <row
+><entry
+>دوّر لليمين</entry
+><entry
+><keycap
+>F</keycap
+></entry
+><entry
+>&Right; سهم لليمين</entry
+></row>
+                <row
+><entry
+>سرّع</entry
+><entry
+><keycap
+>E</keycap
+></entry
+><entry
+>&Up; سهم لأعلى</entry
+></row>
+                <row
+><entry
+>اللقطة</entry
+><entry
+><keycap
+>D</keycap
+></entry
+><entry
+>&Down; سهم لأسفل</entry
+></row>
+                <row
+><entry
+>الألغام</entry
+><entry
+><keycap
+>A</keycap
+></entry
+><entry
+>&Ins;</entry
+></row>
+            </tbody>
+            </tgroup>
+        </informaltable>
+        <note
+><para
+>لتغيير هذه المفاتيح، يُرجى الرجوع إلى قسم <link linkend="options-keys"
+>ضبط اللعبة</link
+>.</para
+></note>
+    </sect1>
+    <sect1 id="rules">
+        <title
+>القواعد</title>
+        <sect2 id="energy">
+            <title
+>حول نقاط الطاقة</title>
+            <itemizedlist>
+                <listitem
+><para
+>يتحكم كل لاعب بسفينة واحدة.</para
+></listitem>
+                <listitem
+><para
+>يمكن للسفن الدوران والتسارع وإطلاق النار ووضع الألغام.</para
+></listitem>
+                <listitem
+><para
+>لكل سفينة كمية محدودة من الطاقة المطلوبة للدوران والتسارع وإطلاق النار ووضع الألغام.</para
+></listitem>
+                <listitem
+><para
+>لكل سفينة كمية محدودة من الطاقة.</para
+></listitem>
+                <listitem
+><para
+>تمتص السفن الطاقة الشمسية اللازمة لعمل السفينة. تعتمد كمية الطاقة التي تحصل عليها السفينة على المسافة من الشمس والاتجاه نحوها.</para
+></listitem>
+            </itemizedlist>
+            <note
+><para
+>تحصل السفينة على طاقة أكبر بالقرب من الشمس وطاقة أقل بالقرب من الحدود. تحصل على كامل كمية الطاقة إذا سطعت الشمس مباشرة على الألواح الشمسية، وطاقة أقل أو حتى لا تحصل على طاقة إذا سطعت الشمس بزاوية على الألواح أو على الجانب الآخر منها.</para
+></note>
+        </sect2>
+        <sect2 id="bullets-and-mines">
+            <title
+>حول الطلقات والألغام</title>
+            <itemizedlist>
+                <listitem
+><para
+>تطير الطلقات حول الشمس تمامًا كما تفعل السفينة.</para
+></listitem>
+                <listitem
+><para
+>تمتلك الألغام كمية من الطاقة للبقاء في نفس الموقع. عندما تُستنفد الطاقة، تصطدم الألغام بالشمس وتتفكك.</para
+></listitem>
+                <listitem
+><para
+>كلما وُضع اللغم بالقرب من الشمس، زادت الطاقة التي يحتاجها للبقاء في مكانه.</para
+></listitem>
+                <listitem
+><para
+>يمكن تدمير الألغام بالطلقات.</para
+></listitem>
+                <listitem
+><para
+>مبدئيًا تمتلك كل سفينة 5 طلقات و3 ألغام.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="hit-points">
+            <title
+>حول نقاط الضرب</title>
+            <itemizedlist>
+                <listitem
+><para
+>الاصطدام بطلقاتك الخاصة، أو طلقات العدو أو ألغامه يُقلل من نقاط الضرب.</para
+></listitem>
+                <listitem
+><para
+>إذا اصطدمت سفينتان، تُدمر السفينة الأضعف وتُقلل نقاط ضرب السفينة الأقوى بمقدار نقاط الضرب التي كانت تمتلكها السفينة الأضعف.</para
+></listitem>
+                <listitem
+><para
+>إذا وصلت كمية نقاط ضرب السفينة إلى الصفر، تنفجر السفينة.</para
+></listitem>
+                <listitem
+><para
+>إذا اصطدمت سفينة بالشمس تُدمر بغض النظر عن كمية نقاط الضرب المتبقية.</para
+></listitem>
+            </itemizedlist>
+        </sect2>
+        <sect2 id="powerups">
+          <title
+>زيادات الطاقة</title>
+
+          <para
+>تظهر زيادات طاقة في ساحة اللعب من وقت لآخر.</para>
+          <para
+>توجد أربع زيادات طاقة مختلفة:</para>
+
+          <variablelist>
+            <varlistentry
+><term
+></term
+><listitem>
+              <variablelist>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="mine.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>اللغم</guiicon
+></term>
+                  <listitem
+><para
+>يزداد الحد الأقصى لعدد الألغام.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="bullet.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>الطلقة</guiicon
+></term>
+                  <listitem
+><para
+>يزداد الحد الأقصى لعدد الطلقات.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="energy.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>طاقة</guiicon
+> (كرة صفراء أو خضراء)</term>
+                  <listitem
+><para
+>تزداد طاقة اللاعب.</para
+></listitem>
+                </varlistentry>
+                <varlistentry>
+                  <term
+><inlinemediaobject
+><imageobject
+><imagedata fileref="shield.png" format="PNG"/> </imageobject
+></inlinemediaobject
+> <guiicon
+>درع</guiicon
+> (كرة حمراء أو زرقاء)</term>
+                  <listitem
+><para
+>تزداد نقاط ضرب اللاعب.</para
+></listitem>
+                </varlistentry>
+              </variablelist>
+            </listitem
+></varlistentry>
+          </variablelist>
+        </sect2>
+    </sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>عناصر القائمة</title>
+
+<variablelist>
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>جديد</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>يبدأ لعبة جديدة</action
+> في مبارزة الفضاء.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="game-menu-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>جولة جديدة</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>يبدأ جولة جديدة</action
+> عند المستوى الحالي.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry  id="game-menu-pause">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+><keycap
+>P</keycap
+></keycombo
+></shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>ألبث</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>يُلبث اللعبة ويستأنفها.</action
+></para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>أنهِ</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>ينهي</action
+> مبارزة الفضاء.</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry id="settings-menu-settings">
+    <term
+><menuchoice
+><guimenu
+>الإعدادات</guimenu
+> <guimenuitem
+>اضبط مبارزة الفضاء…</guimenuitem
+></menuchoice
+></term>
+    <listitem
+><para
+><action
+>يفتح حواري الضبط</action
+> الذي يتيح لك تحديد العديد من إعدادات اللعبة، ارجع إلى فصل <link linkend="configuration"
+>ضبط اللعبة</link
+> لمزيد من المعلومات.</para
+></listitem>
+  </varlistentry>
+</variablelist>
+
+<para
+>بالإضافة إلى ذلك، تحتوي مبارزة الفضاء على عناصر قائمتي كيدي الشائعة <guimenu
+>الإعدادات</guimenu
+> و<guimenu
+>مساعدة</guimenu
+>، لمزيد من المعلومات اقرأ الأقسام المتعلقة بـ <ulink url="help:/fundamentals/menus.html#menus-settings"
+>قائمة الإعدادات</ulink
+> و <ulink url="help:/fundamentals/menus.html#menus-help"
+>قائمة المساعدة</ulink
+> في أساسيات كيدي. </para>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>الأسئلة الشائعة</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>أريد تغيير شكل اللعبة. هل يمكنني ذلك؟ </para
+></question>
+ <answer
+><para
+>لا، في هذه اللحظة توفر مبارزة الفضاء سمة واحدة فقط.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>لقد ارتكبت خطأ. هل يمكنني التراجع؟ </para
+></question>
+ <answer
+><para
+>لا، لا تمتلك مبارزة الفضاء ميزة <quote
+>تراجع</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>لا أعرف ماذا أفعل هنا! هل هناك تلميحات؟ </para
+></question>
+ <answer
+><para
+>لا، لا تمتلك مبارزة الفضاء ميزة <quote
+>تلميح</quote
+>. ومع ذلك، إذا قرأت بإمعان قسم <link linkend="rules_and_tips"
+>قواعد اللعبة واستراتيجياتها وتلميحاتها</link
+> فمن المفترض ألا تواجه هذه المشكلة.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>يجب أن أخرج من اللعبة الآن، لكنني لم أنتهِ بعد. هل يمكنني حفظ تقدمي؟</para
+></question>
+ <answer
+><para
+>لا، لا تمتلك مبارزة الفضاء ميزة <quote
+>حفظ</quote
+>.</para
+></answer>
+</qandaentry>
+<!--Please add more Q&As if needed-->
+
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>ضبط اللعبة</title
+> <!-- do not change this! -->
+<!--This section describes configuration &GUI;. If your game is configured using menubar exclusively, please remove this section.-->
+  <sect1 id="options-keys">
+    <title
+>مفاتيح اللعبة</title>
+     <para
+>تمتلك مبارزة الفضاء مجموعة مبدئية من المفاتيح للتحكم في اللعبة. للحصول على قائمة بالمفاتيح المبدئية، انظر القسم المعنون <link linkend="keys"
+>الاختصارات المبدئية</link
+>.</para>
+     <para
+>يمكن ضبط المفاتيح باختيار عنصر القائمة <menuchoice
+><guimenu
+>الإعدادات</guimenu
+> <guimenuitem
+>اضبط الاختصارات…</guimenuitem
+></menuchoice
+>.</para>
+     <para
+>سيؤدي هذا إلى إظهار صندوق حواري يتيح لك ضبط جميع مفاتيح الاختصار، بما في ذلك المفاتيح المستخدمة لتوجيه السفن الفضائية، وإطلاق الطلقات، ووضع الألغام.</para>
+     <para
+>يمكنك رؤية أن لكل لاعب (الأحمر والأزرق) 5 ضغطات مفاتيح تقابل: دوّر لليسار، دوّر لليمين، سرّع، اللقطة، والألغام.</para>
+     <para
+>عند الانتهاء من ضبط مفاتيحك، يجب النقر على <guibutton
+>حسنًا</guibutton
+> لتطبيق تغييراتك.</para>
+     <para
+>إذا أردت استعادة المفاتيح المبدئية، فما عليك سوى النقر على زر <guibutton
+>المبدئي</guibutton
+> مرة واحدة. لجعل هذه التغييرات دائمة، اضغط <guibutton
+>حسنًا</guibutton
+>.</para>
+     <para
+>إذا أردت التخلي عن التغييرات التي أجريتها، والعودة إلى مفاتيحك المختارة مسبقًا، فانقر ببساطة على <guibutton
+>ألغِ</guibutton
+>، وستُفقد تغييراتك.</para>
+  </sect1>
+
+  <sect1 id="options-configurations">
+    <title
+>ضبط اللعبة</title>
+    <para
+>جميع إعدادات لعبة مبارزة الفضاء قابلة للضبط.</para>
+    <para
+>إذا أردت تغيير إعدادات اللعبة، فاختر ببساطة عنصر القائمة <menuchoice
+><guimenu
+>الإعدادات</guimenu
+> <guimenuitem
+>اضبط مبارزة الفضاء…</guimenuitem
+></menuchoice
+>.</para>
+    <para
+>سيؤدي هذا إلى إظهار صندوق حواري بصفحتين، تسميان <guilabel
+>عام</guilabel
+> و<guilabel
+>لعبة</guilabel
+>. الصفحة الأولى بسيطة نوعًا ما، أما الثانية فتحتوي على سبعة ألسنة تبويب في الأعلى.</para>
+    <para
+>تُجمع الإعدادات في تشكيلات مختلفة. يمكنك الاختيار من بين عدة تشكيلات محددة مسبقًا.</para>
+    <para
+>إذا اخترت التشكيلة <guilabel
+>مخصصة</guilabel
+>، يمكنك تحديد جميع الإعدادات بنفسك.</para>
+    <note
+><para
+>إذا لم تختر <guilabel
+>مخصصة</guilabel
+>، فلن تتمكن من إجراء أي تغييرات على هذه الخيارات.</para
+></note>
+    <tip
+><para
+>إذا وجدت تشكيلة مثيرة للاهتمام، فأرسلها بالبريد الإلكتروني إلى مؤلف اللعبة. يمكن تنفيذها في إصدار مستقبلي (أرسل الجزء [Game] الموجود في الملف <filename
+>~/.config/kspaceduelrc</filename
+>).</para
+></tip>
+    <para
+>عند الانتهاء من تعديل الخيارات، يجب النقر على <guibutton
+>حسنًا</guibutton
+> لتطبيق تغييراتك.</para>
+    <para
+>إذا أردت استعادة المبدئي، فما عليك سوى النقر على زر <guibutton
+>المبدئي</guibutton
+> مرة واحدة. لجعل هذه التغييرات دائمة، اضغط <guibutton
+>حسنًا</guibutton
+>.</para>
+    <para
+>إذا أردت التخلي عن التغييرات التي أجريتها، والعودة إلى خياراتك السابقة، فانقر ببساطة على <guibutton
+>ألغِ</guibutton
+>، وستُفقد تغييراتك.</para>
+
+    <para
+>الإعدادات هي:</para>
+
+    <sect2 id="general">
+    <title
+>الصفحة العامة</title>
+    <variablelist>
+      <varlistentry>
+        <term
+><guilabel
+>نقاط الضرب</guilabel
+></term>
+        <listitem
+><para
+>يحتوي هذا القسم على منزلقين يسمحان لك بتحديد نقاط الضرب لكل من اللاعبين؛ قد ترغب في تقليل نقاط ضرب أحد اللاعبين لإعطائه عائقًا.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>وقت التحديث:</guilabel
+></term>
+         <listitem
+><para
+>الوقت بين عمليتي تحديث للشاشة بالملي ثانية. جميع الإعدادات الأخرى مستقلة عن وقت التحديث.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>اللاعب الأحمر</guilabel
+></term>
+        <listitem
+><para
+>في هذا القسم يمكنك تحديد ما إذا كان اللاعب الأحمر سيُتحكم فيه بواسطة الذكاء الاصطناعي، وكذلك اختيار مستوى مهارة الذكاء الاصطناعي لهذا اللاعب. فقط جرب مستويات المهارة المختلفة للعثور على المستوى الذي يناسبك.</para
+></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term
+><guilabel
+>اللاعب الأزرق</guilabel
+></term>
+        <listitem
+><para
+>يعمل هذا بنفس طريقة خيارات قسم <guilabel
+>اللاعب الأحمر</guilabel
+> الموضح أعلاه.</para
+></listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+
+    <sect2 id="game">
+    <title
+>صفحة اللعبة</title>
+
+    <para
+>هنا يمكنك اختيار مجموعة إعدادات مخصصة من قائمة منسدلة. ثم استخدم ألسنة التبويب لتخصيص الإعدادات أكثر قليلًا.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term
+>لسان تبويب <guilabel
+>عام</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>سرعة اللعبة:</guilabel
+></term>
+              <listitem
+><para
+>يتحكم في سرعة اللعبة بأكملها.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="bullet">
+        <term
+>لسان تبويب <guilabel
+>طلقة</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>سرعة الطلقة:</guilabel
+></term>
+              <listitem
+><para
+>سرعة الطلقات.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>الطاقة المحتاجة:</guilabel
+></term>
+              <listitem
+><para
+>كمية الطاقة المطلوبة للقطة واحدة.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>أعلى رقم:</guilabel
+></term>
+              <listitem
+><para
+>أقصى عدد من الطلقات يمكن للاعب امتلاكها على الشاشة.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>الضرر:</guilabel
+></term>
+              <listitem
+><para
+>عدد نقاط ضرب الضرر الناتج عندما تصيب طلقة سفينة.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>وقت الحياة:</guilabel
+></term>
+              <listitem
+><para
+>أقصى وقت حياة للطلقة.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>وقت إعادة التحميل:</guilabel
+></term>
+              <listitem
+><para
+>الوقت الذي تحتاجه السفينة لإعادة تحميل طلقة.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="mine">
+        <term
+>لسان تبويب <guilabel
+>لغم</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>وقود اللغم:</guilabel
+></term>
+              <listitem
+><para
+>كمية الوقود في اللغم.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>الطاقة المحتاجة:</guilabel
+></term>
+              <listitem
+><para
+>كمية الطاقة المطلوبة لوضع لغم.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>وقت التنشيط:</guilabel
+></term>
+              <listitem
+><para
+>الوقت الذي يكون فيه اللغم غير نشط.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>الضرر:</guilabel
+></term>
+              <listitem
+><para
+>عدد نقاط ضرب الضرر الناتج عندما تصدم سفينة لغمًا.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>أعلى رقم:</guilabel
+></term>
+              <listitem
+><para
+>أقصى عدد من الألغام يمكن للاعب امتلاكها على الشاشة.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>وقت إعادة التحميل:</guilabel
+></term>
+              <listitem
+><para
+>الوقت الذي تحتاجه السفينة لإعادة تحميل لغم.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ship">
+        <term
+>لسان تبويب <guilabel
+>سفينة</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>التسارع:</guilabel
+></term>
+              <listitem
+><para
+>تسارع السفن.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>الطاقة المحتاجة:</guilabel
+></term>
+              <listitem
+><para
+>الطاقة المطلوبة لتسريع سفينة.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>سرعة الدوران:</guilabel
+></term>
+              <listitem
+><para
+>السرعة التي تدور بها السفينة.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>الطاقة المحتاجة:</guilabel
+></term>
+              <listitem
+><para
+>الطاقة المطلوبة لتدوير سفينة.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>ضرر التحطم:</guilabel
+></term>
+              <listitem
+><para
+>عدد نقاط ضرب الضرر الناتج عندما تصطدم سفينتان.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="sun">
+        <term
+>لسان تبويب <guilabel
+>شمس</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>طاقة الشمس:</guilabel
+></term>
+              <listitem
+><para
+>قوة الشمس. كلما زادت القيمة، أُعيد شحن السفن بشكل أسرع.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>الجاذبية:</guilabel
+></term>
+              <listitem
+><para
+>قوة سحب جاذبية الشمس.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="start">
+        <term
+>لسان تبويب <guilabel
+>بدء</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>الموضع X:</guilabel
+> و <guilabel
+>الموضع Y:</guilabel
+></term>
+              <listitem
+><para
+>موقع السفن في بداية جولة جديدة. تبدأ السفن من جانبين متقابلين من الشمس.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>السرعة X:</guilabel
+> و <guilabel
+>السرعة Y:</guilabel
+></term>
+              <listitem
+><para
+>السرعة في بداية جولة جديدة.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="powerup-options">
+        <term
+>لسان تبويب <guilabel
+>زيادات الطاقة</guilabel
+></term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term
+><guilabel
+>وقت الظهور:</guilabel
+></term>
+              <listitem
+><para
+>أقصى وقت بين ظهور زيادتي طاقة.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>وقت الحياة:</guilabel
+></term>
+              <listitem
+><para
+>أقصى وقت حياة لزيادة الطاقة.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>كمية الطاقة:</guilabel
+></term>
+              <listitem
+><para
+>كمية الطاقة التي يحصل عليها اللاعب من زيادة طاقة.</para
+></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term
+><guilabel
+>كمية الدرع:</guilabel
+></term>
+              <listitem
+><para
+>كمية نقاط الضرب التي يحصل عليها اللاعب من زيادة طاقة درع.</para
+></listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    </sect2>
+  </sect1>
+</chapter>
+
+<chapter id="credits"
+><title
+>الحقوق والترخيص</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>لعبة مبارزة الفضاء </para>
+<para
+>حقوق ملكية البرنامج 1999-2000 &Andreas.Zehender; &Andreas.Zehender.mail;</para>
+<para
+>حقوق ملكية التوثيق 2000 &Andreas.Zehender; &Andreas.Zehender.mail;</para>
+<para
+>حُدث التوثيق لـ كيدي 4.11 بواسطة &Mike.McBride; &Mike.McBride.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
