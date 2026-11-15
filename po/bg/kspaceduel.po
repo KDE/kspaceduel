@@ -1,7 +1,7 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kspaceduel.po 1723009 2025-11-17 12:32:57Z scripty $
+# $Id$
 #
 # SPDX-FileCopyrightText: 2022, 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
