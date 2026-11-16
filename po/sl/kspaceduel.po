@@ -2,7 +2,7 @@
 # Translation of kspaceduel.po to Slovenian
 # -*- mode:po; coding:iso-latin-2; -*- Slovenian msg. catalog for Kspaceduel.
 # Copyright (C) 2001, 2003, 2004, 2007 Free Software Foundation, Inc.
-# $Id: kspaceduel.po 1723087 2025-11-17 12:44:32Z scripty $
+# $Id$
 # $Source$
 #
 # Roman Maurer <roman.maurer@hermes.si>, 2000.
