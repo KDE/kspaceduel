@@ -2,7 +2,7 @@
 <component type="desktop-application">
   <id>org.kde.kspaceduel</id>
   <metadata_license>FSFAP</metadata_license>
-  <project_license>GPL-2.0+</project_license>
+  <project_license>GPL-2.0-or-later</project_license>
   <developer id="org.kde">
     <name translate="no">KDE</name>
   </developer>
@@ -150,6 +150,8 @@
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kspaceduel</url>
   <url type="help">https://docs.kde.org/?application=kspaceduel</url>
   <url type="donation">https://www.kde.org/community/donations/?app=kspaceduel&amp;source=appdata</url>
+  <url type="vcs-browser">https://invent.kde.org/games/kspaceduel/</url>
+  <url type="contribute">https://community.kde.org/Get_Involved</url>
   <screenshots>
     <screenshot type="default">
       <image>https://cdn.kde.org/screenshots/kspaceduel/kspaceduel.png</image>
