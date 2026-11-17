@@ -1,4 +1,4 @@
-# Version: $Revision: 1723076 $
+# Version: $Revision$
 # translation of kspaceduel.po to Polish
 # translation of kspaceduel.po to
 # Copyright (C) 2002, 2003, 2007, 2008 Free Software Foundation, Inc.
