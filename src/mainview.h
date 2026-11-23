@@ -10,6 +10,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QList>
+#include <QMap>
 #include <QRandomGenerator>
 #include <QTimerEvent>
 #include <QWidget>
